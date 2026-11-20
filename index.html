@@ -253,14 +253,19 @@ function show(pct,heard,alts){
 
 /* ---------- Chế độ miễn phí: Web Speech API ---------- */
 const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
-function listenFree(){
+const IOS_STANDALONE=navigator.standalone===true;
+function listenFree(retry){
   if(!SR){$("err").textContent="Trình duyệt này không hỗ trợ nhận diện giọng nói. Dùng Chrome (Android) hoặc Safari (iPhone).";return}
   const r=new SR();r.lang="de-DE";r.interimResults=true;r.maxAlternatives=5;r.continuous=false;
-  let got=null;start();
+  let got=null,aborted=false;if(!retry)start();
   r.onresult=e=>{const res=e.results[0];$("status").textContent="… "+res[0].transcript;
     if(res.isFinal)got=[...res].map(a=>({t:a.transcript.trim(),c:a.confidence||0}))};
-  r.onerror=e=>{$("err").textContent={"not-allowed":"Chưa cho phép micro. Bấm biểu tượng ổ khoá trên thanh địa chỉ → cho phép Micro.","no-speech":"Không nghe thấy gì, thử nói to và gần hơn.","network":"Cần có mạng để nhận diện.","service-not-allowed":"iPhone: bật Đọc chính tả (Cài đặt → Chung → Bàn phím → Bật Đọc chính tả)."}[e.error]||("Lỗi: "+e.error)};
-  r.onend=()=>{stop();if(!got)return;
+  r.onerror=e=>{if(e.error==="aborted"){aborted=true;return}$("err").textContent={"not-allowed":"Chưa cho phép micro. Bấm biểu tượng ổ khoá trên thanh địa chỉ → cho phép Micro.","no-speech":"Không nghe thấy gì, thử nói to và gần hơn.","network":"Cần có mạng để nhận diện.","service-not-allowed":"iPhone: bật Đọc chính tả (Cài đặt → Chung → Bàn phím → Bật Đọc chính tả)."}[e.error]||("Lỗi: "+e.error)};
+  r.onend=()=>{
+    if(aborted&&!got){
+      if(!retry){setTimeout(()=>listenFree(true),400);return}
+      stop();$("err").textContent=IOS_STANDALONE?"iPhone không cho nhận diện miễn phí khi mở app từ màn hình chính. Hãy mở link trong Safari, hoặc nhập khóa Azure trong ⚙ để dùng chế độ Azure.":"Máy đã ngắt nhận diện. Thử lại; nếu vẫn lỗi, mở trong Safari/Chrome hoặc dùng chế độ Azure (⚙).";return}
+    stop();if(!got)return;
     // Chấm nghiêm: CHỈ dùng kết quả đầu tiên của máy (không lấy các phương án dự phòng)
     // và yêu cầu độ chắc chắn của máy đạt ngưỡng theo mức khó.
     const top=got[0],thr=+cfg.level||0.9,target=full(cur());
@@ -311,7 +316,7 @@ async function listenAzure(){
   },e=>{stop();rec.close();$("err").textContent="Lỗi Azure: "+e});
 }
 
-function start(){busy=true;$("mic").classList.add("on");$("status").textContent="Đang nghe… hãy đọc";$("err").textContent="";$("result").classList.add("hidden");$("de").textContent=cur().w;speechSynthesis?.cancel()}
+function start(){busy=true;$("mic").classList.add("on");$("status").textContent="Đang nghe… hãy đọc";$("err").textContent="";$("result").classList.add("hidden");$("de").textContent=cur().w;try{if(window.speechSynthesis&&speechSynthesis.speaking)speechSynthesis.cancel()}catch(e){}}
 function stop(){busy=false;$("mic").classList.remove("on");$("status").textContent="Bấm mic để đọc lại"}
 function useAzure(){return cfg.key&&cfg.reg}
 function modeInfo(){$("modeInfo").textContent="Đang dùng: "+(useAzure()?"Azure – chấm từng âm":"nhận diện miễn phí của trình duyệt")}
