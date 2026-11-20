@@ -272,7 +272,7 @@ function listenFree(retry){
     const s=[target,cur().w].map(t=>score(t,top.t)).sort((x,y)=>y.pct-x.pct)[0];
     const exact=s.pct===100,hasConf=top.c>0,conf=Math.round(top.c*100);
     let pct=s.pct,note="";
-    if(exact&&hasConf&&top.c<thr){pct=Math.min(84,conf);note=`Máy nghe ra đúng từ nhưng chỉ chắc chắn ${conf}% (cần ≥ ${Math.round(thr*100)}%). Đọc rõ hơn, nhất là các âm khó.`}
+    if(exact&&hasConf&&top.c<thr){pct=Math.max(60,Math.min(84,conf));note=`Máy nghe ra <b>đúng từ</b> nhưng chỉ chắc chắn ${conf}% (mức hiện tại cần ≥ ${Math.round(thr*100)}%), và còn phân vân với từ khác. Có thể một âm chưa thật rõ — thử đọc chậm, rõ từng âm. Chế độ Azure (⚙) sẽ chỉ chính xác âm nào.`}
     else if(exact&&hasConf){pct=Math.max(85,conf);note=`Độ chắc chắn của máy: ${conf}%.`}
     else if(exact){note="Máy không cho biết độ chắc chắn, nên kết quả chỉ mang tính tham khảo."}
     else note=`Chữ <span style="color:var(--red)">đỏ</span> trên thẻ là chỗ máy nghe khác đi. Nghe mẫu chậm rồi thử lại.`;
