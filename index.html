@@ -11,17 +11,16 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 <title>Luyện phát âm tiếng Đức</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;800&family=Noto+Sans:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{color-scheme:light dark;
   --bg:light-dark(#f4f1ea,#14161c);--card:light-dark(#fff,#1e2129);--ink:light-dark(#16181d,#f1efe9);
-  --muted:light-dark(#6a6f7a,#9aa0ab);--line:light-dark(#e2ddd2,#2d313b);
-  --gold:#f2b705;--red:#d62f2f;--green:#1f9d55;--orange:#e07b00;
-  --der:#2563eb;--die:#d62f2f;--das:#1f9d55}
+  --muted:light-dark(#6a6f7a,#9aa0ab);--line:light-dark(#e2ddd2,#2d313b);--soft:light-dark(#f4f1ea,#262a33);
+  --gold:#f2b705;--red:#d62f2f;--green:#1f9d55;--orange:#e07b00;--der:#2563eb;--die:#d62f2f;--das:#1f9d55}
 *{box-sizing:border-box;min-width:0}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Figtree,system-ui,-apple-system,sans-serif;overflow-x:clip;
-  padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
-.wrap{max-width:560px;margin:0 auto;padding:14px 16px 48px}
+  padding:env(safe-area-inset-top) env(safe-area-inset-right) 0 env(safe-area-inset-left)}
+.wrap{max-width:560px;margin:0 auto;padding:14px 16px calc(96px + env(safe-area-inset-bottom))}
 header{display:flex;align-items:center;gap:10px;margin-bottom:12px}
 header h1{font-size:20px;margin:0;flex:1}
 .flag{width:22px;height:16px;border-radius:3px;background:linear-gradient(#111 0 33%,var(--red) 33% 66%,var(--gold) 66%)}
@@ -32,19 +31,22 @@ button{font:inherit;color:inherit;cursor:pointer}
 .chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:10px;scrollbar-width:none}
 .chips .chip{flex:none;font-size:14px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px;margin-bottom:14px}
-.nav{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:14px}
+.nav{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:14px;gap:8px}
 .word{text-align:center;margin:18px 0 4px}
 .art{font-weight:800;font-size:18px}
-.de{font-size:clamp(34px,10vw,52px);font-weight:800;line-height:1.08;letter-spacing:-.01em;overflow-wrap:anywhere}
+.de{font-size:clamp(34px,10vw,52px);font-weight:800;line-height:1.1;letter-spacing:-.01em;overflow-wrap:anywhere}
+.de.long{font-size:clamp(22px,6vw,28px);line-height:1.35;letter-spacing:0}
 .de .ok{color:var(--green)}.de .bad{color:var(--red);text-decoration:underline wavy;text-underline-offset:6px}
+.ipa{font-family:"Noto Sans","Charis SIL","Doulos SIL",system-ui,sans-serif;color:var(--muted);text-align:center;font-size:19px;margin-top:4px;overflow-wrap:anywhere}
+.de.long+.ipa,.ipa.small{font-size:16px}
 .vi{text-align:center;color:var(--muted);margin:10px 0 12px}
 .tip{background:light-dark(#fff7dc,#2a2513);border-radius:14px;padding:12px 14px;font-size:15px}
 .tip b{color:light-dark(#8a6400,var(--gold))}
 .row{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:14px}
-.mic{display:block;margin:20px auto 6px;width:96px;height:96px;border-radius:50%;border:0;background:var(--red);color:#fff;
+.mic{margin:20px auto 6px;width:96px;height:96px;border-radius:50%;border:0;background:var(--red);color:#fff;
   box-shadow:0 8px 24px rgba(214,47,47,.35);display:grid;place-items:center}
 .mic svg{width:40px;height:40px}
-.mic.on{animation:pulse 1.1s infinite}
+.mic.on{animation:pulse 1.1s infinite;background:#b51f1f}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(214,47,47,.55)}100%{box-shadow:0 0 0 22px rgba(214,47,47,0)}}
 @media (prefers-reduced-motion:reduce){.mic.on{animation:none;outline:4px solid var(--gold)}}
 .status{text-align:center;color:var(--muted);min-height:24px;font-size:15px}
@@ -55,22 +57,49 @@ button{font:inherit;color:inherit;cursor:pointer}
 .meter{height:12px;background:var(--line);border-radius:99px;overflow:hidden;margin:8px 0 4px}
 .meter i{display:block;height:100%;border-radius:99px}
 .scores{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0}
-.sc{background:var(--bg);border-radius:12px;padding:8px 4px;text-align:center}
+.sc{background:var(--soft);border-radius:12px;padding:8px 4px;text-align:center}
 .sc b{display:block;font-size:20px}.sc span{font-size:12px;color:var(--muted)}
 .wd{border-top:1px solid var(--line);padding:10px 0}
 .wd .w{font-weight:800;font-size:18px}
 .ph{display:inline-block;margin:4px 4px 0 0;padding:3px 8px;border-radius:8px;font-size:14px;color:#fff}
 .g{background:var(--green)}.o{background:var(--orange)}.r{background:var(--red)}
+.wchips{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:8px 0}
+.wchips span{padding:4px 10px;border-radius:10px;color:#fff;font-weight:600}
 .alts{font-size:13px;color:var(--muted);text-align:center}
 .hidden{display:none!important}
-input{font:inherit;font-size:16px;width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+input,select{font:inherit;font-size:16px;width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--soft);color:var(--ink)}
 label{display:block;font-size:14px;color:var(--muted);margin:10px 0 4px}
 .prim{background:var(--ink);color:var(--bg);border:0;border-radius:12px;padding:12px 18px;font-weight:600;min-height:44px}
 .list{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}
-.li{border:1px solid var(--line);background:var(--bg);border-radius:12px;padding:10px;text-align:left}
+.li{border:1px solid var(--line);background:var(--soft);border-radius:12px;padding:10px;text-align:left}
 .li small{display:block;color:var(--muted)}
 .dot{float:right;width:10px;height:10px;border-radius:50%;background:var(--line);margin-top:6px}
 .small{font-size:13px;color:var(--muted)}
+.big-q{font-size:15px;color:var(--muted);text-align:center;margin:0}
+.syls{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px 0 6px}
+.syl{min-width:64px;min-height:64px;padding:10px 14px;border-radius:16px;border:2px solid var(--line);background:var(--soft);font-size:24px;font-weight:800}
+.syl.right{background:var(--green);border-color:var(--green);color:#fff}
+.syl.wrong{background:var(--red);border-color:var(--red);color:#fff}
+.syl.answer{border-color:var(--green);color:var(--green)}
+.ipaq{font-family:"Noto Sans","Charis SIL",system-ui,sans-serif;font-size:30px;text-align:center;margin:14px 0 4px;overflow-wrap:anywhere}
+.ipaq .blank{display:inline-block;min-width:1.4em;border-bottom:3px solid var(--gold);color:var(--gold);text-align:center}
+.opts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:16px}
+.opt{min-height:60px;border-radius:14px;border:2px solid var(--line);background:var(--soft);font-family:"Noto Sans",system-ui,sans-serif;font-size:26px}
+.opt.right{background:var(--green);border-color:var(--green);color:#fff}
+.opt.wrong{background:var(--red);border-color:var(--red);color:#fff}
+.feedback{margin-top:14px;text-align:center;min-height:24px}
+.score-line{text-align:center;color:var(--muted);font-size:14px}
+table{width:100%;border-collapse:collapse;font-size:15px}
+td,th{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-size:13px;color:var(--muted);font-weight:600}
+td.sym{font-family:"Noto Sans",system-ui,sans-serif;font-size:20px;white-space:nowrap}
+tr.play{cursor:pointer}
+.tabbar{position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:6px 6px calc(6px + env(safe-area-inset-bottom));z-index:5}
+.tabbar button{border:0;background:none;padding:6px 2px;border-radius:12px;font-size:12px;color:var(--muted);display:grid;justify-items:center;gap:2px;min-height:52px}
+.tabbar button b{font-size:18px;color:var(--ink);font-weight:800;line-height:1.2}
+.tabbar button[aria-current=true]{background:var(--soft);color:var(--ink)}
+.tabbar button[aria-current=true] b{color:var(--red)}
 :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 </style>
 </head>
@@ -78,19 +107,17 @@ label{display:block;font-size:14px;color:var(--muted);margin:10px 0 4px}
 <div class="wrap">
   <header>
     <span class="flag" aria-hidden="true"></span>
-    <h1>Luyện phát âm</h1>
-    <button class="ibtn" id="btnList" aria-label="Danh sách từ">☰ Từ</button>
+    <h1 id="title">Luyện phát âm</h1>
+    <button class="ibtn" id="btnList" aria-label="Danh sách">☰</button>
     <button class="ibtn" id="btnSet" aria-label="Cài đặt">⚙</button>
   </header>
-
-  <div class="chips" id="cats"></div>
 
   <section class="card hidden" id="setPanel">
     <b>Cài đặt</b>
     <label for="rate">Tốc độ giọng mẫu</label>
     <input id="rate" type="range" min="0.5" max="1.1" step="0.1" value="0.85">
     <label for="level">Độ khó khi chấm (chế độ miễn phí)</label>
-    <select id="level" style="font:inherit;font-size:16px;width:100%;padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink)">
+    <select id="level">
       <option value="0.7">Dễ – máy chắc chắn ≥ 70%</option>
       <option value="0.85">Vừa – ≥ 85%</option>
       <option value="0.9">Khó – ≥ 90% và máy không phân vân</option>
@@ -105,189 +132,342 @@ label{display:block;font-size:14px;color:var(--muted);margin:10px 0 4px}
   </section>
 
   <section class="card hidden" id="listPanel">
-    <b>Chọn từ</b>
+    <b id="listTitle">Chọn</b>
     <div class="list" id="list" style="margin-top:10px"></div>
   </section>
 
-  <section class="card" id="practice">
-    <div class="nav">
-      <button class="ibtn" id="prev" aria-label="Từ trước">‹</button>
-      <span id="counter"></span>
-      <button class="ibtn" id="next" aria-label="Từ sau">›</button>
-    </div>
-    <div class="word"><div class="art" id="art"></div><div class="de" id="de"></div></div>
-    <div class="vi" id="vi"></div>
-    <div class="tip" id="tip"></div>
-    <div class="row">
-      <button class="ibtn" id="listen">🔊 Nghe mẫu</button>
-      <button class="ibtn" id="listenSlow">🐢 Nghe chậm</button>
-    </div>
-    <button class="mic" id="mic" aria-label="Bấm để nói">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-2.08A7 7 0 0 0 19 12h-2Z"/></svg>
-    </button>
-    <div class="status" id="status">Bấm mic rồi đọc từ trên</div>
-    <div class="err" id="err"></div>
-  </section>
+  <!-- ===== Luyện nói: từ & câu dài ===== -->
+  <div id="vSpeak">
+    <div class="chips" id="cats"></div>
+    <section class="card" id="practice">
+      <div class="nav">
+        <button class="ibtn" id="prev" aria-label="Trước">‹</button>
+        <span id="counter"></span>
+        <button class="ibtn" id="next" aria-label="Sau">›</button>
+      </div>
+      <div class="word"><div class="art" id="art"></div><div class="de" id="de"></div><div class="ipa" id="ipa"></div></div>
+      <div class="vi" id="vi"></div>
+      <div class="tip" id="tip"></div>
+      <div class="row">
+        <button class="ibtn" id="listen">🔊 Nghe mẫu</button>
+        <button class="ibtn" id="listenSlow">🐢 Nghe chậm</button>
+      </div>
+      <button class="mic" id="mic" aria-label="Bấm để nói">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 15a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-2.08A7 7 0 0 0 19 12h-2Z"/></svg>
+      </button>
+      <div class="status" id="status"></div>
+      <div class="err" id="err"></div>
+    </section>
 
-  <section class="card hidden" id="result">
-    <div class="verdict" id="verdict"></div>
-    <div class="heard" id="heard"></div>
-    <div class="meter"><i id="bar"></i></div>
-    <div class="scores hidden" id="scores"></div>
-    <div id="detail"></div>
-    <div class="alts" id="alts"></div>
-    <div class="row"><button class="ibtn" id="again">↻ Đọc lại</button><button class="prim" id="goNext">Từ tiếp →</button></div>
-  </section>
+    <section class="card hidden" id="result">
+      <div class="verdict" id="verdict"></div>
+      <div class="heard" id="heard"></div>
+      <div class="meter"><i id="bar"></i></div>
+      <div class="scores hidden" id="scores"></div>
+      <div id="detail"></div>
+      <div class="alts" id="alts"></div>
+      <div class="row"><button class="ibtn" id="again">↻ Đọc lại</button><button class="prim" id="goNext">Tiếp →</button></div>
+    </section>
 
-  <section class="card">
-    <b>Tự nhập từ hoặc câu</b>
-    <div class="row"><input id="custom" placeholder="vd: Ich möchte ein Brötchen"></div>
-    <div class="row"><button class="ibtn" id="useCustom">Luyện câu này</button></div>
-  </section>
-  <p class="small" style="text-align:center">Tiến độ chỉ lưu trên máy này.</p>
+    <section class="card">
+      <b id="customLabel">Tự nhập từ hoặc câu</b>
+      <div class="row"><input id="custom" placeholder="vd: Ich möchte ein Brötchen"></div>
+      <div class="row"><button class="ibtn" id="useCustom">Luyện câu này</button></div>
+    </section>
+  </div>
+
+  <!-- ===== Trọng âm ===== -->
+  <div id="vStress" class="hidden">
+    <section class="card">
+      <div class="score-line" id="stScore"></div>
+      <p class="big-q" style="margin-top:12px">Chạm vào âm tiết mang <b>trọng âm</b> (đọc mạnh nhất)</p>
+      <div class="vi" id="stVi" style="margin:6px 0 0"></div>
+      <div class="syls" id="stSyls"></div>
+      <div class="ipa" id="stIpa"></div>
+      <div class="feedback" id="stFb"></div>
+      <div class="row">
+        <button class="ibtn" id="stListen">🔊 Nghe</button>
+        <button class="prim" id="stNext">Từ tiếp →</button>
+      </div>
+    </section>
+    <section class="card">
+      <b>Quy tắc trọng âm cần nhớ</b>
+      <ul class="small" style="padding-left:18px;margin:8px 0 0;font-size:14px">
+        <li>Từ gốc Đức: trọng âm thường ở <b>âm tiết đầu</b> (Arbeit, Bahnhof).</li>
+        <li>Tiền tố <b>be-, ge-, er-, ver-, ent-, zer-</b> không bao giờ nhận trọng âm (bekommen, verstehen).</li>
+        <li>Tiền tố tách được <b>auf-, an-, mit-, aus-…</b> nhận trọng âm (aufstehen).</li>
+        <li>Từ ghép: trọng âm ở <b>từ đầu tiên</b> (Supermarkt, Geburtstag → Ge<b>burts</b>tag).</li>
+        <li>Đuôi <b>-ei, -ieren, -tät, -ion, -ent</b> nhận trọng âm (Bäckerei, studieren).</li>
+        <li>Nhiều từ mượn có trọng âm ở cuối (Hotel, Musik, Restaurant).</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- ===== Bài tập nguyên âm IPA ===== -->
+  <div id="vIpa" class="hidden">
+    <section class="card">
+      <div class="score-line" id="ipScore"></div>
+      <p class="big-q" style="margin-top:12px">Chọn <b>nguyên âm IPA</b> còn thiếu (nguyên âm mang trọng âm)</p>
+      <div class="word" style="margin-top:10px"><div class="de long" id="ipWord" style="font-size:30px"></div></div>
+      <div class="vi" id="ipVi" style="margin:4px 0"></div>
+      <div class="ipaq" id="ipQ"></div>
+      <div class="opts" id="ipOpts"></div>
+      <div class="feedback" id="ipFb"></div>
+      <div class="row">
+        <button class="ibtn" id="ipListen">🔊 Nghe</button>
+        <button class="prim" id="ipNext">Từ tiếp →</button>
+      </div>
+    </section>
+    <section class="card">
+      <b>Bảng nguyên âm tiếng Đức</b>
+      <p class="small">Chạm vào một dòng để nghe từ ví dụ. Dấu <b>ː</b> = đọc dài; nguyên âm dài thường căng hơn, ngắn thì lỏng và mở hơn.</p>
+      <table><thead><tr><th>IPA</th><th>Ví dụ</th><th>Mẹo cho người Việt</th></tr></thead><tbody id="vTable"></tbody></table>
+    </section>
+  </div>
 </div>
+
+<nav class="tabbar" id="tabbar">
+  <button data-v="word" aria-current="true"><b>Aa</b>Từ</button>
+  <button data-v="sent"><b>¶</b>Câu dài</button>
+  <button data-v="stress"><b>ˈA</b>Trọng âm</button>
+  <button data-v="ipa"><b>ø</b>IPA</button>
+</nav>
 
 <script>
 {
+/* ================= DỮ LIỆU ================= */
 const WORDS=[
- {c:"ö ü ä",a:"das",w:"Brötchen",m:"bánh mì nhỏ",t:"<b>ö</b>: lưỡi đặt như “ê”, môi tròn như “ô”. <b>ch</b> sau ö là tiếng xì nhẹ, không phải “k”."},
- {c:"ö ü ä",a:"die",w:"Küche",m:"nhà bếp",t:"<b>ü</b>: lưỡi như “i”, môi chu tròn như “u”. Đừng nhầm với <i>Kuchen</i>."},
- {c:"ö ü ä",a:"",w:"schön",m:"đẹp",t:"<b>sch</b> như “s” uốn lưỡi, môi hơi chu. <b>ö</b> dài."},
- {c:"ö ü ä",a:"",w:"müde",m:"mệt",t:"<b>ü</b> dài; <b>d</b> rõ, <b>-e</b> cuối đọc nhẹ “ơ”."},
- {c:"ö ü ä",a:"das",w:"Mädchen",m:"cô gái",t:"<b>ä</b> gần “e” mở. <b>-chen</b> đọc nhẹ, ch xì."},
- {c:"ö ü ä",a:"",w:"fünf",m:"số năm",t:"<b>ü</b> ngắn, môi tròn. Kết thúc bằng <b>nf</b>: răng trên chạm môi dưới."},
- {c:"ch",a:"",w:"ich",m:"tôi",t:"<b>ch</b> sau i/e: lưỡi gần vòm, thổi hơi xì như mèo phì. Không đọc “ích”."},
- {c:"ch",a:"der",w:"Kuchen",m:"bánh ngọt",t:"<b>ch</b> sau a/o/u: khàn ở cổ, giống “kh” tiếng Việt."},
- {c:"ch",a:"",w:"acht",m:"số tám",t:"<b>ch</b> khàn như “kh”, rồi bật <b>t</b> rõ."},
- {c:"ch",a:"",w:"Milch",m:"sữa",t:"Sau <b>l</b>, <b>ch</b> là âm xì nhẹ."},
- {c:"r",a:"",w:"rot",m:"màu đỏ",t:"<b>r</b> đầu từ: rung nhẹ ở cuống họng (như súc miệng), không rung đầu lưỡi."},
- {c:"r",a:"der",w:"Vater",m:"bố",t:"<b>-er</b> cuối từ đọc thành “ơ” (gần “a” nhẹ), không cần r. <b>V</b> = “ph”."},
- {c:"r",a:"",w:"Frühstück",m:"bữa sáng",t:"<b>Fr</b>: r họng ngay sau f. <b>st</b> đầu âm tiết = “sch-t”."},
- {c:"ei ie eu",a:"",w:"Bier",m:"bia",t:"<b>ie</b> = “i” dài."},
- {c:"ei ie eu",a:"",w:"Wein",m:"rượu vang",t:"<b>ei</b> = “ai”. <b>W</b> = “v”."},
- {c:"ei ie eu",a:"",w:"heute",m:"hôm nay",t:"<b>eu</b> = “oi”. <b>h</b> bật hơi."},
- {c:"ei ie eu",a:"das",w:"Haus",m:"ngôi nhà",t:"<b>au</b> = “ao”. <b>s</b> cuối không rung."},
- {c:"z sch sp",a:"",w:"zehn",m:"số mười",t:"<b>z</b> = “ts”. <b>eh</b> = “ê” dài."},
- {c:"z sch sp",a:"die",w:"Zeit",m:"thời gian",t:"<b>Z</b> = “ts”, <b>ei</b> = “ai”: “tsai-t”."},
- {c:"z sch sp",a:"",w:"sprechen",m:"nói",t:"<b>sp</b> đầu từ = “schp”. <b>ch</b> sau e xì nhẹ."},
- {c:"z sch sp",a:"die",w:"Straße",m:"con đường",t:"<b>st</b> = “scht”, <b>ß</b> = “s” mạnh, <b>a</b> dài."},
- {c:"z sch sp",a:"",w:"Entschuldigung",m:"xin lỗi",t:"<b>tsch</b> như “ch” bật mạnh. Trọng âm ở <b>schul</b>."},
- {c:"Câu",a:"",w:"Guten Morgen",m:"chào buổi sáng",t:"<b>-en</b> đọc lướt. <b>r</b> trong Morgen rất nhẹ."},
- {c:"Câu",a:"",w:"Wie geht es dir",m:"bạn khoẻ không",t:"<b>W</b> = “v”, <b>ie</b> = “i” dài, <b>g</b> luôn cứng."},
- {c:"Câu",a:"",w:"Ich möchte ein Brötchen",m:"tôi muốn một ổ bánh mì",t:"Hai âm <b>ö</b> và hai âm <b>ch</b> xì — câu luyện tổng hợp."},
- {c:"Câu",a:"",w:"Ich komme aus Vietnam",m:"tôi đến từ Việt Nam",t:"<b>V</b> trong Vietnam đọc “v” (từ mượn). <b>aus</b> = “ao-s”."}
+ {c:"ö ü ä",a:"das",w:"Brötchen",i:"ˈbʁøːtçən",m:"bánh mì nhỏ",t:"<b>ö</b>: lưỡi đặt như “ê”, môi tròn như “ô”. <b>ch</b> sau ö là tiếng xì nhẹ, không phải “k”."},
+ {c:"ö ü ä",a:"die",w:"Küche",i:"ˈkʏçə",m:"nhà bếp",t:"<b>ü</b>: lưỡi như “i”, môi chu tròn như “u”. Đừng nhầm với <i>Kuchen</i>."},
+ {c:"ö ü ä",a:"",w:"schön",i:"ʃøːn",m:"đẹp",t:"<b>sch</b> như “s” uốn lưỡi, môi hơi chu. <b>ö</b> dài."},
+ {c:"ö ü ä",a:"",w:"müde",i:"ˈmyːdə",m:"mệt",t:"<b>ü</b> dài; <b>d</b> rõ, <b>-e</b> cuối đọc nhẹ “ơ”."},
+ {c:"ö ü ä",a:"das",w:"Mädchen",i:"ˈmɛːtçən",m:"cô gái",t:"<b>ä</b> dài gần “e” mở. <b>d</b> trước ch đọc thành “t”."},
+ {c:"ö ü ä",a:"",w:"fünf",i:"fʏnf",m:"số năm",t:"<b>ü</b> ngắn, môi tròn. Kết thúc bằng <b>nf</b>: răng trên chạm môi dưới."},
+ {c:"ch",a:"",w:"ich",i:"ɪç",m:"tôi",t:"<b>ch</b> sau i/e: lưỡi gần vòm, thổi hơi xì như mèo phì. Không đọc “ích”."},
+ {c:"ch",a:"der",w:"Kuchen",i:"ˈkuːxn̩",m:"bánh ngọt",t:"<b>ch</b> sau a/o/u: khàn ở cổ, giống “kh” tiếng Việt."},
+ {c:"ch",a:"",w:"acht",i:"axt",m:"số tám",t:"<b>ch</b> khàn như “kh”, rồi bật <b>t</b> rõ."},
+ {c:"ch",a:"die",w:"Milch",i:"mɪlç",m:"sữa",t:"Sau <b>l</b>, <b>ch</b> là âm xì nhẹ [ç]."},
+ {c:"r",a:"",w:"rot",i:"ʁoːt",m:"màu đỏ",t:"<b>r</b> đầu từ [ʁ]: rung nhẹ ở cuống họng, không rung đầu lưỡi."},
+ {c:"r",a:"der",w:"Vater",i:"ˈfaːtɐ",m:"bố",t:"<b>-er</b> cuối từ đọc thành [ɐ] (gần “a” nhẹ). <b>V</b> = “ph”."},
+ {c:"r",a:"das",w:"Frühstück",i:"ˈfʁyːʃtʏk",m:"bữa sáng",t:"<b>Fr</b>: r họng ngay sau f. <b>st</b> đầu âm tiết = “scht”."},
+ {c:"ei ie eu",a:"das",w:"Bier",i:"biːɐ̯",m:"bia",t:"<b>ie</b> = “i” dài. <b>r</b> cuối gần như “a” nhẹ."},
+ {c:"ei ie eu",a:"der",w:"Wein",i:"vaɪ̯n",m:"rượu vang",t:"<b>ei</b> = “ai”. <b>W</b> = “v”."},
+ {c:"ei ie eu",a:"",w:"heute",i:"ˈhɔʏ̯tə",m:"hôm nay",t:"<b>eu</b> = “oi”. <b>h</b> bật hơi."},
+ {c:"ei ie eu",a:"das",w:"Haus",i:"haʊ̯s",m:"ngôi nhà",t:"<b>au</b> = “ao”. <b>s</b> cuối không rung."},
+ {c:"z sch sp",a:"",w:"zehn",i:"tseːn",m:"số mười",t:"<b>z</b> = “ts”. <b>eh</b> = “ê” dài."},
+ {c:"z sch sp",a:"die",w:"Zeit",i:"tsaɪ̯t",m:"thời gian",t:"<b>Z</b> = “ts”, <b>ei</b> = “ai”: “tsai-t”."},
+ {c:"z sch sp",a:"",w:"sprechen",i:"ˈʃpʁɛçn̩",m:"nói",t:"<b>sp</b> đầu từ = “schp”. <b>ch</b> sau e xì nhẹ."},
+ {c:"z sch sp",a:"die",w:"Straße",i:"ˈʃtʁaːsə",m:"con đường",t:"<b>st</b> = “scht”, <b>ß</b> = “s” mạnh, <b>a</b> dài."},
+ {c:"z sch sp",a:"",w:"Entschuldigung",i:"ɛntˈʃʊldɪɡʊŋ",m:"xin lỗi",t:"<b>tsch</b> như “ch” bật mạnh. Trọng âm ở <b>schul</b>."},
+ {c:"Câu ngắn",a:"",w:"Guten Morgen",i:"ˈɡuːtn̩ ˈmɔʁɡn̩",m:"chào buổi sáng",t:"<b>-en</b> đọc lướt thành [n̩]. <b>r</b> trong Morgen rất nhẹ."},
+ {c:"Câu ngắn",a:"",w:"Wie geht es dir",i:"viː ɡeːt ɛs diːɐ̯",m:"bạn khoẻ không",t:"<b>W</b> = “v”, <b>ie</b> = “i” dài, <b>g</b> luôn cứng."},
+ {c:"Câu ngắn",a:"",w:"Ich möchte ein Brötchen",i:"ɪç ˈmœçtə aɪ̯n ˈbʁøːtçən",m:"tôi muốn một ổ bánh mì",t:"<b>ö</b> ngắn [œ] trong möchte, <b>ö</b> dài [øː] trong Brötchen."}
 ];
-const CATS=["Tất cả",...new Set(WORDS.map(x=>x.c))];
+const SENTS=[
+ {c:"Giới thiệu",w:"Ich heiße Lan und ich komme aus Vietnam.",i:"ɪç ˈhaɪ̯sə lan ʊnt ɪç ˈkɔmə aʊ̯s viɛtˈnam",m:"Tôi tên là Lan và tôi đến từ Việt Nam.",t:"<b>ß</b> = “s” mạnh; <b>und</b> đọc “unt” (d cuối thành t)."},
+ {c:"Giới thiệu",w:"Ich wohne seit zwei Jahren in Berlin.",i:"ɪç ˈvoːnə zaɪ̯t tsvaɪ̯ ˈjaːʁən ɪn bɛʁˈliːn",m:"Tôi sống ở Berlin được hai năm rồi.",t:"<b>s</b> trước nguyên âm rung [z]: seit = “zait”. <b>zw</b> = “tsv”."},
+ {c:"Giới thiệu",w:"Ich lerne Deutsch, weil ich in Deutschland arbeiten möchte.",i:"ɪç ˈlɛʁnə dɔʏ̯tʃ vaɪ̯l ɪç ɪn ˈdɔʏ̯tʃlant ˈaʁbaɪ̯tn̩ ˈmœçtə",m:"Tôi học tiếng Đức vì muốn làm việc ở Đức.",t:"<b>eu</b> = “oi”, <b>tsch</b> = “ch” bật. Ngắt nhẹ ở dấu phẩy."},
+ {c:"Hằng ngày",w:"Zum Frühstück esse ich meistens ein Brötchen mit Käse.",i:"tsʊm ˈfʁyːʃtʏk ˈɛsə ɪç ˈmaɪ̯stn̩s aɪ̯n ˈbʁøːtçən mɪt ˈkɛːzə",m:"Bữa sáng tôi thường ăn một ổ bánh mì với phô mai.",t:"Ba âm khó trong một câu: <b>ü</b>, <b>ö</b>, <b>ä</b>."},
+ {c:"Hằng ngày",w:"Am Wochenende gehe ich gern mit meinen Freunden spazieren.",i:"am ˈvɔxn̩ˌʔɛndə ˈɡeːə ɪç ɡɛʁn mɪt ˈmaɪ̯nən ˈfʁɔʏ̯ndn̩ ʃpaˈtsiːʁən",m:"Cuối tuần tôi thích đi dạo với bạn bè.",t:"<b>Wochenende</b>: ngắt nhẹ [ʔ] trước “ende”. <b>sp</b> = “schp”."},
+ {c:"Hằng ngày",w:"Das Wetter ist heute schön, aber morgen soll es regnen.",i:"das ˈvɛtɐ ɪst ˈhɔʏ̯tə ʃøːn ˈaːbɐ ˈmɔʁɡn̩ zɔl ɛs ˈʁeːɡnən",m:"Hôm nay trời đẹp, nhưng mai nghe nói sẽ mưa.",t:"<b>-er</b> cuối (Wetter, aber) đọc [ɐ], không cuốn r."},
+ {c:"Giao tiếp",w:"Könnten Sie mir bitte sagen, wo der Bahnhof ist?",i:"ˈkœntn̩ ziː miːɐ̯ ˈbɪtə ˈzaːɡn̩ voː deːɐ̯ ˈbaːnhoːf ɪst",m:"Ông/bà có thể chỉ giúp tôi nhà ga ở đâu không?",t:"Câu hỏi có từ để hỏi (wo): giọng <b>đi xuống</b> ở cuối."},
+ {c:"Giao tiếp",w:"Ich möchte einen Termin beim Arzt vereinbaren.",i:"ɪç ˈmœçtə ˈaɪ̯nən tɛʁˈmiːn baɪ̯m aːɐ̯tst fɛɐ̯ˈʔaɪ̯nbaːʁən",m:"Tôi muốn đặt lịch hẹn với bác sĩ.",t:"<b>ver-</b> không nhận trọng âm; ngắt nhẹ trước <b>ein</b>."},
+ {c:"Giao tiếp",w:"Entschuldigung, ich habe das nicht verstanden.",i:"ɛntˈʃʊldɪɡʊŋ ɪç ˈhaːbə das nɪçt fɛɐ̯ˈʃtandn̩",m:"Xin lỗi, tôi không hiểu câu đó.",t:"<b>nicht</b>: ch xì nhẹ [ç] rồi bật t."},
+ {c:"Nói nhanh",w:"Fischers Fritz fischt frische Fische.",i:"ˈfɪʃɐs fʁɪts fɪʃt ˈfʁɪʃə ˈfɪʃə",m:"Fritz nhà Fischer câu cá tươi. (câu nói nhanh)",t:"Luyện <b>f</b>, <b>sch</b> và <b>r</b> họng. Đọc chậm trước rồi tăng tốc."},
+ {c:"Nói nhanh",w:"Zwischen zwei Zwetschgenzweigen sitzen zwei zwitschernde Schwalben.",i:"ˈtsvɪʃn̩ tsvaɪ̯ ˈtsvɛtʃɡn̩ˌtsvaɪ̯ɡn̩ ˈzɪtsn̩ tsvaɪ̯ ˈtsvɪtʃɐndə ˈʃvalbn̩",m:"Giữa hai cành mận có hai con én đang hót. (câu nói nhanh)",t:"Luyện <b>zw</b> = “tsv” liên tục. Rất khó — đừng nản!"}
+];
+const STRESS=[
+ {s:["Ar","beit"],k:0,i:"ˈaʁbaɪ̯t",m:"công việc",r:"Từ gốc Đức → âm tiết đầu."},
+ {s:["Bahn","hof"],k:0,i:"ˈbaːnhoːf",m:"nhà ga",r:"Từ ghép → trọng âm ở từ đầu."},
+ {s:["Deutsch","land"],k:0,i:"ˈdɔʏ̯tʃlant",m:"nước Đức",r:"Từ ghép → trọng âm ở từ đầu."},
+ {s:["Früh","stück"],k:0,i:"ˈfʁyːʃtʏk",m:"bữa sáng",r:"Từ ghép → trọng âm ở từ đầu."},
+ {s:["Su","per","markt"],k:0,i:"ˈzuːpɐˌmaʁkt",m:"siêu thị",r:"Từ ghép → trọng âm ở từ đầu (Super)."},
+ {s:["A","bend","es","sen"],k:0,i:"ˈaːbn̩tˌʔɛsn̩",m:"bữa tối",r:"Từ ghép → trọng âm ở từ đầu (Abend)."},
+ {s:["auf","ste","hen"],k:0,i:"ˈaʊ̯fˌʃteːən",m:"thức dậy",r:"Tiền tố tách được (auf-) → nhận trọng âm."},
+ {s:["be","kom","men"],k:1,i:"bəˈkɔmən",m:"nhận được",r:"Tiền tố be- không bao giờ nhận trọng âm."},
+ {s:["ver","ste","hen"],k:1,i:"fɛɐ̯ˈʃteːən",m:"hiểu",r:"Tiền tố ver- không bao giờ nhận trọng âm."},
+ {s:["er","klä","ren"],k:1,i:"ɛɐ̯ˈklɛːʁən",m:"giải thích",r:"Tiền tố er- không bao giờ nhận trọng âm."},
+ {s:["Ge","schenk"],k:1,i:"ɡəˈʃɛŋk",m:"món quà",r:"Tiền tố ge- không bao giờ nhận trọng âm."},
+ {s:["Ge","burts","tag"],k:1,i:"ɡəˈbuːɐ̯tsˌtaːk",m:"sinh nhật",r:"ge- không nhận trọng âm; từ ghép → trọng âm ở phần đầu (Geburt)."},
+ {s:["Ent","schul","di","gung"],k:1,i:"ɛntˈʃʊldɪɡʊŋ",m:"xin lỗi",r:"Tiền tố ent- không bao giờ nhận trọng âm."},
+ {s:["stu","die","ren"],k:1,i:"ʃtuˈdiːʁən",m:"học đại học",r:"Động từ đuôi -ieren → trọng âm ở “ie”."},
+ {s:["Bä","cke","rei"],k:2,i:"bɛkəˈʁaɪ̯",m:"tiệm bánh",r:"Đuôi -ei luôn nhận trọng âm."},
+ {s:["Po","li","zei"],k:2,i:"poliˈtsaɪ̯",m:"cảnh sát",r:"Đuôi -ei luôn nhận trọng âm."},
+ {s:["U","ni","ver","si","tät"],k:4,i:"univɛʁziˈtɛːt",m:"trường đại học",r:"Đuôi -tät luôn nhận trọng âm."},
+ {s:["In","for","ma","ti","on"],k:4,i:"ɪnfɔʁmaˈtsi̯oːn",m:"thông tin",r:"Đuôi -ion luôn nhận trọng âm."},
+ {s:["Prä","si","dent"],k:2,i:"pʁɛziˈdɛnt",m:"tổng thống",r:"Đuôi -ent (từ mượn) nhận trọng âm."},
+ {s:["Ho","tel"],k:1,i:"hoˈtɛl",m:"khách sạn",r:"Từ mượn tiếng Pháp → trọng âm cuối."},
+ {s:["Mu","sik"],k:1,i:"muˈziːk",m:"âm nhạc",r:"Từ mượn → trọng âm cuối."},
+ {s:["Res","tau","rant"],k:2,i:"ʁɛstoˈʁɑ̃ː",m:"nhà hàng",r:"Từ mượn tiếng Pháp → trọng âm cuối."},
+ {s:["Ba","na","ne"],k:1,i:"baˈnaːnə",m:"quả chuối",r:"Từ mượn → trọng âm ở âm tiết thứ hai."},
+ {s:["Fa","mi","lie"],k:1,i:"faˈmiːli̯ə",m:"gia đình",r:"Từ gốc Latin → trọng âm ở “mi”."},
+ {s:["Kar","tof","fel"],k:1,i:"kaʁˈtɔfl̩",m:"khoai tây",r:"Ngoại lệ cần nhớ: trọng âm ở “tof”."},
+ {s:["The","a","ter"],k:1,i:"teˈaːtɐ",m:"nhà hát",r:"Từ gốc Hy Lạp → trọng âm ở “a”."},
+ {s:["Com","pu","ter"],k:1,i:"kɔmˈpjuːtɐ",m:"máy tính",r:"Từ mượn tiếng Anh → giữ trọng âm như tiếng Anh."}
+];
+const VOWELS=[
+ ["iː","Bier, Liebe","“i” dài, căng, miệng cười"],
+ ["ɪ","ich, Milch","“i” ngắn, lỏng hơn, hơi về phía “ê”"],
+ ["yː","müde, Frühstück","Lưỡi đọc “i”, môi chu tròn như “u”, kéo dài"],
+ ["ʏ","fünf, Küche","Như [yː] nhưng ngắn và lỏng hơn"],
+ ["eː","zehn, geht","“ê” dài, căng — không biến thành “ây”"],
+ ["ɛ","Bett, sprechen","“e” ngắn, miệng mở hơn “ê”"],
+ ["ɛː","Mädchen, Käse","“e” dài, mở (chữ ä dài)"],
+ ["øː","schön, Brötchen","Lưỡi đọc “ê”, môi tròn như “ô”, kéo dài"],
+ ["œ","möchte, können","Như [øː] nhưng ngắn và mở hơn"],
+ ["aː","Vater, Straße","“a” dài"],
+ ["a","acht, Stadt","“a” ngắn, gọn"],
+ ["oː","rot, Bahnhof","“ô” dài, môi tròn chặt"],
+ ["ɔ","Morgen, kommen","“o” ngắn, miệng mở"],
+ ["uː","Kuchen, gut","“u” dài, môi chu"],
+ ["ʊ","und, Entschuldigung","“u” ngắn, lỏng hơn"],
+ ["ə","müde, bitte","“ơ” rất nhẹ, không nhấn (âm -e cuối)"],
+ ["ɐ","Vater, aber","“a” nhẹ thay cho -er cuối từ"],
+ ["aɪ̯","Wein, Zeit","“ai”"],
+ ["aʊ̯","Haus, aus","“ao”"],
+ ["ɔʏ̯","heute, Deutsch","“oi”"]
+];
+const VSET=["aɪ̯","aʊ̯","ɔʏ̯","iː","yː","eː","ɛː","øː","aː","oː","uː","ɪ","ʏ","ɛ","œ","ə","ɐ","a","ɔ","ʊ","i","y","e","o","u","ø"];
+const CONF={"iː":["ɪ","eː","yː"],"ɪ":["iː","ɛ","ʏ"],"yː":["ʏ","iː","øː"],"ʏ":["yː","ɪ","œ"],"eː":["ɛ","ɛː","iː"],"ɛ":["eː","ɛː","a"],"ɛː":["ɛ","eː","aː"],
+ "øː":["œ","eː","yː"],"œ":["øː","ɛ","ʏ"],"aː":["a","ɐ","ɔ"],"a":["aː","ɐ","ɛ"],"oː":["ɔ","uː","øː"],"ɔ":["oː","ʊ","a"],"uː":["ʊ","oː","yː"],"ʊ":["uː","ɔ","ʏ"],
+ "aɪ̯":["aʊ̯","ɔʏ̯","eː"],"aʊ̯":["aɪ̯","ɔʏ̯","oː"],"ɔʏ̯":["aɪ̯","aʊ̯","øː"],"i":["ɪ","iː","e"],"e":["eː","ɛ","i"],"o":["oː","ɔ","u"],"u":["uː","ʊ","o"]};
+
+/* ================= TIỆN ÍCH ================= */
 const $=id=>document.getElementById(id);
 const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
-let prog=store.get("deProg",{}), cfg=store.get("deCfg",{rate:.85,key:"",reg:""});
-let cat="Tất cả", list=WORDS, idx=0, custom=null, busy=false;
-
+let prog=store.get("deProg",{}),cfg=store.get("deCfg",{rate:.85,key:"",reg:""});
+let view="word",cat="Tất cả",list=WORDS,idx=0,custom=null,busy=false,activeRec=null;
+const data=()=>view==="sent"?SENTS:WORDS;
 const cur=()=>custom||list[idx];
 const full=x=>(x.a?x.a+" ":"")+x.w;
-const norm=s=>s.toLowerCase().normalize("NFC").replace(/ß/g,"ss").replace(/[.,!?;:"'„“”()-]/g," ").replace(/\s+/g," ").trim();
+const norm=s=>s.toLowerCase().normalize("NFC").replace(/ß/g,"ss").replace(/[.,!?;:"'„“”()\-–]/g," ").replace(/\s+/g," ").trim();
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
-function renderCats(){
-  $("cats").innerHTML=CATS.map(c=>`<button class="chip" aria-pressed="${c===cat}" data-c="${c}">${c}</button>`).join("");
-}
-function renderWord(){
-  const x=cur();
-  $("art").textContent=x.a||""; $("art").style.color=x.a?`var(--${x.a})`:"";
-  $("de").textContent=x.w; $("vi").textContent=x.m||"";
-  $("tip").innerHTML=x.t||"Đọc rõ từng âm, chậm trước rồi nhanh dần.";
-  $("tip").classList.toggle("hidden",!x.t&&custom);
-  $("counter").textContent=custom?"Câu tự nhập":`${idx+1} / ${list.length}${prog[x.w]?" · tốt nhất "+prog[x.w]+"%":""}`;
-  $("result").classList.add("hidden"); $("err").textContent=""; $("status").textContent="Bấm mic rồi đọc "+(x.w.includes(" ")?"câu":"từ")+" trên";
-}
-function renderList(){
-  $("list").innerHTML=WORDS.map((x,i)=>{const p=prog[x.w];const col=p==null?"":p>=85?"var(--green)":p>=60?"var(--orange)":"var(--red)";
-    return `<button class="li" data-i="${i}"><span class="dot" style="${col?"background:"+col:""}"></span>${x.w}<small>${x.m}</small></button>`}).join("");
-}
-function setCat(c){cat=c;list=c==="Tất cả"?WORDS:WORDS.filter(x=>x.c===c);idx=0;custom=null;renderCats();renderWord()}
-
-/* ---------- Giọng mẫu ---------- */
+/* ================= GIỌNG MẪU ================= */
 let deVoice=null;
 function pickVoice(){const v=speechSynthesis.getVoices().filter(v=>v.lang&&v.lang.toLowerCase().startsWith("de"));
   deVoice=v.find(v=>/google|anna|helena|katja|petra|neural|enhanced|premium/i.test(v.name))||v[0]||null}
 if("speechSynthesis" in window){pickVoice();speechSynthesis.onvoiceschanged=pickVoice}
 function speak(text,slow){
-  if(!("speechSynthesis" in window)){$("err").textContent="Trình duyệt không có giọng đọc.";return}
+  if(!("speechSynthesis" in window))return;
   speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang="de-DE";if(deVoice)u.voice=deVoice;
   u.rate=slow?0.55:+cfg.rate;speechSynthesis.speak(u);
-  if(!deVoice)$("err").textContent="Máy chưa có giọng tiếng Đức — vào Cài đặt điện thoại để tải giọng German.";
 }
 
-/* ---------- So khớp ---------- */
-function align(a,b){ // Levenshtein theo ký tự, trả về mảng đánh dấu đúng/sai cho từng ký tự của a
+/* ================= LUYỆN NÓI: HIỂN THỊ ================= */
+function renderCats(){
+  const cats=["Tất cả",...new Set(data().map(x=>x.c))];
+  $("cats").innerHTML=cats.map(c=>`<button class="chip" aria-pressed="${c===cat}" data-c="${esc(c)}">${esc(c)}</button>`).join("");
+}
+function renderWord(){
+  const x=cur(),long=view==="sent"||x.w.split(" ").length>3;
+  $("art").textContent=x.a||"";$("art").style.color=x.a?`var(--${x.a})`:"";
+  $("de").className="de"+(long?" long":"");$("de").textContent=x.w;
+  $("ipa").textContent=x.i?`/${x.i}/`:"";
+  $("vi").textContent=x.m||"";
+  $("tip").innerHTML=x.t||"";$("tip").classList.toggle("hidden",!x.t);
+  $("counter").textContent=custom?"Tự nhập":`${idx+1} / ${list.length}${prog[x.w]?" · tốt nhất "+prog[x.w]+"%":""}`;
+  $("result").classList.add("hidden");$("err").textContent="";
+  $("status").textContent=view==="sent"?"Bấm mic, đọc hết câu, rồi bấm mic lần nữa để dừng":"Bấm mic rồi đọc "+(x.w.includes(" ")?"câu":"từ")+" trên";
+}
+function renderList(){
+  if(view==="stress"||view==="ipa"){$("listTitle").textContent="Chọn từ";
+    const src=view==="stress"?STRESS:IPA_POOL;
+    $("list").innerHTML=src.map((x,i)=>`<button class="li" data-i="${i}">${esc(x.s?x.s.join(""):x.w)}<small>${esc(x.m)}</small></button>`).join("");return}
+  $("listTitle").textContent=view==="sent"?"Chọn câu":"Chọn từ";
+  $("list").innerHTML=data().map((x,i)=>{const p=prog[x.w];const col=p==null?"":p>=85?"var(--green)":p>=60?"var(--orange)":"var(--red)";
+    return `<button class="li" data-i="${i}"><span class="dot" style="${col?"background:"+col:""}"></span>${esc(view==="sent"?x.w.slice(0,40)+(x.w.length>40?"…":""):x.w)}<small>${esc(x.m)}</small></button>`}).join("");
+}
+function setCat(c){cat=c;list=c==="Tất cả"?data():data().filter(x=>x.c===c);idx=0;custom=null;renderCats();renderWord()}
+
+/* ================= SO KHỚP ================= */
+function align(a,b){ // Levenshtein (ký tự hoặc mảng từ) → cờ đúng/sai cho từng phần tử của a
   const n=a.length,m=b.length,d=Array.from({length:n+1},(_,i)=>{const r=new Array(m+1).fill(0);r[0]=i;return r});
   for(let j=0;j<=m;j++)d[0][j]=j;
   for(let i=1;i<=n;i++)for(let j=1;j<=m;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));
   const ok=new Array(n).fill(false);let i=n,j=m;
   while(i>0&&j>0){if(a[i-1]===b[j-1]&&d[i][j]===d[i-1][j-1]){ok[i-1]=true;i--;j--}
     else if(d[i][j]===d[i-1][j-1]+1){i--;j--}else if(d[i][j]===d[i-1][j]+1)i--;else j--}
-  return {dist:d[n][m],ok};
+  return{dist:d[n][m],ok};
 }
-function score(target,heard){const a=norm(target),b=norm(heard);if(!a)return{pct:0,ok:[]};const r=align(a,b);
+function score(target,heard){const a=norm(target),b=norm(heard);if(!a)return{pct:0};const r=align(a,b);
   const raw=Math.max(0,Math.round(100*(1-r.dist/Math.max(a.length,b.length))));
-  return{pct:r.dist===0?100:Math.min(raw,84),ok:r.ok,a}} // chỉ khớp hoàn toàn mới được "Chuẩn"
-function highlight(heard){ // tô màu từng chữ trên thẻ: xanh = khớp, đỏ = máy nghe khác
+  return{pct:r.dist===0?100:Math.min(raw,84)}}
+function highlightChars(heard){
   const t=cur().w,a=cur().a;let h=norm(heard);if(a)h=h.replace(new RegExp("^"+a+" "),"");
-  const tn=norm(t),ok=align(tn,h).ok;let k=0,html="";
-  for(const ch of t){const c=norm(ch);
-    if(!c){html+=ch;continue}
-    if(c===" "){html+=" ";k++;continue}
-    const good=[...c].every((_,q)=>ok[k+q]);k+=c.length;html+=`<span class="${good?"ok":"bad"}">${ch}</span>`}
+  const ok=align(norm(t),h).ok;let k=0,html="";
+  for(const ch of t){const c=norm(ch);if(!c){html+=esc(ch);continue}if(c===" "){html+=" ";k++;continue}
+    const good=[...c].every((_,q)=>ok[k+q]);k+=c.length;html+=`<span class="${good?"ok":"bad"}">${esc(ch)}</span>`}
   $("de").innerHTML=html;
 }
-function show(pct,heard,alts){
+function highlightWords(okFlags){ // tô từng TỪ của câu
+  const parts=cur().w.split(/\s+/);let k=0;
+  $("de").innerHTML=parts.map(p=>{if(!norm(p))return esc(p);const good=okFlags[k++];return `<span class="${good?"ok":"bad"}">${esc(p)}</span>`}).join(" ");
+}
+function show(pct,heard){
   const x=cur(),good=pct>=85,mid=pct>=60;
   $("verdict").textContent=good?"✅ Chuẩn rồi!":mid?"🙂 Gần đúng":"❌ Chưa chuẩn";
   $("verdict").style.color=good?"var(--green)":mid?"var(--orange)":"var(--red)";
-  $("heard").innerHTML=heard?`Máy nghe thành: <b>${heard}</b>`:"Máy không nghe ra từ nào";
+  $("heard").innerHTML=heard?`Máy nghe thành: <b>${esc(heard)}</b>`:"Máy không nghe ra từ nào";
   $("bar").style.width=pct+"%";$("bar").style.background=good?"var(--green)":mid?"var(--orange)":"var(--red)";
-  $("alts").textContent=alts&&alts.length>1?"Các khả năng khác: "+alts.slice(1).join(" · "):"";
   $("result").classList.remove("hidden");
   if(!custom){prog[x.w]=Math.max(prog[x.w]||0,pct);store.set("deProg",prog)}
   $("result").scrollIntoView({behavior:"smooth",block:"nearest"});
 }
 
-/* ---------- Chế độ miễn phí: Web Speech API ---------- */
+/* ================= CHẾ ĐỘ MIỄN PHÍ ================= */
 const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
 const IOS_STANDALONE=navigator.standalone===true;
 function listenFree(retry){
   if(!SR){$("err").textContent="Trình duyệt này không hỗ trợ nhận diện giọng nói. Dùng Chrome (Android) hoặc Safari (iPhone).";return}
-  const r=new SR();r.lang="de-DE";r.interimResults=true;r.maxAlternatives=5;r.continuous=false;
-  let got=null,aborted=false;if(!retry)start();
-  r.onresult=e=>{const res=e.results[0];$("status").textContent="… "+res[0].transcript;
-    if(res.isFinal)got=[...res].map(a=>({t:a.transcript.trim(),c:a.confidence||0}))};
+  const long=view==="sent"||cur().w.split(" ").length>3;
+  const r=new SR();r.lang="de-DE";r.interimResults=true;r.maxAlternatives=long?1:5;r.continuous=long;
+  let finals=[],alts=null,aborted=false;if(!retry)start();activeRec=r;
+  r.onresult=e=>{let live="";
+    for(let i=e.resultIndex;i<e.results.length;i++){const res=e.results[i];
+      if(res.isFinal){finals[i]={t:res[0].transcript.trim(),c:res[0].confidence||0};if(!long)alts=[...res].map(a=>({t:a.transcript.trim(),c:a.confidence||0}))}
+      else live+=res[0].transcript}
+    $("status").textContent="… "+[...finals.filter(Boolean).map(f=>f.t),live].join(" ").trim()};
   r.onerror=e=>{if(e.error==="aborted"){aborted=true;return}$("err").textContent={"not-allowed":"Chưa cho phép micro. Bấm biểu tượng ổ khoá trên thanh địa chỉ → cho phép Micro.","no-speech":"Không nghe thấy gì, thử nói to và gần hơn.","network":"Cần có mạng để nhận diện.","service-not-allowed":"iPhone: bật Đọc chính tả (Cài đặt → Chung → Bàn phím → Bật Đọc chính tả)."}[e.error]||("Lỗi: "+e.error)};
-  r.onend=()=>{
-    if(aborted&&!got){
+  r.onend=()=>{activeRec=null;
+    const got=finals.filter(Boolean);
+    if(aborted&&!got.length){
       if(!retry){setTimeout(()=>listenFree(true),400);return}
-      stop();$("err").textContent=IOS_STANDALONE?"iPhone không cho nhận diện miễn phí khi mở app từ màn hình chính. Hãy mở link trong Safari, hoặc nhập khóa Azure trong ⚙ để dùng chế độ Azure.":"Máy đã ngắt nhận diện. Thử lại; nếu vẫn lỗi, mở trong Safari/Chrome hoặc dùng chế độ Azure (⚙).";return}
-    stop();if(!got)return;
-    // Chấm nghiêm: CHỈ dùng kết quả đầu tiên của máy (không lấy các phương án dự phòng)
-    // và yêu cầu độ chắc chắn của máy đạt ngưỡng theo mức khó.
-    const top=got[0],thr=+cfg.level||0.9,target=full(cur());
-    const s=[target,cur().w].map(t=>score(t,top.t)).sort((x,y)=>y.pct-x.pct)[0];
-    const exact=s.pct===100,hasConf=top.c>0,conf=Math.round(top.c*100);
-    let pct=s.pct,note="";
-    if(exact&&hasConf&&top.c<thr){pct=Math.max(60,Math.min(84,conf));note=`Máy nghe ra <b>đúng từ</b> nhưng chỉ chắc chắn ${conf}% (mức hiện tại cần ≥ ${Math.round(thr*100)}%), và còn phân vân với từ khác. Có thể một âm chưa thật rõ — thử đọc chậm, rõ từng âm. Chế độ Azure (⚙) sẽ chỉ chính xác âm nào.`}
-    else if(exact&&hasConf){pct=Math.max(85,conf);note=`Độ chắc chắn của máy: ${conf}%.`}
-    else if(exact){note="Máy không cho biết độ chắc chắn, nên kết quả chỉ mang tính tham khảo."}
-    else note=`Chữ <span style="color:var(--red)">đỏ</span> trên thẻ là chỗ máy nghe khác đi. Nghe mẫu chậm rồi thử lại.`;
-    // Nếu các phương án dự phòng của máy là những từ khác hẳn → máy đang phân vân
-    const others=got.slice(1).map(g=>g.t).filter(t=>![top.t,target,cur().w].some(v=>norm(v)===norm(t)));
-    if(exact&&pct>=85&&others.length>=2&&thr>=0.9){pct=84;note+=" Máy còn phân vân với: "+others.slice(0,3).join(", ")+"."}
-    highlight(top.t);
-    $("scores").classList.add("hidden");$("detail").innerHTML=`<p class="small">${note}</p>`;
-    show(pct,top.t,null);
-    $("alts").textContent=others.length?"Máy cũng đoán: "+others.join(" · "):"";
+      stop();$("err").textContent=IOS_STANDALONE?"iPhone không cho nhận diện miễn phí khi mở app từ màn hình chính. Hãy mở link trong Safari, hoặc nhập khóa Azure trong ⚙.":"Máy đã ngắt nhận diện. Thử lại; nếu vẫn lỗi, mở trong Safari/Chrome hoặc dùng chế độ Azure (⚙).";return}
+    stop();if(!got.length)return;
+    long?gradeSentence(got.map(g=>g.t).join(" ")):gradeWord(alts||got);
   };
-  try{r.start()}catch(e){stop();$("err").textContent="Không mở được micro: "+e.message}
+  try{r.start()}catch(e){stop();activeRec=null;$("err").textContent="Không mở được micro: "+e.message}
+}
+function gradeWord(got){
+  const top=got[0],thr=+cfg.level||0.9,target=full(cur());
+  const s=[target,cur().w].map(t=>score(t,top.t)).sort((x,y)=>y.pct-x.pct)[0];
+  const exact=s.pct===100,hasConf=top.c>0,conf=Math.round(top.c*100);
+  let pct=s.pct,note="";
+  if(exact&&hasConf&&top.c<thr){pct=Math.max(60,Math.min(84,conf));note=`Máy nghe ra <b>đúng từ</b> nhưng chỉ chắc chắn ${conf}% (mức hiện tại cần ≥ ${Math.round(thr*100)}%). Có thể một âm chưa thật rõ — thử đọc chậm, rõ từng âm. Chế độ Azure (⚙) sẽ chỉ chính xác âm nào.`}
+  else if(exact&&hasConf){pct=Math.max(85,conf);note=`Độ chắc chắn của máy: ${conf}%.`}
+  else if(exact){note="Máy không cho biết độ chắc chắn, nên kết quả chỉ mang tính tham khảo."}
+  else note=`Chữ <span style="color:var(--red)">đỏ</span> trên thẻ là chỗ máy nghe khác đi. Nghe mẫu chậm rồi thử lại.`;
+  const others=got.slice(1).map(g=>g.t).filter(t=>![top.t,target,cur().w].some(v=>norm(v)===norm(t)));
+  if(exact&&pct>=85&&others.length>=2&&thr>=0.9){pct=84;note+=" Máy còn phân vân với: "+others.slice(0,3).map(esc).join(", ")+"."}
+  highlightChars(top.t);
+  $("scores").classList.add("hidden");$("detail").innerHTML=`<p class="small">${note}</p>`;
+  show(pct,top.t);
+  $("alts").textContent=others.length?"Máy cũng đoán: "+others.join(" · "):"";
+}
+function gradeSentence(heard){
+  const tw=norm(cur().w).split(" "),hw=norm(heard).split(" ").filter(Boolean);
+  const {ok}=align(tw,hw);const n=ok.filter(Boolean).length;
+  const pct=n===tw.length&&hw.length<=tw.length+1?100:Math.min(84,Math.round(100*n/tw.length));
+  highlightWords(ok);
+  const miss=tw.filter((_,i)=>!ok[i]);
+  $("scores").classList.add("hidden");
+  $("detail").innerHTML=`<p class="small">Máy nghe đúng <b>${n}/${tw.length}</b> từ.${miss.length?` Các từ <span style="color:var(--red)">đỏ</span> trên thẻ bị nghe sai hoặc thiếu: <b>${miss.map(esc).join(", ")}</b>. Bấm “Nghe chậm”, luyện riêng từng từ đó rồi đọc lại cả câu.`:" Đọc rất rõ!"}</p>`;
+  show(pct,heard);$("alts").textContent="";
 }
 
-/* ---------- Chế độ chi tiết: Azure Pronunciation Assessment ---------- */
+/* ================= CHẾ ĐỘ AZURE ================= */
 let sdkP=null;
 function loadSdk(){return sdkP||(sdkP=new Promise((ok,no)=>{const s=document.createElement("script");
   s.src="https://cdn.jsdelivr.net/npm/microsoft-cognitiveservices-speech-sdk@1.41.0/distrib/browser/microsoft.cognitiveservices.speech.sdk.bundle-min.js";
@@ -296,9 +476,9 @@ async function listenAzure(){
   start();let S;
   try{S=await loadSdk()}catch(e){stop();$("err").textContent=e.message;return}
   const sc=S.SpeechConfig.fromSubscription(cfg.key,cfg.reg);sc.speechRecognitionLanguage="de-DE";
+  if(view==="sent")sc.setProperty(S.PropertyId.Speech_SegmentationSilenceTimeoutMs,"1500");
   const rec=new S.SpeechRecognizer(sc,S.AudioConfig.fromDefaultMicrophoneInput());
-  const target=full(cur());
-  const pa=new S.PronunciationAssessmentConfig(target,S.PronunciationAssessmentGradingSystem.HundredMark,S.PronunciationAssessmentGranularity.Phoneme,true);
+  const pa=new S.PronunciationAssessmentConfig(full(cur()),S.PronunciationAssessmentGradingSystem.HundredMark,S.PronunciationAssessmentGranularity.Phoneme,true);
   pa.applyTo(rec);
   rec.recognizeOnceAsync(res=>{stop();rec.close();
     if(res.reason!==S.ResultReason.RecognizedSpeech){$("err").textContent=res.reason===S.ResultReason.NoMatch?"Không nghe rõ, thử lại.":"Lỗi Azure: "+(res.errorDetails||res.reason);return}
@@ -308,37 +488,127 @@ async function listenAzure(){
       .map(([n,v])=>`<div class="sc"><b>${v==null?"–":Math.round(v)}</b><span>${n}</span></div>`).join("");
     $("scores").classList.remove("hidden");
     const err={Mispronunciation:"đọc sai",Omission:"bị bỏ sót",Insertion:"đọc thừa"};
-    $("detail").innerHTML=(nb.Words||[]).map(w=>{const a=w.PronunciationAssessment||{};
-      return `<div class="wd"><span class="w">${w.Word}</span> · ${Math.round(a.AccuracyScore??0)} ${a.ErrorType&&a.ErrorType!=="None"?`<span style="color:var(--red)">(${err[a.ErrorType]||a.ErrorType})</span>`:""}<br>${
-        (w.Phonemes||[]).map(ph=>{const v=ph.PronunciationAssessment?.AccuracyScore??0;return `<span class="ph ${cls(v)}">${ph.Phoneme} ${Math.round(v)}</span>`}).join("")}</div>`}).join("");
-    $("de").textContent=cur().w;
-    show(Math.round(p.PronScore??p.AccuracyScore??0),res.text,null);
+    const words=nb.Words||[];
+    const chips=`<div class="wchips">${words.map(w=>{const a=w.PronunciationAssessment||{},v=a.AccuracyScore??0;
+      return `<span class="${a.ErrorType==="Omission"?"r":cls(v)}">${esc(w.Word)}</span>`}).join("")}</div>`;
+    const weak=words.filter(w=>{const a=w.PronunciationAssessment||{};return words.length<=3||(a.AccuracyScore??0)<80||(a.ErrorType&&a.ErrorType!=="None")});
+    $("detail").innerHTML=(words.length>3?chips+(weak.length?`<p class="small">Các từ cần luyện thêm:</p>`:`<p class="small">Tất cả các từ đều tốt!</p>`):"")+
+      weak.map(w=>{const a=w.PronunciationAssessment||{};
+      return `<div class="wd"><span class="w">${esc(w.Word)}</span> · ${Math.round(a.AccuracyScore??0)} ${a.ErrorType&&a.ErrorType!=="None"?`<span style="color:var(--red)">(${err[a.ErrorType]||a.ErrorType})</span>`:""}<br>${
+        (w.Phonemes||[]).map(ph=>{const v=ph.PronunciationAssessment?.AccuracyScore??0;return `<span class="ph ${cls(v)}">${esc(ph.Phoneme)} ${Math.round(v)}</span>`}).join("")}</div>`}).join("");
+    $("de").textContent=cur().w;$("alts").textContent="";
+    show(Math.round(p.PronScore??p.AccuracyScore??0),res.text);
   },e=>{stop();rec.close();$("err").textContent="Lỗi Azure: "+e});
 }
-
-function start(){busy=true;$("mic").classList.add("on");$("status").textContent="Đang nghe… hãy đọc";$("err").textContent="";$("result").classList.add("hidden");$("de").textContent=cur().w;try{if(window.speechSynthesis&&speechSynthesis.speaking)speechSynthesis.cancel()}catch(e){}}
+function start(){busy=true;$("mic").classList.add("on");$("status").textContent=view==="sent"&&!useAzure()?"Đang nghe… đọc xong bấm mic để dừng":"Đang nghe… hãy đọc";$("err").textContent="";$("result").classList.add("hidden");$("de").textContent=cur().w;try{if(window.speechSynthesis&&speechSynthesis.speaking)speechSynthesis.cancel()}catch(e){}}
 function stop(){busy=false;$("mic").classList.remove("on");$("status").textContent="Bấm mic để đọc lại"}
 function useAzure(){return cfg.key&&cfg.reg}
 function modeInfo(){$("modeInfo").textContent="Đang dùng: "+(useAzure()?"Azure – chấm từng âm":"nhận diện miễn phí của trình duyệt")}
 
-/* ---------- Sự kiện ---------- */
+/* ================= TRỌNG ÂM ================= */
+let st={order:shuffle(STRESS.map((_,i)=>i)),p:0,done:false,right:0,total:0};
+const stCur=()=>STRESS[st.order[st.p%st.order.length]];
+function renderStress(){
+  const x=stCur();st.done=false;
+  $("stVi").textContent=x.m;$("stIpa").textContent="";$("stFb").innerHTML="";
+  $("stSyls").innerHTML=x.s.map((s,i)=>`<button class="syl" data-k="${i}">${esc(s)}</button>`).join("");
+  $("stScore").textContent=st.total?`Đúng ${st.right}/${st.total}`:`${STRESS.length} từ · trộn ngẫu nhiên`;
+}
+function answerStress(k){
+  if(st.done)return;st.done=true;const x=stCur(),good=k===x.k;st.total++;if(good)st.right++;
+  [...$("stSyls").children].forEach((b,i)=>{if(i===x.k)b.classList.add(good?"right":"answer");if(i===k&&!good)b.classList.add("wrong")});
+  $("stIpa").textContent=`/${x.i}/`;
+  $("stFb").innerHTML=`<b style="color:${good?"var(--green)":"var(--red)"}">${good?"✅ Đúng!":"❌ Chưa đúng"}</b> — trọng âm ở <b>${esc(x.s[x.k])}</b>.<br><span class="small">${esc(x.r)}</span>`;
+  $("stScore").textContent=`Đúng ${st.right}/${st.total}`;
+  speak(x.s.join(""),false);
+}
+
+/* ================= BÀI TẬP NGUYÊN ÂM IPA ================= */
+function stressedVowel(ipa){ // vị trí & ký hiệu nguyên âm mang trọng âm
+  let s=ipa.indexOf("ˈ");s=s<0?0:s+1;
+  for(let p=s;p<ipa.length;p++){
+    for(const v of VSET){
+      if(ipa.startsWith(v,p)){
+        const next=ipa[p+v.length];
+        if(v.length===1&&next==="̯")break; // bán nguyên âm (i̯) – bỏ qua
+        if(!CONF[v])return null;
+        return{p,v};
+      }
+    }
+  }
+  return null;
+}
+const IPA_POOL=[...WORDS.filter(x=>x.w.split(" ").length===1),...STRESS.map(x=>({w:x.s.join(""),i:x.i,m:x.m}))]
+  .filter((x,i,a)=>a.findIndex(y=>y.w===x.w)===i).filter(x=>stressedVowel(x.i));
+let ip={order:shuffle(IPA_POOL.map((_,i)=>i)),p:0,done:false,right:0,total:0};
+const ipCur=()=>IPA_POOL[ip.order[ip.p%ip.order.length]];
+function renderIpa(){
+  const x=ipCur(),sv=stressedVowel(x.i);ip.done=false;
+  $("ipWord").textContent=x.w;$("ipVi").textContent=x.m;$("ipFb").innerHTML="";
+  $("ipQ").innerHTML="/"+esc(x.i.slice(0,sv.p))+`<span class="blank">?</span>`+esc(x.i.slice(sv.p+sv.v.length))+"/";
+  const opts=shuffle([sv.v,...CONF[sv.v]].filter((v,i,a)=>a.indexOf(v)===i).slice(0,4));
+  $("ipOpts").innerHTML=opts.map(v=>`<button class="opt" data-v="${v}">${v}</button>`).join("");
+  $("ipScore").textContent=ip.total?`Đúng ${ip.right}/${ip.total}`:`${IPA_POOL.length} từ · trộn ngẫu nhiên`;
+}
+function answerIpa(v){
+  if(ip.done)return;ip.done=true;const x=ipCur(),sv=stressedVowel(x.i),good=v===sv.v;ip.total++;if(good)ip.right++;
+  [...$("ipOpts").children].forEach(b=>{if(b.dataset.v===sv.v)b.classList.add("right");else if(b.dataset.v===v)b.classList.add("wrong")});
+  $("ipQ").innerHTML="/"+esc(x.i.slice(0,sv.p))+`<span class="blank" style="color:var(--green);border-color:var(--green)">${sv.v}</span>`+esc(x.i.slice(sv.p+sv.v.length))+"/";
+  const info=VOWELS.find(r=>r[0]===sv.v);
+  $("ipFb").innerHTML=`<b style="color:${good?"var(--green)":"var(--red)"}">${good?"✅ Đúng!":"❌ Chưa đúng"}</b> — đáp án <b style="font-family:'Noto Sans'">${sv.v}</b>${info?`: ${esc(info[2])}`:""}.${!good&&VOWELS.find(r=>r[0]===v)?`<br><span class="small">Bạn chọn <b>${v}</b>: ${esc(VOWELS.find(r=>r[0]===v)[2])}</span>`:""}`;
+  $("ipScore").textContent=`Đúng ${ip.right}/${ip.total}`;
+  speak(x.w,false);
+}
+$("vTable").innerHTML=VOWELS.map(r=>`<tr class="play" data-ex="${esc(r[1].split(",")[0])}"><td class="sym">${r[0]}</td><td>${esc(r[1])}</td><td>${esc(r[2])}</td></tr>`).join("");
+
+/* ================= CHUYỂN TAB ================= */
+function setView(v){
+  if(busy&&activeRec){try{activeRec.abort()}catch(e){}}
+  view=v;
+  for(const b of $("tabbar").children)b.setAttribute("aria-current",b.dataset.v===v);
+  $("vSpeak").classList.toggle("hidden",!(v==="word"||v==="sent"));
+  $("vStress").classList.toggle("hidden",v!=="stress");
+  $("vIpa").classList.toggle("hidden",v!=="ipa");
+  $("listPanel").classList.add("hidden");$("setPanel").classList.add("hidden");
+  $("title").textContent={word:"Luyện phát âm",sent:"Luyện đọc câu dài",stress:"Bài tập trọng âm",ipa:"Bài tập nguyên âm IPA"}[v];
+  if(v==="word"||v==="sent"){cat="Tất cả";list=data();idx=0;custom=null;renderCats();renderWord();
+    $("customLabel").textContent=v==="sent"?"Tự nhập câu dài":"Tự nhập từ hoặc câu";
+    $("custom").placeholder=v==="sent"?"vd: Ich habe heute keine Zeit, weil ich arbeiten muss.":"vd: Ich möchte ein Brötchen"}
+  if(v==="stress")renderStress();
+  if(v==="ipa")renderIpa();
+  window.scrollTo({top:0});
+}
+
+/* ================= SỰ KIỆN ================= */
+$("tabbar").onclick=e=>{const b=e.target.closest("[data-v]");if(b)setView(b.dataset.v)};
 $("cats").onclick=e=>{const b=e.target.closest("[data-c]");if(b)setCat(b.dataset.c)};
 $("prev").onclick=()=>{custom=null;idx=(idx-1+list.length)%list.length;renderWord()};
 $("next").onclick=$("goNext").onclick=()=>{custom=null;idx=(idx+1)%list.length;renderWord()};
 $("again").onclick=()=>$("mic").click();
 $("listen").onclick=()=>speak(full(cur()),false);
 $("listenSlow").onclick=()=>speak(full(cur()),true);
-$("mic").onclick=()=>{if(busy)return;useAzure()?listenAzure():listenFree()};
+$("mic").onclick=()=>{if(busy){if(activeRec){try{activeRec.stop()}catch(e){}}return}useAzure()?listenAzure():listenFree()};
 $("btnSet").onclick=()=>{$("setPanel").classList.toggle("hidden");$("listPanel").classList.add("hidden")};
 $("btnList").onclick=()=>{renderList();$("listPanel").classList.toggle("hidden");$("setPanel").classList.add("hidden")};
-$("list").onclick=e=>{const b=e.target.closest("[data-i]");if(!b)return;cat="Tất cả";list=WORDS;idx=+b.dataset.i;custom=null;renderCats();renderWord();$("listPanel").classList.add("hidden")};
+$("list").onclick=e=>{const b=e.target.closest("[data-i]");if(!b)return;const i=+b.dataset.i;
+  if(view==="stress"){st.p=st.order.indexOf(i);renderStress()}
+  else if(view==="ipa"){ip.p=ip.order.indexOf(i);renderIpa()}
+  else{cat="Tất cả";list=data();idx=i;custom=null;renderCats();renderWord()}
+  $("listPanel").classList.add("hidden")};
 $("saveSet").onclick=()=>{cfg={rate:$("rate").value,level:$("level").value,key:$("azKey").value.trim(),reg:$("azReg").value.trim()};store.set("deCfg",cfg);modeInfo();$("setPanel").classList.add("hidden")};
-$("resetProg").onclick=()=>{prog={};store.set("deProg",prog);renderList();renderWord()};
-$("useCustom").onclick=()=>{const v=$("custom").value.trim();if(!v)return;custom={a:"",w:v,m:"",t:""};renderWord();window.scrollTo({top:0,behavior:"smooth"})};
+$("resetProg").onclick=()=>{prog={};store.set("deProg",prog);renderList();if(view==="word"||view==="sent")renderWord()};
+$("useCustom").onclick=()=>{const v=$("custom").value.trim();if(!v)return;custom={a:"",w:v,m:"",t:"",i:""};renderWord();window.scrollTo({top:0,behavior:"smooth"})};
 $("custom").onkeydown=e=>{if(e.key==="Enter")$("useCustom").click()};
+$("stSyls").onclick=e=>{const b=e.target.closest("[data-k]");if(b)answerStress(+b.dataset.k)};
+$("stListen").onclick=()=>speak(stCur().s.join(""),false);
+$("stNext").onclick=()=>{st.p++;renderStress()};
+$("ipOpts").onclick=e=>{const b=e.target.closest("[data-v]");if(b)answerIpa(b.dataset.v)};
+$("ipListen").onclick=()=>speak(ipCur().w,false);
+$("ipNext").onclick=()=>{ip.p++;renderIpa()};
+$("vTable").onclick=e=>{const r=e.target.closest("[data-ex]");if(r)speak(r.dataset.ex,true)};
 
 $("rate").value=cfg.rate;$("level").value=cfg.level||"0.9";$("azKey").value=cfg.key||"";$("azReg").value=cfg.reg||"";modeInfo();
-renderCats();renderWord();
+setView("word");
 if(!window.isSecureContext)$("err").textContent="Cần mở qua link https:// thì micro mới hoạt động.";
 }
 </script>
