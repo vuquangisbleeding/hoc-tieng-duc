@@ -101,6 +101,84 @@ tr.play{cursor:pointer}
 .tabbar button[aria-current=true]{background:var(--soft);color:var(--ink)}
 .tabbar button[aria-current=true] b{color:var(--red)}
 :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+/* ---- Từ vựng ---- */
+.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:4px;margin-bottom:10px}
+.seg button{border:0;background:none;border-radius:10px;min-height:40px;font-weight:600;color:var(--muted)}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.art-der{color:var(--der);font-weight:800}.art-die{color:var(--die);font-weight:800}.art-das{color:var(--das);font-weight:800}
+.vtop{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;gap:8px;margin-bottom:12px}
+.vtitle{font-weight:800;font-size:18px;text-align:center}
+.vhero{display:flex;gap:16px;align-items:center;background:var(--ink);color:var(--bg);border-radius:22px;padding:18px 20px;margin-bottom:14px}
+.vhero .big{font-size:40px;font-weight:800;line-height:1}.vhero .big small{font-size:18px;opacity:.7}
+.vhero .small{color:inherit;opacity:.75}
+.vhero-r{flex:1;display:grid;gap:8px;justify-items:end;text-align:right}
+.vhero .prim{background:var(--gold);color:#16181d}
+.sets{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.setc{display:grid;gap:4px;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;min-height:118px;align-content:start}
+.setc b{font-size:16px;line-height:1.25}.setc.add{border-style:dashed;background:transparent}
+.lvl{font-size:12px;font-weight:700;color:var(--red)}
+.pbar{display:block;height:8px;background:var(--line);border-radius:9px;overflow:hidden;margin-top:6px}
+.pbar i{display:block;height:100%;background:var(--green);border-radius:9px;transition:width .3s}
+.chk{display:flex;gap:8px;align-items:center;margin-top:12px;font-size:14px;color:var(--ink)}.chk input{width:auto}
+.modes{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-bottom:14px}
+.mode{display:grid;gap:2px;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 14px}
+.mode .mi{font-size:22px}.mode b{font-size:15px}
+.wlist{display:grid;margin-top:8px}.wlist.left{text-align:left}
+.wl{display:flex;align-items:center;gap:6px;padding:10px 0;border-top:1px solid var(--line)}
+.wl-main{flex:1}.wl-ipa{font-family:"Noto Sans",system-ui,sans-serif;color:var(--muted);font-size:14px}
+.spk,.star{border:0;background:none;font-size:18px;min-width:40px;min-height:40px;border-radius:10px}
+.star{color:var(--line);font-size:22px}.star.on{color:var(--gold)}
+.lvdot{width:10px;height:10px;border-radius:50%;background:var(--line)}.lvdot.lv1{background:var(--red)}.lvdot.lv2{background:var(--orange)}.lvdot.lv3{background:var(--green)}
+.center{text-align:center}.big{font-size:48px}.score{font-size:40px;font-weight:800}.score small{font-size:18px;color:var(--muted)}
+.fcbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.ibtn.mini{min-height:34px;padding:6px 12px;font-size:14px}.big2{min-height:52px;flex:1;max-width:220px}
+.flip{display:grid;min-height:340px;perspective:1200px;cursor:pointer;margin-bottom:6px}
+.face{grid-area:1/1;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .45s;display:grid;align-content:center;overflow:auto}
+.face.back{transform:rotateY(180deg);align-content:start}
+.flip.on .front{transform:rotateY(180deg)}.flip.on .back{transform:rotateY(360deg)}
+@media (prefers-reduced-motion:reduce){.face{transition:none}}
+.fterm{font-size:clamp(30px,9vw,44px);font-weight:800;text-align:center;line-height:1.15;overflow-wrap:anywhere}
+.fterm.vi{font-size:clamp(24px,7vw,32px)}
+.hint{text-align:center;margin-top:18px}
+.winfo{display:grid;gap:6px}
+.wterm{font-size:26px;font-weight:800;display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.wipa{font-family:"Noto Sans",system-ui,sans-serif;color:var(--muted);font-size:17px;text-align:inherit}
+.fterm+.wipa{text-align:center}
+.wmean{font-size:18px;font-weight:600}.wtype{font-size:13px;color:var(--muted);font-weight:400}
+.wrow{font-size:15px}.wrow span{display:inline-block;min-width:76px;color:var(--muted);font-size:13px}
+.wnote{background:light-dark(#fff7dc,#2a2513);border-radius:12px;padding:10px 12px;font-size:14.5px}
+.wnote b{color:light-dark(#8a6400,var(--gold))}.wnote.alt{background:var(--soft)}
+.wex{background:var(--soft);border-radius:12px;padding:10px 12px;font-size:15px}.wex span{color:var(--muted);font-size:14px}
+.wex .spk{min-width:32px;min-height:32px;font-size:15px}
+.lnbar{display:grid;gap:4px;margin-bottom:10px}
+.qlabel{color:var(--muted);text-align:center;margin:0 0 8px;font-size:14px}
+.qbig{font-size:clamp(26px,8vw,38px);font-weight:800;text-align:center;line-height:1.2;overflow-wrap:anywhere}
+.qbig.vi{font-size:clamp(22px,6.5vw,30px)}
+.mcopts{display:grid;gap:10px;margin-top:16px}
+.mco{min-height:52px;text-align:left;padding:12px 16px;border-radius:14px;border:2px solid var(--line);background:var(--soft);font-size:16px}
+.mco.right,.gopt.right{background:var(--green);border-color:var(--green);color:#fff}.mco.right span{color:#fff}
+.mco.wrong,.gopt.wrong{background:var(--red);border-color:var(--red);color:#fff}.mco.wrong span{color:#fff}
+.ansf{margin-top:14px}
+.ansf input,.blank{font-size:18px}
+input.right{border-color:var(--green);background:light-dark(#e7f6ec,#163322)}input.wrong{border-color:var(--red);background:light-dark(#fdeaea,#3a1a1a)}
+.kbd{display:flex;gap:6px;justify-content:center;margin-top:8px;flex-wrap:wrap}
+.kbd button{min-width:44px;min-height:44px;border-radius:10px;border:1px solid var(--line);background:var(--soft);font-size:18px}
+.cloze{font-size:20px;line-height:2.2;text-align:center;margin:8px 0}
+.blank{display:inline-block;width:auto;padding:4px 8px;margin:0 2px;border-radius:8px;text-align:center;min-width:4ch;max-width:100%}
+.gopts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:16px}
+.gopt{min-height:64px;border-radius:14px;border:2px solid var(--line);background:var(--soft);font-size:22px;font-weight:800}
+.g-der{color:var(--der)}.g-die{color:var(--die)}.g-das{color:var(--das)}
+.fb{margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
+.fbh{font-size:20px;font-weight:800;margin-bottom:6px}.fb.good .fbh{color:var(--green)}.fb.bad .fbh{color:var(--red)}
+.fb p{margin:0 0 10px}
+.mgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:10px}
+.mt{min-height:84px;padding:8px;border-radius:14px;border:2px solid var(--line);background:var(--card);font-size:15px;line-height:1.25;overflow-wrap:anywhere}
+.mt.de{font-weight:700}.mt.sel{border-color:var(--gold);background:light-dark(#fff7dc,#2a2513)}
+.mt.bad{border-color:var(--red);animation:shake .3s}.mt.gone{visibility:hidden}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+textarea{font:inherit;font-size:16px;width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--soft);color:var(--ink)}
+.tabbar{grid-template-columns:repeat(4,minmax(0,1fr))}
+
 </style>
 </head>
 <body>
@@ -137,7 +215,10 @@ tr.play{cursor:pointer}
   </section>
 
   <!-- ===== Luyện nói: từ & câu dài ===== -->
+  <div id="vVocab"></div>
+
   <div id="vSpeak">
+    <div class="seg" id="seg"><button data-v="word" aria-pressed="true">Từ</button><button data-v="sent" aria-pressed="false">Câu dài</button></div>
     <div class="chips" id="cats"></div>
     <section class="card" id="practice">
       <div class="nav">
@@ -227,8 +308,8 @@ tr.play{cursor:pointer}
 </div>
 
 <nav class="tabbar" id="tabbar">
-  <button data-v="word" aria-current="true"><b>Aa</b>Từ</button>
-  <button data-v="sent"><b>¶</b>Câu dài</button>
+  <button data-v="vocab" aria-current="true"><b>🗂</b>Từ vựng</button>
+  <button data-v="word"><b>🎤</b>Phát âm</button>
   <button data-v="stress"><b>ˈA</b>Trọng âm</button>
   <button data-v="ipa"><b>ø</b>IPA</button>
 </nav>
@@ -562,15 +643,21 @@ function answerIpa(v){
 $("vTable").innerHTML=VOWELS.map(r=>`<tr class="play" data-ex="${esc(r[1].split(",")[0])}"><td class="sym">${r[0]}</td><td>${esc(r[1])}</td><td>${esc(r[2])}</td></tr>`).join("");
 
 /* ================= CHUYỂN TAB ================= */
+let prevView=null;
 function setView(v){
   if(busy&&activeRec){try{activeRec.abort()}catch(e){}}
   view=v;
-  for(const b of $("tabbar").children)b.setAttribute("aria-current",b.dataset.v===v);
+  for(const b of $("tabbar").children)b.setAttribute("aria-current",b.dataset.v===v||(b.dataset.v==="word"&&v==="sent"));
+  for(const b of $("seg").children)b.setAttribute("aria-pressed",b.dataset.v===v);
+  $("vVocab").classList.toggle("hidden",v!=="vocab");
+  $("btnList").classList.toggle("hidden",v==="vocab");
+  if(v==="vocab"&&window.vocabHome&&prevView==="vocab")window.vocabHome();
+  prevView=v;
   $("vSpeak").classList.toggle("hidden",!(v==="word"||v==="sent"));
   $("vStress").classList.toggle("hidden",v!=="stress");
   $("vIpa").classList.toggle("hidden",v!=="ipa");
   $("listPanel").classList.add("hidden");$("setPanel").classList.add("hidden");
-  $("title").textContent={word:"Luyện phát âm",sent:"Luyện đọc câu dài",stress:"Bài tập trọng âm",ipa:"Bài tập nguyên âm IPA"}[v];
+  $("title").textContent={vocab:"Từ vựng",word:"Luyện phát âm",sent:"Luyện đọc câu dài",stress:"Bài tập trọng âm",ipa:"Bài tập nguyên âm IPA"}[v];
   if(v==="word"||v==="sent"){cat="Tất cả";list=data();idx=0;custom=null;renderCats();renderWord();
     $("customLabel").textContent=v==="sent"?"Tự nhập câu dài":"Tự nhập từ hoặc câu";
     $("custom").placeholder=v==="sent"?"vd: Ich habe heute keine Zeit, weil ich arbeiten muss.":"vd: Ich möchte ein Brötchen"}
@@ -581,6 +668,10 @@ function setView(v){
 
 /* ================= SỰ KIỆN ================= */
 $("tabbar").onclick=e=>{const b=e.target.closest("[data-v]");if(b)setView(b.dataset.v)};
+$("seg").onclick=e=>{const b=e.target.closest("[data-v]");if(b&&b.dataset.v!==view)setView(b.dataset.v)};
+window.appSpeak=speak;
+window.appPractice=(text,ipa,mean)=>{setView("word");const am=text.match(/^(der|die|das) (.+)$/);custom={a:am?am[1]:"",w:am?am[2]:text,m:mean||"",t:"",i:ipa||""};
+  const hit=WORDS.find(x=>norm(full(x))===norm(text)||norm(x.w)===norm(text));if(hit)custom=hit;renderWord()};
 $("cats").onclick=e=>{const b=e.target.closest("[data-c]");if(b)setCat(b.dataset.c)};
 $("prev").onclick=()=>{custom=null;idx=(idx-1+list.length)%list.length;renderWord()};
 $("next").onclick=$("goNext").onclick=()=>{custom=null;idx=(idx+1)%list.length;renderWord()};
@@ -608,9 +699,11 @@ $("ipNext").onclick=()=>{ip.p++;renderIpa()};
 $("vTable").onclick=e=>{const r=e.target.closest("[data-ex]");if(r)speak(r.dataset.ex,true)};
 
 $("rate").value=cfg.rate;$("level").value=cfg.level||"0.9";$("azKey").value=cfg.key||"";$("azReg").value=cfg.reg||"";modeInfo();
-setView("word");
+setView("vocab");
 if(!window.isSecureContext)$("err").textContent="Cần mở qua link https:// thì micro mới hoạt động.";
 }
 </script>
+<script src="vocab-data.js"></script>
+<script src="vocab.js"></script>
 </body>
 </html>
