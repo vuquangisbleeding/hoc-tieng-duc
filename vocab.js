@@ -54,26 +54,62 @@ function genderHint(w){
   return"";
 }
 
+/* ---------- Chia động từ ---------- */
+const PERS=["ich","du","er/sie/es","wir","ihr","sie/Sie"];
+const parseForm=x=>{const irr=x[0]==="*";const [f,i]=(irr?x.slice(1):x).split("|");return{f,i,irr}};
+function conjOf(w){const c=w.t==="v"&&window.VERB_CONJ&&VERB_CONJ[w.w];if(!c)return null;
+  return{p:c.p.split(";").map(parseForm),prt:parseForm(c.prt),pf:parseForm(c.pf)}}
+const low=s=>String(s).toLowerCase().trim();
+/* dạng chia trong câu ví dụ thuộc ngôi/thì nào */
+function whichForm(w,form){
+  const c=conjOf(w);if(!c)return null;const f=low(form);
+  const rows=c.p.map((r,k)=>low(r.f)===f?k:-1).filter(k=>k>=0);
+  if(rows.length){
+    const words=(w.ex||"").replace(/[\[\]]/g,"").split(/[\s,.!?]+/).filter(Boolean);
+    let pick=null;
+    words.forEach((t,k)=>{const l=t.toLowerCase();let cand=[];
+      if(l==="ich")cand=[0];else if(l==="du")cand=[1];else if(l==="er"||l==="es"||l==="man")cand=[2];else if(l==="wir")cand=[3];else if(l==="ihr")cand=[4];
+      else if(l==="sie")cand=(t==="Sie"&&k>0)?[5]:[2,5];
+      const hit=cand.find(x=>rows.includes(x));if(pick==null&&hit!=null)pick=hit});
+    if(pick==null)pick=rows[0];
+    const same=rows.filter(k=>k!==pick).map(k=>PERS[k]);
+    return{tense:"hiện tại (Präsens)",who:PERS[pick],ipa:c.p[pick].i,rows:[pick],same};
+  }
+  if(low(c.prt.f)===f)return{tense:"quá khứ (Präteritum)",who:"",ipa:c.prt.i,rows:["prt"]};
+  if(low(c.pf.f).endsWith(f))return{tense:"hoàn thành (Perfekt)",who:"",ipa:c.pf.i,rows:["pf"]};
+  return null;
+}
+function conjTable(w,hl=[]){
+  const c=conjOf(w);if(!c)return "";
+  const cell=(r,lab,key)=>`<tr class="${hl.includes(key)?"hl":""}"><td class="cp">${lab}</td><td class="cf ${r.irr?"irr":""}">${esc(r.f)}</td><td class="ci">/${esc(r.i)}/</td><td><button class="spk sm" data-say="${esc(r.f.replace(/ \(.*\)/,""))}" aria-label="Nghe">🔊</button></td></tr>`;
+  return `<div class="conj"><div class="conj-h">Bảng chia động từ <span class="small">· <span class="irr">đỏ</span> = bất quy tắc</span></div>
+   <table><tbody>${c.p.map((r,k)=>cell(r,PERS[k],k)).join("")}
+   <tr class="sep"><td colspan="4">Quá khứ & hoàn thành (ngôi er/sie/es)</td></tr>
+   ${cell(c.prt,"Präteritum","prt")}${cell(c.pf,"Perfekt","pf")}</tbody></table></div>`;
+}
+
 /* ---------- Khung chung ---------- */
 let curSet=null,starOnly=false;
 const wordsOf=set=>{const ws=set.words;if(!starOnly)return ws;const s=ws.filter(w=>pr(keyOf(set,w)).star);return s.length?s:ws};
 function screen(html){root.innerHTML=html;window.scrollTo({top:0})}
 function topbar(title,back){return `<div class="vtop"><button class="ibtn" data-act="${back}" aria-label="Quay lại">‹</button><div class="vtitle">${title}</div><span></span></div>`}
 function infoBlock(w,opts={}){ // phần giải nghĩa đầy đủ – dùng ở mặt sau thẻ & phản hồi
+  const ct=conjTable(w,opts.hl||[]);
   return `<div class="winfo">
     <div class="wterm">${termHtml(w)} <button class="spk" data-say="${esc(term(w))}" aria-label="Nghe">🔊</button></div>
     ${w.i?`<div class="wipa">/${esc(w.i)}/</div>`:""}
     <div class="wmean">${esc(w.m)} <span class="wtype">${TYPE[w.t]||""}</span></div>
     ${w.pl?`<div class="wrow"><span>Số nhiều</span>${w.pl==="—"?"<i>thường không dùng số nhiều</i>":esc(w.pl)}</div>`:""}
-    ${w.f?`<div class="wrow"><span>Chia</span>${esc(w.f)}</div>`:""}
+    ${w.f&&!ct?`<div class="wrow"><span>Chia</span>${esc(w.f)}</div>`:""}
     ${w.n?`<div class="wnote"><b>🗣 Phát âm & trọng âm:</b> ${w.n}</div>`:""}
     ${opts.gender&&genderHint(w)?`<div class="wnote alt">${genderHint(w)}</div>`:""}
+    ${ct}
     ${w.ex?`<div class="wex">${esc(w.ex.replace(/[\[\]]/g,""))} <button class="spk" data-say="${esc(w.ex.replace(/[\[\]]/g,""))}" aria-label="Nghe câu">🔊</button><br><span>${esc(w.exv||"")}</span></div>`:""}
     <button class="ibtn mini" data-practice="${esc(term(w))}" data-ipa="${esc(w.i||"")}" data-mean="${esc(w.m)}">🎤 Luyện phát âm từ này</button>
   </div>`;
 }
-function feedback(good,w,msg,extra=""){
-  return `<div class="fb ${good?"good":"bad"}"><div class="fbh">${good?"✅ Chính xác!":"❌ Chưa đúng"}</div>${msg?`<p>${msg}</p>`:""}${extra}${infoBlock(w,{gender:true})}</div>`;
+function feedback(good,w,msg,extra="",hl=[]){
+  return `<div class="fb ${good?"good":"bad"}"><div class="fbh">${good?"✅ Chính xác!":"❌ Chưa đúng"}</div>${msg?`<p>${msg}</p>`:""}${extra}${infoBlock(w,{gender:true,hl})}</div>`;
 }
 const kbd=`<div class="kbd">${["ä","ö","ü","ß","Ä","Ö","Ü"].map(c=>`<button type="button" data-ch="${c}">${c}</button>`).join("")}</div>`;
 
@@ -144,15 +180,23 @@ function renderQ(q,head=""){
     <div class="gopts">${["der","die","das"].map(a=>`<button class="gopt g-${a}" data-g="${a}">${a}</button>`).join("")}</div>`;
   return head+`<div class="card q" id="qcard">${body}<div id="fbox"></div></div>`;
 }
+function explainForm(w,form){
+  const wf=whichForm(w,form);
+  if(wf)return{hl:wf.rows,html:`Đáp án: <b class="ans">${esc(form)}</b> <span class="ipa-in">/${esc(wf.ipa)}/</span> <button class="spk sm" data-say="${esc(form)}" aria-label="Nghe">🔊</button><br>
+    → <b>${esc(w.w)}</b> chia ở ${wf.who?`ngôi <b>${wf.who}</b>, `:""}thì <b>${wf.tense}</b>${wf.same&&wf.same.length?` <span class="small">(ngôi ${wf.same.join(", ")} cũng có dạng này)</span>`:""}.`};
+  if(w.pl&&low(w.pl.replace(/^die /,""))===low(form)&&low(form)!==low(w.w))return{hl:[],html:`Đáp án: <b class="ans">${esc(form)}</b> <button class="spk sm" data-say="${esc(form)}">🔊</button> → dạng <b>số nhiều</b> của ${termHtml(w)}.`};
+  if(low(form)!==low(w.w))return{hl:[],html:`Đáp án: <b class="ans">${esc(form)}</b> <button class="spk sm" data-say="${esc(form)}">🔊</button> (dạng biến đổi của <b>${esc(w.w)}</b>).`};
+  return{hl:[],html:`Đáp án: <b class="ans">${esc(form)}</b>`};
+}
 let activeQ=null;
 function bindQ(q,done){ // done(good) gọi khi trả lời xong
   activeQ=q;
   const fbox=document.getElementById("fbox"),w=q.w;let answered=false;
   const next=`<div class="row"><button class="prim" id="nextBtn">Tiếp →</button></div>`;
-  const finish=(good,msg,extra)=>{if(answered)return;answered=true;
-    fbox.innerHTML=feedback(good,w,msg,extra)+(good?"":`<div class="row"><button class="ibtn mini" id="override">Tôi trả lời đúng (bấm nhầm/gõ nhầm)</button></div>`)+next;
+  const finish=(good,msg,extra,say,hl)=>{if(answered)return;answered=true;
+    fbox.innerHTML=feedback(good,w,msg,extra||"",hl||[])+(good?"":`<div class="row"><button class="ibtn mini" id="override">Tôi trả lời đúng (bấm nhầm/gõ nhầm)</button></div>`)+next;
     document.querySelectorAll("#qcard input,#qcard .mco,#qcard .gopt").forEach(e=>e.disabled=true);
-    speak(term(w));let result=good;
+    speak(say||term(w));let result=good;
     document.getElementById("override")?.addEventListener("click",e=>{result=true;e.target.textContent="✓ Đã tính là đúng";e.target.disabled=true});
     const nb=document.getElementById("nextBtn");nb.focus({preventScroll:true});fbox.scrollIntoView({behavior:"smooth",block:"nearest"});
     nb.onclick=()=>done(result);
@@ -168,8 +212,9 @@ function bindQ(q,done){ // done(good) gọi khi trả lời xong
     const first=document.querySelector("#qcard input");setTimeout(()=>first&&first.focus({preventScroll:true}),50);
     form.onsubmit=e=>{e.preventDefault();
       if(q.type==="cloze"){const ins=[...document.querySelectorAll(".blank")];let all=true,msgs=[];
-        ins.forEach((inp,k)=>{const want=q.blanks[k],r=check(inp.value,{w:want,t:"x"},false);inp.classList.add(r.ok?"right":"wrong");if(!r.ok){all=false;msgs.push(`Chỗ trống ${ins.length>1?k+1:""}: đáp án <b>${esc(want)}</b>${r.msg?" — "+r.msg:""}`)}else if(r.msg)msgs.push(r.msg)});
-        finish(all,msgs.join("<br>"));return}
+        ins.forEach((inp,k)=>{const want=q.blanks[k],r=check(inp.value,{w:want,t:"x"},false);inp.classList.add(r.ok?"right":"wrong");if(!r.ok){all=false;msgs.push(`Bạn viết: <b>${esc(inp.value||"(trống)")}</b>${r.msg?" — "+r.msg:""}`)}else if(r.msg)msgs.push(r.msg)});
+        const form=q.blanks.join(" "),info=explainForm(w,form);
+        finish(all,info.html+(msgs.length?"<br>"+msgs.join("<br>"):""),"",form,info.hl);return}
       const r=check(document.getElementById("ans").value,w,!!w.a);
       document.getElementById("ans").classList.add(r.ok?"right":"wrong");
       finish(r.ok,(r.ok?"":`Đáp án: <b>${termHtml(w)}</b>. `)+(r.msg||""));

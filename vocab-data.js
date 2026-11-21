@@ -133,3 +133,30 @@ window.VOCAB_SETS = [
  {t:"n",a:"die",w:"Polizei",pl:"—",m:"cảnh sát",i:"poliˈtsaɪ̯",ex:"Rufen Sie die [Polizei]!",exv:"Hãy gọi cảnh sát!",n:"Đuôi <b>-ei</b> luôn nhận trọng âm; <b>z</b> = “ts”."}
 ]}
 ];
+
+/* Bảng chia động từ: p = hiện tại (ich; du; er/sie/es; wir; ihr; sie/Sie), prt = quá khứ Präteritum (ngôi er),
+   pf = hoàn thành Perfekt (ngôi er). Mỗi dạng "từ|IPA"; dấu * = dạng bất quy tắc (đổi gốc/khác quy tắc). */
+window.VERB_CONJ = {
+ "heißen":{p:"heiße|ˈhaɪ̯sə;heißt|haɪ̯st;heißt|haɪ̯st;heißen|ˈhaɪ̯sn̩;heißt|haɪ̯st;heißen|ˈhaɪ̯sn̩",prt:"*hieß|hiːs",pf:"hat geheißen|hat ɡəˈhaɪ̯sn̩"},
+ "kommen":{p:"komme|ˈkɔmə;kommst|kɔmst;kommt|kɔmt;kommen|ˈkɔmən;kommt|kɔmt;kommen|ˈkɔmən",prt:"*kam|kaːm",pf:"ist gekommen|ɪst ɡəˈkɔmən"},
+ "wohnen":{p:"wohne|ˈvoːnə;wohnst|voːnst;wohnt|voːnt;wohnen|ˈvoːnən;wohnt|voːnt;wohnen|ˈvoːnən",prt:"wohnte|ˈvoːntə",pf:"hat gewohnt|hat ɡəˈvoːnt"},
+ "sprechen":{p:"spreche|ˈʃpʁɛçə;*sprichst|ʃpʁɪçst;*spricht|ʃpʁɪçt;sprechen|ˈʃpʁɛçn̩;sprecht|ʃpʁɛçt;sprechen|ˈʃpʁɛçn̩",prt:"*sprach|ʃpʁaːx",pf:"hat gesprochen|hat ɡəˈʃpʁɔxn̩"},
+ "essen":{p:"esse|ˈɛsə;*isst|ɪst;*isst|ɪst;essen|ˈɛsn̩;esst|ɛst;essen|ˈɛsn̩",prt:"*aß|aːs",pf:"hat gegessen|hat ɡəˈɡɛsn̩"},
+ "trinken":{p:"trinke|ˈtʁɪŋkə;trinkst|tʁɪŋkst;trinkt|tʁɪŋkt;trinken|ˈtʁɪŋkn̩;trinkt|tʁɪŋkt;trinken|ˈtʁɪŋkn̩",prt:"*trank|tʁaŋk",pf:"hat getrunken|hat ɡəˈtʁʊŋkn̩"},
+ "sein":{p:"*bin|bɪn;*bist|bɪst;*ist|ɪst;*sind|zɪnt;*seid|zaɪ̯t;*sind|zɪnt",prt:"*war|vaːɐ̯",pf:"ist gewesen|ɪst ɡəˈveːzn̩"},
+ "haben":{p:"habe|ˈhaːbə;*hast|hast;*hat|hat;haben|ˈhaːbn̩;habt|haːpt;haben|ˈhaːbn̩",prt:"*hatte|ˈhatə",pf:"hat gehabt|hat ɡəˈhaːpt"},
+ "machen":{p:"mache|ˈmaxə;machst|maxst;macht|maxt;machen|ˈmaxn̩;macht|maxt;machen|ˈmaxn̩",prt:"machte|ˈmaxtə",pf:"hat gemacht|hat ɡəˈmaxt"},
+ "gehen":{p:"gehe|ˈɡeːə;gehst|ɡeːst;geht|ɡeːt;gehen|ˈɡeːən;geht|ɡeːt;gehen|ˈɡeːən",prt:"*ging|ɡɪŋ",pf:"ist gegangen|ɪst ɡəˈɡaŋən"},
+ "fahren":{p:"fahre|ˈfaːʁə;*fährst|fɛːɐ̯st;*fährt|fɛːɐ̯t;fahren|ˈfaːʁən;fahrt|faːɐ̯t;fahren|ˈfaːʁən",prt:"*fuhr|fuːɐ̯",pf:"ist gefahren|ɪst ɡəˈfaːʁən"},
+ "lernen":{p:"lerne|ˈlɛʁnə;lernst|lɛʁnst;lernt|lɛʁnt;lernen|ˈlɛʁnən;lernt|lɛʁnt;lernen|ˈlɛʁnən",prt:"lernte|ˈlɛʁntə",pf:"hat gelernt|hat ɡəˈlɛʁnt"},
+ "arbeiten":{p:"arbeite|ˈaʁbaɪ̯tə;arbeitest|ˈaʁbaɪ̯təst;arbeitet|ˈaʁbaɪ̯tət;arbeiten|ˈaʁbaɪ̯tn̩;arbeitet|ˈaʁbaɪ̯tət;arbeiten|ˈaʁbaɪ̯tn̩",prt:"arbeitete|ˈaʁbaɪ̯tətə",pf:"hat gearbeitet|hat ɡəˈʔaʁbaɪ̯tət"},
+ "sehen":{p:"sehe|ˈzeːə;*siehst|ziːst;*sieht|ziːt;sehen|ˈzeːən;seht|zeːt;sehen|ˈzeːən",prt:"*sah|zaː",pf:"hat gesehen|hat ɡəˈzeːən"},
+ "lesen":{p:"lese|ˈleːzə;*liest|liːst;*liest|liːst;lesen|ˈleːzn̩;lest|leːst;lesen|ˈleːzn̩",prt:"*las|laːs",pf:"hat gelesen|hat ɡəˈleːzn̩"},
+ "schreiben":{p:"schreibe|ˈʃʁaɪ̯bə;schreibst|ʃʁaɪ̯pst;schreibt|ʃʁaɪ̯pt;schreiben|ˈʃʁaɪ̯bn̩;schreibt|ʃʁaɪ̯pt;schreiben|ˈʃʁaɪ̯bn̩",prt:"*schrieb|ʃʁiːp",pf:"hat geschrieben|hat ɡəˈʃʁiːbn̩"},
+ "verstehen":{p:"verstehe|fɛɐ̯ˈʃteːə;verstehst|fɛɐ̯ˈʃteːst;versteht|fɛɐ̯ˈʃteːt;verstehen|fɛɐ̯ˈʃteːən;versteht|fɛɐ̯ˈʃteːt;verstehen|fɛɐ̯ˈʃteːən",prt:"*verstand|fɛɐ̯ˈʃtant",pf:"hat verstanden|hat fɛɐ̯ˈʃtandn̩"},
+ "aufstehen":{p:"stehe auf|ˈʃteːə ˈʔaʊ̯f;stehst auf|ˈʃteːst ˈʔaʊ̯f;steht auf|ˈʃteːt ˈʔaʊ̯f;stehen auf|ˈʃteːən ˈʔaʊ̯f;steht auf|ˈʃteːt ˈʔaʊ̯f;stehen auf|ˈʃteːən ˈʔaʊ̯f",prt:"*stand auf|ˈʃtant ˈʔaʊ̯f",pf:"ist aufgestanden|ɪst ˈʔaʊ̯fɡəˌʃtandn̩"},
+ "kaufen":{p:"kaufe|ˈkaʊ̯fə;kaufst|kaʊ̯fst;kauft|kaʊ̯ft;kaufen|ˈkaʊ̯fn̩;kauft|kaʊ̯ft;kaufen|ˈkaʊ̯fn̩",prt:"kaufte|ˈkaʊ̯ftə",pf:"hat gekauft|hat ɡəˈkaʊ̯ft"},
+ "können":{p:"*kann|kan;*kannst|kanst;*kann|kan;können|ˈkœnən;könnt|kœnt;können|ˈkœnən",prt:"*konnte|ˈkɔntə",pf:"hat gekonnt|hat ɡəˈkɔnt"},
+ "möchten":{p:"möchte|ˈmœçtə;möchtest|ˈmœçtəst;*möchte|ˈmœçtə;möchten|ˈmœçtn̩;möchtet|ˈmœçtət;möchten|ˈmœçtn̩",prt:"*wollte (dùng wollen)|ˈvɔltə",pf:"hat gewollt (dùng wollen)|hat ɡəˈvɔlt"},
+ "studieren":{p:"studiere|ʃtuˈdiːʁə;studierst|ʃtuˈdiːɐ̯st;studiert|ʃtuˈdiːɐ̯t;studieren|ʃtuˈdiːʁən;studiert|ʃtuˈdiːɐ̯t;studieren|ʃtuˈdiːʁən",prt:"studierte|ʃtuˈdiːɐ̯tə",pf:"hat studiert|hat ʃtuˈdiːɐ̯t"}
+};
