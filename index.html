@@ -178,6 +178,9 @@ input.right{border-color:var(--green);background:light-dark(#e7f6ec,#163322)}inp
 @keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
 textarea{font:inherit;font-size:16px;width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);background:var(--soft);color:var(--ink)}
 .tabbar{grid-template-columns:repeat(4,minmax(0,1fr))}
+.syncsec{border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:6px}
+#cloudBtn{min-width:44px;font-size:15px;white-space:nowrap}
+#cloudBtn[data-s=ok]{color:var(--green)}#cloudBtn[data-s=err]{color:var(--red)}#cloudBtn[data-s=busy]{color:var(--orange)}
 
 </style>
 </head>
@@ -705,5 +708,6 @@ if(!window.isSecureContext)$("err").textContent="Cần mở qua link https:// th
 </script>
 <script src="vocab-data.js"></script>
 <script src="vocab.js"></script>
+<script src="sync.js"></script>
 </body>
 </html>
