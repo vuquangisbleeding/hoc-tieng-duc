@@ -1,0 +1,121 @@
+# Nguồn từ vựng A1 – mỗi dòng: loại|từ|số nhiều hoặc dạng chia|nghĩa|câu ví dụ ([..] = chỗ điền)|dịch câu|ghi chú
+# "=Từ" = dùng lại mục đã có trong vocab-data.js. "@id|tên bộ|số phần trong tài liệu" = mở bộ mới.
+
+@a1-giao-tiep|Chào hỏi & giao tiếp|1
+=Hallo
+phr|Guten Morgen||chào buổi sáng|[Guten Morgen], Frau Weber!|Chào buổi sáng, bà Weber!|Dùng đến khoảng 10–11 giờ trưa.
+=Guten Tag
+phr|Guten Abend||chào buổi tối|[Guten Abend], Herr Klein!|Chào buổi tối, ông Klein!|Dùng khi gặp nhau từ khoảng 18 giờ.
+phr|Gute Nacht||chúc ngủ ngon|[Gute Nacht], schlaf gut!|Chúc ngủ ngon nhé!|Chỉ nói khi đi ngủ hoặc chia tay lúc khuya, không dùng để chào khi gặp.
+phr|Auf Wiedersehen||tạm biệt (lịch sự)|[Auf Wiedersehen], bis nächste Woche!|Tạm biệt, hẹn tuần sau!|Nhấn <b>Wie</b>: auf <b>WIE</b>-der-se-hen; <b>ie</b> đọc “i” dài.
+=Tschüss
+phr|bis bald||hẹn sớm gặp lại|Tschüss, [bis bald]!|Tạm biệt, hẹn sớm gặp lại!|
+phr|bis morgen||mai gặp lại|Ich gehe jetzt nach Hause. [Bis morgen]!|Giờ tôi về nhà đây. Mai gặp nhé!|
+phr|Wie geht es Ihnen?||Ông/bà có khoẻ không? (lịch sự)|Guten Tag, Herr Braun! [Wie geht es Ihnen]?|Chào ông Braun! Ông có khoẻ không?|Với bạn bè nói <b>Wie geht's?</b> hoặc Wie geht es dir?
+phr|Wie geht es dir?||Bạn khoẻ không? (thân mật)|Hallo Lisa, [wie geht es dir]?|Chào Lisa, bạn khoẻ không?|
+phr|Mir geht es gut.||Tôi khoẻ.|Danke, [mir geht es gut]. Und dir?|Cảm ơn, tôi khoẻ. Còn bạn?|Dùng <b>mir</b> chứ không phải ich: nghĩa đen là “với tôi thì ổn”.
+phr|Freut mich.||Rất vui được gặp.|Ich bin Paul. – [Freut mich], ich bin Mai.|Tôi là Paul. – Rất vui được gặp, tôi là Mai.|
+=danke
+phr|vielen Dank||cảm ơn nhiều|[Vielen Dank] für das Geschenk!|Cảm ơn nhiều vì món quà!|
+=bitte
+phr|bitte schön||xin mời; không có gì|Hier ist Ihr Kaffee, [bitte schön].|Cà phê của ông đây, xin mời.|
+=Entschuldigung
+phr|Es tut mir leid.||Tôi rất tiếc, tôi xin lỗi.|[Es tut mir leid], ich habe heute keine Zeit.|Tôi xin lỗi, hôm nay tôi không có thời gian.|Dùng khi thật sự lấy làm tiếc. Muốn hỏi đường hay làm phiền ai thì nói <b>Entschuldigung</b>.
+phr|kein Problem||không sao đâu|Ich komme zehn Minuten später. – [Kein Problem]!|Tôi đến muộn mười phút. – Không sao!|
+phr|Wie bitte?||Xin lỗi, bạn nói gì cơ?|[Wie bitte]? Ich verstehe Sie nicht.|Xin lỗi, gì cơ? Tôi không hiểu ông nói gì.|Lên giọng ở cuối khi hỏi lại.
+phr|noch einmal||thêm một lần nữa|Können Sie das bitte [noch einmal] sagen?|Ông có thể nói lại lần nữa được không?|
+=ja
+=nein
+adv|doch||có chứ (đáp lại câu hỏi phủ định)|Kommst du nicht mit? – [Doch], ich komme mit!|Bạn không đi cùng à? – Có chứ, tôi đi cùng!|Chỉ dùng để nói “có” khi câu hỏi mang ý phủ định; trả lời <b>ja</b> ở đây là sai.
+phr|Herzlich willkommen!||Nhiệt liệt chào mừng!|[Herzlich willkommen] in Berlin!|Chào mừng bạn đến Berlin!|
+phr|Herzlichen Glückwunsch!||Xin chúc mừng!|[Herzlichen Glückwunsch] zum Geburtstag!|Chúc mừng sinh nhật!|
+phr|Alles Gute!||Chúc mọi điều tốt đẹp!|[Alles Gute] zum Geburtstag, Oma!|Chúc bà sinh nhật mọi điều tốt đẹp!|
+phr|Viel Glück!||Chúc may mắn!|Morgen hast du die Prüfung? [Viel Glück]!|Mai bạn thi à? Chúc may mắn!|
+phr|Guten Appetit!||Chúc ngon miệng!|Das Essen ist fertig. [Guten Appetit]!|Đồ ăn xong rồi. Chúc ngon miệng!|
+phr|Schönes Wochenende!||Cuối tuần vui vẻ!|Tschüss und [schönes Wochenende]!|Tạm biệt và chúc cuối tuần vui vẻ!|
+phr|Prost!||Cạn ly! Dzô!|Alle zusammen: [Prost]!|Tất cả cùng nào: dzô!|<b>o</b> dài như “ô”: “prôst”.
+phr|Moment, bitte.||Xin chờ một chút.|[Moment, bitte], ich komme gleich.|Chờ chút nhé, tôi đến ngay.|
+phr|Ich verstehe nicht.||Tôi không hiểu.|Entschuldigung, [ich verstehe nicht].|Xin lỗi, tôi không hiểu.|
+phr|Wie heißt das auf Deutsch?||Cái này tiếng Đức gọi là gì?|Entschuldigung, [wie heißt das auf Deutsch]?|Xin lỗi, cái này tiếng Đức gọi là gì?|
+phr|Was bedeutet das?||Cái đó nghĩa là gì?|„Zug“? [Was bedeutet das]?|“Zug” à? Từ đó nghĩa là gì?|
+n|der Gruß|die Grüße|lời chào|Viele [Grüße] an deine Familie!|Gửi lời chào tới gia đình bạn nhé!|Cuối thư hay viết <b>Viele Grüße</b> hoặc Liebe Grüße.
+
+@a1-ca-nhan|Thông tin cá nhân|2
+=Name
+n|der Vorname|die Vornamen|tên (tên riêng)|Mein [Vorname] ist Minh, mein Familienname ist Nguyen.|Tên tôi là Minh, họ tôi là Nguyễn.|Người Đức ghi tên trước, họ sau.
+n|der Familienname|die Familiennamen|họ|Wie ist Ihr [Familienname]?|Họ của ông/bà là gì?|Cũng nói <b>der Nachname</b>.
+=heißen
+n|die Adresse|die Adressen|địa chỉ|Wie ist Ihre [Adresse]?|Địa chỉ của ông/bà là gì?|Nhấn âm giữa: a-<b>DRES</b>-se.
+n|die Hausnummer|die Hausnummern|số nhà|Meine [Hausnummer] ist 12.|Số nhà của tôi là 12.|
+n|die Postleitzahl|die Postleitzahlen|mã bưu chính|Die [Postleitzahl] von Berlin-Mitte ist 10115.|Mã bưu chính của Berlin-Mitte là 10115.|Viết tắt <b>PLZ</b>, đọc “pê-en-tsét”.
+n|der Wohnort|die Wohnorte|nơi ở|Mein [Wohnort] ist Hamburg.|Nơi ở của tôi là Hamburg.|
+=wohnen
+n|die Telefonnummer|die Telefonnummern|số điện thoại|Wie ist deine [Telefonnummer]?|Số điện thoại của bạn là gì?|
+n|das Handy|die Handys|điện thoại di động|Mein [Handy] ist kaputt.|Điện thoại của tôi bị hỏng.|Từ “Anh tự chế”: người Anh không gọi điện thoại là handy. Đọc “hen-đi”.
+n|die E-Mail|die E-Mails|thư điện tử, email|Ich schreibe dir morgen eine [E-Mail].|Mai tôi sẽ viết email cho bạn.|Đọc như tiếng Anh: “i-mêu”.
+n|das Alter|–|tuổi|Bitte schreiben Sie Ihr [Alter] in das Formular.|Vui lòng ghi tuổi của ông/bà vào mẫu đơn.|
+adj|alt||già; cũ; … tuổi|Ich bin 30 Jahre [alt].|Tôi 30 tuổi.|Hỏi tuổi: <b>Wie alt bist du?</b>
+adj|geboren||được sinh ra|Ich bin 1998 in Hanoi [geboren].|Tôi sinh năm 1998 ở Hà Nội.|Hỏi: Wann / Wo sind Sie geboren?
+=Geburtstag
+n|das Geburtsdatum|die Geburtsdaten|ngày sinh|Bitte schreiben Sie hier Ihr [Geburtsdatum].|Vui lòng ghi ngày sinh của ông/bà vào đây.|
+n|der Geburtsort|die Geburtsorte|nơi sinh|Mein [Geburtsort] ist Da Nang.|Nơi sinh của tôi là Đà Nẵng.|
+=Land
+=kommen
+n|Deutschland|–|nước Đức|Ich wohne seit zwei Jahren in [Deutschland].|Tôi sống ở Đức được hai năm.|Phần lớn tên nước không dùng mạo từ: in Deutschland, aus Vietnam.
+n|Österreich|–|nước Áo|Wien ist die Hauptstadt von [Österreich].|Vienna là thủ đô của nước Áo.|<b>Ö</b> dài, nhấn âm đầu: <b>Ö</b>-ster-reich.
+n|die Schweiz|–|Thụy Sĩ|Mein Bruder arbeitet in der [Schweiz].|Anh trai tôi làm việc ở Thụy Sĩ.|Tên nước có mạo từ: <b>die</b> Schweiz → in der Schweiz, aus der Schweiz.
+n|Vietnam|–|Việt Nam|[Vietnam] liegt in Asien.|Việt Nam nằm ở châu Á.|
+=Sprache
+n|Deutsch|–|tiếng Đức|Ich lerne seit drei Monaten [Deutsch].|Tôi học tiếng Đức được ba tháng.|Tên ngôn ngữ viết hoa, không cần mạo từ: Ich spreche Deutsch.
+n|Englisch|–|tiếng Anh|Sprechen Sie [Englisch]?|Ông/bà có nói tiếng Anh không?|
+=sprechen
+adj|ledig||độc thân|Ich bin nicht verheiratet, ich bin [ledig].|Tôi chưa kết hôn, tôi độc thân.|
+=verheiratet
+adj|geschieden||đã ly hôn|Meine Eltern sind [geschieden].|Bố mẹ tôi đã ly hôn.|
+n|der Familienstand|–|tình trạng hôn nhân|Bitte kreuzen Sie Ihren [Familienstand] an.|Vui lòng đánh dấu tình trạng hôn nhân của ông/bà.|
+n|die Nationalität|die Nationalitäten|quốc tịch|Welche [Nationalität] haben Sie?|Ông/bà mang quốc tịch nào?|<b>ti</b> trước nguyên âm đọc [tsi]: na-tsi-o-na-li-<b>TÄT</b>.
+v|buchstabieren|buchstabiert – hat buchstabiert|đánh vần|Können Sie Ihren Namen bitte [buchstabieren]?|Ông/bà đánh vần tên mình được không?|
+n|die Unterschrift|die Unterschriften|chữ ký|Hier fehlt noch Ihre [Unterschrift].|Ở đây còn thiếu chữ ký của ông/bà.|
+=Herr
+=Frau
+n|der Pass|die Pässe|hộ chiếu|Haben Sie Ihren [Pass] dabei?|Ông/bà có mang theo hộ chiếu không?|
+n|der Ausweis|die Ausweise|giấy tờ tuỳ thân, thẻ căn cước|Zeigen Sie mir bitte Ihren [Ausweis].|Vui lòng cho tôi xem giấy tờ tuỳ thân.|
+adj|männlich||nam (giới tính)|Im Formular kreuze ich [männlich] an.|Trong mẫu đơn tôi đánh dấu ô “nam”.|
+adj|weiblich||nữ (giới tính)|Bitte ankreuzen: männlich oder [weiblich]?|Vui lòng đánh dấu: nam hay nữ?|
+
+@a1-con-nguoi|Gia đình & con người|3
+=Familie
+=Eltern
+=Vater
+=Mutter
+=Kind
+=Sohn
+=Tochter
+=Bruder
+=Schwester
+n|die Geschwister|(chỉ có số nhiều)|anh chị em ruột|Hast du [Geschwister]?|Bạn có anh chị em không?|
+=Großvater
+=Großmutter
+n|die Großeltern|(chỉ có số nhiều)|ông bà|Am Sonntag besuchen wir die [Großeltern].|Chủ nhật chúng tôi đi thăm ông bà.|
+n|der Opa|die Opas|ông (cách gọi thân mật)|Mein [Opa] ist 80 Jahre alt.|Ông tôi 80 tuổi.|
+n|die Oma|die Omas|bà (cách gọi thân mật)|Meine [Oma] kocht sehr gut.|Bà tôi nấu ăn rất ngon.|
+=Onkel
+=Tante
+=Mann
+n|der Partner|die Partner|bạn đời; đối tác (nam)|Mein [Partner] heißt Jonas.|Bạn đời của tôi tên là Jonas.|Nữ: <b>die Partnerin</b>.
+n|der Freund|die Freunde|bạn; bạn trai|Das ist mein [Freund] Tom.|Đây là bạn tôi, Tom.|<b>eu</b> đọc “oi”: “froint”. Nữ: die Freundin.
+n|die Freundin|die Freundinnen|bạn (nữ); bạn gái|Meine [Freundin] wohnt in München.|Bạn gái tôi sống ở München.|
+=Baby
+n|der Junge|die Jungen|cậu bé, con trai|Der [Junge] ist zehn Jahre alt.|Cậu bé mười tuổi.|
+n|das Mädchen|die Mädchen|cô bé, con gái|Das [Mädchen] heißt Lena.|Cô bé tên là Lena.|
+n|der Mensch|die Menschen|con người|In Berlin leben viele [Menschen].|Ở Berlin có rất nhiều người sinh sống.|
+n|die Leute|(chỉ có số nhiều)|mọi người, người ta|Die [Leute] hier sind sehr nett.|Người ở đây rất tử tế.|
+n|die Person|die Personen|người (khi đếm)|Ein Tisch für vier [Personen], bitte.|Cho một bàn bốn người.|
+n|die Dame|die Damen|quý bà, quý cô|Die [Dame] dort ist meine Lehrerin.|Quý bà đằng kia là cô giáo tôi.|
+n|der Nachbar|die Nachbarn|hàng xóm (nam)|Mein [Nachbar] hat einen Hund.|Hàng xóm của tôi có một con chó.|Nữ: <b>die Nachbarin</b>.
+n|der Gast|die Gäste|khách|Heute Abend haben wir [Gäste].|Tối nay nhà chúng tôi có khách.|
+v|lieben|liebt – hat geliebt|yêu|Ich [liebe] meine Familie.|Tôi yêu gia đình mình.|
+v|heiraten|heiratet – hat geheiratet|kết hôn, cưới|Meine Schwester [heiratet] im Mai.|Chị gái tôi cưới vào tháng Năm.|
+v|kennenlernen|lernt kennen – hat kennengelernt|làm quen, quen biết|Wo hast du deine Frau [kennengelernt]?|Bạn đã quen vợ mình ở đâu?|
+v|besuchen|besucht – hat besucht|thăm|Am Wochenende [besuche] ich meine Eltern.|Cuối tuần tôi đi thăm bố mẹ.|
+adj|jung||trẻ|Mein Vater ist noch [jung].|Bố tôi vẫn còn trẻ.|

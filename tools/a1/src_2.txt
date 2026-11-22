@@ -1,0 +1,106 @@
+@a1-so-dem|Số đếm|4
+num|null||số không|Heute sind es [null] Grad.|Hôm nay trời không độ.|
+num|eins||một|[Eins], zwei, drei – los!|Một, hai, ba – bắt đầu!|Khi đếm nói <b>eins</b>; đứng trước danh từ thì dùng ein / eine: ein Kind.
+num|zwei||hai|Ich habe [zwei] Brüder.|Tôi có hai anh trai.|Khi đọc số qua điện thoại hay nói <b>zwo</b> để khỏi nhầm với drei.
+num|drei||ba|Wir wohnen seit [drei] Jahren hier.|Chúng tôi sống ở đây được ba năm.|
+num|vier||bốn|Das Zimmer hat [vier] Fenster.|Căn phòng có bốn cửa sổ.|<b>v</b> đọc [f]: “fia”.
+num|fünf||năm|Der Kurs beginnt um [fünf] Uhr.|Khoá học bắt đầu lúc năm giờ.|
+num|sechs||sáu|Wir sind [sechs] Personen.|Chúng tôi có sáu người.|<b>chs</b> đọc [ks]: “zéks”.
+num|sieben||bảy|Eine Woche hat [sieben] Tage.|Một tuần có bảy ngày.|
+num|acht||tám|Ich stehe um [acht] Uhr auf.|Tôi dậy lúc tám giờ.|
+num|neun||chín|Mein Sohn ist [neun] Jahre alt.|Con trai tôi chín tuổi.|<b>eu</b> đọc “oi”: “noin”.
+num|zehn||mười|Der Bus kommt in [zehn] Minuten.|Mười phút nữa xe buýt đến.|<b>z</b> = [ts], <b>h</b> câm: “tsên”.
+num|elf||mười một|Es ist schon [elf] Uhr.|Đã mười một giờ rồi.|
+num|zwölf||mười hai|Ein Jahr hat [zwölf] Monate.|Một năm có mười hai tháng.|
+num|dreizehn||mười ba|Meine Tochter ist [dreizehn].|Con gái tôi mười ba tuổi.|13–19 = số đơn vị + zehn: drei-zehn, vier-zehn…
+num|sechzehn||mười sáu|Ich bin [sechzehn] Jahre alt.|Tôi mười sáu tuổi.|Bỏ chữ <b>s</b>: sech-zehn (không viết sechszehn).
+num|siebzehn||mười bảy|Der Bus Nummer [siebzehn] fährt zum Bahnhof.|Xe buýt số mười bảy chạy đến nhà ga.|Bỏ <b>-en</b>: sieb-zehn (không phải siebenzehn).
+num|zwanzig||hai mươi|Die Fahrt dauert [zwanzig] Minuten.|Chuyến đi mất hai mươi phút.|Đuôi <b>-zig</b> đọc [tsɪç] “tsích”.
+num|einundzwanzig||hai mươi mốt|Mein Bruder ist [einundzwanzig] Jahre alt.|Anh tôi hai mươi mốt tuổi.|Đọc hàng đơn vị trước: 21 = ein-und-zwanzig (“một và hai mươi”).
+num|dreißig||ba mươi|Der April hat [dreißig] Tage.|Tháng Tư có ba mươi ngày.|Viết <b>-ßig</b>, không phải -zig.
+num|vierzig||bốn mươi|Mein Vater ist [vierzig] Jahre alt.|Bố tôi bốn mươi tuổi.|<b>ie</b> trong vierzig, vierzehn đọc ngắn [ɪ].
+num|fünfzig||năm mươi|Das Hemd kostet [fünfzig] Euro.|Chiếc áo sơ mi giá năm mươi euro.|
+num|sechzig||sáu mươi|Eine Stunde hat [sechzig] Minuten.|Một giờ có sáu mươi phút.|Bỏ <b>s</b> như sechzehn: sech-zig.
+num|siebzig||bảy mươi|Meine Oma ist [siebzig].|Bà tôi bảy mươi tuổi.|Bỏ <b>-en</b>: sieb-zig.
+num|achtzig||tám mươi|Hier darf man nur [achtzig] fahren.|Ở đây chỉ được chạy tám mươi cây số giờ.|
+num|neunzig||chín mươi|Der Film dauert [neunzig] Minuten.|Bộ phim dài chín mươi phút.|
+num|hundert||một trăm|Das Fahrrad kostet [hundert] Euro.|Chiếc xe đạp giá một trăm euro.|Cũng nói <b>einhundert</b>; 101 = hunderteins.
+num|tausend||một nghìn|Die Reise kostet [tausend] Euro.|Chuyến đi tốn một nghìn euro.|
+n|die Million|die Millionen|một triệu|Berlin hat fast vier [Millionen] Einwohner.|Berlin có gần bốn triệu dân.|Million là danh từ nên viết hoa: eine Million, zwei Millionen.
+num|erste||thứ nhất|Ich wohne im [ersten] Stock.|Tôi sống ở tầng một (tức tầng hai kiểu Việt Nam).|Số thứ tự: thêm -te vào số (zweite, vierte); riêng <b>erste, dritte, siebte</b> đặc biệt; từ 20 thêm -ste (zwanzigste).
+num|zweite||thứ hai|Das ist mein [zweiter] Deutschkurs.|Đây là khoá tiếng Đức thứ hai của tôi.|
+num|dritte||thứ ba|Heute ist der [dritte] Mai.|Hôm nay là ngày mùng ba tháng Năm.|Bất quy tắc: <b>dritte</b> (không phải dreite).
+n|die Zahl|die Zahlen|con số|Schreiben Sie die [Zahl] bitte auf.|Vui lòng viết con số ra.|
+n|die Nummer|die Nummern|số (điện thoại, phòng, xe…)|Welche [Nummer] hat Ihr Zimmer?|Phòng của ông/bà số mấy?|
+v|zählen|zählt – hat gezählt|đếm|Mein Sohn kann schon bis hundert [zählen].|Con trai tôi đã đếm được đến một trăm.|
+adv|einmal||một lần|Ich war [einmal] in Berlin.|Tôi từng đến Berlin một lần.|zweimal = hai lần, dreimal = ba lần.
+n|das Mal|die Male|lần|Ich bin zum ersten [Mal] in Deutschland.|Đây là lần đầu tiên tôi đến Đức.|
+
+@a1-gio-ngay|Thời gian: giờ, buổi, ngày|5
+n|die Zeit|die Zeiten|thời gian|Hast du morgen [Zeit]?|Mai bạn có rảnh không?|<b>z</b> = [ts], <b>ei</b> = “ai”: “tsait”.
+=Uhr
+=Stunde
+=Minute
+n|die Sekunde|die Sekunden|giây|Warte eine [Sekunde]!|Đợi một giây!|
+n|der Morgen|die Morgen|buổi sáng|Am [Morgen] trinke ich Kaffee.|Buổi sáng tôi uống cà phê.|Đừng nhầm: <b>morgen</b> viết thường = ngày mai; <b>der Morgen</b> = buổi sáng.
+n|der Vormittag|die Vormittage|buổi sáng (trước trưa)|Am [Vormittag] bin ich im Büro.|Buổi sáng tôi ở văn phòng.|
+n|der Mittag|die Mittage|buổi trưa|Zu [Mittag] esse ich nur einen Salat.|Buổi trưa tôi chỉ ăn một đĩa salad.|
+n|der Nachmittag|die Nachmittage|buổi chiều|Am [Nachmittag] gehe ich schwimmen.|Buổi chiều tôi đi bơi.|
+n|der Abend|die Abende|buổi tối|Am [Abend] sehe ich fern.|Buổi tối tôi xem tivi.|<b>d</b> cuối đọc [t].
+n|die Nacht|die Nächte|ban đêm|In der [Nacht] schlafe ich schlecht.|Ban đêm tôi ngủ không ngon.|Các buổi trong ngày là <b>der</b> (der Morgen, der Abend), riêng <b>die Nacht</b>.
+adv|morgens||vào buổi sáng (thường lệ)|[Morgens] trinke ich immer Tee.|Buổi sáng tôi luôn uống trà.|Thêm <b>-s</b> và viết thường = “vào mỗi buổi…”: morgens, mittags, abends, nachts.
+adv|abends||vào buổi tối (thường lệ)|[Abends] lese ich gern.|Buổi tối tôi thích đọc sách.|
+=heute
+=morgen
+=gestern
+adv|übermorgen||ngày kia|[Übermorgen] fahren wir in den Urlaub.|Ngày kia chúng tôi đi nghỉ.|
+=Tag
+=Woche
+=Wochenende
+=Monat
+=Jahr
+adj|halb||rưỡi; một nửa|Es ist [halb] acht.|Bây giờ là bảy giờ rưỡi.|Cẩn thận: <b>halb acht</b> = 7:30 (còn nửa tiếng nữa đến 8 giờ), không phải 8:30!
+n|das Viertel|die Viertel|một phần tư; 15 phút|Es ist [Viertel] nach drei.|Bây giờ là ba giờ mười lăm.|Viertel vor drei = 2:45. <b>V</b> đọc [f], <b>ie</b> ở đây đọc ngắn.
+adv|jetzt||bây giờ|Ich habe [jetzt] keine Zeit.|Bây giờ tôi không có thời gian.|
+adv|bald||sắp, sớm thôi|Der Zug kommt [bald].|Tàu sắp đến.|
+adv|später||sau, muộn hơn|Ich rufe dich [später] an.|Tôi sẽ gọi cho bạn sau.|
+=früh
+=spät
+adv|gleich||ngay, lát nữa|Warte, ich komme [gleich]!|Đợi nhé, tôi đến ngay!|
+adv|sofort||ngay lập tức|Kommen Sie bitte [sofort]!|Ông/bà đến ngay nhé!|
+adv|immer||luôn luôn|Er kommt [immer] zu spät.|Anh ấy luôn đến muộn.|
+adv|oft||thường, hay|Ich gehe [oft] ins Kino.|Tôi hay đi xem phim.|
+adv|manchmal||thỉnh thoảng|[Manchmal] koche ich für meine Freunde.|Thỉnh thoảng tôi nấu ăn cho bạn bè.|
+adv|nie||không bao giờ|Ich trinke [nie] Alkohol.|Tôi không bao giờ uống rượu.|
+n|das Datum|die Daten|ngày tháng|Welches [Datum] ist heute?|Hôm nay là ngày bao nhiêu?|
+n|der Kalender|die Kalender|cuốn lịch|Ich schreibe den Termin in meinen [Kalender].|Tôi ghi cuộc hẹn vào lịch.|Nhấn âm giữa: ka-<b>LEN</b>-der.
+v|dauern|dauert – hat gedauert|kéo dài, mất (thời gian)|Wie lange [dauert] der Film?|Bộ phim dài bao lâu?|
+phr|Wie spät ist es?||Mấy giờ rồi?|Entschuldigung, [wie spät ist es]?|Xin lỗi, mấy giờ rồi ạ?|Cũng hỏi: <b>Wie viel Uhr ist es?</b>
+
+@a1-thu-thang|Thời gian: thứ, tháng, mùa|5
+=Montag
+n|der Dienstag|die Dienstage|thứ Ba|Am [Dienstag] habe ich Deutschkurs.|Thứ Ba tôi có lớp tiếng Đức.|Các ngày trong tuần đều là <b>der</b>; “vào thứ…” = <b>am</b> Dienstag.
+=Mittwoch
+n|der Donnerstag|die Donnerstage|thứ Năm|Am [Donnerstag] gehe ich zum Arzt.|Thứ Năm tôi đi khám bác sĩ.|
+n|der Freitag|die Freitage|thứ Sáu|Am [Freitag] gehen wir tanzen.|Thứ Sáu chúng tôi đi nhảy.|
+n|der Samstag|die Samstage|thứ Bảy|Am [Samstag] gehen wir ins Kino.|Thứ Bảy chúng tôi đi xem phim.|Ở miền Bắc nước Đức còn gọi là <b>Sonnabend</b>.
+n|der Sonntag|die Sonntage|Chủ nhật|Am [Sonntag] schlafe ich lange.|Chủ nhật tôi ngủ đến muộn.|
+n|der Januar|–|tháng Một|Im [Januar] ist es sehr kalt.|Tháng Một trời rất lạnh.|Các tháng đều là <b>der</b>; “vào tháng…” = <b>im</b> Januar.
+n|der Februar|–|tháng Hai|Mein Geburtstag ist im [Februar].|Sinh nhật tôi vào tháng Hai.|
+n|der März|–|tháng Ba|Im [März] beginnt der Frühling.|Mùa xuân bắt đầu vào tháng Ba.|
+n|der April|–|tháng Tư|Im [April] regnet es oft.|Tháng Tư trời hay mưa.|
+n|der Mai|–|tháng Năm|Im [Mai] ist das Wetter schön.|Tháng Năm thời tiết đẹp.|
+n|der Juni|–|tháng Sáu|Der Kurs endet im [Juni].|Khoá học kết thúc vào tháng Sáu.|
+n|der Juli|–|tháng Bảy|Im [Juli] machen wir Urlaub.|Tháng Bảy chúng tôi đi nghỉ.|Qua điện thoại hay đọc <b>Julei</b> để khỏi nhầm với Juni.
+n|der August|–|tháng Tám|Im [August] ist es heiß.|Tháng Tám trời nóng.|Tên tháng nhấn âm sau: au-<b>GUST</b> (khác tên người August nhấn âm đầu).
+n|der September|–|tháng Chín|Die Schule beginnt im [September].|Trường học bắt đầu vào tháng Chín.|
+n|der Oktober|–|tháng Mười|Im [Oktober] wird es kühl.|Tháng Mười trời bắt đầu se lạnh.|
+n|der November|–|tháng Mười Một|Im [November] wird es früh dunkel.|Tháng Mười Một trời tối sớm.|
+n|der Dezember|–|tháng Mười Hai|Weihnachten ist im [Dezember].|Giáng sinh vào tháng Mười Hai.|
+n|die Jahreszeit|die Jahreszeiten|mùa|Welche [Jahreszeit] magst du am liebsten?|Bạn thích mùa nào nhất?|
+n|der Frühling|die Frühlinge|mùa xuân|Im [Frühling] blühen die Blumen.|Mùa xuân hoa nở.|Các mùa đều là <b>der</b>; “vào mùa…” = <b>im</b> Frühling.
+n|der Sommer|die Sommer|mùa hè|Im [Sommer] fahren wir ans Meer.|Mùa hè chúng tôi đi biển.|
+n|der Herbst|die Herbste|mùa thu|Im [Herbst] ist es oft windig.|Mùa thu trời hay có gió.|
+n|der Winter|die Winter|mùa đông|Im [Winter] schneit es manchmal.|Mùa đông thỉnh thoảng có tuyết.|
+n|der Feiertag|die Feiertage|ngày lễ|Am [Feiertag] sind die Geschäfte geschlossen.|Vào ngày lễ các cửa hàng đóng cửa.|
+n|Weihnachten|–|lễ Giáng sinh|Zu [Weihnachten] besuche ich meine Familie.|Giáng sinh tôi về thăm gia đình.|Thường không dùng mạo từ: zu Weihnachten, Frohe Weihnachten!

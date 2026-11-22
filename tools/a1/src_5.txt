@@ -1,0 +1,132 @@
+@a1-cong-viec|Công việc & giấy tờ|10
+n|die Arbeit|die Arbeiten|công việc|Nach der [Arbeit] gehe ich einkaufen.|Sau giờ làm tôi đi mua sắm.|
+=arbeiten
+n|der Beruf|die Berufe|nghề nghiệp|Was sind Sie von [Beruf]?|Ông/bà làm nghề gì?|
+n|der Job|die Jobs|việc làm|Ich suche einen neuen [Job].|Tôi đang tìm việc mới.|Từ tiếng Anh, đọc “jóp” [dʒɔp].
+n|die Firma|die Firmen|công ty|Meine [Firma] ist in Frankfurt.|Công ty tôi ở Frankfurt.|
+n|das Büro|die Büros|văn phòng|Ich arbeite in einem [Büro].|Tôi làm việc ở văn phòng.|Gốc Pháp, nhấn âm cuối: bü-<b>RÔ</b>.
+n|der Chef|die Chefs|sếp (nam)|Mein [Chef] ist sehr nett.|Sếp tôi rất tốt.|Gốc Pháp: <b>ch</b> đọc [ʃ] “sép”. Nữ: die Chefin.
+n|der Kollege|die Kollegen|đồng nghiệp (nam)|Mein [Kollege] kommt aus Spanien.|Đồng nghiệp tôi đến từ Tây Ban Nha.|Nhấn âm giữa: ko-<b>LÊ</b>-gơ.
+n|die Kollegin|die Kolleginnen|đồng nghiệp (nữ)|Meine [Kollegin] hilft mir oft.|Đồng nghiệp nữ hay giúp tôi.|
+n|der Termin|die Termine|cuộc hẹn|Ich habe morgen einen [Termin] beim Arzt.|Ngày mai tôi có hẹn với bác sĩ.|Nhấn âm sau: ter-<b>MIN</b>.
+n|die Pause|die Pausen|giờ nghỉ|Wir machen zehn Minuten [Pause].|Chúng ta nghỉ mười phút.|
+n|der Computer|die Computer|máy tính|Ich arbeite viel am [Computer].|Tôi làm việc nhiều trên máy tính.|Từ tiếng Anh: <b>u</b> đọc “iu”: com-<b>PIU</b>-tơ.
+n|das Internet|–|mạng internet|Ich suche die Adresse im [Internet].|Tôi tìm địa chỉ trên mạng.|
+n|das Formular|die Formulare|mẫu đơn|Das [Formular] gibt es auch online.|Mẫu đơn này cũng có trên mạng.|Nhấn âm cuối: for-mu-<b>LAR</b>.
+v|ausfüllen|füllt aus – hat ausgefüllt|điền (mẫu đơn)|Ich [fülle] das Formular schnell [aus].|Tôi điền nhanh mẫu đơn.|
+v|unterschreiben|unterschreibt – hat unterschrieben|ký tên|Bitte [unterschreiben] Sie hier.|Vui lòng ký vào đây.|
+
+@a1-hoc-tap|Học tập|10
+n|der Lehrer|die Lehrer|giáo viên (nam)|Der [Lehrer] erklärt die Grammatik.|Thầy giáo giải thích ngữ pháp.|Nữ: <b>die Lehrerin</b>.
+n|die Lehrerin|die Lehrerinnen|cô giáo|Unsere [Lehrerin] heißt Frau Koch.|Cô giáo chúng tôi tên là cô Koch.|
+n|der Student|die Studenten|sinh viên (nam)|Mein Bruder ist [Student].|Anh tôi là sinh viên.|Nữ: die Studentin. Nói nghề không dùng mạo từ: Ich bin Student.
+n|der Schüler|die Schüler|học sinh|Die [Schüler] haben heute frei.|Hôm nay học sinh được nghỉ.|Nữ: die Schülerin.
+n|die Schule|die Schulen|trường học|Meine Tochter geht schon zur [Schule].|Con gái tôi đã đi học.|
+n|die Universität|die Universitäten|trường đại học|Ich studiere an der [Universität] Wien.|Tôi học ở Đại học Vienna.|Nói tắt: <b>die Uni</b>.
+n|der Kurs|die Kurse|khoá học|Der [Kurs] beginnt am Montag.|Khoá học bắt đầu vào thứ Hai.|
+n|der Unterricht|–|giờ học, buổi học|Der [Unterricht] dauert 90 Minuten.|Buổi học kéo dài 90 phút.|
+n|die Prüfung|die Prüfungen|kỳ thi, bài thi|Morgen habe ich eine [Prüfung].|Ngày mai tôi có bài thi.|
+n|die Hausaufgabe|die Hausaufgaben|bài tập về nhà|Hast du die [Hausaufgaben] schon gemacht?|Bạn đã làm bài tập về nhà chưa?|
+=lernen
+=studieren
+=lesen
+=schreiben
+v|fragen|fragt – hat gefragt|hỏi|Darf ich Sie etwas [fragen]?|Tôi hỏi ông/bà một chút được không?|
+v|antworten|antwortet – hat geantwortet|trả lời|Bitte [antworten] Sie auf Deutsch.|Vui lòng trả lời bằng tiếng Đức.|
+n|die Frage|die Fragen|câu hỏi|Ich habe eine [Frage].|Tôi có một câu hỏi.|
+n|die Antwort|die Antworten|câu trả lời|Ich warte auf deine [Antwort].|Tôi chờ câu trả lời của bạn.|
+n|das Wort|die Wörter|từ|Dieses [Wort] verstehe ich nicht.|Tôi không hiểu từ này.|
+n|der Satz|die Sätze|câu|Schreiben Sie einen [Satz] mit „Haus“.|Hãy viết một câu với từ “Haus”.|
+n|das Buch|die Bücher|quyển sách|Ich lese gerade ein [Buch] über Berlin.|Tôi đang đọc một quyển sách về Berlin.|
+n|das Heft|die Hefte|quyển vở|Schreibt die Wörter in euer [Heft].|Các em hãy viết các từ vào vở.|
+n|der Kuli|die Kulis|bút bi|Hast du einen [Kuli] für mich?|Bạn có bút bi cho mình mượn không?|
+n|der Bleistift|die Bleistifte|bút chì|Schreiben Sie bitte mit [Bleistift].|Hãy viết bằng bút chì.|
+n|das Papier|die Papiere|giấy|Ich brauche ein Blatt [Papier].|Tôi cần một tờ giấy.|Nhấn âm sau: pa-<b>PIER</b>.
+n|die Seite|die Seiten|trang|Öffnen Sie das Buch auf [Seite] 20.|Hãy mở sách trang 20.|
+v|wiederholen|wiederholt – hat wiederholt|nhắc lại; ôn lại|Können Sie das bitte [wiederholen]?|Ông/bà có thể nhắc lại được không?|Không tách được: nhấn <b>ho</b> (wie-der-<b>HO</b>-len), Perfekt không có ge-: hat wiederholt.
+v|üben|übt – hat geübt|luyện tập|Ich [übe] jeden Tag Deutsch.|Ngày nào tôi cũng luyện tiếng Đức.|
+v|erklären|erklärt – hat erklärt|giải thích|Kannst du mir das [erklären]?|Bạn giải thích cho mình cái này được không?|
+n|der Fehler|die Fehler|lỗi|Der Text hat drei [Fehler].|Bài viết có ba lỗi.|
+
+@a1-suc-khoe|Cơ thể & sức khoẻ|11
+n|der Körper|die Körper|cơ thể|Sport ist gut für den [Körper].|Thể thao tốt cho cơ thể.|
+n|der Kopf|die Köpfe|cái đầu|Mein [Kopf] tut weh.|Tôi bị đau đầu.|
+n|das Haar|die Haare|tóc|Sie hat lange [Haare].|Cô ấy có mái tóc dài.|Thường dùng số nhiều: die Haare.
+n|das Gesicht|die Gesichter|khuôn mặt|Ich wasche mir das [Gesicht].|Tôi rửa mặt.|
+n|das Auge|die Augen|con mắt|Er hat blaue [Augen].|Anh ấy có đôi mắt xanh.|
+n|das Ohr|die Ohren|cái tai|Ich höre auf dem linken [Ohr] schlecht.|Tai trái của tôi nghe kém.|
+n|die Nase|die Nasen|cái mũi|Meine [Nase] läuft.|Tôi bị sổ mũi.|
+n|der Mund|die Münder|cái miệng|Mach bitte den [Mund] auf.|Há miệng ra nào.|
+n|der Zahn|die Zähne|cái răng|Ich putze mir zweimal am Tag die [Zähne].|Tôi đánh răng hai lần một ngày.|
+n|der Hals|die Hälse|cổ, họng|Ich habe Schmerzen im [Hals].|Tôi bị đau họng.|
+n|der Arm|die Arme|cánh tay|Das Baby liegt in meinem [Arm].|Em bé nằm trong vòng tay tôi.|
+n|die Hand|die Hände|bàn tay|Wasch dir bitte die [Hände]!|Con đi rửa tay đi!|
+n|der Finger|die Finger|ngón tay|Eine Hand hat fünf [Finger].|Một bàn tay có năm ngón.|
+n|der Bauch|die Bäuche|bụng|Nach dem Essen tut mir der [Bauch] weh.|Sau khi ăn tôi bị đau bụng.|
+n|der Rücken|die Rücken|cái lưng|Ich habe Schmerzen im [Rücken].|Tôi bị đau lưng.|
+n|das Bein|die Beine|cái chân (cẳng chân)|Nach dem Sport tun mir die [Beine] weh.|Sau khi tập thể thao tôi bị đau chân.|
+n|der Fuß|die Füße|bàn chân|Ich habe kalte [Füße].|Chân tôi bị lạnh.|
+adj|krank||ốm, bệnh|Ich bin heute [krank].|Hôm nay tôi bị ốm.|
+adj|gesund||khoẻ mạnh; tốt cho sức khoẻ|Obst ist [gesund].|Hoa quả tốt cho sức khoẻ.|
+n|der Schmerz|die Schmerzen|cơn đau|Haben Sie [Schmerzen]?|Ông/bà có bị đau không?|Thường dùng số nhiều, hay ghép: Kopfschmerzen, Bauchschmerzen.
+v|wehtun|tut weh – hat wehgetan|đau|Wo [tut] es [weh]?|Đau ở chỗ nào?|
+n|das Fieber|–|cơn sốt|Das Kind hat hohes [Fieber].|Đứa trẻ bị sốt cao.|
+n|die Erkältung|die Erkältungen|cảm lạnh|Ich habe eine [Erkältung].|Tôi bị cảm lạnh.|
+n|der Arzt|die Ärzte|bác sĩ (nam)|Ich muss heute zum [Arzt].|Hôm nay tôi phải đi khám bác sĩ.|<b>a</b> đọc dài [aː] dù sau nó có hai phụ âm. Nữ: die Ärztin.
+n|die Ärztin|die Ärztinnen|bác sĩ (nữ)|Meine [Ärztin] ist sehr freundlich.|Bác sĩ của tôi rất thân thiện.|<b>ä</b> đọc dài như “e” kéo dài.
+n|die Praxis|die Praxen|phòng khám|Die [Praxis] ist am Mittwochnachmittag geschlossen.|Phòng khám đóng cửa vào chiều thứ Tư.|
+n|das Medikament|die Medikamente|thuốc|Nehmen Sie das [Medikament] dreimal am Tag.|Uống thuốc này ba lần một ngày.|Nhấn âm cuối: me-di-ka-<b>MENT</b>.
+n|die Tablette|die Tabletten|viên thuốc|Ich nehme eine [Tablette] gegen Kopfschmerzen.|Tôi uống một viên thuốc giảm đau đầu.|
+n|das Rezept|die Rezepte|đơn thuốc; công thức nấu ăn|Der Arzt gibt mir ein [Rezept].|Bác sĩ kê đơn thuốc cho tôi.|
+adj|müde||mệt, buồn ngủ|Ich bin sehr [müde].|Tôi rất mệt.|
+phr|Gute Besserung!||Chúc mau khoẻ!|Du bist krank? [Gute Besserung]!|Bạn bị ốm à? Chúc bạn mau khoẻ!|
+n|die Krankenkasse|die Krankenkassen|quỹ bảo hiểm y tế|Bei welcher [Krankenkasse] sind Sie?|Ông/bà tham gia bảo hiểm y tế ở đâu?|
+
+@a1-thoi-tiet|Thời tiết & màu sắc|12
+n|das Wetter|–|thời tiết|Wie ist das [Wetter] heute?|Thời tiết hôm nay thế nào?|
+n|die Sonne|die Sonnen|mặt trời|Die [Sonne] geht um sechs Uhr auf.|Mặt trời mọc lúc sáu giờ.|
+n|der Regen|–|mưa|Bei [Regen] bleibe ich zu Hause.|Trời mưa thì tôi ở nhà.|
+n|der Schnee|–|tuyết|Die Kinder spielen im [Schnee].|Bọn trẻ chơi trong tuyết.|
+n|der Wind|die Winde|gió|Heute ist der [Wind] sehr stark.|Hôm nay gió rất mạnh.|
+n|die Wolke|die Wolken|đám mây|Am Himmel sind viele [Wolken].|Trên trời có nhiều mây.|
+v|regnen|es regnet – es hat geregnet|mưa|Es [regnet] schon den ganzen Tag.|Trời mưa suốt cả ngày.|
+v|schneien|es schneit – es hat geschneit|có tuyết rơi|Schau mal, es [schneit]!|Nhìn kìa, tuyết rơi!|
+v|scheinen|scheint – hat geschienen|chiếu sáng|Heute [scheint] die Sonne.|Hôm nay trời nắng.|
+adj|warm||ấm|Das Wasser im Meer ist schön [warm].|Nước biển ấm dễ chịu.|
+adj|kalt||lạnh|Mir ist [kalt].|Tôi thấy lạnh.|Nói “Mir ist kalt” (với tôi thì lạnh); “Ich bin kalt” nghe như tính cách lạnh lùng.
+adj|heiß||nóng|Der Kaffee ist sehr [heiß].|Cà phê rất nóng.|
+adj|kühl||mát, se lạnh|Am Abend wird es [kühl].|Buổi tối trời trở nên mát.|
+adj|sonnig||có nắng|Morgen wird es [sonnig].|Ngày mai trời sẽ nắng.|
+adj|windig||có gió|Heute ist es kalt und [windig].|Hôm nay trời lạnh và nhiều gió.|
+n|der Grad|die Grade|độ|Heute sind es 25 [Grad].|Hôm nay trời 25 độ.|Sau số vẫn để số ít: 25 Grad.
+n|der Himmel|die Himmel|bầu trời|Der [Himmel] ist heute blau.|Hôm nay bầu trời trong xanh.|
+n|die Farbe|die Farben|màu sắc|Welche [Farbe] magst du?|Bạn thích màu gì?|
+adj|rot||đỏ|Die Ampel ist [rot].|Đèn giao thông đang đỏ.|
+adj|blau||xanh dương|Das Meer ist [blau].|Biển màu xanh.|
+adj|grün||xanh lá|Die Ampel ist [grün], wir können gehen.|Đèn xanh rồi, mình đi được.|
+adj|gelb||vàng|Die Bananen sind [gelb].|Chuối màu vàng.|
+adj|schwarz||đen|Ich trinke meinen Kaffee [schwarz].|Tôi uống cà phê đen.|
+adj|weiß||trắng|Der Schnee ist [weiß].|Tuyết màu trắng.|
+adj|grau||xám|Im November ist der Himmel oft [grau].|Tháng Mười Một bầu trời thường xám xịt.|
+adj|braun||nâu|Mein Hund ist [braun].|Con chó của tôi màu nâu.|
+adj|bunt||sặc sỡ, nhiều màu|Das Kleid ist sehr [bunt].|Chiếc váy rất sặc sỡ.|
+adj|rosa||hồng|Das T-Shirt ist [rosa].|Chiếc áo phông màu hồng.|Không biến đổi đuôi: ein rosa Kleid.
+
+@a1-quan-ao|Quần áo|12
+n|die Kleidung|–|quần áo|Im Winter braucht man warme [Kleidung].|Mùa đông cần quần áo ấm.|
+n|die Hose|die Hosen|cái quần dài|Die [Hose] ist zu lang.|Cái quần dài quá.|
+n|das Hemd|die Hemden|áo sơ mi|Er trägt ein weißes [Hemd].|Anh ấy mặc áo sơ mi trắng.|
+n|die Bluse|die Blusen|áo cánh (nữ)|Die [Bluse] passt gut zum Rock.|Chiếc áo cánh hợp với chân váy.|
+n|das T-Shirt|die T-Shirts|áo phông|Im Sommer trage ich nur [T-Shirts].|Mùa hè tôi chỉ mặc áo phông.|
+n|der Pullover|die Pullover|áo len|Es ist kalt, ich ziehe einen [Pullover] an.|Trời lạnh, tôi mặc áo len.|Nhấn âm giữa: pu-<b>LÔ</b>-vơ; <b>v</b> đọc [v]. Nói tắt: der Pulli.
+n|die Jacke|die Jacken|áo khoác|Nimm eine [Jacke] mit!|Mang theo áo khoác đi!|
+n|der Mantel|die Mäntel|áo măng tô|Im Winter trage ich einen dicken [Mantel].|Mùa đông tôi mặc áo măng tô dày.|
+n|das Kleid|die Kleider|váy liền|Sie trägt ein rotes [Kleid].|Cô ấy mặc chiếc váy đỏ.|
+n|der Rock|die Röcke|chân váy|Der [Rock] ist zu kurz.|Chiếc chân váy ngắn quá.|
+n|der Schuh|die Schuhe|chiếc giày|Diese [Schuhe] sind sehr bequem.|Đôi giày này rất thoải mái.|
+n|die Socke|die Socken|chiếc tất|Ich brauche neue [Socken].|Tôi cần tất mới.|
+n|die Mütze|die Mützen|mũ len|Im Winter trägt mein Sohn eine [Mütze].|Mùa đông con trai tôi đội mũ len.|
+n|die Tasche|die Taschen|túi xách; túi (áo, quần)|Mein Handy ist in der [Tasche].|Điện thoại của tôi ở trong túi.|
+v|anziehen|zieht an – hat angezogen|mặc (quần áo)|Ich [ziehe] schnell meine Jacke [an].|Tôi mặc vội áo khoác vào.|
+v|tragen|trägt – hat getragen|mặc, đeo; mang, xách|Sie [trägt] heute eine Brille.|Hôm nay cô ấy đeo kính.|
+v|passen|passt – hat gepasst|vừa (cỡ); hợp|Die Hose [passt] mir nicht.|Cái quần không vừa với tôi.|

@@ -1,0 +1,105 @@
+@a1-do-an|Ăn uống: đồ ăn|6
+n|das Essen|die Essen|đồ ăn; bữa ăn|Das [Essen] ist sehr lecker.|Đồ ăn rất ngon.|Danh từ tạo từ động từ (essen → das Essen) luôn là <b>das</b>.
+=essen
+=Frühstück
+n|das Mittagessen|die Mittagessen|bữa trưa|Was gibt es zum [Mittagessen]?|Bữa trưa có món gì?|
+n|das Abendessen|die Abendessen|bữa tối|Um sieben Uhr gibt es [Abendessen].|Bảy giờ có bữa tối.|
+v|frühstücken|frühstückt – hat gefrühstückt|ăn sáng|Wir [frühstücken] um acht Uhr.|Chúng tôi ăn sáng lúc tám giờ.|
+v|kochen|kocht – hat gekocht|nấu ăn|Heute [koche] ich eine Suppe.|Hôm nay tôi nấu súp.|
+=Brot
+=Brötchen
+n|die Butter|–|bơ|Ich esse Brot mit [Butter].|Tôi ăn bánh mì với bơ.|
+=Käse
+n|die Wurst|die Würste|xúc xích|Zum Frühstück esse ich Brot mit [Wurst].|Bữa sáng tôi ăn bánh mì với xúc xích.|
+=Fleisch
+n|das Hähnchen|die Hähnchen|thịt gà; gà nướng|Heute gibt es [Hähnchen] mit Reis.|Hôm nay có gà với cơm.|
+=Fisch
+=Ei
+n|der Reis|–|gạo, cơm|In Vietnam isst man viel [Reis].|Ở Việt Nam người ta ăn nhiều cơm.|<b>ei</b> = “ai”: “rais”.
+n|die Nudel|die Nudeln|mì, mì ống|Die Kinder essen gern [Nudeln].|Bọn trẻ thích ăn mì.|Thường dùng số nhiều: die Nudeln.
+=Kartoffel
+=Gemüse
+n|die Tomate|die Tomaten|cà chua|Ich kaufe ein Kilo [Tomaten].|Tôi mua một cân cà chua.|
+n|der Salat|die Salate|rau xà lách; món salad|Zum Essen gibt es einen grünen [Salat].|Bữa ăn có một đĩa salad rau xanh.|Nhấn âm sau: sa-<b>LAT</b>.
+n|die Zwiebel|die Zwiebeln|củ hành tây|Für die Suppe brauche ich eine [Zwiebel].|Để nấu súp tôi cần một củ hành.|
+=Obst
+=Apfel
+n|die Banane|die Bananen|quả chuối|Eine [Banane] kostet 30 Cent.|Một quả chuối giá 30 xu.|Nhấn âm giữa: ba-<b>NA</b>-ne.
+n|die Orange|die Orangen|quả cam|Ich esse jeden Tag eine [Orange].|Ngày nào tôi cũng ăn một quả cam.|Đọc kiểu Pháp: o-<b>RANG</b>-sơ, <b>g</b> đọc như “j” mềm [ʒ].
+n|der Kuchen|die Kuchen|bánh ngọt|Am Sonntag backe ich einen [Kuchen].|Chủ nhật tôi nướng một chiếc bánh.|
+n|die Schokolade|die Schokoladen|sô-cô-la|Kinder essen gern [Schokolade].|Trẻ con thích ăn sô-cô-la.|Nhấn âm áp chót: scho-ko-<b>LA</b>-de.
+n|der Zucker|–|đường|Trinkst du den Kaffee mit [Zucker]?|Bạn uống cà phê có đường không?|<b>z</b> = [ts], <b>ck</b> = [k].
+n|das Salz|–|muối|Die Suppe braucht noch etwas [Salz].|Món súp cần thêm chút muối.|
+n|die Suppe|die Suppen|món súp, canh|Die [Suppe] ist zu heiß.|Món súp nóng quá.|
+n|die Pizza|die Pizzas|bánh pizza|Am Freitag essen wir immer [Pizza].|Thứ Sáu nào chúng tôi cũng ăn pizza.|<b>zz</b> đọc [ts]: “pít-tsa”. Số nhiều: die Pizzas hoặc die Pizzen.
+n|die Marmelade|die Marmeladen|mứt|Ich esse Brötchen mit [Marmelade].|Tôi ăn bánh mì với mứt.|
+n|der Hunger|–|cơn đói|Ich habe großen [Hunger].|Tôi đói lắm.|Tiếng Đức nói “có đói”: <b>Hunger haben</b>.
+v|schmecken|schmeckt – hat geschmeckt|có vị; ngon|Die Suppe [schmeckt] sehr gut.|Món súp rất ngon.|Hỏi nhanh khi ăn: <b>Schmeckt's?</b> = Có ngon không?
+=lecker
+adj|süß||ngọt; dễ thương|Der Kuchen ist sehr [süß].|Chiếc bánh rất ngọt.|
+adj|scharf||cay; sắc|Das Essen ist mir zu [scharf].|Món này cay quá đối với tôi.|
+adj|frisch||tươi|Das Brot ist ganz [frisch].|Bánh mì còn rất tươi.|
+
+@a1-nha-hang|Ăn uống: đồ uống & nhà hàng|6
+n|das Getränk|die Getränke|đồ uống|Welches [Getränk] möchten Sie?|Ông/bà muốn dùng đồ uống gì?|
+=trinken
+=Wasser
+=Kaffee
+=Tee
+=Milch
+n|der Saft|die Säfte|nước ép|Ein Glas [Saft], bitte.|Cho một ly nước ép.|
+n|das Bier|die Biere|bia|In Bayern trinkt man viel [Bier].|Ở bang Bayern người ta uống nhiều bia.|
+n|der Wein|die Weine|rượu vang|Zum Essen trinken wir ein Glas [Wein].|Trong bữa ăn chúng tôi uống một ly vang.|<b>W</b> = [v], <b>ei</b> = “ai”: “vain”.
+n|die Cola|die Colas|nước cô-la|Eine [Cola] ohne Eis, bitte.|Một cô-la không đá.|
+n|der Durst|–|cơn khát|Ich habe [Durst]. Gibt es Wasser?|Tôi khát. Có nước không?|Giống Hunger: <b>Durst haben</b> = khát nước.
+=Restaurant
+n|das Café|die Cafés|quán cà phê|Wir treffen uns im [Café].|Chúng ta gặp nhau ở quán cà phê nhé.|Nhấn âm cuối: ca-<b>FÉ</b> (khác der Kaffee là đồ uống).
+n|die Speisekarte|die Speisekarten|thực đơn|Die [Speisekarte], bitte!|Cho tôi xem thực đơn!|
+v|bestellen|bestellt – hat bestellt|gọi món, đặt hàng|Ich [bestelle] eine Pizza.|Tôi gọi một chiếc pizza.|
+n|die Rechnung|die Rechnungen|hoá đơn|Die [Rechnung], bitte!|Cho tôi thanh toán!|
+n|der Kellner|die Kellner|bồi bàn (nam)|Der [Kellner] ist sehr freundlich.|Anh phục vụ rất thân thiện.|Nữ: <b>die Kellnerin</b>.
+n|das Glas|die Gläser|cái ly; thuỷ tinh|Ein [Glas] Wasser, bitte.|Cho một ly nước.|
+n|die Tasse|die Tassen|cái tách|Möchten Sie eine [Tasse] Kaffee?|Ông/bà dùng một tách cà phê không?|
+n|der Teller|die Teller|cái đĩa|Stell den [Teller] bitte auf den Tisch.|Đặt cái đĩa lên bàn giúp nhé.|
+n|die Flasche|die Flaschen|cái chai|Ich kaufe eine [Flasche] Wasser.|Tôi mua một chai nước.|
+n|das Messer|die Messer|con dao|Das [Messer] ist sehr scharf.|Con dao rất sắc.|
+n|die Gabel|die Gabeln|cái nĩa|Ich esse mit Messer und [Gabel].|Tôi ăn bằng dao và nĩa.|
+n|der Löffel|die Löffel|cái thìa|Für die Suppe brauchst du einen [Löffel].|Ăn súp thì bạn cần một cái thìa.|
+n|die Kantine|die Kantinen|căng tin|Mittags esse ich in der [Kantine].|Buổi trưa tôi ăn ở căng tin.|
+phr|Ich hätte gern …||Cho tôi … (khi gọi món, mua hàng)|[Ich hätte gern] ein Wasser, bitte.|Cho tôi một chai nước.|Cách nói lịch sự hơn “Ich will…”. Cũng nói <b>Ich möchte…</b>
+phr|Stimmt so.||Khỏi thối lại (tiền thừa là tiền boa)|Das macht 18 Euro. – Hier sind 20, [stimmt so].|Hết 18 euro. – Đây là 20, khỏi thối lại.|Cách đưa tiền boa phổ biến ở Đức: làm tròn số tiền.
+n|das Eis|–|kem; đá (nước đá)|Im Sommer essen wir gern [Eis].|Mùa hè chúng tôi thích ăn kem.|
+
+@a1-mua-sam|Mua sắm & tiền|7
+=kaufen
+v|einkaufen|kauft ein – hat eingekauft|đi mua sắm, đi chợ|Am Samstag [kaufe] ich im Supermarkt [ein].|Thứ Bảy tôi đi siêu thị mua đồ.|
+v|verkaufen|verkauft – hat verkauft|bán|Er [verkauft] sein altes Auto.|Anh ấy bán chiếc xe cũ của mình.|
+n|das Geschäft|die Geschäfte|cửa hàng; công việc kinh doanh|Das [Geschäft] öffnet um neun Uhr.|Cửa hàng mở cửa lúc chín giờ.|
+n|der Laden|die Läden|cửa hiệu|Der kleine [Laden] an der Ecke ist sehr gut.|Cửa hiệu nhỏ ở góc phố rất tốt.|
+=Supermarkt
+n|der Markt|die Märkte|chợ|Samstags gehe ich auf den [Markt].|Thứ Bảy nào tôi cũng đi chợ.|
+n|die Bäckerei|die Bäckereien|tiệm bánh mì|Ich kaufe Brötchen in der [Bäckerei].|Tôi mua bánh mì ở tiệm bánh.|
+n|der Kiosk|die Kioske|ki-ốt, quầy báo|Am [Kiosk] kaufe ich eine Zeitung.|Tôi mua báo ở ki-ốt.|
+n|das Angebot|die Angebote|hàng khuyến mãi; lời đề nghị|Die Äpfel sind heute im [Angebot].|Hôm nay táo đang được giảm giá.|
+n|der Preis|die Preise|giá|Der [Preis] ist zu hoch.|Giá cao quá.|
+v|kosten|kostet – hat gekostet|có giá|Was [kostet] das?|Cái này giá bao nhiêu?|
+adj|billig||rẻ|Das T-Shirt ist sehr [billig].|Chiếc áo phông rất rẻ.|
+adj|teuer||đắt|Die Wohnung ist zu [teuer].|Căn hộ đắt quá.|<b>eu</b> đọc “oi”: “toi-ơ”.
+n|das Geld|–|tiền|Ich habe kein [Geld] mehr.|Tôi hết tiền rồi.|
+n|der Euro|die Euros|đồng euro|Das kostet fünf [Euro].|Cái này giá năm euro.|<b>Eu</b> đọc “oi”: “oi-rô”. Sau số vẫn để số ít: fünf Euro.
+n|der Cent|die Cents|xu (1/100 euro)|Das Brötchen kostet 50 [Cent].|Chiếc bánh mì giá 50 xu.|
+adv|bar||bằng tiền mặt|Kann ich [bar] bezahlen?|Tôi trả tiền mặt được không?|
+n|die Karte|die Karten|thẻ; vé; tấm thiệp|Kann ich mit [Karte] zahlen?|Tôi trả bằng thẻ được không?|Gặp trong nhiều từ ghép: Fahrkarte (vé xe), Speisekarte (thực đơn), Postkarte (bưu thiếp).
+v|bezahlen|bezahlt – hat bezahlt|trả tiền, thanh toán|Ich [bezahle] die Rechnung.|Tôi thanh toán hoá đơn.|
+n|die Kasse|die Kassen|quầy thu ngân|Bitte zahlen Sie an der [Kasse].|Vui lòng thanh toán ở quầy thu ngân.|
+n|die Tüte|die Tüten|cái túi (ni lông, giấy)|Brauchen Sie eine [Tüte]?|Ông/bà có cần túi không?|
+n|das Kilo|die Kilos|ki-lô-gam, cân|Ein [Kilo] Äpfel kostet zwei Euro.|Một cân táo giá hai euro.|
+n|das Gramm|(sau số giữ nguyên: 200 Gramm)|gam|Ich nehme 200 [Gramm] Käse.|Tôi lấy 200 gam phô mai.|Sau con số, đơn vị đo giữ nguyên dạng: 200 Gramm, zwei Kilo, drei Liter.
+n|der Liter|die Liter|lít|Ich kaufe einen [Liter] Milch.|Tôi mua một lít sữa.|
+n|das Stück|die Stücke|miếng, cái, chiếc|Ein [Stück] Kuchen, bitte.|Cho một miếng bánh.|
+n|die Packung|die Packungen|gói, hộp|Eine [Packung] Nudeln, bitte.|Cho một gói mì.|
+v|brauchen|braucht – hat gebraucht|cần|Ich [brauche] neue Schuhe.|Tôi cần giày mới.|
+n|die Größe|die Größen|cỡ, kích thước|Haben Sie die Hose in [Größe] 40?|Có cái quần này cỡ 40 không?|
+adj|geöffnet||mở cửa|Die Bank ist bis 16 Uhr [geöffnet].|Ngân hàng mở cửa đến 16 giờ.|
+adj|geschlossen||đóng cửa|Am Sonntag ist der Supermarkt [geschlossen].|Chủ nhật siêu thị đóng cửa.|
+phr|Das ist alles.||Chỉ vậy thôi.|Noch etwas? – Nein danke, [das ist alles].|Còn gì nữa không? – Không, cảm ơn, chỉ vậy thôi.|

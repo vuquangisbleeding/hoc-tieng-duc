@@ -1,0 +1,117 @@
+@a1-nha-o|Nhà ở & đồ đạc|8
+=Wohnung
+=Haus
+=Zimmer
+=Küche
+=Bad
+n|die Toilette|die Toiletten|nhà vệ sinh|Entschuldigung, wo ist die [Toilette]?|Xin lỗi, nhà vệ sinh ở đâu?|Gốc Pháp: <b>oi</b> đọc “oa”: toa-<b>LÉT</b>-tơ.
+n|das Wohnzimmer|die Wohnzimmer|phòng khách|Im [Wohnzimmer] steht ein großes Sofa.|Trong phòng khách có một chiếc sofa lớn.|
+=Schlafzimmer
+n|der Flur|die Flure|hành lang (trong nhà)|Die Schuhe stehen im [Flur].|Giày để ở hành lang.|
+=Balkon
+n|der Garten|die Gärten|khu vườn|Die Kinder spielen im [Garten].|Bọn trẻ chơi trong vườn.|
+n|der Keller|die Keller|tầng hầm|Das Fahrrad steht im [Keller].|Xe đạp để dưới tầng hầm.|
+n|das Erdgeschoss|die Erdgeschosse|tầng trệt|Wir wohnen im [Erdgeschoss].|Chúng tôi sống ở tầng trệt.|
+n|der Stock|die Stockwerke|tầng (lầu)|Die Wohnung liegt im dritten [Stock].|Căn hộ nằm ở tầng ba (tức tầng bốn kiểu Việt Nam).|Tầng trệt là Erdgeschoss, nên <b>der erste Stock</b> = tầng hai kiểu Việt Nam. Số nhiều theo nghĩa “tầng” dùng <b>die Stockwerke</b> (die Stöcke là “những cây gậy”).
+n|die Treppe|die Treppen|cầu thang|Ich nehme die [Treppe], nicht den Aufzug.|Tôi đi cầu thang bộ, không đi thang máy.|
+n|der Aufzug|die Aufzüge|thang máy|Gibt es hier einen [Aufzug]?|Ở đây có thang máy không?|
+=Tür
+=Fenster
+n|die Wand|die Wände|bức tường|An der [Wand] hängt ein Bild.|Trên tường treo một bức tranh.|
+n|das Bild|die Bilder|bức tranh, hình ảnh|Mein Sohn malt ein [Bild].|Con trai tôi vẽ một bức tranh.|
+=Tisch
+=Stuhl
+n|das Sofa|die Sofas|ghế sofa|Abends sitze ich auf dem [Sofa].|Buổi tối tôi ngồi trên ghế sofa.|
+=Bett
+n|der Schrank|die Schränke|cái tủ|Die Kleidung ist im [Schrank].|Quần áo ở trong tủ.|
+n|das Regal|die Regale|cái kệ, giá sách|Die Bücher stehen im [Regal].|Sách để trên kệ.|Nhấn âm sau: re-<b>GAL</b>.
+n|die Lampe|die Lampen|cái đèn|Mach bitte die [Lampe] an.|Bật đèn lên giúp nhé.|
+n|der Fernseher|die Fernseher|cái tivi|Der [Fernseher] steht im Wohnzimmer.|Tivi để trong phòng khách.|
+n|der Kühlschrank|die Kühlschränke|tủ lạnh|Die Milch ist im [Kühlschrank].|Sữa ở trong tủ lạnh.|
+n|der Herd|die Herde|bếp nấu|Die Suppe steht auf dem [Herd].|Nồi súp đang ở trên bếp.|
+n|die Waschmaschine|die Waschmaschinen|máy giặt|Die [Waschmaschine] ist im Keller.|Máy giặt ở dưới tầng hầm.|
+n|die Dusche|die Duschen|vòi sen; buồng tắm vòi sen|Das Bad hat eine [Dusche].|Phòng tắm có vòi sen.|
+n|die Heizung|die Heizungen|hệ thống sưởi, lò sưởi|Im Winter ist die [Heizung] an.|Mùa đông lò sưởi được bật.|
+n|der Schlüssel|die Schlüssel|chìa khoá|Ich finde meinen [Schlüssel] nicht.|Tôi không tìm thấy chìa khoá.|
+=Miete
+v|mieten|mietet – hat gemietet|thuê|Wir [mieten] eine Wohnung in Köln.|Chúng tôi thuê một căn hộ ở Köln.|
+n|der Vermieter|die Vermieter|chủ nhà (cho thuê)|Ich rufe den [Vermieter] an: Die Heizung ist kaputt.|Tôi gọi cho chủ nhà: lò sưởi bị hỏng.|
+v|umziehen|zieht um – ist umgezogen|chuyển nhà|Nächsten Monat [ziehen] wir nach Berlin [um].|Tháng sau chúng tôi chuyển đến Berlin.|
+v|putzen|putzt – hat geputzt|lau chùi, dọn dẹp|Am Samstag [putze] ich die Wohnung.|Thứ Bảy tôi dọn dẹp căn hộ.|
+=groß
+=klein
+=dunkel
+adj|hell||sáng sủa|Das Zimmer ist schön [hell].|Căn phòng sáng sủa dễ chịu.|
+adj|ruhig||yên tĩnh|Die Straße ist sehr [ruhig].|Con phố rất yên tĩnh.|
+adj|laut||ồn ào; to (tiếng)|Unsere Nachbarn sind sehr [laut].|Hàng xóm của chúng tôi rất ồn.|
+adj|gemütlich||ấm cúng|Das Wohnzimmer ist sehr [gemütlich].|Phòng khách rất ấm cúng.|
+n|die Möbel|(thường dùng số nhiều)|đồ đạc, nội thất|Die [Möbel] sind neu.|Đồ đạc đều mới.|
+
+@a1-thanh-pho|Thành phố & chỉ đường|9
+=Stadt
+n|das Dorf|die Dörfer|làng|Meine Großeltern wohnen in einem kleinen [Dorf].|Ông bà tôi sống ở một ngôi làng nhỏ.|
+=Straße
+n|der Platz|die Plätze|chỗ (ngồi); quảng trường|Ist der [Platz] hier frei?|Chỗ này còn trống không?|
+n|der Park|die Parks|công viên|Im [Park] spielen viele Kinder.|Trong công viên có nhiều trẻ em chơi.|
+n|die Kirche|die Kirchen|nhà thờ|Die [Kirche] ist sehr alt.|Nhà thờ rất cổ.|
+n|das Museum|die Museen|viện bảo tàng|Am Sonntag gehen wir ins [Museum].|Chủ nhật chúng tôi đi bảo tàng.|Nhấn âm giữa: mu-<b>SE</b>-um. Số nhiều: die Museen.
+n|das Kino|die Kinos|rạp chiếu phim|Gehen wir heute Abend ins [Kino]?|Tối nay mình đi xem phim nhé?|
+n|das Theater|die Theater|nhà hát|Wir gehen oft ins [Theater].|Chúng tôi hay đi nhà hát.|<b>th</b> đọc [t]; nhấn âm giữa: te-<b>A</b>-ter.
+n|das Rathaus|die Rathäuser|toà thị chính|Das [Rathaus] ist im Zentrum.|Toà thị chính ở trung tâm.|
+n|das Zentrum|die Zentren|trung tâm|Wir wohnen im [Zentrum].|Chúng tôi sống ở trung tâm.|
+n|die Post|–|bưu điện|Ich bringe das Paket zur [Post].|Tôi mang gói hàng ra bưu điện.|
+=Bank
+=Apotheke
+n|das Krankenhaus|die Krankenhäuser|bệnh viện|Mein Vater liegt im [Krankenhaus].|Bố tôi đang nằm viện.|
+n|das Hotel|die Hotels|khách sạn|Das [Hotel] ist direkt am Bahnhof.|Khách sạn ở ngay cạnh nhà ga.|Nhấn âm cuối: ho-<b>TEL</b>.
+n|die Bibliothek|die Bibliotheken|thư viện|In der [Bibliothek] kann man Bücher ausleihen.|Ở thư viện có thể mượn sách.|Nhấn âm cuối: bi-bli-o-<b>THEK</b>; th = [t].
+=Polizei
+=links
+=rechts
+=geradeaus
+n|die Ampel|die Ampeln|đèn giao thông|An der [Ampel] gehen Sie links.|Đến đèn giao thông thì ông rẽ trái.|
+n|die Kreuzung|die Kreuzungen|ngã tư|Nach der [Kreuzung] sehen Sie die Post.|Qua ngã tư ông sẽ thấy bưu điện.|
+n|die Ecke|die Ecken|góc (phố)|Die Bäckerei ist an der [Ecke].|Tiệm bánh ở ngay góc phố.|
+adj|weit||xa|Ist der Bahnhof [weit] von hier?|Nhà ga có xa đây không?|
+adj|nah||gần|Die Schule ist ganz [nah].|Trường học ở rất gần.|
+adv|hier||ở đây|Wohnen Sie [hier]?|Ông/bà sống ở đây à?|
+adv|dort||ở đó, đằng kia|Siehst du das Haus [dort]?|Bạn có thấy ngôi nhà đằng kia không?|
+n|der Weg|die Wege|con đường, lối đi|Können Sie mir den [Weg] zum Bahnhof zeigen?|Ông có thể chỉ đường đến nhà ga cho tôi không?|
+n|der Stadtplan|die Stadtpläne|bản đồ thành phố|Hast du einen [Stadtplan]?|Bạn có bản đồ thành phố không?|
+n|die Richtung|die Richtungen|hướng|Fährt dieser Bus in [Richtung] Zentrum?|Xe buýt này có đi về hướng trung tâm không?|
+phr|Wie komme ich zum …?||Làm sao để đến …?|Entschuldigung, [wie komme ich zum] Bahnhof?|Xin lỗi, làm sao để đến nhà ga?|Với danh từ giống cái dùng <b>zur</b>: Wie komme ich zur Post?
+
+@a1-giao-thong|Giao thông & đi lại|9
+=Bahnhof
+=Flughafen
+=Haltestelle
+=Zug
+=Bus
+=Auto
+=Ticket
+n|die S-Bahn|die S-Bahnen|tàu điện ngoại ô|Ich fahre mit der [S-Bahn] zur Arbeit.|Tôi đi tàu S-Bahn đi làm.|Đọc “ét-ban”.
+n|die U-Bahn|die U-Bahnen|tàu điện ngầm|Die [U-Bahn] kommt alle fünf Minuten.|Cứ năm phút lại có một chuyến tàu điện ngầm.|Đọc “u-ban”.
+n|die Straßenbahn|die Straßenbahnen|tàu điện mặt đất|Die [Straßenbahn] hält direkt vor meinem Haus.|Tàu điện dừng ngay trước nhà tôi.|
+n|das Taxi|die Taxis|xe taxi|Wir nehmen ein [Taxi] zum Flughafen.|Chúng tôi đi taxi ra sân bay.|
+n|das Fahrrad|die Fahrräder|xe đạp|Ich fahre jeden Tag mit dem [Fahrrad].|Ngày nào tôi cũng đi xe đạp.|
+n|das Flugzeug|die Flugzeuge|máy bay|Das [Flugzeug] landet um 10 Uhr.|Máy bay hạ cánh lúc 10 giờ.|
+n|die Fahrkarte|die Fahrkarten|vé (tàu, xe)|Wo kann ich eine [Fahrkarte] kaufen?|Tôi có thể mua vé ở đâu?|
+n|der Fahrplan|die Fahrpläne|lịch chạy tàu xe|Schau mal auf den [Fahrplan]!|Xem lịch chạy tàu đi!|
+n|die Abfahrt|die Abfahrten|giờ khởi hành, sự khởi hành|Die [Abfahrt] ist um 9:15 Uhr.|Giờ khởi hành là 9 giờ 15.|
+n|die Ankunft|die Ankünfte|giờ đến, sự đến nơi|Die [Ankunft] in München ist um 14 Uhr.|Giờ đến München là 14 giờ.|
+n|das Gleis|die Gleise|đường ray (số…)|Der Zug fährt von [Gleis] 3 ab.|Tàu khởi hành từ đường ray số 3.|
+v|abfahren|fährt ab – ist abgefahren|khởi hành|Wann [fährt] der nächste Zug nach Köln [ab]?|Khi nào chuyến tàu tiếp theo đi Köln khởi hành?|
+v|ankommen|kommt an – ist angekommen|đến nơi|Wir [kommen] um 18 Uhr in Hamburg [an].|Chúng tôi đến Hamburg lúc 18 giờ.|
+v|einsteigen|steigt ein – ist eingestiegen|lên (xe, tàu)|Bitte [steigen] Sie schnell [ein]!|Xin mời lên xe nhanh!|
+v|aussteigen|steigt aus – ist ausgestiegen|xuống (xe, tàu)|An der nächsten Haltestelle [steige] ich [aus].|Tôi xuống ở trạm tiếp theo.|
+v|umsteigen|steigt um – ist umgestiegen|đổi tàu, đổi xe|In Frankfurt müssen wir [umsteigen].|Đến Frankfurt chúng ta phải đổi tàu.|
+=fahren
+v|fliegen|fliegt – ist geflogen|bay, đi máy bay|Im Sommer [fliegen] wir nach Vietnam.|Mùa hè chúng tôi bay về Việt Nam.|
+=gehen
+phr|zu Fuß||đi bộ|Ich gehe [zu Fuß] zur Arbeit.|Tôi đi bộ đi làm.|
+v|parken|parkt – hat geparkt|đỗ xe|Hier darf man nicht [parken].|Ở đây không được đỗ xe.|
+n|der Parkplatz|die Parkplätze|chỗ đỗ xe, bãi đỗ xe|Ich suche einen [Parkplatz].|Tôi đang tìm chỗ đỗ xe.|
+n|die Linie|die Linien|tuyến (xe buýt, tàu)|Nehmen Sie die [Linie] 8.|Ông/bà đi tuyến số 8 nhé.|Đuôi <b>-ie</b> không nhấn đọc lướt “i-ơ”: <b>LI</b>-ni-ơ.
+n|die Verspätung|die Verspätungen|sự chậm trễ|Der Zug hat 20 Minuten [Verspätung].|Tàu bị trễ 20 phút.|
+adj|pünktlich||đúng giờ|Der Bus ist heute [pünktlich].|Hôm nay xe buýt đến đúng giờ.|
+n|die Autobahn|die Autobahnen|đường cao tốc|Auf der [Autobahn] fahren viele Autos.|Trên đường cao tốc có rất nhiều ô tô.|

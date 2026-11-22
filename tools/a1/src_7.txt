@@ -1,0 +1,124 @@
+@a1-tinh-tu|Tính từ thông dụng|15
+adj|gut||tốt; giỏi; ngon|Du sprichst schon [gut] Deutsch!|Bạn nói tiếng Đức giỏi rồi đấy!|So sánh bất quy tắc: gut – besser – am besten.
+adj|schlecht||tệ, kém|Das Wetter ist heute [schlecht].|Thời tiết hôm nay xấu.|
+adj|schön||đẹp|Die Stadt ist sehr [schön].|Thành phố rất đẹp.|
+adj|neu||mới|Mein Handy ist ganz [neu].|Điện thoại của tôi mới tinh.|
+adj|lang||dài|Der Film ist sehr [lang].|Bộ phim rất dài.|
+adj|kurz||ngắn|Die Pause ist zu [kurz].|Giờ nghỉ ngắn quá.|
+adj|schnell||nhanh|Das Auto fährt sehr [schnell].|Chiếc xe chạy rất nhanh.|
+adj|langsam||chậm|Bitte sprechen Sie [langsam].|Xin hãy nói chậm thôi.|
+adj|leise||nhỏ tiếng, khẽ|Bitte sei [leise], das Baby schläft.|Khẽ thôi, em bé đang ngủ.|
+adj|leicht||dễ; nhẹ|Die Aufgabe ist [leicht].|Bài tập này dễ.|
+adj|schwer||khó; nặng|Deutsch ist nicht so [schwer].|Tiếng Đức không khó lắm đâu.|
+adj|einfach||đơn giản|Das ist ganz [einfach].|Cái đó rất đơn giản.|
+adj|schwierig||khó khăn|Die Prüfung war [schwierig].|Bài thi khó.|
+adj|richtig||đúng|Ihre Antwort ist [richtig].|Câu trả lời của ông/bà đúng.|
+adj|falsch||sai|Das ist leider [falsch].|Tiếc là cái đó sai rồi.|
+adj|wichtig||quan trọng|Diese Prüfung ist sehr [wichtig] für mich.|Kỳ thi này rất quan trọng với tôi.|
+adj|interessant||thú vị|Der Film war sehr [interessant].|Bộ phim rất thú vị.|Nhấn âm cuối: in-te-res-<b>SANT</b>.
+adj|langweilig||chán|Der Unterricht ist nie [langweilig].|Giờ học không bao giờ chán.|
+adj|nett||dễ mến, tử tế|Danke, das ist sehr [nett] von dir!|Cảm ơn, bạn thật tốt!|
+adj|freundlich||thân thiện|Die Verkäuferin ist sehr [freundlich].|Cô bán hàng rất thân thiện.|
+adj|lustig||vui nhộn, hài hước|Mein Onkel ist sehr [lustig].|Chú tôi rất vui tính.|
+adj|toll||tuyệt|Das Konzert war [toll]!|Buổi hoà nhạc thật tuyệt!|
+adj|wunderbar||tuyệt vời|Das Wetter ist heute [wunderbar].|Thời tiết hôm nay thật tuyệt vời.|
+adj|glücklich||hạnh phúc|Ich bin sehr [glücklich].|Tôi rất hạnh phúc.|
+adj|traurig||buồn|Warum bist du so [traurig]?|Sao bạn buồn thế?|
+adj|froh||vui mừng|Ich bin [froh], dass du da bist.|Tôi mừng vì bạn ở đây.|
+adj|voll||đầy; đông|Der Bus ist sehr [voll].|Xe buýt rất đông.|
+adj|leer||trống, rỗng|Der Kühlschrank ist [leer].|Tủ lạnh trống trơn.|
+adj|frei||rảnh, được nghỉ; trống; miễn phí|Am Samstag habe ich [frei].|Thứ Bảy tôi được nghỉ.|
+adj|besetzt||có người; bận (máy)|Die Toilette ist [besetzt].|Nhà vệ sinh đang có người.|
+adj|fertig||xong; sẵn sàng|Bist du schon [fertig]?|Bạn xong chưa?|
+adj|kaputt||hỏng|Die Waschmaschine ist [kaputt].|Máy giặt bị hỏng.|
+adj|möglich||có thể (xảy ra)|Ist das [möglich]?|Điều đó có thể không?|
+adj|sicher||chắc chắn; an toàn|Bist du [sicher]?|Bạn có chắc không?|
+adj|ganz||cả, toàn bộ; hoàn toàn|Ich habe den [ganzen] Tag gearbeitet.|Tôi đã làm việc cả ngày.|
+adj|bequem||thoải mái, êm|Das Sofa ist sehr [bequem].|Chiếc sofa rất êm.|
+
+@a1-trang-tu|Trạng từ thông dụng|15
+adv|sehr||rất|Das schmeckt [sehr] gut!|Cái này ngon lắm!|
+adv|auch||cũng|Ich komme [auch] aus Vietnam.|Tôi cũng đến từ Việt Nam.|
+adv|nur||chỉ|Ich habe [nur] zehn Euro.|Tôi chỉ có mười euro.|
+adv|noch||vẫn, còn|Ich bin [noch] im Büro.|Tôi vẫn còn ở văn phòng.|
+adv|schon||đã, rồi|Ich bin [schon] zwei Jahre in Deutschland.|Tôi ở Đức đã hai năm rồi.|
+adv|wieder||lại|Morgen regnet es [wieder].|Mai trời lại mưa.|
+adv|zusammen||cùng nhau|Wir essen heute [zusammen].|Hôm nay chúng ta ăn cùng nhau.|
+adv|allein||một mình|Ich wohne [allein].|Tôi sống một mình.|
+adv|zuerst||đầu tiên, trước hết|[Zuerst] trinke ich einen Kaffee.|Trước hết tôi uống một ly cà phê.|
+adv|dann||sau đó, rồi|Zuerst lerne ich, [dann] sehe ich fern.|Tôi học trước, sau đó mới xem tivi.|
+adv|leider||tiếc là|Ich habe [leider] keine Zeit.|Tiếc là tôi không có thời gian.|
+adv|natürlich||tất nhiên|[Natürlich] helfe ich dir!|Tất nhiên tôi sẽ giúp bạn!|
+adv|wirklich||thật sự|Das ist [wirklich] toll!|Cái đó thật sự tuyệt!|
+adv|vielleicht||có lẽ|[Vielleicht] komme ich morgen.|Có lẽ mai tôi đến.|
+adv|gern||thích (làm gì)|Ich spiele [gern] Fußball.|Tôi thích chơi bóng đá.|Cấu trúc: động từ + gern = thích làm việc đó. Thích hơn: lieber, thích nhất: am liebsten.
+adv|lieber||thích … hơn|Ich trinke [lieber] Tee als Kaffee.|Tôi thích uống trà hơn cà phê.|
+adv|ziemlich||khá|Es ist heute [ziemlich] kalt.|Hôm nay trời khá lạnh.|
+adv|etwas||một chút; cái gì đó|Ich möchte [etwas] trinken.|Tôi muốn uống chút gì đó.|
+adv|zu||quá|Die Schuhe sind [zu] klein.|Đôi giày nhỏ quá.|
+adv|genau||chính xác, đúng vậy|Das ist [genau] richtig.|Cái đó hoàn toàn chính xác.|Dùng riêng để đồng ý: <b>Genau!</b> = Đúng vậy!
+adv|fast||gần như|Es ist [fast] acht Uhr.|Đã gần tám giờ.|
+adv|gerade||đang; vừa mới|Ich esse [gerade].|Tôi đang ăn.|
+
+@a1-dai-tu|Đại từ & từ để hỏi|16
+pron|ich||tôi|[Ich] heiße Minh.|Tôi tên là Minh.|
+pron|du||bạn (thân mật)|Woher kommst [du]?|Bạn từ đâu đến?|Dùng với bạn bè, người nhà, trẻ em.
+pron|er||anh ấy, ông ấy; nó (giống đực)|Das ist Tom. [Er] ist mein Freund.|Đây là Tom. Anh ấy là bạn tôi.|Cũng thay cho danh từ giống đực: der Tisch → er.
+pron|sie||cô ấy, bà ấy; họ|Das ist Anna. Kennst du [sie]?|Đây là Anna. Bạn có quen cô ấy không?|sie viết thường = cô ấy / họ; <b>Sie</b> viết hoa = ông/bà (lịch sự).
+pron|es||nó (giống trung)|Das Kind ist müde, [es] schläft schon.|Đứa trẻ mệt, nó đã ngủ rồi.|
+pron|wir||chúng tôi, chúng ta|[Wir] lernen zusammen Deutsch.|Chúng tôi học tiếng Đức cùng nhau.|
+pron|ihr||các bạn|Kommt [ihr] heute Abend?|Tối nay các bạn có đến không?|
+pron|Sie||ông, bà, anh, chị (lịch sự)|Wie heißen [Sie]?|Ông/bà tên là gì?|Luôn viết hoa; động từ chia giống số nhiều: Sie sind, Sie haben.
+pron|mein||của tôi|Das ist [mein] Bruder.|Đây là anh trai tôi.|Trước danh từ giống cái và số nhiều thêm -e: meine Mutter, meine Eltern.
+pron|dein||của bạn|Ist das [dein] Handy?|Đây có phải điện thoại của bạn không?|
+pron|sein||của anh ấy|Das ist Peter und [sein] Hund.|Đây là Peter và con chó của anh ấy.|
+pron|unser||của chúng tôi|Das ist [unser] Haus.|Đây là nhà của chúng tôi.|
+pron|Ihr||của ông/bà (lịch sự)|Ist das [Ihr] Koffer?|Đây có phải va li của ông/bà không?|
+pron|mir||(cho) tôi (dativ)|Gib [mir] bitte das Buch.|Đưa giúp tôi quyển sách.|
+pron|dir||(cho) bạn (dativ)|Ich gebe [dir] meine Nummer.|Tôi cho bạn số điện thoại của tôi.|
+pron|man||người ta|In Deutschland trinkt [man] viel Kaffee.|Ở Đức người ta uống nhiều cà phê.|Động từ chia như er/sie/es.
+pron|alle||tất cả mọi người|[Alle] sind schon da.|Mọi người đã có mặt đủ.|
+pron|nichts||không gì cả|Ich habe heute noch [nichts] gegessen.|Hôm nay tôi chưa ăn gì cả.|
+art|kein||không (một …) – phủ định danh từ|Ich habe [kein] Auto.|Tôi không có ô tô.|Phủ định danh từ dùng <b>kein</b>; phủ định động từ, tính từ dùng <b>nicht</b>.
+adv|nicht||không|Ich verstehe das [nicht].|Tôi không hiểu cái đó.|
+qw|wer||ai|[Wer] ist das?|Đó là ai?|
+qw|was||cái gì|[Was] machst du heute?|Hôm nay bạn làm gì?|
+qw|wo||ở đâu|[Wo] wohnst du?|Bạn sống ở đâu?|
+qw|woher||từ đâu|[Woher] kommen Sie?|Ông/bà từ đâu đến?|
+qw|wohin||đi đâu|[Wohin] fährst du im Urlaub?|Kỳ nghỉ bạn đi đâu?|
+qw|wann||khi nào|[Wann] hast du Geburtstag?|Sinh nhật bạn khi nào?|
+qw|wie||như thế nào|[Wie] heißt du?|Bạn tên gì?|
+qw|warum||tại sao|[Warum] lernst du Deutsch?|Tại sao bạn học tiếng Đức?|
+qw|wie viel||bao nhiêu|[Wie viel] kostet das?|Cái này giá bao nhiêu?|
+qw|welcher||nào, cái nào|[Welcher] Bus fährt zum Bahnhof?|Xe buýt nào đến nhà ga?|Biến đổi như der/die/das: welcher, welche, welches.
+
+@a1-gioi-tu|Giới từ & liên từ|16
+prep|in||trong, ở|Ich wohne [in] Hamburg.|Tôi sống ở Hamburg.|
+prep|an||ở cạnh; trên (bề mặt đứng)|Das Bild hängt [an] der Wand.|Bức tranh treo trên tường.|
+prep|auf||trên (bề mặt nằm)|Die Tasse steht [auf] dem Tisch.|Cái tách ở trên bàn.|
+prep|unter||dưới|Die Katze liegt [unter] dem Bett.|Con mèo nằm dưới gầm giường.|
+prep|über||phía trên|Die Lampe hängt [über] dem Tisch.|Cái đèn treo phía trên bàn.|
+prep|neben||bên cạnh|Die Bank ist [neben] der Post.|Ngân hàng ở cạnh bưu điện.|
+prep|vor||trước; cách đây|Ich warte [vor] dem Kino.|Tôi đợi trước rạp phim.|Chỉ thời gian: vor zwei Jahren = cách đây hai năm; zehn vor acht = 7:50.
+prep|hinter||phía sau|Der Garten ist [hinter] dem Haus.|Khu vườn ở phía sau nhà.|
+prep|zwischen||ở giữa|Das Café ist [zwischen] der Bank und dem Kino.|Quán cà phê nằm giữa ngân hàng và rạp phim.|
+prep|mit||với; bằng|Ich fahre [mit] dem Bus.|Tôi đi bằng xe buýt.|
+prep|ohne||không có|Ich trinke Kaffee [ohne] Zucker.|Tôi uống cà phê không đường.|
+prep|für||cho, dành cho|Das Geschenk ist [für] dich.|Món quà này dành cho bạn.|
+prep|von||của; từ|Das ist ein Foto [von] meiner Familie.|Đây là tấm ảnh gia đình tôi.|
+prep|zu||đến (chỗ ai, nơi nào)|Ich gehe [zu] meiner Freundin.|Tôi đến nhà bạn gái.|zu + dem = <b>zum</b>, zu + der = <b>zur</b>.
+prep|bei||ở chỗ, ở nhà (ai)|Ich wohne noch [bei] meinen Eltern.|Tôi vẫn sống cùng bố mẹ.|
+prep|aus||từ (ra khỏi)|Sie kommt [aus] Polen.|Cô ấy đến từ Ba Lan.|
+prep|nach||đến (thành phố, nước); sau|Wir fahren morgen [nach] Berlin.|Mai chúng tôi đi Berlin.|Cũng có nghĩa “sau”: nach dem Essen; zehn nach acht = 8:10.
+prep|seit||từ (khi), được (bao lâu)|Ich wohne [seit] 2020 in Köln.|Tôi sống ở Köln từ năm 2020.|
+prep|um||lúc (giờ)|Der Film beginnt [um] 20 Uhr.|Phim bắt đầu lúc 20 giờ.|
+prep|bis||đến (khi)|Ich arbeite [bis] 17 Uhr.|Tôi làm việc đến 17 giờ.|
+conj|und||và|Ich trinke Kaffee [und] esse ein Brötchen.|Tôi uống cà phê và ăn một chiếc bánh mì.|
+conj|oder||hoặc, hay|Möchtest du Tee [oder] Kaffee?|Bạn muốn uống trà hay cà phê?|
+conj|aber||nhưng|Das Auto ist schön, [aber] teuer.|Chiếc xe đẹp nhưng đắt.|
+conj|denn||vì|Ich bleibe zu Hause, [denn] ich bin krank.|Tôi ở nhà vì tôi bị ốm.|Sau denn động từ vẫn đứng thứ hai (khác weil).
+conj|weil||bởi vì|Ich lerne Deutsch, [weil] ich in Berlin arbeite.|Tôi học tiếng Đức vì tôi làm việc ở Berlin.|Sau weil động từ chạy về cuối câu.
+conj|dass||rằng, là|Ich weiß, [dass] du müde bist.|Tôi biết là bạn đang mệt.|
+conj|wenn||khi, nếu|[Wenn] ich Zeit habe, lese ich.|Khi có thời gian, tôi đọc sách.|
+phr|es gibt||có (tồn tại)|[Es gibt] hier keinen Supermarkt.|Ở đây không có siêu thị.|
+adv|da||ở đó; có mặt|Ist Herr Müller [da]?|Ông Müller có ở đây không?|

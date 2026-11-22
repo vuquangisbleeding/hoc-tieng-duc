@@ -114,6 +114,7 @@ tr.play{cursor:pointer}
 .vhero-r{flex:1;display:grid;gap:8px;justify-items:end;text-align:right}
 .vhero .prim{background:var(--gold);color:#16181d}
 .sets{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.sgh{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin:18px 2px 8px}.sgh b{font-size:17px}
 .setc{display:grid;gap:4px;text-align:left;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;min-height:118px;align-content:start}
 .setc b{font-size:16px;line-height:1.25}.setc.add{border-style:dashed;background:transparent}
 .lvl{font-size:12px;font-weight:700;color:var(--red)}
@@ -879,8 +880,9 @@ setView("vocab");
 if(!window.isSecureContext)$("err").textContent="Cần mở qua link https:// thì micro mới hoạt động.";
 }
 </script>
-<script src="vocab-data.js"></script>
-<script src="vocab.js"></script>
+<script src="vocab-data.js?v=a1"></script>
+<script src="vocab-a1.js?v=1"></script>
+<script src="vocab.js?v=a1"></script>
 <script src="sync.js"></script>
 </body>
 </html>

@@ -1,0 +1,101 @@
+# Bảng chia cho động từ mới: nguyên mẫu|ich,du,er,wir,ihr,sie|Präteritum (er)|Perfekt (er). Dấu * = dạng bất quy tắc.
+buchstabieren|buchstabiere,buchstabierst,buchstabiert,buchstabieren,buchstabiert,buchstabieren|buchstabierte|hat buchstabiert
+lieben|liebe,liebst,liebt,lieben,liebt,lieben|liebte|hat geliebt
+heiraten|heirate,heiratest,heiratet,heiraten,heiratet,heiraten|heiratete|hat geheiratet
+kennenlernen|lerne kennen,lernst kennen,lernt kennen,lernen kennen,lernt kennen,lernen kennen|lernte kennen|hat kennengelernt
+besuchen|besuche,besuchst,besucht,besuchen,besucht,besuchen|besuchte|hat besucht
+zählen|zähle,zählst,zählt,zählen,zählt,zählen|zählte|hat gezählt
+dauern|dauere,dauerst,dauert,dauern,dauert,dauern|dauerte|hat gedauert
+frühstücken|frühstücke,frühstückst,frühstückt,frühstücken,frühstückt,frühstücken|frühstückte|hat gefrühstückt
+kochen|koche,kochst,kocht,kochen,kocht,kochen|kochte|hat gekocht
+schmecken|schmecke,schmeckst,schmeckt,schmecken,schmeckt,schmecken|schmeckte|hat geschmeckt
+bestellen|bestelle,bestellst,bestellt,bestellen,bestellt,bestellen|bestellte|hat bestellt
+einkaufen|kaufe ein,kaufst ein,kauft ein,kaufen ein,kauft ein,kaufen ein|kaufte ein|hat eingekauft
+verkaufen|verkaufe,verkaufst,verkauft,verkaufen,verkauft,verkaufen|verkaufte|hat verkauft
+kosten|koste,kostest,kostet,kosten,kostet,kosten|kostete|hat gekostet
+bezahlen|bezahle,bezahlst,bezahlt,bezahlen,bezahlt,bezahlen|bezahlte|hat bezahlt
+brauchen|brauche,brauchst,braucht,brauchen,braucht,brauchen|brauchte|hat gebraucht
+mieten|miete,mietest,mietet,mieten,mietet,mieten|mietete|hat gemietet
+umziehen|ziehe um,ziehst um,zieht um,ziehen um,zieht um,ziehen um|*zog um|ist umgezogen
+putzen|putze,putzt,putzt,putzen,putzt,putzen|putzte|hat geputzt
+abfahren|fahre ab,*fährst ab,*fährt ab,fahren ab,fahrt ab,fahren ab|*fuhr ab|ist abgefahren
+ankommen|komme an,kommst an,kommt an,kommen an,kommt an,kommen an|*kam an|ist angekommen
+einsteigen|steige ein,steigst ein,steigt ein,steigen ein,steigt ein,steigen ein|*stieg ein|ist eingestiegen
+aussteigen|steige aus,steigst aus,steigt aus,steigen aus,steigt aus,steigen aus|*stieg aus|ist ausgestiegen
+umsteigen|steige um,steigst um,steigt um,steigen um,steigt um,steigen um|*stieg um|ist umgestiegen
+fliegen|fliege,fliegst,fliegt,fliegen,fliegt,fliegen|*flog|ist geflogen
+parken|parke,parkst,parkt,parken,parkt,parken|parkte|hat geparkt
+ausfüllen|fülle aus,füllst aus,füllt aus,füllen aus,füllt aus,füllen aus|füllte aus|hat ausgefüllt
+unterschreiben|unterschreibe,unterschreibst,unterschreibt,unterschreiben,unterschreibt,unterschreiben|*unterschrieb|hat unterschrieben
+fragen|frage,fragst,fragt,fragen,fragt,fragen|fragte|hat gefragt
+antworten|antworte,antwortest,antwortet,antworten,antwortet,antworten|antwortete|hat geantwortet
+wiederholen|wiederhole,wiederholst,wiederholt,wiederholen,wiederholt,wiederholen|wiederholte|hat wiederholt
+üben|übe,übst,übt,üben,übt,üben|übte|hat geübt
+erklären|erkläre,erklärst,erklärt,erklären,erklärt,erklären|erklärte|hat erklärt
+wehtun|tue weh,tust weh,tut weh,tun weh,tut weh,tun weh|*tat weh|hat wehgetan
+scheinen|scheine,scheinst,scheint,scheinen,scheint,scheinen|*schien|hat geschienen
+anziehen|ziehe an,ziehst an,zieht an,ziehen an,zieht an,ziehen an|*zog an|hat angezogen
+tragen|trage,*trägst,*trägt,tragen,tragt,tragen|*trug|hat getragen
+passen|passe,passt,passt,passen,passt,passen|passte|hat gepasst
+spielen|spiele,spielst,spielt,spielen,spielt,spielen|spielte|hat gespielt
+schwimmen|schwimme,schwimmst,schwimmt,schwimmen,schwimmt,schwimmen|*schwamm|ist geschwommen
+tanzen|tanze,tanzt,tanzt,tanzen,tanzt,tanzen|tanzte|hat getanzt
+singen|singe,singst,singt,singen,singt,singen|*sang|hat gesungen
+hören|höre,hörst,hört,hören,hört,hören|hörte|hat gehört
+fernsehen|sehe fern,*siehst fern,*sieht fern,sehen fern,seht fern,sehen fern|*sah fern|hat ferngesehen
+fotografieren|fotografiere,fotografierst,fotografiert,fotografieren,fotografiert,fotografieren|fotografierte|hat fotografiert
+feiern|feiere,feierst,feiert,feiern,feiert,feiern|feierte|hat gefeiert
+einladen|lade ein,*lädst ein,*lädt ein,laden ein,ladet ein,laden ein|*lud ein|hat eingeladen
+treffen|treffe,*triffst,*trifft,treffen,trefft,treffen|*traf|hat getroffen
+spazieren gehen|gehe spazieren,gehst spazieren,geht spazieren,gehen spazieren,geht spazieren,gehen spazieren|*ging spazieren|ist spazieren gegangen
+wandern|wandere,wanderst,wandert,wandern,wandert,wandern|wanderte|ist gewandert
+reisen|reise,reist,reist,reisen,reist,reisen|reiste|ist gereist
+buchen|buche,buchst,bucht,buchen,bucht,buchen|buchte|hat gebucht
+werden|werde,*wirst,*wird,werden,werdet,werden|*wurde|ist geworden
+müssen|*muss,*musst,*muss,müssen,müsst,müssen|*musste|hat gemusst
+dürfen|*darf,*darfst,*darf,dürfen,dürft,dürfen|*durfte|hat gedurft
+wollen|*will,*willst,*will,wollen,wollt,wollen|wollte|hat gewollt
+sollen|*soll,sollst,*soll,sollen,sollt,sollen|sollte|hat gesollt
+mögen|*mag,*magst,*mag,mögen,mögt,mögen|*mochte|hat gemocht
+wissen|*weiß,*weißt,*weiß,wissen,wisst,wissen|*wusste|hat gewusst
+kennen|kenne,kennst,kennt,kennen,kennt,kennen|*kannte|hat gekannt
+tun|tue,tust,tut,tun,tut,tun|*tat|hat getan
+geben|gebe,*gibst,*gibt,geben,gebt,geben|*gab|hat gegeben
+bekommen|bekomme,bekommst,bekommt,bekommen,bekommt,bekommen|*bekam|hat bekommen
+nehmen|nehme,*nimmst,*nimmt,nehmen,nehmt,nehmen|*nahm|hat genommen
+bringen|bringe,bringst,bringt,bringen,bringt,bringen|*brachte|hat gebracht
+holen|hole,holst,holt,holen,holt,holen|holte|hat geholt
+sagen|sage,sagst,sagt,sagen,sagt,sagen|sagte|hat gesagt
+zeigen|zeige,zeigst,zeigt,zeigen,zeigt,zeigen|zeigte|hat gezeigt
+finden|finde,findest,findet,finden,findet,finden|*fand|hat gefunden
+suchen|suche,suchst,sucht,suchen,sucht,suchen|suchte|hat gesucht
+denken|denke,denkst,denkt,denken,denkt,denken|*dachte|hat gedacht
+glauben|glaube,glaubst,glaubt,glauben,glaubt,glauben|glaubte|hat geglaubt
+helfen|helfe,*hilfst,*hilft,helfen,helft,helfen|*half|hat geholfen
+warten|warte,wartest,wartet,warten,wartet,warten|wartete|hat gewartet
+bleiben|bleibe,bleibst,bleibt,bleiben,bleibt,bleiben|*blieb|ist geblieben
+beginnen|beginne,beginnst,beginnt,beginnen,beginnt,beginnen|*begann|hat begonnen
+anfangen|fange an,*fängst an,*fängt an,fangen an,fangt an,fangen an|*fing an|hat angefangen
+aufhören|höre auf,hörst auf,hört auf,hören auf,hört auf,hören auf|hörte auf|hat aufgehört
+stehen|stehe,stehst,steht,stehen,steht,stehen|*stand|hat gestanden
+sitzen|sitze,sitzt,sitzt,sitzen,sitzt,sitzen|*saß|hat gesessen
+liegen|liege,liegst,liegt,liegen,liegt,liegen|*lag|hat gelegen
+legen|lege,legst,legt,legen,legt,legen|legte|hat gelegt
+stellen|stelle,stellst,stellt,stellen,stellt,stellen|stellte|hat gestellt
+öffnen|öffne,öffnest,öffnet,öffnen,öffnet,öffnen|öffnete|hat geöffnet
+schließen|schließe,schließt,schließt,schließen,schließt,schließen|*schloss|hat geschlossen
+gefallen|gefalle,*gefällst,*gefällt,gefallen,gefallt,gefallen|*gefiel|hat gefallen
+gehören|gehöre,gehörst,gehört,gehören,gehört,gehören|gehörte|hat gehört
+schlafen|schlafe,*schläfst,*schläft,schlafen,schlaft,schlafen|*schlief|hat geschlafen
+laufen|laufe,*läufst,*läuft,laufen,lauft,laufen|*lief|ist gelaufen
+anrufen|rufe an,rufst an,ruft an,rufen an,ruft an,rufen an|*rief an|hat angerufen
+lachen|lache,lachst,lacht,lachen,lacht,lachen|lachte|hat gelacht
+leben|lebe,lebst,lebt,leben,lebt,leben|lebte|hat gelebt
+vergessen|vergesse,*vergisst,*vergisst,vergessen,vergesst,vergessen|*vergaß|hat vergessen
+mitkommen|komme mit,kommst mit,kommt mit,kommen mit,kommt mit,kommen mit|*kam mit|ist mitgekommen
+mitbringen|bringe mit,bringst mit,bringt mit,bringen mit,bringt mit,bringen mit|*brachte mit|hat mitgebracht
+telefonieren|telefoniere,telefonierst,telefoniert,telefonieren,telefoniert,telefonieren|telefonierte|hat telefoniert
+schicken|schicke,schickst,schickt,schicken,schickt,schicken|schickte|hat geschickt
+waschen|wasche,*wäschst,*wäscht,waschen,wascht,waschen|*wusch|hat gewaschen
+benutzen|benutze,benutzt,benutzt,benutzen,benutzt,benutzen|benutzte|hat benutzt
+schenken|schenke,schenkst,schenkt,schenken,schenkt,schenken|schenkte|hat geschenkt

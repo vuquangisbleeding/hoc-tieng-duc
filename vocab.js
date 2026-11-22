@@ -19,11 +19,11 @@ function mark(set,w,good){const p=pr(keyOf(set,w));if(good){p.ok++;p.lv=Math.min
 const term=w=>(w.a?w.a+" ":"")+w.w;
 const artHtml=w=>w.a?`<span class="art-${w.a}">${w.a}</span> `:"";
 const termHtml=w=>artHtml(w)+esc(w.w);
-const TYPE={n:"danh từ",v:"động từ",adj:"tính từ",adv:"trạng từ",phr:"cụm từ"};
+const TYPE={n:"danh từ",v:"động từ",adj:"tính từ",adv:"trạng từ",phr:"cụm từ",num:"số từ",pron:"đại từ",prep:"giới từ",conj:"liên từ",qw:"từ để hỏi",art:"mạo từ"};
 
 /* ---------- So sánh câu trả lời ---------- */
 const fold=s=>String(s).normalize("NFC").toLowerCase().replace(/ä/g,"ae").replace(/ö/g,"oe").replace(/ü/g,"ue").replace(/ß/g,"ss")
-  .replace(/[.,!?;:"'„“”()]/g," ").replace(/\s+/g," ").trim();
+  .replace(/[.,!?;:"'„“”()…]/g," ").replace(/\s+/g," ").trim();
 function lev(a,b){const d=Array.from({length:a.length+1},(_,i)=>[i]);for(let j=1;j<=b.length;j++)d[0][j]=j;
   for(let i=1;i<=a.length;i++)for(let j=1;j<=b.length;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[a.length][b.length]}
 /* trả về {ok, msg} – msg giải thích khi gần đúng */
@@ -299,12 +299,19 @@ function home(){
   curSet=null;
   const weak=[];allSets().forEach(s=>s.words.forEach(w=>{const p=P[keyOf(s,w)];if(p&&(p.bad>0||p.lv>0)&&p.lv<3)weak.push({s,w})}));
   const total=allSets().reduce((n,s)=>n+s.words.length,0),done=allSets().reduce((n,s)=>n+s.words.filter(w=>mastered(s,w)).length,0);
+  /* gom bộ theo nhóm: A1 đầy đủ → bộ khởi động → bộ của bạn */
+  const groups=[],gi={};
+  allSets().forEach((s,i)=>{const g=s.custom?"Bộ của bạn":(s.group||"Bộ khởi động");if(!(g in gi)){gi[g]=groups.length;groups.push({g,items:[]})}groups[gi[g]].items.push([s,i])});
+  const rank=g=>g==="Bộ của bạn"?2:g==="Bộ khởi động"?1:0;groups.sort((a,b)=>rank(a.g)-rank(b.g));
+  if(!groups.some(x=>x.g==="Bộ của bạn"))groups.push({g:"Bộ của bạn",items:[]});
+  const card=([s,i])=>{const n=s.words.length,d=s.words.filter(w=>mastered(s,w)).length;
+    return `<button class="setc" data-set="${i}"><span class="lvl">${esc(s.level||"Của bạn")}</span><b>${esc(s.title)}</b><span class="small">${n} từ · đã thuộc ${d}</span><span class="pbar"><i style="width:${n?Math.round(100*d/n):0}%"></i></span></button>`};
   screen(`
    <div class="vhero"><div><div class="big">${done}<small>/${total}</small></div><div class="small">từ đã thuộc</div></div>
      <div class="vhero-r">${weak.length?`<b>${weak.length} từ</b> cần ôn lại<button class="prim" data-act="review">Ôn ngay</button>`:`<span class="small">Chọn một bộ bên dưới để bắt đầu. Từ nào bạn làm sai sẽ hiện ở đây để ôn lại.</span>`}</div></div>
-   <div class="sets">${allSets().map((s,i)=>{const n=s.words.length,d=s.words.filter(w=>mastered(s,w)).length;
-     return `<button class="setc" data-set="${i}"><span class="lvl">${esc(s.level||"Của bạn")}</span><b>${esc(s.title)}</b><span class="small">${n} từ · đã thuộc ${d}</span><span class="pbar"><i style="width:${n?Math.round(100*d/n):0}%"></i></span></button>`}).join("")}
-     <button class="setc add" data-act="create"><b>＋ Tạo bộ của bạn</b><span class="small">Dán danh sách từ của riêng bạn</span></button></div>`);
+   ${groups.map(G=>{const nw=G.items.reduce((n,[s])=>n+s.words.length,0);
+     return `<div class="sgh"><b>${esc(G.g)}</b><span class="small">${G.items.length?`${G.items.length} bộ · ${nw} từ`:""}</span></div>
+     <div class="sets">${G.items.map(card).join("")}${G.g==="Bộ của bạn"?`<button class="setc add" data-act="create"><b>＋ Tạo bộ của bạn</b><span class="small">Dán danh sách từ của riêng bạn</span></button>`:""}</div>`}).join("")}`);
 }
 
 /* ---------- Trang bộ từ ---------- */

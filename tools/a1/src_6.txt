@@ -1,0 +1,111 @@
+@a1-so-thich|Sở thích & thời gian rảnh|13
+n|die Freizeit|–|thời gian rảnh|Was machst du in deiner [Freizeit]?|Bạn làm gì lúc rảnh?|
+n|das Hobby|die Hobbys|sở thích|Mein [Hobby] ist Fotografieren.|Sở thích của tôi là chụp ảnh.|
+v|spielen|spielt – hat gespielt|chơi|Am Wochenende [spielen] wir Karten.|Cuối tuần chúng tôi chơi bài.|
+n|der Sport|–|thể thao|Ich mache jeden Tag [Sport].|Ngày nào tôi cũng tập thể thao.|
+n|der Fußball|die Fußbälle|bóng đá; quả bóng|Am Samstag spiele ich [Fußball].|Thứ Bảy tôi chơi bóng đá.|
+v|schwimmen|schwimmt – ist geschwommen|bơi|Mein Sohn [schwimmt] sehr gut.|Con trai tôi bơi rất giỏi.|
+v|tanzen|tanzt – hat getanzt|nhảy, khiêu vũ|Wir [tanzen] gern Salsa.|Chúng tôi thích nhảy salsa.|
+v|singen|singt – hat gesungen|hát|Meine Schwester [singt] im Chor.|Chị tôi hát trong dàn hợp xướng.|
+n|die Musik|–|âm nhạc|Ich höre gern [Musik].|Tôi thích nghe nhạc.|Nhấn âm sau: mu-<b>SIK</b>.
+v|hören|hört – hat gehört|nghe|Ich [höre] jeden Morgen Radio.|Sáng nào tôi cũng nghe đài.|
+n|das Radio|die Radios|đài, radio|Im [Radio] kommen jetzt Nachrichten.|Trên đài đang có tin tức.|
+n|der Film|die Filme|bộ phim|Der [Film] war sehr lustig.|Bộ phim rất vui.|
+v|fernsehen|sieht fern – hat ferngesehen|xem tivi|Die Kinder [sehen] zu viel [fern].|Bọn trẻ xem tivi quá nhiều.|
+n|das Foto|die Fotos|bức ảnh|Ich mache ein [Foto] von euch.|Tôi chụp cho các bạn một tấm ảnh.|
+v|fotografieren|fotografiert – hat fotografiert|chụp ảnh|Ich [fotografiere] gern Blumen.|Tôi thích chụp ảnh hoa.|
+n|die Party|die Partys|bữa tiệc|Am Samstag mache ich eine [Party].|Thứ Bảy tôi tổ chức một bữa tiệc.|Từ tiếng Anh, số nhiều: die Partys.
+v|feiern|feiert – hat gefeiert|tổ chức, ăn mừng|Wir [feiern] heute meinen Geburtstag.|Hôm nay chúng tôi tổ chức sinh nhật cho tôi.|
+n|das Fest|die Feste|lễ hội, bữa tiệc|Das [Fest] beginnt um 18 Uhr.|Bữa tiệc bắt đầu lúc 18 giờ.|
+v|einladen|lädt ein – hat eingeladen|mời|Ich [lade] dich zum Essen [ein].|Tôi mời bạn đi ăn.|
+n|die Einladung|die Einladungen|lời mời; thiệp mời|Danke für die [Einladung]!|Cảm ơn vì lời mời!|
+v|treffen|trifft – hat getroffen|gặp|Ich [treffe] meine Freunde im Café.|Tôi gặp bạn bè ở quán cà phê.|
+v|spazieren gehen|geht spazieren – ist spazieren gegangen|đi dạo|Am Sonntag [gehen] wir im Park [spazieren].|Chủ nhật chúng tôi đi dạo trong công viên.|
+v|wandern|wandert – ist gewandert|đi bộ đường dài|Im Urlaub [wandern] wir in den Bergen.|Kỳ nghỉ chúng tôi đi bộ đường dài trên núi.|
+n|der Spaß|–|niềm vui|Deutsch lernen macht [Spaß]!|Học tiếng Đức thật vui!|<b>Sp</b> đầu từ đọc “schp”; a dài.
+n|die Lust|–|hứng thú, muốn|Hast du [Lust] auf Kino?|Bạn có muốn đi xem phim không?|
+n|das Spiel|die Spiele|trò chơi; trận đấu|Das [Spiel] beginnt um 20 Uhr.|Trận đấu bắt đầu lúc 20 giờ.|
+n|das Konzert|die Konzerte|buổi hoà nhạc|Wir gehen heute ins [Konzert].|Hôm nay chúng tôi đi xem hoà nhạc.|
+n|das Tier|die Tiere|con vật|Im Zoo gibt es viele [Tiere].|Trong sở thú có nhiều con vật.|
+n|der Hund|die Hunde|con chó|Unser [Hund] heißt Bello.|Con chó của chúng tôi tên là Bello.|
+n|die Katze|die Katzen|con mèo|Die [Katze] schläft auf dem Sofa.|Con mèo đang ngủ trên sofa.|
+
+@a1-du-lich|Du lịch|13
+n|die Reise|die Reisen|chuyến đi|Die [Reise] nach Italien war wunderbar.|Chuyến đi Ý thật tuyệt vời.|
+v|reisen|reist – ist gereist|đi du lịch|Wir [reisen] im Sommer nach Spanien.|Mùa hè chúng tôi đi du lịch Tây Ban Nha.|
+n|der Urlaub|die Urlaube|kỳ nghỉ (phép)|Wir machen zwei Wochen [Urlaub] am Meer.|Chúng tôi nghỉ hai tuần ở biển.|
+n|die Ferien|(chỉ có số nhiều)|kỳ nghỉ (của học sinh)|In den [Ferien] fahren wir zu Oma.|Kỳ nghỉ chúng tôi về chơi với bà.|
+n|das Einzelzimmer|die Einzelzimmer|phòng đơn|Ich möchte ein [Einzelzimmer] für zwei Nächte.|Tôi muốn một phòng đơn trong hai đêm.|
+n|das Doppelzimmer|die Doppelzimmer|phòng đôi|Haben Sie noch ein [Doppelzimmer] frei?|Ông/bà còn phòng đôi trống không?|
+v|buchen|bucht – hat gebucht|đặt (phòng, vé)|Ich habe das Hotel online [gebucht].|Tôi đã đặt khách sạn qua mạng.|
+n|der Koffer|die Koffer|va li|Mein [Koffer] ist zu schwer.|Va li của tôi nặng quá.|
+n|das Gepäck|–|hành lý|Wo kann ich mein [Gepäck] lassen?|Tôi có thể để hành lý ở đâu?|
+n|das Meer|die Meere|biển|Das [Meer] ist heute sehr ruhig.|Hôm nay biển rất lặng.|
+n|der Strand|die Strände|bãi biển|Wir liegen den ganzen Tag am [Strand].|Chúng tôi nằm cả ngày trên bãi biển.|
+n|der Berg|die Berge|ngọn núi|Der [Berg] ist 2000 Meter hoch.|Ngọn núi cao 2000 mét.|
+n|der See|die Seen|cái hồ|Im Sommer schwimmen wir im [See].|Mùa hè chúng tôi bơi ở hồ.|Bẫy: <b>der See</b> = hồ, còn <b>die See</b> = biển.
+n|das Ausland|–|nước ngoài|Ich möchte im [Ausland] arbeiten.|Tôi muốn làm việc ở nước ngoài.|
+n|der Tourist|die Touristen|khách du lịch (nam)|Im Sommer kommen viele [Touristen] nach Berlin.|Mùa hè có nhiều khách du lịch đến Berlin.|Nhấn âm sau: tu-<b>RIST</b>. Nữ: die Touristin.
+n|die Postkarte|die Postkarten|bưu thiếp|Ich schreibe meiner Mutter eine [Postkarte].|Tôi viết cho mẹ một tấm bưu thiếp.|
+n|der Ausflug|die Ausflüge|chuyến đi chơi (ngắn)|Am Sonntag machen wir einen [Ausflug].|Chủ nhật chúng tôi đi chơi xa một chuyến.|
+phr|Gute Reise!||Chúc thượng lộ bình an!|Du fliegst morgen nach Hanoi? [Gute Reise]!|Mai bạn bay về Hà Nội à? Chúc thượng lộ bình an!|
+
+@a1-dong-tu-1|Động từ thông dụng (1)|14
+=sein
+=haben
+v|werden|wird – ist geworden|trở thành; sẽ|Mein Sohn [wird] Arzt.|Con trai tôi sẽ trở thành bác sĩ.|
+=können
+v|müssen|muss – hat gemusst|phải|Ich [muss] heute lange arbeiten.|Hôm nay tôi phải làm việc lâu.|
+v|dürfen|darf – hat gedurft|được phép|Hier [darf] man nicht rauchen.|Ở đây không được hút thuốc.|
+v|wollen|will – hat gewollt|muốn|Ich [will] Deutsch lernen.|Tôi muốn học tiếng Đức.|Bẫy: <b>will</b> = muốn, không phải “sẽ” như tiếng Anh.
+v|sollen|soll – hat gesollt|nên, phải (theo lời người khác)|Der Arzt sagt, ich [soll] viel Wasser trinken.|Bác sĩ bảo tôi nên uống nhiều nước.|
+v|mögen|mag – hat gemocht|thích|Ich [mag] Schokolade.|Tôi thích sô-cô-la.|
+=möchten
+v|wissen|weiß – hat gewusst|biết (một thông tin)|Ich [weiß] es nicht.|Tôi không biết.|wissen = biết một điều; kennen = quen biết người, nơi chốn.
+v|kennen|kennt – hat gekannt|biết, quen (người, nơi chốn)|[Kennst] du meinen Bruder?|Bạn có quen anh trai tôi không?|
+=machen
+v|tun|tut – hat getan|làm|Was kann ich für Sie [tun]?|Tôi có thể làm gì cho ông/bà?|
+v|geben|gibt – hat gegeben|đưa, cho|[Gibst] du mir bitte das Salz?|Bạn đưa giúp mình lọ muối nhé?|Cụm cố định: <b>es gibt</b> = có (tồn tại).
+v|bekommen|bekommt – hat bekommen|nhận được|Ich [bekomme] viele E-Mails.|Tôi nhận được rất nhiều email.|Bẫy: bekommen = nhận được, không phải “trở thành” (become).
+v|nehmen|nimmt – hat genommen|lấy; dùng; chọn|Ich [nehme] die Suppe.|Tôi lấy món súp.|
+v|bringen|bringt – hat gebracht|mang đến|Der Kellner [bringt] die Rechnung.|Người phục vụ mang hoá đơn đến.|
+v|holen|holt – hat geholt|đi lấy, mang về|Ich [hole] schnell Brot.|Tôi chạy đi mua bánh mì.|
+v|sagen|sagt – hat gesagt|nói|Wie [sagt] man das auf Deutsch?|Cái này tiếng Đức nói thế nào?|
+v|zeigen|zeigt – hat gezeigt|chỉ, cho xem|Ich [zeige] dir meine Wohnung.|Tôi cho bạn xem căn hộ của tôi.|
+=sehen
+=verstehen
+v|finden|findet – hat gefunden|tìm thấy; thấy (cho rằng)|Ich [finde] den Film langweilig.|Tôi thấy bộ phim chán.|
+v|suchen|sucht – hat gesucht|tìm|Ich [suche] eine Wohnung.|Tôi đang tìm căn hộ.|
+
+@a1-dong-tu-2|Động từ thông dụng (2)|14
+v|denken|denkt – hat gedacht|nghĩ|Ich [denke] oft an meine Familie.|Tôi hay nghĩ về gia đình.|
+v|glauben|glaubt – hat geglaubt|tin; nghĩ rằng|Ich [glaube], er kommt heute nicht.|Tôi nghĩ hôm nay anh ấy không đến.|
+v|helfen|hilft – hat geholfen|giúp đỡ|Kannst du mir [helfen]?|Bạn giúp mình được không?|Đi với dativ: helfen + mir / dir / Ihnen.
+v|warten|wartet – hat gewartet|chờ, đợi|Ich [warte] auf den Bus.|Tôi đang đợi xe buýt.|
+v|bleiben|bleibt – ist geblieben|ở lại|Heute [bleibe] ich zu Hause.|Hôm nay tôi ở nhà.|
+v|beginnen|beginnt – hat begonnen|bắt đầu|Der Unterricht [beginnt] um neun Uhr.|Giờ học bắt đầu lúc chín giờ.|
+v|anfangen|fängt an – hat angefangen|bắt đầu|Wann [fängt] der Kurs [an]?|Khi nào khoá học bắt đầu?|
+v|aufhören|hört auf – hat aufgehört|dừng, ngừng|Es [hört] nicht [auf] zu regnen.|Trời mưa mãi không ngớt.|
+v|stehen|steht – hat gestanden|đứng; để (dựng đứng)|Das Auto [steht] vor dem Haus.|Chiếc ô tô đỗ trước nhà.|
+v|sitzen|sitzt – hat gesessen|ngồi|Wir [sitzen] im Garten.|Chúng tôi ngồi trong vườn.|
+v|liegen|liegt – hat gelegen|nằm|Das Buch [liegt] auf dem Tisch.|Quyển sách nằm trên bàn.|
+v|legen|legt – hat gelegt|đặt (nằm xuống)|Ich [lege] das Handy auf den Tisch.|Tôi đặt điện thoại lên bàn.|
+v|stellen|stellt – hat gestellt|đặt (dựng đứng)|Ich [stelle] die Flasche in den Kühlschrank.|Tôi đặt chai vào tủ lạnh.|
+v|öffnen|öffnet – hat geöffnet|mở|Können Sie bitte das Fenster [öffnen]?|Ông/bà mở cửa sổ giúp được không?|
+v|schließen|schließt – hat geschlossen|đóng|Die Geschäfte [schließen] um 20 Uhr.|Các cửa hàng đóng cửa lúc 20 giờ.|
+v|gefallen|gefällt – hat gefallen|làm (ai) thích|Die Stadt [gefällt] mir sehr.|Tôi rất thích thành phố này.|Cấu trúc ngược: vật được thích là chủ ngữ, người thích ở dativ (mir, dir…).
+v|gehören|gehört – hat gehört|thuộc về|Das Fahrrad [gehört] mir.|Chiếc xe đạp này là của tôi.|
+v|schlafen|schläft – hat geschlafen|ngủ|Das Baby [schläft] noch.|Em bé vẫn đang ngủ.|
+=aufstehen
+v|laufen|läuft – ist gelaufen|chạy; đi bộ|Ich [laufe] jeden Morgen im Park.|Sáng nào tôi cũng chạy bộ trong công viên.|
+v|anrufen|ruft an – hat angerufen|gọi điện thoại|[Rufst] du mich heute Abend [an]?|Tối nay bạn gọi cho mình nhé?|
+v|lachen|lacht – hat gelacht|cười|Die Kinder [lachen] viel.|Bọn trẻ cười rất nhiều.|
+v|leben|lebt – hat gelebt|sống|Meine Eltern [leben] in Vietnam.|Bố mẹ tôi sống ở Việt Nam.|
+v|vergessen|vergisst – hat vergessen|quên|Ich [vergesse] immer seinen Namen.|Tôi cứ quên tên anh ấy.|
+v|mitkommen|kommt mit – ist mitgekommen|đi cùng|Ich gehe ins Kino. [Kommst] du [mit]?|Tôi đi xem phim. Bạn đi cùng không?|
+v|mitbringen|bringt mit – hat mitgebracht|mang theo|Kannst du Brot [mitbringen]?|Bạn mang theo bánh mì được không?|
+v|telefonieren|telefoniert – hat telefoniert|nói chuyện điện thoại|Ich [telefoniere] mit meiner Mutter.|Tôi đang nói chuyện điện thoại với mẹ.|
+v|schicken|schickt – hat geschickt|gửi|Ich [schicke] dir ein Foto.|Tôi gửi cho bạn một tấm ảnh.|
+v|waschen|wäscht – hat gewaschen|giặt, rửa|Er [wäscht] sein Auto.|Anh ấy rửa xe.|
+v|benutzen|benutzt – hat benutzt|sử dụng|Darf ich dein Handy [benutzen]?|Mình dùng điện thoại của bạn được không?|
+v|schenken|schenkt – hat geschenkt|tặng|Ich [schenke] dir ein Buch.|Tôi tặng bạn một quyển sách.|
