@@ -56,7 +56,7 @@ phr|Gute Reise!||Chúc thượng lộ bình an!|Du fliegst morgen nach Hanoi? [G
 v|werden|wird – ist geworden|trở thành; sẽ|Mein Sohn [wird] Arzt.|Con trai tôi sẽ trở thành bác sĩ.|
 =können
 v|müssen|muss – hat gemusst|phải|Ich [muss] heute lange arbeiten.|Hôm nay tôi phải làm việc lâu.|
-v|dürfen|darf – hat gedurft|được phép|Hier [darf] man nicht rauchen.|Ở đây không được hút thuốc.|
+v|dürfen|darf – hat gedurft|được phép|[Darf] ich hier sitzen?|Tôi ngồi đây được không?|
 v|wollen|will – hat gewollt|muốn|Ich [will] Deutsch lernen.|Tôi muốn học tiếng Đức.|Bẫy: <b>will</b> = muốn, không phải “sẽ” như tiếng Anh.
 v|sollen|soll – hat gesollt|nên, phải (theo lời người khác)|Der Arzt sagt, ich [soll] viel Wasser trinken.|Bác sĩ bảo tôi nên uống nhiều nước.|
 v|mögen|mag – hat gemocht|thích|Ich [mag] Schokolade.|Tôi thích sô-cô-la.|
@@ -88,14 +88,14 @@ v|anfangen|fängt an – hat angefangen|bắt đầu|Wann [fängt] der Kurs [an]
 v|aufhören|hört auf – hat aufgehört|dừng, ngừng|Es [hört] nicht [auf] zu regnen.|Trời mưa mãi không ngớt.|
 v|stehen|steht – hat gestanden|đứng; để (dựng đứng)|Das Auto [steht] vor dem Haus.|Chiếc ô tô đỗ trước nhà.|
 v|sitzen|sitzt – hat gesessen|ngồi|Wir [sitzen] im Garten.|Chúng tôi ngồi trong vườn.|
-v|liegen|liegt – hat gelegen|nằm|Das Buch [liegt] auf dem Tisch.|Quyển sách nằm trên bàn.|
+v|liegen|liegt – hat gelegen|nằm|Köln [liegt] am Rhein.|Köln nằm bên sông Rhein.|
 v|legen|legt – hat gelegt|đặt (nằm xuống)|Ich [lege] das Handy auf den Tisch.|Tôi đặt điện thoại lên bàn.|
 v|stellen|stellt – hat gestellt|đặt (dựng đứng)|Ich [stelle] die Flasche in den Kühlschrank.|Tôi đặt chai vào tủ lạnh.|
 v|öffnen|öffnet – hat geöffnet|mở|Können Sie bitte das Fenster [öffnen]?|Ông/bà mở cửa sổ giúp được không?|
 v|schließen|schließt – hat geschlossen|đóng|Die Geschäfte [schließen] um 20 Uhr.|Các cửa hàng đóng cửa lúc 20 giờ.|
 v|gefallen|gefällt – hat gefallen|làm (ai) thích|Die Stadt [gefällt] mir sehr.|Tôi rất thích thành phố này.|Cấu trúc ngược: vật được thích là chủ ngữ, người thích ở dativ (mir, dir…).
 v|gehören|gehört – hat gehört|thuộc về|Das Fahrrad [gehört] mir.|Chiếc xe đạp này là của tôi.|
-v|schlafen|schläft – hat geschlafen|ngủ|Das Baby [schläft] noch.|Em bé vẫn đang ngủ.|
+v|schlafen|schläft – hat geschlafen|ngủ|[Schläfst] du schon?|Bạn ngủ chưa?|
 =aufstehen
 v|laufen|läuft – ist gelaufen|chạy; đi bộ|Ich [laufe] jeden Morgen im Park.|Sáng nào tôi cũng chạy bộ trong công viên.|
 v|anrufen|ruft an – hat angerufen|gọi điện thoại|[Rufst] du mich heute Abend [an]?|Tối nay bạn gọi cho mình nhé?|

@@ -21,7 +21,7 @@ n|der Lehrer|die Lehrer|giáo viên (nam)|Der [Lehrer] erklärt die Grammatik.|T
 n|die Lehrerin|die Lehrerinnen|cô giáo|Unsere [Lehrerin] heißt Frau Koch.|Cô giáo chúng tôi tên là cô Koch.|
 n|der Student|die Studenten|sinh viên (nam)|Mein Bruder ist [Student].|Anh tôi là sinh viên.|Nữ: die Studentin. Nói nghề không dùng mạo từ: Ich bin Student.
 n|der Schüler|die Schüler|học sinh|Die [Schüler] haben heute frei.|Hôm nay học sinh được nghỉ.|Nữ: die Schülerin.
-n|die Schule|die Schulen|trường học|Meine Tochter geht schon zur [Schule].|Con gái tôi đã đi học.|
+n|die Schule|die Schulen|trường học|Mein Sohn geht gern in die [Schule].|Con trai tôi thích đi học.|
 n|die Universität|die Universitäten|trường đại học|Ich studiere an der [Universität] Wien.|Tôi học ở Đại học Vienna.|Nói tắt: <b>die Uni</b>.
 n|der Kurs|die Kurse|khoá học|Der [Kurs] beginnt am Montag.|Khoá học bắt đầu vào thứ Hai.|
 n|der Unterricht|–|giờ học, buổi học|Der [Unterricht] dauert 90 Minuten.|Buổi học kéo dài 90 phút.|
@@ -44,7 +44,7 @@ n|der Bleistift|die Bleistifte|bút chì|Schreiben Sie bitte mit [Bleistift].|H�
 n|das Papier|die Papiere|giấy|Ich brauche ein Blatt [Papier].|Tôi cần một tờ giấy.|Nhấn âm sau: pa-<b>PIER</b>.
 n|die Seite|die Seiten|trang|Öffnen Sie das Buch auf [Seite] 20.|Hãy mở sách trang 20.|
 v|wiederholen|wiederholt – hat wiederholt|nhắc lại; ôn lại|Können Sie das bitte [wiederholen]?|Ông/bà có thể nhắc lại được không?|Không tách được: nhấn <b>ho</b> (wie-der-<b>HO</b>-len), Perfekt không có ge-: hat wiederholt.
-v|üben|übt – hat geübt|luyện tập|Ich [übe] jeden Tag Deutsch.|Ngày nào tôi cũng luyện tiếng Đức.|
+v|üben|übt – hat geübt|luyện tập|Wir [üben] die Aussprache.|Chúng tôi luyện phát âm.|
 v|erklären|erklärt – hat erklärt|giải thích|Kannst du mir das [erklären]?|Bạn giải thích cho mình cái này được không?|
 n|der Fehler|die Fehler|lỗi|Der Text hat drei [Fehler].|Bài viết có ba lỗi.|
 
@@ -58,7 +58,7 @@ n|das Ohr|die Ohren|cái tai|Ich höre auf dem linken [Ohr] schlecht.|Tai trái 
 n|die Nase|die Nasen|cái mũi|Meine [Nase] läuft.|Tôi bị sổ mũi.|
 n|der Mund|die Münder|cái miệng|Mach bitte den [Mund] auf.|Há miệng ra nào.|
 n|der Zahn|die Zähne|cái răng|Ich putze mir zweimal am Tag die [Zähne].|Tôi đánh răng hai lần một ngày.|
-n|der Hals|die Hälse|cổ, họng|Ich habe Schmerzen im [Hals].|Tôi bị đau họng.|
+n|der Hals|die Hälse|cổ, họng|Im Winter trage ich einen Schal um den [Hals].|Mùa đông tôi quàng khăn quanh cổ.|
 n|der Arm|die Arme|cánh tay|Das Baby liegt in meinem [Arm].|Em bé nằm trong vòng tay tôi.|
 n|die Hand|die Hände|bàn tay|Wasch dir bitte die [Hände]!|Con đi rửa tay đi!|
 n|der Finger|die Finger|ngón tay|Eine Hand hat fünf [Finger].|Một bàn tay có năm ngón.|
@@ -98,7 +98,7 @@ adj|heiß||nóng|Der Kaffee ist sehr [heiß].|Cà phê rất nóng.|
 adj|kühl||mát, se lạnh|Am Abend wird es [kühl].|Buổi tối trời trở nên mát.|
 adj|sonnig||có nắng|Morgen wird es [sonnig].|Ngày mai trời sẽ nắng.|
 adj|windig||có gió|Heute ist es kalt und [windig].|Hôm nay trời lạnh và nhiều gió.|
-n|der Grad|die Grade|độ|Heute sind es 25 [Grad].|Hôm nay trời 25 độ.|Sau số vẫn để số ít: 25 Grad.
+n|der Grad|die Grade|độ|Im Sommer sind es oft 30 [Grad].|Mùa hè trời thường 30 độ.|Sau số vẫn để số ít: 25 Grad.
 n|der Himmel|die Himmel|bầu trời|Der [Himmel] ist heute blau.|Hôm nay bầu trời trong xanh.|
 n|die Farbe|die Farben|màu sắc|Welche [Farbe] magst du?|Bạn thích màu gì?|
 adj|rot||đỏ|Die Ampel ist [rot].|Đèn giao thông đang đỏ.|
@@ -124,7 +124,7 @@ n|der Mantel|die Mäntel|áo măng tô|Im Winter trage ich einen dicken [Mantel]
 n|das Kleid|die Kleider|váy liền|Sie trägt ein rotes [Kleid].|Cô ấy mặc chiếc váy đỏ.|
 n|der Rock|die Röcke|chân váy|Der [Rock] ist zu kurz.|Chiếc chân váy ngắn quá.|
 n|der Schuh|die Schuhe|chiếc giày|Diese [Schuhe] sind sehr bequem.|Đôi giày này rất thoải mái.|
-n|die Socke|die Socken|chiếc tất|Ich brauche neue [Socken].|Tôi cần tất mới.|
+n|die Socke|die Socken|chiếc tất|Wo sind meine [Socken]?|Tất của tôi đâu rồi?|
 n|die Mütze|die Mützen|mũ len|Im Winter trägt mein Sohn eine [Mütze].|Mùa đông con trai tôi đội mũ len.|
 n|die Tasche|die Taschen|túi xách; túi (áo, quần)|Mein Handy ist in der [Tasche].|Điện thoại của tôi ở trong túi.|
 v|anziehen|zieht an – hat angezogen|mặc (quần áo)|Ich [ziehe] schnell meine Jacke [an].|Tôi mặc vội áo khoác vào.|

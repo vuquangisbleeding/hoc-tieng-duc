@@ -6,8 +6,8 @@ num|drei||ba|Wir wohnen seit [drei] Jahren hier.|Chúng tôi sống ở đây đ
 num|vier||bốn|Das Zimmer hat [vier] Fenster.|Căn phòng có bốn cửa sổ.|<b>v</b> đọc [f]: “fia”.
 num|fünf||năm|Der Kurs beginnt um [fünf] Uhr.|Khoá học bắt đầu lúc năm giờ.|
 num|sechs||sáu|Wir sind [sechs] Personen.|Chúng tôi có sáu người.|<b>chs</b> đọc [ks]: “zéks”.
-num|sieben||bảy|Eine Woche hat [sieben] Tage.|Một tuần có bảy ngày.|
-num|acht||tám|Ich stehe um [acht] Uhr auf.|Tôi dậy lúc tám giờ.|
+num|sieben||bảy|Der Laden öffnet um [sieben] Uhr.|Cửa hiệu mở cửa lúc bảy giờ.|
+num|acht||tám|Ich arbeite [acht] Stunden am Tag.|Tôi làm việc tám tiếng một ngày.|
 num|neun||chín|Mein Sohn ist [neun] Jahre alt.|Con trai tôi chín tuổi.|<b>eu</b> đọc “oi”: “noin”.
 num|zehn||mười|Der Bus kommt in [zehn] Minuten.|Mười phút nữa xe buýt đến.|<b>z</b> = [ts], <b>h</b> câm: “tsên”.
 num|elf||mười một|Es ist schon [elf] Uhr.|Đã mười một giờ rồi.|
@@ -61,7 +61,7 @@ adv|übermorgen||ngày kia|[Übermorgen] fahren wir in den Urlaub.|Ngày kia ch�
 =Jahr
 adj|halb||rưỡi; một nửa|Es ist [halb] acht.|Bây giờ là bảy giờ rưỡi.|Cẩn thận: <b>halb acht</b> = 7:30 (còn nửa tiếng nữa đến 8 giờ), không phải 8:30!
 n|das Viertel|die Viertel|một phần tư; 15 phút|Es ist [Viertel] nach drei.|Bây giờ là ba giờ mười lăm.|Viertel vor drei = 2:45. <b>V</b> đọc [f], <b>ie</b> ở đây đọc ngắn.
-adv|jetzt||bây giờ|Ich habe [jetzt] keine Zeit.|Bây giờ tôi không có thời gian.|
+adv|jetzt||bây giờ|Wir essen [jetzt].|Bây giờ chúng ta ăn.|
 adv|bald||sắp, sớm thôi|Der Zug kommt [bald].|Tàu sắp đến.|
 adv|später||sau, muộn hơn|Ich rufe dich [später] an.|Tôi sẽ gọi cho bạn sau.|
 =früh
@@ -79,7 +79,7 @@ phr|Wie spät ist es?||Mấy giờ rồi?|Entschuldigung, [wie spät ist es]?|Xi
 
 @a1-thu-thang|Thời gian: thứ, tháng, mùa|5
 =Montag
-n|der Dienstag|die Dienstage|thứ Ba|Am [Dienstag] habe ich Deutschkurs.|Thứ Ba tôi có lớp tiếng Đức.|Các ngày trong tuần đều là <b>der</b>; “vào thứ…” = <b>am</b> Dienstag.
+n|der Dienstag|die Dienstage|thứ Ba|Am [Dienstag] gehe ich zum Sport.|Thứ Ba tôi đi tập thể thao.|Các ngày trong tuần đều là <b>der</b>; “vào thứ…” = <b>am</b> Dienstag.
 =Mittwoch
 n|der Donnerstag|die Donnerstage|thứ Năm|Am [Donnerstag] gehe ich zum Arzt.|Thứ Năm tôi đi khám bác sĩ.|
 n|der Freitag|die Freitage|thứ Sáu|Am [Freitag] gehen wir tanzen.|Thứ Sáu chúng tôi đi nhảy.|

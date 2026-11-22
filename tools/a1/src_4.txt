@@ -9,7 +9,7 @@ n|das Wohnzimmer|die Wohnzimmer|phòng khách|Im [Wohnzimmer] steht ein großes 
 =Schlafzimmer
 n|der Flur|die Flure|hành lang (trong nhà)|Die Schuhe stehen im [Flur].|Giày để ở hành lang.|
 =Balkon
-n|der Garten|die Gärten|khu vườn|Die Kinder spielen im [Garten].|Bọn trẻ chơi trong vườn.|
+n|der Garten|die Gärten|khu vườn|Wir haben einen kleinen [Garten].|Chúng tôi có một khu vườn nhỏ.|
 n|der Keller|die Keller|tầng hầm|Das Fahrrad steht im [Keller].|Xe đạp để dưới tầng hầm.|
 n|das Erdgeschoss|die Erdgeschosse|tầng trệt|Wir wohnen im [Erdgeschoss].|Chúng tôi sống ở tầng trệt.|
 n|der Stock|die Stockwerke|tầng (lầu)|Die Wohnung liegt im dritten [Stock].|Căn hộ nằm ở tầng ba (tức tầng bốn kiểu Việt Nam).|Tầng trệt là Erdgeschoss, nên <b>der erste Stock</b> = tầng hai kiểu Việt Nam. Số nhiều theo nghĩa “tầng” dùng <b>die Stockwerke</b> (die Stöcke là “những cây gậy”).

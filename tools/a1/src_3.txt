@@ -1,5 +1,5 @@
 @a1-do-an|Ăn uống: đồ ăn|6
-n|das Essen|die Essen|đồ ăn; bữa ăn|Das [Essen] ist sehr lecker.|Đồ ăn rất ngon.|Danh từ tạo từ động từ (essen → das Essen) luôn là <b>das</b>.
+n|das Essen|die Essen|đồ ăn; bữa ăn|Das [Essen] ist gleich fertig.|Đồ ăn sắp xong rồi.|Danh từ tạo từ động từ (essen → das Essen) luôn là <b>das</b>.
 =essen
 =Frühstück
 n|das Mittagessen|die Mittagessen|bữa trưa|Was gibt es zum [Mittagessen]?|Bữa trưa có món gì?|
@@ -47,7 +47,7 @@ n|das Getränk|die Getränke|đồ uống|Welches [Getränk] möchten Sie?|Ông/
 =Kaffee
 =Tee
 =Milch
-n|der Saft|die Säfte|nước ép|Ein Glas [Saft], bitte.|Cho một ly nước ép.|
+n|der Saft|die Säfte|nước ép|Zum Frühstück trinke ich ein Glas [Saft].|Bữa sáng tôi uống một ly nước ép.|
 n|das Bier|die Biere|bia|In Bayern trinkt man viel [Bier].|Ở bang Bayern người ta uống nhiều bia.|
 n|der Wein|die Weine|rượu vang|Zum Essen trinken wir ein Glas [Wein].|Trong bữa ăn chúng tôi uống một ly vang.|<b>W</b> = [v], <b>ei</b> = “ai”: “vain”.
 n|die Cola|die Colas|nước cô-la|Eine [Cola] ohne Eis, bitte.|Một cô-la không đá.|
@@ -58,7 +58,7 @@ n|die Speisekarte|die Speisekarten|thực đơn|Die [Speisekarte], bitte!|Cho t�
 v|bestellen|bestellt – hat bestellt|gọi món, đặt hàng|Ich [bestelle] eine Pizza.|Tôi gọi một chiếc pizza.|
 n|die Rechnung|die Rechnungen|hoá đơn|Die [Rechnung], bitte!|Cho tôi thanh toán!|
 n|der Kellner|die Kellner|bồi bàn (nam)|Der [Kellner] ist sehr freundlich.|Anh phục vụ rất thân thiện.|Nữ: <b>die Kellnerin</b>.
-n|das Glas|die Gläser|cái ly; thuỷ tinh|Ein [Glas] Wasser, bitte.|Cho một ly nước.|
+n|das Glas|die Gläser|cái ly; thuỷ tinh|Ich trinke ein [Glas] Milch.|Tôi uống một ly sữa.|
 n|die Tasse|die Tassen|cái tách|Möchten Sie eine [Tasse] Kaffee?|Ông/bà dùng một tách cà phê không?|
 n|der Teller|die Teller|cái đĩa|Stell den [Teller] bitte auf den Tisch.|Đặt cái đĩa lên bàn giúp nhé.|
 n|die Flasche|die Flaschen|cái chai|Ich kaufe eine [Flasche] Wasser.|Tôi mua một chai nước.|
