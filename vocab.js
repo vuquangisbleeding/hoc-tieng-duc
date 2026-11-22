@@ -88,6 +88,149 @@ function conjTable(w,hl=[]){
    ${cell(c.prt,"Präteritum","prt")}${cell(c.pf,"Perfekt","pf")}</tbody></table></div>`;
 }
 
+/* ---------- Bóc tách âm tiết & nhận diện âm ---------- */
+const VOW="aeiouyɛɪɔʊœʏøəɐɑ";
+function soundsOf(sp,ipRaw,w,forced){
+  const s=sp.toLowerCase(),ip=ipRaw.replace(/[ˈˌ]/g,""),word=w.w.toLowerCase(),out=[],B=window.SOUND_BANK||{};
+  const add=id=>{if(B[id]&&!out.includes(id))out.push(id)};
+  if(forced)add(forced);
+  if(s==="chen"&&w.a==="das"&&/chen$/.test(word))add("chen");
+  if(/\u0303/.test(ip))add("nasal");
+  if(ip.includes("tʃ"))add("tsch");
+  if(/^s[tp]/.test(s)&&/ʃ[tp]/.test(ip))add("st-sp");
+  if(ip.includes("øː"))add("oe-long");
+  if(ip.includes("œ"))add("oe-short");
+  if(ip.includes("yː"))add("ue-long");
+  if(ip.replace(/ɔʏ̯/g,"").includes("ʏ"))add("ue-short");
+  if(ip.includes("ç"))add("ch-front");
+  if(ip.includes("x"))add("ch-back");
+  if(s.includes("sch")&&!ip.includes("tʃ"))add("sch");
+  if(/^(v?er|her|zer)$/.test(s)&&ip.includes("ɛɐ̯"))add("er-prefix");
+  if(/^s[aeiouäöü]/.test(s)&&ip.startsWith("z"))add("s-voiced");
+  if(s.includes("v")&&ip.includes("f"))add("v-f");
+  if(s.includes("w")&&ip.includes("v"))add("w-v");
+  if(s.includes("z")&&ip.includes("ts"))add("z");
+  if(s.includes("ß"))add("ss");
+  if(s.includes("th")&&ip.includes("t"))add("th");
+  if(s.includes("pf"))add("pf");
+  if(/^j/.test(s)&&ip.startsWith("j"))add("j");
+  if(/^g[eiy]/.test(s)&&ip.startsWith("ɡ"))add("g-hard");
+  if((/[bdg]$/.test(s)&&/[ptk]$/.test(ip))||(/b(?=s?t)/.test(s)&&ip.includes("p")&&!s.includes("p")))add("devoice");
+  if(ip.includes("ʔ"))add("glottal");
+  if(ip.includes("i̯ə"))add("ie-schwa");
+  const fv=ip.search(new RegExp("["+VOW+"]")),rp=ip.indexOf("ʁ");
+  if(rp>=0&&(fv<0||rp<fv))add("r-uvular");
+  if(ip.includes("ɐ̯")&&!out.includes("er-prefix"))add("r-vocalic");
+  if(/ɐn?$/.test(ip))add("er-end");
+  if(rp>=0&&fv>=0&&rp>fv)add("r-coda");
+  if(ip.includes("aɪ̯"))add("ei");
+  if(ip.includes("ɔʏ̯"))add("eu");
+  if(ip.includes("aʊ̯"))add("au");
+  if(ip.includes("ŋ"))add("ng");
+  if(s.includes("ä")&&ip.includes("ɛː"))add("ae-long");
+  if(/[aeiouäöü]h/.test(s)&&ip.includes("ː"))add("h-silent");
+  if(ip.includes("aː"))add("a-long");
+  if(ip.includes("eː")||/e(?!ː)/.test(ip))add("e-long");
+  if(ip.includes("iː")||/i(?![ː\u032F])/.test(ip))add("i-long");
+  if(ip.includes("oː")||/o(?!ː)/.test(ip))add("o-long");
+  if(ip.includes("uː")||/u(?!ː)/.test(ip))add("u-long");
+  if(/a(?!ː)/.test(ip.replace(/aɪ̯|aʊ̯/g,"")))add("a-short");
+  if(/ɛ(?!ː|ɐ̯)/.test(ip))add("e-short");
+  if(/ɪ(?!\u032F)/.test(ip.replace(/aɪ̯/g,"")))add("i-short");
+  if(/ɔ(?!ʏ)/.test(ip))add("o-short");
+  if(ip.replace(/aʊ̯/g,"").includes("ʊ"))add("u-short");
+  if(/n̩$|ən$/.test(ip))add("en");
+  if(ip.includes("l̩"))add("el");
+  if(ip.includes("ə"))add("schwa");
+  return out;
+}
+function parseSyl(w){
+  const v=window.VOCAB_SYL&&VOCAB_SYL[w.w];if(!v)return null;
+  const [sp,ip]=v.split("="),ws=sp.split(" "),iw=ip.split(" "),out=[];
+  ws.forEach((wd,wi)=>{const ii=(iw[wi]||"").split("|");wd.split("|").forEach((x,k)=>{const [t,forced]=x.split("#"),i=ii[k]||"";
+    out.push({sp:t,ip:i,stress:i.includes("ˈ"),second:i.includes("ˌ"),wordStart:k===0,wi,forced})})});
+  out.forEach(x=>x.sounds=soundsOf(x.sp,x.ip,w,x.forced));
+  return out;
+}
+const SYLREG=[];const regW=w=>{let i=SYLREG.indexOf(w);if(i<0){SYLREG.push(w);i=SYLREG.length-1}return i};
+function hlWord(t,h){if(!h)return esc(t);const m=t.match(new RegExp(h,"i"));if(!m)return esc(t);
+  return esc(t.slice(0,m.index))+"<u>"+esc(m[0])+"</u>"+esc(t.slice(m.index+m[0].length))}
+function sylDetail(w,syl,i,pick){
+  const x=syl[i],ids=x.sounds,B=window.SOUND_BANK||{};
+  if(!ids.length)return `<div class="small">Âm tiết “${esc(x.sp)}” đọc đúng như chữ viết.</div>`;
+  const cur=pick&&ids.includes(pick)?pick:ids[0],b=B[cur];
+  const ex=b.ex.filter(([t])=>t.toLowerCase()!==w.w.toLowerCase()).slice(0,5);
+  return `<div class="sndh"><b>${esc(x.sp)}</b> <span class="ipa-in">/${esc(x.ip.replace(/[ˈˌ]/g,""))}/</span> → <b>${esc(b.t)}</b></div>
+    <div class="small">${b.d}</div>
+    <div class="sndl small">Âm này còn có trong (chạm để nghe):</div>
+    <div class="sndex">${ex.map(([t,m])=>`<button class="sndw" data-say="${esc(t)}"><b>${hlWord(t,b.h)}</b><span>${esc(m)}</span></button>`).join("")}</div>
+    ${ids.length>1?`<div class="sndother small">Âm khác trong “${esc(x.sp)}”: ${ids.filter(k=>k!==cur).map(k=>`<button class="sndtag" data-sndpick="${k}" data-sylidx="${i}">${esc(B[k].t)}</button>`).join("")}</div>`:""}`;
+}
+function sylBlock(w){
+  const syl=parseSyl(w);if(!syl)return "";
+  const start=Math.max(0,syl.findIndex(x=>x.sounds.length));
+  return `<div class="sylb" data-sylid="${regW(w)}">
+    <div class="sylh">🔤 Bóc tách âm tiết <span class="small">· chạm vào từng âm tiết</span></div>
+    <div class="sylrow">${syl.map((x,i)=>`${i&&x.wordStart?'<span class="sylgap"></span>':i?'<span class="syldot">·</span>':""}<button class="sylc${i===start?" on":""}${x.stress?" st":""}" data-sylpick="${i}"><b>${esc(x.sp)}</b><span>/${esc(x.ip)}/</span>${x.stress&&syl.length>1?"<i>nhấn</i>":""}</button>`).join("")}</div>
+    <div class="syldet">${sylDetail(w,syl,start)}</div></div>`;
+}
+/* ---------- Lưu ý khi học: mẹo giống, động từ, từ mượn, trọng âm ---------- */
+function genderTrick(w){
+  if(!w.a)return "";const G=window.GENDER_TRICK||{};if(G[w.w])return G[w.w];
+  const x=w.w.toLowerCase();
+  if(/(chen|lein)$/.test(x))return "Đuôi <b>-chen / -lein</b> luôn là <b>das</b>.";
+  if(w.a==="die"&&/(ung|heit|keit|schaft|ion|tät|ik|ei|ie)$/.test(x))return `Đuôi <b>-${x.match(/(ung|heit|keit|schaft|ion|tät|ik|ei|ie)$/)[1]}</b> → hầu như luôn là <b>die</b> (cả nhóm -ung, -heit, -keit, -schaft, -ion, -tät, -ei, -ie).`;
+  if(w.a==="die"&&/e$/.test(x))return "Khoảng 90% danh từ đuôi <b>-e</b> là <b>die</b> (die Küche, die Woche, die Straße).";
+  if(w.a==="der"&&/(ling|ismus)$/.test(x))return "Đuôi -ling, -ismus luôn là <b>der</b>.";
+  if(w.a==="das"&&/(um|ment)$/.test(x))return "Đuôi -um, -ment thường là <b>das</b>.";
+  return "";
+}
+function verbNotes(w){
+  const c=conjOf(w);if(!c)return null;
+  const part=c.pf.f.replace(/^(hat|ist) /,"").replace(/ \(.*\)$/,"");
+  const presIrr=c.p.map((r,k)=>r.irr?`${PERS[k]} ${r.f}`:null).filter(Boolean);
+  const modal=["können","möchten","müssen","dürfen","wollen","sollen","mögen"].includes(w.w);
+  const irr=w.w==="sein"||presIrr.length>0||c.prt.irr,bits=[];
+  if(w.w==="sein")bits.push("Bất quy tắc hoàn toàn – phải học thuộc cả bảng.");
+  else if(irr){
+    if(presIrr.length&&!modal)bits.push(`Hiện tại đổi gốc ở <b>${presIrr.map(esc).join(", ")}</b>.`);
+    if(c.prt.irr)bits.push(`Quá khứ bất quy tắc <b>${esc(c.prt.f)}</b>, phân từ II <b>${esc(part)}</b>.`);
+  } else bits.push(`Chia theo mẫu chuẩn (-e, -st, -t, -en); Perfekt: <b>${esc(c.pf.f)}</b>.`);
+  if(modal)bits.push("Động từ khuyết thiếu: ngôi ich và er/sie/es giống nhau, không có đuôi -t.");
+  if(/^ist /.test(c.pf.f))bits.push("Perfekt dùng <b>sein</b> (ist …) vì chỉ sự di chuyển hoặc thay đổi trạng thái.");
+  if(c.p[0].f.includes(" "))bits.push("Động từ <b>tách được</b>: tiền tố chạy về cuối câu.");
+  if(!/ge/.test(part))bits.push("Phân từ II <b>không thêm ge-</b>.");
+  return{title:irr?"Động từ bất quy tắc":"Động từ có quy tắc",text:bits.join(" ")};
+}
+const STRESS_OVR={
+  "geradeaus":"Nhấn âm cuối <b>aus</b>: các trạng từ ghép chỉ hướng như geradeaus, voraus, hinaus, heraus nhấn phần sau.",
+  "Hallo":"Thường nhấn âm cuối <b>lo</b> (ha-LÔ); nhấn âm đầu cũng được chấp nhận."
+};
+function stressNote(w){
+  if(STRESS_OVR[w.w])return STRESS_OVR[w.w];
+  const syl=parseSyl(w);if(!syl||w.w.includes(" ")||syl.length<2)return "";
+  const i=syl.findIndex(x=>x.stress);if(i<0)return "";const sp=`<b>${esc(syl[i].sp)}</b>`;
+  const c=conjOf(w);
+  if(c&&c.p[0].f.includes(" "))return `Nhấn tiền tố tách được ${sp}- (động từ tách được luôn nhấn phần tiền tố).`;
+  const comp=syl.some(x=>x.second)?" Từ ghép: phần đầu nhấn chính, phần sau nhấn phụ.":"";
+  if(i===0)return `Nhấn âm tiết đầu ${sp} – đúng quy tắc chung của từ gốc Đức.${comp}`;
+  let why="";const first=syl[0].sp.toLowerCase();
+  if(/^(be|ge|ver|er|ent|zer|emp|miss)$/.test(first))why=` vì tiền tố <b>${esc(syl[0].sp)}-</b> không bao giờ nhận trọng âm`;
+  else if(/ieren$/.test(w.w))why=" vì động từ đuôi -ieren luôn nhấn “ie”";
+  else if(/ei$/.test(w.w))why=" vì đuôi -ei luôn nhận trọng âm";
+  else if(window.VOCAB_ORIGIN&&VOCAB_ORIGIN[w.w])why=" vì đây là từ mượn";
+  return `Nhấn âm tiết thứ ${i+1} ${sp}, không phải âm đầu${why}.${comp}`;
+}
+function notesBlock(w){
+  const L=[],g=genderTrick(w),v=verbNotes(w),o=window.VOCAB_ORIGIN&&VOCAB_ORIGIN[w.w],st=stressNote(w);
+  if(g)L.push(["🎨","Mẹo nhớ giống",g]);
+  if(v)L.push(["🔁",v.title,v.text]);
+  if(o)L.push(["🌍",`Từ mượn (${esc(o[0])})`,esc(o[1])]);
+  if(st)L.push(["ˈ","Trọng âm",st]);
+  if(!L.length)return "";
+  return `<div class="wlu"><div class="wlu-h">📌 Lưu ý khi học</div>${L.map(([i,t,x])=>`<div class="wlu-l"><span class="wlu-i">${i}</span><div><b>${t}:</b> ${x}</div></div>`).join("")}</div>`;
+}
+
 /* ---------- Khung chung ---------- */
 let curSet=null,starOnly=false;
 const wordsOf=set=>{const ws=set.words;if(!starOnly)return ws;const s=ws.filter(w=>pr(keyOf(set,w)).star);return s.length?s:ws};
@@ -102,7 +245,8 @@ function infoBlock(w,opts={}){ // phần giải nghĩa đầy đủ – dùng �
     ${w.pl?`<div class="wrow"><span>Số nhiều</span>${w.pl==="—"?"<i>thường không dùng số nhiều</i>":esc(w.pl)}</div>`:""}
     ${w.f&&!ct?`<div class="wrow"><span>Chia</span>${esc(w.f)}</div>`:""}
     ${w.n?`<div class="wnote"><b>🗣 Phát âm & trọng âm:</b> ${w.n}</div>`:""}
-    ${opts.gender&&genderHint(w)?`<div class="wnote alt">${genderHint(w)}</div>`:""}
+    ${notesBlock(w)}
+    ${sylBlock(w)}
     ${ct}
     ${w.ex?`<div class="wex">${esc(w.ex.replace(/[\[\]]/g,""))} <button class="spk" data-say="${esc(w.ex.replace(/[\[\]]/g,""))}" aria-label="Nghe câu">🔊</button><button class="spk trymic" data-tryread="${esc(w.ex.replace(/[\[\]]/g,""))}" aria-label="Đọc thử câu ví dụ">🎤</button><br><span>${esc(w.exv||"")}</span></div>`:""}
     <div class="tryread">
@@ -353,6 +497,9 @@ function saveCustom(){
 root.addEventListener("click",e=>{
   const t=e.target.closest("button,[data-set]");if(!t)return;
   if(t.dataset.ch&&lastInput){const i=lastInput,s=i.selectionStart??i.value.length;i.value=i.value.slice(0,s)+t.dataset.ch+i.value.slice(i.selectionEnd??s);i.focus();i.setSelectionRange(s+1,s+1);return}
+  if(t.dataset.sylpick!=null){const b=t.closest(".sylb"),w=SYLREG[+b.dataset.sylid],i=+t.dataset.sylpick;
+    b.querySelectorAll(".sylc").forEach(c=>c.classList.toggle("on",c===t));b.querySelector(".syldet").innerHTML=sylDetail(w,parseSyl(w),i);return}
+  if(t.dataset.sndpick){const b=t.closest(".sylb"),w=SYLREG[+b.dataset.sylid];b.querySelector(".syldet").innerHTML=sylDetail(w,parseSyl(w),+t.dataset.sylidx,t.dataset.sndpick);return}
   if(t.dataset.tryread){tryRead(t);return}
   if(t.dataset.say){speak(t.dataset.say);return}
   if(t.dataset.practice){window.appPractice&&window.appPractice(t.dataset.practice,t.dataset.ipa,t.dataset.mean);return}
@@ -378,10 +525,11 @@ root.addEventListener("click",e=>{
     else{const tw=term(q.w);h.innerHTML=`Gợi ý: <b>${esc(tw.slice(0,(q.w.a?q.w.a.length+1:0)+2))}…</b> (${q.w.w.length} chữ cái)`}}
   else if(a==="redoWrong"){const ws=run.wrong.slice();series(run.kind==="test"?"write":run.kind,ws)}
 });
-root.addEventListener("click",e=>{const f=e.target.closest("#flip");if(f&&!e.target.closest("button,.tryread,.wex,.conj")){fc.flip=!fc.flip;f.classList.toggle("on",fc.flip);if(fc.flip&&fc.dir==="vi")speak(term(fc.list[fc.i]))}});
+root.addEventListener("click",e=>{const f=e.target.closest("#flip");if(f&&!e.target.closest("button,.tryread,.wex,.conj,.sylb,.wlu")){fc.flip=!fc.flip;f.classList.toggle("on",fc.flip);if(fc.flip&&fc.dir==="vi")speak(term(fc.list[fc.i]))}});
 root.addEventListener("change",e=>{if(e.target.id==="starOnly"){starOnly=e.target.checked}});
 const curQ=()=>activeQ;
 
 window.vocabHome=home;
+window.__vocabTest={parseSyl,notesBlock,verbNotes,genderTrick,stressNote};
 home();
 })();

@@ -48,7 +48,7 @@ window.VOCAB_SETS = [
  {t:"n",a:"der",w:"Kaffee",pl:"die Kaffees",m:"cà phê",i:"ˈkafe",ex:"Trinkst du gern [Kaffee]?",exv:"Bạn có thích uống cà phê không?",n:"Ở Đức thường nhấn <b>đầu</b> “<b>KA</b>-phê”; ở Áo nhấn cuối “ka-<b>PHÊ</b>”."},
  {t:"n",a:"der",w:"Tee",pl:"die Tees",m:"trà",i:"teː",ex:"Möchtest du einen [Tee]?",exv:"Bạn có muốn uống trà không?",n:"<b>ee</b> = “ê” dài, không biến thành “ây”."},
  {t:"n",a:"das",w:"Ei",pl:"die Eier",m:"quả trứng",i:"aɪ̯",ex:"Ich esse ein [Ei] zum Frühstück.",exv:"Tôi ăn một quả trứng vào bữa sáng.",n:"<b>ei</b> = “ai”. Số nhiều Eier đọc “ai-ơ” [ˈaɪ̯ɐ]."},
- {t:"n",a:"der",w:"Apfel",pl:"die Äpfel",m:"quả táo",i:"ˈap͡fl̩",ex:"Der [Apfel] ist rot.",exv:"Quả táo màu đỏ.",n:"<b>pf</b> đọc liền một hơi “p+ph”. Số nhiều đổi a → <b>ä</b>."},
+ {t:"n",a:"der",w:"Apfel",pl:"die Äpfel",m:"quả táo",i:"ˈapfl̩",ex:"Der [Apfel] ist rot.",exv:"Quả táo màu đỏ.",n:"<b>pf</b> đọc liền một hơi “p+ph”. Số nhiều đổi a → <b>ä</b>."},
  {t:"n",a:"die",w:"Kartoffel",pl:"die Kartoffeln",m:"khoai tây",i:"kaʁˈtɔfl̩",ex:"Wir essen [Kartoffeln] mit Fleisch.",exv:"Chúng tôi ăn khoai tây với thịt.",n:"Ngoại lệ trọng âm: nhấn <b>tof</b> (không phải âm đầu)."},
  {t:"n",a:"das",w:"Fleisch",pl:"—",m:"thịt",i:"flaɪ̯ʃ",ex:"Ich esse kein [Fleisch].",exv:"Tôi không ăn thịt.",n:"<b>ei</b> = “ai”; <b>sch</b> cuối kéo nhẹ."},
  {t:"n",a:"der",w:"Fisch",pl:"die Fische",m:"cá",i:"fɪʃ",ex:"Der [Fisch] ist frisch.",exv:"Cá còn tươi.",n:"<b>i</b> ngắn [ɪ] vì sau nó là <b>sch</b>."},
@@ -159,4 +159,139 @@ window.VERB_CONJ = {
  "können":{p:"*kann|kan;*kannst|kanst;*kann|kan;können|ˈkœnən;könnt|kœnt;können|ˈkœnən",prt:"*konnte|ˈkɔntə",pf:"hat gekonnt|hat ɡəˈkɔnt"},
  "möchten":{p:"möchte|ˈmœçtə;möchtest|ˈmœçtəst;*möchte|ˈmœçtə;möchten|ˈmœçtn̩;möchtet|ˈmœçtət;möchten|ˈmœçtn̩",prt:"*wollte (dùng wollen)|ˈvɔltə",pf:"hat gewollt (dùng wollen)|hat ɡəˈvɔlt"},
  "studieren":{p:"studiere|ʃtuˈdiːʁə;studierst|ʃtuˈdiːɐ̯st;studiert|ʃtuˈdiːɐ̯t;studieren|ʃtuˈdiːʁən;studiert|ʃtuˈdiːɐ̯t;studieren|ʃtuˈdiːʁən",prt:"studierte|ʃtuˈdiːɐ̯tə",pf:"hat studiert|hat ʃtuˈdiːɐ̯t"}
+};
+
+/* Tách âm tiết: "chính tả|chính tả=IPA|IPA". Âm tiết có ˈ là âm tiết nhấn.
+   "#id" sau âm tiết = chọn sẵn âm chính để giải thích (khi tự nhận diện không đủ). */
+window.VOCAB_SYL = {
+ "Hallo":"Hal|lo=ha|ˈloː","Tschüss":"Tschüss=tʃʏs","Guten Tag":"Gu|ten Tag=ˈɡuː|tn̩ ˈtaːk","danke":"dan|ke=ˈdaŋ|kə","bitte":"bit|te=ˈbɪ|tə",
+ "Entschuldigung":"Ent|schul|di|gung=ɛnt|ˈʃʊl|dɪ|ɡʊŋ","heißen":"hei|ßen=ˈhaɪ̯|sn̩","kommen":"kom|men=ˈkɔ|mən","wohnen":"woh|nen=ˈvoː|nən",
+ "sprechen":"spre|chen=ˈʃpʁɛ|çn̩","Name":"Na|me=ˈnaː|mə","Land":"Land=lant","Sprache":"Spra|che=ˈʃpʁaː|xə","ja":"ja=jaː","nein":"nein=naɪ̯n",
+ "Herr":"Herr=hɛʁ","Frau":"Frau=fʁaʊ̯",
+ "Familie":"Fa|mi|lie=fa|ˈmiː|li̯ə","Mutter":"Mut|ter=ˈmʊ|tɐ","Vater":"Va|ter=ˈfaː|tɐ","Eltern":"El|tern=ˈɛl|tɐn","Bruder":"Bru|der=ˈbʁuː|dɐ",
+ "Schwester":"Schwes|ter=ˈʃvɛs|tɐ","Kind":"Kind=kɪnt","Sohn":"Sohn=zoːn","Tochter":"Toch|ter=ˈtɔx|tɐ","Großvater":"Groß|va|ter=ˈɡʁoːs|ˌfaː|tɐ",
+ "Großmutter":"Groß|mut|ter=ˈɡʁoːs|ˌmʊ|tɐ","Mann":"Mann=man","verheiratet":"ver|hei|ra|tet=fɛɐ̯|ˈhaɪ̯|ʁaː|tət","Baby":"Ba|by=ˈbeː|bi",
+ "Onkel":"On|kel=ˈɔŋ|kl̩","Tante":"Tan|te=ˈtan|tə",
+ "Brot":"Brot=bʁoːt","Brötchen":"Bröt|chen=ˈbʁøːt|çən","Käse":"Kä|se=ˈkɛː|zə","Milch":"Milch=mɪlç","Wasser":"Was|ser=ˈva|sɐ","Kaffee":"Kaf|fee=ˈka|fe",
+ "Tee":"Tee=teː","Ei":"Ei=aɪ̯","Apfel":"Ap|fel#pf=ˈap|fl̩","Kartoffel":"Kar|tof|fel=kaʁ|ˈtɔ|fl̩","Fleisch":"Fleisch=flaɪ̯ʃ","Fisch":"Fisch=fɪʃ",
+ "Gemüse":"Ge|mü|se=ɡə|ˈmyː|zə","Obst":"Obst#o-long=oːpst","essen":"es|sen=ˈɛ|sn̩","trinken":"trin|ken=ˈtʁɪŋ|kn̩","Frühstück":"Früh|stück=ˈfʁyː|ʃtʏk",
+ "lecker":"le|cker=ˈlɛ|kɐ",
+ "Wohnung":"Woh|nung=ˈvoː|nʊŋ","Haus":"Haus=haʊ̯s","Zimmer":"Zim|mer=ˈtsɪ|mɐ","Küche":"Kü|che=ˈkʏ|çə","Bad":"Bad=baːt",
+ "Schlafzimmer":"Schlaf|zim|mer=ˈʃlaːf|ˌtsɪ|mɐ","Tisch":"Tisch=tɪʃ","Stuhl":"Stuhl=ʃtuːl","Bett":"Bett=bɛt","Fenster":"Fens|ter=ˈfɛns|tɐ",
+ "Tür":"Tür=tyːɐ̯","Miete":"Mie|te=ˈmiː|tə","groß":"groß=ɡʁoːs","klein":"klein=klaɪ̯n","dunkel":"dun|kel=ˈdʊŋ|kl̩","Balkon":"Bal|kon=bal|ˈkɔŋ",
+ "Tag":"Tag=taːk","Woche":"Wo|che=ˈvɔ|xə","Monat":"Mo|nat=ˈmoː|nat","Jahr":"Jahr=jaːɐ̯","heute":"heu|te=ˈhɔʏ̯|tə","morgen":"mor|gen=ˈmɔʁ|ɡn̩",
+ "gestern":"ges|tern=ˈɡɛs|tɐn","Uhr":"Uhr=uːɐ̯","Stunde":"Stun|de=ˈʃtʊn|də","Minute":"Mi|nu|te=mi|ˈnuː|tə","Montag":"Mon|tag=ˈmoːn|ˌtaːk",
+ "Mittwoch":"Mitt|woch=ˈmɪt|ˌvɔx","Wochenende":"Wo|chen|en|de=ˈvɔ|xn̩|ˌʔɛn|də","spät":"spät=ʃpɛːt","früh":"früh=fʁyː",
+ "Geburtstag":"Ge|burts|tag=ɡə|ˈbuːɐ̯ts|ˌtaːk",
+ "sein":"sein=zaɪ̯n","haben":"ha|ben=ˈhaː|bn̩","machen":"ma|chen=ˈma|xn̩","gehen":"ge|hen=ˈɡeː|ən","fahren":"fah|ren=ˈfaː|ʁən",
+ "lernen":"ler|nen=ˈlɛʁ|nən","arbeiten":"ar|bei|ten=ˈaʁ|baɪ̯|tn̩","sehen":"se|hen=ˈzeː|ən","lesen":"le|sen=ˈleː|zn̩","schreiben":"schrei|ben=ˈʃʁaɪ̯|bn̩",
+ "verstehen":"ver|ste|hen=fɛɐ̯|ˈʃteː|ən","aufstehen":"auf|ste|hen=ˈaʊ̯f|ˌʃteː|ən","kaufen":"kau|fen=ˈkaʊ̯|fn̩","können":"kön|nen=ˈkœ|nən",
+ "möchten":"möch|ten=ˈmœç|tn̩","studieren":"stu|die|ren=ʃtu|ˈdiː|ʁən",
+ "Bahnhof":"Bahn|hof=ˈbaːn|hoːf","Zug":"Zug=tsuːk","Bus":"Bus=bʊs","Auto":"Au|to=ˈaʊ̯|to","Straße":"Stra|ße=ˈʃtʁaː|sə","Stadt":"Stadt=ʃtat",
+ "Supermarkt":"Su|per|markt=ˈzuː|pɐ|ˌmaʁkt","Apotheke":"A|po|the|ke=a|po|ˈteː|kə","Restaurant":"Res|tau|rant=ʁɛs|to|ˈʁɑ̃ː","Bank":"Bank=baŋk",
+ "links":"links=lɪŋks","rechts":"rechts=ʁɛçts","geradeaus":"ge|ra|de|aus=ɡə|ʁaː|də|ˈʔaʊ̯s","Haltestelle":"Hal|te|stel|le=ˈhal|tə|ˌʃtɛ|lə",
+ "Ticket":"Ti|cket=ˈtɪ|kət","Flughafen":"Flug|ha|fen=ˈfluːk|ˌhaː|fn̩","Polizei":"Po|li|zei=po|li|ˈtsaɪ̯"
+};
+
+/* Từ mượn: [nguồn gốc, ghi chú] */
+window.VOCAB_ORIGIN = {
+ "Tschüss":["Tây Ban Nha / Pháp","Bắt nguồn từ lời chào “adiós”/“adieu”, đi vào tiếng Đức qua phương ngữ miền Bắc."],
+ "Familie":["Latin","Từ “familia”: giữ trọng âm ở “mi”, đuôi -ie đọc “i-ơ”."],
+ "Baby":["Anh","Đọc gần như tiếng Anh “bê-bi”; số nhiều chỉ thêm -s (die Babys)."],
+ "Kaffee":["Pháp (gốc Ả Rập)","Qua tiếng Pháp “café”; ở Đức hay nhấn âm đầu, ở Áo nhấn âm cuối."],
+ "Kartoffel":["Ý","Từ “tartufolo” (nấm truýp) – vì vậy trọng âm không rơi vào âm đầu."],
+ "Balkon":["Pháp","Từ “balcon”: nhấn âm cuối, -on đọc gần như “ong”."],
+ "Minute":["Latin","Từ “minuta”: nhấn âm “nu”."],
+ "Restaurant":["Pháp","Giữ cách đọc Pháp: au = “ô”, -ant đọc mũi và không đọc t; nhấn âm cuối."],
+ "Ticket":["Anh","Đọc như tiếng Anh. Từ Đức tương đương: die Fahrkarte."],
+ "Apotheke":["Hy Lạp","Từ “apothḗkē” (kho chứa): th đọc t, nhấn “te”."],
+ "Polizei":["Hy Lạp / Latin","Từ “politeia” (việc quản lý thành phố); đuôi -ei nhận trọng âm."],
+ "Auto":["Hy Lạp + Latin","Rút gọn từ “das Automobil” (tự + chuyển động) – vì thế là das."],
+ "Bus":["Latin","Rút gọn từ “Omnibus” (“cho tất cả mọi người”)."],
+ "Bank":["Ý","Nghĩa “ngân hàng” đến từ tiếng Ý “banca” (bàn của người đổi tiền)."],
+ "studieren":["Latin","Từ “studere”; mọi động từ -ieren đều nhấn “ie” và không thêm ge- ở Perfekt."],
+ "Supermarkt":["Latin + Đức","“super” (Latin: trên, hơn) + der Markt."]
+};
+
+/* Mẹo nhớ giống riêng cho từng danh từ (ngoài các quy tắc đuôi từ tự động) */
+window.GENDER_TRICK = (()=>{
+ const t={},put=(ws,txt)=>ws.forEach(w=>t[w]=txt);
+ put(["Vater","Bruder","Sohn","Mann","Herr","Onkel"],"Người giống đực → <b>der</b> (der Vater, der Bruder, der Onkel…).");
+ put(["Mutter","Schwester","Tochter","Frau","Tante"],"Người giống cái → <b>die</b> (die Mutter, die Tante…). Ngoại lệ đáng nhớ: das Mädchen (vì đuôi -chen).");
+ put(["Brötchen","Mädchen"],"Đuôi <b>-chen</b> (nghĩa “nhỏ”) luôn là <b>das</b> – kể cả das Mädchen (cô gái): đuôi từ quyết định giống, không phải giới tính.");
+ t["Großvater"]="Từ ghép lấy giống của <b>từ cuối</b>: der Vater → <b>der</b> Großvater.";
+ t["Großmutter"]="Từ ghép lấy giống của <b>từ cuối</b>: die Mutter → <b>die</b> Großmutter.";
+ t["Schlafzimmer"]="Từ ghép lấy giống của từ cuối: das Zimmer → <b>das</b> Schlafzimmer.";
+ t["Wochenende"]="Từ ghép lấy giống của từ cuối: das Ende → <b>das</b> Wochenende (dù die Woche).";
+ t["Frühstück"]="Từ ghép lấy giống của từ cuối: das Stück → <b>das</b> Frühstück.";
+ t["Bahnhof"]="Từ ghép lấy giống của từ cuối: der Hof → <b>der</b> Bahnhof (dù die Bahn).";
+ t["Supermarkt"]="Từ ghép lấy giống của từ cuối: der Markt → <b>der</b> Supermarkt.";
+ t["Flughafen"]="Từ ghép lấy giống của từ cuối: der Hafen → <b>der</b> Flughafen.";
+ t["Haltestelle"]="Từ ghép lấy giống của từ cuối: die Stelle → <b>die</b> Haltestelle.";
+ t["Geburtstag"]="Từ ghép lấy giống của từ cuối: der Tag → <b>der</b> Geburtstag (dù die Geburt).";
+ put(["Montag","Mittwoch","Tag","Monat"],"Ngày, thứ, tháng, mùa đều là <b>der</b> (der Montag, der Januar, der Sommer).");
+ t["Käse"]="Ngoại lệ: phần lớn danh từ đuôi -e là die, nhưng <b>der</b> Käse thì không.";
+ t["Name"]="Ngoại lệ đuôi -e: <b>der</b> Name (cùng nhóm với der Junge, der Kunde).";
+ put(["Kind","Baby"],"Trẻ con và con non thường là <b>das</b>: das Kind, das Baby.");
+ t["Auto"]="<b>das</b> Auto vì là dạng rút gọn của das Automobil.";
+ put(["Bus","Zug"],"Nhiều phương tiện giao thông là <b>der</b>: der Bus, der Zug, der Wagen – nhưng das Auto, die Bahn.");
+ put(["Kaffee","Tee"],"Đồ uống nóng thường là <b>der</b>: der Kaffee, der Tee (nhưng die Milch, das Wasser).");
+ t["Gemüse"]="Danh từ tập hợp có tiền tố <b>Ge-</b> thường là <b>das</b>: das Gemüse, das Gebäck, das Geschirr.";
+ t["Apfel"]="Nhiều danh từ đuôi <b>-el</b> là <b>der</b>: der Apfel, der Löffel, der Onkel – ngoại lệ: die Kartoffel.";
+ t["Kartoffel"]="Ngoại lệ của mẹo “đuôi -el thường là der”: <b>die</b> Kartoffel.";
+ put(["Fenster","Zimmer","Wasser"],"Đuôi -er thường là der (der Lehrer), nhưng cần nhớ riêng: <b>das</b> Fenster, <b>das</b> Zimmer, <b>das</b> Wasser.");
+ t["Eltern"]="Danh từ chỉ có số nhiều luôn dùng <b>die</b>: die Eltern, die Leute, die Ferien.";
+ put(["Restaurant","Ticket"],"Nhiều từ mượn tiếng Pháp/Anh là <b>das</b>: das Restaurant, das Hotel, das Café, das Ticket.");
+ return t;
+})();
+
+/* Kho âm: t = tên âm, d = mẹo đọc, h = phần chữ cần tô trong ví dụ, ex = [từ, nghĩa] */
+window.SOUND_BANK = {
+ "chen":{t:"đuôi -chen [çən]",d:"Đuôi -chen nghĩa là “nhỏ, đáng yêu”: ch xì nhẹ, -en lướt. Danh từ đuôi -chen luôn là das.",h:"chen$",ex:[["Brötchen","bánh mì nhỏ"],["Mädchen","cô gái"],["Kätzchen","mèo con"],["Häuschen","ngôi nhà nhỏ"],["Würstchen","xúc xích nhỏ"],["Hähnchen","thịt gà"],["Märchen","truyện cổ tích"]]},
+ "nasal":{t:"âm mũi [ɑ̃]",d:"Âm mũi kiểu Pháp: đọc gần “ăng” nhưng không bật rõ “ng”.",h:"an|en|on",ex:[["Restaurant","nhà hàng"],["Croissant","bánh sừng bò"],["Orange","quả cam"],["Chance","cơ hội"],["Engagement","sự cam kết"]]},
+ "tsch":{t:"tsch [tʃ]",d:"Như “ch” tiếng Việt nhưng bật mạnh, môi hơi chu.",h:"tsch",ex:[["tschüss","tạm biệt"],["Deutsch","tiếng Đức"],["Deutschland","nước Đức"],["Entschuldigung","xin lỗi"],["Quatsch","vớ vẩn"],["klatschen","vỗ tay"]]},
+ "oe-long":{t:"ö dài [øː]",d:"Lưỡi đặt như “ê”, môi tròn như “ô”, kéo dài.",h:"ö",ex:[["schön","đẹp"],["hören","nghe"],["böse","xấu, giận"],["Öl","dầu"],["Größe","cỡ"],["Brötchen","bánh mì nhỏ"],["Löwe","sư tử"]]},
+ "oe-short":{t:"ö ngắn [œ]",d:"Như ö dài nhưng ngắn, miệng mở hơn.",h:"ö",ex:[["können","có thể"],["möchte","muốn"],["öffnen","mở"],["zwölf","mười hai"],["Wörter","các từ"],["Töchter","các con gái"],["Köln","thành phố Köln"]]},
+ "ue-long":{t:"ü dài [yː]",d:"Lưỡi đọc “i”, môi chu tròn như “u”, kéo dài.",h:"ü",ex:[["müde","mệt"],["Tür","cửa"],["grün","xanh lá"],["über","trên, về"],["früh","sớm"],["Bücher","những quyển sách"],["Gemüse","rau"]]},
+ "ue-short":{t:"ü ngắn [ʏ]",d:"Như ü dài nhưng ngắn và lỏng hơn.",h:"ü",ex:[["fünf","năm"],["Küche","bếp"],["Glück","may mắn"],["Brücke","cây cầu"],["Stück","miếng"],["müssen","phải"],["dünn","mỏng"]]},
+ "ch-front":{t:"ch xì [ç]",d:"Sau i, e, ä, ö, ü, ei, eu, l, n, r: lưỡi gần vòm miệng, thổi hơi xì như mèo phì. Không đọc “k” hay “kh”.",h:"ch",ex:[["ich","tôi"],["nicht","không"],["Milch","sữa"],["sprechen","nói"],["Licht","ánh sáng"],["rechts","bên phải"],["Küche","bếp"]]},
+ "ch-back":{t:"ch khàn [x]",d:"Sau a, o, u, au: khàn ở cổ họng, gần như “kh” tiếng Việt.",h:"ch",ex:[["acht","tám"],["Buch","sách"],["Nacht","đêm"],["Woche","tuần"],["kochen","nấu ăn"],["Kuchen","bánh ngọt"],["machen","làm"]]},
+ "st-sp":{t:"st-/sp- đầu âm tiết [ʃt]/[ʃp]",d:"Đứng đầu từ (hoặc đầu một phần của từ ghép): st đọc “scht”, sp đọc “schp”.",h:"s[tp]",ex:[["Straße","con đường"],["Stadt","thành phố"],["Stuhl","cái ghế"],["sprechen","nói"],["spät","muộn"],["Sport","thể thao"],["Stunde","tiếng đồng hồ"]]},
+ "sch":{t:"sch [ʃ]",d:"Như “s” uốn lưỡi, môi chu ra trước.",h:"sch",ex:[["schön","đẹp"],["Tisch","cái bàn"],["Fisch","cá"],["Schule","trường học"],["Tasche","cái túi"],["schreiben","viết"],["Fleisch","thịt"]]},
+ "er-prefix":{t:"ver-/er- [fɛɐ̯]/[ɛɐ̯]",d:"Tiền tố không bao giờ nhận trọng âm; r gần như thành “a” nhẹ; v đọc “ph”.",h:"^v?er",ex:[["verstehen","hiểu"],["verkaufen","bán"],["vergessen","quên"],["erklären","giải thích"],["erzählen","kể"],["verheiratet","đã kết hôn"]]},
+ "s-voiced":{t:"s trước nguyên âm [z]",d:"s đứng trước nguyên âm đọc rung (như “d” nhẹ/“z”): Sohn đọc “zôn”.",h:"s(?=[aeiouäöü])",ex:[["Sohn","con trai"],["sehen","nhìn"],["sieben","bảy"],["Sonne","mặt trời"],["lesen","đọc"],["Käse","phô mai"],["Saft","nước ép"]]},
+ "v-f":{t:"v đọc [f]",d:"Trong từ gốc Đức, v đọc như “ph”.",h:"v",ex:[["Vater","bố"],["vier","bốn"],["viel","nhiều"],["Vogel","con chim"],["von","từ, của"],["voll","đầy"]]},
+ "w-v":{t:"w đọc [v]",d:"w tiếng Đức đọc như “v” tiếng Việt.",h:"w",ex:[["Wasser","nước"],["Wein","rượu vang"],["wohnen","sống"],["Woche","tuần"],["wir","chúng tôi"],["was","cái gì"],["wie","như thế nào"]]},
+ "z":{t:"z / tz [ts]",d:"Đọc “ts” liền một hơi.",h:"tz|z",ex:[["zehn","mười"],["Zeit","thời gian"],["Zimmer","căn phòng"],["Zug","tàu hoả"],["zwei","hai"],["Katze","con mèo"],["jetzt","bây giờ"]]},
+ "ss":{t:"ß [s]",d:"ß = “s” mạnh, không rung; chỉ đứng sau nguyên âm dài hoặc nguyên âm đôi.",h:"ß",ex:[["Straße","con đường"],["groß","to"],["heißen","tên là"],["Fuß","bàn chân"],["weiß","màu trắng"],["Größe","cỡ"],["süß","ngọt"]]},
+ "th":{t:"th đọc [t]",d:"th trong tiếng Đức đọc như “t”, không phải “th” tiếng Anh.",h:"th",ex:[["Apotheke","hiệu thuốc"],["Theater","nhà hát"],["Thema","chủ đề"],["Mathe","môn toán"],["Bibliothek","thư viện"]]},
+ "pf":{t:"pf [pf]",d:"Bật “p” rồi nối ngay sang “ph” trong một hơi.",h:"pf",ex:[["Apfel","quả táo"],["Pferd","con ngựa"],["Kopf","cái đầu"],["Pfeffer","hạt tiêu"],["Topf","cái nồi"],["Pflanze","cây trồng"]]},
+ "j":{t:"j [j]",d:"j đọc như “d” mềm/“y” (gần “gi” miền Nam), không phải “j” tiếng Anh.",h:"^j",ex:[["ja","vâng"],["Jahr","năm"],["jung","trẻ"],["jetzt","bây giờ"],["Juli","tháng Bảy"],["Junge","cậu bé"]]},
+ "g-hard":{t:"g luôn cứng [ɡ]",d:"g trước e, i vẫn đọc “g” cứng, không thành “gi”.",h:"^g",ex:[["gehen","đi"],["gestern","hôm qua"],["geben","cho"],["Geld","tiền"],["gern","thích"],["Gemüse","rau"],["Gitarre","đàn ghi-ta"]]},
+ "devoice":{t:"b/d/g cuối → [p]/[t]/[k]",d:"Ở cuối từ hoặc cuối âm tiết, b/d/g đọc thành p/t/k (không rung).",h:"[bdg]$",ex:[["Tag","ngày"],["Kind","đứa trẻ"],["Land","đất nước"],["Zug","tàu hoả"],["Bad","phòng tắm"],["gelb","màu vàng"],["Hund","con chó"]]},
+ "glottal":{t:"ngắt hơi [ʔ]",d:"Trước nguyên âm đầu một phần từ: ngắt nhẹ hơi rồi mới đọc, không nối âm như tiếng Anh.",h:"",ex:[["Wochenende","cuối tuần"],["geradeaus","thẳng phía trước"],["beantworten","trả lời"],["Abendessen","bữa tối"],["erinnern","nhớ lại"]]},
+ "ie-schwa":{t:"-ie cuối [i̯ə]",d:"Trong từ gốc Latin, -ie cuối đọc lướt “i-ơ”, không kéo dài “i”.",h:"ie(?=n?$)",ex:[["Familie","gia đình"],["Ferien","kỳ nghỉ"],["Linie","tuyến, đường kẻ"],["Lilie","hoa loa kèn"],["Italien","nước Ý"]]},
+ "r-uvular":{t:"r họng [ʁ]",d:"Rung nhẹ ở cuống họng (như súc miệng), không rung đầu lưỡi.",h:"r",ex:[["rot","màu đỏ"],["Brot","bánh mì"],["Frau","phụ nữ"],["drei","ba"],["richtig","đúng"],["grün","xanh lá"],["Reis","gạo"]]},
+ "r-vocalic":{t:"r sau nguyên âm dài [ɐ̯]",d:"r sau nguyên âm dài gần như thành “a” nhẹ: Bier đọc “bi-a”.",h:"h?r$",ex:[["Bier","bia"],["Tür","cửa"],["Uhr","đồng hồ"],["Jahr","năm"],["hier","ở đây"],["vier","bốn"],["mehr","nhiều hơn"]]},
+ "er-end":{t:"-er cuối [ɐ]",d:"-er cuối từ đọc như “a” nhẹ, không cuốn r.",h:"er(?=n?$)",ex:[["Vater","bố"],["Mutter","mẹ"],["Wasser","nước"],["Fenster","cửa sổ"],["Zimmer","căn phòng"],["aber","nhưng"],["Lehrer","giáo viên"]]},
+ "r-coda":{t:"r sau nguyên âm ngắn",d:"r đứng sau nguyên âm ngắn đọc rất nhẹ ở họng, có khi gần như mất.",h:"r",ex:[["Herr","ông"],["morgen","ngày mai"],["lernen","học"],["Garten","khu vườn"],["Karte","thẻ, vé"],["Wort","từ"],["arbeiten","làm việc"]]},
+ "ei":{t:"ei [aɪ̯]",d:"ei luôn đọc “ai” (ngược với tiếng Anh).",h:"ei",ex:[["Wein","rượu vang"],["nein","không"],["klein","nhỏ"],["Zeit","thời gian"],["heißen","tên là"],["drei","ba"],["arbeiten","làm việc"]]},
+ "eu":{t:"eu / äu [ɔʏ̯]",d:"eu và äu đều đọc “oi”.",h:"eu|äu",ex:[["heute","hôm nay"],["Deutsch","tiếng Đức"],["neu","mới"],["Freund","người bạn"],["Häuser","những ngôi nhà"],["teuer","đắt"],["Leute","mọi người"]]},
+ "au":{t:"au [aʊ̯]",d:"au đọc “ao”.",h:"au",ex:[["Haus","ngôi nhà"],["Frau","phụ nữ"],["auf","trên"],["kaufen","mua"],["Auto","ô tô"],["Baum","cái cây"],["laut","to tiếng"]]},
+ "ng":{t:"ng / nk [ŋ]",d:"ng là một âm “ng” (không bật g); nk = “ng” + “k”.",h:"ng|nk",ex:[["danke","cảm ơn"],["lang","dài"],["jung","trẻ"],["Wohnung","căn hộ"],["trinken","uống"],["links","bên trái"],["Bank","ngân hàng"]]},
+ "ae-long":{t:"ä dài [ɛː]",d:"ä dài đọc gần “e” mở, kéo dài.",h:"ä",ex:[["Mädchen","cô gái"],["Käse","phô mai"],["spät","muộn"],["erklären","giải thích"],["Zähne","răng"],["Bär","con gấu"],["Väter","những người bố"]]},
+ "h-silent":{t:"h câm sau nguyên âm",d:"h đứng sau nguyên âm thì câm, chỉ báo nguyên âm đó đọc dài.",h:"[aeiouäöü]h",ex:[["Sohn","con trai"],["wohnen","sống"],["Uhr","đồng hồ"],["Stuhl","cái ghế"],["früh","sớm"],["Jahr","năm"],["zehn","mười"]]},
+ "a-long":{t:"a dài [aː]",d:"a kéo dài (thường khi sau nó chỉ có 1 phụ âm, hoặc viết aa/ah).",h:"aa|ah|a",ex:[["Vater","bố"],["Name","tên"],["Tag","ngày"],["fahren","đi (bằng xe)"],["haben","có"],["Abend","buổi tối"],["Bahn","tàu, đường ray"]]},
+ "a-short":{t:"a ngắn [a]",d:"a ngắn, gọn (thường khi sau nó có 2 phụ âm).",h:"a",ex:[["acht","tám"],["Mann","đàn ông"],["Wasser","nước"],["Land","đất nước"],["Stadt","thành phố"],["alt","già, cũ"],["Apfel","quả táo"]]},
+ "e-long":{t:"e dài [eː]",d:"“ê” dài, căng – không biến thành “ây”.",h:"ee|eh|e",ex:[["zehn","mười"],["Tee","trà"],["gehen","đi"],["sehen","nhìn"],["lesen","đọc"],["See","cái hồ"],["Weg","con đường"]]},
+ "e-short":{t:"e / ä ngắn [ɛ]",d:"“e” ngắn, miệng mở hơn “ê”.",h:"e|ä",ex:[["Bett","cái giường"],["essen","ăn"],["Fenster","cửa sổ"],["Mensch","con người"],["Herr","ông"],["Geld","tiền"],["Hände","đôi tay"]]},
+ "i-long":{t:"i dài [iː] (ie, ih, i)",d:"“i” dài, căng, miệng hơi cười. ie luôn là i dài.",h:"ie|ih|i",ex:[["Bier","bia"],["Miete","tiền thuê nhà"],["vier","bốn"],["sieben","bảy"],["Liebe","tình yêu"],["hier","ở đây"],["Kino","rạp chiếu phim"]]},
+ "i-short":{t:"i ngắn [ɪ]",d:"“i” ngắn, lỏng hơn, hơi ngả về “ê”.",h:"i",ex:[["ich","tôi"],["Milch","sữa"],["Fisch","cá"],["Tisch","cái bàn"],["Kind","đứa trẻ"],["bitte","làm ơn"],["Zimmer","căn phòng"]]},
+ "o-long":{t:"o dài [oː]",d:"“ô” dài, môi tròn chặt.",h:"oo|oh|o",ex:[["rot","màu đỏ"],["Brot","bánh mì"],["Sohn","con trai"],["wohnen","sống"],["groß","to"],["Montag","thứ Hai"],["Zoo","sở thú"]]},
+ "o-short":{t:"o ngắn [ɔ]",d:"“o” ngắn, miệng mở.",h:"o",ex:[["kommen","đến"],["Woche","tuần"],["Tochter","con gái"],["morgen","ngày mai"],["Sonne","mặt trời"],["oft","thường"],["Post","bưu điện"]]},
+ "u-long":{t:"u dài [uː]",d:"“u” dài, môi chu.",h:"uh|u",ex:[["Kuchen","bánh ngọt"],["Bruder","anh/em trai"],["Stuhl","cái ghế"],["Zug","tàu hoả"],["Uhr","đồng hồ"],["gut","tốt"],["Buch","sách"]]},
+ "u-short":{t:"u ngắn [ʊ]",d:"“u” ngắn, lỏng hơn.",h:"u",ex:[["Mutter","mẹ"],["Bus","xe buýt"],["Stunde","tiếng đồng hồ"],["und","và"],["Hund","con chó"],["dunkel","tối"],["Butter","bơ"]]},
+ "en":{t:"-en cuối [ən] / [n̩]",d:"-en cuối đọc lướt “(ơ)n”, nhiều khi gần như chỉ còn “n”.",h:"en$",ex:[["Kuchen","bánh ngọt"],["essen","ăn"],["trinken","uống"],["kaufen","mua"],["haben","có"],["Garten","khu vườn"],["morgen","ngày mai"]]},
+ "el":{t:"-el cuối [l̩]",d:"-el cuối đọc lướt, gần như chỉ còn “l”.",h:"el$",ex:[["Apfel","quả táo"],["Onkel","chú, bác"],["dunkel","tối"],["Kartoffel","khoai tây"],["Vogel","con chim"],["Löffel","cái thìa"],["Mantel","áo khoác"]]},
+ "schwa":{t:"e không nhấn [ə]",d:"e ở âm tiết không nhấn đọc “ơ” rất nhẹ – không bỏ đi, cũng không đọc “ê”.",h:"e$",ex:[["bitte","làm ơn"],["danke","cảm ơn"],["Küche","bếp"],["müde","mệt"],["heute","hôm nay"],["Tante","cô, dì"],["Name","tên"]]}
 };
