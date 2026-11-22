@@ -1,10 +1,14 @@
 /* ============ Đồng bộ đám mây (Supabase) ============
    Lưu toàn bộ tiến độ (các khoá localStorage bên dưới) vào bảng public.progress, mỗi người một dòng. */
 (function(){
-const CFG=window.__SYNC_OVERRIDE||{
-url:"https://tsvggnleugaykgqdgifl.supabase.co",
-key:"eyJhbGciOiJIUzI1NiIs…"
+const RAW=window.__SYNC_OVERRIDE||{
+  url:"https://tsvggnleugaykgqdgifl.supabase.co",   // Project URL
+  key:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzdmdnbmxldWdheWtncWRnaWZsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTUzNTQwNzAsImV4cCI6MjExMDkzMDA3MH0.oTDgLdCA1qCV_94_v7aJHc1xscht8qGHQnyWCBkdp8M"   // anon key (công khai được; dữ liệu được bảo vệ bằng Row Level Security)
 };
+/* làm sạch: bỏ khoảng trắng / ký tự lạ (vd dấu … hay nháy cong khi dán) */
+const clean=v=>String(v||"").trim().replace(/[^\x21-\x7E]/g,"");
+const CFG={url:clean(RAW.url).replace(/\/+$/,""),key:clean(RAW.key)};
+const CFG_BAD=(CFG.url||CFG.key)&&(!/^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(CFG.url)||!(/^eyJ[\w-]+\.[\w-]+\.[\w-]+$/.test(CFG.key)&&CFG.key.length>100||/^sb_publishable_[\w-]{10,}$/.test(CFG.key)));
 const KEYS=["deVocabProg","deMatchBest","deCustomSets","deProg","deCfg"];
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -21,6 +25,7 @@ function render(){
   btn.dataset.s=state;btn.title=msg;
   btn.textContent={ok:"☁︎✓",busy:"☁︎…",err:"☁︎!",off:"☁︎"}[state]||"☁︎";
   if(!CFG.url||!CFG.key){sec.innerHTML=`<b>☁︎ Đồng bộ đám mây</b><p class="small">Chưa bật. Tiến độ đang chỉ lưu trên máy này.</p>`;return}
+  if(CFG_BAD){btn.dataset.s="err";sec.innerHTML=`<b>☁︎ Đồng bộ đám mây</b><p class="small" style="color:var(--red)">Project URL hoặc key Supabase trong file sync.js không hợp lệ (có thể bị cắt ngắn hoặc lẫn ký tự lạ). Tiến độ vẫn đang được lưu trên máy này.</p>`;return}
   if(!user){sec.innerHTML=`<b>☁︎ Đồng bộ đám mây</b>
     <p class="small">Đăng nhập để lưu tiến độ lên đám mây và dùng trên nhiều máy. Tiến độ hiện có trên máy này sẽ được giữ và gộp lên.</p>
     <form id="syncForm"><label for="sEmail">Email</label><input id="sEmail" type="email" autocomplete="username" inputmode="email" autocapitalize="off">
@@ -32,7 +37,7 @@ function render(){
     <div class="row"><button class="ibtn" type="button" data-sa="now">Đồng bộ ngay</button><button class="ibtn" type="button" data-sa="out">Đăng xuất</button></div>`;
 }
 render();
-if(!CFG.url||!CFG.key)return;
+if(!CFG.url||!CFG.key||CFG_BAD)return;
 
 /* ---------- Đọc / ghi / gộp dữ liệu ---------- */
 const readLocal=()=>{const o={};for(const k of KEYS){try{const v=localStorage.getItem(k);if(v!=null)o[k]=JSON.parse(v)}catch(e){}}return o};
@@ -53,6 +58,22 @@ function merge(L,R){
 }
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 
+/* ---------- Lỗi → tiếng Việt ---------- */
+function friendly(e){
+  const m=String(e?.message||e?.error_description||e||""),c=String(e?.code||"");
+  if(c==="PGRST205"||c==="42P01"||/could not find the table|does not exist|schema cache/i.test(m))return"Chưa có bảng “progress” trên Supabase — vào SQL Editor chạy đoạn SQL tạo bảng rồi thử lại.";
+  if(c==="42501"||/row-level security|permission denied/i.test(m))return"Supabase từ chối ghi (thiếu policy) — chạy lại đầy đủ đoạn SQL, gồm 3 dòng create policy.";
+  if(/invalid login/i.test(m))return"Sai email hoặc mật khẩu.";
+  if(/not confirmed/i.test(m))return"Email chưa được xác nhận — mở hộp thư (cả mục Spam), bấm link xác nhận rồi đăng nhập lại.";
+  if(/already registered|already exists/i.test(m))return"Email này đã có tài khoản — bấm Đăng nhập.";
+  if(/rate limit|too many/i.test(m))return"Gửi quá nhiều yêu cầu/email trong thời gian ngắn — đợi khoảng 1 giờ rồi thử lại.";
+  if(/signups not allowed|signup.*disabled/i.test(m))return"Supabase đang tắt đăng ký tài khoản mới — bật lại trong Authentication → Sign In / Providers.";
+  if(/password.*(short|least|weak)/i.test(m))return"Mật khẩu quá ngắn hoặc quá yếu — dùng ít nhất 6 ký tự.";
+  if(/invalid api key|no api key|jwt|apikey/i.test(m))return"Key Supabase không đúng — kiểm tra lại anon key trong sync.js.";
+  if(/failed to fetch|network|load failed/i.test(m))return"Không kết nối được Supabase — kiểm tra mạng (hoặc project đang bị tạm dừng, vào supabase.com bấm Restore).";
+  return"Lỗi: "+m;
+}
+
 /* ---------- Supabase ---------- */
 let sb=null,started=false;
 function loadLib(){return window.supabase?Promise.resolve(window.supabase):new Promise((ok,no)=>{const s=document.createElement("script");
@@ -69,7 +90,7 @@ async function pull(reloadIfChanged){
     lastSync=new Date();setState("ok","Đã đồng bộ");
     if(!same(merged,local)){writeLocal(merged);
       if(reloadIfChanged&&!busyUI()){sessionStorage.setItem("deSyncReloaded","1");location.reload()}}
-  }catch(e){setState("err",e.message||String(e))}
+  }catch(e){setState("err",friendly(e))}
 }
 async function push(obj){
   if(!user)return;
@@ -78,7 +99,7 @@ async function push(obj){
 }
 let timer=null;
 function schedulePush(){if(!user)return;clearTimeout(timer);setState("busy");
-  timer=setTimeout(async()=>{timer=null;try{await push();setState("ok","Đã đồng bộ")}catch(e){setState("err",e.message||String(e))}},2500)}
+  timer=setTimeout(async()=>{timer=null;try{await push();setState("ok","Đã đồng bộ")}catch(e){setState("err",friendly(e))}},2500)}
 
 /* mọi lần app lưu tiến độ → hẹn đẩy lên đám mây */
 const orig=Storage.prototype.setItem;
@@ -97,9 +118,9 @@ sec.addEventListener("click",async e=>{
     const email=$("sEmail").value.trim(),password=$("sPass").value;
     if(!email||password.length<6){$("sMsg").textContent="Nhập email và mật khẩu (ít nhất 6 ký tự).";return}
     $("sMsg").textContent=a==="in"?"Đang đăng nhập…":"Đang tạo tài khoản…";
-    const r=a==="in"?await sb.auth.signInWithPassword({email,password}):await sb.auth.signUp({email,password});
-    if(r.error){const m=r.error.message||"";$("sMsg").textContent=/invalid login/i.test(m)?"Sai email hoặc mật khẩu.":/not confirmed/i.test(m)?"Email chưa được xác nhận — mở hộp thư, bấm link xác nhận rồi đăng nhập lại.":/already registered/i.test(m)?"Email này đã có tài khoản — bấm Đăng nhập.":"Lỗi: "+m;return}
-    if(a==="up"&&!r.data.session){msg="";$("sMsg").innerHTML="✅ Đã tạo tài khoản. Mở email, bấm link <b>xác nhận</b>, rồi quay lại đây bấm <b>Đăng nhập</b>.";return}
+    let r;try{r=a==="in"?await sb.auth.signInWithPassword({email,password}):await sb.auth.signUp({email,password,options:{emailRedirectTo:location.origin+location.pathname}})}catch(err){r={error:err}}
+    if(r.error){$("sMsg").textContent=friendly(r.error);return}
+    if(a==="up"&&!r.data.session){msg="";$("sMsg").innerHTML="✅ Đã tạo tài khoản. Mở email (xem cả mục Spam), bấm link <b>xác nhận</b>, rồi quay lại đây bấm <b>Đăng nhập</b>.";return}
   }
   if(a==="now")pull(true);
   if(a==="out"){await sb.auth.signOut();user=null;setState("off","");}
