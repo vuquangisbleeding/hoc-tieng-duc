@@ -2,8 +2,8 @@
    Lưu toàn bộ tiến độ (các khoá localStorage bên dưới) vào bảng public.progress, mỗi người một dòng. */
 (function(){
 const CFG=window.__SYNC_OVERRIDE||{
-  url:"",   // Project URL, vd https://xxxx.supabase.co
-  key:""    // publishable / anon key (công khai được; dữ liệu được bảo vệ bằng Row Level Security)
+url:"https://tsvggnleugaykgqdgifl.supabase.co",
+key:"eyJhbGciOiJIUzI1NiIs…"
 };
 const KEYS=["deVocabProg","deMatchBest","deCustomSets","deProg","deCfg"];
 const $=id=>document.getElementById(id);
