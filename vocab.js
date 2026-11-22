@@ -104,14 +104,51 @@ function infoBlock(w,opts={}){ // phần giải nghĩa đầy đủ – dùng �
     ${w.n?`<div class="wnote"><b>🗣 Phát âm & trọng âm:</b> ${w.n}</div>`:""}
     ${opts.gender&&genderHint(w)?`<div class="wnote alt">${genderHint(w)}</div>`:""}
     ${ct}
-    ${w.ex?`<div class="wex">${esc(w.ex.replace(/[\[\]]/g,""))} <button class="spk" data-say="${esc(w.ex.replace(/[\[\]]/g,""))}" aria-label="Nghe câu">🔊</button><br><span>${esc(w.exv||"")}</span></div>`:""}
-    <button class="ibtn mini" data-practice="${esc(term(w))}" data-ipa="${esc(w.i||"")}" data-mean="${esc(w.m)}">🎤 Luyện phát âm từ này</button>
+    ${w.ex?`<div class="wex">${esc(w.ex.replace(/[\[\]]/g,""))} <button class="spk" data-say="${esc(w.ex.replace(/[\[\]]/g,""))}" aria-label="Nghe câu">🔊</button><button class="spk trymic" data-tryread="${esc(w.ex.replace(/[\[\]]/g,""))}" aria-label="Đọc thử câu ví dụ">🎤</button><br><span>${esc(w.exv||"")}</span></div>`:""}
+    <div class="tryread">
+      <div class="tryrow"><button class="trybtn" data-tryread="${esc(term(w))}" data-key="${esc(curSet?keyOf(curSet,w):"")}">🎤 Đọc thử</button>
+        <span class="small">${window.appScoreMode&&appScoreMode()==="azure"?"Chấm từng âm (Azure)":"Chấm nhanh (miễn phí)"}${(()=>{const p=curSet&&P[keyOf(curSet,w)];return p&&p.say?` · tốt nhất ${p.say}%`:""})()}</span></div>
+      <div class="tryres" aria-live="polite"></div>
+    </div>
   </div>`;
 }
 function feedback(good,w,msg,extra="",hl=[]){
   return `<div class="fb ${good?"good":"bad"}"><div class="fbh">${good?"✅ Chính xác!":"❌ Chưa đúng"}</div>${msg?`<p>${msg}</p>`:""}${extra}${infoBlock(w,{gender:true,hl})}</div>`;
 }
 const kbd=`<div class="kbd">${["ä","ö","ü","ß","Ä","Ö","Ü"].map(c=>`<button type="button" data-ch="${c}">${c}</button>`).join("")}</div>`;
+
+/* ---------- Đọc thử ngay trong phần giải nghĩa ---------- */
+let tryBusy=null;
+async function tryRead(btn){
+  const box=btn.closest(".winfo")?.querySelector(".tryres");if(!box||!window.appScore)return;
+  if(tryBusy){window.appScoreStop&&appScoreStop();return}          // bấm lần nữa = dừng (câu dài)
+  const text=btn.dataset.tryread,isMain=btn.classList.contains("trybtn"),long=text.split(/\s+/).length>3;
+  tryBusy=btn;btn.classList.add("on");const label=btn.innerHTML;if(isMain)btn.innerHTML="⏺ Đang nghe…";
+  box.innerHTML=`<div class="small">Hãy đọc: <b>${esc(text)}</b>${long&&appScoreMode()!=="azure"?" — đọc xong bấm 🎤 lần nữa để dừng":""}</div><div class="small trylive"></div>`;
+  try{
+    const r=await appScore(text,{onInterim:s=>{const l=box.querySelector(".trylive");if(l)l.textContent="… "+s}});
+    box.innerHTML=renderTry(r);
+    if(btn.dataset.key){const p=pr(btn.dataset.key);p.say=Math.max(p.say||0,r.pct);save()}
+  }catch(e){box.innerHTML=`<div class="tryerr">⚠️ ${esc(e.message||e)}</div>`}
+  finally{btn.classList.remove("on");btn.innerHTML=label;tryBusy=null}
+}
+function renderTry(r){
+  const c=r.pct>=85?"good":r.pct>=60?"mid":"bad";
+  const col={good:"var(--green)",mid:"var(--orange)",bad:"var(--red)"}[c];
+  let h=`<div class="tryv ${c}">${{good:"✅ Chuẩn rồi!",mid:"🙂 Gần đúng",bad:"❌ Chưa chuẩn"}[c]}<span class="trypct">${r.pct}%</span></div>
+    <div class="meter"><i style="width:${r.pct}%;background:${col}"></i></div>
+    <div class="tryterm">${r.targetHtml}</div>`;
+  if(r.heard)h+=`<div class="small">Máy nghe thành: <b>${esc(r.heard)}</b></div>`;
+  if(r.scores)h+=`<div class="tryscores">${Object.entries(r.scores).map(([k,v])=>`<div><b>${v==null?"–":Math.round(v)}</b><span>${k}</span></div>`).join("")}</div>`;
+  if(r.words&&r.words.length){
+    const err={Mispronunciation:"đọc sai",Omission:"bỏ sót",Insertion:"đọc thừa"};
+    const show=r.words.length<=3?r.words:r.words.filter(w=>w.acc<80||w.err!=="None");
+    h+=show.map(w=>`<div class="tryph"><b>${esc(w.w)}</b>${w.acc}${w.err!=="None"?` <span class="bad-t">(${err[w.err]||w.err})</span>`:""}<br>${w.ph.map(x=>`<span class="ph ${x.s>=80?"g":x.s>=60?"o":"r"}">${esc(x.p)} ${x.s}</span>`).join("")}</div>`).join("")||`<div class="small">Tất cả các từ đều tốt!</div>`;
+  }
+  if(r.note)h+=`<div class="small">${r.note}</div>`;
+  if(r.others&&r.others.length)h+=`<div class="small">Máy cũng đoán: ${r.others.map(esc).join(" · ")}</div>`;
+  return h;
+}
 
 /* ---------- Trang chủ ---------- */
 function home(){
@@ -138,7 +175,7 @@ function setPage(i){
    <div class="modes">${MODES.filter(m=>!(m[0]==="gender"&&!hasN)&&!(m[0]==="cloze"&&!hasEx)).map(m=>`<button class="mode" data-mode="${m[0]}"><span class="mi">${m[1]}</span><b>${m[2]}</b><span class="small">${m[3]}</span></button>`).join("")}</div>
    <div class="card"><b>Danh sách từ</b>
     <div class="wlist">${s.words.map((w,j)=>{const p=P[keyOf(s,w)]||{};return `<div class="wl"><div class="wl-main"><div>${termHtml(w)} <span class="wl-ipa">${w.i?"/"+esc(w.i)+"/":""}</span></div><div class="small">${esc(w.m)}${w.pl&&w.pl!=="—"&&w.pl[0]!=="("?" · "+esc(w.pl):""}</div></div>
-      <span class="lvdot lv${Math.min(p.lv||0,3)}" title="Mức thuộc"></span><button class="spk" data-say="${esc(term(w))}">🔊</button><button class="star ${p.star?"on":""}" data-star="${j}" aria-label="Gắn sao">★</button></div>`}).join("")}</div>
+      ${p.say?`<span class="saybadge" title="Điểm đọc thử tốt nhất">🎤${p.say}</span>`:""}<span class="lvdot lv${Math.min(p.lv||0,3)}" title="Mức thuộc"></span><button class="spk" data-say="${esc(term(w))}">🔊</button><button class="star ${p.star?"on":""}" data-star="${j}" aria-label="Gắn sao">★</button></div>`}).join("")}</div>
     ${s.custom?`<div class="row"><button class="ibtn" data-act="delset">Xoá bộ này</button></div>`:""}</div>`);
 }
 
@@ -316,6 +353,7 @@ function saveCustom(){
 root.addEventListener("click",e=>{
   const t=e.target.closest("button,[data-set]");if(!t)return;
   if(t.dataset.ch&&lastInput){const i=lastInput,s=i.selectionStart??i.value.length;i.value=i.value.slice(0,s)+t.dataset.ch+i.value.slice(i.selectionEnd??s);i.focus();i.setSelectionRange(s+1,s+1);return}
+  if(t.dataset.tryread){tryRead(t);return}
   if(t.dataset.say){speak(t.dataset.say);return}
   if(t.dataset.practice){window.appPractice&&window.appPractice(t.dataset.practice,t.dataset.ipa,t.dataset.mean);return}
   if(t.dataset.set!=null){starOnly=false;setPage(+t.dataset.set);return}
@@ -340,7 +378,7 @@ root.addEventListener("click",e=>{
     else{const tw=term(q.w);h.innerHTML=`Gợi ý: <b>${esc(tw.slice(0,(q.w.a?q.w.a.length+1:0)+2))}…</b> (${q.w.w.length} chữ cái)`}}
   else if(a==="redoWrong"){const ws=run.wrong.slice();series(run.kind==="test"?"write":run.kind,ws)}
 });
-root.addEventListener("click",e=>{const f=e.target.closest("#flip");if(f&&!e.target.closest("button")){fc.flip=!fc.flip;f.classList.toggle("on",fc.flip);if(fc.flip&&fc.dir==="vi")speak(term(fc.list[fc.i]))}});
+root.addEventListener("click",e=>{const f=e.target.closest("#flip");if(f&&!e.target.closest("button,.tryread,.wex,.conj")){fc.flip=!fc.flip;f.classList.toggle("on",fc.flip);if(fc.flip&&fc.dir==="vi")speak(term(fc.list[fc.i]))}});
 root.addEventListener("change",e=>{if(e.target.id==="starOnly"){starOnly=e.target.checked}});
 const curQ=()=>activeQ;
 
