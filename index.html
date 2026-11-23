@@ -201,6 +201,7 @@ textarea{font:inherit;font-size:16px;width:100%;padding:12px 14px;border-radius:
 .hlive.wait b{font-size:15px;opacity:.6;font-weight:400}
 .lvl{height:6px;border-radius:3px;background:var(--line);overflow:hidden;margin:0 auto 8px;max-width:240px}.lvl i{display:block;height:100%;width:0;background:var(--green);transition:width .08s}
 .recrow{flex-wrap:wrap;justify-content:center}
+.tryipa{font-size:18px;margin:2px 0 6px}
 /* nút Tiếp luôn nổi ngay trên thanh tab, không phải cuộn xuống */
 .stickynext{position:sticky;bottom:calc(72px + env(safe-area-inset-bottom));z-index:4;padding:8px 0;margin-bottom:-8px}
 .stickynext .prim{min-width:180px;box-shadow:0 6px 20px rgba(0,0,0,.45)}
@@ -775,6 +776,25 @@ function wavUrl(pcm){const b=new ArrayBuffer(44+pcm.length*2),v=new DataView(b),
   v.setUint32(24,16000,true);v.setUint32(28,32000,true);v.setUint16(32,2,true);v.setUint16(34,16,true);w(36,"data");v.setUint32(40,pcm.length*2,true);
   new Int16Array(b,44).set(pcm);return URL.createObjectURL(new Blob([b],{type:"audio/wav"}))}
 function keepRec(pcm){if(!pcm||pcm.length<3200)return null;forgetRec();lastRecUrl=wavUrl(pcm);return{url:lastRecUrl,dur:pcm.length/16000}}
+/* IPA cho đáp án: tra trong dữ liệu của app (bộ từ vựng, tab Phát âm, câu dài). Từ nào không có thì hiện "…" */
+let IPAM=null;const ART_IPA={der:"deːɐ̯",die:"diː",das:"das"};
+function ipaMap(){if(IPAM)return IPAM;IPAM=new Map();
+  const clean=i=>String(i||"").trim().replace(/^[\/\[]|[\/\]]$/g,"");
+  const put=(k,i)=>{k=norm(String(k||""));i=clean(i);if(k&&i&&!IPAM.has(k))IPAM.set(k,i)};
+  const eat=x=>{if(!x||!x.w||!x.i)return;put(x.w,x.i);if(x.a&&ART_IPA[x.a])put(x.a+" "+x.w,ART_IPA[x.a]+" "+clean(x.i))};
+  try{(window.APP_WORDS||[]).forEach(eat);(window.APP_SENTS||[]).forEach(eat)}catch(e){}
+  try{for(const s of (window.VOCAB_SETS||[]))(s.words||[]).forEach(eat)}catch(e){}
+  try{const C=window.VERB_CONJ||{};for(const v in C){const c=C[v];   // dạng chia của động từ: wohne, kommst, gekommen…
+    for(const fi of [...String(c.p||"").split(";"),c.prt,c.pf]){if(!fi)continue;const [f,i]=String(fi).replace(/^\*/,"").split("|");if(!f||!i)continue;put(f,i);
+      const fw=f.trim().split(/\s+/),iw=i.trim().split(/\s+/);if(fw.length>1&&fw.length===iw.length)fw.forEach((w,k)=>put(w,iw[k]))}}}catch(e){}
+  const NAMES={Berlin:"bɛʁˈliːn",Deutschland:"ˈdɔɪ̯tʃlant",Vietnam:"viɛtˈnam",München:"ˈmʏnçn̩",Hamburg:"ˈhambʊʁk",Köln:"kœln",Wien:"viːn",
+    Anna:"ˈana",Lena:"ˈleːna",Tom:"tɔm",Sara:"ˈzaːʁa",Lukas:"ˈluːkas",Schmidt:"ʃmɪt",Weber:"ˈveːbɐ",Minh:"mɪn",Mia:"ˈmiːa",Lan:"lan",Herr:"hɛʁ",Frau:"fʁaʊ̯"};
+  for(const k in NAMES)put(k,NAMES[k]);
+  for(const a in ART_IPA)put(a,ART_IPA[a]);return IPAM}
+function ipaFor(text){const m=ipaMap(),t=norm(String(text||""));if(!t)return"";if(m.has(t))return m.get(t);
+  const parts=t.split(" ").map(w=>m.get(w)||"");const n=parts.filter(Boolean).length;
+  return n&&n>=parts.length/2?parts.map(p=>p||"…").join(" "):""}
+window.ipaFor=ipaFor;
 /* hàng nút sau khi chấm: nghe lại giọng mình · nghe chữ máy hiểu · nghe giọng mẫu */
 function recRowHtml(r){if(!r)return"";const b=[];
   if(r.audio&&r.audio.url)b.push(`<button class="ibtn" data-playrec="${r.audio.url}">▶ Giọng bạn (${r.audio.dur.toFixed(1)}s)</button>`);
@@ -887,11 +907,13 @@ function mergeAz(got){
 /* ===== Azure: ghi âm của app → (1) nhận dạng tự do, hiện chữ ngay khi nói → (2) sau khi dừng, chấm phát âm trên chính bản ghi =====
    Gói F0 chỉ cho 1 kết nối nhận dạng cùng lúc, nên 2 bước chạy lần lượt. */
 const azPush=S=>S.AudioInputStream.createPushStream(S.AudioStreamFormat.getWaveFormatPCM(16000,16,1));
-function azRecog(S,push,ref,long){
+function azRecog(S,push,ref,long,ipa=true){
   const sc=S.SpeechConfig.fromSubscription(cfg.key,cfg.reg);sc.speechRecognitionLanguage="de-DE";sc.outputFormat=S.OutputFormat.Detailed;
   if(long)sc.setProperty(S.PropertyId.Speech_SegmentationSilenceTimeoutMs,"1500");
   const rec=new S.SpeechRecognizer(sc,S.AudioConfig.fromStreamInput(push));
-  if(ref)new S.PronunciationAssessmentConfig(ref,S.PronunciationAssessmentGradingSystem.HundredMark,S.PronunciationAssessmentGranularity.Phoneme,true).applyTo(rec);
+  if(ref){const pc=new S.PronunciationAssessmentConfig(ref,S.PronunciationAssessmentGradingSystem.HundredMark,S.PronunciationAssessmentGranularity.Phoneme,true);
+    if(ipa)try{pc.phonemeAlphabet="IPA"}catch(e){}   // tên âm theo IPA thay vì để trống
+    pc.applyTo(rec)}
   return rec}
 /* chạy một bộ nhận dạng đến khi hết âm thanh; trả {segs,error} — không bao giờ reject */
 function azRun(S,rec,{onInterim,onFirst}={}){
@@ -906,8 +928,8 @@ function azRun(S,rec,{onInterim,onFirst}={}){
     try{rec.startContinuousRecognitionAsync(()=>{},e=>end(String(e)))}catch(e){end(String(e&&e.message||e))}});
   return{p,kill:()=>end&&end("timeout")}}
 /* chạy nhận dạng trên cả bản ghi (có đệm im lặng hai đầu) */
-async function azOnBuffer(S,pcm,ref,long){
-  const push=azPush(S),rec=azRecog(S,push,ref,long),run=azRun(S,rec);
+async function azOnBuffer(S,pcm,ref,long,ipa=true){
+  const push=azPush(S),rec=azRecog(S,push,ref,long,ipa),run=azRun(S,rec);
   push.write(new Int16Array(4800).buffer);
   for(let i=0;i<pcm.length;i+=16000)push.write(pcm.slice(i,i+16000).buffer);
   push.write(new Int16Array(8000).buffer);push.close();
@@ -938,7 +960,8 @@ async function engineAzureRec(target,long,o={}){
   if(h.error&&!h.segs.length){if(azFatal(h.error))throw new Error(azErr(h.error));h=await azOnBuffer(S,all,null,long)}
   if(h.error&&!h.segs.length)throw new Error(azErr(h.error));
   let p={segs:[],error:null};
-  if(h.segs.length)p=await azOnBuffer(S,all,target,long);   // bước 2: chấm phát âm trên chính bản ghi
+  if(h.segs.length){p=await azOnBuffer(S,all,target,long);   // bước 2: chấm phát âm trên chính bản ghi
+    if(p.error&&!p.segs.length&&!azFatal(p.error))p=await azOnBuffer(S,all,target,long,false)}   // vùng/ngôn ngữ chưa hỗ trợ IPA → chấm lại không IPA
   return{heard:h.segs,pa:p.segs,paError:p.error,audio,spoke,maxL}}
 async function scoreAzure(target,long,opts){
   const strict=cfg.strict!=="off";
@@ -1146,7 +1169,7 @@ if(!window.isSecureContext)$("err").textContent="Cần mở qua link https:// th
 <script src="vocab-data.js?v=a1"></script>
 <script src="vocab-a1.js?v=2"></script>
 <script src="tutor-data.js?v=1"></script>
-<script src="vocab.js?v=t6"></script>
+<script src="vocab.js?v=t7"></script>
 <script src="dict.js?v=1"></script>
 <script src="tutor.js?v=7"></script>
 <script src="sync.js?v=t1"></script>
