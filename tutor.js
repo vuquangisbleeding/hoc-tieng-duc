@@ -315,7 +315,12 @@ function answer(it,good,fbHtml,opts={}){
   if(it.answered)return;it.answered=true;
   const st=RUN.steps[RUN.si],r=RUN.res[st];
   if(good!==null){r.n++;if(good)r.r++;if(it.w)V.mark(it.w.s,it.w.w,good);if(!good)RUN.wrong.push(it)}
-  if(opts.direct){nextItem();return}   // kết quả đã hiện sẵn (vd. bài đọc to) → sang câu tiếp luôn, không hiện thêm khung phản hồi
+  if(opts.direct){   // kết quả chi tiết đã hiện sẵn (bài nói) → báo nhanh Đúng/Chưa đạt rồi tự sang câu tiếp, khỏi bấm Tiếp lần nữa
+    document.querySelectorAll("#tq button").forEach(b=>b.disabled=true);
+    const t=document.createElement("div");t.className="ttoast "+(good?"good":"bad");
+    t.innerHTML=opts.toast||(good?pick(["✅ Đúng rồi!","✅ Đạt chuẩn!","✅ Giỏi lắm!"]):"❌ Chưa đạt — đã ghi lại để ôn sau");
+    document.body.appendChild(t);requestAnimationFrame(()=>t.classList.add("on"));
+    setTimeout(()=>{t.remove();if(RUN&&RUN.items&&RUN.items[RUN.ii]===it)nextItem()},1300);return}
   const box=document.getElementById("tq");
   box.querySelectorAll("input,textarea,.mco,.gopt,.tile").forEach(e=>{if(!e.closest(".fb"))e.disabled=true});
   const fb=document.createElement("div");fb.className="fb "+(good===null?"":good?"good":"bad");
@@ -426,12 +431,12 @@ R.speak=(it,box)=>{
   box.querySelector('[data-t="mic"]').onclick=e=>micRun(e.currentTarget,it.text,(r,err)=>{
     const res=document.getElementById("tres");if(!res)return;
     if(err){res.innerHTML=`<div class="tryerr">⚠️ ${esc(err.message||err)}</div><div class="row"><button class="ibtn" data-t="selfok">✓ Tôi đọc được</button><button class="ibtn" data-t="selfno">✗ Chưa ổn</button></div>`;
-      res.querySelector('[data-t="selfok"]').onclick=()=>answer(it,true,"",{direct:true});res.querySelector('[data-t="selfno"]').onclick=()=>answer(it,false,"",{direct:true});return}
+      res.querySelector('[data-t="selfok"]').onclick=()=>answer(it,true,"",{direct:true,toast:"✅ Đã ghi: tự đánh giá đạt"});res.querySelector('[data-t="selfno"]').onclick=()=>answer(it,false,"",{direct:true,toast:"❌ Đã ghi: chưa ổn — sẽ ôn lại"});return}
     if(!best||r.pct>best.pct)best=r;const j=judge(r,kindOf(it.text));if(j.ok)it.passed=true;
     res.innerHTML=V.renderTry(r)+fluHtml(r)+verdictHtml(j,j.ok);
     if(!it.answered){const ok=!!it.passed;
       res.insertAdjacentHTML("beforeend",`<div class="row stickynext"><button class="prim${ok?"":" soft"}" id="tdone">${ok?`✅ Đạt · Tiếp →`:"Bỏ qua, tiếp →"}</button></div>`);
-      document.getElementById("tdone").onclick=()=>answer(it,ok,"",{direct:true})}
+      document.getElementById("tdone").onclick=()=>answer(it,ok,"",{direct:true,toast:ok?`✅ Đạt chuẩn · ${best.pct}%`:`❌ Chưa đạt (tốt nhất ${best.pct}%) — đã ghi lại để ôn`})}
   },box.querySelector(".tlive"))};
 /* ---------- Chấm nghiêm (Azure) ----------
    word: ≥80%, không từ nào dưới 60, phải đúng hết các từ
@@ -488,7 +493,7 @@ R.passage=(it,box)=>{
       if(it.final&&!RUN.quick){const ks=S.kits[RUN.k.n]=S.kits[RUN.k.n]||{steps:{},best:{}};const f=ks.flu||{};
         ks.flu={best:Math.max(f.best||0,j.ok?r.pct:0),star:!!(f.star||starred),tries:(f.tries||0)+1};saveS()}
       if(!it.answered){res.insertAdjacentHTML("beforeend",`<div class="row stickynext"><button class="prim${passed?"":" soft"}" id="tdone">${passed?`${starred?"⭐":"✅"} Tiếp →`:"Bỏ qua, tiếp →"}</button></div>`);
-        document.getElementById("tdone").onclick=()=>answer(it,passed,"",{direct:true})}
+        document.getElementById("tdone").onclick=()=>answer(it,passed,"",{direct:true,toast:passed?`${starred?"⭐ Nói thuộc cả đoạn!":"✅ Nói trôi chảy cả đoạn!"}`:`❌ Chưa đạt (tốt nhất ${best?best.pct:0}%) — đã ghi lại để ôn`})}
     },box.querySelector(".tlive"),{passage:true})}};
   draw()};
 function passageResult(r,L){
