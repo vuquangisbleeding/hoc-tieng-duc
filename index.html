@@ -792,7 +792,7 @@ function engineFree(long,onInterim,onReady){
     run();
   });
 }
-async function engineAzure(target,long,onReady){
+async function engineAzure(target,long,onReady,onInterim){
   const S=await loadSdk();
   return new Promise((resolve,reject)=>{
     let rec;
@@ -802,8 +802,17 @@ async function engineAzure(target,long,onReady){
       rec=new S.SpeechRecognizer(sc,S.AudioConfig.fromDefaultMicrophoneInput());
       new S.PronunciationAssessmentConfig(target,S.PronunciationAssessmentGradingSystem.HundredMark,S.PronunciationAssessmentGranularity.Phoneme,true).applyTo(rec);
     }catch(e){reject(new Error(azErr(e&&e.message||e)));return}
-    let rd=false,done=false;const ready=()=>{if(!rd){rd=true;clearTimeout(rt);onReady&&onReady()}},rt=setTimeout(ready,1500);rec.sessionStarted=ready;
-    const fin=()=>{rd=true;clearTimeout(rt)};
+    let rd=false,done=false,heard=false,wd=null;
+    const fin=()=>{rd=true;clearTimeout(wd)};
+    const fail=msg=>{if(done)return;done=true;fin();engineActive=null;try{rec.close()}catch(e){}reject(new Error(msg))};
+    // Chỉ báo "Đang nghe" khi Azure đã thật sự kết nối. Trước đây cứ sau 1,5 s là báo, kể cả khi chưa kết nối được → kẹt mãi ở "Đang nghe".
+    wd=setTimeout(()=>fail("Không kết nối được Azure sau 10 giây. Kiểm tra mạng, khóa và vùng trong ⚙ (vùng phải là westeurope nếu bạn tạo ở West Europe)."),10000);
+    rec.sessionStarted=()=>{if(rd||done)return;rd=true;clearTimeout(wd);onReady&&onReady();
+      // Azure tự dừng sau khoảng 5 giây im lặng. Quá thời gian này mà chưa có kết quả nghĩa là micro không gửi tiếng tới.
+      wd=setTimeout(()=>fail(heard?"Azure nghe được nhưng chưa chốt kết quả. Nói xong thì im lặng một chút, rồi thử lại."
+        :"Azure không nhận được tiếng từ micro. Kiểm tra micro đang dùng (macOS: System Settings → Sound → Input, thanh mức có nhảy khi nói không) và quyền micro của trình duyệt."),long?40000:15000)};
+    rec.recognizing=(_,e)=>{heard=true;onInterim&&e&&e.result&&onInterim(e.result.text)};
+    rec.canceled=(_,e)=>fail(azErr((e&&e.errorDetails)||"canceled"));
     // chấm một lần: tự dừng khi bạn ngừng nói; bấm 🎤 lần nữa để huỷ (trước đây nút này không làm gì → kẹt ở "Đang nghe")
     engineActive={stop:()=>{if(done)return;done=true;fin();engineActive=null;try{rec.close()}catch(e){}
       const e=new Error("Đã dừng.");e.cancelled=true;reject(e)}};
@@ -824,7 +833,7 @@ async function appScore(target,opts={}){
   target=String(target).trim();const long=target.split(/\s+/).length>3;
   try{if(window.speechSynthesis&&speechSynthesis.speaking)speechSynthesis.cancel()}catch(e){}
   if(useAzure()){
-    const {json,text}=await engineAzure(target,long,opts.onReady);const nb=(json.NBest||[])[0]||{},p=nb.PronunciationAssessment||{};
+    const {json,text}=await engineAzure(target,long,opts.onReady,opts.onInterim);const nb=(json.NBest||[])[0]||{},p=nb.PronunciationAssessment||{};
     const words=(nb.Words||[]).map(w=>({w:w.Word,acc:Math.round(w.PronunciationAssessment?.AccuracyScore??0),err:w.PronunciationAssessment?.ErrorType||"None",
       ph:(w.Phonemes||[]).map(x=>({p:x.Phoneme,s:Math.round(x.PronunciationAssessment?.AccuracyScore??0)}))}));
     const cl=v=>v>=80?"ok":v>=60?"mid":"bad";
