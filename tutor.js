@@ -44,7 +44,24 @@ const MAL=/stefan|markus|conrad|hans|yannick|klaus|günter|martin|florian|killia
 const rate=()=>+(store.get("deCfg",{}).rate)||0.85;
 const speakable=s=>String(s).replace(/[„“”"]/g,"").replace(/…/g,", ").replace(/ – /g,", ").replace(/·/g,". ").replace(/\s+/g," ").trim();
 let playTok=0;
+/* Giọng Azure cho từng nhân vật (nữ / nam khác nhau) */
+const AZV={Anna:"de-DE-KatjaNeural",Lena:"de-DE-AmalaNeural",Sara:"de-DE-LouisaNeural","Frau Schmidt":"de-DE-TanjaNeural",Mia:"de-DE-MajaNeural",
+  Minh:"de-DE-ConradNeural",Tom:"de-DE-KillianNeural",Lukas:"de-DE-KasperNeural","Herr Weber":"de-DE-KlausNeural"};
+const azVoiceOf=sp=>AZV[sp]||(genderOf(sp)==="m"?"de-DE-ConradNeural":genderOf(sp)==="f"?"de-DE-KatjaNeural":(store.get("deCfg",{}).voice||"de-DE-KatjaNeural"));
+async function playLinesAz(lines,slow,onLine,tok){
+  const rel=rate()*(slow?0.72:1),az=window.azTok();
+  const urls=lines.map(([sp,de])=>azAudioUrl(speakable(de),azVoiceOf(sp),rel));   // tải trước cả đoạn hội thoại
+  urls.forEach(u=>u.catch(()=>{}));
+  for(let i=0;i<lines.length;i++){if(tok!==playTok||az!==window.azTok())return;
+    await urls[i];if(tok!==playTok||az!==window.azTok())return;onLine&&onLine(i);
+    await azPlay(speakable(lines[i][1]),azVoiceOf(lines[i][0]),rel,az)}
+  if(tok===playTok&&onLine)onLine(-1)}
 function playLines(lines,slow,onLine){
+  window.stopAzAudio&&stopAzAudio();
+  if(window.useAzTts&&useAzTts()){const tok=++playTok;try{speechSynthesis.cancel()}catch(e){}
+    playLinesAz(lines,slow,onLine,tok).catch(e=>{console.warn("Azure TTS lỗi, dùng giọng trình duyệt:",e);if(tok===playTok)playLinesBrowser(lines,slow,onLine)});return}
+  playLinesBrowser(lines,slow,onLine)}
+function playLinesBrowser(lines,slow,onLine){
   if(!("speechSynthesis" in window))return;
   try{speechSynthesis.cancel()}catch(e){}
   const tok=++playTok,fv=VOICES.find(v=>FEM.test(v.name)),mv=VOICES.find(v=>MAL.test(v.name)),def=fv||VOICES[0]||null;
@@ -54,7 +71,7 @@ function playLines(lines,slow,onLine){
     u.onstart=()=>{if(tok===playTok&&onLine)onLine(i)};
     if(i===lines.length-1)u.onend=()=>{if(tok===playTok&&onLine)onLine(-1)};
     speechSynthesis.speak(u)})}
-function stopPlay(){playTok++;try{speechSynthesis.cancel()}catch(e){}}
+function stopPlay(){playTok++;window.stopAzAudio&&stopAzAudio();try{speechSynthesis.cancel()}catch(e){}}
 
 /* ---------- So sánh câu trả lời ---------- */
 const deum=s=>fold(s).replace(/ae/g,"a").replace(/oe/g,"o").replace(/ue/g,"u").replace(/ss/g,"s");
@@ -376,8 +393,8 @@ async function micRun(btn,target,onDone,live){
   if(!window.appScore){onDone(null,new Error("Máy không hỗ trợ nhận diện giọng nói."));return}
   busyMic=true;btn.classList.add("on");const lbl=btn.innerHTML;btn.innerHTML="⏳ Đợi mic…";if(live)live.innerHTML="";let heardNow="";
   const old=document.getElementById("tres");if(old)old.innerHTML="";   // xoá lỗi/kết quả của lần đọc trước
-  try{const r=await appScore(target,{onReady:()=>{if(!busyMic)return;btn.innerHTML="⏺ Đang nghe… nói đi";if(live&&!heardNow)live.innerHTML=heardHtml("")},onInterim:s=>{heardNow=s||heardNow;if(live&&busyMic)live.innerHTML=heardHtml(s)}});onDone(r,null)}
-  catch(e){if(!(e&&e.cancelled))onDone(null,e)}   // bấm 🎤 lần nữa để huỷ: không báo lỗi
+  try{const r=await appScore(target,{onReady:()=>{if(!busyMic)return;btn.innerHTML="⏹ Đang nghe… bấm để dừng & chấm";if(live&&!heardNow)live.innerHTML=heardHtml("")},onInterim:s=>{heardNow=s||heardNow;if(live&&busyMic)live.innerHTML=heardHtml(s)}});onDone(r,null)}
+  catch(e){if(!(e&&e.cancelled))onDone(null,e)}
   finally{busyMic=false;btn.classList.remove("on");btn.innerHTML=lbl;
     if(live)live.innerHTML=heardNow?`<div class="heard">🎧 Máy đã nghe được:<b>${esc(heardNow)}</b></div>`:""}}   // giữ lại chữ đã nghe, kể cả khi báo lỗi
 R.speak=(it,box)=>{
@@ -386,7 +403,7 @@ R.speak=(it,box)=>{
     <div class="qbig${long?" tlong":""}">${esc(it.text)}</div>${it.sub?`<div class="small center">${it.sub}</div>`:""}
     <div class="row"><button class="ibtn" data-t="play">🔊 Nghe mẫu</button><button class="ibtn" data-t="slow">🐢</button></div>
     <div class="row"><button class="trybtn" data-t="mic">🎤 Đọc</button><button class="ibtn" data-t="skip">Bỏ qua</button></div>
-    ${long&&window.appScoreMode&&appScoreMode()!=="azure"?`<div class="small center">Đọc xong câu dài thì bấm 🎤 lần nữa để dừng.</div>`:""}<div class="small center tlive"></div><div class="tryres" id="tres"></div>`;
+    <div class="small center">Đọc xong có thể bấm 🎤 lần nữa để dừng và chấm ngay.</div><div class="small center tlive"></div><div class="tryres" id="tres"></div>`;
   bindAudio(box,{text:it.text});
   const c=box.querySelector('[data-t="ctx"]');if(c)c.onclick=()=>playLines([it.ctx]);
   if(it.ctx)setTimeout(()=>playLines([it.ctx]),250);
