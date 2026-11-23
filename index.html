@@ -200,7 +200,9 @@ textarea{font:inherit;font-size:16px;width:100%;padding:12px 14px;border-radius:
 .hlive b{font-size:22px;color:var(--ink);display:block;margin-top:4px;word-break:break-word}
 .hlive.wait b{font-size:15px;opacity:.6;font-weight:400}
 .lvl{height:6px;border-radius:3px;background:var(--line);overflow:hidden;margin:0 auto 8px;max-width:240px}.lvl i{display:block;height:100%;width:0;background:var(--green);transition:width .08s}
-.recrow{flex-wrap:wrap;justify-content:center}
+.recrow{flex-wrap:wrap;justify-content:center;gap:6px}.recrow .ibtn{padding:7px 10px;font-size:13.5px;min-height:0;white-space:nowrap}
+.tverd{margin-top:10px}
+.prim.soft{background:var(--soft);color:var(--ink);border:1px solid var(--line)}
 .tryipa{font-size:18px;margin:2px 0 6px}
 /* nút Tiếp luôn nổi ngay trên thanh tab, không phải cuộn xuống */
 .stickynext{position:sticky;bottom:calc(72px + env(safe-area-inset-bottom));z-index:4;padding:8px 0;margin-bottom:-8px}
@@ -797,9 +799,9 @@ function ipaFor(text){const m=ipaMap(),t=norm(String(text||""));if(!t)return"";i
 window.ipaFor=ipaFor;
 /* hàng nút sau khi chấm: nghe lại giọng mình · nghe chữ máy hiểu · nghe giọng mẫu */
 function recRowHtml(r){if(!r)return"";const b=[];
-  if(r.audio&&r.audio.url)b.push(`<button class="ibtn" data-playrec="${r.audio.url}">▶ Giọng bạn (${r.audio.dur.toFixed(1)}s)</button>`);
-  if(r.heard)b.push(`<button class="ibtn" data-sayx="${esc(r.heard)}">🔊 Chữ máy nghe ra</button>`);
-  if(r.target)b.push(`<button class="ibtn" data-sayx="${esc(r.target)}">🔊 Giọng mẫu</button>`);
+  if(r.audio&&r.audio.url)b.push(`<button class="ibtn" data-playrec="${r.audio.url}">▶ Giọng bạn</button>`);
+  if(r.heard)b.push(`<button class="ibtn" data-sayx="${esc(r.heard)}">🔊 Máy nghe</button>`);
+  if(r.target)b.push(`<button class="ibtn" data-sayx="${esc(r.target)}">🔊 Mẫu</button>`);
   return b.length?`<div class="row recrow">${b.join("")}</div>`:""}
 document.addEventListener("click",e=>{const b=e.target.closest("[data-playrec],[data-sayx]");if(!b)return;e.stopPropagation();e.preventDefault();
   if(b.dataset.sayx){if(recAudio){try{recAudio.pause()}catch(x){}}speak(b.dataset.sayx);return}
@@ -1171,7 +1173,7 @@ if(!window.isSecureContext)$("err").textContent="Cần mở qua link https:// th
 <script src="tutor-data.js?v=1"></script>
 <script src="vocab.js?v=t7"></script>
 <script src="dict.js?v=1"></script>
-<script src="tutor.js?v=7"></script>
+<script src="tutor.js?v=8"></script>
 <script src="sync.js?v=t1"></script>
 </body>
 </html>

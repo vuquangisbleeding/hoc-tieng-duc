@@ -308,6 +308,7 @@ function answer(it,good,fbHtml,opts={}){
   if(it.answered)return;it.answered=true;
   const st=RUN.steps[RUN.si],r=RUN.res[st];
   if(good!==null){r.n++;if(good)r.r++;if(it.w)V.mark(it.w.s,it.w.w,good);if(!good)RUN.wrong.push(it)}
+  if(opts.direct){nextItem();return}   // kết quả đã hiện sẵn (vd. bài đọc to) → sang câu tiếp luôn, không hiện thêm khung phản hồi
   const box=document.getElementById("tq");
   box.querySelectorAll("input,textarea,.mco,.gopt,.tile").forEach(e=>{if(!e.closest(".fb"))e.disabled=true});
   const fb=document.createElement("div");fb.className="fb "+(good===null?"":good?"good":"bad");
@@ -418,11 +419,12 @@ R.speak=(it,box)=>{
   box.querySelector('[data-t="mic"]').onclick=e=>micRun(e.currentTarget,it.text,(r,err)=>{
     const res=document.getElementById("tres");if(!res)return;
     if(err){res.innerHTML=`<div class="tryerr">⚠️ ${esc(err.message||err)}</div><div class="row"><button class="ibtn" data-t="selfok">✓ Tôi đọc được</button><button class="ibtn" data-t="selfno">✗ Chưa ổn</button></div>`;
-      res.querySelector('[data-t="selfok"]').onclick=()=>answer(it,true,"Tự đánh giá: đạt.",{info:false});res.querySelector('[data-t="selfno"]').onclick=()=>answer(it,false,"Hãy nghe mẫu và luyện thêm ở tab Phát âm.",{info:false});return}
+      res.querySelector('[data-t="selfok"]').onclick=()=>answer(it,true,"",{direct:true});res.querySelector('[data-t="selfno"]').onclick=()=>answer(it,false,"",{direct:true});return}
     if(!best||r.pct>best.pct)best=r;res.innerHTML=V.renderTry(r);
     const thr=window.appScoreMode&&appScoreMode()==="azure"?70:60;
-    if(!it.answered){res.insertAdjacentHTML("beforeend",`<div class="small">${best.pct>=thr?"Đạt! Bạn có thể đọc lại để cải thiện điểm.":`Cần ${thr}% để đạt — nghe mẫu rồi bấm 🎤 đọc lại.`}</div><div class="row stickynext"><button class="prim" id="tdone">${best.pct>=thr?"Tiếp →":"Ghi nhận & tiếp →"}</button></div>`);
-      document.getElementById("tdone").onclick=()=>{const ok=best.pct>=thr;answer(it,ok,ok?`Điểm tốt nhất: <b>${best.pct}%</b>`:`Điểm tốt nhất: <b>${best.pct}%</b> (cần ${thr}%). Nghe mẫu và thử lại sau nhé.`,{info:false})}}
+    if(!it.answered){const ok=best.pct>=thr,bestTxt=best!==r?` Điểm tốt nhất: <b>${best.pct}%</b>.`:"";
+      res.insertAdjacentHTML("beforeend",`<div class="small center tverd">${ok?`Đạt rồi! Muốn điểm cao hơn thì bấm 🎤 đọc lại.${bestTxt}`:`Cần ${thr}% để đạt — nghe mẫu rồi bấm 🎤 đọc lại.${bestTxt}`}</div><div class="row stickynext"><button class="prim${ok?"":" soft"}" id="tdone">${ok?`✅ ${best.pct}% · Tiếp →`:"Bỏ qua, tiếp →"}</button></div>`);
+      document.getElementById("tdone").onclick=()=>answer(it,ok,"",{direct:true})}
   },box.querySelector(".tlive"))};
 R.answer=(it,box)=>{
   const [q,model,kw,hint]=it.s,target=model.split(" / ")[0].replace(/…/g," ").replace(/\s+/g," ").trim();
