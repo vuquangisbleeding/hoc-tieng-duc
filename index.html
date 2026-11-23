@@ -203,6 +203,13 @@ textarea{font:inherit;font-size:16px;width:100%;padding:12px 14px;border-radius:
 .recrow{flex-wrap:wrap;justify-content:center;gap:6px}.recrow .ibtn{padding:7px 10px;font-size:13.5px;min-height:0;white-space:nowrap}
 .tverd{margin-top:10px}
 .prim.soft{background:var(--soft);color:var(--ink);border:1px solid var(--line)}
+.tverd{margin:12px 0 4px;padding:10px 12px;border-radius:12px;font-size:14px;text-align:left}.tverd.good{background:rgba(46,160,67,.12);color:var(--ink)}.tverd.bad{background:rgba(220,60,60,.10);color:var(--ink)}
+.tverd ul{margin:6px 0 4px 18px;padding:0}.tverd li{margin:3px 0}
+.tflu{display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;font-size:13.5px;color:var(--muted);margin:8px 0}.tflu b{color:var(--ink)}
+.pmodes{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:6px 0 10px}.pmodes .chip{font-size:14px}
+.ptext{background:var(--soft);border-radius:12px;padding:10px 12px;margin:6px 0 10px;text-align:left}
+.pline{padding:4px 6px;border-radius:8px;font-size:17px;line-height:1.45}.pline.on{background:rgba(240,180,40,.22)}.pline .tsp{font-size:13px;color:var(--muted);font-weight:600}
+.pvi{color:var(--muted);font-style:italic}.ptry{font-size:18px;font-weight:700;text-align:left}.ptry .pline{font-size:18px}
 .tryipa{font-size:18px;margin:2px 0 6px}
 /* nút Tiếp luôn nổi ngay trên thanh tab, không phải cuộn xuống */
 .stickynext{position:sticky;bottom:calc(72px + env(safe-area-inset-bottom));z-index:4;padding:8px 0;margin-bottom:-8px}
@@ -924,7 +931,7 @@ function azRun(S,rec,{onInterim,onFirst}={}){
     rec.recognizing=(_,e)=>{const t=e&&e.result&&e.result.text;if(t&&onInterim)onInterim(t)};
     rec.recognized=(_,e)=>{const r=e&&e.result;if(!r||r.reason!==S.ResultReason.RecognizedSpeech||!r.text)return;
       let j={};try{j=JSON.parse(r.properties.getProperty(S.PropertyId.SpeechServiceResponse_JsonResult))}catch(x){}
-      segs.push({json:j,text:r.text});onFirst&&onFirst()};
+      segs.push({json:j,text:r.text});onFirst&&onFirst(r.text)};
     rec.canceled=(_,e)=>end(e&&e.reason===S.CancellationReason.Error?(e.errorDetails||"canceled"):null);
     rec.sessionStopped=()=>end(null);
     try{rec.startContinuousRecognitionAsync(()=>{},e=>end(String(e)))}catch(e){end(String(e&&e.message||e))}});
@@ -942,7 +949,9 @@ async function engineAzureRec(target,long,o={}){
   const mic=await micOpen();
   const res16=makeRes(mic.rate),pcm=[],push=azPush(S);
   push.write(new Int16Array(4800).buffer);              // 0,3 s im lặng ở đầu giúp Azure bắt được âm đầu tiên
-  const run=azRun(S,azRecog(S,push,null,long),{onInterim:o.onInterim,onFirst:()=>stop()});
+  // câu ngắn: đọc xong một lượt là chấm luôn. Đoạn dài (passage): nghe đến khi bạn bấm dừng hoặc im lặng lâu
+  let finals="";const live=t=>o.onInterim&&o.onInterim((finals+" "+(t||"")).trim());
+  const run=azRun(S,azRecog(S,push,null,long),{onInterim:live,onFirst:t=>{finals=(finals+" "+t).trim();if(o.passage)live("");else stop()}});
   let stopped=false,stopRes;const stoppedP=new Promise(r=>stopRes=r);
   const stop=()=>{if(stopped)return;stopped=true;mic.close();push.write(new Int16Array(8000).buffer);try{push.close()}catch(e){}stopRes()};
   run.p.then(r=>{if(r.error&&!stopped)stop()});        // lỗi kết nối/khóa → dừng ghi ngay, khỏi chờ
@@ -951,8 +960,8 @@ async function engineAzureRec(target,long,o={}){
   mic.onLevel=v=>{o.onLevel&&o.onLevel(v);const now=performance.now();maxL=Math.max(maxL,v);
     if(now-t0<350){noise=Math.min(noise,v);return}
     const thr=Math.max(0.02,noise*3);
-    if(v>thr){spoke=true;lastLoud=now}else if(spoke&&now-lastLoud>(long?2200:1300))stop();
-    if(now-t0>(long?30000:10000))stop()};
+    if(v>thr){spoke=true;lastLoud=now}else if(spoke&&now-lastLoud>(o.passage?4000:long?2200:1300))stop();
+    if(now-t0>(o.passage?150000:long?30000:10000))stop()};
   mic.onChunk=f=>{const a=res16(f);if(a.length&&!stopped){pcm.push(a);push.write(a.slice().buffer)}};
   engineActive={stop};
   o.onReady&&o.onReady();
@@ -977,11 +986,12 @@ async function scoreAzure(target,long,opts){
     return{mode:"azure",pct:0,heard:"",audio:R.audio,words:[],targetHtml:`<span class="bad">${esc(target)}</span>`,
       note:"Máy không nhận ra chữ nào. Bấm ▶ nghe lại giọng bạn xem có rõ không, rồi đọc to, chậm và rõ hơn."}}
   const pa=R.pa.length?mergeAz(R.pa):null,nb=pa?((((pa.json||{}).NBest)||[])[0]||{}):{},p=nb.PronunciationAssessment||{};
-  const paW=(nb.Words||[]).filter(w=>(w.PronunciationAssessment?.ErrorType)!=="Insertion").map(w=>({w:w.Word,acc:Math.round(w.PronunciationAssessment?.AccuracyScore??0),
+  const paW=(nb.Words||[]).filter(w=>!/Insertion|Omission/.test(w.PronunciationAssessment?.ErrorType||"")).map(w=>({w:w.Word,acc:Math.round(w.PronunciationAssessment?.AccuracyScore??0),off:w.Offset,dur:w.Duration,
     err:w.PronunciationAssessment?.ErrorType||"None",ph:(w.Phonemes||[]).map(x=>({p:x.Phoneme,s:Math.round(x.PronunciationAssessment?.AccuracyScore??0)}))}));
   // so từng từ cần đọc với chữ máy nghe ra (không biết trước đáp án)
   const hw=norm(lex||hText).split(" ").filter(Boolean);let j=0;
-  const heardOk=tWords.map(t=>{const k=hw.indexOf(norm(t),j);if(k<0)return false;j=k+1;return true});
+  const heardOk=tWords.length>6?align(tWords.map(t=>norm(t)),hw).ok.map(Boolean)   // câu/đoạn dài: so khớp kiểu "sửa ít nhất" để một từ sai không kéo lệch cả đoạn
+    :tWords.map(t=>{const k=hw.indexOf(norm(t),j);if(k<0)return false;j=k+1;return true});
   const nOk=heardOk.filter(Boolean).length,all=nOk===tWords.length;
   // từ rất ngắn (es, ja, du, ich…) đứng một mình thì máy nhận dạng tự do hay nghe nhầm → nếu chấm từng âm vẫn tốt thì coi là gần đúng
   const short=tWords.length<=2&&tWords.every(t=>norm(t).length<=4);
@@ -998,8 +1008,15 @@ async function scoreAzure(target,long,opts){
     if(near){pct=Math.min(base,short?80:70);note=short&&paOk?`Từ rất ngắn nên máy nghe riêng ra <b>“${esc(hText)}”</b>, nhưng chấm theo từng âm thì bạn đọc khá tốt. Bấm ▶ nghe lại để tự kiểm tra.`:`Máy phân vân: nghe thành <b>“${esc(hText)}”</b>, cũng có thể là “${esc(target)}”. Đọc rõ hơn một chút nhé.`}
     else{pct=Math.min(base,Math.max(40,Math.round(80*nOk/(tWords.length||1))));note=`Máy nghe thành <b>“${esc(hText)}”</b> — khác với từ cần đọc. Bấm ▶ nghe lại giọng bạn rồi so với 🔊 giọng mẫu.`}}
   const others=alts.slice(1).map(a=>a.t).filter(t=>norm(t)!==norm(lex)).slice(0,3);
+  // độ trôi chảy: tốc độ nói và số lần ngắt > 1 giây ở giữa câu (ngắt sau dấu . ! ? , thì không tính)
+  let flu=null;
+  if(tWords.length>3){const tk=target.split(/\s+/).filter(t=>norm(t));let mid=0,longest=0,first=null,last=null,cnt=0;
+    words.forEach((w,i)=>{if(w.off==null||!heardOk[i])return;cnt++;if(first==null)first=w.off;last=w.off+(w.dur||0);
+      const nx=words.slice(i+1).find(x=>x.off!=null);if(!nx)return;const gap=(nx.off-(w.off+(w.dur||0)))/1e7;
+      if(gap>longest)longest=gap;if(gap>1.0&&!/[.!?,;:…–]$/.test(tk[i]||""))mid++});
+    const span=first!=null?(last-first)/1e7:0;flu={wpm:span>0.5?Math.round(cnt/span*60):0,mid,longest:Math.round(longest*10)/10}}
   const cl=v=>v>=80?"ok":v>=60?"mid":"bad";
-  return{mode:"azure",pct,heard:hText,words,note,others,audio:R.audio,
+  return{mode:"azure",pct,heard:hText,words,note,others,audio:R.audio,flu,heardOk,
     scores:{"Tổng":pct,"Chính xác":p.AccuracyScore,"Trôi chảy":p.FluencyScore,[strict?"Đúng từ":"Đầy đủ"]:strict?Math.round(100*nOk/(tWords.length||1)):p.CompletenessScore},
     targetHtml:words.map(w=>`<span class="${cl(w.acc)}">${esc(w.w)}</span>`).join(" ")}}
 function colorChars(word,ok){let k=0,html="";
@@ -1173,7 +1190,7 @@ if(!window.isSecureContext)$("err").textContent="Cần mở qua link https:// th
 <script src="tutor-data.js?v=1"></script>
 <script src="vocab.js?v=t7"></script>
 <script src="dict.js?v=1"></script>
-<script src="tutor.js?v=8"></script>
+<script src="tutor.js?v=9"></script>
 <script src="sync.js?v=t1"></script>
 </body>
 </html>

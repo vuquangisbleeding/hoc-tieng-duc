@@ -240,15 +240,22 @@ function buildStep(k,st){
     return items}
   if(st==="noi"){
     if(k.rv!==2){
-      if(k.P&&k.P.length&&!k.rv){const P=k.P[0];items.push({type:"intro",html:`<div class="tintro"><p><b>Luyện phát âm: ${esc(P[0])}</b></p><p class="small">Bấm 🔊 nghe mẫu, rồi bấm 🎤 và đọc to. Máy chấm điểm — từ 60% là đạt.</p></div>`,btn:"Bắt đầu"});
+      if(k.P&&k.P.length&&!k.rv){const P=k.P[0];items.push({type:"intro",html:`<div class="tintro"><p><b>Luyện phát âm: ${esc(P[0])}</b></p><p class="small">Bấm 🔊 nghe mẫu, rồi bấm 🎤 và đọc to. Chấm nghiêm: cần ≥ 80%, đúng đủ các từ và không từ nào dưới 60.</p></div>`,btn:"Bắt đầu"});
         P[1].split(",").map(s=>s.trim()).filter(Boolean).slice(0,5).forEach(t=>items.push({type:"speak",text:t,label:"Đọc to"}))}
-      else items.push({type:"intro",html:`<div class="tintro"><div class="big">🗣</div><p>Đọc to từ mới, đóng vai trong hội thoại và trả lời câu hỏi. Bấm 🎤 rồi nói — máy sẽ chấm.</p><p class="small">Không dùng được micro? Bạn vẫn có thể tự đánh giá.</p></div>`,btn:"Bắt đầu"});
+      else items.push({type:"intro",html:`<div class="tintro"><div class="big">🗣</div><p>Đọc to từ mới, đóng vai, trả lời câu hỏi — rồi <b>nói trôi chảy cả đoạn hội thoại</b>. Máy chấm nghiêm: từng âm, đủ từ, tốc độ và chỗ ngắt.</p><p class="small">Không dùng được micro? Bạn vẫn có thể tự đánh giá.</p></div>`,btn:"Bắt đầu"});
       const hasP=!!(k.P&&k.P.length);
       if(!k.rv&&!hasP)ws.slice(0,4).forEach(x=>items.push({type:"speak",text:V.term(x.w),label:"Đọc to từ mới",w:x,sub:esc(x.w.m)}));
       if(main){const role=roleOf(main.d),maxR=hasP?2:3;
         if(role&&!k.rv){let c=0;main.d.forEach((l,i)=>{if(l[0]===role&&c<maxR&&l[1].split(/\s+/).length<=14){c++;items.push({type:"speak",text:l[1],label:`Đóng vai <b>${esc(role)}</b>`,ctx:i?main.d[i-1]:null,sub:esc(l[2])})}})}
         else shuffle(main.d.filter(l=>l[1].split(/\s+/).length<=14)).slice(0,2).forEach(l=>items.push({type:"speak",text:l[1],label:"Đọc to câu trong bài",sub:esc(l[2])}))}}
-    (k.S||[]).forEach(s=>items.push({type:"answer",s}));return items}
+    (k.S||[]).forEach(s=>items.push({type:"answer",s}));
+    // Bậc thang nói trôi chảy: nửa đầu → nửa sau → cả đoạn (mục tiêu cuối của mỗi kit)
+    if(main){const Lp=main.d.filter(l=>l[1]&&pclean(l[1]).split(/\s+/).length>=1);
+      if(Lp.length>=4&&k.rv!==2){const h=Math.ceil(Lp.length/2);
+        items.push({type:"passage",lines:Lp.slice(0,h),label:"🧱 Nối câu (1/2): nói liền nửa đầu hội thoại"});
+        items.push({type:"passage",lines:Lp.slice(h),label:"🧱 Nối câu (2/2): nói liền nửa sau"})}
+      if(Lp.length>=2)items.push({type:"passage",lines:Lp,label:"🎯 Thử thách cuối kit: nói trôi chảy cả đoạn",final:true})}
+    return items}
   if(st==="doc"){
     X.forEach(x=>{if(!(x.R&&x.R.length)&&k.rv===2)return;
       items.push({type:"read",x});(x.R||[]).forEach(q=>items.push({type:"readq",x,q}))});
@@ -393,13 +400,13 @@ R.order=(it,box)=>{
     box.querySelector('[data-t="chk"]').onclick=()=>{const ok=fold(sel.map(x=>x.t).join(" "))===fold(target.join(" "));
       box.querySelector(".tans").classList.add(ok?"right":"wrong");answer(it,ok,`Câu đúng: <b>${esc(it.l[1])}</b>`,{say:it.l[1]})}};
   draw()};
-async function micRun(btn,target,onDone,live){
+async function micRun(btn,target,onDone,live,extra={}){
   if(busyMic){window.appScoreStop&&appScoreStop();return}
   if(!window.appScore){onDone(null,new Error("Máy không hỗ trợ nhận diện giọng nói."));return}
   busyMic=true;btn.classList.add("on");const lbl=btn.innerHTML;btn.innerHTML="⏳ Đợi mic…";
   const old=document.getElementById("tres");if(old)old.innerHTML="";   // xoá lỗi/kết quả của lần đọc trước
   if(live)live.innerHTML="";const lv=live?liveBind(live):null;
-  try{const r=await appScore(target,{onReady:()=>{if(!busyMic)return;btn.innerHTML="⏹ Đang nghe… bấm để dừng & chấm";lv&&lv.ready()},
+  try{const r=await appScore(target,{...extra,onReady:()=>{if(!busyMic)return;btn.innerHTML="⏹ Đang nghe… bấm để dừng & chấm";lv&&lv.ready()},
       onInterim:s=>{if(busyMic&&lv)lv.interim(s)},onLevel:v=>{lv&&lv.level(v)},
       onProcessing:()=>{btn.innerHTML="⏳ Đang chấm…";lv&&lv.processing()}});
     if(live)live.innerHTML="";onDone(r,null)}
@@ -420,12 +427,80 @@ R.speak=(it,box)=>{
     const res=document.getElementById("tres");if(!res)return;
     if(err){res.innerHTML=`<div class="tryerr">⚠️ ${esc(err.message||err)}</div><div class="row"><button class="ibtn" data-t="selfok">✓ Tôi đọc được</button><button class="ibtn" data-t="selfno">✗ Chưa ổn</button></div>`;
       res.querySelector('[data-t="selfok"]').onclick=()=>answer(it,true,"",{direct:true});res.querySelector('[data-t="selfno"]').onclick=()=>answer(it,false,"",{direct:true});return}
-    if(!best||r.pct>best.pct)best=r;res.innerHTML=V.renderTry(r);
-    const thr=window.appScoreMode&&appScoreMode()==="azure"?70:60;
-    if(!it.answered){const ok=best.pct>=thr,bestTxt=best!==r?` Điểm tốt nhất: <b>${best.pct}%</b>.`:"";
-      res.insertAdjacentHTML("beforeend",`<div class="small center tverd">${ok?`Đạt rồi! Muốn điểm cao hơn thì bấm 🎤 đọc lại.${bestTxt}`:`Cần ${thr}% để đạt — nghe mẫu rồi bấm 🎤 đọc lại.${bestTxt}`}</div><div class="row stickynext"><button class="prim${ok?"":" soft"}" id="tdone">${ok?`✅ ${best.pct}% · Tiếp →`:"Bỏ qua, tiếp →"}</button></div>`);
+    if(!best||r.pct>best.pct)best=r;const j=judge(r,kindOf(it.text));if(j.ok)it.passed=true;
+    res.innerHTML=V.renderTry(r)+fluHtml(r)+verdictHtml(j,j.ok);
+    if(!it.answered){const ok=!!it.passed;
+      res.insertAdjacentHTML("beforeend",`<div class="row stickynext"><button class="prim${ok?"":" soft"}" id="tdone">${ok?`✅ Đạt · Tiếp →`:"Bỏ qua, tiếp →"}</button></div>`);
       document.getElementById("tdone").onclick=()=>answer(it,ok,"",{direct:true})}
   },box.querySelector(".tlive"))};
+/* ---------- Chấm nghiêm (Azure) ----------
+   word: ≥80%, không từ nào dưới 60, phải đúng hết các từ
+   sent: như trên + trôi chảy ≥65, không ngắt >1 giây giữa câu
+   passage: ≥75%, đúng ≥90% số từ, trôi chảy ≥70, tốc độ ≥70 từ/phút, ngắt giữa câu rất ít, ít từ yếu */
+function judge(r,kind){
+  const why=[];
+  if(r.mode!=="azure"){const thr=kind==="passage"?75:70;if(r.pct<thr)why.push(`cần ít nhất ${thr}%`);
+    return{ok:!why.length,why,note:"Chế độ miễn phí chỉ biết máy nghe ra chữ gì, không chấm được từng âm. Muốn chấm nghiêm hãy nhập khóa Azure trong ⚙."}}
+  const W=r.words||[],sc=r.scores||{},P=kind==="passage";
+  const thr=P?75:80;if(r.pct<thr)why.push(`tổng điểm cần ≥ ${thr}% (bạn: ${r.pct}%)`);
+  const right=sc["Đúng từ"]??sc["Đầy đủ"];
+  if(right!=null&&right<(P?90:100))why.push(P?`nói đúng ít nhất 90% số từ (bạn: ${Math.round(right)}%)`:"phải nói đủ và đúng tất cả các từ");
+  const weak=W.filter(w=>w.acc<60),maxWeak=P?Math.max(1,Math.floor(W.length/12)):0;
+  if(weak.length>maxWeak)why.push(`từ đọc chưa chuẩn (dưới 60): ${weak.slice(0,5).map(w=>`<b>${esc(w.w)}</b> ${w.acc}`).join(", ")}${weak.length>5?"…":""}`);
+  const fl=sc["Trôi chảy"];
+  if(kind!=="word"&&fl!=null&&fl<(P?70:65))why.push(`độ trôi chảy cần ≥ ${P?70:65} (bạn: ${Math.round(fl)})`);
+  if(r.flu&&kind!=="word"){const lim=P?Math.max(1,Math.floor(W.length/25)):0;
+    if(r.flu.mid>lim)why.push(`ngắt quãng giữa câu ${r.flu.mid} lần (tối đa ${lim}) — nói liền mạch, chỉ nghỉ ở dấu chấm/phẩy`);
+    if(P&&r.flu.wpm&&r.flu.wpm<70)why.push(`nói hơi chậm: ${r.flu.wpm} từ/phút (cần ≥ 70)`)}
+  return{ok:!why.length,why}}
+const kindOf=t=>t.split(/\s+/).length<=3?"word":"sent";
+function fluHtml(r){if(!r||!r.flu)return"";const f=r.flu;
+  return `<div class="tflu"><span>⏱ <b>${f.wpm||"–"}</b> từ/phút</span><span>⏸ Ngắt giữa câu: <b>${f.mid}</b></span><span>Lâu nhất: <b>${f.longest}s</b></span></div>`}
+function verdictHtml(j,passed){
+  if(passed)return `<div class="tverd good">✅ <b>Đạt chuẩn!</b> Muốn tốt hơn nữa thì bấm 🎤 nói lại.</div>`;
+  return `<div class="tverd bad"><b>Chưa đạt chuẩn:</b><ul>${j.why.map(x=>`<li>${x}</li>`).join("")}</ul>${j.note?`<div class="small">${j.note}</div>`:""}<div class="small">Nghe mẫu 🔊, bắt chước ngữ điệu rồi bấm 🎤 nói lại.</div></div>`}
+const pclean=t=>String(t).replace(/[„“”"]/g,"").replace(/…/g,"").replace(/\s+–\s+/g,", ").replace(/\s+/g," ").trim();
+/* Nói cả đoạn: nhìn chữ Đức, hoặc chỉ nhìn tiếng Việt (nói thuộc lòng) */
+R.passage=(it,box)=>{
+  const L=it.lines,target=L.map(l=>pclean(l[1])).join(" ");let mode="read",best=null,passed=false,starred=false;
+  const say=L.map(l=>[l[0],l[1]]);
+  const draw=()=>{
+    box.innerHTML=`<p class="qlabel">${it.label}</p>
+      <div class="pmodes"><button class="chip" aria-pressed="${mode==="read"}" data-m="read">📖 Nhìn chữ Đức</button><button class="chip" aria-pressed="${mode==="vi"}" data-m="vi">🇻🇳 Chỉ nhìn tiếng Việt</button></div>
+      <div class="ptext">${L.map((l,i)=>`<div class="pline" data-i="${i}">${l[0]&&!isText(l[0])?`<span class="tsp">${esc(l[0])}:</span> `:""}${mode==="vi"?`<span class="pvi">${esc(l[2]||"")}</span>`:`<span class="pde">${esc(l[1])}</span>`}</div>`).join("")}</div>
+      <div class="row"><button class="ibtn" data-t="playall">🔊 Nghe cả đoạn</button><button class="ibtn" data-t="slowall">🐢</button></div>
+      <div class="row"><button class="trybtn" data-t="mic">🎤 Nói cả đoạn</button><button class="ibtn" data-t="skip">Bỏ qua</button></div>
+      <div class="small center">${mode==="vi"?"Nhìn tiếng Việt, nói lại bằng tiếng Đức — đây là mục tiêu cuối: nói thuộc, trôi chảy.":"Nói liền một mạch, không đọc tên nhân vật."} Nói xong bấm 🎤 để dừng và chấm.</div>
+      <div class="small center tlive"></div><div class="tryres" id="tres"></div>`;
+    box.querySelectorAll("[data-m]").forEach(b=>b.onclick=()=>{if(busyMic)return;mode=b.dataset.m;draw()});
+    const hl=i=>box.querySelectorAll(".pline").forEach((e,k)=>e.classList.toggle("on",k===i));
+    box.querySelector('[data-t="playall"]').onclick=()=>playLines(say,false,hl);
+    box.querySelector('[data-t="slowall"]').onclick=()=>playLines(say,true,hl);
+    box.querySelector('[data-t="skip"]').onclick=()=>{if(it.answered)return;it.answered=true;nextItem()};
+    box.querySelector('[data-t="mic"]').onclick=e=>{stopPlay();micRun(e.currentTarget,target,(r,err)=>{
+      const res=document.getElementById("tres");if(!res)return;
+      if(err){res.innerHTML=`<div class="tryerr">⚠️ ${esc(err.message||err)}</div>`;if(!it.answered)res.insertAdjacentHTML("beforeend",`<div class="row stickynext"><button class="prim soft" id="tdone">Bỏ qua, tiếp →</button></div>`);
+        const d=document.getElementById("tdone");if(d)d.onclick=()=>answer(it,false,"",{direct:true});return}
+      const j=judge(r,"passage");if(j.ok){passed=true;if(mode==="vi")starred=true}
+      if(!best||r.pct>best.pct)best=r;
+      res.innerHTML=passageResult(r,L)+verdictHtml(j,j.ok)+
+        (passed&&mode==="read"&&it.final?`<div class="small center">⭐ Thử tiếp chế độ <b>🇻🇳 Chỉ nhìn tiếng Việt</b> để nói thuộc lòng.</div>`:"");
+      if(it.final&&!RUN.quick){const ks=S.kits[RUN.k.n]=S.kits[RUN.k.n]||{steps:{},best:{}};const f=ks.flu||{};
+        ks.flu={best:Math.max(f.best||0,j.ok?r.pct:0),star:!!(f.star||starred),tries:(f.tries||0)+1};saveS()}
+      if(!it.answered){res.insertAdjacentHTML("beforeend",`<div class="row stickynext"><button class="prim${passed?"":" soft"}" id="tdone">${passed?`${starred?"⭐":"✅"} Tiếp →`:"Bỏ qua, tiếp →"}</button></div>`);
+        document.getElementById("tdone").onclick=()=>answer(it,passed,"",{direct:true})}
+    },box.querySelector(".tlive"),{passage:true})}};
+  draw()};
+function passageResult(r,L){
+  const cls=v=>v>=80?"ok":v>=60?"mid":"bad";let k=0;
+  const text=r.words&&r.words.length?L.map(l=>`<div class="pline">${pclean(l[1]).split(/\s+/).map(t=>{if(!/[\p{L}\d]/u.test(t))return esc(t);const w=r.words[k++];return `<span class="${w?cls(w.acc):"bad"}" title="${w?w.acc:0}">${esc(t)}</span>`}).join(" ")}</div>`).join(""):`<div>${r.targetHtml||""}</div>`;
+  const c=r.pct>=85?"good":r.pct>=60?"mid":"bad",col={good:"var(--green)",mid:"var(--orange)",bad:"var(--red)"}[c];
+  const weak=(r.words||[]).filter(w=>w.acc<70).slice(0,6);
+  return `<div class="tryv ${c}">Cả đoạn<span class="trypct">${r.pct}%</span></div><div class="meter"><i style="width:${r.pct}%;background:${col}"></i></div>
+    <div class="tryterm ptry">${text}</div>
+    ${r.scores?`<div class="tryscores">${Object.entries(r.scores).map(([k,v])=>`<div><b>${v==null?"–":Math.round(v)}</b><span>${k}</span></div>`).join("")}</div>`:""}${fluHtml(r)}
+    ${weak.length?`<div class="small">Từ cần luyện:</div>`+weak.map(w=>`<div class="tryph"><b>${esc(w.w)}</b>${window.ipaFor&&ipaFor(w.w)&&!ipaFor(w.w).includes("…")?` <span class="ipa-in">/${esc(ipaFor(w.w))}/</span>`:""} · ${w.acc}<br>${(w.ph||[]).map(x=>`<span class="ph ${x.s>=80?"g":x.s>=60?"o":"r"}">${esc(x.p)} ${x.s}</span>`).join("")}</div>`).join(""):""}
+    ${r.heard?`<div class="small">Máy nghe thành: <i>${esc(r.heard)}</i></div>`:""}${r.note?`<div class="small">${r.note}</div>`:""}${window.recRowHtml?recRowHtml({...r,target:null}):""}`}
 R.answer=(it,box)=>{
   const [q,model,kw,hint]=it.s,target=model.split(" / ")[0].replace(/…/g," ").replace(/\s+/g," ").trim();
   box.innerHTML=`<p class="qlabel">Trả lời bằng lời nói</p>${hint?`<div class="tnote small">${esc(hint)}</div>`:""}<div class="qbig tlong">${esc(q)}</div>
@@ -520,12 +595,13 @@ function finish(){
   if(allDone&&S.cur===k.n)S.cur=Math.min(180,k.n+1);
   saveS();
   const rows=RUN.steps.map(s=>{const r=RUN.res[s];const p=r?pct(r.r,r.n):null;return `<div class="tsum"><span>${STEP[s].i} ${STEP[s].t}</span><span class="tmeter"><i style="width:${p??100}%;background:${p==null?"var(--line)":p>=80?"var(--green)":p>=60?"var(--orange)":"var(--red)"}"></i></span><b>${p==null?"–":p+"%"}</b></div>`}).join("");
+  const F=ks.flu;const fluRow=F&&F.tries?`<div class="tsum"><span>🎯 Nói trôi chảy cả đoạn</span><b>${F.best?F.best+"%":"chưa đạt"}${F.star?" ⭐ thuộc lòng":""}</b></div>`:"";
   const tot=RUN.steps.reduce((a,s)=>a+(RUN.res[s]?RUN.res[s].r:0),0),n=RUN.steps.reduce((a,s)=>a+(RUN.res[s]?RUN.res[s].n:0),0),p=pct(tot,n);
   const nx=KITS[k.n];
   root.innerHTML=`<div class="vtop"><button class="ibtn" data-t="kit" data-n="${k.n}" aria-label="Quay lại">‹</button><div class="vtitle">Tổng kết Kit ${k.n}</div><span></span></div>
     <div class="card center"><div class="big">${p==null?"✅":p>=90?"🏆":p>=70?"🎉":"💪"}</div><div class="score">${p==null?"Xong":p+"%"}</div><p>${esc(k.t)}</p>
       ${allDone&&k.n===180?"<p><b>Chúc mừng! Bạn đã đi hết lộ trình 180 kit đến trình độ A1. 🇩🇪</b></p>":allDone?"<p class='small'>Đã hoàn thành kit này.</p>":"<p class='small'>Còn bước chưa làm — mở lại kit để học tiếp.</p>"}</div>
-    <div class="card">${rows}</div>${wrongHtml()}
+    <div class="card">${rows}${fluRow}</div>${wrongHtml()}
     <div class="row">${nx?`<button class="prim" data-t="kit" data-n="${nx.n}">Kit ${nx.n}: ${esc(nx.t)} →</button>`:""}<button class="ibtn" data-t="home">Trang Gia sư</button></div>`;
   RUN=null;window.scrollTo({top:0})}
 function wrongHtml(){
