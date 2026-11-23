@@ -268,13 +268,14 @@ async function tryRead(btn){
   if(tryBusy){window.appScoreStop&&appScoreStop();return}          // bấm lần nữa = dừng (câu dài)
   const text=btn.dataset.tryread,isMain=btn.classList.contains("trybtn"),long=text.split(/\s+/).length>3;
   tryBusy=btn;btn.classList.add("on");const label=btn.innerHTML;if(isMain)btn.innerHTML="⏳ Đợi mic…";
-  box.innerHTML=`<div class="small">Hãy đọc: <b>${esc(text)}</b> — đọc xong có thể bấm 🎤 lần nữa để dừng và chấm ngay</div><div class="trylive"><div class="small">⏳ Đợi mic mở…</div></div>`;let heardNow="";
+  box.innerHTML=`<div class="small">Hãy đọc: <b>${esc(text)}</b> — đọc xong có thể bấm 🎤 lần nữa để dừng và chấm ngay</div><div class="trylive"><div class="small">⏳ Đợi mic mở…</div></div>`;
+  const lv=liveBind(box.querySelector(".trylive"));
   try{
-    const r=await appScore(text,{onReady:()=>{if(tryBusy!==btn)return;if(isMain)btn.innerHTML="⏹ Đang nghe… bấm để chấm";const l=box.querySelector(".trylive");if(l&&!heardNow)l.innerHTML=heardHtml("")},
-      onInterim:s=>{heardNow=s||heardNow;const l=box.querySelector(".trylive");if(l)l.innerHTML=heardHtml(s)}});
+    const r=await appScore(text,{onReady:()=>{if(tryBusy!==btn)return;if(isMain)btn.innerHTML="⏹ Đang nghe… bấm để chấm";lv.ready()},
+      onInterim:s=>lv.interim(s),onLevel:v=>lv.level(v),onProcessing:()=>{if(isMain)btn.innerHTML="⏳ Đang chấm…";lv.processing()}});
     box.innerHTML=renderTry(r);
     if(btn.dataset.key){const p=pr(btn.dataset.key);p.say=Math.max(p.say||0,r.pct);save()}
-  }catch(e){box.innerHTML=(heardNow?`<div class="heard">🎧 Máy đã nghe được:<b>${esc(heardNow)}</b></div>`:"")+`<div class="tryerr">⚠️ ${esc(e.message||e)}</div>`}
+  }catch(e){box.innerHTML=(lv.text?heardHtml(lv.text,"🎧 Máy đã nghe được:"):"")+`<div class="tryerr">⚠️ ${esc(e.message||e)}</div>`}
   finally{btn.classList.remove("on");btn.innerHTML=label;tryBusy=null}
 }
 function renderTry(r){
@@ -292,6 +293,7 @@ function renderTry(r){
   }
   if(r.note)h+=`<div class="small">${r.note}</div>`;
   if(r.others&&r.others.length)h+=`<div class="small">Máy cũng đoán: ${r.others.map(esc).join(" · ")}</div>`;
+  if(window.recRowHtml)h+=recRowHtml(r);
   return h;
 }
 
