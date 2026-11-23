@@ -802,16 +802,18 @@ async function engineAzure(target,long,onReady){
       rec=new S.SpeechRecognizer(sc,S.AudioConfig.fromDefaultMicrophoneInput());
       new S.PronunciationAssessmentConfig(target,S.PronunciationAssessmentGradingSystem.HundredMark,S.PronunciationAssessmentGranularity.Phoneme,true).applyTo(rec);
     }catch(e){reject(new Error(azErr(e&&e.message||e)));return}
-    engineActive={stop:()=>{}};   // chấm một lần: tự dừng khi bạn ngừng nói
-    let rd=false;const ready=()=>{if(!rd){rd=true;clearTimeout(rt);onReady&&onReady()}},rt=setTimeout(ready,1500);rec.sessionStarted=ready;
+    let rd=false,done=false;const ready=()=>{if(!rd){rd=true;clearTimeout(rt);onReady&&onReady()}},rt=setTimeout(ready,1500);rec.sessionStarted=ready;
     const fin=()=>{rd=true;clearTimeout(rt)};
-    rec.recognizeOnceAsync(res=>{fin();engineActive=null;try{rec.close()}catch(e){}
+    // chấm một lần: tự dừng khi bạn ngừng nói; bấm 🎤 lần nữa để huỷ (trước đây nút này không làm gì → kẹt ở "Đang nghe")
+    engineActive={stop:()=>{if(done)return;done=true;fin();engineActive=null;try{rec.close()}catch(e){}
+      const e=new Error("Đã dừng.");e.cancelled=true;reject(e)}};
+    rec.recognizeOnceAsync(res=>{if(done)return;done=true;fin();engineActive=null;try{rec.close()}catch(e){}
       if(res.reason!==S.ResultReason.RecognizedSpeech){
         if(res.reason===S.ResultReason.NoMatch){reject(new Error("Không nghe rõ — nói to, rõ hơn"+(/^(der|die|das) /i.test(target)?" và đọc cả mạo từ":"")+" rồi thử lại."));return}
         let d=res.errorDetails;try{d=S.CancellationDetails.fromResult(res).errorDetails||d}catch(e){}
         reject(new Error(azErr(d||res.reason)));return}
       resolve({json:JSON.parse(res.properties.getProperty(S.PropertyId.SpeechServiceResponse_JsonResult)),text:res.text});
-    },e=>{fin();engineActive=null;try{rec.close()}catch(x){}reject(new Error(azErr(e)))});
+    },e=>{if(done)return;done=true;fin();engineActive=null;try{rec.close()}catch(x){}reject(new Error(azErr(e)))});
   });
 }
 function colorChars(word,ok){let k=0,html="";

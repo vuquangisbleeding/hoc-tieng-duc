@@ -375,8 +375,9 @@ async function micRun(btn,target,onDone,live){
   if(busyMic){window.appScoreStop&&appScoreStop();return}
   if(!window.appScore){onDone(null,new Error("Máy không hỗ trợ nhận diện giọng nói."));return}
   busyMic=true;btn.classList.add("on");const lbl=btn.innerHTML;btn.innerHTML="⏳ Đợi mic…";if(live)live.textContent="";
+  const old=document.getElementById("tres");if(old)old.innerHTML="";   // xoá lỗi/kết quả của lần đọc trước
   try{const r=await appScore(target,{onReady:()=>{if(busyMic)btn.innerHTML="⏺ Đang nghe… nói đi"},onInterim:s=>{if(live)live.textContent="… "+s}});onDone(r,null)}
-  catch(e){onDone(null,e)}
+  catch(e){if(!(e&&e.cancelled))onDone(null,e)}   // bấm 🎤 lần nữa để huỷ: không báo lỗi
   finally{busyMic=false;btn.classList.remove("on");btn.innerHTML=lbl}}
 R.speak=(it,box)=>{
   const long=it.text.split(/\s+/).length>3;let best=null;
