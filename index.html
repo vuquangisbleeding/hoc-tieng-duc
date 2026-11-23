@@ -196,6 +196,9 @@ textarea{font:inherit;font-size:16px;width:100%;padding:12px 14px;border-radius:
 .tryscores div{background:var(--card);border-radius:10px;padding:6px 2px;text-align:center}.tryscores b{display:block;font-size:17px}.tryscores span{font-size:11px;color:var(--muted)}
 .tryph{font-size:14px}.tryph b{margin-right:4px}
 .tryerr{color:var(--red);font-size:14px}
+.heard{margin:10px auto 4px;padding:10px 14px;border-radius:12px;background:var(--card2,rgba(255,255,255,.06));font-size:15px;max-width:520px;text-align:center}
+.heard b{font-size:22px;color:var(--text,#fff);display:block;margin-top:4px;word-break:break-word}
+.heard.wait b{font-size:15px;opacity:.6;font-weight:400}
 .tryres .meter{margin:0}
 .saybadge{font-size:12px;color:var(--muted);white-space:nowrap}
 .wlu{background:var(--soft);border-radius:12px;padding:10px 12px;display:grid;gap:6px;font-size:14.5px}
@@ -640,7 +643,7 @@ function listenFree(retry){
   const r=new SR();r.lang="de-DE";r.interimResults=true;r.maxAlternatives=long?1:5;r.continuous=long;
   const col=srCollector(long);let aborted=false,err="";if(!retry)start();activeRec=r;
   const unready=srReady(r,()=>{if(busy&&activeRec===r)$("status").textContent=long?"Đang nghe… đọc xong bấm mic để dừng":"Đang nghe… hãy đọc"});
-  r.onresult=e=>{col.add(e);const l=col.live();if(l)$("status").textContent="… "+l};
+  r.onresult=e=>{col.add(e);const l=col.live();if(l)$("status").textContent="🎧 Máy đang nghe được: "+l};
   r.onerror=e=>{if(e.error==="aborted"){aborted=true;return}err=FREE_ERR[e.error]||("Lỗi: "+e.error)};
   r.onend=()=>{activeRec=null;unready();
     const res=col.result();
@@ -688,6 +691,9 @@ function azErr(d){d=String(d||"");
   if(/microphone|notallowed|permission|getusermedia|audio source/i.test(d))return"Chưa cho phép micro. Bấm biểu tượng ổ khoá/“aA” trên thanh địa chỉ → cho phép Micro, rồi thử lại.";
   if(/1006|unable to contact|websocket|network|connection|timeout/i.test(d))return"Không kết nối được Azure. Kiểm tra mạng, và kiểm tra vùng đã nhập có đúng không (vd: westeurope).";
   return"Lỗi Azure: "+d;}
+/* Hiện chữ máy đang nghe được (dùng chung cho mọi màn hình có 🎤) */
+function heardHtml(s){s=String(s||"").trim();return s?`<div class="heard">🎧 Máy đang nghe được:<b>${esc(s)}</b></div>`:`<div class="heard wait">🎧 Đang nghe… nói đi<b>(chưa nghe ra chữ nào)</b></div>`}
+window.heardHtml=heardHtml;
 let sdkP=null;
 function loadSdk(){return sdkP||(sdkP=new Promise((ok,no)=>{const s=document.createElement("script");
   s.src="https://cdn.jsdelivr.net/npm/microsoft-cognitiveservices-speech-sdk@1.41.0/distrib/browser/microsoft.cognitiveservices.speech.sdk.bundle-min.js";
@@ -703,6 +709,7 @@ async function listenAzure(){
     const pa=new S.PronunciationAssessmentConfig(full(cur()),S.PronunciationAssessmentGradingSystem.HundredMark,S.PronunciationAssessmentGranularity.Phoneme,true);
     pa.applyTo(rec);
   }catch(e){stop();$("err").textContent=azErr(e&&e.message||e);return}
+  rec.recognizing=(_,e)=>{const t=e&&e.result&&e.result.text;if(t)$("status").textContent="🎧 Máy đang nghe được: "+t};
   rec.recognizeOnceAsync(res=>{stop();rec.close();
     if(res.reason!==S.ResultReason.RecognizedSpeech){
       if(res.reason===S.ResultReason.NoMatch){$("err").textContent="Không nghe rõ — nói to, rõ hơn và đọc cả mạo từ (nếu có) rồi thử lại.";return}
@@ -994,9 +1001,9 @@ if(!window.isSecureContext)$("err").textContent="Cần mở qua link https:// th
 <script src="vocab-data.js?v=a1"></script>
 <script src="vocab-a1.js?v=2"></script>
 <script src="tutor-data.js?v=1"></script>
-<script src="vocab.js?v=t2"></script>
+<script src="vocab.js?v=t3"></script>
 <script src="dict.js?v=1"></script>
-<script src="tutor.js?v=2"></script>
+<script src="tutor.js?v=3"></script>
 <script src="sync.js?v=t1"></script>
 </body>
 </html>

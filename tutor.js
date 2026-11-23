@@ -374,11 +374,12 @@ R.order=(it,box)=>{
 async function micRun(btn,target,onDone,live){
   if(busyMic){window.appScoreStop&&appScoreStop();return}
   if(!window.appScore){onDone(null,new Error("Máy không hỗ trợ nhận diện giọng nói."));return}
-  busyMic=true;btn.classList.add("on");const lbl=btn.innerHTML;btn.innerHTML="⏳ Đợi mic…";if(live)live.textContent="";
+  busyMic=true;btn.classList.add("on");const lbl=btn.innerHTML;btn.innerHTML="⏳ Đợi mic…";if(live)live.innerHTML="";let heardNow="";
   const old=document.getElementById("tres");if(old)old.innerHTML="";   // xoá lỗi/kết quả của lần đọc trước
-  try{const r=await appScore(target,{onReady:()=>{if(busyMic)btn.innerHTML="⏺ Đang nghe… nói đi"},onInterim:s=>{if(live)live.textContent="… "+s}});onDone(r,null)}
+  try{const r=await appScore(target,{onReady:()=>{if(!busyMic)return;btn.innerHTML="⏺ Đang nghe… nói đi";if(live&&!heardNow)live.innerHTML=heardHtml("")},onInterim:s=>{heardNow=s||heardNow;if(live&&busyMic)live.innerHTML=heardHtml(s)}});onDone(r,null)}
   catch(e){if(!(e&&e.cancelled))onDone(null,e)}   // bấm 🎤 lần nữa để huỷ: không báo lỗi
-  finally{busyMic=false;btn.classList.remove("on");btn.innerHTML=lbl}}
+  finally{busyMic=false;btn.classList.remove("on");btn.innerHTML=lbl;
+    if(live)live.innerHTML=heardNow?`<div class="heard">🎧 Máy đã nghe được:<b>${esc(heardNow)}</b></div>`:""}}   // giữ lại chữ đã nghe, kể cả khi báo lỗi
 R.speak=(it,box)=>{
   const long=it.text.split(/\s+/).length>3;let best=null;
   box.innerHTML=`<p class="qlabel">${it.label||"Đọc to"}</p>${it.ctx?`<div class="tctx"><span class="tsp">${esc(it.ctx[0])}:</span> ${esc(it.ctx[1])} <button class="spk sm" data-t="ctx">🔊</button></div>`:""}

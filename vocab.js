@@ -268,13 +268,13 @@ async function tryRead(btn){
   if(tryBusy){window.appScoreStop&&appScoreStop();return}          // bấm lần nữa = dừng (câu dài)
   const text=btn.dataset.tryread,isMain=btn.classList.contains("trybtn"),long=text.split(/\s+/).length>3;
   tryBusy=btn;btn.classList.add("on");const label=btn.innerHTML;if(isMain)btn.innerHTML="⏳ Đợi mic…";
-  box.innerHTML=`<div class="small">Hãy đọc: <b>${esc(text)}</b>${long&&appScoreMode()!=="azure"?" — đọc xong bấm 🎤 lần nữa để dừng":""}</div><div class="small trylive">⏳ Đợi mic mở…</div>`;
+  box.innerHTML=`<div class="small">Hãy đọc: <b>${esc(text)}</b>${long&&appScoreMode()!=="azure"?" — đọc xong bấm 🎤 lần nữa để dừng":""}</div><div class="trylive"><div class="small">⏳ Đợi mic mở…</div></div>`;let heardNow="";
   try{
-    const r=await appScore(text,{onReady:()=>{if(tryBusy!==btn)return;if(isMain)btn.innerHTML="⏺ Đang nghe…";const l=box.querySelector(".trylive");if(l&&l.textContent.startsWith("⏳"))l.textContent="🎙 Đang nghe… nói đi"},
-      onInterim:s=>{const l=box.querySelector(".trylive");if(l)l.textContent="… "+s}});
+    const r=await appScore(text,{onReady:()=>{if(tryBusy!==btn)return;if(isMain)btn.innerHTML="⏺ Đang nghe…";const l=box.querySelector(".trylive");if(l&&!heardNow)l.innerHTML=heardHtml("")},
+      onInterim:s=>{heardNow=s||heardNow;const l=box.querySelector(".trylive");if(l)l.innerHTML=heardHtml(s)}});
     box.innerHTML=renderTry(r);
     if(btn.dataset.key){const p=pr(btn.dataset.key);p.say=Math.max(p.say||0,r.pct);save()}
-  }catch(e){box.innerHTML=`<div class="tryerr">⚠️ ${esc(e.message||e)}</div>`}
+  }catch(e){box.innerHTML=(heardNow?`<div class="heard">🎧 Máy đã nghe được:<b>${esc(heardNow)}</b></div>`:"")+`<div class="tryerr">⚠️ ${esc(e.message||e)}</div>`}
   finally{btn.classList.remove("on");btn.innerHTML=label;tryBusy=null}
 }
 function renderTry(r){
