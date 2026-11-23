@@ -297,7 +297,11 @@ function renderItem(){
   const box=document.getElementById("tq");it.answered=false;
   (R[it.type]||R.intro)(it,box)}
 function nextItem(){RUN.ii++;if(RUN.ii<RUN.items.length)renderItem();else stepDone()}
-function nextBtn(label="Tiếp →"){return `<div class="row"><button class="prim" id="tnext">${label}</button></div>`}
+function nextBtn(label="Tiếp →"){return `<div class="row stickynext"><button class="prim" id="tnext">${label}</button></div>`}
+/* Enter (khi không gõ chữ) = bấm nút Tiếp đang hiện */
+document.addEventListener("keydown",e=>{if(e.key!=="Enter"||e.shiftKey||e.isComposing)return;const t=e.target;
+  if(t&&(t.tagName==="INPUT"||t.tagName==="TEXTAREA"||t.tagName==="SELECT"||t.isContentEditable||t.tagName==="BUTTON"))return;
+  const b=document.getElementById("tnext")||document.getElementById("tdone");if(b&&b.offsetParent){e.preventDefault();b.click()}});
 function bindNext(){const b=document.getElementById("tnext");if(b){b.onclick=nextItem;b.focus({preventScroll:true})}}
 /* ghi kết quả một câu */
 function answer(it,good,fbHtml,opts={}){
@@ -417,7 +421,7 @@ R.speak=(it,box)=>{
       res.querySelector('[data-t="selfok"]').onclick=()=>answer(it,true,"Tự đánh giá: đạt.",{info:false});res.querySelector('[data-t="selfno"]').onclick=()=>answer(it,false,"Hãy nghe mẫu và luyện thêm ở tab Phát âm.",{info:false});return}
     if(!best||r.pct>best.pct)best=r;res.innerHTML=V.renderTry(r);
     const thr=window.appScoreMode&&appScoreMode()==="azure"?70:60;
-    if(!it.answered){res.insertAdjacentHTML("beforeend",`<div class="small">${best.pct>=thr?"Đạt! Bạn có thể đọc lại để cải thiện điểm.":`Cần ${thr}% để đạt — nghe mẫu rồi bấm 🎤 đọc lại.`}</div><div class="row"><button class="prim" id="tdone">${best.pct>=thr?"Tiếp →":"Ghi nhận & tiếp →"}</button></div>`);
+    if(!it.answered){res.insertAdjacentHTML("beforeend",`<div class="small">${best.pct>=thr?"Đạt! Bạn có thể đọc lại để cải thiện điểm.":`Cần ${thr}% để đạt — nghe mẫu rồi bấm 🎤 đọc lại.`}</div><div class="row stickynext"><button class="prim" id="tdone">${best.pct>=thr?"Tiếp →":"Ghi nhận & tiếp →"}</button></div>`);
       document.getElementById("tdone").onclick=()=>{const ok=best.pct>=thr;answer(it,ok,ok?`Điểm tốt nhất: <b>${best.pct}%</b>`:`Điểm tốt nhất: <b>${best.pct}%</b> (cần ${thr}%). Nghe mẫu và thử lại sau nhé.`,{info:false})}}
   },box.querySelector(".tlive"))};
 R.answer=(it,box)=>{
