@@ -250,7 +250,7 @@ function buildStep(k,st){
         else shuffle(main.d.filter(l=>l[1].split(/\s+/).length<=14)).slice(0,2).forEach(l=>items.push({type:"speak",text:l[1],label:"Đọc to câu trong bài",sub:esc(l[2])}))}}
     (k.S||[]).forEach(s=>items.push({type:"answer",s}));
     // Bậc thang nói trôi chảy: nửa đầu → nửa sau → cả đoạn (mục tiêu cuối của mỗi kit)
-    if(main){const Lp=main.d.filter(l=>l[1]&&pclean(l[1]).split(/\s+/).length>=1);
+    if(main){const Lp=main.d.filter(l=>l[1]&&!isText(l[0]));   // chỉ lời thoại (bỏ thực đơn, biển báo… đọc to không tự nhiên)
       if(Lp.length>=4&&k.rv!==2){const h=Math.ceil(Lp.length/2);
         items.push({type:"passage",lines:Lp.slice(0,h),label:"🧱 Nối câu (1/2): nói liền nửa đầu hội thoại"});
         items.push({type:"passage",lines:Lp.slice(h),label:"🧱 Nối câu (2/2): nói liền nửa sau"})}

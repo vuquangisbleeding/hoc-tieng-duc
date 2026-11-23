@@ -974,6 +974,10 @@ async function engineAzureRec(target,long,o={}){
   if(h.segs.length){p=await azOnBuffer(S,all,target,long);   // bước 2: chấm phát âm trên chính bản ghi
     if(p.error&&!p.segs.length&&!azFatal(p.error))p=await azOnBuffer(S,all,target,long,false)}   // vùng/ngôn ngữ chưa hỗ trợ IPA → chấm lại không IPA
   return{heard:h.segs,pa:p.segs,paError:p.error,audio,spoke,maxL}}
+/* So khớp từ "khoan dung" với cách viết khác nhau: Tschüss = Tschüs, ü = ue, ss = s (chữ đôi), 24 = vierundzwanzig, geht's = geht es */
+function canonW(w){let n=norm(String(w||""));if(/^\d+$/.test(n)&&window.DictCore&&DictCore.numDe)n=norm(DictCore.numDe(+n));
+  return n.replace(/ä/g,"ae").replace(/ö/g,"oe").replace(/ü/g,"ue").replace(/(.)\1+/g,"$1")}
+const freeTok=t=>(/\d/.test(t)&&!/^\d+$/.test(norm(t)))||!/[\p{L}\d]/u.test(t);   // giá tiền, giờ (4,50 € · 6:30): không bắt lỗi
 async function scoreAzure(target,long,opts){
   const strict=cfg.strict!=="off";
   const R=await engineAzureRec(target,long,opts);
@@ -989,15 +993,16 @@ async function scoreAzure(target,long,opts){
   const paW=(nb.Words||[]).filter(w=>!/Insertion|Omission/.test(w.PronunciationAssessment?.ErrorType||"")).map(w=>({w:w.Word,acc:Math.round(w.PronunciationAssessment?.AccuracyScore??0),off:w.Offset,dur:w.Duration,
     err:w.PronunciationAssessment?.ErrorType||"None",ph:(w.Phonemes||[]).map(x=>({p:x.Phoneme,s:Math.round(x.PronunciationAssessment?.AccuracyScore??0)}))}));
   // so từng từ cần đọc với chữ máy nghe ra (không biết trước đáp án)
-  const hw=norm(lex||hText).split(" ").filter(Boolean);let j=0;
-  const heardOk=tWords.length>6?align(tWords.map(t=>norm(t)),hw).ok.map(Boolean)   // câu/đoạn dài: so khớp kiểu "sửa ít nhất" để một từ sai không kéo lệch cả đoạn
-    :tWords.map(t=>{const k=hw.indexOf(norm(t),j);if(k<0)return false;j=k+1;return true});
+  const hw=norm(lex||hText).split(" ").filter(Boolean).map(w=>w==="s"?"es":w).map(canonW);let j=0;
+  const tc=tWords.map(canonW);
+  const heardOk=(tWords.length>6?align(tc,hw).ok.map(Boolean)   // câu/đoạn dài: so khớp kiểu "sửa ít nhất" để một từ sai không kéo lệch cả đoạn
+    :tc.map(t=>{const k=hw.indexOf(t,j);if(k<0)return false;j=k+1;return true})).map((ok,i)=>ok||freeTok(tWords[i]));
   const nOk=heardOk.filter(Boolean).length,all=nOk===tWords.length;
   // từ rất ngắn (es, ja, du, ich…) đứng một mình thì máy nhận dạng tự do hay nghe nhầm → nếu chấm từng âm vẫn tốt thì coi là gần đúng
   const short=tWords.length<=2&&tWords.every(t=>norm(t).length<=4);
   const paOk=pa&&(p.AccuracyScore??0)>=80&&!(nb.Words||[]).some(w=>(w.PronunciationAssessment?.ErrorType)==="Omission");
   const near=!all&&((tWords.length===1&&alts.slice(1).some(a=>norm(a.t)===norm(target)))||(short&&paOk));
-  let q=0;const words=tWords.map((t,i)=>{const k=paW.findIndex((x,ix)=>ix>=q&&norm(x.w)===norm(t));let w;
+  let q=0;const words=tWords.map((t,i)=>{const k=paW.findIndex((x,ix)=>ix>=q&&canonW(x.w)===canonW(t));let w;
     if(k>=0){w={...paW[k],w:t};q=k+1}else w={w:t,acc:0,err:"Omission",ph:[]};
     if(strict&&!heardOk[i]&&!near)w={...w,acc:Math.min(w.acc,40),err:w.err==="None"?"Mispronunciation":w.err};return w});
   const avg=Math.round(words.reduce((a,w)=>a+w.acc,0)/(words.length||1));
@@ -1190,7 +1195,7 @@ if(!window.isSecureContext)$("err").textContent="Cần mở qua link https:// th
 <script src="tutor-data.js?v=1"></script>
 <script src="vocab.js?v=t7"></script>
 <script src="dict.js?v=1"></script>
-<script src="tutor.js?v=9"></script>
+<script src="tutor.js?v=10"></script>
 <script src="sync.js?v=t1"></script>
 </body>
 </html>
