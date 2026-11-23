@@ -374,8 +374,8 @@ R.order=(it,box)=>{
 async function micRun(btn,target,onDone,live){
   if(busyMic){window.appScoreStop&&appScoreStop();return}
   if(!window.appScore){onDone(null,new Error("Máy không hỗ trợ nhận diện giọng nói."));return}
-  busyMic=true;btn.classList.add("on");const lbl=btn.innerHTML;btn.innerHTML="⏺ Đang nghe… (bấm để dừng)";
-  try{const r=await appScore(target,{onInterim:s=>{if(live)live.textContent="… "+s}});onDone(r,null)}
+  busyMic=true;btn.classList.add("on");const lbl=btn.innerHTML;btn.innerHTML="⏳ Đợi mic…";if(live)live.textContent="";
+  try{const r=await appScore(target,{onReady:()=>{if(busyMic)btn.innerHTML="⏺ Đang nghe… nói đi"},onInterim:s=>{if(live)live.textContent="… "+s}});onDone(r,null)}
   catch(e){onDone(null,e)}
   finally{busyMic=false;btn.classList.remove("on");btn.innerHTML=lbl}}
 R.speak=(it,box)=>{

@@ -638,20 +638,17 @@ function listenFree(retry){
   if(!SR){$("err").textContent="Trình duyệt này không hỗ trợ nhận diện giọng nói. Dùng Chrome (Android) hoặc Safari (iPhone).";return}
   const long=view==="sent"||cur().w.split(" ").length>3;
   const r=new SR();r.lang="de-DE";r.interimResults=true;r.maxAlternatives=long?1:5;r.continuous=long;
-  let finals=[],alts=null,aborted=false;if(!retry)start();activeRec=r;
-  r.onresult=e=>{let live="";
-    for(let i=e.resultIndex;i<e.results.length;i++){const res=e.results[i];
-      if(res.isFinal){finals[i]={t:res[0].transcript.trim(),c:res[0].confidence||0};if(!long)alts=[...res].map(a=>({t:a.transcript.trim(),c:a.confidence||0}))}
-      else live+=res[0].transcript}
-    $("status").textContent="… "+[...finals.filter(Boolean).map(f=>f.t),live].join(" ").trim()};
-  r.onerror=e=>{if(e.error==="aborted"){aborted=true;return}$("err").textContent={"not-allowed":"Chưa cho phép micro. Bấm biểu tượng ổ khoá trên thanh địa chỉ → cho phép Micro.","no-speech":"Không nghe thấy gì, thử nói to và gần hơn.","network":"Cần có mạng để nhận diện.","service-not-allowed":"iPhone: bật Đọc chính tả (Cài đặt → Chung → Bàn phím → Bật Đọc chính tả)."}[e.error]||("Lỗi: "+e.error)};
-  r.onend=()=>{activeRec=null;
-    const got=finals.filter(Boolean);
-    if(aborted&&!got.length){
+  const col=srCollector(long);let aborted=false,err="";if(!retry)start();activeRec=r;
+  const unready=srReady(r,()=>{if(busy&&activeRec===r)$("status").textContent=long?"Đang nghe… đọc xong bấm mic để dừng":"Đang nghe… hãy đọc"});
+  r.onresult=e=>{col.add(e);const l=col.live();if(l)$("status").textContent="… "+l};
+  r.onerror=e=>{if(e.error==="aborted"){aborted=true;return}err=FREE_ERR[e.error]||("Lỗi: "+e.error)};
+  r.onend=()=>{activeRec=null;unready();
+    const res=col.result();
+    if(!res&&aborted){
       if(!retry){setTimeout(()=>listenFree(true),400);return}
       stop();$("err").textContent=IOS_STANDALONE?"iPhone không cho nhận diện miễn phí khi mở app từ màn hình chính. Hãy mở link trong Safari, hoặc nhập khóa Azure trong ⚙.":"Máy đã ngắt nhận diện. Thử lại; nếu vẫn lỗi, mở trong Safari/Chrome hoặc dùng chế độ Azure (⚙).";return}
-    stop();if(!got.length)return;
-    long?gradeSentence(got.map(g=>g.t).join(" ")):gradeWord(alts||got);
+    stop();if(!res){$("err").textContent=err||"Không nghe thấy gì, thử nói to và gần hơn.";return}
+    long?gradeSentence(res.heard):gradeWord(res.alts);
   };
   try{r.start()}catch(e){stop();activeRec=null;$("err").textContent="Không mở được micro: "+e.message}
 }
@@ -747,7 +744,7 @@ async function testAzureKey(){
       e=>{clearTimeout(timer);done(false,azErr(e))});
   }catch(e){out.innerHTML=`<span style="color:var(--red)">❌ ${esc(azErr(e&&e.message||e))}</span>`}
 }
-function start(){busy=true;$("mic").classList.add("on");$("status").textContent=view==="sent"&&!useAzure()?"Đang nghe… đọc xong bấm mic để dừng":"Đang nghe… hãy đọc";$("err").textContent="";$("result").classList.add("hidden");$("de").textContent=cur().w;try{if(window.speechSynthesis&&speechSynthesis.speaking)speechSynthesis.cancel()}catch(e){}}
+function start(){busy=true;$("mic").classList.add("on");$("status").textContent=useAzure()?"Đang nghe… hãy đọc":"⏳ Đợi mic mở…";$("err").textContent="";$("result").classList.add("hidden");$("de").textContent=cur().w;try{if(window.speechSynthesis&&speechSynthesis.speaking)speechSynthesis.cancel()}catch(e){}}
 function stop(){busy=false;$("mic").classList.remove("on");$("status").textContent="Bấm mic để đọc lại"}
 function useAzure(){return cfg.key&&cfg.reg}
 function modeInfo(){$("modeInfo").textContent="Đang dùng: "+(useAzure()?"Azure – chấm từng âm":"nhận diện miễn phí của trình duyệt")}
@@ -755,32 +752,47 @@ function modeInfo(){$("modeInfo").textContent="Đang dùng: "+(useAzure()?"Azure
    window.appScore(text,{onInterim}) → Promise<{mode,pct,heard,note,others,targetHtml,scores,words}> */
 let engineActive=null;
 const FREE_ERR={"not-allowed":"Chưa cho phép micro. Bấm biểu tượng ổ khoá/“aA” trên thanh địa chỉ → cho phép Micro.","no-speech":"Không nghe thấy gì, thử nói to và gần hơn.","network":"Cần có mạng để nhận diện.","service-not-allowed":"iPhone: bật Đọc chính tả (Cài đặt → Chung → Bàn phím → Bật Đọc chính tả), và mở app bằng Safari.","audio-capture":"Không tìm thấy micro."};
-function engineFree(long,onInterim){
+/* Gom kết quả nhận diện. Safari đôi khi tắt mic mà KHÔNG gửi kết quả "chốt" (isFinal) dù đã nghe ra chữ
+   (hiện ở dòng "… Tag") → khi kết thúc, phần nghe tạm thời cuối cùng được dùng như kết quả. */
+function srCollector(long){
+  const finals=[],interim=[];let alts=null,ialts=null;
+  return{
+    add(e){for(let i=e.resultIndex;i<e.results.length;i++){const res=e.results[i];if(!res||!res[0])continue;
+        if(res.isFinal){finals[i]={t:res[0].transcript.trim(),c:res[0].confidence||0};delete interim[i];if(!long)alts=[...res].map(a=>({t:a.transcript.trim(),c:a.confidence||0}))}
+        else{interim[i]=res[0].transcript.trim();if(!long)ialts=[...res].map(a=>({t:a.transcript.trim(),c:0})).filter(a=>a.t)}}},
+    live(){return[...finals.filter(Boolean).map(f=>f.t),...interim.filter(Boolean)].join(" ").trim()},
+    result(){const got=finals.filter(Boolean),last=finals.length-1,tail=interim.filter((t,i)=>t&&i>last);
+      if(!got.length&&!tail.length)return null;
+      if(long)return{heard:[...got.map(g=>g.t),...tail].join(" ").trim()};
+      const list=got.length?(alts||got):(ialts&&ialts.length?ialts:[{t:tail.join(" "),c:0}]);
+      return{heard:list[0].t,alts:list}}};
+}
+/* báo cho giao diện biết mic đã thật sự mở (Safari cần ~0,5 s; nói sớm hơn dễ bị mất chữ đầu) */
+function srReady(r,cb){let done=false,t=null;const go=()=>{if(!done){done=true;clearTimeout(t);cb&&cb()}};
+  r.onaudiostart=go;r.onstart=()=>{if(!done)t=setTimeout(go,700)};return()=>{done=true;clearTimeout(t)}}
+function engineFree(long,onInterim,onReady){
   return new Promise((resolve,reject)=>{
     if(!SR){reject(new Error("Trình duyệt này không hỗ trợ nhận diện giọng nói. Dùng Chrome (Android) hoặc Safari (iPhone)."));return}
     let tries=0;
     const run=()=>{
       const r=new SR();r.lang="de-DE";r.interimResults=true;r.maxAlternatives=long?1:5;r.continuous=long;
-      let finals=[],alts=null,aborted=false,err="";
+      const col=srCollector(long);let aborted=false,err="";
       engineActive={stop:()=>{try{r.stop()}catch(e){}}};
-      r.onresult=e=>{let live="";
-        for(let i=e.resultIndex;i<e.results.length;i++){const res=e.results[i];
-          if(res.isFinal){finals[i]={t:res[0].transcript.trim(),c:res[0].confidence||0};if(!long)alts=[...res].map(a=>({t:a.transcript.trim(),c:a.confidence||0}))}
-          else live+=res[0].transcript}
-        onInterim&&onInterim([...finals.filter(Boolean).map(f=>f.t),live].join(" ").trim())};
+      const unready=srReady(r,onReady);
+      r.onresult=e=>{col.add(e);onInterim&&onInterim(col.live())};
       r.onerror=e=>{if(e.error==="aborted"){aborted=true;return}err=FREE_ERR[e.error]||("Lỗi: "+e.error)};
-      r.onend=()=>{const got=finals.filter(Boolean);
-        if(aborted&&!got.length&&tries++<1){setTimeout(run,400);return}
+      r.onend=()=>{unready();const res=col.result();
+        if(!res&&aborted&&tries++<1){setTimeout(run,400);return}
         engineActive=null;
-        if(!got.length){reject(new Error(err||(aborted?(IOS_STANDALONE?"iPhone không cho nhận diện miễn phí khi mở app từ màn hình chính. Hãy mở link trong Safari, hoặc nhập khóa Azure trong ⚙.":"Máy đã ngắt nhận diện, thử lại."):"Không nghe thấy gì, thử nói to và gần hơn.")));return}
-        const list=alts||got;resolve(long?{heard:got.map(g=>g.t).join(" ")}:{heard:list[0].t,alts:list});
+        if(!res){reject(new Error(err||(aborted?(IOS_STANDALONE?"iPhone không cho nhận diện miễn phí khi mở app từ màn hình chính. Hãy mở link trong Safari, hoặc nhập khóa Azure trong ⚙.":"Máy đã ngắt nhận diện, thử lại."):"Không nghe thấy gì, thử nói to và gần hơn.")));return}
+        resolve(res);
       };
       try{r.start()}catch(e){engineActive=null;reject(new Error("Không mở được micro: "+e.message))}
     };
     run();
   });
 }
-async function engineAzure(target,long){
+async function engineAzure(target,long,onReady){
   const S=await loadSdk();
   return new Promise((resolve,reject)=>{
     let rec;
@@ -791,13 +803,15 @@ async function engineAzure(target,long){
       new S.PronunciationAssessmentConfig(target,S.PronunciationAssessmentGradingSystem.HundredMark,S.PronunciationAssessmentGranularity.Phoneme,true).applyTo(rec);
     }catch(e){reject(new Error(azErr(e&&e.message||e)));return}
     engineActive={stop:()=>{}};   // chấm một lần: tự dừng khi bạn ngừng nói
-    rec.recognizeOnceAsync(res=>{engineActive=null;try{rec.close()}catch(e){}
+    let rd=false;const ready=()=>{if(!rd){rd=true;clearTimeout(rt);onReady&&onReady()}},rt=setTimeout(ready,1500);rec.sessionStarted=ready;
+    const fin=()=>{rd=true;clearTimeout(rt)};
+    rec.recognizeOnceAsync(res=>{fin();engineActive=null;try{rec.close()}catch(e){}
       if(res.reason!==S.ResultReason.RecognizedSpeech){
         if(res.reason===S.ResultReason.NoMatch){reject(new Error("Không nghe rõ — nói to, rõ hơn"+(/^(der|die|das) /i.test(target)?" và đọc cả mạo từ":"")+" rồi thử lại."));return}
         let d=res.errorDetails;try{d=S.CancellationDetails.fromResult(res).errorDetails||d}catch(e){}
         reject(new Error(azErr(d||res.reason)));return}
       resolve({json:JSON.parse(res.properties.getProperty(S.PropertyId.SpeechServiceResponse_JsonResult)),text:res.text});
-    },e=>{engineActive=null;try{rec.close()}catch(x){}reject(new Error(azErr(e)))});
+    },e=>{fin();engineActive=null;try{rec.close()}catch(x){}reject(new Error(azErr(e)))});
   });
 }
 function colorChars(word,ok){let k=0,html="";
@@ -808,7 +822,7 @@ async function appScore(target,opts={}){
   target=String(target).trim();const long=target.split(/\s+/).length>3;
   try{if(window.speechSynthesis&&speechSynthesis.speaking)speechSynthesis.cancel()}catch(e){}
   if(useAzure()){
-    const {json,text}=await engineAzure(target,long);const nb=(json.NBest||[])[0]||{},p=nb.PronunciationAssessment||{};
+    const {json,text}=await engineAzure(target,long,opts.onReady);const nb=(json.NBest||[])[0]||{},p=nb.PronunciationAssessment||{};
     const words=(nb.Words||[]).map(w=>({w:w.Word,acc:Math.round(w.PronunciationAssessment?.AccuracyScore??0),err:w.PronunciationAssessment?.ErrorType||"None",
       ph:(w.Phonemes||[]).map(x=>({p:x.Phoneme,s:Math.round(x.PronunciationAssessment?.AccuracyScore??0)}))}));
     const cl=v=>v>=80?"ok":v>=60?"mid":"bad";
@@ -816,7 +830,7 @@ async function appScore(target,opts={}){
       scores:{"Tổng":p.PronScore,"Chính xác":p.AccuracyScore,"Trôi chảy":p.FluencyScore,"Đầy đủ":p.CompletenessScore},words,
       targetHtml:words.length?words.map(w=>`<span class="${w.err==="Omission"?"bad":cl(w.acc)}">${esc(w.w)}</span>`).join(" "):esc(target)};
   }
-  const r=await engineFree(long,opts.onInterim);
+  const r=await engineFree(long,opts.onInterim,opts.onReady);
   if(long){ // câu: chấm theo từng từ
     const tw=norm(target).split(" "),hw=norm(r.heard).split(" ").filter(Boolean);const {ok}=align(tw,hw);const n=ok.filter(Boolean).length;
     const pct=n===tw.length&&hw.length<=tw.length+1?100:Math.min(84,Math.round(100*n/tw.length));
@@ -969,9 +983,9 @@ if(!window.isSecureContext)$("err").textContent="Cần mở qua link https:// th
 <script src="vocab-data.js?v=a1"></script>
 <script src="vocab-a1.js?v=2"></script>
 <script src="tutor-data.js?v=1"></script>
-<script src="vocab.js?v=t1"></script>
+<script src="vocab.js?v=t2"></script>
 <script src="dict.js?v=1"></script>
-<script src="tutor.js?v=1"></script>
+<script src="tutor.js?v=2"></script>
 <script src="sync.js?v=t1"></script>
 </body>
 </html>
