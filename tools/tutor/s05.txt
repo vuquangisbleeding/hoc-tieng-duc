@@ -1,0 +1,160 @@
+#|5|Thời gian trong ngày|Hỏi và nói giờ, các buổi trong ngày, hôm qua/hôm nay/ngày mai, tần suất; quy tắc động từ ở vị trí thứ 2.
+
+=41|Mấy giờ rồi?|Wie spät ist es?; Uhr; Zeit; wann; um
+N|Hỏi giờ: <b>Wie spät ist es?</b> hoặc <b>Wie viel Uhr ist es?</b> — <b>Es ist acht Uhr.</b>
+N|Hỏi lúc nào: <b>Wann …?</b> — <b>Um</b> neun Uhr. (<b>um</b> + giờ = vào lúc)
+N|<b>die Uhr</b> = đồng hồ / giờ; <b>die Zeit</b> = thời gian: <i>Hast du Zeit?</i> (Bạn có rảnh không?)
+N|Giờ chính thức (tàu, TV) dùng 24 giờ: 20:15 = <i>zwanzig Uhr fünfzehn</i>.
+D|Minh|Entschuldigung, wie spät ist es?|Xin lỗi, mấy giờ rồi ạ?
+D|Frau|Es ist acht Uhr.|Tám giờ.
+D|Minh|Oh nein! Der Kurs beginnt um acht!|Ôi không! Lớp học bắt đầu lúc tám giờ!
+D|Frau Schmidt|Guten Morgen, Minh! Haben Sie keine Uhr?|Chào Minh! Anh không có đồng hồ à?
+D|Minh|Entschuldigung! Wann ist die Pause?|Em xin lỗi! Khi nào giải lao ạ?
+D|Frau Schmidt|Um zehn Uhr. Jetzt haben wir keine Zeit – wir lernen!|Lúc mười giờ. Bây giờ không có thời gian – chúng ta học thôi!
+L|Lớp học bắt đầu lúc mấy giờ?|8 giờ|10 giờ|9 giờ
+R|Khi nào giải lao?|um zehn Uhr|um acht Uhr|um neun Uhr
+S|Wann beginnt Ihr Deutschkurs?|Mein Kurs beginnt um … Uhr.|um/uhr|Lớp tiếng Đức của bạn bắt đầu lúc mấy giờ?
+W|Viết câu hỏi “Mấy giờ rồi?” và câu trả lời “7 giờ”.|Wie spät ist es? – Es ist sieben Uhr.|wie spaet ist es, sieben uhr
+G|time:full
+
+=42|Giờ rưỡi|Stunde; Minute; Sekunde; halb
+N|Cách nói thường ngày: <b>halb</b> + giờ <b>tiếp theo</b>: 8:30 = <b>halb neun</b> (còn nửa tiếng nữa là 9 giờ) — khác tiếng Việt!
+N|<b>die Stunde</b> = tiếng (60 phút), <b>die Minute</b> = phút, <b>die Sekunde</b> = giây: <i>Eine Stunde hat sechzig Minuten.</i>
+N|Phân biệt: <b>Uhr</b> = giờ trên đồng hồ (Es ist drei Uhr), <b>Stunde</b> = khoảng thời gian (drei Stunden = ba tiếng).
+D|Anna|Wann treffen wir uns?|Khi nào chúng ta gặp nhau?
+D|Minh|Um halb sieben?|Lúc sáu rưỡi nhé?
+D|Anna|Halb sieben, also 6:30. Okay!|Sáu rưỡi, tức là 6:30. Được!
+D|Minh|Anna, es ist schon sieben! Ich warte schon eine halbe Stunde!|Anna, bảy giờ rồi! Mình chờ nửa tiếng rồi đấy!
+D|Anna|Entschuldigung! Noch fünf Minuten!|Xin lỗi! Năm phút nữa thôi!
+D|Minh|Fünf Minuten … oder fünf Sekunden?|Năm phút… hay năm giây?
+L|Họ hẹn gặp lúc mấy giờ?|6:30|7:30|5:30
+R|Minh đã chờ bao lâu?|nửa tiếng|năm phút|một tiếng
+S|Wie viele Minuten hat eine Stunde?|Eine Stunde hat sechzig Minuten.|sechzig/60|Một giờ có bao nhiêu phút?
+W|Viết bằng chữ theo cách nói thường ngày: 9:30|halb zehn|halb zehn
+G|time:halb
+
+=43|Kém mười lăm & hơn mười lăm|Viertel; vor; nach; gleich
+N|<b>Viertel nach</b> acht = 8:15; <b>Viertel vor</b> neun = 8:45. <b>fünf nach</b> acht = 8:05; <b>zehn vor</b> neun = 8:50.
+N|Phút 25–35 thường nói theo <b>halb</b>: 8:25 = fünf vor halb neun, 8:35 = fünf nach halb neun.
+N|<b>vor</b> còn nghĩa “trước” (vor dem Kino), “cách đây” (vor zwei Jahren); <b>nach</b>: “sau” (nach dem Kurs), “đến” thành phố/nước (nach Berlin). <b>gleich</b> = ngay, lát nữa.
+D|Minh|Wann fährt der Bus?|Mấy giờ xe buýt chạy?
+D|Tom|Um Viertel nach acht.|Lúc tám giờ mười lăm.
+D|Minh|Und jetzt ist es … zehn nach acht!|Bây giờ là… tám giờ mười!
+D|Tom|Dann kommt der Bus gleich!|Vậy xe buýt sắp đến rồi!
+D|Minh|Und wann sind wir im Kurs?|Thế khi nào chúng ta đến lớp?
+D|Tom|Um Viertel vor neun. Nach dem Kurs trinken wir einen Kaffee, okay?|Lúc chín giờ kém mười lăm. Sau giờ học chúng ta đi uống cà phê nhé?
+L|Xe buýt chạy lúc mấy giờ?|8:15|8:45|8:10
+R|Họ đến lớp lúc mấy giờ?|8:45|9:15|8:15
+S|Wie spät ist es? (7:15)|Es ist Viertel nach sieben.|viertel nach sieben|Đồng hồ chỉ 7:15. Hãy nói giờ theo cách thường ngày.
+W|Viết bằng chữ: 10:45|Viertel vor elf|viertel vor elf
+G|time:viertel
+
+=44|Các buổi trong ngày|Morgen; Vormittag; Mittag; Nachmittag; Abend; Nacht
+N|<b>der Morgen</b> (sáng sớm), <b>der Vormittag</b> (buổi sáng, khoảng 9–12 giờ), <b>der Mittag</b> (trưa), <b>der Nachmittag</b> (chiều), <b>der Abend</b> (tối) — đều là <b>der</b>; chỉ <b>die Nacht</b> (đêm) là giống cái.
+N|Vào buổi…: <b>am</b> Morgen, <b>am</b> Vormittag, <b>am</b> Mittag, <b>am</b> Nachmittag, <b>am</b> Abend, nhưng <b>in der</b> Nacht.
+D|Minh|Was machst du heute, Lena?|Hôm nay bạn làm gì, Lena?
+D|Lena|Am Vormittag lerne ich und am Mittag esse ich mit Anna.|Buổi sáng mình học, buổi trưa mình ăn với Anna.
+D|Minh|Und am Nachmittag?|Còn buổi chiều?
+D|Lena|Am Nachmittag arbeite ich. Und am Abend? Hast du Zeit?|Buổi chiều mình đi làm. Còn buổi tối? Bạn có rảnh không?
+D|Minh|Ja! Am Abend habe ich Zeit. Aber nicht in der Nacht – am Morgen bin ich immer müde.|Có! Buổi tối mình rảnh. Nhưng ban đêm thì không – buổi sáng mình lúc nào cũng mệt.
+L|Buổi chiều Lena làm gì?|arbeiten (đi làm)|lernen (học)|essen (ăn)
+R|Khi nào Minh rảnh?|am Abend|am Nachmittag|in der Nacht
+S|Was machen Sie am Abend?|Am Abend lerne ich Deutsch.|am abend|Buổi tối bạn thường làm gì? (bắt đầu bằng “Am Abend …”)
+W|Viết: “Buổi sáng tôi học, buổi tối tôi làm việc.”|Am Vormittag lerne ich, am Abend arbeite ich.|lerne ich, arbeite ich
+G|art
+
+=45|Hôm qua, hôm nay, ngày mai|heute; morgen; gestern; übermorgen; Tag
+N|<b>gestern</b> (hôm qua) – <b>heute</b> (hôm nay) – <b>morgen</b> (ngày mai) – <b>übermorgen</b> (ngày kia). Kết hợp: <i>heute Abend</i> (tối nay), <i>morgen früh</i> (sáng mai).
+N|⚠️ <b>morgen</b> (viết thường) = ngày mai; <b>der Morgen</b> (viết hoa) = buổi sáng.
+N|<b>Quy tắc vị trí 2:</b> động từ luôn đứng thứ 2. Nếu câu bắt đầu bằng thời gian, chủ ngữ đứng <b>sau</b> động từ: <i>Ich arbeite heute.</i> → <i><b>Heute arbeite</b> ich.</i>
+D|Anna|Was machst du morgen?|Mai bạn làm gì?
+D|Minh|Morgen habe ich Kurs. Und übermorgen ist Samstag – da habe ich frei!|Mai mình có lớp. Ngày kia là thứ Bảy – hôm đó mình được nghỉ!
+D|Anna|Und heute?|Còn hôm nay?
+D|Minh|Heute bin ich müde. Gestern war ein langer Tag.|Hôm nay mình mệt. Hôm qua là một ngày dài.
+D|Anna|Dann schlaf heute viel! Gute Nacht!|Vậy hôm nay ngủ nhiều vào! Chúc ngủ ngon!
+L|Ngày mai Minh làm gì?|đi học ở lớp|nghỉ|đi làm
+R|Hôm qua thế nào?|ein langer Tag (một ngày dài)|ein schöner Tag (một ngày đẹp)|frei (được nghỉ)
+S|Was machen Sie heute?|Heute lerne ich Deutsch.|heute|Hôm nay bạn làm gì? (bắt đầu câu bằng “Heute …”)
+W|Viết lại câu bắt đầu bằng “Morgen”: Ich habe morgen Zeit.|Morgen habe ich Zeit.|morgen habe ich zeit
+F|Heute ___ ich Deutsch. (lernen)|lerne|động từ ở vị trí 2
+F|Morgen ___ wir frei. (haben)|haben|động từ ở vị trí 2
+F|Übermorgen ___ meine Mutter. (kommen)|kommt|động từ ở vị trí 2
+
+=46|Sáng nào cũng… – sớm & muộn|morgens; abends; früh; spät
+N|<b>morgens</b> = vào mỗi buổi sáng (thói quen), <b>abends</b> = mỗi tối. Tương tự: mittags, nachmittags, nachts (viết thường, có -s).
+N|<b>früh</b> = sớm ↔ <b>spät</b> = muộn: <i>Ich stehe früh auf.</i> <i>Es ist schon spät.</i>
+D|Tom|Minh, wann lernst du Deutsch?|Minh, bạn học tiếng Đức lúc nào?
+D|Minh|Morgens im Kurs und abends zu Hause.|Buổi sáng ở lớp và buổi tối ở nhà.
+D|Tom|Abends bin ich immer müde. Ich lerne lieber früh.|Buổi tối mình lúc nào cũng mệt. Mình thích học sớm hơn.
+D|Minh|Wie früh?|Sớm cỡ nào?
+D|Tom|Um sechs Uhr morgens!|Sáu giờ sáng!
+D|Minh|Das ist zu früh für mich! Ich gehe spät ins Bett.|Thế thì quá sớm với mình! Mình đi ngủ muộn.
+L|Minh học tiếng Đức khi nào?|buổi sáng ở lớp và buổi tối ở nhà|chỉ buổi tối|chỉ buổi sáng
+R|Tom học lúc mấy giờ?|6 giờ sáng|6 giờ tối|8 giờ sáng
+S|Lernen Sie morgens oder abends?|Ich lerne abends. / Ich lerne morgens.|lerne|Bạn học buổi sáng hay buổi tối?
+W|Viết: “Tối nào tôi cũng học tiếng Đức.”|Abends lerne ich Deutsch.|abends, lerne, deutsch
+G|opp
+
+=47|Luôn luôn, thường, đôi khi, không bao giờ|immer; oft; manchmal; nie
+N|Tần suất: <b>immer</b> (luôn luôn) > <b>oft</b> (thường) > <b>manchmal</b> (đôi khi) > <b>nie</b> (không bao giờ).
+N|Vị trí: thường đứng <b>sau động từ</b>: <i>Ich trinke <b>oft</b> Kaffee.</i> Hoặc đầu câu (đảo ngữ): <i><b>Manchmal</b> koche ich.</i>
+D|Anna|Kochst du oft, Minh?|Minh có hay nấu ăn không?
+D|Minh|Ja, ich koche oft. Ich esse nie im Restaurant – das ist zu teuer.|Có, mình hay nấu. Mình không bao giờ ăn nhà hàng – đắt quá.
+D|Anna|Ich koche nie! Ich esse immer bei meiner Mutter.|Mình không bao giờ nấu! Mình luôn ăn ở nhà mẹ.
+D|Minh|Immer?|Luôn luôn á?
+D|Anna|Na ja … manchmal esse ich auch Pizza.|À thì… đôi khi mình cũng ăn pizza.
+L|Minh có hay ăn nhà hàng không?|nie (không bao giờ)|oft (thường)|manchmal (đôi khi)
+R|Đôi khi Anna ăn gì?|Pizza|Suppe|Fisch
+S|Wie oft lernen Sie Deutsch?|Ich lerne jeden Tag / oft / manchmal Deutsch.|lerne|Bạn học tiếng Đức thường xuyên thế nào?
+W|Viết: “Buổi sáng tôi luôn uống cà phê.”|Morgens trinke ich immer Kaffee.|trinke, immer, kaffee
+F|Ich trinke ___ Kaffee. (luôn luôn)|immer|tần suất
+F|Er kommt ___ zu spät. (không bao giờ)|nie|tần suất
+F|___ koche ich. (đôi khi)|Manchmal|tần suất
+F|Wir lernen ___ zusammen. (thường)|oft|tần suất
+
+=48|Bao lâu? Từ… đến…|dauern; von; bis; sofort; bald
+N|<b>Wie lange dauert …?</b> — <i>Der Kurs dauert drei Stunden.</i> (dauern = kéo dài)
+N|<b>von … bis …</b> = từ … đến …: <i>von neun bis zwölf Uhr</i>. <b>bis</b> + thời gian = đến: <i>bis morgen</i>, <i>bis Freitag</i>.
+N|<b>sofort</b> = ngay lập tức, <b>bald</b> = sắp, chẳng bao lâu nữa. <b>von</b> còn nghĩa “của”: <i>ein Foto von meiner Familie</i>.
+D|Minh|Frau Schmidt, wie lange dauert der Kurs heute?|Cô Schmidt, hôm nay lớp học kéo dài bao lâu ạ?
+D|Frau Schmidt|Von neun bis zwölf Uhr, also drei Stunden.|Từ chín đến mười hai giờ, tức là ba tiếng.
+D|Minh|Und wann ist die Prüfung?|Còn khi nào thi ạ?
+D|Frau Schmidt|Bald – in zwei Wochen.|Sắp rồi – hai tuần nữa.
+D|Tom|Frau Schmidt, Telefon für Sie!|Cô Schmidt, có điện thoại cho cô!
+D|Frau Schmidt|Ich komme sofort!|Tôi đến ngay!
+L|Hôm nay lớp học từ mấy giờ đến mấy giờ?|9–12 giờ|8–11 giờ|9–13 giờ
+R|Khi nào thi?|hai tuần nữa|ngày mai|ba tiếng nữa
+S|Wie lange dauert Ihr Deutschkurs?|Mein Kurs dauert … Stunden.|dauert/von/bis|Lớp tiếng Đức của bạn kéo dài bao lâu?
+W|Viết: “Tôi làm việc từ 8 đến 17 giờ.”|Ich arbeite von acht bis siebzehn Uhr.|arbeite, von, bis
+F|Der Film ___ zwei Stunden. (dauern)|dauert|chia động từ
+F|Ich arbeite von neun ___ fünf Uhr.|bis|từ … đến …
+F|Warte! Ich komme ___! (ngay lập tức)|sofort|
+F|Wie lange ___ der Kurs? (dauern)|dauert|chia động từ
+
+=49|Một ngày làm việc|machen; arbeiten; schlafen; müde
+N|<b>Was machst du?</b> = Bạn làm gì? <b>machen</b> chia đều: ich mache, du machst, er macht.
+N|<b>arbeiten</b>: gốc kết thúc bằng <b>-t</b> nên thêm <b>-e-</b>: du arbeit<b>e</b>st, er arbeit<b>e</b>t, ihr arbeit<b>e</b>t.
+N|<b>schlafen</b> đổi a → ä: du schl<b>ä</b>fst, er schl<b>ä</b>ft. <b>müde</b> = mệt, buồn ngủ.
+D|Anna|Minh, was machst du da?|Minh, bạn đang làm gì đấy?
+D|Minh|Ich arbeite. Ich arbeite abends in einem Café.|Mình đang làm việc. Buổi tối mình làm ở một quán cà phê.
+D|Anna|Wie lange arbeitest du?|Bạn làm bao lâu?
+D|Minh|Von sechs bis elf. Dann bin ich sehr müde.|Từ sáu đến mười một giờ. Sau đó mình rất mệt.
+D|Anna|Und wie lange schläfst du?|Vậy bạn ngủ bao lâu?
+D|Minh|Nur sechs Stunden.|Chỉ sáu tiếng.
+L|Minh làm việc ở đâu?|in einem Café|in einem Restaurant|im Kurs
+R|Minh ngủ bao nhiêu tiếng?|6|8|11
+S|Wo arbeiten Sie?|Ich arbeite in … / Ich arbeite nicht, ich lerne.|arbeite|Bạn làm việc ở đâu?
+W|Viết: “Bạn có mệt không?” (thân mật) – “Có, tôi rất mệt.”|Bist du müde? – Ja, ich bin sehr müde.|bist du muede, sehr muede
+G|conj:machen,arbeiten,schlafen
+
+=50|Ôn tập chặng 5|*
+D||Minh hat jeden Tag viel zu tun. Morgens um neun beginnt sein Deutschkurs.|Ngày nào Minh cũng có nhiều việc. Buổi sáng lúc chín giờ lớp tiếng Đức của anh ấy bắt đầu.
+D||Der Kurs dauert drei Stunden, von neun bis zwölf. Um halb elf ist Pause.|Lớp học kéo dài ba tiếng, từ chín đến mười hai giờ. Mười giờ rưỡi giải lao.
+D||Am Nachmittag lernt Minh zu Hause. Abends arbeitet er von sechs bis elf in einem Café.|Buổi chiều Minh học ở nhà. Buổi tối anh ấy làm ở một quán cà phê từ sáu đến mười một giờ.
+D||Er schläft nur sechs Stunden und ist morgens oft müde. Am Wochenende schläft er lange.|Anh ấy chỉ ngủ sáu tiếng và buổi sáng thường mệt. Cuối tuần anh ấy ngủ dậy muộn.
+L|Lớp học kéo dài bao lâu?|ba tiếng|hai tiếng|sáu tiếng
+L|Giải lao lúc mấy giờ?|10:30|11:30|9:30
+R|Buổi tối Minh làm gì?|arbeiten in einem Café|lernen zu Hause|schlafen
+R|Cuối tuần Minh làm gì?|schläft lange (ngủ dậy muộn)|arbeitet|geht in den Kurs
+S|Erzählen Sie: Wie ist Ihr Tag?|Morgens … Am Nachmittag … Abends …|morgens/am morgen/am vormittag, abends/am abend|Kể về một ngày của bạn (sáng, chiều, tối).
+W|Viết 3 câu về một ngày của bạn, mỗi câu có giờ.|Um acht Uhr … Um zwölf Uhr … Um sieben Uhr …|uhr

@@ -1,0 +1,297 @@
+# Từ xuất hiện trong bài kit nhưng không nằm trong bộ A1 (để Tra từ tra được mọi từ trong tài liệu).
+# từ|nghĩa|loại|số nhiều (danh từ)        ~dạng|từ gốc|ghi chú
+# ---- Mạo từ & dạng rút gọn ----
+der|mạo từ xác định giống đực (cũng là cách 3 của giống cái: mit der Frau)|art
+die|mạo từ xác định giống cái và số nhiều|art
+das|mạo từ xác định giống trung; “đây / đó là” (Das ist …)|art
+~den|der|mạo từ cách 4 giống đực (den Tisch) / cách 3 số nhiều (den Kindern)
+~dem|der|mạo từ cách 3 của der / das (dem Tisch)
+~des|der|mạo từ cách 2 (sở hữu)
+ein|mạo từ không xác định: một (ein Tisch, eine Lampe)|art
+~eine|ein|giống cái
+~einen|ein|cách 4 giống đực
+~einem|ein|cách 3 giống đực / trung
+~einer|ein|cách 3 giống cái
+~eines|ein|cách 2
+dieser|này, đó (dieser, diese, dieses)|pron
+~diese|dieser|giống cái / số nhiều
+~dieses|dieser|giống trung
+~diesem|dieser|cách 3
+~diesen|dieser|cách 4 giống đực / cách 3 số nhiều
+jeder|mỗi (jeder, jede, jedes)|pron
+~jede|jeder|giống cái
+~jedes|jeder|giống trung
+~jeden|jeder|cách 4 giống đực (jeden Tag = mỗi ngày)
+~jedem|jeder|cách 3
+~im|in|= in dem
+~ins|in|= in das
+~am|an|= an dem
+~ans|an|= an das
+~zum|zu@a1-gioi-tu|= zu dem
+~zur|zu@a1-gioi-tu|= zu der
+~beim|bei|= bei dem
+~vom|von|= von dem
+# ---- Đại từ ----
+~mich|ich|cách 4 của ich (tôi)
+~dich|du|cách 4 của du (bạn)
+~ihn|er|cách 4 của er (anh ấy / nó)
+~ihm|er|cách 3 của er (cho anh ấy)
+~uns|wir|cách 3/4 của wir (chúng tôi)
+~euch|ihr|cách 3/4 của ihr (các bạn)
+~Ihnen|Sie|cách 3 của Sie (ông/bà – lịch sự)
+~ihnen|sie|cách 3 của sie (họ)
+~Wen|wer|cách 4 của wer (ai)
+~wen|wer|cách 4 của wer (ai)
+~wem|wer|cách 3 của wer (cho ai)
+sich|mình, bản thân (đại từ phản thân: sich vorstellen = tự giới thiệu)|pron
+niemand|không ai|pron
+jemand|ai đó|pron
+worauf|cái gì (warten auf → Worauf wartest du?)|qw
+viel|nhiều|adj
+mehr|hơn, thêm nữa (nicht mehr = không còn nữa)|adv
+# ---- Thán từ ----
+oh|ồ, ôi|phr
+ah|à|phr
+ach|à, ồ (ach ja = à đúng rồi)|phr
+hm|hừm|phr
+haha|ha ha|phr
+wow|chà, ồ|phr
+brr|brr (lạnh quá)|phr
+na|à thì (na ja = ừ thì)|phr
+okay|được, OK|phr
+super|tuyệt|adj
+klar|rõ; chắc chắn rồi! (Klar!)|adj
+schade|tiếc quá|adj
+# ---- Trạng từ, liên từ, giới từ ----
+so|như thế, thật là (so groß = to thế)|adv
+bisschen|(ein bisschen) một chút|adv
+als|hơn (so sánh: lieber Tee als Kaffee); với tư cách là (als Ingenieur)|conj
+also|vậy thì, tức là|adv
+dabei|mang theo người; đồng thời (lerne dabei = học luôn)|adv
+danach|sau đó|adv
+darum|vì vậy|adv
+dazu|kèm theo, ăn kèm|adv
+damit|để mà; với cái đó|conj
+erst|mới (đến lúc đó mới); đầu tiên|adv
+gar|(gar nicht) hoàn toàn không|adv
+hin|(hin und zurück) đi và về|adv
+zurück|trở lại, quay về|adv
+sondern|mà (là) – dùng sau phủ định: nicht um sieben, sondern um acht|conj
+sonst|ngoài ra; nếu không thì|adv
+gegen|chống lại (Medikament gegen Schmerzen = thuốc giảm đau)|prep
+gegenüber|đối diện|prep
+nebenan|ngay bên cạnh|adv
+unten|ở dưới|adv
+draußen|ở ngoài (trời)|adv
+hoffentlich|hy vọng là|adv
+besonders|đặc biệt là, nhất là|adv
+bestimmt|chắc chắn|adv
+plus|cộng|conj
+minus|trừ; âm (nhiệt độ)|adv
+ab|từ (thời điểm: ab 18 Uhr); khởi hành (fährt ab)|prep
+nächst|tiếp theo, kế tiếp (nächste Woche, der nächste Bus)|adj
+letzt|vừa rồi, cuối cùng (letztes Mal = lần trước)|adj
+recht|bên phải (auf der rechten Seite)|adj
+geehrt|kính gửi (Sehr geehrte Frau …, Sehr geehrter Herr …)|adj
+~weh|wehtun|“… tut weh” = … đau
+~wehtut|wehtun|dạng chia của wehtun
+~fern|fernsehen|“sehe … fern” = xem TV
+~spazieren|spazieren gehen|đi dạo
+~mit|mitkommen|(Kommst du mit?) đi cùng
+~besser|gut|so sánh hơn của gut: tốt hơn
+~bessere|gut|so sánh hơn của gut: tốt hơn
+~besten|gut|am besten = tốt nhất
+~liebsten|gern|am liebsten = thích nhất
+~Minhs|Minh|của Minh
+~mail|E-Mail|(trong địa chỉ email)
+# ---- Động từ ----
+hängen|treo (đang treo)|v
+hoffen|hy vọng|v
+abholen|đón (ai)|v
+anmelden|(sich anmelden) đăng ký (cư trú, khoá học)|v
+interessieren|(sich interessieren für) quan tâm đến|v
+~interessiere|interessieren|ich interessiere mich für … = tôi quan tâm đến …
+bewegen|cử động|v
+fressen|ăn (dùng cho động vật)|v
+malen|vẽ|v
+passieren|xảy ra|v
+funktionieren|hoạt động, chạy (máy móc)|v
+fehlen|thiếu; Was fehlt Ihnen? = Anh/chị bị làm sao?|v
+brechen|gãy, làm gãy|v
+~gebrochen|brechen|bị gãy (phân từ II)
+freuen|(sich freuen auf) mong chờ, vui mừng|v
+schauen|nhìn, xem|v
+~zu|zuschauen|schau zu = xem (trận đấu)
+zuschauen|xem, đứng xem|v
+setzen|(sich setzen) ngồi xuống|v
+einpacken|xếp vào, đóng gói|v
+~eingepackt|einpacken|đã xếp vào (phân từ II)
+beschreiben|mô tả|v
+erzählen|kể|v
+landen|hạ cánh|v
+halten|dừng (xe, tàu); cầm|v
+~hält|halten|dừng (er hält)
+erkältet|bị cảm lạnh|adj
+ausziehen|cởi ra (quần áo, giày)|v
+~aus|ausziehen|(Ziehen Sie die Schuhe aus) cởi ra
+aussehen|trông có vẻ|v
+~siehst|aussehen|du siehst … aus = trông bạn …
+~aus|aussehen|(siehst … aus) trông có vẻ
+nachdenken|suy nghĩ kỹ|v
+# ---- Danh từ ----
+die E-Mail-Adresse|địa chỉ email|n|die E-Mail-Adressen
+der Punkt|dấu chấm; điểm|n|die Punkte
+das Telefon|điện thoại|n|die Telefone
+der Schal|khăn quàng cổ|n|die Schals
+das Geschenk|món quà|n|die Geschenke
+die Gitarre|đàn ghi-ta|n|die Gitarren
+die Flagge|lá cờ|n|die Flaggen
+die Lieblingsfarbe|màu yêu thích|n|die Lieblingsfarben
+der Lieblingspullover|áo len yêu thích|n|die Lieblingspullover
+die Lederjacke|áo khoác da|n|die Lederjacken
+die Regenjacke|áo mưa|n|die Regenjacken
+das Paar|đôi, cặp (ein Paar Schuhe)|n|die Paare
+der Ingenieur|kỹ sư|n|die Ingenieure
+die Jeans|quần jeans|n|die Jeans
+der Jazz|nhạc jazz|n
+der Pop|nhạc pop|n
+der Volleyball|bóng chuyền|n
+das Tennis|quần vợt|n
+die Salsa|điệu nhảy salsa|n
+der Chor|dàn hợp xướng|n|die Chöre
+der Honig|mật ong|n
+die Frisur|kiểu tóc|n|die Frisuren
+das Boot|thuyền|n|die Boote
+die Briefmarke|tem thư|n|die Briefmarken
+der Briefkasten|hộp thư|n|die Briefkästen
+die Einheit|sự thống nhất (Tag der Deutschen Einheit = Quốc khánh Đức, 3/10)|n
+der Abschluss|lễ tốt nghiệp; bằng tốt nghiệp|n|die Abschlüsse
+die Anmeldung|việc đăng ký (cư trú)|n|die Anmeldungen
+der Alkohol|rượu, đồ uống có cồn|n
+die Gesundheit|sức khoẻ|n
+das Geschlecht|giới tính|n|die Geschlechter
+der Grund|lý do|n|die Gründe
+das Gras|cỏ|n
+der Wald|rừng|n|die Wälder
+das Gold|vàng (kim loại); màu vàng kim|n
+die Idee|ý tưởng|n|die Ideen
+die Information|thông tin|n|die Informationen
+der Kilometer|ki-lô-mét|n|die Kilometer
+km|ki-lô-mét (Kilometer)|
+kg|ki-lô-gam (Kilo)|
+der Kunde|khách hàng|n|die Kunden
+die Mathe|môn toán (nói tắt của Mathematik)|n
+die Nachricht|tin tức; tin nhắn|n|die Nachrichten
+der Ort|nơi, địa điểm|n|die Orte
+das Prozent|phần trăm|n|die Prozent
+der Quadratmeter|mét vuông|n|die Quadratmeter
+der Raum|phòng|n|die Räume
+der Regenschirm|cái ô (dù)|n|die Regenschirme
+der Reisende|hành khách (Reisende = những người đi tàu)|n|die Reisenden
+der Rest|phần còn lại|n|die Reste
+die Sprechzeit|giờ khám bệnh, giờ tiếp khách|n|die Sprechzeiten
+der Techniker|thợ kỹ thuật|n|die Techniker
+der Test|bài kiểm tra|n|die Tests
+der Text|bài, văn bản|n|die Texte
+das Thema|chủ đề|n|die Themen
+der Unfall|tai nạn|n|die Unfälle
+die Uni|trường đại học (nói tắt của Universität)|n|die Unis
+der Unterschied|sự khác nhau|n|die Unterschiede
+der Verkäufer|người bán hàng|n|die Verkäufer
+die Versichertenkarte|thẻ bảo hiểm y tế|n|die Versichertenkarten
+das Video|video|n|die Videos
+die Vorspeise|món khai vị|n|die Vorspeisen
+das Vorstellungsgespräch|buổi phỏng vấn xin việc|n|die Vorstellungsgespräche
+die WG|căn hộ ở chung (Wohngemeinschaft)|n|die WGs
+der Winterschlussverkauf|đợt đại hạ giá cuối mùa đông|n
+die Mitte|giữa, trung tâm|n
+die Mode|thời trang|n
+der Norden|phía bắc, miền Bắc|n
+der Halt|trạm dừng; sự dừng lại|n
+der ICE|tàu cao tốc ICE của Đức|n
+die Achtung|chú ý!|n
+der IT-Service|bộ phận hỗ trợ máy tính (IT)|n
+der Doktor|bác sĩ; tiến sĩ (viết tắt Dr.)|n|die Doktoren
+~Dr|Doktor|viết tắt của Doktor
+der Bingo|trò chơi bingo|n
+der Wolf|con sói|n|die Wölfe
+das Haustier|thú cưng|n|die Haustiere
+das Phở|phở (món ăn Việt Nam)|n
+das Rotkäppchen|cô bé quàng khăn đỏ (truyện cổ Grimm)|n
+das Bargeld|tiền mặt|n
+das Stockwerk|tầng (nhà)|n|die Stockwerke
+der Kleiderschrank|tủ quần áo|n|die Kleiderschränke
+der Schreibtisch|bàn học, bàn làm việc|n|die Schreibtische
+der Nachtisch|món tráng miệng|n|die Nachtische
+der Deutschkurs|lớp tiếng Đức|n|die Deutschkurse
+die Arbeitszeit|giờ làm việc|n|die Arbeitszeiten
+# ---- Tính từ ----
+perfekt|hoàn hảo|adj
+praktisch|tiện lợi, thực tế|adj
+sauber|sạch|adj
+komisch|kỳ lạ; buồn cười|adj
+kostenlos|miễn phí|adj
+fit|khoẻ khoắn, sung sức|adj
+hoch|cao|adj
+sportlich|khoẻ khoắn, thể thao|adj
+vietnamesisch|thuộc Việt Nam; tiếng Việt (Vietnamesisch)|adj
+getrennt|riêng, tách rời (trả tiền riêng)|adj
+deutsch|thuộc nước Đức (die deutsche Sprache)|adj
+# ---- Tên riêng ----
+Minh|Minh – nhân vật chính, người Việt học tiếng Đức ở Berlin|name
+Anna|Anna – bạn, hàng xóm của Minh (sinh viên)|name
+Lena|Lena – bạn của Anna|name
+Tom|Tom – bạn cùng lớp của Minh, người Áo|name
+Sara|Sara – bạn cùng lớp, người Thuỵ Sĩ|name
+Lukas|Lukas – anh trai của Anna|name
+Schmidt|cô Schmidt – giáo viên tiếng Đức|name
+Weber|ông Weber – chủ nhà, hàng xóm|name
+Nguyen|Nguyễn – họ của Minh|name
+Hung|Hùng – chú của Minh|name
+Max|Max – tên người|name
+Mia|Mia – tên người|name
+Jonas|Jonas – tên người|name
+Peter|Peter – tên người|name
+Mimi|Mimi – tên con mèo của Lena|name
+Kaya|ông Kaya – tên người|name
+Kaiser|bà Kaiser – tên người|name
+Schulz|bà Schulz – hàng xóm|name
+Becker|bác sĩ Becker – tên người|name
+Müller|Müller – họ phổ biến ở Đức|name
+Goethe|Goethe – nhà thơ Đức nổi tiếng (tên đường: Goethestraße)|name
+Berlin|Berlin – thủ đô nước Đức|name
+Hamburg|Hamburg – thành phố cảng ở miền Bắc nước Đức|name
+München|München (Munich) – thành phố ở miền Nam nước Đức|name
+Köln|Köln (Cologne) – thành phố bên sông Rhein|name
+Leipzig|Leipzig – thành phố ở miền Đông nước Đức|name
+Potsdam|Potsdam – thành phố gần Berlin|name
+Nürnberg|Nürnberg – thành phố ở bang Bayern|name
+Bayern|Bayern (Bavaria) – bang ở miền Nam nước Đức|name
+Norddeutschland|miền Bắc nước Đức|name
+Wien|Wien (Viên) – thủ đô nước Áo|name
+Zürich|Zürich – thành phố ở Thuỵ Sĩ|name
+Italien|nước Ý|name
+Venedig|Venice – thành phố ở Ý|name
+Rom|Rome – thủ đô nước Ý|name
+China|Trung Quốc|name
+Hanoi|Hà Nội|name
+Saigon|Sài Gòn|name
+London|London|name
+Alexanderplatz|quảng trường Alexander ở Berlin|name
+Sonnenschein|ánh nắng (tên tiệm bánh)|name
+ät|ký hiệu @ trong email (đọc là „ät“)|
+de|.de – đuôi tên miền của nước Đức|
+vorbei|qua rồi, kết thúc (Die Party ist vorbei.)|adv
+zahlen|trả tiền (= bezahlen)|v
+~Hause|Haus|zu Hause = ở nhà · nach Hause = về nhà
+~montags|Montag|vào các ngày thứ Hai (thói quen)
+~dienstags|Dienstag|vào các ngày thứ Ba
+~mittwochs|Mittwoch|vào các ngày thứ Tư
+~donnerstags|Donnerstag|vào các ngày thứ Năm
+~freitags|Freitag|vào các ngày thứ Sáu
+~samstags|Samstag|vào các ngày thứ Bảy
+~sonntags|Sonntag|vào các ngày Chủ nhật
+~mittags|Mittag|vào buổi trưa (thói quen)
+~vormittags|Vormittag|vào buổi sáng (thói quen)
+~nachmittags|Nachmittag|vào buổi chiều (thói quen)
+~nachts|Nacht|vào ban đêm (thói quen)

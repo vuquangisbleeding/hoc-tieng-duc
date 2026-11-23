@@ -237,7 +237,7 @@ const wordsOf=set=>{const ws=set.words;if(!starOnly)return ws;const s=ws.filter(
 function screen(html){root.innerHTML=html;window.scrollTo({top:0})}
 function topbar(title,back){return `<div class="vtop"><button class="ibtn" data-act="${back}" aria-label="Quay lại">‹</button><div class="vtitle">${title}</div><span></span></div>`}
 function infoBlock(w,opts={}){ // phần giải nghĩa đầy đủ – dùng ở mặt sau thẻ & phản hồi
-  const ct=conjTable(w,opts.hl||[]);
+  const ct=conjTable(w,opts.hl||[]),S=opts.set||curSet;
   return `<div class="winfo">
     <div class="wterm">${termHtml(w)} <button class="spk" data-say="${esc(term(w))}" aria-label="Nghe">🔊</button></div>
     ${w.i?`<div class="wipa">/${esc(w.i)}/</div>`:""}
@@ -250,8 +250,8 @@ function infoBlock(w,opts={}){ // phần giải nghĩa đầy đủ – dùng �
     ${ct}
     ${w.ex?`<div class="wex">${esc(w.ex.replace(/[\[\]]/g,""))} <button class="spk" data-say="${esc(w.ex.replace(/[\[\]]/g,""))}" aria-label="Nghe câu">🔊</button><button class="spk trymic" data-tryread="${esc(w.ex.replace(/[\[\]]/g,""))}" aria-label="Đọc thử câu ví dụ">🎤</button><br><span>${esc(w.exv||"")}</span></div>`:""}
     <div class="tryread">
-      <div class="tryrow"><button class="trybtn" data-tryread="${esc(term(w))}" data-key="${esc(curSet?keyOf(curSet,w):"")}">🎤 Đọc thử</button>
-        <span class="small">${window.appScoreMode&&appScoreMode()==="azure"?"Chấm từng âm (Azure)":"Chấm nhanh (miễn phí)"}${(()=>{const p=curSet&&P[keyOf(curSet,w)];return p&&p.say?` · tốt nhất ${p.say}%`:""})()}</span></div>
+      <div class="tryrow"><button class="trybtn" data-tryread="${esc(term(w))}" data-key="${esc(S?keyOf(S,w):"")}">🎤 Đọc thử</button>
+        <span class="small">${window.appScoreMode&&appScoreMode()==="azure"?"Chấm từng âm (Azure)":"Chấm nhanh (miễn phí)"}${(()=>{const p=S&&P[keyOf(S,w)];return p&&p.say?` · tốt nhất ${p.say}%`:""})()}</span></div>
       <div class="tryres" aria-live="polite"></div>
     </div>
   </div>`;
@@ -414,7 +414,7 @@ function bindQ(q,done){ // done(good) gọi khi trả lời xong
 }
 /* chèn ä ö ü ß vào ô đang gõ */
 let lastInput=null;
-root.addEventListener("focusin",e=>{if(e.target.matches("input#ans,input.blank"))lastInput=e.target});
+document.addEventListener("focusin",e=>{if(e.target.matches("input#ans,input.blank,input[data-kbd],textarea[data-kbd]"))lastInput=e.target});
 
 /* ---------- 2. Học (thích ứng) ---------- */
 let ln=null;
@@ -501,15 +501,21 @@ function saveCustom(){
 }
 
 /* ---------- Sự kiện ---------- */
+/* các nút trong khung giải nghĩa (đọc thử, nghe, âm tiết, bàn phím ä ö ü) – dùng chung cho mọi tab */
+function infoClick(e){
+  const t=e.target.closest("button");if(!t)return false;
+  if(t.dataset.ch&&lastInput&&document.body.contains(lastInput)){const i=lastInput,s=i.selectionStart??i.value.length;i.value=i.value.slice(0,s)+t.dataset.ch+i.value.slice(i.selectionEnd??s);i.focus();i.setSelectionRange(s+1,s+1);i.dispatchEvent(new Event("input",{bubbles:true}));return true}
+  if(t.dataset.sylpick!=null){const b=t.closest(".sylb"),w=SYLREG[+b.dataset.sylid],i=+t.dataset.sylpick;
+    b.querySelectorAll(".sylc").forEach(c=>c.classList.toggle("on",c===t));b.querySelector(".syldet").innerHTML=sylDetail(w,parseSyl(w),i);return true}
+  if(t.dataset.sndpick){const b=t.closest(".sylb"),w=SYLREG[+b.dataset.sylid];b.querySelector(".syldet").innerHTML=sylDetail(w,parseSyl(w),+t.dataset.sylidx,t.dataset.sndpick);return true}
+  if(t.dataset.tryread){tryRead(t);return true}
+  if(t.dataset.say){speak(t.dataset.say);return true}
+  if(t.dataset.practice){window.appPractice&&window.appPractice(t.dataset.practice,t.dataset.ipa,t.dataset.mean);return true}
+  return false;
+}
 root.addEventListener("click",e=>{
   const t=e.target.closest("button,[data-set]");if(!t)return;
-  if(t.dataset.ch&&lastInput){const i=lastInput,s=i.selectionStart??i.value.length;i.value=i.value.slice(0,s)+t.dataset.ch+i.value.slice(i.selectionEnd??s);i.focus();i.setSelectionRange(s+1,s+1);return}
-  if(t.dataset.sylpick!=null){const b=t.closest(".sylb"),w=SYLREG[+b.dataset.sylid],i=+t.dataset.sylpick;
-    b.querySelectorAll(".sylc").forEach(c=>c.classList.toggle("on",c===t));b.querySelector(".syldet").innerHTML=sylDetail(w,parseSyl(w),i);return}
-  if(t.dataset.sndpick){const b=t.closest(".sylb"),w=SYLREG[+b.dataset.sylid];b.querySelector(".syldet").innerHTML=sylDetail(w,parseSyl(w),+t.dataset.sylidx,t.dataset.sndpick);return}
-  if(t.dataset.tryread){tryRead(t);return}
-  if(t.dataset.say){speak(t.dataset.say);return}
-  if(t.dataset.practice){window.appPractice&&window.appPractice(t.dataset.practice,t.dataset.ipa,t.dataset.mean);return}
+  if(t.tagName==="BUTTON"&&infoClick(e))return;
   if(t.dataset.set!=null){starOnly=false;setPage(+t.dataset.set);return}
   if(t.dataset.star!=null){const w=curSet.words[+t.dataset.star],p=pr(keyOf(curSet,w));p.star=!p.star;save();t.classList.toggle("on",p.star);return}
   if(t.dataset.mode){const m=t.dataset.mode;({cards,learn:()=>learn(),match}[m]||(()=>series(m)))();return}
@@ -538,5 +544,8 @@ const curQ=()=>activeQ;
 
 window.vocabHome=home;
 window.__vocabTest={parseSyl,notesBlock,verbNotes,genderTrick,stressNote};
+/* API cho tab Gia sư & Tra từ */
+window.VocabAPI={esc,shuffle,fold,lev,check,term,termHtml,artHtml,TYPE,keyOf,pr,save,mark,mastered,allSets,conjOf,whichForm,explainForm,
+  infoBlock,infoClick,renderTry,kbd,PERS,genderHint,getP:()=>P};
 home();
 })();

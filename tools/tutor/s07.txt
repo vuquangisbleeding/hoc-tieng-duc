@@ -1,0 +1,147 @@
+#|7|Đồ ăn|Nói về đồ ăn, bữa ăn, nấu ăn; thích/không thích (gern, mögen, lieber); cách 4 – Akkusativ (einen/eine/ein, keinen).
+
+=61|Ba bữa ăn|Essen; Frühstück; Mittagessen; Abendessen; frühstücken
+N|<b>das Frühstück</b> (bữa sáng), <b>das Mittagessen</b> (bữa trưa), <b>das Abendessen</b> (bữa tối) — đều là <b>das</b> (theo das Essen).
+N|<b>zum Frühstück</b> = cho bữa sáng: <i>Zum Frühstück esse ich Brot.</i> <b>frühstücken</b> = ăn sáng (động từ, không tách: ich frühstücke).
+N|<b>das Essen</b> = đồ ăn, bữa ăn: <i>Das Essen ist fertig!</i>
+D|Anna|Minh, was isst du zum Frühstück?|Minh ăn gì vào bữa sáng?
+D|Minh|In Vietnam esse ich Phở zum Frühstück. Hier frühstücke ich nur einen Kaffee.|Ở Việt Nam mình ăn phở buổi sáng. Ở đây mình ăn sáng chỉ bằng một cốc cà phê.
+D|Anna|Nur Kaffee? Und das Mittagessen?|Chỉ cà phê thôi à? Còn bữa trưa?
+D|Minh|Mittags esse ich in der Kantine. Das Essen dort ist okay.|Buổi trưa mình ăn ở căng tin. Đồ ăn ở đó tạm được.
+D|Anna|Und abends? Komm doch zum Abendessen zu uns!|Còn buổi tối? Đến nhà mình ăn tối đi!
+L|Ở Việt Nam, Minh ăn gì buổi sáng?|Phở|Brot|Kaffee
+R|Buổi trưa Minh ăn ở đâu?|in der Kantine|zu Hause|bei Anna
+S|Was essen Sie zum Frühstück?|Zum Frühstück esse ich …|esse/trinke|Bạn ăn gì vào bữa sáng?
+W|Viết: “Buổi trưa tôi ăn ở căng tin.”|Mittags esse ich in der Kantine.|esse, kantine
+G|art
+
+=62|Bánh mì & bơ – essen|essen; Brot; Brötchen; Butter; Marmelade
+N|<b>essen</b> đổi e → i: ich esse, <b>du isst, er isst</b>, wir essen.
+N|Bữa sáng kiểu Đức: <b>Brötchen</b> (bánh mì nhỏ, giòn) với <b>Butter</b> (bơ) và <b>Marmelade</b> (mứt).
+N|Danh từ không đếm được thường không có mạo từ: <i>Ich esse Brot. Ich esse gern Butter.</i>
+D|Anna|Das Frühstück ist fertig! Möchtest du ein Brötchen?|Bữa sáng xong rồi! Bạn muốn một cái bánh mì nhỏ không?
+D|Minh|Ja, gern! Was isst du?|Có, thích lắm! Bạn ăn gì?
+D|Anna|Ich esse Brot mit Butter und Marmelade.|Mình ăn bánh mì với bơ và mứt.
+D|Minh|Isst man in Deutschland immer Brot zum Frühstück?|Ở Đức người ta luôn ăn bánh mì vào bữa sáng à?
+D|Anna|Ja, fast immer. Die Deutschen lieben Brot!|Ừ, hầu như luôn luôn. Người Đức mê bánh mì!
+L|Anna ăn gì?|Brot mit Butter und Marmelade|Brötchen mit Käse|Brot mit Wurst
+R|Theo Anna, người Đức mê gì?|Brot|Reis|Pizza
+S|Essen Sie gern Brot?|Ja, ich esse gern Brot. / Nein, …|esse|Bạn có thích ăn bánh mì không?
+W|Chia động từ essen: du ___, er ___.|du isst, er isst|du isst, er isst
+G|conj:essen; art
+
+=63|Phô mai, xúc xích & trứng – thích|Käse; Wurst; Ei; Hunger; gern
+N|<b>gern</b> = thích (làm gì) — đứng sau động từ: <i>Ich esse <b>gern</b> Käse.</i> Không thích: <i>Ich esse <b>nicht gern</b> Wurst.</i>
+N|<b>Hunger haben</b> = đói: <i>Ich habe Hunger.</i> (không dùng sein!)
+N|<b>das Ei</b> (số nhiều: die Eier) = trứng, <b>der Käse</b> = phô mai, <b>die Wurst</b> = xúc xích.
+D|Minh|Ich habe Hunger!|Mình đói!
+D|Lena|Ich habe Brot, Käse und Wurst. Was isst du gern?|Mình có bánh mì, phô mai và xúc xích. Bạn thích ăn gì?
+D|Minh|Ich esse gern Käse, aber nicht gern Wurst.|Mình thích phô mai, nhưng không thích xúc xích.
+D|Lena|Und ein Ei?|Còn một quả trứng?
+D|Minh|Ja, gern! Eier esse ich sehr gern.|Có, thích lắm! Mình rất thích trứng.
+L|Minh không thích gì?|Wurst|Käse|Eier
+R|Minh nói gì khi đói?|Ich habe Hunger!|Ich bin Hunger!|Ich esse Hunger!
+S|Was essen Sie gern?|Ich esse gern …|esse gern|Bạn thích ăn gì?
+W|Viết: “Tôi thích ăn trứng, nhưng tôi không thích ăn phô mai.”|Ich esse gern Eier, aber ich esse nicht gern Käse.|esse gern, nicht gern
+F|Ich esse ___ Käse. (thích)|gern|gern đứng sau động từ
+F|Ich ___ Hunger. (haben)|habe|Hunger haben = đói
+F|Er ___ nicht gern Wurst. (essen)|isst|essen: er isst
+
+=64|Thịt, cá & Akkusativ|Fleisch; Hähnchen; Fisch; Reis; Nudel
+N|<b>Akkusativ (cách 4)</b>: tân ngữ của các động từ như essen, haben, möchten, kaufen… Chỉ giống <b>đực</b> thay đổi: <b>der → den, ein → einen, kein → keinen</b>. Giống cái và trung giữ nguyên.
+N|<i>Ich möchte <b>einen</b> Fisch.</i> (der Fisch) — <i>Ich esse <b>ein</b> Hähnchen.</i> (das) — <i>Ich koche <b>eine</b> Suppe.</i> (die)
+N|<b>die Nudel</b> → thường dùng số nhiều <b>Nudeln</b> (mì). <b>der Reis</b> (gạo, cơm), <b>das Fleisch</b> (thịt) không đếm được.
+D|Anna|Was kochen wir heute? Fleisch oder Fisch?|Hôm nay chúng ta nấu gì? Thịt hay cá?
+D|Minh|Ich esse kein Fleisch. Ich möchte einen Fisch.|Mình không ăn thịt. Mình muốn một con cá.
+D|Anna|Okay. Und dazu Reis oder Nudeln?|Được. Thế ăn kèm cơm hay mì?
+D|Minh|Reis, bitte! Ohne Reis ist das kein Essen für mich.|Cơm nhé! Không có cơm thì với mình chẳng phải bữa ăn.
+D|Anna|Und Lukas? Er isst immer Hähnchen.|Còn Lukas? Anh ấy lúc nào cũng ăn gà.
+L|Minh muốn ăn gì?|einen Fisch|ein Hähnchen|Fleisch
+R|Minh chọn ăn kèm gì?|Reis|Nudeln|Brot
+S|Was essen Sie lieber: Fleisch oder Fisch?|Ich esse lieber Fisch.|fisch/fleisch|Bạn thích ăn thịt hay cá hơn?
+W|Viết: “Tôi muốn một con cá và cơm.”|Ich möchte einen Fisch und Reis.|einen fisch, reis
+G|akk; art
+
+=65|Rau củ & số nhiều|Gemüse; Kartoffel; Tomate; Salat; Zwiebel
+N|Danh từ giống cái đuôi <b>-e / -el</b> thường thêm <b>-n</b> ở số nhiều: die Tomate → Tomate<b>n</b>, die Kartoffel → Kartoffel<b>n</b>, die Zwiebel → Zwiebel<b>n</b>.
+N|<b>das Gemüse</b> = rau củ (không đếm). <b>der Salat</b> = rau xà lách / món salad.
+D|Minh|Ich mache einen Salat. Was brauchen wir?|Mình làm món salad. Chúng ta cần gì?
+D|Anna|Tomaten und eine Zwiebel. Ich mag Gemüse!|Cà chua và một củ hành. Mình thích rau củ!
+D|Minh|Und Kartoffeln? Kartoffelsalat ist sehr deutsch, oder?|Còn khoai tây? Salad khoai tây rất “Đức”, đúng không?
+D|Anna|Ja! Mit Kartoffeln, Zwiebeln und Salz.|Đúng! Với khoai tây, hành và muối.
+L|Minh làm món gì?|einen Salat|eine Suppe|Kartoffeln
+R|Salad khoai tây có những gì?|Kartoffeln, Zwiebeln und Salz|Tomaten und Zwiebeln|Kartoffeln und Fleisch
+S|Welches Gemüse essen Sie gern?|Ich esse gern Tomaten / Kartoffeln …|esse gern|Bạn thích ăn rau củ nào?
+W|Viết số nhiều: Tomate, Kartoffel, Zwiebel.|Tomaten, Kartoffeln, Zwiebeln|tomaten, kartoffeln, zwiebeln
+G|pl; art
+
+=66|Trái cây – mögen|Obst; Apfel; Banane; Orange; mögen
+N|<b>mögen</b> (thích) bất quy tắc: ich <b>mag</b>, du <b>magst</b>, er <b>mag</b>, wir mögen, ihr mögt, sie mögen. Dùng với danh từ: <i>Ich mag Äpfel.</i>
+N|<b>mögen</b> + danh từ ↔ <b>gern</b> + động từ: <i>Ich mag Obst.</i> = <i>Ich esse gern Obst.</i>
+N|<b>der Apfel</b> → die <b>Ä</b>pfel, <b>die Banane</b> → Bananen, <b>die Orange</b> (đọc kiểu Pháp “ô-răng-giơ”) → Orangen. <b>das Obst</b> = trái cây (không đếm).
+D|Lena|Magst du Obst, Minh?|Minh có thích trái cây không?
+D|Minh|Ja, sehr! Ich mag Bananen und Orangen.|Có, rất thích! Mình thích chuối và cam.
+D|Lena|Und Äpfel?|Còn táo?
+D|Minh|Äpfel mag ich nicht so. Aber mein Bruder mag Äpfel sehr.|Táo thì mình không thích lắm. Nhưng anh trai mình rất thích táo.
+D|Lena|In Vietnam gibt es sicher viel Obst!|Ở Việt Nam chắc chắn có nhiều trái cây lắm!
+L|Minh thích những quả gì?|Bananen und Orangen|Äpfel|Äpfel und Bananen
+R|Ai rất thích táo?|anh trai Minh|Minh|Lena
+S|Mögen Sie Obst? Welches?|Ja, ich mag Bananen und Äpfel.|mag|Bạn có thích trái cây không? Loại nào?
+W|Chia mögen: ich ___, du ___, er ___.|ich mag, du magst, er mag|ich mag, du magst, er mag
+G|conj:mögen; pl
+
+=67|Đồ ngọt|Kuchen; Schokolade; Zucker; süß; lecker
+N|<b>süß</b> = ngọt (cũng nghĩa “dễ thương”), <b>lecker</b> = ngon: <i>Der Kuchen ist lecker!</i>
+N|Khen đồ ăn: <b>Das schmeckt gut!</b> / <b>Lecker!</b> Người Đức hay có <b>Kaffee und Kuchen</b> vào khoảng 15–16 giờ Chủ nhật.
+D|Anna|Minh, möchtest du ein Stück Kuchen?|Minh, bạn muốn một miếng bánh không?
+D|Minh|Ja, gern! Hm, der Kuchen ist sehr lecker!|Có, thích lắm! Hừm, bánh ngon quá!
+D|Anna|Danke! Das ist Schokoladenkuchen von meiner Oma.|Cảm ơn! Đây là bánh sô-cô-la của bà mình.
+D|Minh|Er ist sehr süß. Ist viel Zucker im Kuchen?|Nó rất ngọt. Trong bánh có nhiều đường không?
+D|Anna|Ja, viel Zucker und viel Schokolade!|Có, nhiều đường và nhiều sô-cô-la!
+L|Bánh do ai làm?|bà của Anna|Anna|mẹ của Anna
+R|Minh thấy bánh thế nào?|sehr lecker und süß|nicht so gut|zu scharf
+S|Essen Sie gern Kuchen oder Schokolade?|Ich esse gern Schokolade.|esse gern|Bạn thích bánh ngọt hay sô-cô-la?
+W|Viết: “Cái bánh rất ngon!”|Der Kuchen ist sehr lecker!|kuchen ist, lecker
+G|art
+
+=68|Nấu ăn|kochen; Suppe; Salz; scharf; frisch
+N|<b>kochen</b> = nấu: <i>Ich koche eine Suppe.</i> (Akkusativ: die Suppe → eine Suppe)
+N|<b>scharf</b> = cay, <b>frisch</b> = tươi, <b>das Salz</b> = muối: <i>Die Suppe ist zu scharf.</i>
+D|Minh|Heute koche ich eine vietnamesische Suppe für euch.|Hôm nay mình nấu một món súp Việt Nam cho các bạn.
+D|Lena|Toll! Ist sie scharf?|Tuyệt! Có cay không?
+D|Minh|Ein bisschen. Und das Gemüse ist ganz frisch – vom Markt.|Một chút. Và rau thì rất tươi – mua ở chợ.
+D|Lena|Hm, lecker! Aber vielleicht noch ein bisschen Salz?|Hừm, ngon! Nhưng có lẽ thêm chút muối nữa?
+D|Minh|Hier ist das Salz!|Muối đây!
+L|Minh nấu món gì?|eine vietnamesische Suppe|einen Salat|Fisch
+R|Rau mua ở đâu?|vom Markt (ở chợ)|im Supermarkt|im Garten
+S|Kochen Sie gern? Was kochen Sie?|Ja, ich koche gern Suppe.|koche|Bạn có thích nấu ăn không? Bạn nấu món gì?
+W|Viết: “Súp hơi cay nhưng rất ngon.”|Die Suppe ist ein bisschen scharf, aber sehr lecker.|suppe, scharf, aber, lecker
+G|conj:kochen; art
+
+=69|Ngon không? – thích hơn|schmecken; Pizza; lieber; etwas
+N|<b>schmecken</b> = có vị, ngon: <i>Das schmeckt gut!</i> <i>Schmeckt dir die Pizza?</i> (Bạn thấy pizza ngon không? — dir = với bạn).
+N|So sánh sở thích: <b>gern</b> → <b>lieber</b> (thích hơn) → <b>am liebsten</b> (thích nhất): <i>Ich esse gern Pizza, aber lieber Phở.</i>
+N|<b>etwas</b> = cái gì đó / một chút: <i>Möchtest du etwas essen?</i>
+D|Tom|Möchtest du etwas essen? Ich bestelle Pizza.|Bạn muốn ăn gì không? Mình gọi pizza.
+D|Minh|Ja, gern. Aber ich esse lieber Pizza mit Gemüse.|Ừ, được. Nhưng mình thích pizza rau hơn.
+D|Tom|Kein Problem. … Und? Schmeckt dir die Pizza?|Không vấn đề gì. … Sao? Bạn thấy pizza ngon không?
+D|Minh|Ja, sie schmeckt sehr gut! Aber am liebsten esse ich Phở.|Có, rất ngon! Nhưng mình thích nhất là phở.
+L|Minh thích pizza loại nào hơn?|mit Gemüse (rau)|mit Fleisch (thịt)|mit Fisch (cá)
+R|Minh thích ăn gì nhất?|Phở|Pizza|Salat
+S|Schmeckt Ihnen deutsches Essen?|Ja, es schmeckt gut. / Nein, nicht so gut.|schmeckt|Bạn thấy đồ ăn Đức ngon không?
+W|Viết: “Tôi thích ăn cá hơn thịt.”|Ich esse lieber Fisch als Fleisch.|lieber fisch
+F|Ich esse gern Pizza, aber ___ Salat. (thích hơn)|lieber|gern → lieber
+F|___ dir der Kuchen? (schmecken)|Schmeckt|chia động từ
+F|Möchtest du ___ trinken? (cái gì đó)|etwas|
+
+=70|Ôn tập chặng 7|*
+D||Am Sonntag frühstückt Familie Weber lange und gemütlich.|Chủ nhật gia đình Weber ăn sáng lâu và thong thả.
+D||Es gibt frische Brötchen, Butter, Käse, Wurst und Eier.|Có bánh mì nhỏ tươi, bơ, phô mai, xúc xích và trứng.
+D||Herr Weber isst gern Brötchen mit Marmelade. Seine Partnerin mag lieber Käse.|Ông Weber thích ăn bánh mì với mứt. Bạn đời của ông thích phô mai hơn.
+D||Mittags kochen sie zusammen: Fisch mit Kartoffeln und Salat.|Buổi trưa họ nấu ăn cùng nhau: cá với khoai tây và salad.
+D||Am Nachmittag gibt es Kaffee und Kuchen. Lecker!|Buổi chiều có cà phê và bánh. Ngon!
+L|Buổi trưa họ nấu gì?|Fisch mit Kartoffeln und Salat|Fleisch mit Reis|Suppe
+L|Bạn đời của ông Weber thích gì hơn?|Käse|Marmelade|Wurst
+R|Khi nào họ ăn bánh?|am Nachmittag|zum Frühstück|am Abend
+S|Was essen Sie gern und was essen Sie nicht gern?|Ich esse gern … Ich esse nicht gern …|gern, nicht gern|Bạn thích và không thích ăn gì?
+W|Viết 3 câu về bữa sáng của bạn.|Zum Frühstück esse ich … Ich trinke … Ich mag …|esse/trinke

@@ -9,7 +9,7 @@ const RAW=window.__SYNC_OVERRIDE||{
 const clean=v=>String(v||"").trim().replace(/[^\x21-\x7E]/g,"");
 const CFG={url:clean(RAW.url).replace(/\/+$/,""),key:clean(RAW.key)};
 const CFG_BAD=(CFG.url||CFG.key)&&(!/^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(CFG.url)||!(/^eyJ[\w-]+\.[\w-]+\.[\w-]+$/.test(CFG.key)&&CFG.key.length>100||/^sb_publishable_[\w-]{10,}$/.test(CFG.key)));
-const KEYS=["deVocabProg","deMatchBest","deCustomSets","deProg","deCfg"];
+const KEYS=["deVocabProg","deMatchBest","deCustomSets","deProg","deCfg","deTutor"];
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
@@ -54,6 +54,14 @@ function merge(L,R){
   { const a=L.deMatchBest||{},b=R.deMatchBest||{},m={...b};for(const k in a)m[k]=b[k]?Math.min(a[k],b[k]):a[k];if(Object.keys(m).length)out.deMatchBest=m }
   { const a=L.deCustomSets||[],b=R.deCustomSets||[],ids=new Set(a.map(s=>s.id));const m=[...a,...b.filter(s=>!ids.has(s.id))];if(m.length)out.deCustomSets=m }
   { const a=L.deCfg||{},b=R.deCfg||{},m={...b};for(const k in a)if(a[k]!==""&&a[k]!=null)m[k]=a[k];if(Object.keys(m).length)out.deCfg=m }
+  { const a=L.deTutor,b=R.deTutor;                                       // gia sư: gộp từng kit (điểm cao nhất, ngày hoàn thành sớm nhất)
+    if(a||b){const A=a||{},B=b||{},kits={},ka=A.kits||{},kb=B.kits||{};
+      for(const n of new Set([...Object.keys(ka),...Object.keys(kb)])){const x=ka[n],y=kb[n];if(!x||!y){kits[n]=x||y;continue}
+        const best={},steps={};for(const st of new Set([...Object.keys(x.best||{}),...Object.keys(y.best||{})]))best[st]=Math.max((x.best||{})[st]??-1,(y.best||{})[st]??-1);
+        const nx=(x.t||0)>=(y.t||0)?x:y;Object.assign(steps,(nx===x?y:x).steps||{},nx.steps||{});
+        kits[n]={...nx,steps,best,done:x.done&&y.done?Math.min(x.done,y.done):(x.done||y.done||undefined)}}
+      const days={...(B.days||{})};for(const d in A.days||{})days[d]=Math.max(days[d]||0,A.days[d]);
+      out.deTutor={...B,...A,v:1,cur:Math.max(A.cur||1,B.cur||1),kits,days}} }
   return out;
 }
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
@@ -78,7 +86,7 @@ function friendly(e){
 let sb=null,started=false;
 function loadLib(){return window.supabase?Promise.resolve(window.supabase):new Promise((ok,no)=>{const s=document.createElement("script");
   s.src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js";s.onload=()=>ok(window.supabase);s.onerror=()=>no(new Error("Không tải được thư viện đồng bộ (cần mạng)"));document.head.appendChild(s)})}
-const busyUI=()=>!!document.querySelector("#qcard, #flip, .mgrid, .mic.on");
+const busyUI=()=>!!document.querySelector("#qcard, #flip, .mgrid, .mic.on, .trun");
 
 async function pull(reloadIfChanged){
   if(!user)return;setState("busy");

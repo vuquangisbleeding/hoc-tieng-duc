@@ -1,0 +1,172 @@
+#|18|Du lịch, thời tiết & thi thử A1|Thời tiết, du lịch, khách sạn; câu với weil / denn / wenn / dass; quá khứ war / hatte; werden; làm bài thi thử A1.
+
+=171|Trời nắng đẹp|Wetter; Sonne; scheinen; sonnig; warm
+N|<b>Wie ist das Wetter?</b> — <i>Das Wetter ist schön. Die Sonne <b>scheint</b>. Es ist <b>sonnig</b> und <b>warm</b>.</i>
+N|Nói về thời tiết thường dùng chủ ngữ <b>es</b>: <i>Es ist warm. Es ist sonnig.</i>
+D|Lena|Hallo Minh! Wie ist das Wetter in Hanoi?|Chào Minh! Thời tiết ở Hà Nội thế nào?
+D|Minh|Sehr warm! Die Sonne scheint den ganzen Tag. Es ist sonnig und heiß.|Rất ấm! Mặt trời chiếu cả ngày. Trời nắng và nóng.
+D|Lena|Hier in Berlin ist das Wetter nicht so schön.|Ở Berlin thời tiết không đẹp lắm.
+D|Minh|Wirklich? Im Juli?|Thật à? Vào tháng Bảy?
+D|Lena|Ja, heute ist es grau. Aber morgen scheint die Sonne wieder.|Ừ, hôm nay trời xám xịt. Nhưng ngày mai mặt trời lại chiếu.
+L|Thời tiết ở Hà Nội thế nào?|sonnig und heiß (nắng và nóng)|kalt|grau
+R|Ngày mai Berlin thế nào?|Mặt trời lại chiếu|Mưa|Có tuyết
+S|Wie ist das Wetter heute bei Ihnen?|Heute ist es sonnig und warm.|es ist/scheint/regnet|Hôm nay thời tiết chỗ bạn thế nào?
+W|Viết: “Hôm nay mặt trời chiếu và trời ấm.”|Heute scheint die Sonne und es ist warm.|scheint die sonne, warm
+G|conj:scheinen; opp
+
+=172|Trời mưa|Regen; regnen; Wolke; Himmel
+N|<b>Es regnet.</b> = Trời mưa (động từ regnen chỉ dùng với es). <b>der Regen</b> = cơn mưa: <i>Im Herbst gibt es viel Regen.</i>
+N|<b>die Wolke</b> = đám mây, <b>der Himmel</b> = bầu trời: <i>Der Himmel ist grau.</i>
+D|Anna|Schau mal aus dem Fenster: Der Himmel ist ganz grau.|Nhìn ra cửa sổ xem: Bầu trời xám xịt.
+D|Minh|Ja, viele Wolken. Ich glaube, es regnet gleich.|Ừ, nhiều mây. Mình nghĩ sắp mưa rồi.
+D|Anna|Nimm einen Regenschirm mit!|Mang ô theo đi!
+D|Minh|Ich habe keinen. Aber kein Problem – ich mag Regen.|Mình không có. Nhưng không sao – mình thích mưa.
+D|Anna|Du magst Regen? Du bist komisch!|Bạn thích mưa á? Bạn kỳ lạ thật!
+L|Bầu trời thế nào?|ganz grau (xám xịt)|blau|sonnig
+R|Minh có ô không?|Không|Có|Có, hai cái
+S|Was machen Sie, wenn es regnet?|Wenn es regnet, bleibe ich zu Hause.|regnet|Khi trời mưa, bạn làm gì?
+W|Viết: “Hôm nay trời mưa và bầu trời xám.”|Heute regnet es und der Himmel ist grau.|regnet es, himmel ist grau
+G|art; pl
+
+=173|Tuyết & nhiệt độ|Schnee; schneien; kalt; Grad; heiß
+N|<b>Es schneit.</b> = Tuyết rơi. <b>der Schnee</b> = tuyết. <b>kalt</b> (lạnh) ↔ <b>heiß</b> (nóng).
+N|Nhiệt độ: <i>Es sind minus fünf <b>Grad</b>.</i> / <i>Es ist dreißig Grad.</i> (der Grad, số nhiều vẫn là Grad)
+D|Minh|Wow, es schneit! Das ist mein erster Schnee!|Ồ, tuyết rơi! Đây là trận tuyết đầu tiên của mình!
+D|Lena|Wirklich? In Vietnam gibt es keinen Schnee?|Thật à? Ở Việt Nam không có tuyết à?
+D|Minh|Nur ganz im Norden, in den Bergen. Wie kalt ist es?|Chỉ ở tận miền Bắc, trên núi. Lạnh bao nhiêu độ?
+D|Lena|Minus drei Grad.|Âm ba độ.
+D|Minh|Minus drei! In Hanoi sind es jetzt dreißig Grad – das ist heiß!|Âm ba! Ở Hà Nội bây giờ ba mươi độ – nóng thế!
+L|Nhiệt độ ở Berlin là bao nhiêu?|-3 độ|3 độ|-13 độ
+R|Ở Hà Nội bây giờ bao nhiêu độ?|30 độ|13 độ|3 độ
+S|Wie viel Grad ist es heute?|Heute sind es … Grad.|grad|Hôm nay bao nhiêu độ?
+W|Viết: “Tuyết rơi. Trời âm năm độ.”|Es schneit. Es sind minus fünf Grad.|es schneit, minus fuenf grad
+G|opp
+
+=174|Gió – khi… thì…|Wind; windig; kühl; man; wenn
+N|<b>der Wind</b> = gió, <b>windig</b> = có gió, <b>kühl</b> = mát (hơi lạnh).
+N|<b>wenn</b> = khi, nếu — động từ đứng <b>cuối</b> mệnh đề: <i><b>Wenn</b> es windig <b>ist</b>, ziehe ich eine Jacke an.</i> Mệnh đề wenn đứng trước thì mệnh đề sau bắt đầu bằng động từ.
+N|<b>man</b> = người ta (động từ chia như er): <i>Bei Wind <b>trägt man</b> eine Jacke.</i>
+D|Anna|Heute ist es windig und kühl. Nur zwölf Grad.|Hôm nay có gió và mát. Chỉ mười hai độ.
+D|Minh|Wenn es windig ist, fahre ich nicht gern Fahrrad.|Khi có gió, mình không thích đạp xe.
+D|Anna|In Norddeutschland gibt es oft Wind. Da sagt man: „Es gibt kein schlechtes Wetter, nur falsche Kleidung.“|Ở miền Bắc nước Đức thường có gió. Ở đó người ta nói: “Không có thời tiết xấu, chỉ có quần áo sai.”
+D|Minh|Dann brauche ich bessere Kleidung!|Vậy mình cần quần áo tốt hơn!
+L|Hôm nay bao nhiêu độ?|12 độ|20 độ|2 độ
+R|Người miền Bắc nước Đức nói gì?|Không có thời tiết xấu, chỉ có quần áo sai|Gió là bạn|Mưa rất đẹp
+S|Was machen Sie, wenn das Wetter schön ist?|Wenn das Wetter schön ist, gehe ich spazieren.|wenn|Khi trời đẹp, bạn làm gì? (dùng wenn)
+W|Viết: “Khi trời lạnh, tôi uống trà.”|Wenn es kalt ist, trinke ich Tee.|wenn es kalt ist, trinke ich
+F|___ es regnet, bleibe ich zu Hause. (khi)|Wenn||Weil|Dass
+F|Wenn es kalt ___, trinke ich Tee. (sein)|ist||bin|sind
+F|In Deutschland trinkt ___ viel Kaffee. (người ta)|man||Mann|men
+
+=175|Đi nghỉ ở đâu? Tại sao?|Urlaub; Ferien; Ausland; warum; weil
+N|<b>der Urlaub</b> = kỳ nghỉ (của người đi làm): <i>Ich habe Urlaub. Ich fahre in Urlaub.</i> <b>die Ferien</b> (chỉ số nhiều) = kỳ nghỉ (trường học): <i>Sommerferien</i>. <b>im Ausland</b> = ở nước ngoài.
+N|<b>Warum?</b> — <b>Weil</b> …: động từ đứng <b>cuối câu</b>: <i>Ich lerne Deutsch, <b>weil</b> ich in Deutschland <b>arbeiten möchte</b>.</i>
+D|Lena|Wohin fährst du in den Ferien?|Kỳ nghỉ bạn đi đâu?
+D|Minh|Ich mache Urlaub im Ausland – in Italien!|Mình đi nghỉ ở nước ngoài – ở Ý!
+D|Lena|Warum gerade Italien?|Sao lại là Ý?
+D|Minh|Weil ich Pizza liebe und weil das Wetter dort warm ist.|Vì mình mê pizza và vì thời tiết ở đó ấm.
+D|Lena|Gute Gründe!|Lý do hay đấy!
+L|Minh đi nghỉ ở đâu?|in Italien (ở Ý)|in Vietnam|in Österreich
+R|Tại sao Minh chọn nước đó?|vì pizza và thời tiết ấm|vì có bạn ở đó|vì rẻ
+S|Warum lernen Sie Deutsch?|Ich lerne Deutsch, weil …|weil|Tại sao bạn học tiếng Đức? (dùng weil)
+W|Viết: “Tôi học tiếng Đức vì tôi muốn làm việc ở Đức.”|Ich lerne Deutsch, weil ich in Deutschland arbeiten möchte.|weil, arbeiten moechte/arbeiten will/arbeiten
+F|Ich bleibe zu Hause, weil ich krank ___. (sein)|bin||ist|sein
+F|___ lernst du Deutsch? (tại sao)|Warum||Wann|Wo
+F|Ich komme nicht, ___ ich keine Zeit habe. (vì)|weil||denn|wenn
+
+=176|Biển hay núi? – denn|Meer; Strand; Berg; See; denn
+N|<b>das Meer</b> = biển: <i>ans Meer fahren, am Meer</i>; <b>der Strand</b> = bãi biển: <i>am Strand</i>; <b>der Berg</b> = núi: <i>in den Bergen</i>; <b>der See</b> = hồ: <i>am See</i> (⚠️ die See = biển, ít dùng).
+N|<b>denn</b> = vì — trật tự từ <b>bình thường</b> (khác weil): <i>Ich fahre ans Meer, <b>denn</b> ich <b>schwimme</b> gern.</i>
+D|Anna|Fahren wir im Sommer ans Meer oder in die Berge?|Mùa hè chúng ta đi biển hay đi núi?
+D|Lukas|Ans Meer! Ich liege gern am Strand.|Đi biển! Anh thích nằm trên bãi biển.
+D|Anna|Ich möchte lieber in die Berge, denn ich wandere gern.|Em thích đi núi hơn, vì em thích đi bộ đường dài.
+D|Lukas|Dann fahren wir an einen See in den Bergen! Da kann man schwimmen und wandern.|Vậy chúng ta đến một hồ trên núi! Ở đó có thể bơi và đi bộ đường dài.
+D|Anna|Super Idee!|Ý hay đấy!
+L|Lukas thích làm gì?|am Strand liegen (nằm trên bãi biển)|wandern|im See schwimmen
+R|Cuối cùng họ quyết định đi đâu?|an einen See in den Bergen|ans Meer|in die Stadt
+S|Fahren Sie lieber ans Meer oder in die Berge? Warum?|Ich fahre lieber ans Meer, denn ich schwimme gern.|denn/weil|Bạn thích đi biển hay núi? Vì sao? (dùng denn)
+W|Viết: “Tôi thích đi biển, vì tôi thích bơi.” (dùng denn)|Ich fahre gern ans Meer, denn ich schwimme gern.|meer, denn
+F|Ich bleibe zu Hause, ___ ich bin krank. (vì – trật tự thường)|denn||weil|wenn
+F|Wir fahren ans ___. (biển)|Meer|
+F|Im Sommer liege ich gern am ___. (bãi biển)|Strand|
+
+=177|Chuẩn bị chuyến đi|Reise; reisen; Koffer; Gepäck; Gute Reise!
+N|<b>die Reise</b> = chuyến đi, <b>reisen</b> = du lịch, đi xa: <i>Ich reise gern.</i> <b>der Koffer</b> = va-li, <b>das Gepäck</b> = hành lý (không đếm).
+N|Chúc: <b>Gute Reise!</b> = Chúc thượng lộ bình an! Hỏi sau chuyến đi: <i>Wie war die Reise?</i>
+D|Anna|Minh, ist dein Koffer schon fertig?|Minh, va-li của bạn xong chưa?
+D|Minh|Fast. Aber mein Gepäck ist zu schwer – dreiundzwanzig Kilo!|Gần xong. Nhưng hành lý của mình nặng quá – hai mươi ba ký!
+D|Anna|Was hast du alles eingepackt?|Bạn xếp những gì vào thế?
+D|Minh|Geschenke für meine Familie. Die Reise nach Vietnam ist lang, aber ich reise gern.|Quà cho gia đình mình. Chuyến đi Việt Nam dài, nhưng mình thích đi xa.
+D|Anna|Gute Reise! Und schick mir eine Postkarte!|Thượng lộ bình an! Và gửi cho mình một tấm bưu thiếp nhé!
+L|Hành lý của Minh nặng bao nhiêu?|23 kg|13 kg|32 kg
+R|Trong va-li có gì?|Geschenke für die Familie (quà cho gia đình)|Bücher|Kleidung für den Winter
+S|Reisen Sie gern? Wohin?|Ja, ich reise gern nach Italien.|reise|Bạn có thích du lịch không? Đi đâu?
+W|Viết lời chúc cho bạn trước chuyến đi.|Gute Reise!|gute reise
+G|art; conj:reisen
+
+=178|Đặt phòng khách sạn|buchen; Einzelzimmer; Doppelzimmer; Tourist
+N|<b>buchen</b> = đặt (phòng, vé): <i>Ich möchte ein Zimmer buchen.</i> <b>das Einzelzimmer</b> (phòng đơn), <b>das Doppelzimmer</b> (phòng đôi).
+N|Câu hữu ích: <i>Haben Sie ein Zimmer frei? Was kostet eine Nacht? Ist das Frühstück inklusive?</i> <b>der Tourist / die Touristin</b> = khách du lịch.
+D|Rezeption|Hotel Sonne, guten Tag!|Khách sạn Sonne, xin chào!
+D|Minh|Guten Tag, ich möchte ein Zimmer buchen, vom zehnten bis zum zwölften August.|Xin chào, tôi muốn đặt phòng từ ngày 10 đến ngày 12 tháng Tám.
+D|Rezeption|Ein Einzelzimmer oder ein Doppelzimmer?|Phòng đơn hay phòng đôi ạ?
+D|Minh|Ein Einzelzimmer, bitte. Was kostet eine Nacht?|Phòng đơn. Một đêm bao nhiêu tiền?
+D|Rezeption|Fünfundsiebzig Euro mit Frühstück. Im August sind viele Touristen hier – buchen Sie schnell!|75 euro gồm bữa sáng. Tháng Tám có nhiều khách du lịch – anh đặt nhanh nhé!
+D|Minh|Gut, ich buche das Zimmer.|Được, tôi đặt phòng.
+L|Minh đặt phòng loại nào?|Einzelzimmer (phòng đơn)|Doppelzimmer (phòng đôi)|không đặt
+R|Một đêm giá bao nhiêu?|75 € (gồm bữa sáng)|57 €|75 € (không gồm bữa sáng)
+S|Sie möchten ein Doppelzimmer für zwei Nächte buchen. Was sagen Sie?|Ich möchte ein Doppelzimmer für zwei Nächte buchen.|doppelzimmer, buchen|Bạn muốn đặt phòng đôi cho hai đêm. Bạn nói gì?
+W|Viết: “Tôi muốn đặt một phòng đơn.”|Ich möchte ein Einzelzimmer buchen.|einzelzimmer buchen
+G|conj:buchen; art
+
+=179|Bưu thiếp – quá khứ war & hatte|Ausflug; Postkarte; dass; werden
+N|Quá khứ của <b>sein</b> và <b>haben</b> thường dùng Präteritum: ich <b>war</b>, du warst, er <b>war</b>, wir waren; ich <b>hatte</b>, du hattest, er <b>hatte</b>, wir hatten. <i>Das Wetter <b>war</b> toll. Wir <b>hatten</b> viel Spaß.</i>
+N|<b>dass</b> = rằng (động từ cuối câu): <i>Ich hoffe, <b>dass</b> es dir gut <b>geht</b>.</i> <b>werden</b> = trở thành; sẽ: <i>Morgen <b>wird</b> es kalt.</i> (du wirst, er wird)
+N|<b>der Ausflug</b> = chuyến dã ngoại, <b>die Postkarte</b> = bưu thiếp.
+D|Postkarte|Liebe Anna, viele Grüße aus Italien!|Anna thân mến, gửi lời chào từ Ý!
+D|Postkarte|Das Wetter war toll und das Essen war sehr lecker.|Thời tiết tuyệt vời và đồ ăn rất ngon.
+D|Postkarte|Gestern hatten wir einen Ausflug nach Venedig. Ich bin mit dem Boot gefahren!|Hôm qua chúng mình có chuyến dã ngoại đến Venice. Mình đã đi thuyền!
+D|Postkarte|Morgen wird es leider kalt. Ich hoffe, dass es dir gut geht. Bis bald! Minh|Ngày mai tiếc là trời sẽ lạnh. Mình hy vọng là bạn vẫn khoẻ. Hẹn sớm gặp lại! Minh
+L|Hôm qua Minh đi dã ngoại ở đâu?|in Venedig|in Rom|am Meer
+R|Ngày mai thời tiết thế nào?|Trời sẽ lạnh|Trời sẽ nóng|Trời sẽ mưa
+S|Wie war Ihr letzter Urlaub?|Mein letzter Urlaub war toll. Ich war in …|war|Kỳ nghỉ vừa rồi của bạn thế nào? (dùng war / hatte)
+W|Viết bưu thiếp ngắn: lời chào, thời tiết thế nào, bạn đã làm gì, ký tên.|Liebe …, viele Grüße aus … Das Wetter ist … Gestern war ich … Bis bald! …|gruesse, wetter
+F|Gestern ___ das Wetter schön. (sein, quá khứ)|war||ist|hatte
+F|Wir ___ viel Spaß. (haben, quá khứ)|hatten||haben|waren
+F|Ich hoffe, ___ du kommst. (rằng)|dass||weil|denn
+F|Morgen ___ es kalt. (werden)|wird||werden|wirst
+G|conj:werden
+
+=180|Thi thử A1|**
+T|Hören 1 – Hội thoại ngắn
+D|Frau|Entschuldigung, wann fährt der nächste Bus zum Bahnhof?|Xin lỗi, chuyến xe buýt tiếp theo đến nhà ga chạy lúc mấy giờ?
+D|Mann|Um halb drei. Der Bus um zwei ist schon weg.|Lúc hai rưỡi. Chuyến hai giờ đi mất rồi.
+L|Wann fährt der nächste Bus?|um 14:30|um 14:00|um 13:30
+T|Hören 2 – Thông báo trong siêu thị
+D|Ansage|Liebe Kunden, heute sind alle Getränke im Angebot: Jede Flasche Saft kostet nur einen Euro fünfzig. Wir schließen heute um achtzehn Uhr.|Quý khách thân mến, hôm nay tất cả đồ uống đều khuyến mãi: mỗi chai nước ép chỉ 1,50 euro. Hôm nay chúng tôi đóng cửa lúc 18 giờ.
+L|Wann schließt der Supermarkt heute?|um 18 Uhr|um 20 Uhr|um 16 Uhr
+L|Was kostet eine Flasche Saft?|1,50 €|1,15 €|5,10 €
+T|Hören 3 – Tin nhắn thoại
+D|Anna|Hallo Minh, hier ist Anna. Wir treffen uns morgen nicht um sieben, sondern um acht Uhr vor dem Kino. Bis morgen!|Chào Minh, Anna đây. Ngày mai chúng ta không gặp lúc bảy giờ, mà lúc tám giờ trước rạp phim. Mai gặp!
+L|Wann treffen sie sich?|um 8 Uhr|um 7 Uhr|um 6 Uhr
+L|Wo treffen sie sich?|vor dem Kino|im Café|am Bahnhof
+T|Lesen 1 – Email
+D|E-Mail|Liebe Lena, ich bin jetzt in Hamburg bei meiner Tante. Das Wetter ist schlecht, es regnet jeden Tag. Aber die Stadt ist sehr schön.|Lena thân mến, mình đang ở Hamburg nhà cô mình. Thời tiết xấu, ngày nào cũng mưa. Nhưng thành phố rất đẹp.
+D|E-Mail|Am Freitag komme ich zurück. Kannst du mich vom Bahnhof abholen? Mein Zug kommt um siebzehn Uhr dreißig an. Liebe Grüße, Sara|Thứ Sáu mình về. Bạn ra ga đón mình được không? Tàu của mình đến lúc 17:30. Thân, Sara
+R|Sara ist bei ihrer Tante in Hamburg.|Richtig|Falsch
+R|In Hamburg ist das Wetter gut.|Falsch|Richtig
+R|Saras Zug kommt am Freitag um 17:30 Uhr an.|Richtig|Falsch
+T|Lesen 2 – Biển báo
+D|Schild|Praxis Dr. Klein – Sprechzeiten: Montag bis Freitag 8–12 Uhr, Mittwoch auch 15–18 Uhr|Phòng khám bác sĩ Klein – Giờ khám: thứ Hai đến thứ Sáu 8–12 giờ, thứ Tư thêm 15–18 giờ
+D|Schild|Bäckerei Sonnenschein: Heute geschlossen! Morgen sind wir wieder für Sie da.|Tiệm bánh Sonnenschein: Hôm nay đóng cửa! Ngày mai chúng tôi lại phục vụ quý khách.
+R|Kann man am Mittwochnachmittag zu Dr. Klein gehen?|Ja|Nein
+R|Kann man heute in der Bäckerei Brot kaufen?|Nein|Ja
+T|Lesen 3 – Rao vặt
+D|Anzeige|Verkaufe mein Fahrrad: drei Jahre alt, sehr gut, nur 80 Euro. Telefon: 0171 23 45 67 (ab 18 Uhr)|Bán xe đạp: dùng ba năm, rất tốt, chỉ 80 euro. Điện thoại: 0171 23 45 67 (từ 18 giờ)
+R|Das Fahrrad kostet 80 Euro.|Richtig|Falsch
+R|Man kann den ganzen Tag anrufen.|Falsch|Richtig
+S|Stellen Sie sich vor: Name, Alter, Land, Wohnort, Sprachen, Beruf, Hobby.|Ich heiße … Ich bin … Jahre alt. Ich komme aus … Ich wohne in … Ich spreche … Ich bin … von Beruf. Mein Hobby ist …|heisse, alt, komme aus, wohne, spreche|Nói – phần 1: Giới thiệu bản thân.
+S|Thema Essen: Was essen Sie gern?|Ich esse gern Reis und Gemüse.|esse, gern|Nói – phần 2: Trả lời câu hỏi về chủ đề ăn uống.
+S|Sie möchten, dass jemand das Fenster öffnet. Was sagen Sie?|Können Sie bitte das Fenster öffnen?|fenster, oeffnen|Nói – phần 3: Nhờ ai đó mở cửa sổ.
+W|Viết – phần 1: Điền phiếu đăng ký khoá học: Name, Vorname, Geburtsdatum, Adresse, Telefonnummer, Kurs (A1 hoặc A2).|Name: Nguyen – Vorname: Minh – Geburtsdatum: 12.03.2002 – Adresse: Goethestraße 12, 10115 Berlin – Telefon: 0176 34 55 21 – Kurs: A1|
+W|Viết – phần 2: Viết email cho cô giáo (khoảng 30 từ): bạn bị ốm, ngày mai không đến lớp; hỏi về bài tập; khi nào quay lại.|Liebe Frau Schmidt, leider bin ich krank und kann morgen nicht zum Kurs kommen. Was sind die Hausaufgaben? Am Montag bin ich wieder da. Viele Grüße, Minh|krank, morgen, hausaufgaben

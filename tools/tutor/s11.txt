@@ -1,0 +1,147 @@
+#|11|Đồ vật & vị trí|Đồ đạc, đồ dùng; giới từ chỉ vị trí (auf, unter, neben, zwischen, an, über, hinter) + Dativ; stehen/liegen/sitzen; legen/stellen; xin phép với dürfen.
+
+=101|Đồ nội thất|Möbel; Tisch; Stuhl; Sofa; bequem
+N|<b>die Möbel</b> (số nhiều) = đồ nội thất: <b>der Tisch</b> (bàn), <b>der Stuhl</b> (ghế; số nhiều: Stühle), <b>das Sofa</b> (ghế sô-pha).
+N|<b>bequem</b> = thoải mái, êm: <i>Das Sofa ist sehr bequem.</i>
+D|Anna|In der neuen Wohnung habe ich noch keine Möbel!|Ở căn hộ mới mình chưa có đồ đạc gì!
+D|Minh|Keine Möbel? Was brauchst du?|Không có đồ đạc à? Bạn cần gì?
+D|Anna|Einen Tisch, vier Stühle und ein Sofa.|Một cái bàn, bốn cái ghế và một ghế sô-pha.
+D|Minh|Ich habe ein altes Sofa. Es ist sehr bequem. Möchtest du es?|Mình có một ghế sô-pha cũ. Nó rất êm. Bạn muốn lấy không?
+D|Anna|Wirklich? Super, danke!|Thật à? Tuyệt, cảm ơn!
+L|Anna cần mấy cái ghế?|4|2|1
+R|Minh cho Anna cái gì?|ein Sofa|einen Tisch|Stühle
+S|Welche Möbel haben Sie im Wohnzimmer?|Im Wohnzimmer habe ich ein Sofa und einen Tisch.|sofa/tisch/stuhl|Phòng khách nhà bạn có đồ đạc gì?
+W|Viết: “Tôi cần một cái bàn và hai cái ghế.”|Ich brauche einen Tisch und zwei Stühle.|einen tisch, zwei stuehle
+G|art; pl; akk
+
+=102|Phòng ngủ|Bett; Schrank; Regal; Lampe
+N|<b>das Bett</b> (giường), <b>der Schrank</b> (tủ; Kleiderschrank = tủ quần áo), <b>das Regal</b> (kệ, giá sách), <b>die Lampe</b> (đèn).
+N|Mẹo giống: danh từ đuôi <b>-e</b> thường là <b>die</b> (die Lampe); còn lại nhiều từ phải học thuộc kèm mạo từ.
+D|Minh|Lena, wie findest du mein Schlafzimmer?|Lena, bạn thấy phòng ngủ của mình thế nào?
+D|Lena|Gemütlich! Das Bett ist groß. Aber wo sind deine Bücher?|Ấm cúng! Giường to. Nhưng sách của bạn đâu?
+D|Minh|Ich habe kein Regal. Die Bücher sind im Schrank.|Mình không có kệ sách. Sách để trong tủ.
+D|Lena|Und die Lampe? Es ist ein bisschen dunkel hier.|Còn đèn? Ở đây hơi tối.
+D|Minh|Die Lampe ist kaputt. Ich kaufe morgen eine neue.|Đèn hỏng rồi. Mai mình mua cái mới.
+L|Sách của Minh ở đâu?|im Schrank|im Regal|auf dem Bett
+R|Tại sao phòng hơi tối?|Đèn bị hỏng|Không có cửa sổ|Trời đã tối
+S|Was gibt es in Ihrem Schlafzimmer?|In meinem Schlafzimmer gibt es ein Bett und einen Schrank.|bett/schrank|Phòng ngủ của bạn có gì?
+W|Viết: “Tôi không có kệ sách.”|Ich habe kein Regal.|kein regal
+G|art; kein
+
+=103|Trên & dưới – liegen|auf; unter; liegen; Buch; Papier
+N|Vị trí (<b>Wo?</b>) + <b>Dativ</b>: der/das → <b>dem</b>, die → <b>der</b>, số nhiều → <b>den</b>: <i>auf <b>dem</b> Tisch, unter <b>dem</b> Bett, auf <b>der</b> Straße</i>.
+N|<b>liegen</b> = nằm (vật đặt nằm ngang): <i>Das Buch <b>liegt auf dem</b> Tisch.</i> <i>Die Katze liegt <b>unter dem</b> Bett.</i>
+N|<b>das Buch</b> (số nhiều: Bücher) = sách, <b>das Papier</b> = giấy.
+D|Minh|Wo ist mein Buch? Ich finde es nicht!|Sách của mình đâu? Mình không tìm thấy!
+D|Anna|Liegt es auf dem Tisch?|Nó nằm trên bàn à?
+D|Minh|Nein, auf dem Tisch liegt nur Papier.|Không, trên bàn chỉ có giấy.
+D|Anna|Und unter dem Bett?|Thế dưới gầm giường?
+D|Minh|Ah, da liegt es! Unter dem Bett. Danke!|À, nó nằm đây! Dưới gầm giường. Cảm ơn!
+L|Cuối cùng quyển sách nằm ở đâu?|unter dem Bett|auf dem Tisch|im Schrank
+R|Trên bàn có gì?|Papier|das Buch|nichts
+S|Wo liegt Ihr Handy jetzt?|Mein Handy liegt auf dem Tisch.|liegt|Điện thoại của bạn bây giờ nằm ở đâu?
+W|Viết: “Quyển sách nằm trên bàn.”|Das Buch liegt auf dem Tisch.|buch liegt auf dem tisch
+G|dat:auf,unter; pl
+
+=104|Bên cạnh, ở giữa – stehen|neben; zwischen; stehen; Kühlschrank; Herd
+N|<b>stehen</b> = đứng (vật dựng đứng): <i>Der Kühlschrank <b>steht neben dem</b> Herd.</i>
+N|<b>neben</b> = bên cạnh, <b>zwischen</b> = ở giữa: <i>Der Tisch steht <b>zwischen dem</b> Fenster <b>und der</b> Tür.</i>
+N|<b>der Kühlschrank</b> (tủ lạnh), <b>der Herd</b> (bếp nấu).
+D|Anna|Wohin kommt der Kühlschrank?|Tủ lạnh để đâu đây?
+D|Minh|Er steht am besten neben dem Herd.|Tốt nhất là để cạnh bếp nấu.
+D|Anna|Und der Tisch?|Còn cái bàn?
+D|Minh|Zwischen dem Fenster und der Tür. Dann ist er hell.|Giữa cửa sổ và cửa ra vào. Như vậy sẽ sáng.
+D|Anna|Perfekt! Jetzt steht alles.|Hoàn hảo! Giờ mọi thứ đã đâu vào đấy.
+L|Tủ lạnh đứng ở đâu?|neben dem Herd|neben der Tür|zwischen dem Fenster und der Tür
+R|Cái bàn đứng ở đâu?|zwischen dem Fenster und der Tür|neben dem Herd|vor dem Fenster
+S|Was steht in Ihrer Küche neben dem Kühlschrank?|Neben dem Kühlschrank steht …|steht/neben|Trong bếp nhà bạn, cái gì đứng cạnh tủ lạnh?
+W|Viết: “Tủ lạnh đứng cạnh bếp nấu.”|Der Kühlschrank steht neben dem Herd.|steht neben dem herd
+G|dat:neben,zwischen; art
+
+=105|Trên tường, phía trên, phía sau|an; über; hinter; Wand; Bild
+N|<b>an</b> = ở trên (bề mặt thẳng đứng) / sát cạnh: <i>Das Bild hängt <b>an der</b> Wand.</i> <b>über</b> = phía trên (không chạm): <i>Die Lampe hängt <b>über dem</b> Tisch.</i>
+N|<b>hinter</b> = phía sau ↔ <b>vor</b> = phía trước: <i>Der Garten ist <b>hinter dem</b> Haus.</i>
+N|Rút gọn: an + dem = <b>am</b>, in + dem = <b>im</b>.
+D|Lena|Das Bild an der Wand ist schön! Wer hat es gemalt?|Bức tranh trên tường đẹp quá! Ai vẽ vậy?
+D|Minh|Meine Schwester. Sie malt gern.|Em gái mình. Em ấy thích vẽ.
+D|Lena|Und was ist hinter dem Sofa?|Còn cái gì ở sau ghế sô-pha?
+D|Minh|Meine Gitarre. Und über dem Sofa hängt noch ein Bild – von Hanoi.|Cây đàn ghi-ta của mình. Và phía trên ghế sô-pha còn treo một bức tranh – về Hà Nội.
+L|Ai vẽ bức tranh trên tường?|em gái Minh|Minh|Lena
+R|Cái gì ở sau ghế sô-pha?|die Gitarre|ein Bild|die Lampe
+S|Was hängt an der Wand in Ihrem Zimmer?|An der Wand hängt ein Bild.|an der wand|Trên tường phòng bạn treo gì?
+W|Viết: “Cái đèn treo phía trên bàn.”|Die Lampe hängt über dem Tisch.|ueber dem tisch
+G|dat:an,über,hinter; art
+
+=106|Đặt nằm – đặt đứng|legen; stellen; Heft; Kuli; Bleistift
+N|Hành động <b>đặt</b> (<b>Wohin?</b>) dùng <b>Akkusativ</b>: <b>legen</b> (đặt nằm) / <b>stellen</b> (đặt đứng): <i>Ich <b>lege</b> das Heft <b>auf den</b> Tisch.</i> <i>Ich <b>stelle</b> die Flasche <b>in den</b> Kühlschrank.</i>
+N|So sánh: <b>Wo?</b> → Dativ: <i>Das Heft <b>liegt auf dem</b> Tisch.</i> / <b>Wohin?</b> → Akkusativ: <i>Ich <b>lege</b> das Heft <b>auf den</b> Tisch.</i>
+N|<b>das Heft</b> (vở), <b>der Kuli</b> (bút bi), <b>der Bleistift</b> (bút chì).
+D|Frau Schmidt|Bitte legen Sie die Hefte auf den Tisch.|Mời các bạn đặt vở lên bàn.
+D|Minh|Und die Kulis?|Còn bút bi ạ?
+D|Frau Schmidt|Die Kulis bitte in die Tasche. Heute schreiben wir mit Bleistift.|Bút bi thì cất vào cặp. Hôm nay chúng ta viết bằng bút chì.
+D|Tom|Ich habe keinen Bleistift!|Em không có bút chì!
+D|Frau Schmidt|Hier, ich lege Ihnen einen Bleistift auf den Tisch.|Đây, tôi đặt cho anh một cái bút chì lên bàn.
+L|Hôm nay họ viết bằng gì?|mit Bleistift|mit Kuli|am Computer
+R|Bút bi để đâu?|in die Tasche (vào cặp)|auf den Tisch|auf das Heft
+S|Wohin legen Sie Ihr Handy am Abend?|Ich lege mein Handy auf den Tisch.|lege|Buổi tối bạn đặt điện thoại ở đâu?
+W|Viết: “Tôi đặt quyển vở lên bàn.”|Ich lege das Heft auf den Tisch.|lege das heft auf den tisch
+F|Ich ___ das Buch auf den Tisch. (đặt nằm)|lege||stelle|liege
+F|Das Buch ___ auf dem Tisch. (nằm)|liegt||legt|steht
+F|Ich ___ die Flasche in den Kühlschrank. (đặt đứng)|stelle||lege|stehe
+F|Die Flasche ___ im Kühlschrank. (đứng)|steht||stellt|liegt
+F|Ich lege den Kuli auf ___ Heft. (das Heft – Wohin?)|das||dem|den
+
+=107|Ngồi xem TV|sitzen; Fernseher; sehen; holen
+N|<b>sitzen</b> = ngồi: <i>Wir <b>sitzen</b> auf dem Sofa.</i> (vị trí → Dativ)
+N|<b>sehen</b> đổi e → ie: ich sehe, <b>du siehst, er sieht</b>. <b>holen</b> = đi lấy, mang lại: <i>Ich hole schnell etwas zu trinken.</i>
+N|<b>der Fernseher</b> = cái TV; <b>fernsehen</b> = xem TV (học ở chặng 17).
+D|Lukas|Komm, wir sehen den Film zusammen!|Đến đây, chúng ta xem phim cùng nhau!
+D|Minh|Gern! Wo sitzt du?|Được! Bạn ngồi đâu?
+D|Lukas|Ich sitze auf dem Sofa. Setz dich hier neben mich.|Mình ngồi trên ghế sô-pha. Ngồi đây cạnh mình này.
+D|Minh|Siehst du gut? Der Fernseher ist ziemlich klein.|Bạn có nhìn rõ không? TV khá nhỏ.
+D|Lukas|Ja, alles gut. Moment, ich hole noch etwas zu trinken.|Ừ, ổn cả. Chờ chút, mình đi lấy thêm đồ uống.
+L|Lukas ngồi ở đâu?|auf dem Sofa|auf dem Stuhl|auf dem Bett
+R|Lukas đi lấy gì?|etwas zu trinken|den Fernseher|Kuchen
+S|Wo sitzen Sie jetzt?|Ich sitze auf dem Stuhl.|sitze|Bây giờ bạn đang ngồi ở đâu?
+W|Chia sehen: du ___, er ___.|du siehst, er sieht|du siehst, er sieht
+G|conj:sehen,sitzen,holen
+
+=108|Đồ bị hỏng|Dusche; Waschmaschine; waschen; Heizung; kaputt
+N|<b>kaputt</b> = hỏng: <i>Die Heizung ist kaputt.</i> Báo chủ nhà: <i>Die Dusche funktioniert nicht.</i>
+N|<b>waschen</b> đổi a → ä: ich wasche, <b>du wäschst, er wäscht</b>. <b>die Waschmaschine</b> = máy giặt.
+N|<b>die Dusche</b> = vòi sen, <b>die Heizung</b> = lò sưởi (rất quan trọng ở Đức vào mùa đông!).
+D|Minh|Herr Weber, die Heizung ist kaputt! Es ist so kalt.|Ông Weber, lò sưởi hỏng rồi! Lạnh quá.
+D|Herr Weber|Oh nein! Und die Dusche? Ist das Wasser warm?|Ôi không! Thế còn vòi sen? Nước có ấm không?
+D|Minh|Nein, auch kalt. Und die Waschmaschine wäscht nicht mehr.|Không, cũng lạnh. Và máy giặt không giặt nữa.
+D|Herr Weber|Ich rufe sofort den Techniker an. Er kommt morgen.|Tôi gọi ngay cho thợ kỹ thuật. Mai anh ấy đến.
+L|Cái gì bị hỏng đầu tiên?|die Heizung|die Dusche|der Herd
+R|Khi nào thợ đến?|morgen|heute|am Wochenende
+S|Ihre Waschmaschine ist kaputt. Was sagen Sie zum Vermieter?|Guten Tag, die Waschmaschine ist kaputt.|kaputt|Máy giặt hỏng. Bạn nói gì với chủ nhà?
+W|Viết tin nhắn: “Lò sưởi bị hỏng. Ông có thể đến không?”|Die Heizung ist kaputt. Können Sie kommen?|heizung ist kaputt, koennen sie
+G|conj:waschen; art
+
+=109|Dọn dẹp & xin phép – dürfen|putzen; gehören; benutzen; dürfen
+N|<b>dürfen</b> = được phép (động từ khuyết thiếu): ich <b>darf</b>, du <b>darfst</b>, er <b>darf</b>, wir dürfen. Động từ chính đứng <b>cuối câu</b>: <i>Darf ich das Bad <b>benutzen</b>?</i>
+N|<b>gehören</b> + Dativ = thuộc về: <i>Das Buch <b>gehört mir</b>.</i> <i>Gehört der Schlüssel dir?</i>
+N|<b>putzen</b> = lau dọn: <i>Am Samstag putze ich die Wohnung.</i> <b>benutzen</b> = sử dụng.
+D|Anna|Minh, gehört der Schlüssel dir?|Minh, chìa khoá này của bạn à?
+D|Minh|Ja, danke! … Darf ich kurz dein Bad benutzen?|Ừ, cảm ơn! … Mình dùng nhờ phòng tắm của bạn một chút được không?
+D|Anna|Natürlich! Aber es ist nicht so sauber. Ich putze erst am Samstag.|Tất nhiên! Nhưng nó không sạch lắm. Đến thứ Bảy mình mới dọn.
+D|Minh|Kein Problem! Bei mir putzt auch niemand.|Không sao! Nhà mình cũng chẳng ai dọn.
+L|Chìa khoá là của ai?|Minh|Anna|Lena
+R|Khi nào Anna dọn dẹp?|am Samstag|heute|morgen
+S|Sie sind bei Freunden und möchten das Bad benutzen. Was fragen Sie?|Darf ich bitte das Bad benutzen?|darf ich|Bạn ở nhà bạn bè và muốn dùng phòng tắm. Bạn hỏi gì?
+W|Viết: “Tôi ngồi đây được không?”|Darf ich hier sitzen?|darf ich hier sitzen
+G|conj:dürfen,putzen; modal:dürfen
+
+=110|Ôn tập chặng 11|*
+D||Das ist mein Zimmer. Es ist nicht groß, aber gemütlich.|Đây là phòng của tôi. Nó không rộng, nhưng ấm cúng.
+D||Das Bett steht an der Wand, neben dem Fenster. Über dem Bett hängt ein Bild von Hanoi.|Giường đặt sát tường, cạnh cửa sổ. Phía trên giường treo một bức tranh về Hà Nội.
+D||Der Schreibtisch steht zwischen dem Bett und dem Schrank. Auf dem Tisch liegen meine Bücher und Hefte.|Bàn học đặt giữa giường và tủ. Trên bàn có sách và vở của tôi.
+D||Unter dem Tisch liegt meine Tasche. Im Regal stehen viele Bücher.|Dưới gầm bàn là cái cặp của tôi. Trên kệ có nhiều sách.
+L|Phía trên giường treo gì?|ein Bild von Hanoi|eine Lampe|eine Uhr
+L|Cái cặp nằm ở đâu?|unter dem Tisch|auf dem Bett|im Schrank
+R|Bàn học đặt ở đâu?|zwischen dem Bett und dem Schrank|neben dem Fenster|an der Tür
+R|Trên bàn có gì?|Bücher und Hefte|eine Tasche|ein Bild
+S|Beschreiben Sie Ihr Zimmer: Was steht, liegt oder hängt wo?|Das Bett steht … Auf dem Tisch liegt … An der Wand hängt …|steht/liegt/haengt|Mô tả phòng của bạn: cái gì ở đâu?
+W|Viết 4 câu mô tả phòng bạn (dùng steht / liegt / hängt + giới từ).|Das Bett steht neben dem Fenster. Auf dem Tisch liegt …|steht/liegt

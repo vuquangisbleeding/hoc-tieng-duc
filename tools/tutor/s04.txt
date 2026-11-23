@@ -1,0 +1,149 @@
+#|4|Gia đình & con người|Nói về gia đình, bạn bè, hàng xóm; mạo từ der/die/das, ein/eine, kein; đại từ sở hữu mein/dein/sein/unser/Ihr; số nhiều.
+
+=31|Gia đình tôi|Familie; Vater; Mutter; Eltern; mein
+N|Danh từ có 3 giống: <b>der</b> Vater (đực), <b>die</b> Mutter (cái), <b>das</b> Kind (trung); số nhiều luôn là <b>die</b>: die Eltern.
+N|<b>mein</b> (của tôi) đổi theo giống: <b>mein</b> Vater / <b>mein</b> Kind, nhưng <b>meine</b> Mutter / <b>meine</b> Eltern (giống cái & số nhiều thêm <b>-e</b>).
+N|Danh từ tiếng Đức luôn <b>viết hoa</b> chữ cái đầu.
+D|Anna|Ist das ein Foto von deiner Familie?|Đây là ảnh gia đình bạn à?
+D|Minh|Ja. Das ist meine Familie in Hanoi.|Ừ. Đây là gia đình mình ở Hà Nội.
+D|Anna|Wer ist das?|Đây là ai?
+D|Minh|Das ist mein Vater, und das ist meine Mutter.|Đây là bố mình, còn đây là mẹ mình.
+D|Anna|Deine Eltern sind sehr jung!|Bố mẹ bạn trẻ quá!
+D|Minh|Ja, mein Vater ist achtundvierzig und meine Mutter ist fünfundvierzig.|Ừ, bố mình 48 tuổi, mẹ mình 45.
+L|Bố Minh bao nhiêu tuổi?|48|45|58
+R|Gia đình Minh sống ở đâu?|in Hanoi|in Berlin|in Saigon
+S|Wie heißt Ihre Mutter?|Meine Mutter heißt …|meine mutter|Mẹ bạn tên là gì?
+W|Viết: “Đây là bố tôi và mẹ tôi.”|Das ist mein Vater und meine Mutter.|mein vater, meine mutter
+G|art; poss
+
+=32|Anh chị em – ein & kein|Bruder; Schwester; Geschwister; dein; kein
+N|<b>ein / eine</b> = một: <b>ein</b> Bruder (der), <b>eine</b> Schwester (die), <b>ein</b> Kind (das).
+N|Phủ định danh từ dùng <b>kein / keine</b>: <i>Ich habe <b>keine</b> Geschwister.</i> <i>Das ist <b>kein</b> Problem.</i>
+N|Sau <b>haben</b>, danh từ giống đực đổi: ich habe <b>einen</b> Bruder / <b>keinen</b> Bruder (cách 4 – Akkusativ, học kỹ ở chặng 7).
+N|<b>dein</b> = của bạn: dein Bruder, deine Schwester. <b>die Geschwister</b> = anh chị em (chỉ dùng số nhiều).
+D|Lena|Hast du Geschwister, Minh?|Minh có anh chị em không?
+D|Minh|Ja, ich habe einen Bruder und eine Schwester. Und du?|Có, mình có một anh trai và một em gái. Còn bạn?
+D|Lena|Ich habe keine Geschwister.|Mình không có anh chị em nào.
+D|Minh|Ist das dein Bruder auf dem Foto?|Người trong ảnh là anh trai bạn à?
+D|Lena|Nein, ich habe keinen Bruder! Das ist mein Freund Tom.|Không, mình làm gì có anh trai! Đó là Tom, bạn mình.
+L|Minh có bao nhiêu anh chị em?|2 (ein Bruder, eine Schwester)|1|0
+R|Người trong ảnh của Lena là ai?|Tom, bạn của Lena|anh trai Lena|bố của Lena
+S|Haben Sie Geschwister?|Ja, ich habe einen Bruder. / Nein, ich habe keine Geschwister.|habe|Bạn có anh chị em không?
+W|Viết: “Tôi có một em gái, nhưng tôi không có anh trai.”|Ich habe eine Schwester, aber ich habe keinen Bruder.|eine schwester, keinen bruder
+G|kein; art
+
+=33|Con cái & số nhiều|Kind; Sohn; Tochter; Baby; sein@a1-dai-tu
+N|Số nhiều tiếng Đức có nhiều dạng — học thuộc cùng từ: das Kind → die Kind<b>er</b>, der Sohn → die S<b>ö</b>hn<b>e</b>, die Tochter → die T<b>ö</b>chter, das Baby → die Baby<b>s</b>.
+N|<b>sein</b> = của anh ấy, <b>ihr</b> = của cô ấy: <i>Peter und <b>sein</b> Sohn, Anna und <b>ihre</b> Tochter.</i>
+D|Minh|Herr Weber, haben Sie Kinder?|Ông Weber, ông có con không ạ?
+D|Herr Weber|Ja, zwei Kinder: einen Sohn und eine Tochter.|Có, hai đứa: một con trai và một con gái.
+D|Minh|Wie alt sind sie?|Họ bao nhiêu tuổi ạ?
+D|Herr Weber|Mein Sohn ist dreißig und meine Tochter ist siebenundzwanzig. Sie hat ein Baby.|Con trai tôi ba mươi, con gái tôi hai mươi bảy. Con bé có một em bé.
+D|Minh|Und Ihr Sohn? Hat er Kinder?|Còn con trai ông? Anh ấy có con chưa ạ?
+D|Herr Weber|Nein, aber sein Hund ist wie ein Baby!|Chưa, nhưng con chó của nó như một em bé vậy!
+L|Ông Weber có mấy người con?|2|3|1
+R|Ai có một em bé?|con gái ông Weber|con trai ông Weber|Minh
+S|Haben Sie Kinder?|Ja, ich habe … / Nein, ich habe keine Kinder.|habe|Bạn có con không?
+W|Viết số nhiều: das Kind, der Sohn, die Tochter.|die Kinder, die Söhne, die Töchter|kinder, soehne, toechter
+G|pl
+
+=34|Ông bà – từ ghép|Großvater; Großmutter; Großeltern; Opa; Oma
+N|Từ ghép lấy giống theo <b>từ cuối</b>: groß + <b>der</b> Vater = <b>der</b> Großvater, groß + <b>die</b> Mutter = <b>die</b> Großmutter. Trọng âm ở từ đầu: <b>Groß</b>vater.
+N|Thân mật: <b>der Opa</b> (ông), <b>die Oma</b> (bà). <b>die Großeltern</b> = ông bà (số nhiều).
+D|Anna|Am Wochenende besuche ich meine Großeltern.|Cuối tuần mình đi thăm ông bà.
+D|Minh|Wo wohnen sie?|Ông bà sống ở đâu?
+D|Anna|In Hamburg. Mein Opa ist achtzig und meine Oma ist sechsundsiebzig.|Ở Hamburg. Ông mình tám mươi, bà mình bảy mươi sáu.
+D|Minh|Meine Großmutter wohnt bei uns in Hanoi. Mein Großvater lebt nicht mehr.|Bà mình sống cùng nhà mình ở Hà Nội. Ông mình mất rồi.
+D|Anna|Oh, das tut mir leid.|Ôi, mình rất tiếc.
+L|Ông của Anna bao nhiêu tuổi?|80|76|18
+R|Bà của Minh sống ở đâu?|in Hanoi, bei Minhs Familie|in Hamburg|in Berlin
+S|Wo wohnen Ihre Großeltern?|Meine Großeltern wohnen in …|wohnen|Ông bà bạn sống ở đâu?
+W|Viết mạo từ đúng: Großvater, Großmutter, Großeltern.|der Großvater, die Großmutter, die Großeltern|der grossvater, die grossmutter, die grosseltern
+G|art; pl
+
+=35|Họ hàng – của chúng tôi, của ông/bà|Onkel; Tante; unser; Ihr
+N|Đại từ sở hữu: <b>mein</b> (tôi), <b>dein</b> (bạn), <b>sein</b> (anh ấy), <b>ihr</b> (cô ấy), <b>unser</b> (chúng tôi), <b>euer</b> (các bạn), <b>Ihr</b> (ông/bà – lịch sự, viết hoa).
+N|Với danh từ giống cái và số nhiều thêm <b>-e</b>: unser Onkel → <b>unsere</b> Tante; Ihr Sohn → <b>Ihre</b> Tochter.
+D|Frau Schmidt|Ist das Ihre Familie, Minh?|Đây là gia đình anh à, Minh?
+D|Minh|Ja. Das ist mein Onkel Hung und das ist meine Tante Mai.|Vâng. Đây là chú Hùng và đây là cô Mai của em.
+D|Frau Schmidt|Wohnen Ihre Tante und Ihr Onkel auch in Hanoi?|Cô và chú của anh cũng sống ở Hà Nội à?
+D|Minh|Nein, sie wohnen in Leipzig. Unser Onkel kocht sehr gut!|Không, họ sống ở Leipzig. Chú của chúng em nấu ăn rất ngon!
+D|Frau Schmidt|Leipzig ist nicht weit. Besuchen Sie sie?|Leipzig không xa. Anh có đến thăm họ không?
+D|Minh|Ja, am Sonntag.|Có, vào Chủ nhật.
+L|Cô và chú của Minh sống ở đâu?|in Leipzig|in Hanoi|in Berlin
+R|Khi nào Minh đi thăm họ?|am Sonntag|am Montag|heute
+S|Haben Sie einen Onkel oder eine Tante? Wo wohnen sie?|Mein Onkel wohnt in …|wohnt/wohnen|Nói về chú/cô/dì của bạn.
+W|Viết: “Đây là nhà của chúng tôi.” (das Haus)|Das ist unser Haus.|unser haus
+G|poss; art
+
+=36|Tình trạng hôn nhân|Mann; Partner; ledig; verheiratet; geschieden; Familienstand
+N|<b>der Mann</b> = đàn ông; <b>mein Mann</b> = chồng tôi. <b>die Frau</b> = phụ nữ; <b>meine Frau</b> = vợ tôi.
+N|<b>Sind Sie verheiratet?</b> — Ja, ich bin verheiratet. / Nein, ich bin <b>ledig</b> (độc thân) / <b>geschieden</b> (đã ly hôn).
+N|Trong biểu mẫu: <b>der Familienstand</b> = tình trạng hôn nhân. <b>der Partner / die Partnerin</b> = bạn đời.
+D|Lena|Ist Frau Schmidt verheiratet?|Cô Schmidt đã kết hôn chưa?
+D|Anna|Ja, ihr Mann heißt Peter. Er ist Arzt.|Rồi, chồng cô ấy tên Peter. Anh ấy là bác sĩ.
+D|Lena|Und Herr Weber?|Còn ông Weber?
+D|Anna|Er ist geschieden. Aber er hat eine Partnerin.|Ông ấy đã ly hôn. Nhưng ông ấy có bạn đời.
+D|Lena|Und Minh? Ist er ledig?|Còn Minh? Anh ấy độc thân à?
+D|Anna|Ich glaube, ja!|Mình nghĩ là vậy!
+L|Chồng cô Schmidt tên là gì?|Peter|Tom|Lukas
+R|Tình trạng hôn nhân của ông Weber?|geschieden (đã ly hôn)|verheiratet (đã kết hôn)|ledig (độc thân)
+S|Sind Sie verheiratet?|Nein, ich bin ledig. / Ja, ich bin verheiratet.|bin|Trả lời về tình trạng hôn nhân (có thể bịa).
+W|Điền phiếu: Familienstand (độc thân)|Familienstand: ledig|ledig
+G|art
+
+=37|Bạn bè & tình yêu|Freund; Freundin; lieben; heiraten; kennenlernen
+N|<b>der Freund</b> = bạn (nam) hoặc bạn trai; <b>die Freundin</b> = bạn (nữ) hoặc bạn gái. Muốn nói rõ “chỉ là bạn”: <i>ein Freund von mir</i>.
+N|<b>kennenlernen</b> = làm quen, gặp lần đầu — động từ tách: <i>Ich lerne Anna <b>kennen</b>.</i>
+N|<b>lieben</b> = yêu, <b>heiraten</b> = cưới: <i>Tom und Sara heiraten im Sommer.</i>
+D|Tom|Minh, Sara und ich heiraten im Sommer!|Minh, Sara và mình sẽ cưới vào mùa hè!
+D|Minh|Wirklich? Herzlichen Glückwunsch!|Thật à? Chúc mừng!
+D|Tom|Danke! Ich liebe sie sehr.|Cảm ơn! Mình yêu cô ấy lắm.
+D|Minh|Ich möchte auch eine Freundin kennenlernen …|Mình cũng muốn làm quen một bạn gái…
+D|Tom|Lena hat keinen Freund. Sie ist sehr nett!|Lena chưa có bạn trai. Cô ấy rất dễ thương!
+L|Khi nào Tom và Sara cưới?|im Sommer (mùa hè)|im Winter|morgen
+R|Ai chưa có bạn trai?|Lena|Sara|Anna
+S|Haben Sie einen Freund oder eine Freundin in Deutschland?|Ja, mein Freund heißt … / Nein, …|freund/freundin|Bạn có bạn ở Đức không? Tên gì?
+W|Viết: “Tôi yêu gia đình tôi.”|Ich liebe meine Familie.|liebe meine familie
+G|conj:lieben,heiraten
+
+=38|Con người quanh ta|Junge; Mädchen; Mensch; Leute; Dame
+N|<b>der Junge</b> (cậu bé) / <b>das Mädchen</b> (cô bé) — đuôi <b>-chen</b> luôn là <b>das</b>!
+N|<b>der Mensch</b> = con người; <b>die Leute</b> = mọi người (chỉ dùng số nhiều): <i>Die Leute hier sind nett.</i>
+N|<b>die Dame</b> = quý bà: <i>Meine Damen und Herren!</i> = Thưa quý ông quý bà.
+D|Herr Weber|Meine Damen und Herren, herzlich willkommen!|Thưa quý ông quý bà, xin chào mừng!
+D|Minh|Hier sind viele Leute!|Ở đây đông người quá!
+D|Anna|Ja, alle Nachbarn sind hier. Das Mädchen da ist Mia, und der Junge ist ihr Bruder Max.|Ừ, tất cả hàng xóm đều ở đây. Cô bé kia là Mia, còn cậu bé là em trai Max của cô bé.
+D|Minh|Und die Dame neben Herrn Weber?|Còn quý bà bên cạnh ông Weber?
+D|Anna|Das ist seine Partnerin. Sie ist ein sehr lieber Mensch.|Đó là bạn đời của ông ấy. Bà ấy là một người rất tốt bụng.
+L|Ai nói “Meine Damen und Herren”?|Herr Weber|Anna|Minh
+R|Cậu bé tên là gì?|Max|Mia|Tom
+S|Sind die Leute in Ihrer Stadt nett?|Ja, die Leute sind nett.|leute|Mọi người ở thành phố của bạn có thân thiện không?
+W|Viết mạo từ: Mädchen, Junge, Mensch.|das Mädchen, der Junge, der Mensch|das maedchen, der junge, der mensch
+G|art; pl
+
+=39|Hàng xóm & khách|Nachbar; Gast; besuchen; alle
+N|<b>der Nachbar / die Nachbarin</b> = hàng xóm. <b>der Gast</b> (số nhiều: die Gäste) = khách.
+N|<b>besuchen</b> + người/nơi (không cần giới từ): <i>Ich besuche meine Oma.</i>
+N|<b>alle</b> = tất cả mọi người: <i>Alle sind da.</i>
+D|Herr Weber|Minh, Sie sind mein neuer Nachbar, richtig?|Minh, anh là hàng xóm mới của tôi, đúng không?
+D|Minh|Ja, ich wohne im vierten Stock.|Vâng, tôi sống ở tầng bốn.
+D|Herr Weber|Am Samstag haben wir Gäste. Alle Nachbarn kommen. Besuchen Sie uns auch!|Thứ Bảy chúng tôi có khách. Tất cả hàng xóm đều đến. Anh cũng đến chơi nhé!
+D|Minh|Gern! Vielen Dank!|Rất sẵn lòng! Cảm ơn ông nhiều!
+L|Minh sống ở tầng mấy?|tầng 4|tầng 2|tầng 3
+R|Ai sẽ đến nhà ông Weber vào thứ Bảy?|tất cả hàng xóm|chỉ có Minh|gia đình ông Weber
+S|Wen besuchen Sie am Wochenende?|Ich besuche meine Familie / meinen Freund …|besuche|Cuối tuần bạn đi thăm ai?
+W|Viết: “Chúng tôi đi thăm hàng xóm.”|Wir besuchen den Nachbarn.|wir besuchen, nachbar
+G|conj:besuchen; pl
+
+=40|Ôn tập chặng 4|*
+D||Ich heiße Lena und ich bin zweiundzwanzig Jahre alt. Ich habe keine Geschwister.|Tôi tên là Lena và tôi hai mươi hai tuổi. Tôi không có anh chị em.
+D||Meine Eltern wohnen in München. Mein Vater ist Lehrer und meine Mutter ist Ärztin.|Bố mẹ tôi sống ở München. Bố tôi là giáo viên và mẹ tôi là bác sĩ.
+D||Meine Großeltern wohnen auch in München. Mein Opa ist achtzig.|Ông bà tôi cũng sống ở München. Ông tôi tám mươi tuổi.
+D||Ich bin ledig, aber ich habe einen Freund. Er heißt Jonas und kommt aus Österreich.|Tôi độc thân, nhưng tôi có bạn trai. Anh ấy tên là Jonas và đến từ Áo.
+L|Bố mẹ Lena sống ở đâu?|in München|in Berlin|in Österreich
+L|Ông của Lena bao nhiêu tuổi?|80|18|28
+R|Bạn trai của Lena đến từ đâu?|aus Österreich|aus München|aus der Schweiz
+R|Lena có anh chị em không?|Nein, sie hat keine Geschwister.|Ja, einen Bruder.|Ja, eine Schwester.
+S|Erzählen Sie von Ihrer Familie.|Meine Familie wohnt in … Ich habe … Mein Vater …|familie/habe/mein|Kể về gia đình bạn (3–4 câu).
+W|Viết 4 câu về gia đình bạn.|Meine Familie wohnt in … Mein Vater heißt … Meine Mutter ist … Ich habe …|mein

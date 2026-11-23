@@ -1,0 +1,150 @@
+#|16|Quần áo & màu sắc|Quần áo, màu sắc, mua quần áo; tragen / anziehen; gefallen & passen + Dativ; ich glaube / ich denke; für + Akkusativ.
+
+=151|Quần áo – mặc|Kleidung; Hose; Hemd; T-Shirt; tragen
+N|<b>die Kleidung</b> = quần áo (không đếm). <b>die Hose</b> (cái quần dài — số ít!), <b>das Hemd</b> (áo sơ mi), <b>das T-Shirt</b> (áo phông).
+N|<b>tragen</b> = mặc (đang mặc), mang: du <b>trägst</b>, er <b>trägt</b>. <i>Er trägt ein Hemd und eine Hose.</i>
+D|Anna|Was trägst du morgen zum Vorstellungsgespräch?|Mai bạn mặc gì đi phỏng vấn?
+D|Minh|Ich weiß nicht. Vielleicht ein T-Shirt und eine Jeans?|Mình không biết. Có lẽ áo phông và quần jeans?
+D|Anna|Nein! Trag lieber ein Hemd und eine schöne Hose.|Không được! Mặc áo sơ mi và một cái quần đẹp thì hơn.
+D|Minh|Aber ich habe keine schöne Kleidung!|Nhưng mình không có quần áo đẹp!
+D|Anna|Dann gehen wir heute einkaufen!|Vậy hôm nay chúng ta đi mua sắm!
+L|Ban đầu Minh định mặc gì?|T-Shirt und Jeans|Hemd und Hose|Pullover
+R|Anna khuyên mặc gì?|ein Hemd und eine schöne Hose|ein T-Shirt|eine Jacke
+S|Was tragen Sie heute?|Heute trage ich eine Hose und ein T-Shirt.|trage|Hôm nay bạn mặc gì?
+W|Chia tragen: du ___, er ___.|du trägst, er trägt|du traegst, er traegt
+G|conj:tragen; art
+
+=152|Áo ấm – mặc vào|Pullover; Jacke; Mantel; anziehen
+N|<b>der Pullover</b> (áo len, nói tắt Pulli), <b>die Jacke</b> (áo khoác), <b>der Mantel</b> (áo choàng dài).
+N|<b>anziehen</b> (tách) = mặc vào (hành động): <i>Zieh eine Jacke <b>an</b>, es ist kalt!</i> ↔ ausziehen = cởi ra. So sánh: <b>tragen</b> = đang mặc.
+D|Lena|Brr, es ist kalt heute! Zieh einen Pullover an, Minh.|Brr, hôm nay lạnh quá! Mặc áo len vào đi Minh.
+D|Minh|Ich trage schon einen Pullover. Und eine Jacke!|Mình mặc áo len rồi. Cả áo khoác nữa!
+D|Lena|Im Winter brauchst du einen warmen Mantel.|Mùa đông bạn cần một cái áo choàng ấm.
+D|Minh|In Vietnam brauche ich nie einen Mantel …|Ở Việt Nam mình chẳng bao giờ cần áo choàng…
+D|Lena|Willkommen in Deutschland!|Chào mừng đến nước Đức!
+L|Minh đang mặc gì?|einen Pullover und eine Jacke|einen Mantel|nur ein T-Shirt
+R|Mùa đông Minh cần gì?|einen warmen Mantel|eine Jacke|einen Pullover
+S|Was ziehen Sie an, wenn es kalt ist?|Ich ziehe einen Pullover und eine Jacke an.|ziehe, an|Khi trời lạnh, bạn mặc gì?
+W|Viết: “Mặc áo khoác vào đi!” (thân mật)|Zieh eine Jacke an!|zieh, jacke an
+G|sep:anziehen; akk
+
+=153|Váy & áo sơ mi nữ – dài, ngắn|Kleid; Rock; Bluse; lang; kurz
+N|<b>das Kleid</b> (váy liền), <b>der Rock</b> (chân váy), <b>die Bluse</b> (áo sơ mi nữ).
+N|<b>lang</b> (dài) ↔ <b>kurz</b> (ngắn): <i>Der Rock ist zu kurz.</i> <i>ein langes Kleid</i>.
+D|Anna|Wie findest du das Kleid?|Bạn thấy cái váy này thế nào?
+D|Lena|Schön, aber es ist ein bisschen zu lang.|Đẹp, nhưng hơi dài quá.
+D|Anna|Und der Rock mit der Bluse?|Còn chân váy với áo sơ mi?
+D|Lena|Der Rock ist zu kurz für das Büro! Aber die Bluse ist toll.|Chân váy ngắn quá để đi làm! Nhưng áo sơ mi thì tuyệt.
+D|Anna|Okay, dann nehme ich die Bluse und eine lange Hose.|OK, vậy mình lấy áo sơ mi và một cái quần dài.
+L|Lena nhận xét gì về cái váy?|ein bisschen zu lang|zu kurz|zu teuer
+R|Cuối cùng Anna lấy gì?|die Bluse und eine lange Hose|das Kleid|den Rock
+S|Tragen Sie lieber lange oder kurze Hosen?|Ich trage lieber lange Hosen.|lange/kurze|Bạn thích mặc quần dài hay quần ngắn?
+W|Viết: “Cái váy quá ngắn.”|Das Kleid ist zu kurz.|kleid, zu kurz
+G|opp; art
+
+=154|Giày, tất, mũ, túi|Schuh; Socke; Mütze; Tasche
+N|<b>der Schuh</b> (giày; die Schuhe), <b>die Socke</b> (tất; die Socken), <b>die Mütze</b> (mũ len), <b>die Tasche</b> (túi, cặp).
+N|Ở Đức, vào nhà người khác thường cởi giày: <i>Bitte die Schuhe ausziehen.</i>
+D|Herr Weber|Bitte ziehen Sie die Schuhe aus.|Anh vui lòng cởi giày ra.
+D|Minh|Natürlich. Oh, meine Socken: eine ist rot, eine ist blau!|Tất nhiên. Ôi, tất của tôi: một chiếc đỏ, một chiếc xanh!
+D|Herr Weber|Haha, kein Problem! Wo ist Ihre Mütze?|Haha, không sao! Mũ của anh đâu?
+D|Minh|In der Tasche. Draußen ist es sehr kalt.|Trong túi. Ngoài trời rất lạnh.
+L|Tất của Minh màu gì?|một đỏ một xanh|đều đỏ|đều xanh
+R|Mũ của Minh ở đâu?|in der Tasche|auf dem Kopf|im Schrank
+S|Wie viele Paar Schuhe haben Sie?|Ich habe drei Paar Schuhe.|schuhe|Bạn có bao nhiêu đôi giày?
+W|Viết số nhiều: der Schuh, die Socke, die Tasche.|die Schuhe, die Socken, die Taschen|schuhe, socken, taschen
+G|pl; art
+
+=155|Màu sắc (1)|Farbe; rot; blau; grün; gelb
+N|<b>die Farbe</b> = màu. Hỏi: <b>Welche Farbe hat …?</b> — <i>Das Auto ist <b>rot</b>.</i>
+N|<b>rot</b> (đỏ), <b>blau</b> (xanh dương), <b>grün</b> (xanh lá), <b>gelb</b> (vàng). Cờ Đức: <i>schwarz-rot-gold</i>; cờ Việt Nam: <i>rot mit einem gelben Stern</i>.
+D|Lena|Was ist deine Lieblingsfarbe?|Màu yêu thích của bạn là gì?
+D|Minh|Rot. Die Flagge von Vietnam ist rot und gelb.|Màu đỏ. Lá cờ Việt Nam màu đỏ và vàng.
+D|Lena|Meine Lieblingsfarbe ist grün – wie der Wald.|Màu yêu thích của mình là xanh lá – như rừng.
+D|Minh|Und welche Farbe hat die Flagge von Deutschland?|Thế lá cờ nước Đức có màu gì?
+D|Lena|Schwarz, rot und gold. Gold ist fast wie gelb.|Đen, đỏ và vàng kim. Vàng kim gần giống màu vàng.
+D|Minh|Und der Himmel ist heute blau!|Còn bầu trời hôm nay thì xanh!
+L|Màu yêu thích của Minh là gì?|rot|grün|blau
+R|Lá cờ Đức có những màu nào?|schwarz, rot, gold|rot und gelb|blau, weiß, rot
+S|Was ist Ihre Lieblingsfarbe?|Meine Lieblingsfarbe ist …|lieblingsfarbe/farbe/ist|Màu yêu thích của bạn là gì?
+W|Viết: “Cờ Việt Nam màu đỏ và vàng.”|Die Flagge von Vietnam ist rot und gelb.|rot und gelb
+F|Die Sonne ist ___. (vàng)|gelb||grün|blau
+F|Das Gras ist ___. (xanh lá)|grün||gelb|rot
+F|Der Himmel ist ___. (xanh dương)|blau||rot|gelb
+F|Die Tomate ist ___. (đỏ)|rot||blau|grün
+
+=156|Màu sắc (2)|schwarz; weiß; grau; braun
+N|<b>schwarz</b> (đen), <b>weiß</b> (trắng), <b>grau</b> (xám), <b>braun</b> (nâu).
+N|Đứng trước danh từ, tính từ thêm đuôi: sau ein/eine: <i>ein <b>schwarzer</b> Mantel</i> (der → -er), <i>eine <b>weiße</b> Bluse</i> (die → -e), <i>ein <b>graues</b> Hemd</i> (das → -es).
+D|Verkäuferin|Welche Farbe suchen Sie?|Anh tìm màu gì?
+D|Minh|Ich suche einen schwarzen Mantel.|Tôi tìm một áo choàng màu đen.
+D|Verkäuferin|Schwarz haben wir leider nicht mehr. Wir haben Grau oder Braun.|Màu đen tiếc là hết rồi. Chúng tôi có màu xám hoặc nâu.
+D|Minh|Hm, grau ist okay. Und haben Sie auch weiße Hemden?|Hừm, màu xám cũng được. Thế chị có áo sơ mi trắng không?
+D|Verkäuferin|Ja, hier. Weiß passt gut zu Grau.|Có, đây. Màu trắng hợp với màu xám.
+L|Minh tìm áo choàng màu gì?|schwarz|grau|braun
+R|Minh chấp nhận áo choàng màu gì?|grau|schwarz|braun
+S|Welche Farbe hat Ihr Lieblingspullover?|Mein Pullover ist grau.|ist|Áo len yêu thích của bạn màu gì?
+W|Viết: “Tôi có một cái áo sơ mi trắng.”|Ich habe ein weißes Hemd.|weisses hemd
+F|Der Schnee ist ___. (trắng)|weiß||schwarz|grau
+F|Die Nacht ist ___. (đen)|schwarz||weiß|braun
+F|Schokolade ist ___. (nâu)|braun||grau|weiß
+
+=157|Có hợp không? – gefallen & passen|gefallen; passen; wirklich; möglich
+N|<b>gefallen</b> + Dativ = làm (ai) thích (về vẻ ngoài): <i>Die Jacke <b>gefällt mir</b>.</i> = Tôi thích cái áo. (chủ ngữ là đồ vật!)
+N|<b>passen</b> + Dativ = vừa (cỡ): <i>Die Hose <b>passt mir</b> nicht.</i> <b>passen zu</b> = hợp với.
+N|<b>wirklich</b> = thật sự, <b>möglich</b> = có thể (xảy ra): <i>Ist das möglich?</i>
+D|Minh|Lena, wie gefällt dir die Jacke?|Lena, bạn thấy cái áo khoác thế nào?
+D|Lena|Sie gefällt mir sehr! Passt sie dir?|Mình rất thích! Nó có vừa với bạn không?
+D|Minh|Nein, sie ist zu klein. Haben Sie die Jacke in Größe L?|Không, nó nhỏ quá. Chị có cái này cỡ L không?
+D|Verkäuferin|Moment … ja, hier. Die passt Ihnen bestimmt.|Chờ chút… có, đây. Cái này chắc chắn vừa với anh.
+D|Minh|Wirklich perfekt! Ist es möglich, mit Karte zu bezahlen?|Thật sự hoàn hảo! Có thể trả bằng thẻ không?
+D|Verkäuferin|Ja, natürlich.|Vâng, tất nhiên.
+L|Lena thấy cái áo thế nào?|Cô ấy rất thích|Cô ấy không thích|Quá đắt
+R|Minh cần cỡ nào?|L|M|S
+S|Wie gefällt Ihnen Ihre Stadt?|Meine Stadt gefällt mir sehr gut.|gefaellt mir|Bạn có thích thành phố của bạn không? (dùng gefallen)
+W|Viết: “Cái quần không vừa với tôi.”|Die Hose passt mir nicht.|passt mir nicht
+F|Die Jacke ___ mir. (gefallen)|gefällt||gefallen|gefällst
+F|Die Schuhe ___ mir nicht. (passen, số nhiều)|passen||passt|passe
+F|Wie gefällt ___ das Kleid? (bạn)|dir||du|mir
+
+=158|Tôi nghĩ là… – nhẹ & nặng|leicht; schwer; denken; glauben; sicher
+N|<b>glauben</b> / <b>denken</b> = nghĩ rằng, tin rằng: <i>Ich <b>glaube</b>, die Jacke ist zu teuer.</i> <i>Ich <b>denke</b> oft an meine Familie.</i> (denken an = nghĩ về)
+N|<b>sicher</b> = chắc chắn: <i>Bist du sicher?</i> <b>leicht</b> = nhẹ; dễ ↔ <b>schwer</b> = nặng; khó.
+D|Minh|Welche Jacke nehme ich? Die Lederjacke oder die Regenjacke?|Mình lấy áo nào? Áo da hay áo mưa?
+D|Lena|Ich glaube, die Regenjacke. Sie ist leicht und praktisch.|Mình nghĩ là áo mưa. Nó nhẹ và tiện.
+D|Minh|Ja, die Lederjacke ist ziemlich schwer. Und teuer.|Ừ, áo da khá nặng. Và đắt.
+D|Lena|Bist du sicher? Ich denke, die Lederjacke steht dir gut.|Bạn chắc chứ? Mình nghĩ áo da hợp với bạn đấy.
+D|Minh|Hm … ich weiß es noch nicht!|Hừm… mình vẫn chưa biết nữa!
+L|Lena khuyên lấy áo nào trước?|die Regenjacke|die Lederjacke|keine
+R|Áo da thế nào?|schwer und teuer|leicht und billig|leicht und teuer
+S|Ist Deutsch leicht oder schwer für Sie?|Ich glaube, Deutsch ist schwer, aber interessant.|glaube/finde/denke|Theo bạn tiếng Đức dễ hay khó? (dùng ich glaube / ich denke)
+W|Viết: “Tôi nghĩ là cái áo khoác quá nặng.”|Ich glaube, die Jacke ist zu schwer.|glaube/denke, zu schwer
+G|opp; conj:denken,glauben
+
+=159|Mua quà – sặc sỡ & màu hồng|nett; freundlich; für; bunt; rosa
+N|<b>für</b> + Akkusativ = cho, dành cho: <i>ein Geschenk <b>für</b> meine Freundin / <b>für</b> dich / <b>für</b> ihn</i>.
+N|<b>bunt</b> = sặc sỡ, nhiều màu; <b>rosa</b> = hồng (không đổi đuôi: ein rosa Schal). <b>nett</b> = dễ mến, tử tế; <b>freundlich</b> = thân thiện.
+D|Minh|Ich suche ein Geschenk für meine Freundin Lena.|Tôi tìm một món quà cho bạn tôi là Lena.
+D|Verkäuferin|Vielleicht einen Schal? Hier ist ein rosa Schal.|Có lẽ một chiếc khăn quàng? Đây là một chiếc khăn màu hồng.
+D|Minh|Hm, Lena mag lieber bunte Farben.|Hừm, Lena thích màu sặc sỡ hơn.
+D|Verkäuferin|Dann vielleicht den bunten Schal hier?|Vậy có lẽ chiếc khăn sặc sỡ này?
+D|Minh|Perfekt! Sie sind sehr nett, danke!|Hoàn hảo! Chị thật tử tế, cảm ơn!
+D|Verkäuferin|Gern! Sie sind auch sehr freundlich.|Không có gì! Anh cũng rất thân thiện.
+L|Minh mua quà cho ai?|Lena|Anna|mẹ của Minh
+R|Cuối cùng Minh chọn khăn nào?|den bunten Schal|den rosa Schal|keinen
+S|Was schenken Sie einer Freundin zum Geburtstag?|Ich schenke ihr ein Buch.|schenke/kaufe|Bạn tặng gì cho một người bạn nữ vào sinh nhật?
+W|Viết: “Món quà này dành cho bạn.” (thân mật)|Das Geschenk ist für dich.|fuer dich
+F|Das Geschenk ist ___ dich. (cho)|für||mit|ohne
+F|Die Verkäuferin ist sehr ___. (thân thiện)|freundlich||bunt|leicht
+F|Lena mag ___ Farben. (sặc sỡ)|bunte||rosa|leise
+
+=160|Ôn tập chặng 16|*
+D|Anzeige|Winterschlussverkauf bei Mode Müller! Alle Mäntel und Jacken dreißig Prozent billiger.|Đại hạ giá mùa đông ở Mode Müller! Tất cả áo choàng và áo khoác rẻ hơn 30%.
+D|Anzeige|Pullover in vielen Farben: nur 19,90 Euro. Schuhe ab 29 Euro.|Áo len nhiều màu: chỉ 19,90 euro. Giày từ 29 euro.
+D|SMS|Hallo Anna, ich bin bei Mode Müller. Der graue Mantel gefällt mir, aber er passt mir nicht. Hast du Zeit? Kommst du? Lena|Chào Anna, mình đang ở Mode Müller. Mình thích cái áo choàng xám, nhưng nó không vừa. Bạn có rảnh không? Bạn đến nhé? Lena
+L|Áo choàng và áo khoác rẻ hơn bao nhiêu?|30 %|20 %|19,90 €
+L|Áo len giá bao nhiêu?|19,90 €|29 €|30 €
+R|Vấn đề của Lena với áo choàng xám là gì?|nó không vừa|nó quá đắt|cô ấy không thích màu
+R|Giày giá từ bao nhiêu?|29 €|19,90 €|30 €
+S|Beschreiben Sie, was Sie heute tragen (Kleidung und Farben).|Ich trage eine blaue Hose und ein weißes T-Shirt.|trage|Mô tả bạn đang mặc gì (quần áo và màu sắc).
+W|Viết tin nhắn cho bạn: bạn ở cửa hàng, thích một cái áo khoác, hỏi ý kiến.|Ich bin im Geschäft. Die Jacke gefällt mir. Wie findest du sie?|gefaellt mir

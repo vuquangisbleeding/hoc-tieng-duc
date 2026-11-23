@@ -1,0 +1,147 @@
+#|15|Sức khoẻ|Cơ thể, bệnh, đi khám bác sĩ, thuốc; … tut weh; mir/dir (Dativ); sollen; helfen.
+
+=141|Cơ thể (1) – đầu, tóc, mặt|Körper; Kopf; Haar; Gesicht
+N|<b>der Körper</b> (cơ thể), <b>der Kopf</b> (đầu), <b>das Haar</b> (tóc — thường dùng số nhiều: die Haare), <b>das Gesicht</b> (khuôn mặt).
+N|Mô tả: <i>Sie hat lange Haare.</i> <i>Er hat ein freundliches Gesicht.</i>
+D|Lena|Wer ist der Mann auf dem Foto?|Người đàn ông trong ảnh là ai?
+D|Anna|Das ist Lukas mit seiner neuen Frisur!|Đó là Lukas với kiểu tóc mới!
+D|Lena|Was? Er hat ja keine Haare mehr auf dem Kopf!|Gì cơ? Anh ấy chẳng còn sợi tóc nào trên đầu!
+D|Anna|Ja, im Sommer ist es ihm zu warm. Aber er hat ein schönes Gesicht.|Ừ, mùa hè anh ấy thấy nóng quá. Nhưng anh ấy có khuôn mặt đẹp.
+D|Lena|Und einen sportlichen Körper!|Và một cơ thể thể thao!
+L|Kiểu tóc mới của Lukas thế nào?|không còn tóc|tóc dài|tóc màu đỏ
+R|Tại sao Lukas cắt tóc?|Mùa hè nóng quá|Vì bạn gái muốn|Vì công việc
+S|Haben Sie lange oder kurze Haare?|Ich habe kurze Haare. / lange Haare.|haare|Bạn có tóc dài hay ngắn?
+W|Viết mạo từ: Kopf, Gesicht, Körper.|der Kopf, das Gesicht, der Körper|der kopf, das gesicht, der koerper
+G|art; pl
+
+=142|Mắt, tai, mũi, miệng|Auge; Ohr; Nase; Mund; Zahn
+N|<b>das Auge</b> (mắt; die Augen), <b>das Ohr</b> (tai; die Ohren), <b>die Nase</b> (mũi), <b>der Mund</b> (miệng), <b>der Zahn</b> (răng; die Zähne).
+N|Truyện cổ Grimm “Cô bé quàng khăn đỏ” (Rotkäppchen) có đoạn hỏi về tai, mắt, miệng — rất hợp để nhớ từ!
+D|Rotkäppchen|Großmutter, warum hast du so große Ohren?|Bà ơi, sao tai bà to thế?
+D|Wolf|Damit ich dich besser hören kann!|Để bà nghe cháu rõ hơn!
+D|Rotkäppchen|Großmutter, warum hast du so große Augen?|Bà ơi, sao mắt bà to thế?
+D|Wolf|Damit ich dich besser sehen kann!|Để bà nhìn cháu rõ hơn!
+D|Rotkäppchen|Und warum hast du so einen großen Mund und so große Zähne?|Thế sao miệng bà to và răng bà to thế?
+D|Wolf|Damit ich dich besser fressen kann!|Để bà ăn thịt cháu dễ hơn!
+L|Con sói nói tai to để làm gì?|để nghe rõ hơn|để nhìn rõ hơn|để ăn
+R|Cuối cùng cô bé hỏi về bộ phận nào?|Mund und Zähne|Ohren|Nase
+S|Welche Farbe haben Ihre Augen?|Meine Augen sind braun.|augen|Mắt bạn màu gì?
+W|Viết số nhiều: das Auge, das Ohr, der Zahn.|die Augen, die Ohren, die Zähne|augen, ohren, zaehne
+G|pl; art
+
+=143|Cổ, tay, ngón tay|Hals; Arm; Hand; Finger
+N|<b>der Hals</b> (cổ, họng), <b>der Arm</b> (cánh tay), <b>die Hand</b> (bàn tay; die Hände), <b>der Finger</b> (ngón tay).
+N|Người Đức bắt tay khi chào hỏi trang trọng: <i>Man gibt sich die Hand.</i>
+D|Ärztin|Guten Tag! Was ist passiert?|Xin chào! Chuyện gì đã xảy ra?
+D|Tom|Ich hatte einen Unfall mit dem Fahrrad. Jetzt tut mein Arm weh.|Tôi bị tai nạn xe đạp. Giờ cánh tay tôi đau.
+D|Ärztin|Zeigen Sie mal. Und die Hand? Können Sie die Finger bewegen?|Cho tôi xem nào. Còn bàn tay? Anh cử động các ngón tay được không?
+D|Tom|Ja, aber es tut ein bisschen weh.|Được, nhưng hơi đau một chút.
+D|Ärztin|Gut, es ist nichts gebrochen.|Tốt, không có gì bị gãy cả.
+L|Tom đau ở đâu?|am Arm (cánh tay)|am Kopf|am Bein
+R|Có gì bị gãy không?|Nein, nichts|Ja, der Arm|Ja, ein Finger
+S|Wie viele Finger hat eine Hand?|Eine Hand hat fünf Finger.|fuenf/5|Một bàn tay có bao nhiêu ngón?
+W|Viết: “Tay tôi đau.” (Hand, wehtun)|Meine Hand tut weh.|hand tut weh
+G|art; pl
+
+=144|Bụng, lưng, chân – laufen|Bauch; Rücken; Bein; Fuß; laufen
+N|<b>der Bauch</b> (bụng), <b>der Rücken</b> (lưng), <b>das Bein</b> (chân — từ hông xuống), <b>der Fuß</b> (bàn chân; die Füße).
+N|<b>laufen</b> = chạy; đi bộ: du <b>läufst</b>, er <b>läuft</b>. <i>Ich laufe jeden Morgen im Park.</i> <b>zu Fuß</b> = đi bộ.
+D|Minh|Lena, du läufst jeden Morgen, oder?|Lena, sáng nào bạn cũng chạy bộ nhỉ?
+D|Lena|Ja, fünf Kilometer im Park. Komm doch mit!|Ừ, năm cây số trong công viên. Đi cùng đi!
+D|Minh|Ich weiß nicht … Mein Rücken tut oft weh.|Mình không biết nữa… Lưng mình hay đau.
+D|Lena|Laufen ist gut für den Rücken und für die Beine. Und für den Bauch!|Chạy bộ tốt cho lưng và cho chân. Và cho cả bụng nữa!
+D|Minh|Okay, okay! Morgen laufe ich mit.|Được rồi! Mai mình chạy cùng.
+L|Lena chạy bao xa mỗi sáng?|5 km|15 km|3 km
+R|Minh hay đau ở đâu?|Rücken (lưng)|Bauch (bụng)|Bein (chân)
+S|Laufen Sie gern?|Ja, ich laufe gern. / Nein, ich gehe lieber spazieren.|laufe/gehe|Bạn có thích chạy bộ không?
+W|Chia laufen: du ___, er ___.|du läufst, er läuft|du laeufst, er laeuft
+G|conj:laufen; art
+
+=145|Khoẻ hay ốm? – mir & dir|krank; gesund; schlecht; mir; dir
+N|<b>krank</b> (ốm) ↔ <b>gesund</b> (khoẻ mạnh): <i>Ich bin krank.</i>
+N|Dativ của đại từ: ich → <b>mir</b>, du → <b>dir</b>: <i>Wie geht es <b>dir</b>? — <b>Mir</b> geht es <b>schlecht</b>.</i> (schlecht = tệ). Cũng dùng: <i>Gib <b>mir</b> das Buch.</i> <i>Ich helfe <b>dir</b>.</i>
+D|Anna|Minh, wie geht es dir? Du siehst nicht gut aus.|Minh, bạn khoẻ không? Trông bạn không ổn.
+D|Minh|Mir geht es schlecht. Ich glaube, ich bin krank.|Mình thấy tệ lắm. Mình nghĩ mình bị ốm rồi.
+D|Anna|Oh nein! Kann ich dir helfen?|Ôi không! Mình giúp gì được cho bạn?
+D|Minh|Bring mir bitte einen Tee mit Honig.|Mang cho mình một cốc trà mật ong nhé.
+D|Anna|Gern. Trink viel und schlaf viel – dann bist du bald wieder gesund!|Được. Uống nhiều và ngủ nhiều – rồi bạn sẽ sớm khoẻ lại!
+L|Minh cảm thấy thế nào?|schlecht (tệ)|gut|sehr gut
+R|Minh nhờ Anna mang gì?|Tee mit Honig|Medikamente|Suppe
+S|Wie geht es Ihnen heute?|Mir geht es gut. / Mir geht es schlecht.|mir geht es|Hôm nay bạn thấy thế nào?
+W|Viết: “Tôi bị ốm. Tôi thấy rất tệ.”|Ich bin krank. Mir geht es sehr schlecht.|bin krank, mir geht es, schlecht
+F|Wie geht es ___? (bạn)|dir||mir|du
+F|___ geht es gut. (tôi)|Mir||Ich|Dir
+F|Gib ___ bitte das Buch! (tôi)|mir||ich|dir
+F|Ich helfe ___. (bạn)|dir||du|mir
+
+=146|Đau ở đâu? – tut weh|wehtun; Schmerz; Fieber; Erkältung
+N|<b>wehtun</b> = đau (tách): <i>Mein Kopf <b>tut weh</b>.</i> Số nhiều: <i>Meine Füße <b>tun weh</b>.</i> Bác sĩ hỏi: <i>Was tut Ihnen weh?</i>
+N|Từ ghép với <b>-schmerzen</b> (số nhiều của der Schmerz): <b>Kopfschmerzen</b>, <b>Bauchschmerzen</b>, <b>Halsschmerzen</b> haben.
+N|<b>das Fieber</b> = sốt: <i>Ich habe Fieber.</i> <b>die Erkältung</b> = cảm lạnh: <i>Ich habe eine Erkältung.</i>
+D|Ärztin|Guten Tag, Herr Nguyen. Was fehlt Ihnen?|Chào anh Nguyễn. Anh bị làm sao?
+D|Minh|Ich habe Kopfschmerzen und Halsschmerzen. Mein Hals tut sehr weh.|Tôi bị đau đầu và đau họng. Họng tôi đau lắm.
+D|Ärztin|Haben Sie auch Fieber?|Anh có sốt không?
+D|Minh|Ja, achtunddreißig Grad.|Có, ba mươi tám độ.
+D|Ärztin|Das ist eine Erkältung. Sie bekommen ein Medikament gegen die Schmerzen.|Đây là cảm lạnh. Anh sẽ được kê thuốc giảm đau.
+L|Minh bị đau gì?|Kopf und Hals (đầu và họng)|Bauch|Rücken
+R|Minh sốt bao nhiêu độ?|38 độ|39 độ|37 độ
+S|Was tut Ihnen weh, wenn Sie erkältet sind?|Mein Hals tut weh. / Ich habe Kopfschmerzen.|weh/schmerzen|Khi bị cảm, bạn đau ở đâu?
+W|Viết: “Tôi bị sốt và đau đầu.”|Ich habe Fieber und Kopfschmerzen.|fieber, kopfschmerzen
+F|Mein Kopf ___ weh. (wehtun)|tut||tun|tust
+F|Meine Füße ___ weh.|tun||tut|tust
+F|Ich habe ___. (sốt)|Fieber|
+
+=147|Gọi điện đến phòng khám|Arzt; Ärztin; Praxis; anrufen; telefonieren
+N|<b>der Arzt / die Ärztin</b> = bác sĩ, <b>die Praxis</b> = phòng khám. Đi khám: <i>Ich gehe <b>zum</b> Arzt.</i> / <i>Ich bin <b>beim</b> Arzt.</i>
+N|<b>anrufen</b> (tách) = gọi điện: <i>Ich <b>rufe</b> in der Praxis <b>an</b>.</i> <b>telefonieren</b> = nói chuyện điện thoại: <i>Sie telefoniert gerade.</i>
+D|Sprechstundenhilfe|Praxis Doktor Becker, guten Morgen.|Phòng khám bác sĩ Becker, chào buổi sáng.
+D|Minh|Guten Morgen, hier ist Minh Nguyen. Ich bin krank. Kann ich heute kommen?|Chào buổi sáng, tôi là Minh Nguyễn. Tôi bị ốm. Hôm nay tôi đến được không?
+D|Sprechstundenhilfe|Die Ärztin hat um elf Uhr einen Termin frei.|Bác sĩ có một lịch trống lúc mười một giờ.
+D|Minh|Gut, ich komme um elf. Danke!|Được, tôi đến lúc mười một giờ. Cảm ơn!
+D|Sprechstundenhilfe|Bringen Sie bitte Ihre Versichertenkarte mit.|Anh nhớ mang theo thẻ bảo hiểm nhé.
+L|Minh có hẹn lúc mấy giờ?|11 giờ|10 giờ|12 giờ
+R|Minh phải mang theo gì?|Versichertenkarte (thẻ bảo hiểm)|Pass|Rezept
+S|Sie sind krank. Rufen Sie in der Praxis an. Was sagen Sie?|Guten Tag, hier ist … Ich bin krank. Kann ich heute kommen?|krank|Bạn bị ốm và gọi điện đến phòng khám. Bạn nói gì?
+W|Viết: “Tôi gọi điện cho bác sĩ.”|Ich rufe den Arzt an.|rufe, an
+G|sep:anrufen; conj:telefonieren
+
+=148|Thuốc & đơn thuốc – quên|Medikament; Tablette; Rezept; Krankenkasse; vergessen
+N|<b>das Medikament</b> = thuốc, <b>die Tablette</b> = viên thuốc, <b>das Rezept</b> = đơn thuốc (và: công thức nấu ăn!). Thuốc kê đơn mua ở <b>Apotheke</b>.
+N|<b>die Krankenkasse</b> = quỹ bảo hiểm y tế. <b>vergessen</b> = quên: du <b>vergisst</b>, er <b>vergisst</b>. <i>Vergessen Sie die Tabletten nicht!</i>
+D|Ärztin|Hier ist Ihr Rezept. Nehmen Sie dreimal am Tag eine Tablette.|Đây là đơn thuốc của anh. Mỗi ngày uống ba lần, mỗi lần một viên.
+D|Minh|Vor oder nach dem Essen?|Trước hay sau bữa ăn ạ?
+D|Ärztin|Nach dem Essen. Und vergessen Sie die Tabletten nicht!|Sau bữa ăn. Và đừng quên uống thuốc!
+D|Minh|Muss ich das Medikament bezahlen?|Tôi có phải trả tiền thuốc không ạ?
+D|Ärztin|Nur fünf Euro. Den Rest bezahlt die Krankenkasse.|Chỉ năm euro. Phần còn lại quỹ bảo hiểm trả.
+L|Minh uống thuốc mấy lần một ngày?|3|2|1
+R|Minh phải trả bao nhiêu tiền thuốc?|5 €|15 €|0 €
+S|Wie oft nehmen Sie die Tablette? (dreimal am Tag)|Ich nehme dreimal am Tag eine Tablette.|dreimal|Bạn uống thuốc mấy lần? (3 lần một ngày)
+W|Viết: “Đừng quên thuốc!” (lịch sự)|Vergessen Sie das Medikament nicht!|vergessen sie, nicht
+G|conj:vergessen; art
+
+=149|Bác sĩ khuyên – sollen|sollen; helfen; bleiben; Gute Besserung!; wieder; gerade
+N|<b>sollen</b> = nên / phải (theo lời người khác): ich <b>soll</b>, du <b>sollst</b>, er <b>soll</b>. <i>Die Ärztin sagt, ich <b>soll</b> im Bett <b>bleiben</b>.</i>
+N|<b>helfen</b> + Dativ: <i>Ich helfe <b>dir</b>.</i> (du <b>hilfst</b>, er <b>hilft</b>). <b>bleiben</b> = ở lại: <i>zu Hause bleiben</i>.
+N|<b>Gute Besserung!</b> = Chúc mau khoẻ! <b>wieder</b> = lại; <b>gerade</b> = đang, vừa mới.
+D|Anna|Hallo Minh! Was hat die Ärztin gesagt?|Chào Minh! Bác sĩ nói gì?
+D|Minh|Ich soll drei Tage zu Hause bleiben und viel schlafen.|Mình nên ở nhà ba ngày và ngủ nhiều.
+D|Anna|Soll ich dir helfen? Ich gehe gerade einkaufen.|Mình giúp bạn nhé? Mình đang đi mua đồ đây.
+D|Minh|Ja, bitte! Kannst du mir Obst und Saft mitbringen?|Có, làm ơn! Bạn mua giúp mình trái cây và nước ép nhé?
+D|Anna|Klar! Gute Besserung! Bald bist du wieder fit.|Chắc chắn! Chúc mau khoẻ! Bạn sẽ sớm khoẻ lại thôi.
+L|Minh nên ở nhà mấy ngày?|3|2|5
+R|Anna đang đi đâu?|einkaufen (đi mua đồ)|zum Arzt|zur Arbeit
+S|Ihr Freund ist krank. Was sagen Sie?|Gute Besserung! Kann ich dir helfen?|gute besserung|Bạn của bạn bị ốm. Bạn nói gì?
+W|Viết: “Bác sĩ nói tôi nên uống nhiều nước.”|Der Arzt sagt, ich soll viel Wasser trinken.|soll, wasser trinken
+G|conj:sollen,helfen,bleiben; modal:sollen
+
+=150|Ôn tập chặng 15|*
+D|E-Mail|Liebe Frau Schmidt, leider kann ich heute und morgen nicht zum Kurs kommen.|Thưa cô Schmidt, tiếc là hôm nay và ngày mai em không thể đến lớp.
+D|E-Mail|Ich bin krank: Ich habe Fieber und mein Hals tut sehr weh.|Em bị ốm: em bị sốt và họng em rất đau.
+D|E-Mail|Die Ärztin sagt, ich soll im Bett bleiben. Am Donnerstag bin ich wieder da.|Bác sĩ nói em nên nằm nghỉ. Thứ Năm em sẽ đi học lại.
+D|E-Mail|Können Sie mir bitte die Hausaufgaben schicken? Viele Grüße, Minh|Cô có thể gửi bài tập về nhà cho em không ạ? Thân, Minh
+L|Minh nghỉ học mấy ngày?|2 (hôm nay và ngày mai)|1|3
+L|Khi nào Minh đi học lại?|am Donnerstag|am Montag|morgen
+R|Minh bị gì?|Fieber und Halsschmerzen|Bauchschmerzen|Rückenschmerzen
+R|Minh nhờ cô giáo điều gì?|gửi bài tập về nhà|gọi bác sĩ|mua thuốc
+S|Sie sind beim Arzt. Sagen Sie, was Ihnen wehtut.|Mein Kopf tut weh und ich habe Fieber.|weh/fieber/schmerzen|Bạn ở chỗ bác sĩ. Nói bạn đau ở đâu.
+W|Viết email cho sếp / cô giáo: bạn bị ốm, không đến được, khi nào quay lại.|Liebe Frau …, ich bin krank und kann heute nicht kommen. Am … bin ich wieder da. Viele Grüße, …|krank, nicht kommen

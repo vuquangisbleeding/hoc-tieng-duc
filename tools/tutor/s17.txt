@@ -1,0 +1,143 @@
+#|17|Thời gian rảnh|Sở thích, thể thao, âm nhạc, phim, rủ rê, tiệc tùng, quà tặng; können (khả năng); thì quá khứ Perfekt với haben / sein.
+
+=161|Thời gian rảnh & sở thích|Freizeit; Hobby; spielen; Spiel; Spaß
+N|<b>Was machst du in deiner Freizeit?</b> — <i>In meiner Freizeit spiele ich Gitarre.</i> <b>das Hobby</b> (số nhiều: Hobbys) = sở thích.
+N|<b>spielen</b> = chơi (thể thao, nhạc cụ, trò chơi): <i>Fußball / Gitarre / Karten spielen</i>. <b>das Spiel</b> = trò chơi; trận đấu.
+N|<b>Spaß machen</b> = vui: <i>Das macht Spaß!</i> <i>Viel Spaß!</i> (Chúc vui vẻ!)
+D|Lena|Minh, was machst du in deiner Freizeit?|Minh, lúc rảnh bạn làm gì?
+D|Minh|Ich spiele gern Computerspiele und Gitarre. Und du? Was ist dein Hobby?|Mình thích chơi điện tử và đàn ghi-ta. Còn bạn? Sở thích của bạn là gì?
+D|Lena|Ich spiele Volleyball. Das macht viel Spaß!|Mình chơi bóng chuyền. Vui lắm!
+D|Minh|Hast du heute ein Spiel?|Hôm nay bạn có trận đấu không?
+D|Lena|Ja, um sieben. Komm doch und schau zu!|Có, lúc bảy giờ. Đến xem đi!
+L|Lena chơi môn gì?|Volleyball|Fußball|Tennis
+R|Trận đấu của Lena lúc mấy giờ?|7 giờ|6 giờ|8 giờ
+S|Was machen Sie in Ihrer Freizeit?|In meiner Freizeit lese ich und spiele Fußball.|freizeit/gern/spiele/lese|Lúc rảnh bạn làm gì?
+W|Viết: “Sở thích của tôi là đọc sách và nấu ăn.”|Meine Hobbys sind Lesen und Kochen.|hobby, lesen, kochen
+G|conj:spielen; art
+
+=162|Thể thao – biết làm gì?|Sport; Fußball; schwimmen; tanzen; singen
+N|<b>Sport machen</b> = chơi thể thao. <b>Fußball spielen</b>, <b>schwimmen</b> (bơi), <b>tanzen</b> (nhảy), <b>singen</b> (hát).
+N|Khả năng: <b>können</b> + nguyên mẫu ở cuối câu: <i>Ich <b>kann</b> gut <b>schwimmen</b>.</i> <i><b>Kannst</b> du <b>tanzen</b>?</i>
+D|Tom|Machst du Sport, Minh?|Minh có chơi thể thao không?
+D|Minh|Ja, ich spiele Fußball, jeden Mittwoch. Und ich kann gut schwimmen.|Có, mình đá bóng mỗi thứ Tư. Và mình bơi giỏi.
+D|Tom|Ich kann nicht schwimmen, aber ich tanze gern – Salsa!|Mình không biết bơi, nhưng mình thích nhảy – salsa!
+D|Minh|Und Sara? Singt sie nicht im Chor?|Còn Sara? Cô ấy không hát trong dàn hợp xướng à?
+D|Tom|Doch! Sie singt sehr schön.|Có chứ! Cô ấy hát rất hay.
+L|Minh đá bóng khi nào?|jeden Mittwoch|jeden Montag|am Wochenende
+R|Tom không biết làm gì?|schwimmen|tanzen|Fußball spielen
+S|Was können Sie gut?|Ich kann gut schwimmen.|kann|Bạn làm giỏi việc gì?
+W|Viết: “Bạn có biết bơi không?” (thân mật)|Kannst du schwimmen?|kannst du schwimmen
+G|modal:können; conj:schwimmen,tanzen
+
+=163|Âm nhạc|Musik; hören; Radio; Konzert; toll
+N|<b>Musik hören</b> = nghe nhạc; <b>Radio hören</b> = nghe đài. <b>hören</b> chia đều: ich höre, du hörst, er hört.
+N|<b>das Konzert</b> = buổi hoà nhạc: <i>ins Konzert gehen</i>. <b>toll</b> = tuyệt!
+D|Anna|Welche Musik hörst du gern?|Bạn thích nghe nhạc gì?
+D|Minh|Pop und ein bisschen Jazz. Morgens höre ich im Radio Nachrichten.|Nhạc pop và một chút jazz. Buổi sáng mình nghe tin tức trên đài.
+D|Anna|Am Freitag gibt es ein Jazzkonzert im Park. Kommst du mit?|Thứ Sáu có buổi hoà nhạc jazz ở công viên. Bạn đi cùng không?
+D|Minh|Toll! Was kostet es?|Tuyệt! Giá bao nhiêu?
+D|Anna|Nichts, es ist kostenlos!|Không mất gì, miễn phí!
+L|Buổi sáng Minh nghe gì trên đài?|Nachrichten (tin tức)|Jazz|Pop
+R|Vé hoà nhạc giá bao nhiêu?|miễn phí|10 €|5 €
+S|Welche Musik hören Sie gern?|Ich höre gern Pop.|hoere|Bạn thích nghe nhạc gì?
+W|Viết: “Tôi nghe nhạc mỗi ngày.”|Ich höre jeden Tag Musik.|hoere, musik
+G|conj:hören; art
+
+=164|Phim – thú vị hay chán?|Film; fernsehen; interessant; langweilig; lustig
+N|<b>fernsehen</b> (tách) = xem TV: <i>Ich <b>sehe</b> abends <b>fern</b>.</i> (du siehst fern). <b>der Film</b> = bộ phim.
+N|Nhận xét: <b>interessant</b> (thú vị) ↔ <b>langweilig</b> (chán); <b>lustig</b> = vui nhộn, hài hước. <i>Ich finde den Film lustig.</i> (finden = cho rằng)
+D|Lukas|Was machst du heute Abend?|Tối nay bạn làm gì?
+D|Minh|Ich sehe fern. Heute kommt ein deutscher Film.|Mình xem TV. Hôm nay có một phim Đức.
+D|Lukas|Deutsche Filme finde ich oft langweilig.|Phim Đức mình thường thấy chán.
+D|Minh|Nein, der Film ist lustig! Und ich lerne dabei Deutsch.|Không, phim này hài lắm! Và mình còn học được tiếng Đức nữa.
+D|Lukas|Okay, das ist interessant. Ich komme mit!|Được, thế thì thú vị đấy. Mình xem cùng!
+L|Tối nay Minh làm gì?|fernsehen (xem TV)|ins Kino gehen|lesen
+R|Lukas nghĩ gì về phim Đức?|oft langweilig|immer lustig|sehr interessant
+S|Wie finden Sie deutsche Filme?|Ich finde deutsche Filme interessant.|finde|Bạn thấy phim Đức thế nào?
+W|Viết: “Buổi tối tôi xem TV.”|Abends sehe ich fern.|sehe, fern
+G|sep:fernsehen; opp
+
+=165|Thú cưng – cười|Tier; Hund; Katze; lachen
+N|<b>das Tier</b> = con vật, <b>der Hund</b> = chó, <b>die Katze</b> = mèo. <i>Hast du ein Haustier?</i> (thú cưng)
+N|<b>lachen</b> = cười: <i>Die Kinder lachen viel.</i>
+D|Lena|Hast du ein Haustier, Minh?|Minh có nuôi thú cưng không?
+D|Minh|Nein, meine Wohnung ist zu klein. Und du?|Không, căn hộ của mình nhỏ quá. Còn bạn?
+D|Lena|Ich habe eine Katze. Sie heißt Mimi und schläft den ganzen Tag.|Mình có một con mèo. Nó tên Mimi và ngủ cả ngày.
+D|Minh|Herr Weber hat einen Hund. Der Hund ist sehr lustig!|Ông Weber có một con chó. Con chó vui tính lắm!
+D|Lena|Ich lache immer, wenn ich Videos von Tieren sehe!|Mình lúc nào cũng cười khi xem video về động vật!
+L|Con mèo của Lena tên là gì?|Mimi|Minh|Max
+R|Ai có một con chó?|Herr Weber|Lena|Minh
+S|Haben Sie ein Haustier?|Ja, ich habe eine Katze. / Nein, ich habe kein Haustier.|habe|Bạn có nuôi thú cưng không?
+W|Viết: “Tôi có một con mèo. Nó ngủ cả ngày.”|Ich habe eine Katze. Sie schläft den ganzen Tag.|eine katze, schlaeft
+G|art; pl
+
+=166|Đi dạo & chụp ảnh – Perfekt|Foto; fotografieren; schicken; wandern; spazieren gehen
+N|<b>Perfekt</b> (quá khứ khi nói): <b>haben / sein</b> (chia) + <b>phân từ II</b> ở cuối câu. Động từ có quy tắc: <b>ge</b>…<b>t</b>: machen → <b>gemacht</b>, schicken → <b>geschickt</b>. Động từ đuôi -ieren không có ge-: fotografieren → <b>fotografiert</b>.
+N|Đa số động từ dùng <b>haben</b>: <i>Ich <b>habe</b> viele Fotos <b>gemacht</b>.</i> Động từ chỉ di chuyển dùng <b>sein</b>: <i>Wir <b>sind</b> gewandert.</i> <i>Ich <b>bin</b> spazieren gegangen.</i>
+D|Anna|Was hast du am Wochenende gemacht?|Cuối tuần bạn làm gì?
+D|Minh|Ich bin mit Tom in den Bergen gewandert. Ich habe viel fotografiert.|Mình đi bộ đường dài trên núi với Tom. Mình chụp rất nhiều ảnh.
+D|Anna|Zeig mal die Fotos!|Cho mình xem ảnh nào!
+D|Minh|Ich habe sie dir gestern geschickt. Hast du sie nicht bekommen?|Mình gửi cho bạn hôm qua rồi. Bạn không nhận được à?
+D|Anna|Ach ja! Ich bin am Sonntag nur im Park spazieren gegangen …|À đúng rồi! Chủ nhật mình chỉ đi dạo trong công viên…
+L|Cuối tuần Minh làm gì?|wandern in den Bergen (đi bộ đường dài trên núi)|im Park spazieren gehen|fernsehen
+R|Chủ nhật Anna làm gì?|im Park spazieren gehen (đi dạo)|wandern|fotografieren
+S|Was haben Sie am Wochenende gemacht?|Ich habe … gemacht. / Ich bin … gegangen.|habe/bin|Cuối tuần bạn đã làm gì? (dùng Perfekt)
+W|Viết: “Tôi đã chụp nhiều ảnh.”|Ich habe viele Fotos gemacht.|habe, fotos gemacht
+G|pf:machen,schicken,fotografieren,wandern
+
+=167|Rủ đi chơi|Lust; treffen; mitkommen; wunderbar
+N|Rủ: <b>Hast du Lust</b>, ins Kino zu gehen? / <b>Hast du Lust auf</b> Pizza? — <i>Ja, gern! / Super! / Leider habe ich keine Zeit.</i>
+N|<b>treffen</b> = gặp: du <b>triffst</b>, er <b>trifft</b>. <i>Wir treffen uns um acht vor dem Kino.</i> <b>mitkommen</b> (tách) = đi cùng: <i>Kommst du <b>mit</b>?</i>
+D|Tom|Hast du Lust, heute Abend ins Kino zu gehen?|Tối nay bạn có hứng đi xem phim không?
+D|Minh|Ja, gern! Kommt Sara auch mit?|Có, thích lắm! Sara có đi cùng không?
+D|Tom|Nein, sie trifft heute ihre Schwester.|Không, hôm nay cô ấy gặp chị gái.
+D|Minh|Wann treffen wir uns?|Mấy giờ chúng ta gặp nhau?
+D|Tom|Um Viertel vor acht vor dem Kino. Danach essen wir Pizza.|Tám giờ kém mười lăm trước rạp phim. Sau đó chúng ta ăn pizza.
+D|Minh|Wunderbar!|Tuyệt vời!
+L|Sara có đi cùng không?|Không|Có|Có lẽ
+R|Họ gặp nhau lúc mấy giờ?|7:45|8:15|8:45
+S|Hast du Lust, am Samstag schwimmen zu gehen?|Ja, gern! / Leider habe ich keine Zeit.|gern/leider/lust|Bạn được rủ đi bơi vào thứ Bảy. Trả lời.
+W|Viết lời rủ: “Bạn có hứng đi ăn pizza không?”|Hast du Lust auf Pizza?|hast du lust, pizza
+G|conj:treffen; sep:mitkommen
+
+=168|Tiệc & lời mời|Party; feiern; Fest; einladen; Einladung
+N|<b>einladen</b> (tách) = mời: <i>Ich <b>lade</b> dich zu meiner Party <b>ein</b>.</i> (du lädst ein). <b>die Einladung</b> = lời mời / thiệp mời.
+N|<b>feiern</b> = tổ chức tiệc, ăn mừng: <i>Geburtstag feiern</i>. <b>die Party</b> = bữa tiệc, <b>das Fest</b> = lễ hội, tiệc lớn.
+N|Perfekt với haben: <i>Wir <b>haben</b> bis zwei Uhr <b>gefeiert</b>.</i> einladen → <b>eingeladen</b> (ge- nằm giữa tiền tố và gốc).
+D|Anna|Danke für die Einladung zu deiner Party, Lena!|Cảm ơn bạn đã mời mình đến tiệc, Lena!
+D|Lena|Gern! Ich habe alle Freunde eingeladen. Wir feiern meinen Geburtstag und meinen Abschluss.|Không có gì! Mình mời tất cả bạn bè. Chúng ta mừng sinh nhật và lễ tốt nghiệp của mình.
+D|Anna|Toll! Gibt es auch Musik?|Tuyệt! Có cả nhạc chứ?
+D|Lena|Natürlich! Und am Samstag gehen wir zusammen zum Stadtfest.|Tất nhiên! Và thứ Bảy chúng ta cùng đi lễ hội thành phố.
+D|Minh|Die Party gestern war super! Wir haben bis zwei Uhr gefeiert.|Bữa tiệc hôm qua thật tuyệt! Chúng mình tiệc tùng đến hai giờ sáng.
+L|Lena mừng gì?|Geburtstag und Abschluss (sinh nhật và tốt nghiệp)|nur Geburtstag|Weihnachten
+R|Bữa tiệc kéo dài đến mấy giờ?|2 giờ|12 giờ|3 giờ
+S|Wie feiern Sie Ihren Geburtstag?|Ich feiere mit Freunden.|feiere|Bạn tổ chức sinh nhật thế nào?
+W|Viết: “Tôi mời bạn đến tiệc của tôi.” (thân mật)|Ich lade dich zu meiner Party ein.|lade dich, ein
+G|sep:einladen; pf:feiern,einladen
+
+=169|Quà tặng & cảm xúc|mitbringen; schenken; bekommen; glücklich; traurig; froh
+N|<b>schenken</b> = tặng: <i>Ich schenke dir ein Buch.</i> <b>bekommen</b> = nhận được (⚠️ không phải “become”!): <i>Ich habe viele Geschenke bekommen.</i> <b>mitbringen</b> (tách) = mang theo: <i>Was soll ich mitbringen?</i>
+N|Cảm xúc: <b>glücklich</b> (hạnh phúc), <b>froh</b> (vui mừng), <b>traurig</b> (buồn): <i>Ich bin froh, dass du da bist.</i>
+D|Minh|Was soll ich zur Party mitbringen?|Mình nên mang gì đến bữa tiệc?
+D|Anna|Vielleicht einen Salat? Und was schenkst du Lena?|Có lẽ một món salad? Thế bạn tặng gì cho Lena?
+D|Minh|Einen bunten Schal. Ich hoffe, sie ist glücklich damit.|Một chiếc khăn sặc sỡ. Mình hy vọng cô ấy sẽ thích.
+D|Lena|Ich habe so viele Geschenke bekommen! Ich bin wirklich froh.|Mình nhận được bao nhiêu là quà! Mình thật sự vui.
+D|Minh|Aber warum siehst du jetzt so traurig aus?|Nhưng sao bây giờ trông bạn buồn thế?
+D|Lena|Weil die Party vorbei ist!|Vì bữa tiệc kết thúc rồi!
+L|Minh tặng Lena gì?|einen bunten Schal|einen Salat|ein Buch
+R|Tại sao Lena buồn?|Vì bữa tiệc đã kết thúc|Vì không có quà|Vì Minh không đến
+S|Was haben Sie zum letzten Geburtstag bekommen?|Ich habe ein Buch bekommen.|bekommen|Sinh nhật vừa rồi bạn nhận được gì?
+W|Viết: “Tôi tặng mẹ tôi một quyển sách.”|Ich schenke meiner Mutter ein Buch.|schenke, buch
+G|pf:schenken,bekommen,mitbringen; opp
+
+=170|Ôn tập chặng 17|*
+D|Einladung|Liebe Freunde, am Samstag, den zwanzigsten Juli, feiere ich meinen einunddreißigsten Geburtstag!|Các bạn thân mến, thứ Bảy ngày 20 tháng Bảy, mình tổ chức sinh nhật lần thứ 31!
+D|Einladung|Die Party beginnt um neunzehn Uhr im Garten. Es gibt Essen, Musik und Spiele.|Tiệc bắt đầu lúc 19 giờ trong vườn. Có đồ ăn, âm nhạc và trò chơi.
+D|Einladung|Bitte bringt etwas zu trinken mit. Habt ihr Lust? Antwortet bis Mittwoch! Tom|Mọi người mang chút đồ uống nhé. Các bạn có hứng không? Trả lời trước thứ Tư nhé! Tom
+D|E-Mail|Lieber Tom, vielen Dank für die Einladung! Leider kann ich nicht kommen: Am Samstag besuche ich meine Eltern. Viel Spaß! Anna|Tom thân mến, cảm ơn lời mời! Tiếc là mình không đến được: thứ Bảy mình về thăm bố mẹ. Chúc vui vẻ! Anna
+L|Tom tròn bao nhiêu tuổi?|31|30|21
+L|Tiệc bắt đầu lúc mấy giờ?|19 giờ|20 giờ|17 giờ
+R|Khách nên mang gì?|etwas zu trinken (đồ uống)|Essen|Spiele
+R|Tại sao Anna không đến được?|Cô ấy về thăm bố mẹ|Cô ấy bị ốm|Cô ấy phải làm việc
+S|Was haben Sie letztes Wochenende gemacht?|Ich habe … / Ich bin …|habe/bin|Cuối tuần trước bạn đã làm gì? (Perfekt)
+W|Trả lời thiệp mời của Tom: cảm ơn, bạn sẽ đến, bạn mang gì theo.|Lieber Tom, danke für die Einladung! Ich komme gern. Ich bringe Saft mit. Viele Grüße, …|danke, komme, bringe
