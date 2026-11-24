@@ -606,7 +606,7 @@ function finish(){
   root.innerHTML=`<div class="vtop"><button class="ibtn" data-t="kit" data-n="${k.n}" aria-label="Quay lại">‹</button><div class="vtitle">Tổng kết Kit ${k.n}</div><span></span></div>
     <div class="card center"><div class="big">${p==null?"✅":p>=90?"🏆":p>=70?"🎉":"💪"}</div><div class="score">${p==null?"Xong":p+"%"}</div><p>${esc(k.t)}</p>
       ${allDone&&k.n===180?"<p><b>Chúc mừng! Bạn đã đi hết lộ trình 180 kit đến trình độ A1. 🇩🇪</b></p>":allDone?"<p class='small'>Đã hoàn thành kit này.</p>":"<p class='small'>Còn bước chưa làm — mở lại kit để học tiếp.</p>"}</div>
-    <div class="card">${rows}${fluRow}</div>${wrongHtml()}
+    <div class="card">${rows}${fluRow}</div>${wrongHtml()}${videosHtml(k,"📺 Học xong rồi — luyện nghe thêm về chủ đề này")}
     <div class="row">${nx?`<button class="prim" data-t="kit" data-n="${nx.n}">Kit ${nx.n}: ${esc(nx.t)} →</button>`:""}<button class="ibtn" data-t="home">Trang Gia sư</button></div>`;
   RUN=null;window.scrollTo({top:0})}
 function wrongHtml(){
@@ -644,6 +644,13 @@ function home(){
         ${open===s.n?`<p class="small">${esc(s.g)}</p><div class="tkits">${ks.map(k=>{const kk=S.kits[k.n],b=kk&&kk.best?Object.values(kk.best).filter(v=>v>=0):[],avg=b.length?Math.round(b.reduce((a,c)=>a+c,0)/b.length):null;
           return `<button class="tkit${kk&&kk.done?" done":kk?" part":""}${k.n===cur.n?" cur":""}${k.rv?" rv":""}" data-t="kit" data-n="${k.n}"><span class="tkn">${k.n}</span><span class="tkt">${esc(k.t)}</span><span class="small">${kk&&kk.done?"✓ "+(avg!=null?avg+"%":""):k.rv===2?"📝 thi thử":k.rv?"🔁 ôn chặng":kk?"đang học":(k.w||[]).length+" từ"}</span></button>`}).join("")}</div>`:""}</div>`}).join("")}`;
 }
+/* 📺 Video luyện nghe theo chủ đề kit (YouTube) */
+function videosHtml(k,title){const D=window.KIT_VIDEOS;if(!D)return"";const ids=D.kit[k.n]||[];if(!ids.length)return"";
+  const q=D.q[k.s];
+  return `<div class="card"><div class="sgh" style="margin-top:0"><b>${title||"📺 Luyện nghe thêm"}</b><span class="small">video ngắn, dễ nghe cho người mới</span></div>
+    <div class="vids">${ids.map(i=>{const [id,t,ch,lv]=D.v[i];return `<a class="vid" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener">
+      <img loading="lazy" src="https://i.ytimg.com/vi/${id}/mqdefault.jpg" alt="" onerror="this.style.visibility='hidden'"><span class="vtx"><b>${esc(t)}</b><span class="small">${esc(ch)} · <span class="vlv${lv==="A1"?"":" up"}">${esc(lv)}</span></span></span></a>`}).join("")}</div>
+    <p class="small">Mẹo nghe: lần 1 nghe không phụ đề để đoán ý · lần 2 bật phụ đề tiếng Đức (CC) · lần 3 nghe và nói nhại theo từng câu.${q?` <a href="https://www.youtube.com/results?search_query=${encodeURIComponent(q)}" target="_blank" rel="noopener">🔎 Tìm thêm video chủ đề này</a>`:""}</p></div>`}
 function kitPage(n){
   RUN=null;stopPlay();const k=KITS[n-1],ks=S.kits[n]||{steps:{},best:{}},ws=k.rv===1?stageW(k.s):k.rv===2?[]:kitW(k);
   const steps=stepsOf(k),firstTodo=steps.find(s=>ks.steps[s]==null&&!(s==="on"&&!dueWords(n,1).length));
@@ -653,6 +660,7 @@ function kitPage(n){
       <div class="row"><button class="prim big2" data-t="start" data-n="${n}">${ks.done?"Học lại cả kit":firstTodo&&firstTodo!==steps[0]&&Object.keys(ks.steps).length?"Học tiếp từ "+STEP[firstTodo].t:"Bắt đầu"} →</button></div></div>
     <div class="card"><div class="sgh" style="margin-top:0"><b>Các bước</b><span class="small">bấm để làm riêng từng bước</span></div>
       ${steps.map(s=>`<button class="tstrow" data-t="only" data-s="${s}" data-n="${n}"><span>${STEP[s].i} ${STEP[s].t}</span><span class="small">${ks.best[s]!=null?(ks.best[s]>=0?"tốt nhất "+ks.best[s]+"%":""):s==="on"&&!dueWords(n,1).length?"chưa có từ để ôn":"chưa làm"}</span></button>`).join("")}</div>
+    ${videosHtml(k)}
     <div class="row"><button class="ibtn" data-t="kit" data-n="${Math.max(1,n-1)}" ${n===1?"disabled":""}>‹ Kit ${n-1||""}</button><button class="ibtn" data-t="kit" data-n="${Math.min(180,n+1)}" ${n===180?"disabled":""}>Kit ${n<180?n+1:""} ›</button></div>`;
   window.scrollTo({top:0})}
 function resume(n){const k=KITS[n-1],ks=S.kits[n]||{steps:{}},steps=stepsOf(k);
