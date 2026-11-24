@@ -290,13 +290,44 @@ function startQuick(){
 function nextStep(){
   stopPlay();RUN.si++;
   if(RUN.si>=RUN.steps.length)return finish();
-  const st=RUN.steps[RUN.si];RUN.items=buildStep(RUN.k,st);RUN.ii=0;RUN.res[st]={r:0,n:0};
+  const st=RUN.steps[RUN.si];RUN.items=buildStep(RUN.k,st);RUN.ii=0;RUN.res[st]={r:0,n:0};(RUN.log=RUN.log||{})[st]=[];
+  if(noSpeak()){RUN.items=RUN.items.filter(it=>!SPEAK_T.has(it.type));if(!RUN.items.some(it=>it.type!=="intro"&&it.type!=="card"&&it.type!=="read"))RUN.items=[]}   // 🔇 chế độ không nói: bỏ hẳn bài phải nói
   if(!RUN.items.length)return nextStep();
   renderItem()}
+/* ---------- Ghi lại từng câu để xem lại: câu hỏi · bạn trả lời · đáp án · giải thích ---------- */
+const SPEAK_T=new Set(["speak","passage","para","answer"]);
+const noSpeak=()=>!!(window.appCfg&&appCfg().nospeak==="on");
+const strip=h=>String(h??"").replace(/<br\s*\/?>/g," ").replace(/<[^>]+>/g," ").replace(/&nbsp;/g," ").replace(/&amp;/g,"&").replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&quot;/g,'"').replace(/\s+/g," ").trim();
+let lastPick=null;
+document.addEventListener("click",e=>{const b=e.target.closest("#tq [data-o],#tq .mco,#tq .gopt");if(b)lastPick={x:strip(b.innerHTML),t:Date.now()}},true);
+function qText(it){
+  if(it.type==="listenq"||it.type==="readq")return it.q[0];
+  if(it.type==="fill")return it.sent+(it.hint?" "+it.hint:"");
+  if(it.type==="dict")return "Nghe rồi chép lại";
+  if(it.type==="order")return "Sắp xếp thành câu: "+(it.l[2]||"");
+  if(it.type==="write")return it.wq[0];
+  if(it.type==="answer")return "Trả lời: "+it.s[0];
+  if(SPEAK_T.has(it.type))return "Nói: "+(it.text||(it.lines?it.lines.map(l=>l[1]).join(" "):"")||(it.items?it.items.map(u=>u.de).join(" "):"")||"đoạn văn");
+  const q=strip(String(it.q||"").replace(/<p class="qlabel">[\s\S]*?<\/p>/,""))||strip(it.q),heard=it.say&&it.say.text&&!it.w?` — nghe: “${it.say.text}”`:"";return (q||(it.w?V.term(it.w.w):""))+heard}
+function caText(it){
+  if(it.type==="mc"){const o=(it.opts||[]).find(o=>o.ok);return o?strip(o.h):strip(it.after)}
+  if(it.type==="listenq"||it.type==="readq")return it.q[1];
+  if(it.type==="fill")return (it.ans||[]).join(" … ");
+  if(it.type==="type")return it.ans&&it.ans.length?it.ans[0]:strip(it.after).replace(/^Đáp án:\s*/,"");
+  if(it.type==="dict")return it.text;
+  if(it.type==="order")return it.l[1];
+  if(it.type==="write")return it.wq[1];
+  return strip(it.after||"")}
+function uaText(){const box=document.getElementById("tq");if(box){const v=[...box.querySelectorAll("#tans,.blank,#tw")].map(e=>e.value.trim()).filter(Boolean);if(v.length)return v.join(" … ")}
+  return lastPick&&Date.now()-lastPick.t<4000?lastPick.x:""}
+function reviewHtml(st){const L=(RUN.log&&RUN.log[st])||[];if(!L.length)return"";const ok=L.filter(x=>x.good).length;
+  return `<details class="card trev"${ok<L.length?" open":""}><summary><b>📋 Xem lại từng câu</b> · đúng ${ok}/${L.length}</summary>${L.map((x,i)=>`<div class="trq ${x.good?"ok":"bad"}">
+    <div><b>${x.good?"✅":"❌"} ${i+1}.</b> ${esc(x.q)}</div>${x.ua&&(!x.good||x.ua!==x.ca)?`<div class="small">Bạn trả lời: ${x.good?esc(x.ua):`<s>${esc(x.ua)}</s>`}</div>`:""}
+    ${x.ca?`<div class="small">Đáp án: <b>${esc(x.ca)}</b></div>`:""}${x.why?`<div class="small twhy">💡 ${x.why}</div>`:""}</div>`).join("")}</details>`}
 function frame(){
   const st=RUN.steps[RUN.si];
   return `<div class="trun"><div class="vtop"><button class="ibtn" data-t="exit" aria-label="Thoát">✕</button><div class="vtitle">${esc(RUN.title)} · ${STEP[st].t}</div><span class="small center">${RUN.ii+1}/${RUN.items.length}</span></div>
-    ${RUN.steps.length>1?`<div class="tsteps">${RUN.steps.map((s,i)=>`<span class="tstep ${i<RUN.si?"done":i===RUN.si?"on":""}" title="${STEP[s].t}"><b>${STEP[s].i}</b><small>${STEP[s].t}</small></span>`).join("")}</div>`:""}
+    ${RUN.steps.length>1?`<div class="tsteps">${RUN.steps.map((s,i)=>`<button class="tstep ${i<RUN.si?"done":i===RUN.si?"on":""}" title="Chuyển đến phần ${STEP[s].t}" data-t="jump" data-i="${i}"><b>${STEP[s].i}</b><small>${STEP[s].t}</small></button>`).join("")}</div>`:""}
     <span class="pbar"><i style="width:${Math.round(100*RUN.ii/RUN.items.length)}%"></i></span>
     <div class="card q" id="tq"></div></div>`}
 let busyMic=false;
@@ -316,7 +347,8 @@ function bindNext(){const b=document.getElementById("tnext");if(b){b.onclick=nex
 function answer(it,good,fbHtml,opts={}){
   if(it.answered)return;it.answered=true;
   const st=RUN.steps[RUN.si],r=RUN.res[st];
-  if(good!==null){r.n++;if(good)r.r++;if(it.w)V.mark(it.w.s,it.w.w,good);if(!good)RUN.wrong.push(it);window.SFX&&(good?SFX.ok():SFX.bad())}
+  if(good!==null){r.n++;if(good)r.r++;if(it.w)V.mark(it.w.s,it.w.w,good);if(!good)RUN.wrong.push(it);window.SFX&&(good?SFX.ok():SFX.bad());
+    try{(RUN.log[st]=RUN.log[st]||[]).push({good,q:qText(it),ua:opts.direct?strip(opts.toast||""):uaText(),ca:opts.direct?"":caText(it),why:it.why||""})}catch(e){}}
   if(opts.direct){   // kết quả chi tiết đã hiện sẵn (bài nói) → báo nhanh Đúng/Chưa đạt rồi tự sang câu tiếp, khỏi bấm Tiếp lần nữa
     document.querySelectorAll("#tq button").forEach(b=>b.disabled=true);
     const t=document.createElement("div");t.className="ttoast "+(good?"good":"bad");
@@ -327,6 +359,8 @@ function answer(it,good,fbHtml,opts={}){
   box.querySelectorAll("input,textarea,.mco,.gopt,.tile").forEach(e=>{if(!e.closest(".fb"))e.disabled=true});
   const fb=document.createElement("div");fb.className="fb "+(good===null?"":good?"good":"bad");
   fb.innerHTML=(good===null?"":`<div class="fbh">${good?pick(["✅ Chính xác!","✅ Đúng rồi!","✅ Giỏi lắm!"]):"❌ Chưa đúng"}</div>`)+(fbHtml?`<div class="tfbtxt">${fbHtml}</div>`:"")+
+    (good===false&&!opts.direct&&caText(it)&&!/Đáp án|Câu đúng|Bạn vừa nghe/.test(fbHtml||"")?`<div class="tfbtxt">Đáp án đúng: <b>${esc(caText(it))}</b></div>`:"")+
+    (it.why?`<div class="twhy">💡 ${it.why}</div>`:"")+
     (it.w&&opts.info!==false?V.infoBlock(it.w.w,{set:it.w.s}):"")+
     (good===false&&opts.override?`<div class="row"><button class="ibtn mini" id="tover">Tôi trả lời đúng (gõ nhầm / máy chấm sai)</button></div>`:"")+nextBtn();
   box.appendChild(fb);
@@ -600,7 +634,9 @@ function stepDone(){
   root.innerHTML=`<div class="trun"><div class="vtop"><button class="ibtn" data-t="exit" aria-label="Thoát">✕</button><div class="vtitle">${esc(RUN.title)}</div><span></span></div>
     <div class="card center"><div class="big">${STEP[st].i}</div><p>Xong phần <b>${STEP[st].t}</b>${p!=null?`: đúng <b>${r.r}/${r.n}</b> (${p}%)`:""}.</p>
     <p class="small">${p==null?"":p>=90?pick(["Xuất sắc! 🎉","Tuyệt vời!","Rất tốt, tiếp tục nhé!"]):p>=70?pick(["Khá lắm!","Tốt! Còn vài lỗi nhỏ.","Ổn rồi, cố thêm chút nữa!"]):"Không sao — những câu sai sẽ được ôn lại ở các kit sau."}</p>
-    <div class="row">${last||RUN.only?`<button class="prim" data-t="fin">Xem tổng kết</button>`:`<button class="prim" data-t="nstep">Tiếp: ${STEP[RUN.steps[RUN.si+1]].i} ${STEP[RUN.steps[RUN.si+1]].t} →</button>`}</div></div></div>`;
+    <div class="row">${last||RUN.only?`<button class="prim" data-t="fin">Xem tổng kết</button>`:`<button class="prim" data-t="nstep">Tiếp: ${STEP[RUN.steps[RUN.si+1]].i} ${STEP[RUN.steps[RUN.si+1]].t} →</button>`}</div>
+    ${RUN.steps.length>1?`<div class="tjump"><div class="small">Hoặc chuyển nhanh đến phần khác của bài này:</div><div class="row">${RUN.steps.map((s,i)=>i===RUN.si?"":`<button class="chip" data-t="jump" data-i="${i}">${STEP[s].i} ${STEP[s].t}${RUN.res[s]&&RUN.res[s].n?` · ${pct(RUN.res[s].r,RUN.res[s].n)}%`:RUN.res[s]?" ✓":""}</button>`).join("")}</div></div>`:""}</div>
+    ${reviewHtml(st)}</div>`;
   window.scrollTo({top:0})}
 function finish(){
   stopPlay();if(RUN.course){const run=RUN;RUN=null;run.course.onFinish(run);window.scrollTo({top:0});return}
@@ -701,13 +737,14 @@ root.addEventListener("click",e=>{
   if(a==="quick"){startQuick();return}
   if(a==="dict"){window.appSetView&&appSetView("dict");return}
   if(a==="nstep"){nextStep();return}
+  if(a==="jump"&&RUN&&RUN.steps){stopPlay();if(busyMic&&window.appScoreStop)appScoreStop();RUN.si=+t.dataset.i-1;nextStep();return}
   if(a==="fin"){finish();return}
 });
 
 window.tutorHome=()=>{if(!RUN)home()};
 window.tutorOpenKit=n=>{window.appSetView&&appSetView("tutor");kitPage(n)};
 /* Cho Lộ trình A2 (course.js) dùng chung bộ chạy bài và các dạng bài */
-window.TutorAPI={STEP,R,answer,nextItem,mcWord,listenWord,typeWord,dictWord,fillItem,cmp,timeDe,playLines,stopPlay,speak,home,
+window.TutorAPI={STEP,R,answer,nextItem,noSpeak,mcWord,listenWord,typeWord,dictWord,fillItem,cmp,timeDe,playLines,stopPlay,speak,home,
   start(meta){stopPlay();RUN={course:meta,k:{n:0,s:1,course:true},steps:meta.steps,si:-1,res:{},wrong:[],only:meta.steps.length===1,title:meta.title};nextStep()},
   running:()=>!!RUN,run:()=>RUN};
 home();

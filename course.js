@@ -62,6 +62,51 @@ const sessWords=s=>{if(!s._w){s._w=s.words.map(r=>{const x=word(r);if(!x)console
 const monthWords=()=>SESS.flatMap(sessWords);
 const weekSess=wk=>SESS.filter(s=>s.wk===wk&&s.kind==="lesson");
 
+
+/* ---------- Giải thích tự động cho bài tập (dựa vào chủ điểm ngữ pháp của câu) ---------- */
+const VC=()=>window.VERB_CONJ||{};
+function conjLine(inf){const c=VC()[inf];if(!c||!c.p)return"";const f=c.p.split(";").map(x=>x.split("|")[0].replace(/^\*/,""));const pr=["ich","du","er/sie","wir","ihr","sie/Sie"];
+  return `Chia <b>${inf}</b>: `+f.map((x,i)=>`${pr[i]} <b>${esc(x)}</b>`).join(" · ")}
+function infFromStem(stem){stem=String(stem||"").toLowerCase();for(const e of ["en","n","eln","ern"]){if(VC()[stem+e])return stem+e}return""}
+function autoWhy(type,P,it){
+  const TW={tmi:"Giờ nói thường: <b>nach</b> = hơn, <b>vor</b> = kém, <b>Viertel</b> = 15 phút, <b>halb</b> + giờ <b>sau</b> (halb neun = 8:30, không phải 9:30).",
+    tmw:"Giờ nói thường: <b>nach</b> = hơn, <b>vor</b> = kém, <b>Viertel</b> = 15 phút, <b>halb</b> + giờ <b>sau</b> (halb neun = 8:30).",
+    tmo:"Giờ chính thức: giờ (0–24) + <b>Uhr</b> + phút: 14:30 = vierzehn Uhr dreißig; 8:05 = acht Uhr fünf.",
+    pr:"Đọc giá: số euro + <b>Euro</b> + số cent, không nói \"Cent\" ở giữa: 3,49 € = drei Euro neunundvierzig; 0,80 € = achtzig Cent.",
+    nw:"Số 13–19: số + zehn (sechzehn, siebzehn bỏ bớt chữ). Số 21–99 đọc <b>hàng đơn vị trước</b>: đơn vị + und + chục, viết liền: 24 = vierundzwanzig. 30 = dreißig (ß).",
+    snd:"Nguyên âm <b>dài</b> trước 1 phụ âm, trước h hoặc viết đôi (Tag, sehr, Boot); <b>ngắn</b> trước 2 phụ âm (Nacht, bitte). ü: môi tròn như u, lưỡi như i · ö: môi tròn như o, lưỡi như e · ei = ai · ie = i dài.",
+    ord:"Câu kể: động từ chia ở <b>vị trí 2</b>. Câu hỏi Có/Không: động từ đứng đầu. Có động từ khuyết thiếu, Perfekt hay động từ tách thì phần còn lại (nguyên mẫu, phân từ, tiền tố) ở <b>cuối câu</b>."};
+  TW.nl=TW.nmc=TW.calc=TW.nw;if(TW[type])return TW[type];
+  const sent=P[0]||"",hint=(P.join(" ").match(/\(([^)]+)\)/)||[])[1]||"",inf=hint.split(/[\s–,-]/)[0];
+  if(type==="art"){const [n,a]=P,g={der:"giống đực",die:"giống cái",das:"giống trung"}[a];let tip="";
+    if(/(chen|lein)$/.test(n))tip=" Đuôi -chen/-lein luôn là das.";else if(/(ung|heit|keit|ion|schaft)$/.test(n))tip=" Đuôi -ung/-heit/-keit/-ion luôn là die.";else if(/e$/.test(n)&&a==="die")tip=" Nhiều danh từ đuôi -e là die.";
+    return `<b>${a} ${esc(n)}</b> là ${g}.${tip} Học danh từ luôn kèm mạo từ.`}
+  if(inf&&VC()[inf])return conjLine(inf);
+  if(type==="fill"){const m=sent.match(/([A-Za-zÄÖÜäöüß]+)___/);if(m){const i2=infFromStem(m[1]);if(i2)return conjLine(i2)}}
+  const ans=type==="fmc"||type==="mc"||type==="fill"?String(P[1]||""):"",A=" "+ans.toLowerCase()+" ",O=type==="fmc"?" "+P.slice(1).join(" ").toLowerCase()+" ":A;
+  const prepGap=/\b(mit|zu|bei|neben|unter|auf|in|an|von|aus|nach)\s+___/i.test(sent);
+  if(/\b(dem|im|zum|zur|beim)\b/.test(A)||(prepGap&&/\b(der|dem|den)\b/.test(A)))
+    return "Sau <b>in, auf, an, neben, unter</b> (ở đâu?) và <b>mit, zu, bei, von, aus, nach</b> dùng <b>cách 3</b>: der → dem, die → der, das → dem, số nhiều → den. Rút gọn: in dem = im, zu dem = zum, zu der = zur, bei dem = beim.";
+  if(/\b(einen|keinen|den|meinen|deinen)\b/.test(A))
+    return "Danh từ <b>giống đực làm tân ngữ</b> (cách 4 — sau haben, brauchen, suchen, kaufen, möchten, nehmen, es gibt…): ein → <b>einen</b>, kein → <b>keinen</b>, der → <b>den</b>. Giống cái, trung và số nhiều giữ nguyên.";
+  if(/\b(kein|keine|nicht)\b/.test(O)&&/\b(kein|keine|nicht)\b/.test(A))
+    return "<b>kein/keine</b> phủ định <b>danh từ</b> (thay cho ein/eine, hoặc danh từ không mạo từ). <b>nicht</b> phủ định động từ, tính từ, tên riêng.";
+  if(/ (aus|in) /.test(O)&&/^ ?(aus|in)( |…)/.test(A))return "Woher? (từ đâu đến) → <b>aus</b>: Ich komme aus Vietnam. · Wo? (đang ở đâu) → <b>in</b>: Ich wohne in Berlin.";
+  if(/^ (am|um|im|von|bis|ab) /.test(A))return "<b>am</b> + thứ/buổi/ngày · <b>um</b> + giờ · <b>im</b> + tháng/mùa · <b>von … bis …</b> = từ … đến … · <b>ab</b> = từ … trở đi.";
+  if(/^ (wer|was|wo|woher|wohin|wie|wann|warum|wie spät|wie viel) $/.test(A))return "Từ hỏi: <b>wer</b> ai · <b>was</b> gì · <b>wo</b> ở đâu · <b>woher</b> từ đâu · <b>wohin</b> đi đâu · <b>wie</b> thế nào · <b>wann</b> khi nào · <b>warum</b> tại sao.";
+  if(/(mein|dein|sein|ihr|unser)/.test(O)&&/\b(mein|meine|dein|deine|sein|seine|ihr|ihre|unser|unsere)\b/.test(A))
+    return "Sở hữu: ich → mein, du → dein, er → sein, sie → ihr, wir → unser, Sie → Ihr. Thêm <b>-e</b> khi danh từ giống cái hoặc số nhiều (meine Schwester, meine Eltern); giống đực/trung giữ nguyên (mein Bruder, mein Kind).";
+  if(/ … (auf|ein|an|fern|mit|ab|aus|um|zu|weg|los) /.test(A))return "<b>Động từ tách</b>: phần chia đứng vị trí 2, tiền tố (auf, ein, an, fern, mit, ab…) đứng <b>cuối câu</b>.";
+  if(/\b(ge\w+t|\w+iert|besucht)\b/.test(A))return "<b>Perfekt</b>: haben (vị trí 2) + phân từ II (cuối câu). Có quy tắc: ge + gốc + t; động từ -ieren và be-/ver- không thêm ge-; động từ tách: ein-<b>ge</b>-kauft.";
+  if(/\b(kann|kannst|können|könnt|muss|musst|müssen|müsst|will|willst|wollen|wollt|möchte|möchtest|möchten|möchtet)\b/.test(A))
+    return "Động từ khuyết thiếu: ich/er <b>kann · muss · will · möchte</b> (không đuôi), du kannst · musst · willst · möchtest; động từ chính ở dạng nguyên mẫu, <b>cuối câu</b>.";
+  if(/\b(bin|bist|ist|sind|seid)\b/.test(A))return conjLine("sein")||"sein: ich bin, du bist, er ist, wir sind, ihr seid, sie/Sie sind.";
+  if(/\b(habe|hast|hat|haben|habt)\b/.test(A))return conjLine("haben")||"haben: ich habe, du hast, er hat, wir haben, ihr habt, sie/Sie haben.";
+  if(/ (er|sie|es) /.test(O)&&/^ (er|sie|es) $/.test(A))return "Thay danh từ bằng đại từ theo <b>giống của từ</b>: der → er, die → sie, das → es — kể cả đồ vật.";
+  if(/^ (kostet|kosten) $/.test(A))return "Một vật: Was <b>kostet</b> …? · Nhiều vật (số nhiều): Was <b>kosten</b> …?";
+  if(/^ (gern|lieber|am liebsten) $/.test(A))return "<b>gern</b> = thích · <b>lieber</b> = thích hơn · <b>am liebsten</b> = thích nhất; đứng sau động từ: Ich esse gern Reis.";
+  if(/^ (zu|sehr|ziemlich) /.test(A))return "<b>zu</b> + tính từ = quá (mức không chấp nhận): zu teuer · <b>sehr</b> = rất · <b>ziemlich</b> = khá.";
+  return ""}
 /* ---------- Dạng bài từ một dòng dữ liệu ---------- */
 const LETTER={A:"a",B:"be",C:"tse",D:"de",E:"e",F:"eff",G:"ge",H:"ha",I:"i",J:"jott",K:"ka",L:"ell",M:"emm",N:"enn",O:"o",P:"pe",Q:"ku",R:"err",S:"ess",T:"te",U:"u",V:"fau",W:"weh",X:"ix",Y:"üpsilon",Z:"zett"};
 const numW=n=>{const w=DC().numDe(n);return n===1?"eins":w};
@@ -71,7 +116,7 @@ const rangeOf=v=>{const [a,b]=v.split("-").map(Number);return[a,b??a]};
 const optsOf=(c,ws,fixed)=>{const o=[c,...ws];return(fixed?o:shuffle(o)).map(x=>({h:esc(x),ok:x===c}))};
 function exItem(line,src){
   const ci=line.indexOf(":"),type=line.slice(0,ci).trim(),P=line.slice(ci+1).split(/\s*\|\s*/).map(x=>x.trim());
-  const it=mk(type,P);if(it)it.src=src;return it}
+  const it=mk(type,P);if(it){it.src=src;if(!it.why)try{it.why=autoWhy(type,P,it)}catch(e){}}return it}
 function mk(type,P){
   switch(type){
     case"mc":{const [q,c,...ws]=P;return{type:"mc",q:`<p class="qlabel">Chọn đáp án đúng</p><div class="tsent">${q}</div>`,opts:optsOf(c,ws),after:`Đáp án: <b>${esc(c)}</b>`,sayAfter:isDe(c)?c:undefined}}
@@ -253,7 +298,7 @@ function finishSess(s,run,extra){
   const wrongN=run.wrong.filter(it=>it.src).length;
   root.innerHTML=`<div class="vtop"><button class="ibtn" data-c="sess" data-id="${s.id}" aria-label="Quay lại">‹</button><div class="vtitle">Tổng kết ${esc(s.kind==="lesson"?"buổi "+s.id:s.title)}</div><span></span></div>
     <div class="card center"><div class="big">${!gated?"✅":pass?"🎉":"💪"}</div><div class="score">${gated&&p!=null?p+"%":"Xong"}</div><p><b>${esc(s.title)}</b></p>
-      ${pass?`<p class="cpass">✅ Đã qua buổi.${s.kind==="test"?" Chúc mừng bạn đã hoàn thành tháng ${s.m}! 🇩🇪":""}</p>`:`<p class="cfail">Chưa qua buổi — cần đủ cả hai điều kiện dưới đây.</p>`}
+      ${pass?`<p class="cpass">✅ Đã qua buổi.${s.kind==="test"?" Chúc mừng bạn đã hoàn thành tháng ${s.m}! 🇩🇪":""}</p>`:`<p class="cfail">Chưa qua buổi — ${noSay()||!s.t.length?"cần đạt điều kiện dưới đây":"cần đủ cả hai điều kiện dưới đây"}.</p>`}
       ${condHtml(s)}
       ${cs.flu?`<p class="small">🎯 Nói cả đoạn: tốt nhất ${cs.flu}%${cs.star?" · ⭐ thuộc lòng":""}</p>`:""}</div>
     <div class="card">${rows}</div>
@@ -267,10 +312,11 @@ function nicoHtml(s,title){const eps=window.NICO?s.nico.filter(n=>NICO.e.some(e=
   return `<div class="card"><div class="sgh" style="margin-top:0"><b>${title}</b><span class="small">Học với Nico</span></div><div class="row cnico">${eps.map(n=>`<button class="ibtn" data-t="nico" data-n="${n}">🎬 Nico tập ${n}</button>`).join("")}</div>
     <p class="small">Lần 1 xem không phụ đề · lần 2 bật phụ đề tiếng Đức · lần 3 nói nhại theo từng câu.</p></div>`}
 
-const sayDone=s=>!s.t.length||!!(C.s[s.id]&&C.s[s.id].say&&C.s[s.id].say.all);
+const noSay=()=>!!(T()&&T().noSpeak&&T().noSpeak());
+const sayDone=s=>!s.t.length||noSay()||!!(C.s[s.id]&&C.s[s.id].say&&C.s[s.id].say.all);
 function condHtml(s){const c=C.s[s.id]||{},g=gateOf(s),sy=c.say,tOk=!g.st.length||(c.best??-1)>=g.min,sOk=sayDone(s);
   return `<div class="ccond">${g.st.length?`<div class="${tOk?"ok":""}">${tOk?"✅":"⬜"} ${s.kind==="lesson"?"Kiểm tra cuối buổi":s.kind==="review"?"Kiểm tra tuần":s.kind==="exam"?"Các phần thi":"Bài kiểm tra 40 câu"} ≥ ${g.min}%${c.best!=null&&c.best>=0?` · tốt nhất ${c.best}%`:" · chưa làm"}</div>`:""}
-    ${s.t.length?`<div class="${sOk?"ok":""}">${sOk?"✅":"⬜"} Nói đoạn đầu ra: mọi câu ≥ ${window.ParaApp?ParaApp.pass():75}%${sy?` · đã đạt ${sy.pass}/${sy.n} câu`:" · chưa làm"}</div>`:""}</div>`}
+    ${s.t.length&&noSay()?`<div class="small">🔇 Đang ở chế độ không nói — bỏ qua phần nói, chỉ tính các phần khác.</div>`:s.t.length?`<div class="${sOk?"ok":""}">${sOk?"✅":"⬜"} Nói đoạn đầu ra: mọi câu ≥ ${window.ParaApp?ParaApp.pass():75}%${sy?` · đã đạt ${sy.pass}/${sy.n} câu`:" · chưa làm"}</div>`:""}</div>`}
 /* ---------- Trang lộ trình & trang buổi ---------- */
 const stOf=s=>{const c=C.s[s.id];return c&&c.done?"done":c&&c.t?"part":""};
 const curSess=()=>SESS.find(s=>!(C.s[s.id]&&C.s[s.id].done))||SESS[SESS.length-1];
@@ -282,6 +328,8 @@ function home(){
     <div class="vhero thero"><div><div class="big">${done}<small>/${SESS.length}</small></div><div class="small">buổi đã qua</div></div>
       <div class="vhero-r"><span class="small">Tháng ${cur.m} · Tuần ${cur.wk}</span><b>${esc(label(cur))}</b><button class="prim" data-c="sess" data-id="${cur.id}">${C.s[cur.id]?"Học tiếp":"Bắt đầu"} →</button></div></div>
     ${window.NicoApp?`<div class="card tnico"><div class="sgh" style="margin-top:0"><b>🎬 Học với Nico</b><span class="small">${window.NICO?NICO.e.length+" tập · ":""}Nicos Weg A1</span></div><p class="small">Xem phim theo tập: mẫu câu, từ vựng, luyện nói có chấm điểm.</p><div class="row"><button class="ibtn" data-t="nico">Mở danh sách tập →</button></div></div>`:""}
+    <div class="card cmode"><b>Chế độ học</b><div class="row"><button class="chip" aria-pressed="${!noSay()}" data-c="speak" data-v="">🎤 Có phần nói</button><button class="chip" aria-pressed="${noSay()}" data-c="speak" data-v="on">🔇 Không nói</button></div>
+      <p class="small">${noSay()?"Các bài phải nói được lược đi; buổi học chỉ tính kiểm tra và các phần nghe, đọc, viết.":"Có đủ các bài nói (chấm phát âm). Bật 🔇 khi đang ở nơi không tiện nói."}</p></div>
     <div class="card"><div class="sgh" style="margin-top:0"><b>📅 Mỗi ngày khoảng 1,5 tiếng</b><span class="small">${book?`📒 Sổ lỗi sai: ${book} câu`:""}</span></div>
       <div class="cday"><div><b>Thứ Hai – Năm</b><span>55′ buổi học mới · 15′ ôn từ & câu sai · 20′ nghe Nico</span></div><div><b>Thứ Sáu</b><span>60′ buổi ôn tuần / kiểm tra</span></div><div><b>Thứ Bảy</b><span>30′ làm lại Sổ lỗi sai, nói lại đoạn đầu ra</span></div><div><b>Chủ nhật</b><span>15′ ôn nhẹ hoặc nghỉ</span></div></div>
       <p class="small">Qua buổi khi kiểm tra cuối buổi ≥ 80%; qua tuần khi kiểm tra tuần ≥ 75% và nói được đoạn đầu ra.</p>
@@ -322,6 +370,7 @@ function redoWrong(){const L=finishSess.last;if(!L||!L.wrong.length)return home(
 function onClick(e){const b=e.target.closest("[data-c]");if(!b||!root||!root.contains(b))return;
   const a=b.dataset.c,s=BY[b.dataset.id];
   if(a==="home")return home();
+  if(a==="speak"){window.appSetCfg&&appSetCfg("nospeak",b.dataset.v);return home()}
   if(a==="sess")return sessPage(b.dataset.id);
   if(a==="start"&&s)return startSess(s);
   if(a==="only"&&s)return startSess(s,[b.dataset.s]);
