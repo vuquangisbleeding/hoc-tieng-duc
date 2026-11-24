@@ -246,7 +246,7 @@ Sara|Sara – bạn cùng lớp, người Thuỵ Sĩ|name
 Lukas|Lukas – anh trai của Anna|name
 Schmidt|cô Schmidt – giáo viên tiếng Đức|name
 Weber|ông Weber – chủ nhà, hàng xóm|name
-Nguyen|Nguyễn – họ của Felix|name
+Neumann|Neumann – họ của Felix|name
 Hung|Hùng – chú của Felix|name
 Max|Max – tên người|name
 Mia|Mia – tên người|name

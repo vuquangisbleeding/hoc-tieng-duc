@@ -5,9 +5,9 @@ N|Đại từ: <b>ich</b> = tôi, <b>du</b> = bạn (thân mật), <b>Sie</b> = 
 N|Động từ đổi đuôi theo người nói: <b>ich heiß<u>e</u></b>, <b>du heiß<u>t</u></b>, <b>Sie heiß<u>en</u></b>. (Gốc heiß- kết thúc bằng ß nên với du chỉ thêm -t.)
 N|Hỏi tên: <b>Wie heißen Sie?</b> / <b>Wie heißt du?</b> / <b>Wie ist Ihr Name?</b> — Trả lời: <b>Ich heiße …</b> / <b>Mein Name ist …</b>
 D|Frau Schmidt|Guten Tag! Ich heiße Schmidt. Wie heißen Sie?|Xin chào! Tôi tên là Schmidt. Anh tên là gì?
-D|Felix|Ich heiße Felix Nguyen.|Tôi tên là Felix Nguyễn.
+D|Felix|Ich heiße Felix Neumann.|Tôi tên là Felix Neumann.
 D|Frau Schmidt|Wie bitte? Wie ist Ihr Name?|Gì cơ? Tên anh là gì?
-D|Felix|Mein Name ist Felix Nguyen.|Tên tôi là Felix Nguyễn.
+D|Felix|Mein Name ist Felix Neumann.|Tên tôi là Felix Neumann.
 D|Tom|Hallo! Ich bin Tom. Und wie heißt du?|Chào! Mình là Tom. Còn bạn tên gì?
 D|Felix|Ich heiße Felix.|Mình tên Felix.
 L|Cô giáo tên là gì?|Schmidt|Felix|Tom
@@ -67,15 +67,15 @@ G|conj:sein
 =15|Chúng tôi & các bạn|wir; ihr@a1-dai-tu; Vorname; Familienname; was
 N|Bảng đại từ: <b>ich, du, er/sie/es, wir, ihr, sie/Sie</b>. Đuôi động từ: ich wohn<b>e</b>, du wohn<b>st</b>, er wohn<b>t</b>, wir wohn<b>en</b>, ihr wohn<b>t</b>, sie/Sie wohn<b>en</b>.
 N|<b>ihr</b> = các bạn (nhiều người, thân mật). <b>wir</b> = chúng tôi / chúng ta.
-N|<b>der Vorname</b> = tên (Felix), <b>der Familienname</b> = họ (Nguyen). Người Đức nói tên trước, họ sau. <b>Was ist Ihr Vorname?</b>
+N|<b>der Vorname</b> = tên (Felix), <b>der Familienname</b> = họ (Neumann). Người Đức nói tên trước, họ sau. <b>Was ist Ihr Vorname?</b>
 D|Frau Schmidt|Tom, Sara – woher kommt ihr?|Tom, Sara – các bạn đến từ đâu?
 D|Sara|Wir kommen aus Österreich und aus der Schweiz.|Chúng em đến từ Áo và Thuỵ Sĩ.
 D|Frau Schmidt|Und Sie, Felix? Was ist Ihr Familienname?|Còn anh, Felix? Họ của anh là gì?
-D|Felix|Mein Familienname ist Nguyen.|Họ của tôi là Nguyễn.
+D|Felix|Mein Familienname ist Neumann.|Họ của tôi là Neumann.
 D|Frau Schmidt|Und Felix ist Ihr Vorname?|Và Felix là tên của anh?
 D|Felix|Ja, richtig.|Vâng, đúng vậy.
 L|Tom và Sara nói gì?|Wir kommen aus Österreich und aus der Schweiz.|Wir wohnen in Berlin.|Wir kommen aus Deutschland.
-R|Họ của Felix là gì?|Nguyen|Felix|Schmidt
+R|Họ của Felix là gì?|Neumann|Felix|Schmidt
 S|Was ist Ihr Vorname?|Mein Vorname ist …|vorname ist/heisse|Hãy nói tên (không phải họ) của bạn.
 W|Viết câu hỏi cho 2 người bạn: “Các bạn sống ở đâu?”|Wo wohnt ihr?|wo wohnt ihr
 G|conj:wohnen,kommen
@@ -145,7 +145,7 @@ F|Kommst du aus Österreich ___ aus der Schweiz?|oder|hay|aber|und
 F|Ich spreche Englisch ___ Deutsch.|und|và|oder|aber
 
 =20|Ôn tập chặng 2|*
-D|Felix|Hallo! Ich heiße Felix Nguyen. Mein Vorname ist Felix, mein Familienname ist Nguyen.|Xin chào! Tôi tên là Felix Nguyễn. Tên tôi là Felix, họ tôi là Nguyễn.
+D|Felix|Hallo! Ich heiße Felix Neumann. Mein Vorname ist Felix, mein Familienname ist Neumann.|Xin chào! Tôi tên là Felix Neumann. Tên tôi là Felix, họ tôi là Neumann.
 D|Felix|Ich komme aus Vietnam, aus Hanoi. Jetzt wohne ich in Berlin.|Tôi đến từ Việt Nam, từ Hà Nội. Bây giờ tôi sống ở Berlin.
 D|Felix|Ich spreche Vietnamesisch und Englisch. Ich lerne Deutsch im Kurs.|Tôi nói tiếng Việt và tiếng Anh. Tôi học tiếng Đức ở lớp.
 D|Felix|Meine Lehrerin heißt Frau Schmidt. Sie kommt aus Hamburg.|Cô giáo của tôi tên là Schmidt. Cô ấy đến từ Hamburg.

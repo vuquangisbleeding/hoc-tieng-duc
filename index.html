@@ -852,7 +852,7 @@ function ipaMap(){if(IPAM)return IPAM;IPAM=new Map();
     for(const fi of [...String(c.p||"").split(";"),c.prt,c.pf]){if(!fi)continue;const [f,i]=String(fi).replace(/^\*/,"").split("|");if(!f||!i)continue;put(f,i);
       const fw=f.trim().split(/\s+/),iw=i.trim().split(/\s+/);if(fw.length>1&&fw.length===iw.length)fw.forEach((w,k)=>put(w,iw[k]))}}}catch(e){}
   const NAMES={Berlin:"bɛʁˈliːn",Deutschland:"ˈdɔɪ̯tʃlant",Vietnam:"viɛtˈnam",München:"ˈmʏnçn̩",Hamburg:"ˈhambʊʁk",Köln:"kœln",Wien:"viːn",
-    Anna:"ˈana",Lena:"ˈleːna",Tom:"tɔm",Sara:"ˈzaːʁa",Lukas:"ˈluːkas",Schmidt:"ʃmɪt",Weber:"ˈveːbɐ",Felix:"ˈfeːlɪks",Mia:"ˈmiːa",Lan:"lan",Herr:"hɛʁ",Frau:"fʁaʊ̯"};
+    Anna:"ˈana",Lena:"ˈleːna",Tom:"tɔm",Sara:"ˈzaːʁa",Lukas:"ˈluːkas",Schmidt:"ʃmɪt",Weber:"ˈveːbɐ",Felix:"ˈfeːlɪks",Neumann:"ˈnɔɪ̯man",Mia:"ˈmiːa",Lan:"lan",Herr:"hɛʁ",Frau:"fʁaʊ̯"};
   for(const k in NAMES)put(k,NAMES[k]);
   try{const CI=window.COURSE_IPA||{};for(const k in CI)put(k,CI[k])}catch(e){}
   // lượt 2: tách cụm thành từ lẻ (chỉ thêm từ còn thiếu)
@@ -871,7 +871,7 @@ function spellWords(){if(SPW)return SPW;SPW=new Map();
   try{(window.APP_WORDS||[]).concat(window.APP_SENTS||[]).forEach(x=>x&&addAll(x.w))}catch(e){}
   try{const C=window.VERB_CONJ||{};for(const v in C){add(v);const c=C[v];for(const fi of [...String(c.p||"").split(";"),c.prt,c.pf])if(fi)addAll(String(fi).replace(/^\*/,"").split("|")[0])}}catch(e){}
   try{for(const k in (window.COURSE_IPA||{}))addAll(k);for(const s of (window.CourseApp?CourseApp.SESS:[]))for(const l of [...s.t,...s.i,...s.l,...s.r])addAll(l[1])}catch(e){}
-  const NM=["Felix","Lena","Anna","Tom","Lukas","Mia","Sara","Schmidt","Weber","Berlin","Hamburg","München","Wien","Hanoi","Vietnam","Deutschland","Nguyen","Lan","Nam","Hoa","Bao","Vy","Tuan","Sie","Ihr","Ihnen"];NM.forEach(add);NM.forEach(noun);
+  const NM=["Felix","Lena","Anna","Tom","Lukas","Mia","Sara","Schmidt","Weber","Berlin","Hamburg","München","Wien","Hanoi","Vietnam","Deutschland","Neumann","Lan","Nam","Hoa","Bao","Vy","Tuan","Sie","Ihr","Ihnen"];NM.forEach(add);NM.forEach(noun);
   try{for(const s of (window.CourseApp?CourseApp.SESS:[]))for(const x of CourseApp.sessWords(s))if(x.w.t==="n"||x.w.a)noun(x.w.w)}catch(e){}
   return SPW}
 function levD(a,b){if(Math.abs(a.length-b.length)>2)return 9;const d=Array.from({length:a.length+1},(_,i)=>[i]);for(let j=1;j<=b.length;j++)d[0][j]=j;
@@ -1356,20 +1356,20 @@ if(!window.isSecureContext)$("err").textContent="Cần mở qua link https:// th
 }
 </script>
 <script src="vocab-data.js?v=a2"></script>
-<script src="vocab-a1.js?v=3"></script>
-<script src="tutor-data.js?v=2"></script>
+<script src="vocab-a1.js?v=4"></script>
+<script src="tutor-data.js?v=3"></script>
 <script src="vocab.js?v=t10"></script>
 <script src="dict.js?v=2"></script>
 <script src="videos.js?v=1"></script>
 <script src="nico-data.js?v=1"></script>
 <script src="nico.js?v=2"></script>
-<script src="course-data.js?v=5"></script>
-<script src="course-data-m2.js?v=2"></script>
-<script src="course-data-m3.js?v=4"></script>
+<script src="course-data.js?v=6"></script>
+<script src="course-data-m2.js?v=3"></script>
+<script src="course-data-m3.js?v=5"></script>
 <script src="course-ipa.js?v=1"></script>
 <script src="course.js?v=13"></script>
 <script src="tutor.js?v=23"></script>
-<script src="para.js?v=10"></script>
+<script src="para.js?v=11"></script>
 <script src="sync.js?v=t3"></script>
 </body>
 </html>

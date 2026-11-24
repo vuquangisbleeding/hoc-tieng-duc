@@ -1057,7 +1057,7 @@ kind: exam
 parts: c_nv
 goal: Thi thử phần Nói 3 phần: tự giới thiệu; hỏi và trả lời theo chủ đề; đề nghị và đáp lại. Mỗi câu cần đạt mức nói trong ⚙.
 nico: 74
-t: Felix | Mein Name ist Felix Nguyen. | Tên tôi là Felix Nguyen.
+t: Felix | Mein Name ist Felix Neumann. | Tên tôi là Felix Neumann.
 t: Felix | Ich bin fünfundzwanzig Jahre alt. | Tôi 25 tuổi.
 t: Felix | Ich komme aus Vietnam und wohne jetzt in Berlin. | Tôi đến từ Việt Nam và hiện sống ở Berlin.
 t: Felix | Ich spreche Vietnamesisch, Englisch und ein bisschen Deutsch. | Tôi nói tiếng Việt, tiếng Anh và một chút tiếng Đức.

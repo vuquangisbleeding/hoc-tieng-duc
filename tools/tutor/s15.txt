@@ -78,7 +78,7 @@ F|Ich helfe ___. (bạn)|dir||du|mir
 N|<b>wehtun</b> = đau (tách): <i>Mein Kopf <b>tut weh</b>.</i> Số nhiều: <i>Meine Füße <b>tun weh</b>.</i> Bác sĩ hỏi: <i>Was tut Ihnen weh?</i>
 N|Từ ghép với <b>-schmerzen</b> (số nhiều của der Schmerz): <b>Kopfschmerzen</b>, <b>Bauchschmerzen</b>, <b>Halsschmerzen</b> haben.
 N|<b>das Fieber</b> = sốt: <i>Ich habe Fieber.</i> <b>die Erkältung</b> = cảm lạnh: <i>Ich habe eine Erkältung.</i>
-D|Ärztin|Guten Tag, Herr Nguyen. Was fehlt Ihnen?|Chào anh Nguyễn. Anh bị làm sao?
+D|Ärztin|Guten Tag, Herr Neumann. Was fehlt Ihnen?|Chào anh Neumann. Anh bị làm sao?
 D|Felix|Ich habe Kopfschmerzen und Halsschmerzen. Mein Hals tut sehr weh.|Tôi bị đau đầu và đau họng. Họng tôi đau lắm.
 D|Ärztin|Haben Sie auch Fieber?|Anh có sốt không?
 D|Felix|Ja, achtunddreißig Grad.|Có, ba mươi tám độ.
@@ -95,7 +95,7 @@ F|Ich habe ___. (sốt)|Fieber|
 N|<b>der Arzt / die Ärztin</b> = bác sĩ, <b>die Praxis</b> = phòng khám. Đi khám: <i>Ich gehe <b>zum</b> Arzt.</i> / <i>Ich bin <b>beim</b> Arzt.</i>
 N|<b>anrufen</b> (tách) = gọi điện: <i>Ich <b>rufe</b> in der Praxis <b>an</b>.</i> <b>telefonieren</b> = nói chuyện điện thoại: <i>Sie telefoniert gerade.</i>
 D|Sprechstundenhilfe|Praxis Doktor Becker, guten Morgen.|Phòng khám bác sĩ Becker, chào buổi sáng.
-D|Felix|Guten Morgen, hier ist Felix Nguyen. Ich bin krank. Kann ich heute kommen?|Chào buổi sáng, tôi là Felix Nguyễn. Tôi bị ốm. Hôm nay tôi đến được không?
+D|Felix|Guten Morgen, hier ist Felix Neumann. Ich bin krank. Kann ich heute kommen?|Chào buổi sáng, tôi là Felix Neumann. Tôi bị ốm. Hôm nay tôi đến được không?
 D|Sprechstundenhilfe|Die Ärztin hat um elf Uhr einen Termin frei.|Bác sĩ có một lịch trống lúc mười một giờ.
 D|Felix|Gut, ich komme um elf. Danke!|Được, tôi đến lúc mười một giờ. Cảm ơn!
 D|Sprechstundenhilfe|Bringen Sie bitte Ihre Versichertenkarte mit.|Anh nhớ mang theo thẻ bảo hiểm nhé.

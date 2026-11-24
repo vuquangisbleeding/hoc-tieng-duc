@@ -42,7 +42,7 @@ n|der Gruß|die Grüße|lời chào|Viele [Grüße] an deine Familie!|Gửi lờ
 
 @a1-ca-nhan|Thông tin cá nhân|2
 =Name
-n|der Vorname|die Vornamen|tên (tên riêng)|Mein [Vorname] ist Minh, mein Familienname ist Nguyen.|Tên tôi là Minh, họ tôi là Nguyễn.|Người Đức ghi tên trước, họ sau.
+n|der Vorname|die Vornamen|tên (tên riêng)|Mein [Vorname] ist Felix, mein Familienname ist Neumann.|Tên tôi là Felix, họ tôi là Neumann.|Người Đức ghi tên trước, họ sau.
 n|der Familienname|die Familiennamen|họ|Wie ist Ihr [Familienname]?|Họ của ông/bà là gì?|Cũng nói <b>der Nachname</b>.
 =heißen
 n|die Adresse|die Adressen|địa chỉ|Wie ist Ihre [Adresse]?|Địa chỉ của ông/bà là gì?|Nhấn âm giữa: a-<b>DRES</b>-se.

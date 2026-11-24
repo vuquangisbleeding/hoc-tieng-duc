@@ -102,7 +102,7 @@ D|Felix|Ja, natürlich.|Có, tất nhiên.
 D|Anna|Wie ist deine Telefonnummer?|Số điện thoại của bạn là gì?
 D|Felix|Null-eins-sieben-sechs, vierunddreißig, fünfundfünfzig, einundzwanzig.|0176 – 34 – 55 – 21.
 D|Anna|Danke. Und hast du auch eine E-Mail-Adresse?|Cảm ơn. Thế bạn có địa chỉ email không?
-D|Felix|Ja: felix Punkt nguyen ät mail Punkt de.|Có: felix.nguyen@mail.de
+D|Felix|Ja: felix Punkt neumann ät mail Punkt de.|Có: felix.neumann@mail.de
 L|Số điện thoại của Felix là gì?|0176 34 55 21|0176 43 55 21|0167 34 55 12
 R|Trong địa chỉ email, “ät” là ký hiệu nào?|@|.|-
 S|Haben Sie ein Handy?|Ja, ich habe ein Handy.|habe|Bạn có điện thoại di động không? Trả lời câu đầy đủ.
@@ -131,7 +131,7 @@ N|Số thứ tự: <b>erste</b> (1.), <b>zweite</b> (2.), <b>dritte</b> (3.), vi
 N|<b>einmal</b> = một lần, <b>das Mal</b> = lần: <i>zum ersten Mal</i> (lần đầu tiên), <i>noch einmal</i> (thêm lần nữa).
 P|Bảng chữ cái|A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, Ä, Ö, Ü, ß
 D|Sekretärin|Wie ist Ihr Familienname?|Họ của anh là gì?
-D|Felix|Nguyen.|Nguyễn.
+D|Felix|Neumann.|Neumann.
 D|Sekretärin|Wie bitte? Buchstabieren Sie bitte.|Gì cơ? Anh đánh vần giúp tôi.
 D|Felix|N – G – U – Y – E – N.|N – G – U – Y – E – N.
 D|Sekretärin|Danke. Sind Sie zum ersten Mal in Deutschland?|Cảm ơn. Anh đến Đức lần đầu à?

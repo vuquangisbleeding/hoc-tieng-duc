@@ -67,7 +67,7 @@ N|Tiếng Đức có 2 cách xưng “bạn”: <b>du</b> (thân mật: bạn b�
 N|Hỏi thăm: <b>Wie geht es Ihnen?</b> (lịch sự) / <b>Wie geht es dir?</b> hay <b>Wie geht's?</b> (thân mật). Trả lời: <b>(Mir geht es) sehr gut / gut / es geht / nicht so gut</b>, rồi hỏi lại: <b>Und Ihnen?</b> / <b>Und dir?</b>
 N|Phát âm: <b>u</b> dài trong <b>gut</b> [uː], <b>u</b> ngắn trong <b>und</b> [ʊ]; <b>d</b> cuối → [t]: und = “unt”.
 C|u dài|gut, du, Schule, Bruder|u ngắn|und, Mutter, Butter, Bus
-D|Frau Schmidt|Guten Morgen, Herr Nguyen! Wie geht es Ihnen?|Chào buổi sáng, anh Nguyễn! Anh khoẻ không?
+D|Frau Schmidt|Guten Morgen, Herr Neumann! Wie geht es Ihnen?|Chào buổi sáng, anh Neumann! Anh khoẻ không?
 D|Felix|Danke, sehr gut. Und Ihnen?|Cảm ơn, rất khoẻ. Còn cô?
 D|Frau Schmidt|Danke, gut.|Cảm ơn, khoẻ.
 D|Anna|Hallo, Felix! Wie geht es dir?|Chào Felix! Bạn khoẻ không?

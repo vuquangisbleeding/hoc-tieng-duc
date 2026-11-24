@@ -138,7 +138,7 @@ w: Bạn làm đổ cà phê của bạn mình. Viết lời xin lỗi và câu 
 ## 1.3 du hay Sie
 goal: Hỏi thăm thân mật và lịch sự, trả lời được.
 nico: 3
-i: Frau Schmidt | Guten Tag, Herr Nguyen! Wie geht es Ihnen? | Chào anh Nguyễn! Anh có khoẻ không?
+i: Frau Schmidt | Guten Tag, Herr Neumann! Wie geht es Ihnen? | Chào anh Neumann! Anh có khoẻ không?
 i: Felix | Danke, sehr gut. Und Ihnen? | Cảm ơn, rất khoẻ. Còn cô?
 i: Frau Schmidt | Auch gut, danke. | Cũng khoẻ, cảm ơn.
 iq: Hai người nói chuyện kiểu gì? | lịch sự (Sie) | thân mật (du) | không rõ
@@ -157,7 +157,7 @@ gt: Chào | Hallo! · Tschüss! | Guten Tag! · Auf Wiedersehen!
 gt: Hỏi thăm | Wie geht's? | Wie geht es Ihnen?
 gt: Hỏi lại | Und dir? | Und Ihnen?
 gt: Gọi | tên riêng: Lena | Herr/Frau + HỌ: Frau Schmidt
-g: <b>Lỗi hay gặp:</b> gọi "Herr Felix" theo tên như tiếng Việt. Người Đức dùng Herr/Frau + họ: <b>Herr Nguyen</b>. Không dùng Herr/Frau với du.
+g: <b>Lỗi hay gặp:</b> gọi "Herr Felix" theo tên như tiếng Việt. Người Đức dùng Herr/Frau + họ: <b>Herr Neumann</b>. Không dùng Herr/Frau với du.
 gx: mc: Bạn hỏi thăm sếp mới. | Wie geht es Ihnen? | Wie geht's? | Und dir?
 gx: mc: Bạn hỏi thăm em họ 15 tuổi. | Wie geht's? | Wie geht es Ihnen? | Und Ihnen?
 gx: mc: Cô giáo hỏi "Wie geht es Ihnen?". Bạn hỏi lại: | Und Ihnen? | Und dir? | Und du?
@@ -194,7 +194,7 @@ rq: Anna hỏi thăm Lena. | R
 t: Felix | Guten Tag, Frau Schmidt! Wie geht es Ihnen? | Chào cô Schmidt! Cô khoẻ không?
 t: Frau Schmidt | Danke, gut. Und Ihnen? | Cảm ơn, khoẻ. Còn anh?
 t: Felix | Sehr gut, danke. | Rất khoẻ, cảm ơn.
-t: Frau Schmidt | Auf Wiedersehen, Herr Nguyen! | Tạm biệt anh Nguyễn!
+t: Frau Schmidt | Auf Wiedersehen, Herr Neumann! | Tạm biệt anh Neumann!
 t: Felix | Auf Wiedersehen! | Tạm biệt!
 ans: Wie geht es Ihnen? | Danke, gut. Und Ihnen? | gut, Ihnen | Trả lời lịch sự rồi hỏi lại.
 w: Viết 2 câu hỏi thăm: một câu cho bạn thân Tom, một câu cho cô giáo Frau Schmidt. | Hallo Tom, wie geht's? Guten Tag, Frau Schmidt, wie geht es Ihnen? | geht's/dir, Ihnen
@@ -211,7 +211,7 @@ iq: "Wie schreibt man das?" nghĩa là gì? | Viết như thế nào? | Bạn t�
 iq: Cô giáo hỏi tên Felix kiểu gì? | lịch sự (Sie) | thân mật (du) | không hỏi
 words: Wie heißt du?; heißen; Wie schreibt man das?; buchstabieren; null; eins; zwei; drei; vier; fünf; sechs; sieben; acht; neun; zehn; elf; zwölf
 +w: phr | - | Wie heißt du? | | Bạn tên gì? | Hallo! [Wie heißt du]? | Chào! Bạn tên gì?
-+w: phr | - | Wie schreibt man das? | | Viết cái đó thế nào? | Nguyen? [Wie schreibt man das]? | Nguyễn à? Viết thế nào?
++w: phr | - | Wie schreibt man das? | | Viết cái đó thế nào? | Neumann? [Wie schreibt man das]? | Neumann à? Viết thế nào?
 g: <b>Bảng chữ cái</b> — tên các chữ đọc như sau:
 gtn: A a | B be | C tse | D de | E ê | F ef | G ghê
 gtn: H ha | I i | J jót | K ka | L el | M em | N en
@@ -272,7 +272,7 @@ x: nmc: 0-12
 x: nmc: 0-12
 x: sp: Felix
 t: Herr Weber | Guten Morgen! Wie heißen Sie? | Chào buổi sáng! Anh tên gì?
-t: Felix | Ich heiße Felix Nguyen. Und Sie? | Tôi tên Felix Nguyễn. Còn ông?
+t: Felix | Ich heiße Felix Neumann. Und Sie? | Tôi tên Felix Neumann. Còn ông?
 t: Herr Weber | Ich heiße Weber. Wie geht es Ihnen? | Tôi tên Weber. Anh khoẻ không?
 t: Felix | Danke, gut. Und Ihnen? | Cảm ơn, khoẻ. Còn ông?
 t: Herr Weber | Auch gut, danke. Auf Wiedersehen! | Cũng khoẻ, cảm ơn. Tạm biệt!
@@ -690,7 +690,7 @@ nico: 10
 i: Lena | Hast du ein Handy? | Bạn có điện thoại di động không?
 i: Felix | Ja. Meine Handynummer ist null eins sieben sechs, drei vier fünf, zwo acht. | Có. Số di động của mình là 0176 345 28.
 i: Lena | Und hast du eine E-Mail-Adresse? | Bạn có địa chỉ email không?
-i: Felix | Ja: felix punkt nguyen at web punkt de. | Có: felix.nguyen@web.de
+i: Felix | Ja: felix punkt neumann at web punkt de. | Có: felix.neumann@web.de
 iq: Số điện thoại của Felix bắt đầu bằng? | 0176 | 0167 | 0716
 iq: "zwo" là số mấy? | 2 | 3 | 12
 iq: Email của Felix có đuôi gì? | web.de | gmail.com | web.com
@@ -747,7 +747,7 @@ t: Felix | Ja, ich habe ein Handy. | Có, mình có một chiếc.
 t: Lena | Wie ist deine Handynummer? | Số di động của bạn là gì?
 t: Felix | Null eins sieben sechs, drei vier fünf, zwo acht. | 0176 345 28.
 t: Lena | Danke! | Cảm ơn!
-w: Viết số điện thoại và email của bạn bằng chữ (vd: null eins sieben sechs …). | Meine Telefonnummer ist null eins sieben sechs, drei vier fünf, zwo acht. Meine E-Mail-Adresse ist felix punkt nguyen at web punkt de. | Telefonnummer/Handynummer, E-Mail
+w: Viết số điện thoại và email của bạn bằng chữ (vd: null eins sieben sechs …). | Meine Telefonnummer ist null eins sieben sechs, drei vier fünf, zwo acht. Meine E-Mail-Adresse ist felix punkt neumann at web punkt de. | Telefonnummer/Handynummer, E-Mail
 
 ## 3.4 Địa chỉ & tờ khai
 goal: Nói địa chỉ và điền tờ khai cá nhân.
@@ -761,7 +761,7 @@ iq: Số nhà của Felix là? | 12 | 20 | 2
 iq: Mã bưu chính là? | 10115 | 11015 | 10150
 words: Adresse; Straße; Hausnummer; Postleitzahl; Wohnort; Vorname; Nachname; Formular; ausfüllen; tausend
 +w: n | die | Straße | die Straßen | đường phố | Ich wohne in der [Straße] Unter den Linden. | Tôi sống ở phố Unter den Linden.
-+w: n | der | Nachname | die Nachnamen | họ | Mein [Nachname] ist Nguyen. | Họ của tôi là Nguyễn.
++w: n | der | Nachname | die Nachnamen | họ | Mein [Nachname] ist Neumann. | Họ của tôi là Neumann.
 +w: n | das | Formular | die Formulare | tờ khai, mẫu đơn | Bitte füllen Sie das [Formular] aus. | Vui lòng điền tờ khai.
 +w: v | - | ausfüllen | | điền (tờ khai) | Ich [fülle] das Formular [aus]. | Tôi điền tờ khai.
 +w: num | - | tausend | | một nghìn | Das kostet [tausend] Euro. | Cái đó giá một nghìn euro.
@@ -815,12 +815,12 @@ rq: Tên của người này là Tran. | F
 rq: Người này sống ở Hamburg. | R
 rq: Số nhà là 8. | R
 t: Herr Weber | Wie ist Ihr Name? | Anh tên gì?
-t: Felix | Felix Nguyen. | Felix Nguyễn.
+t: Felix | Felix Neumann. | Felix Neumann.
 t: Herr Weber | Wie ist Ihre Adresse? | Địa chỉ của anh là gì?
 t: Felix | Ich wohne in der Bergstraße zwölf, in Berlin. | Tôi sống ở số 12 phố Bergstraße, ở Berlin.
 t: Herr Weber | Und Ihre Telefonnummer? | Còn số điện thoại?
 t: Felix | Null eins sieben sechs, drei vier fünf, zwo acht. | 0176 345 28.
-w: Điền tờ khai của bạn: Vorname, Nachname, Adresse (mỗi ô một dòng). | Vorname: Felix. Nachname: Nguyen. Adresse: Bergstraße 12, 10115 Berlin. | Vorname, Nachname, Adresse/Straße
+w: Điền tờ khai của bạn: Vorname, Nachname, Adresse (mỗi ô một dòng). | Vorname: Felix. Nachname: Neumann. Adresse: Bergstraße 12, 10115 Berlin. | Vorname, Nachname, Adresse/Straße
 
 ## 3.5 Ôn tuần 3
 kind: review
@@ -835,14 +835,14 @@ x: ph: 030 46 29 18
 x: lmc: Ich bin zweiundvierzig Jahre alt. | 42 | 24 | 52
 x: calc: 50-7
 t: Sekretärin | Guten Tag! Wie heißen Sie? | Chào anh! Anh tên gì?
-t: Felix | Ich heiße Felix Nguyen. | Tôi tên Felix Nguyễn.
+t: Felix | Ich heiße Felix Neumann. | Tôi tên Felix Neumann.
 t: Sekretärin | Wie alt sind Sie? | Anh bao nhiêu tuổi?
 t: Felix | Ich bin fünfundzwanzig Jahre alt. | Tôi 25 tuổi.
 t: Sekretärin | Wie ist Ihre Adresse? | Địa chỉ của anh là gì?
 t: Felix | Bergstraße zwölf, eins null eins eins fünf Berlin. | Số 12 phố Bergstraße, 10115 Berlin.
 t: Sekretärin | Und Ihre Telefonnummer? | Còn số điện thoại?
 t: Felix | Null eins sieben sechs, drei vier fünf, zwo acht. | 0176 345 28.
-w: Điền tờ khai 8 ô về bạn: Vorname, Nachname, Alter, Straße, PLZ, Wohnort, Telefon, E-Mail. | Vorname: Felix · Nachname: Nguyen · Alter: 25 · Straße: Bergstraße 12 · PLZ: 10115 · Wohnort: Berlin · Telefon: 0176 34528 · E-Mail: felix.nguyen@web.de | Vorname, Nachname, Alter, Straße, PLZ, Wohnort, Telefon, E-Mail
+w: Điền tờ khai 8 ô về bạn: Vorname, Nachname, Alter, Straße, PLZ, Wohnort, Telefon, E-Mail. | Vorname: Felix · Nachname: Neumann · Alter: 25 · Straße: Bergstraße 12 · PLZ: 10115 · Wohnort: Berlin · Telefon: 0176 34528 · E-Mail: felix.neumann@web.de | Vorname, Nachname, Alter, Straße, PLZ, Wohnort, Telefon, E-Mail
 
 ## 4.1 Thành viên gia đình
 goal: Nói mình có anh chị em không, đã kết hôn chưa.
@@ -1113,7 +1113,7 @@ w: Viết 4 câu về gia đình bạn, dùng mein/meine và số nhiều. | Mei
 kind: test
 goal: Nói 1 phút về bản thân và gia đình (8–10 câu) không nhìn chữ; bài kiểm tra 40 câu ≥ 75%.
 nico: 64
-t: Felix | Hallo! Ich heiße Felix Nguyen. | Xin chào! Tôi tên Felix Nguyễn.
+t: Felix | Hallo! Ich heiße Felix Neumann. | Xin chào! Tôi tên Felix Neumann.
 t: Felix | Ich bin fünfundzwanzig Jahre alt. | Tôi 25 tuổi.
 t: Felix | Ich komme aus Vietnam, aus Hanoi. | Tôi đến từ Việt Nam, từ Hà Nội.
 t: Felix | Ich wohne in Berlin, in der Bergstraße zwölf. | Tôi sống ở Berlin, số 12 phố Bergstraße.
@@ -1123,5 +1123,5 @@ t: Felix | Meine Eltern wohnen in Hanoi. | Bố mẹ tôi sống ở Hà Nội.
 t: Felix | Ich habe einen Bruder und eine Schwester. | Tôi có một anh trai và một em gái.
 t: Felix | Mein Bruder heißt Nam. Er ist Student. | Anh trai tôi tên Nam. Anh ấy là sinh viên.
 t: Felix | Meine Schwester Lan ist verheiratet. Sie hat zwei Kinder. | Em gái tôi Lan đã kết hôn. Em ấy có hai con.
-w: Viết một đoạn khoảng 50 từ về bạn và gia đình: tên, tuổi, nơi ở và ít nhất 3 người trong gia đình. | Ich heiße Felix Nguyen und ich bin fünfundzwanzig Jahre alt. Ich komme aus Vietnam und wohne jetzt in Berlin. Meine Eltern wohnen in Hanoi. Ich habe einen Bruder und eine Schwester. Mein Bruder heißt Nam, er ist Student. Meine Schwester ist verheiratet. Ihr Mann heißt Tuan. | heiße, bin, wohne, mein/meine
+w: Viết một đoạn khoảng 50 từ về bạn và gia đình: tên, tuổi, nơi ở và ít nhất 3 người trong gia đình. | Ich heiße Felix Neumann und ich bin fünfundzwanzig Jahre alt. Ich komme aus Vietnam und wohne jetzt in Berlin. Meine Eltern wohnen in Hanoi. Ich habe einen Bruder und eine Schwester. Mein Bruder heißt Nam, er ist Student. Meine Schwester ist verheiratet. Ihr Mann heißt Tuan. | heiße, bin, wohne, mein/meine
 `;

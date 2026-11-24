@@ -9,7 +9,7 @@ const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&g
 const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 let LIB=store.get("deParas",[]);
 const saveLib=()=>store.set("deParas",LIB);
-const SAMPLE="Hallo! Ich heiße Felix Nguyen. Ich bin fünfundzwanzig Jahre alt. Ich komme aus Vietnam, aus Hanoi. Jetzt wohne ich in Berlin. Ich spreche Vietnamesisch, Englisch und ein bisschen Deutsch. Meine Eltern wohnen in Hanoi. Ich habe einen Bruder und eine Schwester.";
+const SAMPLE="Hallo! Ich heiße Felix Neumann. Ich bin fünfundzwanzig Jahre alt. Ich komme aus Vietnam, aus Hanoi. Jetzt wohne ich in Berlin. Ich spreche Vietnamesisch, Englisch und ein bisschen Deutsch. Meine Eltern wohnen in Hanoi. Ich habe einen Bruder und eine Schwester.";
 const splitSents=t=>String(t||"").split(/\n+/).flatMap(p=>p.match(/[^.!?…]+(?:[.!?…]+["“”»]*|$)/g)||[]).map(s=>s.trim()).filter(s=>/\p{L}/u.test(s));
 const clean=s=>String(s).replace(/[„“”"»«]/g,"").replace(/…/g,"").replace(/\s+[–-]\s+/g,", ").replace(/\s+/g," ").trim();
 const hasL=t=>/[\p{L}\d]/u.test(t);
