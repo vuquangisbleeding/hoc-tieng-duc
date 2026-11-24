@@ -9,7 +9,7 @@ const RAW=window.__SYNC_OVERRIDE||{
 const clean=v=>String(v||"").trim().replace(/[^\x21-\x7E]/g,"");
 const CFG={url:clean(RAW.url).replace(/\/+$/,""),key:clean(RAW.key)};
 const CFG_BAD=(CFG.url||CFG.key)&&(!/^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(CFG.url)||!(/^eyJ[\w-]+\.[\w-]+\.[\w-]+$/.test(CFG.key)&&CFG.key.length>100||/^sb_publishable_[\w-]{10,}$/.test(CFG.key)));
-const KEYS=["deVocabProg","deMatchBest","deCustomSets","deProg","deCfg","deTutor","deNico"];
+const KEYS=["deVocabProg","deMatchBest","deCustomSets","deProg","deCfg","deTutor","deNico","deCourse"];
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
@@ -66,6 +66,13 @@ function merge(L,R){
     for(const n of new Set([...Object.keys(a),...Object.keys(b)])){const x=a[n]||{},y=b[n]||{},sk=[...new Set([...(x.sk||[]),...(y.sk||[])])];
       ep[n]={w:Math.max(x.w||0,y.w||0),...((x.q??y.q)!=null?{q:Math.max(x.q??0,y.q??0)}:{}),sk,s:sk.length}}
     if(Object.keys(ep).length)out.deNico={ep}}
+  { const a=L.deCourse,b=R.deCourse;                                     // lộ trình A2: gộp từng buổi (điểm cao nhất, ngày qua sớm nhất)
+    if(a||b){const A=a||{},B=b||{},sa=A.s||{},sb=B.s||{},ss={};
+      for(const id of new Set([...Object.keys(sa),...Object.keys(sb)])){const x=sa[id],y=sb[id];if(!x||!y){ss[id]=x||y;continue}
+        const p={};for(const k of new Set([...Object.keys(x.p||{}),...Object.keys(y.p||{})]))p[k]=Math.max((x.p||{})[k]??-1,(y.p||{})[k]??-1);
+        ss[id]={...((x.t||0)>=(y.t||0)?y:x),...((x.t||0)>=(y.t||0)?x:y),p,best:Math.max(x.best??-1,y.best??-1),flu:Math.max(x.flu||0,y.flu||0),star:x.star||y.star||undefined,
+          done:x.done&&y.done?Math.min(x.done,y.done):(x.done||y.done||undefined)}}
+      out.deCourse={v:1,s:ss,wrong:[...new Set([...(B.wrong||[]),...(A.wrong||[])])].slice(-60),last:A.last||B.last}} }
   return out;
 }
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);

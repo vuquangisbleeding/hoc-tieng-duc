@@ -29,7 +29,7 @@ const SPK_VI={"Frau Schmidt":"cô giáo","Herr Weber":"chủ nhà",Kellner:"ph�
   Beamter:"nhân viên",Beamtin:"nhân viên",Mitarbeiterin:"nhân viên",Sprechstundenhilfe:"lễ tân",Ärztin:"bác sĩ",Rezeption:"lễ tân",Ansage:"thông báo",Anzeige:"quảng cáo",Prospekt:"tờ rơi",
   Aushang:"thông báo",Schild:"biển báo",Einladung:"thiệp mời",Postkarte:"bưu thiếp",SMS:"tin nhắn","E-Mail":"email",Speisekarte:"thực đơn",Tourist:"khách du lịch",Touristin:"khách du lịch",
   Frau:"một phụ nữ",Mann:"một người đàn ông",Rotkäppchen:"cô bé",Wolf:"con sói",Telefon:"điện thoại",Mia:"đồng nghiệp",Formular:"biểu mẫu"};
-const STEP={on:{i:"🔁",t:"Ôn bài cũ"},tu:{i:"🆕",t:"Từ mới"},ngu:{i:"🧩",t:"Ngữ pháp"},nghe:{i:"👂",t:"Nghe"},noi:{i:"🗣",t:"Nói"},doc:{i:"📖",t:"Đọc"},viet:{i:"✍️",t:"Viết"}};
+const STEP={c_in:{i:"🎬",t:"Mở đầu"},c_kt:{i:"🔁",t:"Kiểm tra bài cũ"},c_lt:{i:"🏋️",t:"Luyện tập"},c_nd:{i:"👂",t:"Nghe – Đọc"},c_nv:{i:"🗣",t:"Nói – Viết"},c_ck:{i:"✅",t:"Kiểm tra cuối buổi"},c_rt:{i:"📝",t:"Kiểm tra tuần"},c_tn:{i:"🧩",t:"Từ & ngữ pháp"},on:{i:"🔁",t:"Ôn bài cũ"},tu:{i:"🆕",t:"Từ mới"},ngu:{i:"🧩",t:"Ngữ pháp"},nghe:{i:"👂",t:"Nghe"},noi:{i:"🗣",t:"Nói"},doc:{i:"📖",t:"Đọc"},viet:{i:"✍️",t:"Viết"}};
 const SKILL=[["nghe","👂 Nghe"],["noi","🗣 Nói"],["doc","📖 Đọc"],["viet","✍️ Viết"],["tu","🆕 Từ vựng"],["ngu","🧩 Ngữ pháp"]];
 const stepsOf=k=>k.rv===2?["nghe","doc","viet","noi"]:k.rv===1?["tu","ngu","nghe","doc","noi","viet"]:["on","tu","ngu","nghe","noi","doc","viet"];
 
@@ -213,6 +213,7 @@ function reviewItems(words,pool){return words.map((x,i)=>[()=>mcWord(x,pool,"de"
 function textBlocks(k){return(k.X||[]).filter(x=>x.d&&x.d.length)}
 function roleOf(lines){const sps=[...new Set(lines.map(l=>l[0]).filter(sp=>!isText(sp)))];if(!sps.length)return null;return sps.includes("Minh")?"Minh":(lines[1]&&!isText(lines[1][0])?lines[1][0]:sps[0])}
 function buildStep(k,st){
+  if(RUN&&RUN.course)return RUN.course.build(st)||[];
   const ws=k.rv?(k.rv===1?shuffle(stageW(k.s)).slice(0,10):shuffle(allW()).slice(0,10)):kitW(k),pool=poolFor(k),X=textBlocks(k),main=X[0];
   const items=[];
   if(st==="on"){const due=dueWords(k.n,6);if(!due.length)return[];
@@ -490,7 +491,8 @@ R.passage=(it,box)=>{
       if(!best||r.pct>best.pct)best=r;
       res.innerHTML=passageResult(r,L)+verdictHtml(j,j.ok)+
         (passed&&mode==="read"&&it.final?`<div class="small center">⭐ Thử tiếp chế độ <b>🇻🇳 Chỉ nhìn tiếng Việt</b> để nói thuộc lòng.</div>`:"");
-      if(it.final&&!RUN.quick){const ks=S.kits[RUN.k.n]=S.kits[RUN.k.n]||{steps:{},best:{}};const f=ks.flu||{};
+      if(it.onResult)it.onResult(r,j,mode);
+      if(it.final&&!RUN.quick&&!RUN.course){const ks=S.kits[RUN.k.n]=S.kits[RUN.k.n]||{steps:{},best:{}};const f=ks.flu||{};
         ks.flu={best:Math.max(f.best||0,j.ok?r.pct:0),star:!!(f.star||starred),tries:(f.tries||0)+1};saveS()}
       if(!it.answered){res.insertAdjacentHTML("beforeend",`<div class="row stickynext"><button class="prim${passed?"":" soft"}" id="tdone">${passed?`${starred?"⭐":"✅"} Tiếp →`:"Bỏ qua, tiếp →"}</button></div>`);
         document.getElementById("tdone").onclick=()=>answer(it,passed,"",{direct:true,toast:passed?`${starred?"⭐ Nói thuộc cả đoạn!":"✅ Nói trôi chảy cả đoạn!"}`:`❌ Chưa đạt (tốt nhất ${best?best.pct:0}%) — đã ghi lại để ôn`})}
@@ -581,7 +583,8 @@ R.dict=(it,box)=>{
 /* ---------- Kết thúc một bước / cả kit ---------- */
 function stepDone(){
   stopPlay();const st=RUN.steps[RUN.si],r=RUN.res[st],p=pct(r.r,r.n);
-  if(!RUN.quick){const ks=S.kits[RUN.k.n]=S.kits[RUN.k.n]||{steps:{},best:{}};ks.steps[st]=p??100;ks.best[st]=Math.max(ks.best[st]??-1,p??100);ks.t=Date.now();
+  if(RUN.course){RUN.course.onStep(st,p,r);S.days[day()]=(S.days[day()]||0)+1;saveS()}
+  else if(!RUN.quick){const ks=S.kits[RUN.k.n]=S.kits[RUN.k.n]||{steps:{},best:{}};ks.steps[st]=p??100;ks.best[st]=Math.max(ks.best[st]??-1,p??100);ks.t=Date.now();
     S.days[day()]=(S.days[day()]||0)+1;saveS()}
   const last=RUN.si===RUN.steps.length-1;
   if(RUN.quick)return finish();
@@ -591,7 +594,8 @@ function stepDone(){
     <div class="row">${last||RUN.only?`<button class="prim" data-t="fin">Xem tổng kết</button>`:`<button class="prim" data-t="nstep">Tiếp: ${STEP[RUN.steps[RUN.si+1]].i} ${STEP[RUN.steps[RUN.si+1]].t} →</button>`}</div></div></div>`;
   window.scrollTo({top:0})}
 function finish(){
-  stopPlay();const k=RUN.k;
+  stopPlay();if(RUN.course){const run=RUN;RUN=null;run.course.onFinish(run);window.scrollTo({top:0});return}
+  const k=RUN.k;
   if(RUN.quick){const r=RUN.res.on;S.days[day()]=(S.days[day()]||0)+1;saveS();
     root.innerHTML=`<div class="card center"><div class="big">🔁</div><p>Ôn nhanh xong: đúng <b>${r.r}/${r.n}</b>.</p>${wrongHtml()}<div class="row"><button class="prim" data-t="home">Về trang Gia sư</button></div></div>`;RUN=null;window.scrollTo({top:0});return}
   const ks=S.kits[k.n]=S.kits[k.n]||{steps:{},best:{}};
@@ -637,6 +641,7 @@ function home(){
       <p>${done?`Bạn đang ở <b>chặng ${cur.s}/18: ${esc(st.t)}</b>. Mục tiêu chặng: ${esc(st.g)}`:`Chào bạn! Lộ trình gồm <b>180 kit</b> chia thành 18 chặng, đi từ con số 0 đến trình độ <b>A1</b>. Mỗi kit khoảng 15–25 phút, luyện đủ <b>nghe – nói – đọc – viết</b>.`}</p>
       ${weak&&known.length&&sk[weak]<85?`<p class="small">Kỹ năng cần luyện thêm: <b>${SKILL.find(s=>s[0]===weak)[1]} (${sk[weak]}%)</b>. ${TIPS[weak]}</p>`:""}
       <div class="row">${due?`<button class="ibtn" data-t="quick">🔁 Ôn nhanh ${Math.min(10,due)} từ cần nhớ</button>`:""}<button class="ibtn" data-t="dict">🔍 Tra từ</button></div></div>
+    ${window.CourseApp?CourseApp.card():""}
     ${window.NicoApp?`<div class="card tnico"><div class="sgh" style="margin-top:0"><b>🎬 Học với Nico</b><span class="small">phim Nicos Weg A1 · ${NicoApp.count} tập</span></div><p class="small">Xem từng tập phim ngắn của DW, học mẫu câu, cách dùng và từ vựng rồi luyện tập ngay.</p><div class="row"><button class="prim" data-t="nico">Mở Học với Nico →</button></div></div>`:""}
     ${known.length?`<div class="card"><div class="sgh" style="margin-top:0"><b>Kỹ năng</b><span class="small">điểm trung bình các kit đã làm</span></div>${SKILL.map(([s,l])=>`<div class="tsum"><span>${l}</span><span class="tmeter"><i style="width:${sk[s]??0}%;background:${sk[s]==null?"var(--line)":sk[s]>=80?"var(--green)":sk[s]>=60?"var(--orange)":"var(--red)"}"></i></span><b>${sk[s]==null?"–":sk[s]+"%"}</b></div>`).join("")}</div>`:""}
     <div class="sgh"><b>Lộ trình 18 chặng</b><span class="small">bấm vào chặng để xem kit</span></div>
@@ -673,8 +678,10 @@ root.addEventListener("click",e=>{
   const t=e.target.closest("button");if(!t)return;
   if(t.dataset.lk2){window.DictAPI&&DictAPI.popup(t.dataset.lk2);return}
   const a=t.dataset.t;if(!a)return;
+  if(a==="exit"&&RUN&&RUN.course){const c=RUN.course;stopPlay();if(busyMic&&window.appScoreStop)appScoreStop();RUN=null;c.onExit();return}
   if(a==="exit"){const n=RUN&&!RUN.quick?RUN.k.n:null;stopPlay();if(busyMic&&window.appScoreStop)appScoreStop();RUN=null;n?kitPage(n):home();return}
   if(a==="home"){window.NicoApp&&NicoApp.close();home();return}
+  if(a==="course"){window.NicoApp&&NicoApp.close();window.CourseApp&&CourseApp.open(root,t.dataset.id||"");return}
   if(a==="nico"){window.NicoApp&&NicoApp.open(root,+t.dataset.n||0);return}
   if(a==="go"){const n=+t.dataset.n;S.kits[n]?resume(n):startKit(n);return}
   if(a==="kit"){kitPage(+t.dataset.n);return}
@@ -689,6 +696,10 @@ root.addEventListener("click",e=>{
 
 window.tutorHome=()=>{if(!RUN)home()};
 window.tutorOpenKit=n=>{window.appSetView&&appSetView("tutor");kitPage(n)};
+/* Cho Lộ trình A2 (course.js) dùng chung bộ chạy bài và các dạng bài */
+window.TutorAPI={STEP,R,mcWord,listenWord,typeWord,dictWord,fillItem,cmp,timeDe,playLines,stopPlay,speak,home,
+  start(meta){stopPlay();RUN={course:meta,k:{n:0,s:1,course:true},steps:meta.steps,si:-1,res:{},wrong:[],only:meta.steps.length===1,title:meta.title};nextStep()},
+  running:()=>!!RUN,run:()=>RUN};
 window.__tutorTest={buildStep,genDrills,timeDe,cmp,kwCheck,KITS,startKitSteps,kitPage,home,getS:()=>S,run:()=>RUN};
 home();
 })();
