@@ -385,6 +385,13 @@ textarea{font:inherit;font-size:16px;width:100%;padding:12px 14px;border-radius:
     <b>Cài đặt</b>
     <label for="rate">Tốc độ giọng mẫu</label>
     <input id="rate" type="range" min="0.5" max="1.1" step="0.1" value="0.85">
+    <label for="sayPass">Mức đạt mỗi câu nói (Lộ trình, đọc đoạn văn, luyện từ yếu)</label>
+    <select id="sayPass">
+      <option value="70">Dễ – ≥ 70% (người Đức hiểu được, còn giọng nước ngoài)</option>
+      <option value="75">Vừa – ≥ 75% (khuyên dùng cho A1–A2)</option>
+      <option value="80">Khó – ≥ 80% (rõ ràng, ít lỗi)</option>
+      <option value="85">Rất khó – ≥ 85% (gần chuẩn)</option>
+    </select>
     <label for="level">Độ khó khi chấm (chế độ miễn phí)</label>
     <select id="level">
       <option value="0.7">Dễ – máy chắc chắn ≥ 70%</option>
@@ -919,7 +926,7 @@ function scoreHelpHtml(r){const S=r.scores||{};if(!r.scores)return"";
   const v=k=>S[k]==null?"–":Math.round(S[k]);const comp=S["Đúng từ"]!=null?"Đúng từ":"Đầy đủ";
   return `<div class="scline"><span>🎯 Phát âm <b>${v("Chính xác")}</b></span><span>🌊 Trôi chảy <b>${v("Trôi chảy")}</b></span><span>📝 Đủ từ <b>${v(comp)}</b></span></div>
     <details class="schelp"><summary>Các số này nghĩa là gì?</summary><ul>
-      <li><b>Điểm lớn (%)</b> = 60% 🎯 Phát âm + 20% 🌊 Trôi chảy + 20% 📝 Đủ từ. Nếu có từ nào dưới 60 điểm (đỏ) thì điểm lớn tối đa 79% — tức là chưa qua mức 80%, phải sửa từ đó.</li>
+      <li><b>Điểm lớn (%)</b> = 60% 🎯 Phát âm + 20% 🌊 Trôi chảy + 20% 📝 Đủ từ. Nếu có từ nào dưới 60 điểm (đỏ) thì điểm lớn bị giữ ngay dưới mức đạt (${(+cfg.sayPass||75)}%), phải sửa từ đó mới qua. Mức đạt chỉnh trong ⚙.</li>
       <li><b>🎯 Phát âm</b> (Chính xác): các âm bạn phát ra giống giọng người Đức đến đâu — điểm quan trọng nhất.</li>
       <li><b>🌊 Trôi chảy</b>: đọc liền mạch, ngắt nghỉ tự nhiên, không ngập ngừng giữa chừng.</li>
       <li><b>📝 Đủ từ</b>: đọc đúng và đủ các từ, không bỏ sót hay đọc thừa (100 = đủ hết).</li>
@@ -1135,7 +1142,7 @@ async function scoreAzure(target,long,opts){
   const compV=strict?Math.round(100*nOk/(tWords.length||1)):(p.CompletenessScore??100);
   const accV=p.AccuracyScore??avg,fluV=p.FluencyScore;
   let base=pa?Math.round(fluV!=null&&tWords.length>1?0.6*accV+0.2*fluV+0.2*compV:0.8*accV+0.2*compV):(all?70:0);
-  const weakW=words.filter(w=>w.acc<60);if(pa&&weakW.length)base=Math.min(base,79);
+  const weakW=words.filter(w=>w.acc<60);if(pa&&weakW.length)base=Math.min(base,(+cfg.sayPass||75)-1);
   let pct=base,note="";
   if(!pa)note="Chưa chấm được từng âm (Azure không trả kết quả chấm) — điểm chỉ dựa vào chữ máy nghe ra.";
   if(strict&&!all){
@@ -1321,7 +1328,7 @@ window.SFX=(()=>{let ctx=null,busy=false,last=0;
 document.addEventListener("pointerdown",e=>{const b=e.target.closest("button,.chip,.tkit,summary");if(!b||b.disabled)return;
   if(b.closest(".mco,.gopt")||b.matches('[data-t="mic"],.trybtn,.prmic,[data-pa="mic"],[data-pa="wmic"],#mic,.mic,.mco,.gopt,.tile'))return;SFX.click()},true);
 
-$("saveSet").onclick=()=>{cfg={rate:$("rate").value,level:$("level").value,key:cleanKey($("azKey").value),reg:cleanReg($("azReg").value),tts:$("azTts").checked?"azure":"",voice:$("azVoice").value,strict:$("azStrict").checked?"":"off",sfx:$("sfx").checked?"":"off",kits:$("kits").checked?"on":""};setTimeout(()=>{window.TutorAPI&&!TutorAPI.running()&&TutorAPI.home()},0);
+$("saveSet").onclick=()=>{cfg={rate:$("rate").value,level:$("level").value,key:cleanKey($("azKey").value),reg:cleanReg($("azReg").value),tts:$("azTts").checked?"azure":"",voice:$("azVoice").value,strict:$("azStrict").checked?"":"off",sfx:$("sfx").checked?"":"off",kits:$("kits").checked?"on":"",sayPass:$("sayPass").value};setTimeout(()=>{window.TutorAPI&&!TutorAPI.running()&&TutorAPI.home()},0);
   $("azKey").value=cfg.key;$("azReg").value=cfg.reg;store.set("deCfg",cfg);modeInfo();$("azTest").textContent="";$("setPanel").classList.add("hidden")};
 $("testAz").onclick=testAzureKey;
 $("resetProg").onclick=()=>{prog={};store.set("deProg",prog);renderList();if(view==="word"||view==="sent")renderWord()};
@@ -1335,7 +1342,7 @@ $("ipListen").onclick=()=>speak(ipCur().w,false);
 $("ipNext").onclick=()=>{ip.p++;renderIpa()};
 $("vTable").onclick=e=>{const r=e.target.closest("[data-ex]");if(r)speak(r.dataset.ex,true)};
 
-$("rate").value=cfg.rate;$("level").value=cfg.level||"0.9";$("azKey").value=cfg.key||"";$("azReg").value=cfg.reg||"";$("azTts").checked=cfg.tts==="azure";$("azStrict").checked=cfg.strict!=="off";$("sfx").checked=cfg.sfx!=="off";$("kits").checked=cfg.kits==="on";$("azVoice").value=cfg.voice||"de-DE-KatjaNeural";modeInfo();
+$("rate").value=cfg.rate;$("level").value=cfg.level||"0.9";$("azKey").value=cfg.key||"";$("azReg").value=cfg.reg||"";$("azTts").checked=cfg.tts==="azure";$("azStrict").checked=cfg.strict!=="off";$("sfx").checked=cfg.sfx!=="off";$("kits").checked=cfg.kits==="on";$("sayPass").value=cfg.sayPass||"75";$("azVoice").value=cfg.voice||"de-DE-KatjaNeural";modeInfo();
 setView("tutor");
 if(!window.isSecureContext)$("err").textContent="Cần mở qua link https:// thì micro mới hoạt động.";
 }
@@ -1352,9 +1359,9 @@ if(!window.isSecureContext)$("err").textContent="Cần mở qua link https:// th
 <script src="course-data-m2.js?v=2"></script>
 <script src="course-data-m3.js?v=4"></script>
 <script src="course-ipa.js?v=1"></script>
-<script src="course.js?v=12"></script>
+<script src="course.js?v=13"></script>
 <script src="tutor.js?v=22"></script>
-<script src="para.js?v=9"></script>
+<script src="para.js?v=10"></script>
 <script src="sync.js?v=t3"></script>
 </body>
 </html>

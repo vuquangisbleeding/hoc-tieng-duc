@@ -27,7 +27,8 @@ function colorize(sent,r,k0){
       return `<span class="pw ${w?cls(w.acc):"pr"}" title="${w?w.acc:0}">${esc(t)}</span>`}).join(" ");return{html,k}}
   if(r&&r.targetHtml)return{html:`<span class="tryterm prfree">${r.targetHtml}</span>`,k};
   return{html:esc(sent),k}}
-const PASS=80;   // một câu tính là đạt khi ≥ 80%; cả bài "Đạt" khi mọi câu đều ≥ 80%
+let PASS=75;   // mức đạt mỗi câu (chỉnh trong ⚙, mặc định 75%); cả bài "Đạt" khi mọi câu đều đạt
+const curPass=()=>{const v=+(window.appCfg&&appCfg().sayPass);return v>=50&&v<=100?v:75};
 function weakHtml(r){const ws=(r.words||[]).filter(w=>w.acc<PASS||w.err!=="None").sort((a,b)=>a.acc-b.acc).slice(0,5);
   if(!ws.length)return `<div class="small">Mọi từ đều ≥ ${PASS} — rất tốt! 👍</div>`;
   return `<div class="small">Từ cần luyện (thấp nhất trước):</div>`+ws.map(w=>window.phFeedbackHtml?phFeedbackHtml(w):`<div class="tryph"><b>${esc(w.w)}</b> · ${w.acc}</div>`).join("")}
@@ -36,6 +37,7 @@ const detailHtml=r=>`${window.scoreHelpHtml?scoreHelpHtml(r):""}${weakHtml(r)}${
 /* ---------- Bộ đọc: dùng cho cả trang Luyện đoạn và bài học ----------
    src: chuỗi văn bản, hoặc mảng {de, vi, sp} (mỗi phần tử là một câu/lượt lời; vi hiện khi bật "Che chữ") */
 function reader(box,src,opts={}){
+  PASS=curPass();
   const U=Array.isArray(src)?src.filter(x=>x&&x.de&&/\p{L}/u.test(x.de)):splitSents(src).map(de=>({de}));
   const S=U.map(u=>u.de),n=S.length;
   const st={mode:"sent",hide:false,cur:0,best:S.map((_,i)=>(opts.best||{})[i]??null),last:S.map(()=>null),res:S.map(()=>null),whole:null,wholeBest:opts.wholeBest??null,drill:[]};
@@ -139,6 +141,7 @@ function onHost(e){if(window.VocabAPI&&e.target.closest("[data-ch]")&&VocabAPI.i
    it.items: [{de,vi,sp}] (đoạn nói đầu ra) hoặc it.src = bài viết vừa làm (đọc lại chính đoạn mình viết) / it.text. Chỉ "Đạt" khi mọi câu ≥ 80%. */
 function registerR(){const T=window.TutorAPI;if(!T||!T.R||T.R.para)return;
   T.R.para=(it,box)=>{
+    PASS=curPass();
     const own=it.from&&it.from.userText&&splitSents(it.from.userText).length?it.from.userText:"";let src=it.items||own||it.text||"";
     const plain=Array.isArray(src)?src.map(u=>u.de).join("\n"):src;
     box.innerHTML=`<p class="qlabel">${it.label||"🎤 Đọc to đoạn văn"}</p><div class="small center">${it.from?(own?"Đoạn bạn vừa viết · ":"Bạn chưa viết — đọc bài mẫu · "):""}đọc từng câu, mỗi câu cần ≥ ${PASS}% mới qua</div>
@@ -160,7 +163,7 @@ function registerR(){const T=window.TutorAPI;if(!T||!T.R||T.R.para)return;
       if(!s.tried){it.answered=true;T.nextItem();return}
       T.answer(it,s.allPass,"",{direct:true,toast:s.allPass?`✅ Đã qua: mọi câu ≥ ${PASS}%`:`🔁 ${s.pass}/${s.n} câu đạt ≥ ${PASS}% — luyện tiếp các câu còn lại nhé`})}}}
 
-window.ParaApp={reader,home,splitSents,
+window.ParaApp={pass:curPass,reader,home,splitSents,
   openText(text,title){window.appSetView&&appSetView("para");const e=upsert(text,title);open(e.id)},
   registerR,count:()=>LIB.length};
 registerR();document.addEventListener("DOMContentLoaded",registerR);

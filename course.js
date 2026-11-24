@@ -160,7 +160,7 @@ function buildLesson(s,st){
   return[]}
 function speakWrite(s,shadow){
   const items=[],L=s.t.filter(l=>l[1]);
-  if(L.length&&window.ParaApp&&T().R.para){   // đầu ra: đọc từng câu (chấm từng âm, tô màu từng từ) → cả đoạn → che chữ; mọi câu ≥ 80% mới qua
+  if(L.length&&window.ParaApp&&T().R.para){   // đầu ra: đọc từng câu (chấm từng âm, tô màu từng từ) → cả đoạn → che chữ; mọi câu đạt mức trong ⚙ mới qua
     items.push({type:"para",items:L.map(l=>({de:l[1],vi:l[2]||"",sp:l[0]})),saveTitle:`Buổi ${s.id}: ${s.title}`,
       label:s.kind==="lesson"?"🎯 Đầu ra của buổi: đọc từng câu, rồi cả đoạn, rồi che chữ nói thuộc":"🎯 Đầu ra của tuần: đọc từng câu, rồi cả đoạn, cố gắng che chữ",
       onResult:st=>{const cs=C.s[s.id]=C.s[s.id]||{},o=cs.say||{};cs.say={pass:Math.max(o.pass||0,st.pass),n:st.n,all:!!(o.all||st.allPass)};
@@ -270,7 +270,7 @@ function nicoHtml(s,title){const eps=window.NICO?s.nico.filter(n=>NICO.e.some(e=
 const sayDone=s=>!s.t.length||!!(C.s[s.id]&&C.s[s.id].say&&C.s[s.id].say.all);
 function condHtml(s){const c=C.s[s.id]||{},g=gateOf(s),sy=c.say,tOk=!g.st.length||(c.best??-1)>=g.min,sOk=sayDone(s);
   return `<div class="ccond">${g.st.length?`<div class="${tOk?"ok":""}">${tOk?"✅":"⬜"} ${s.kind==="lesson"?"Kiểm tra cuối buổi":s.kind==="review"?"Kiểm tra tuần":s.kind==="exam"?"Các phần thi":"Bài kiểm tra 40 câu"} ≥ ${g.min}%${c.best!=null&&c.best>=0?` · tốt nhất ${c.best}%`:" · chưa làm"}</div>`:""}
-    ${s.t.length?`<div class="${sOk?"ok":""}">${sOk?"✅":"⬜"} Nói đoạn đầu ra: mọi câu ≥ 80%${sy?` · đã đạt ${sy.pass}/${sy.n} câu`:" · chưa làm"}</div>`:""}</div>`}
+    ${s.t.length?`<div class="${sOk?"ok":""}">${sOk?"✅":"⬜"} Nói đoạn đầu ra: mọi câu ≥ ${window.ParaApp?ParaApp.pass():75}%${sy?` · đã đạt ${sy.pass}/${sy.n} câu`:" · chưa làm"}</div>`:""}</div>`}
 /* ---------- Trang lộ trình & trang buổi ---------- */
 const stOf=s=>{const c=C.s[s.id];return c&&c.done?"done":c&&c.t?"part":""};
 const curSess=()=>SESS.find(s=>!(C.s[s.id]&&C.s[s.id].done))||SESS[SESS.length-1];

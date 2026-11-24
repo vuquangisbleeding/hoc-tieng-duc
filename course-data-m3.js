@@ -1055,7 +1055,7 @@ w: Teil 2 – Bạn mời bạn bè đến tiệc sinh nhật. Viết tin nhắn
 ## 13.4 Thi thử: Nói
 kind: exam
 parts: c_nv
-goal: Thi thử phần Nói 3 phần: tự giới thiệu; hỏi và trả lời theo chủ đề; đề nghị và đáp lại. Mọi câu ≥ 80%.
+goal: Thi thử phần Nói 3 phần: tự giới thiệu; hỏi và trả lời theo chủ đề; đề nghị và đáp lại. Mỗi câu cần đạt mức nói trong ⚙.
 nico: 74
 t: Felix | Mein Name ist Felix Nguyen. | Tên tôi là Felix Nguyen.
 t: Felix | Ich bin fünfundzwanzig Jahre alt. | Tôi 25 tuổi.
