@@ -535,6 +535,14 @@ R.write=(it,box)=>{
   const done=(shown)=>{const v=ta.value.trim(),chk=kwCheck(v,kw);it.userText=v;
     const mdl=`<div class="tmodel"><div class="small">Bài mẫu:</div><div><b>${esc(model)}</b> <button class="spk sm" data-say="${esc(model.replace(/…/g," "))}" aria-label="Nghe bài mẫu">🔊</button></div></div>`;
     if(!v&&!shown){ta.focus();return}
+    // kiểm tra chính tả trước khi chấm: còn lỗi thì báo từng từ, cho sửa rồi kiểm tra lại (không cho qua khi còn lỗi)
+    const sp=!shown&&v&&window.deSpell?deSpell(v):[];let old=box.querySelector(".pspell");if(old)old.remove();
+    if(sp.length&&!it._spellSkip){window.SFX&&SFX.bad();const el=document.createElement("div");el.className="pspell";
+      el.innerHTML=`<b>✏️ Có ${sp.length} lỗi chính tả — sửa rồi bấm Kiểm tra lại</b>${sp.map(x=>`<div><s>${esc(x.from)}</s> → <b>${esc(x.to)}</b>${window.ipaFor&&ipaFor(x.to)?` <span class="ipa-in">/${esc(ipaFor(x.to))}/</span>`:""} <span class="small">· ${esc(x.why)}</span></div>`).join("")}
+        <div class="row"><button class="ibtn mini" data-t2="fix">Sửa giúp tôi</button><button class="ibtn mini" data-t2="skip">Tôi chắc chắn viết đúng</button></div>`;
+      ta.before(el);it._spellErr=(it._spellErr||0)+1;
+      el.querySelector('[data-t2="fix"]').onclick=()=>{let t=ta.value;for(const x of sp)t=t.replace(new RegExp("(^|[^\\p{L}])"+x.from.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"(?![\\p{L}])","gu"),(m,p1)=>p1+x.to);ta.value=t;el.remove();ta.focus()};
+      el.querySelector('[data-t2="skip"]').onclick=()=>{it._spellSkip=true;el.remove();done(false)};return}
     if(chk&&v){answer(it,chk.ok,`<div class="kwl">${chk.res.map(r=>`<span class="${r.ok?"ok":"no"}">${r.ok?"✓":"✗"} ${esc(r.g.split("/")[0])}</span>`).join("")}</div>${chk.ok?"Đủ các ý chính. 👍":"Còn thiếu ý — so sánh với bài mẫu."}${mdl}`,{info:false,override:!chk.ok});return}
     const box2=document.createElement("div");box2.innerHTML=mdl+`<div class="row"><button class="ibtn" data-t="selfok">✓ Tôi viết đúng</button><button class="ibtn" data-t="selfno">✗ Chưa đúng</button></div>`;
     box.appendChild(box2);box.querySelector('[data-t="chk"]').disabled=true;box.querySelector('[data-t="model"]').disabled=true;

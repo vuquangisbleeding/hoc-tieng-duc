@@ -38,10 +38,15 @@ const detailHtml=r=>`${window.scoreHelpHtml?scoreHelpHtml(r):""}${weakHtml(r)}${
 function reader(box,src,opts={}){
   const U=Array.isArray(src)?src.filter(x=>x&&x.de&&/\p{L}/u.test(x.de)):splitSents(src).map(de=>({de}));
   const S=U.map(u=>u.de),n=S.length;
-  const st={mode:"sent",hide:false,cur:0,best:S.map((_,i)=>(opts.best||{})[i]??null),last:S.map(()=>null),res:S.map(()=>null),whole:null,wholeBest:opts.wholeBest??null};
+  const st={mode:"sent",hide:false,cur:0,best:S.map((_,i)=>(opts.best||{})[i]??null),last:S.map(()=>null),res:S.map(()=>null),whole:null,wholeBest:opts.wholeBest??null,drill:[]};
+  const NEED=3;   // từ yếu: phải đọc riêng đạt ≥ PASS đủ 3 lần
+  const addDrill=r=>{(r.words||[]).filter(w=>hasL(w.w)&&(w.acc<PASS||w.err!=="None")).forEach(w=>{const t=String(w.w).replace(/[.,!?;:"„“”()…]/g,"");if(!t)return;
+    const d=st.drill.find(x=>x.w.toLowerCase()===t.toLowerCase());if(!d)st.drill.push({w:t,ok:0,last:null,res:null,from:w.acc})})};
+  const ipaHtml=t=>{const i=window.ipaFor?ipaFor(t):"";return i?`<span class="ipa-in">/${esc(i)}/</span>`:""};
   const stats=()=>{const b=st.best.filter(x=>x!=null),l=st.last.filter(x=>x!=null);
-    const allPass=n>0&&st.best.every(x=>x!=null&&x>=PASS);
-    return{tried:l.length+(st.whole?1:0),n,pass:st.best.filter(x=>x!=null&&x>=PASS).length,allPass,
+    const pend=st.drill.filter(d=>d.ok<NEED).length;
+    const allPass=n>0&&st.best.every(x=>x!=null&&x>=PASS)&&!pend;
+    return{pend,tried:l.length+(st.whole?1:0),n,pass:st.best.filter(x=>x!=null&&x>=PASS).length,allPass,
       avg:l.length?Math.round(l.reduce((a,c)=>a+c,0)/l.length):null,whole:st.wholeBest,wholeLast:st.whole?st.whole.pct:null,weakest:st.best.reduce((m,x,i)=>x==null||x>=PASS?m:(m==null||x<st.best[m]?i:m),null)}};
   const emit=()=>{opts.onUpdate&&opts.onUpdate(st,stats())};
   if(!n){box.innerHTML=`<p class="small center">Chưa có câu tiếng Đức nào để đọc.</p>`;return{stats,stop(){},sents:S}}
@@ -54,16 +59,21 @@ function reader(box,src,opts={}){
       <div class="row"><button class="ibtn" data-pa="all">🔊 Nghe cả đoạn</button><button class="ibtn" data-pa="allslow">🐢</button></div>
       <div class="prs">${U.map((u,i)=>{const x=u.de,r=st.mode==="whole"?st.whole:st.res[i];let html;
           if(st.mode==="whole"&&st.whole){const c=colorize(x,st.whole,k);k=c.k;html=c.html}else html=colorize(x,r,0).html;
-          return `<div class="prl${st.mode==="sent"&&i===st.cur?" on":""}${(st.best[i]??0)>=PASS?" ok":""}" data-i="${i}">${u.sp?`<div class="prsp">${esc(u.sp)}</div>`:""}<div class="prt">${html}</div>${u.vi?`<div class="prvi">${esc(u.vi)}</div>`:""}
+          return `<div class="prl${st.mode==="sent"&&i===st.cur?" on":""}${(st.best[i]??0)>=PASS?" ok":""}" data-i="${i}">${u.sp?`<div class="prsp">${esc(u.sp)}</div>`:""}<div class="prt">${html}</div>${(()=>{const i=window.ipaFor?ipaFor(clean(x)):"";return i?`<div class="pripa">/${esc(i)}/</div>`:""})()}${u.vi?`<div class="prvi">${esc(u.vi)}</div>`:""}
             ${st.mode==="sent"?`<div class="prb"><button class="spk sm" data-pa="say" data-i="${i}" aria-label="Nghe">🔊</button><button class="spk sm" data-pa="slow" data-i="${i}" aria-label="Nghe chậm">🐢</button>
               <button class="trybtn prmic" data-pa="mic" data-i="${i}">🎤 Đọc</button><span class="prbadge">${badge(i)}</span></div><div class="prres" id="prres${i}"></div>`:""}</div>`}).join("")}</div>
       ${st.mode==="whole"?`<div class="row"><button class="trybtn" data-pa="wmic">🎤 Đọc cả đoạn</button></div><div class="small center">Đọc liền một mạch, xong bấm 🎤 lần nữa để dừng và chấm.</div><div class="small center prlive"></div><div class="prwres"></div>`:""}
-      <div class="prsum">${s.tried?`${s.allPass?`<b class="cpass">✅ Đã qua: mọi câu ≥ ${PASS}%</b><br>`:`<b>${s.pass}/${n} câu đạt ≥ ${PASS}%</b>${s.weakest!=null?` · cần luyện thêm câu ${s.weakest+1}`:""}<br>`}<span class="small">Lần đọc gần nhất: trung bình ${s.avg??"–"}%${s.wholeLast!=null?` · cả đoạn ${s.wholeLast}%`:""}${st.wholeBest!=null?` (tốt nhất ${st.wholeBest}%)`:""}</span>`:`${n} câu · ${st.mode==="sent"?"bấm 🔊 nghe mẫu rồi 🎤 đọc từng câu":"nghe cả đoạn rồi đọc liền một mạch"} · cần ≥ ${PASS}% mỗi câu`}</div>
+      ${st.drill.length?`<div class="pdrill"><div class="sgh" style="margin-top:0"><b>🎯 Luyện từ yếu</b><span class="small">mỗi từ đọc đạt ≥ ${PASS}% đủ ${NEED} lần</span></div>
+        ${st.drill.map((d,i)=>`<div class="pdw${d.ok>=NEED?" ok":""}"><div class="pdt"><b>${esc(d.w)}</b> ${ipaHtml(d.w)}</div>
+          <div class="prb"><button class="spk sm" data-pa="dsay" data-i="${i}" aria-label="Nghe">🔊</button><button class="spk sm" data-pa="dslow" data-i="${i}" aria-label="Nghe chậm">🐢</button>
+          ${d.ok>=NEED?`<span class="small">✅ Xong</span>`:`<button class="trybtn prmic" data-pa="dmic" data-i="${i}">🎤 Đọc</button>`}<span class="pddots">${"●".repeat(Math.min(d.ok,NEED))}${"○".repeat(Math.max(0,NEED-d.ok))}</span>${d.last!=null?`<span class="prsc ${cls(d.last)}">${d.last}%</span>`:""}</div>
+          <div class="prres" id="pdres${i}">${d.res&&d.res.pct<PASS&&d.res.words&&d.res.words[0]&&window.phFeedbackHtml?phFeedbackHtml(d.res.words[0]):""}</div></div>`).join("")}</div>`:""}
+      <div class="prsum">${s.tried?`${s.allPass?`<b class="cpass">✅ Đã qua: mọi câu ≥ ${PASS}%</b><br>`:`<b>${s.pass}/${n} câu đạt ≥ ${PASS}%</b>${s.weakest!=null?` · cần luyện thêm câu ${s.weakest+1}`:""}${s.pend?` · còn <b>${s.pend} từ</b> ở 🎯 Luyện từ yếu`:""}<br>`}<span class="small">Lần đọc gần nhất: trung bình ${s.avg??"–"}%${s.wholeLast!=null?` · cả đoạn ${s.wholeLast}%`:""}${st.wholeBest!=null?` (tốt nhất ${st.wholeBest}%)`:""}</span>`:`${n} câu · ${st.mode==="sent"?"bấm 🔊 nghe mẫu rồi 🎤 đọc từng câu":"nghe cả đoạn rồi đọc liền một mạch"} · cần ≥ ${PASS}% mỗi câu`}</div>
       <div class="small center plegend"><span class="pw pg">xanh</span> chuẩn · <span class="pw po">cam</span> hơi lệch · <span class="pw pr">đỏ</span> sai hoặc thiếu${azure()?"":" · chế độ miễn phí chỉ biết máy nghe ra chữ gì — nhập khóa Azure trong ⚙ để chấm từng âm"}</div></div>`;
     if(st.mode==="whole"&&st.whole)showWhole();
     st.res.forEach((r,i)=>{if(r&&st.mode==="sent")showSent(i,i===st.lastIdx)})}
   function showSent(i,open){const el=box.querySelector("#prres"+i),r=st.res[i];if(!el||!r)return;
-    el.innerHTML=`<details class="prdet"${open&&r.pct<PASS?" open":""}><summary>${r.pct>=PASS?"✅":"🔁"} Lần gần nhất ${r.pct}% — ${r.pct>=PASS?"xem chi tiết":"xem âm nào chưa đúng"}</summary>${detailHtml(r)}</details>${window.recRowHtml?recRowHtml({...r,target:null}):""}`}
+    el.innerHTML=`<details class="prdet"${open&&r.pct<PASS?" open":""}><summary>${r.pct>=PASS?"✅":"🔁"} Lần gần nhất ${r.pct}% — ${r.pct>=PASS?"xem chi tiết":"xem âm nào chưa đúng"}</summary>${detailHtml(r)}${(r.words||[]).some(w=>w.acc<PASS||w.err!=="None")?`<div class="small">👉 Từ yếu đã vào mục <b>🎯 Luyện từ yếu</b> bên dưới: đọc riêng mỗi từ ≥ ${PASS}% đủ ${NEED} lần.</div>`:""}</details>${window.recRowHtml?recRowHtml({...r,target:null}):""}`}
   function showWhole(){const el=box.querySelector(".prwres"),r=st.whole;if(!el||!r)return;
     el.innerHTML=`<div class="tryv ${r.pct>=PASS?"good":r.pct>=60?"mid":"bad"}">Cả đoạn · lần gần nhất<span class="trypct">${r.pct}%</span></div>${detailHtml(r)}
       ${r.flu?`<div class="tflu"><span>⏱ <b>${r.flu.wpm||"–"}</b> từ/phút</span><span>⏸ Ngắt giữa câu: <b>${r.flu.mid}</b></span><span>Lâu nhất: <b>${r.flu.longest}s</b></span></div>`:""}${window.recRowHtml?recRowHtml({...r,target:null}):""}`}
@@ -84,10 +94,14 @@ function reader(box,src,opts={}){
     if(a==="all"||a==="allslow"){playAll(S,a==="allslow",hl);return}
     if(a==="say"||a==="slow"){stopAll();window.appSpeak&&appSpeak(S[i],a==="slow");st.cur=i;box.querySelectorAll(".prl").forEach((el,x)=>el.classList.toggle("on",x===i));return}
     if(a==="mic"){st.cur=i;const row=box.querySelector(`.prl[data-i="${i}"]`);let live=row.querySelector(".prlive");if(!live){live=document.createElement("div");live.className="small center prlive";row.querySelector(".prb").after(live)}
-      rec(b,clean(S[i]),false,live,r=>{window.SFX&&setTimeout(()=>r.pct>=PASS?SFX.ok():SFX.bad(),200);st.res[i]=r;st.last[i]=r.pct;st.best[i]=Math.max(st.best[i]??-1,r.pct);st.lastIdx=i;
+      rec(b,clean(S[i]),false,live,r=>{window.SFX&&setTimeout(()=>r.pct>=PASS?SFX.ok():SFX.bad(),200);st.res[i]=r;addDrill(r);st.last[i]=r.pct;st.best[i]=Math.max(st.best[i]??-1,r.pct);st.lastIdx=i;
         if(r.pct>=PASS){const nx=st.best.findIndex((x,j)=>j>i&&(x==null||x<PASS));st.cur=nx>=0?nx:i}
         draw();emit();const el=box.querySelector(`.prl[data-i="${st.cur}"]`);el&&el.scrollIntoView({block:"nearest",behavior:"smooth"})});return}
-    if(a==="wmic"){rec(b,S.map(clean).join(" "),true,box.querySelector(".prlive"),r=>{window.SFX&&setTimeout(()=>r.pct>=PASS?SFX.ok():SFX.bad(),200);st.whole=r;st.wholeBest=Math.max(st.wholeBest??-1,r.pct);draw();emit()});return}};
+    if(a==="dsay"||a==="dslow"){stopAll();window.appSpeak&&appSpeak(st.drill[i].w,a==="dslow");return}
+    if(a==="dmic"){const d=st.drill[i],row=b.closest(".pdw");let live=row.querySelector(".prlive");if(!live){live=document.createElement("div");live.className="small center prlive";row.querySelector(".prb").after(live)}
+      rec(b,d.w,false,live,r=>{window.SFX&&setTimeout(()=>r.pct>=PASS?SFX.ok():SFX.bad(),200);d.last=r.pct;d.res=r;if(r.pct>=PASS)d.ok++;draw();emit();
+        const el=box.querySelector(".pdrill");el&&el.scrollIntoView({block:"nearest",behavior:"smooth"})});return}
+    if(a==="wmic"){rec(b,S.map(clean).join(" "),true,box.querySelector(".prlive"),r=>{window.SFX&&setTimeout(()=>r.pct>=PASS?SFX.ok():SFX.bad(),200);st.whole=r;addDrill(r);st.wholeBest=Math.max(st.wholeBest??-1,r.pct);draw();emit()});return}};
   draw();
   return{stats,stop(){if(busy&&window.appScoreStop)appScoreStop();stopAll()},sents:S}}
 
@@ -125,14 +139,23 @@ function onHost(e){if(window.VocabAPI&&e.target.closest("[data-ch]")&&VocabAPI.i
    it.items: [{de,vi,sp}] (đoạn nói đầu ra) hoặc it.src = bài viết vừa làm (đọc lại chính đoạn mình viết) / it.text. Chỉ "Đạt" khi mọi câu ≥ 80%. */
 function registerR(){const T=window.TutorAPI;if(!T||!T.R||T.R.para)return;
   T.R.para=(it,box)=>{
-    const own=it.from&&it.from.userText&&splitSents(it.from.userText).length?it.from.userText:"",src=it.items||own||it.text||"";
+    const own=it.from&&it.from.userText&&splitSents(it.from.userText).length?it.from.userText:"";let src=it.items||own||it.text||"";
     const plain=Array.isArray(src)?src.map(u=>u.de).join("\n"):src;
     box.innerHTML=`<p class="qlabel">${it.label||"🎤 Đọc to đoạn văn"}</p><div class="small center">${it.from?(own?"Đoạn bạn vừa viết · ":"Bạn chưa viết — đọc bài mẫu · "):""}đọc từng câu, mỗi câu cần ≥ ${PASS}% mới qua</div>
       <div id="paraBox"></div><div class="row"><button class="ibtn mini" data-t2="save">💾 Lưu vào Luyện đoạn</button></div>
       <div class="row stickynext"><button class="prim soft" id="pnext">Bỏ qua, tiếp →</button></div>`;
     const btn=box.querySelector("#pnext");
-    const ctl=reader(box.querySelector("#paraBox"),src,{onUpdate:(st,s)=>{btn.className="prim"+(s.allPass?"":" soft");btn.textContent=s.allPass?`✅ Đã qua · Tiếp →`:`Tiếp → (${s.pass}/${s.n} câu ≥ ${PASS}%)`;it.onResult&&it.onResult(s)}});
-    box.querySelector('[data-t2="save"]').onclick=e=>{upsert(plain,it.saveTitle);e.target.textContent="✓ Đã lưu — mở ở tab Phát âm → 📝 Đoạn văn";e.target.disabled=true};
+    const sug=own&&window.deSpell?deSpell(own):[];
+    if(sug.length){const el=document.createElement("div");el.className="pspell";
+      el.innerHTML=`<b>✏️ Kiểm tra chính tả trước khi đọc</b>${sug.map(x=>`<div><s>${esc(x.from)}</s> → <b>${esc(x.to)}</b> ${window.ipaFor&&ipaFor(x.to)?`<span class="ipa-in">/${esc(ipaFor(x.to))}/</span>`:""} <span class="small">· ${esc(x.why)}</span></div>`).join("")}
+        <div class="row"><button class="prim mini" data-t2="fix">Sửa giúp tôi rồi đọc</button><button class="ibtn mini" data-t2="keep">Giữ nguyên</button></div>`;
+      box.querySelector("#paraBox").before(el);
+      el.querySelector('[data-t2="keep"]').onclick=()=>el.remove();
+      el.querySelector('[data-t2="fix"]').onclick=()=>{let t=src;for(const x of sug)t=t.replace(new RegExp("(^|[^\\p{L}])"+x.from.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+"(?![\\p{L}])","gu"),(m,p1)=>p1+x.to);
+        src=t;if(it.from)it.from.userText=t;el.remove();ctl.stop();ctl=reader(box.querySelector("#paraBox"),src,{onUpdate:upd})}}
+    const upd=(st,s)=>{btn.className="prim"+(s.allPass?"":" soft");btn.textContent=s.allPass?`✅ Đã qua · Tiếp →`:`Tiếp → (${s.pass}/${s.n} câu ≥ ${PASS}%${s.pend?` · ${s.pend} từ cần luyện`:""})`;it.onResult&&it.onResult(s)};
+    let ctl=reader(box.querySelector("#paraBox"),src,{onUpdate:upd});
+    box.querySelector('[data-t2="save"]').onclick=e=>{upsert(Array.isArray(src)?src.map(u=>u.de).join("\n"):src,it.saveTitle);e.target.textContent="✓ Đã lưu — mở ở tab Phát âm → 📝 Đoạn văn";e.target.disabled=true};
     btn.onclick=()=>{ctl.stop();const s=ctl.stats();if(it.answered)return;
       if(!s.tried){it.answered=true;T.nextItem();return}
       T.answer(it,s.allPass,"",{direct:true,toast:s.allPass?`✅ Đã qua: mọi câu ≥ ${PASS}%`:`🔁 ${s.pass}/${s.n} câu đạt ≥ ${PASS}% — luyện tiếp các câu còn lại nhé`})}}}

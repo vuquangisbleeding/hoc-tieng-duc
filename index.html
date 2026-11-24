@@ -299,6 +299,9 @@ textarea{font:inherit;font-size:16px;width:100%;padding:12px 14px;border-radius:
 .ctab{overflow-x:auto;margin:8px 0}.ctab table{border-collapse:collapse;width:100%;font-size:15px}.ctab td,.ctab th{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}.ctab th{background:var(--soft)}
 .cday{display:grid;gap:6px;margin:6px 0}.cday div{display:grid;grid-template-columns:110px 1fr;gap:8px;font-size:14px}.cday span{color:var(--muted,#666)}
 .cmonth{margin:10px 0}.cmonth>summary{cursor:pointer;display:flex;justify-content:space-between;gap:8px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:14px;list-style:none}.cmonth>summary::-webkit-details-marker{display:none}.cmonth>p{margin:6px 4px}
+.pspell{border:1px solid var(--orange);background:light-dark(#fff6e8,#2b2214);border-radius:12px;padding:10px 12px;margin:8px 0;text-align:left;font-size:15px}.pspell s{color:var(--red)}.pspell .row{margin-top:6px}
+.pripa{font-size:14px;color:var(--muted,#666);margin-top:2px}.phide .pripa{display:none}
+.pdrill{border:1px dashed var(--line);border-radius:14px;padding:10px 12px;margin:10px 0}.pdw{border-top:1px solid var(--line);padding:8px 0}.pdw:first-of-type{border-top:0}.pdw.ok .pdt{color:var(--green)}.pdt{font-size:19px}.pddots{letter-spacing:2px;color:var(--green);font-size:16px}
 .oipa{display:block;font-size:13px;font-weight:400;opacity:.7;margin-top:2px}
 .ccond{display:grid;gap:4px;margin:8px 0;text-align:left;font-size:15px}.ccond .ok{color:var(--green)}
 .cpass{color:var(--green);font-weight:600}.cfail{color:var(--red);font-weight:600}
@@ -834,6 +837,7 @@ let IPAM=null;const ART_IPA={der:"deːɐ̯",die:"diː",das:"das"};
 function ipaMap(){if(IPAM)return IPAM;IPAM=new Map();
   const clean=i=>String(i||"").trim().replace(/^[\/\[]|[\/\]]$/g,"");
   const put=(k,i)=>{k=norm(String(k||""));i=clean(i);if(k&&i&&!IPAM.has(k))IPAM.set(k,i)};
+  const split=(w,i)=>{const fw=norm(String(w)).split(" "),iw=clean(i).split(/\s+/);if(fw.length>1&&fw.length===iw.length)fw.forEach((x,k)=>put(x,iw[k]))};   // cụm từ: tra được cả từng từ lẻ
   const eat=x=>{if(!x||!x.w||!x.i)return;put(x.w,x.i);if(x.a&&ART_IPA[x.a])put(x.a+" "+x.w,ART_IPA[x.a]+" "+clean(x.i))};
   try{(window.APP_WORDS||[]).forEach(eat);(window.APP_SENTS||[]).forEach(eat)}catch(e){}
   try{for(const s of (window.VOCAB_SETS||[]))(s.words||[]).forEach(eat)}catch(e){}
@@ -843,7 +847,37 @@ function ipaMap(){if(IPAM)return IPAM;IPAM=new Map();
   const NAMES={Berlin:"bɛʁˈliːn",Deutschland:"ˈdɔɪ̯tʃlant",Vietnam:"viɛtˈnam",München:"ˈmʏnçn̩",Hamburg:"ˈhambʊʁk",Köln:"kœln",Wien:"viːn",
     Anna:"ˈana",Lena:"ˈleːna",Tom:"tɔm",Sara:"ˈzaːʁa",Lukas:"ˈluːkas",Schmidt:"ʃmɪt",Weber:"ˈveːbɐ",Felix:"ˈfeːlɪks",Mia:"ˈmiːa",Lan:"lan",Herr:"hɛʁ",Frau:"fʁaʊ̯"};
   for(const k in NAMES)put(k,NAMES[k]);
+  try{const CI=window.COURSE_IPA||{};for(const k in CI)put(k,CI[k])}catch(e){}
+  // lượt 2: tách cụm thành từ lẻ (chỉ thêm từ còn thiếu)
+  try{(window.APP_WORDS||[]).concat(window.APP_SENTS||[]).forEach(x=>x&&x.w&&x.i&&split(x.w,x.i));for(const s of (window.VOCAB_SETS||[]))(s.words||[]).forEach(x=>x.i&&split(x.w,x.i));
+    const CI=window.COURSE_IPA||{};for(const k in CI)split(k,CI[k])}catch(e){}
   for(const a in ART_IPA)put(a,ART_IPA[a]);return IPAM}
+/* ---------- Kiểm tra chính tả đoạn tự viết: từ không có trong dữ liệu học → gợi ý từ gần nhất; danh từ phải viết hoa ---------- */
+let SPW=null;
+function spellWords(){if(SPW)return SPW;SPW=new Map();
+  const add=w=>{w=String(w||"").replace(/[.,!?;:"„“”()…\[\]]/g,"").trim();if(!w||/\d/.test(w))return;const k=w.toLowerCase();const o=SPW.get(k);
+    if(!o||(w===k&&o!==k))SPW.set(k,w)};   // có dạng viết thường ở đâu đó thì giữ dạng thường
+  SPW.nouns=new Set();const noun=w=>{for(const x of String(w||"").split(/\s+/))if(/^[A-ZÄÖÜ]/.test(x))SPW.nouns.add(x.toLowerCase().replace(/[.,!?]/g,""))};
+  const addAll=t=>{const ws=String(t||"").split(/\s+/);ws.forEach((w,i)=>{add(w);const c=w.replace(/[.,!?;:"„“”()…\[\]]/g,"");   // từ viết hoa không đứng đầu câu → danh từ / tên riêng
+    if(i>0&&/^[A-ZÄÖÜ][a-zäöüß]/.test(c)&&!/[.!?:]$/.test(ws[i-1]))SPW.nouns.add(c.toLowerCase())})};
+  try{for(const s of (window.VOCAB_SETS||[]))for(const w of s.words||[]){if(w.t==="n"||w.a){noun(w.w);if(w.pl&&w.pl[0]!=="(")noun(w.pl.replace(/^die /,""))}addAll(w.w);addAll(String(w.ex||"").replace(/[\[\]]/g,""));if(w.pl&&w.pl[0]!=="(")addAll(w.pl)}}catch(e){}
+  try{(window.APP_WORDS||[]).concat(window.APP_SENTS||[]).forEach(x=>x&&addAll(x.w))}catch(e){}
+  try{const C=window.VERB_CONJ||{};for(const v in C){add(v);const c=C[v];for(const fi of [...String(c.p||"").split(";"),c.prt,c.pf])if(fi)addAll(String(fi).replace(/^\*/,"").split("|")[0])}}catch(e){}
+  try{for(const k in (window.COURSE_IPA||{}))addAll(k);for(const s of (window.CourseApp?CourseApp.SESS:[]))for(const l of [...s.t,...s.i,...s.l,...s.r])addAll(l[1])}catch(e){}
+  const NM=["Felix","Lena","Anna","Tom","Lukas","Mia","Sara","Schmidt","Weber","Berlin","Hamburg","München","Wien","Hanoi","Vietnam","Deutschland","Nguyen","Lan","Nam","Hoa","Bao","Vy","Tuan","Sie","Ihr","Ihnen"];NM.forEach(add);NM.forEach(noun);
+  try{for(const s of (window.CourseApp?CourseApp.SESS:[]))for(const x of CourseApp.sessWords(s))if(x.w.t==="n"||x.w.a)noun(x.w.w)}catch(e){}
+  return SPW}
+function levD(a,b){if(Math.abs(a.length-b.length)>2)return 9;const d=Array.from({length:a.length+1},(_,i)=>[i]);for(let j=1;j<=b.length;j++)d[0][j]=j;
+  for(let i=1;i<=a.length;i++)for(let j=1;j<=b.length;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]===b[j-1]?0:1));return d[a.length][b.length]}
+window.deSpell=function(text){const W=spellWords(),out=[],seen=new Set();
+  for(const raw of String(text||"").split(/\s+/)){const t=raw.replace(/^[„“"(]+|[.,!?;:"“”)…]+$/g,"");if(!t||/\d/.test(t)||seen.has(t))continue;seen.add(t);const k=t.toLowerCase();
+    if(W.has(k)){if(W.nouns.has(k)&&W.get(k)!==k&&k!=="sie"&&k!=="ihr"&&t===k)out.push({from:t,to:t[0].toUpperCase()+t.slice(1),why:"Danh từ tiếng Đức luôn viết hoa"});continue}
+    if(k.length<4)continue;
+    {const m=k.match(/^(.+?)(em|en|er|es|e|s|n)$/);if(m&&(W.has(m[1])||W.has(m[1]+"e")||W.has(m[1]+"en")))continue}   // đuôi biến cách/chia: welchem, letztes…
+    let bd=9,cands=[];for(const [kk,c] of W){if(Math.abs(kk.length-k.length)>2)continue;const dd=levD(k,kk);if(dd<bd){bd=dd;cands=[c]}else if(dd===bd&&cands.length<3)cands.push(c)}
+    if(cands.length&&bd<=(k.length>=8?2:1)){const fix=c=>W.nouns.has(c.toLowerCase())||t[0]!==t[0].toLowerCase()?c[0].toUpperCase()+c.slice(1):c;
+      const all=[...new Set(cands.map(fix))];out.push({from:t,to:all[0],alts:all.slice(1),why:all.length>1?"Có thể gõ nhầm — hoặc: "+all.slice(1).join(", "):"Có thể gõ nhầm"})}}
+  return out};
 function ipaFor(text){const m=ipaMap(),t=norm(String(text||""));if(!t)return"";if(m.has(t))return m.get(t);
   const parts=t.split(" ").map(w=>m.get(w)||"");const n=parts.filter(Boolean).length;
   return n&&n>=parts.length/2?parts.map(p=>p||"…").join(" "):""}
@@ -1319,8 +1353,8 @@ if(!window.isSecureContext)$("err").textContent="Cần mở qua link https:// th
 <script src="course-data-m3.js?v=4"></script>
 <script src="course-ipa.js?v=1"></script>
 <script src="course.js?v=12"></script>
-<script src="tutor.js?v=20"></script>
-<script src="para.js?v=8"></script>
+<script src="tutor.js?v=22"></script>
+<script src="para.js?v=9"></script>
 <script src="sync.js?v=t3"></script>
 </body>
 </html>
