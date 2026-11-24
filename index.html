@@ -885,7 +885,7 @@ function scoreHelpHtml(r){const S=r.scores||{};if(!r.scores)return"";
   const v=k=>S[k]==null?"–":Math.round(S[k]);const comp=S["Đúng từ"]!=null?"Đúng từ":"Đầy đủ";
   return `<div class="scline"><span>🎯 Phát âm <b>${v("Chính xác")}</b></span><span>🌊 Trôi chảy <b>${v("Trôi chảy")}</b></span><span>📝 Đủ từ <b>${v(comp)}</b></span></div>
     <details class="schelp"><summary>Các số này nghĩa là gì?</summary><ul>
-      <li><b>Điểm lớn (%)</b> = 60% 🎯 Phát âm + 20% 🌊 Trôi chảy + 20% 📝 Đủ từ. Nếu có từ nào dưới 70 điểm thì điểm lớn tối đa 89% — tức là chưa qua mức 90%, phải sửa từ đó.</li>
+      <li><b>Điểm lớn (%)</b> = 60% 🎯 Phát âm + 20% 🌊 Trôi chảy + 20% 📝 Đủ từ. Nếu có từ nào dưới 60 điểm (đỏ) thì điểm lớn tối đa 79% — tức là chưa qua mức 80%, phải sửa từ đó.</li>
       <li><b>🎯 Phát âm</b> (Chính xác): các âm bạn phát ra giống giọng người Đức đến đâu — điểm quan trọng nhất.</li>
       <li><b>🌊 Trôi chảy</b>: đọc liền mạch, ngắt nghỉ tự nhiên, không ngập ngừng giữa chừng.</li>
       <li><b>📝 Đủ từ</b>: đọc đúng và đủ các từ, không bỏ sót hay đọc thừa (100 = đủ hết).</li>
@@ -1097,11 +1097,11 @@ async function scoreAzure(target,long,opts){
     if(strict&&!heardOk[i]&&!near)w={...w,acc:Math.min(w.acc,40),err:w.err==="None"?"Mispronunciation":w.err};return w});
   const avg=Math.round(words.reduce((a,w)=>a+w.acc,0)/(words.length||1));
   // Điểm chung tự tính từ đúng các số hiện trên màn hình (không dùng PronScore của Azure vì công thức của nó không hiện ra):
-  // 60% Phát âm + 20% Trôi chảy + 20% Đủ từ; có từ dưới 70 thì tối đa 89% (chưa qua mức 90%).
+  // 60% Phát âm + 20% Trôi chảy + 20% Đủ từ; có từ dưới 60 thì tối đa 79% (chưa qua mức 80%).
   const compV=strict?Math.round(100*nOk/(tWords.length||1)):(p.CompletenessScore??100);
   const accV=p.AccuracyScore??avg,fluV=p.FluencyScore;
   let base=pa?Math.round(fluV!=null&&tWords.length>1?0.6*accV+0.2*fluV+0.2*compV:0.8*accV+0.2*compV):(all?70:0);
-  const weakW=words.filter(w=>w.acc<70);if(pa&&weakW.length)base=Math.min(base,89);
+  const weakW=words.filter(w=>w.acc<60);if(pa&&weakW.length)base=Math.min(base,79);
   let pct=base,note="";
   if(!pa)note="Chưa chấm được từng âm (Azure không trả kết quả chấm) — điểm chỉ dựa vào chữ máy nghe ra.";
   if(strict&&!all){
@@ -1316,11 +1316,11 @@ if(!window.isSecureContext)$("err").textContent="Cần mở qua link https:// th
 <script src="nico.js?v=2"></script>
 <script src="course-data.js?v=5"></script>
 <script src="course-data-m2.js?v=2"></script>
-<script src="course-data-m3.js?v=3"></script>
+<script src="course-data-m3.js?v=4"></script>
 <script src="course-ipa.js?v=1"></script>
-<script src="course.js?v=11"></script>
+<script src="course.js?v=12"></script>
 <script src="tutor.js?v=20"></script>
-<script src="para.js?v=7"></script>
+<script src="para.js?v=8"></script>
 <script src="sync.js?v=t3"></script>
 </body>
 </html>

@@ -27,7 +27,7 @@ function colorize(sent,r,k0){
       return `<span class="pw ${w?cls(w.acc):"pr"}" title="${w?w.acc:0}">${esc(t)}</span>`}).join(" ");return{html,k}}
   if(r&&r.targetHtml)return{html:`<span class="tryterm prfree">${r.targetHtml}</span>`,k};
   return{html:esc(sent),k}}
-const PASS=90;   // một câu chỉ tính là đạt khi ≥ 90%; cả bài chỉ "Đạt" khi mọi câu đều ≥ 90%
+const PASS=80;   // một câu tính là đạt khi ≥ 80%; cả bài "Đạt" khi mọi câu đều ≥ 80%
 function weakHtml(r){const ws=(r.words||[]).filter(w=>w.acc<PASS||w.err!=="None").sort((a,b)=>a.acc-b.acc).slice(0,5);
   if(!ws.length)return `<div class="small">Mọi từ đều ≥ ${PASS} — rất tốt! 👍</div>`;
   return `<div class="small">Từ cần luyện (thấp nhất trước):</div>`+ws.map(w=>window.phFeedbackHtml?phFeedbackHtml(w):`<div class="tryph"><b>${esc(w.w)}</b> · ${w.acc}</div>`).join("")}
@@ -122,7 +122,7 @@ function onHost(e){if(window.VocabAPI&&e.target.closest("[data-ch]")&&VocabAPI.i
   if(a==="del"){if(b.dataset.sure){LIB=LIB.filter(x=>x.id!==b.dataset.id);saveLib();return home()}b.dataset.sure=1;b.textContent="Xoá?";b.classList.add("danger");setTimeout(()=>{if(b.isConnected){delete b.dataset.sure;b.textContent="✕";b.classList.remove("danger")}},2500)}}
 
 /* ---------- Dạng bài "para" trong bài học ----------
-   it.items: [{de,vi,sp}] (đoạn nói đầu ra) hoặc it.src = bài viết vừa làm (đọc lại chính đoạn mình viết) / it.text. Chỉ "Đạt" khi mọi câu ≥ 90%. */
+   it.items: [{de,vi,sp}] (đoạn nói đầu ra) hoặc it.src = bài viết vừa làm (đọc lại chính đoạn mình viết) / it.text. Chỉ "Đạt" khi mọi câu ≥ 80%. */
 function registerR(){const T=window.TutorAPI;if(!T||!T.R||T.R.para)return;
   T.R.para=(it,box)=>{
     const own=it.from&&it.from.userText&&splitSents(it.from.userText).length?it.from.userText:"",src=it.items||own||it.text||"";
