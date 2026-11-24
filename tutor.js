@@ -115,8 +115,9 @@ const countable=x=>x.w.t==="n"&&x.w.a&&/^die \S+$/.test(x.w.pl||"")&&!MASS.has(x
 /* ---------- Tạo câu hỏi ---------- */
 function mcWord(x,pool,dir){
   const others=shuffle(pool.filter(y=>y.w!==x.w&&y.w.m!==x.w.m&&y.w.w!==x.w.w)).sort((a,b)=>(b.w.t===x.w.t)-(a.w.t===x.w.t)).slice(0,3);
-  const opts=shuffle([x,...others]).map(y=>({h:dir==="de"?esc(y.w.m):V.termHtml(y.w),ok:y===x}));
-  return dir==="de"?{type:"mc",q:`<p class="qlabel">Chọn nghĩa đúng</p><div class="qbig">${V.termHtml(x.w)}</div>`,opts,w:x,say:{text:V.term(x.w)},after:`${V.termHtml(x.w)} = <b>${esc(x.w.m)}</b>`}
+  const ip=w=>V.ipaOf(w)?`<span class="oipa">/${esc(V.ipaOf(w))}/</span>`:"";
+  const opts=shuffle([x,...others]).map(y=>({h:dir==="de"?esc(y.w.m):V.termHtml(y.w)+ip(y.w),ok:y===x}));
+  return dir==="de"?{type:"mc",q:`<p class="qlabel">Chọn nghĩa đúng</p><div class="qbig">${V.termHtml(x.w)}</div>${V.ipaOf(x.w)?`<div class="wipa center">/${esc(V.ipaOf(x.w))}/</div>`:""}`,opts,w:x,say:{text:V.term(x.w)},after:`${V.termHtml(x.w)} = <b>${esc(x.w.m)}</b>`}
     :{type:"mc",q:`<p class="qlabel">Chọn từ tiếng Đức đúng</p><div class="qbig vi">${esc(x.w.m)}</div>`,opts,w:x,after:`${esc(x.w.m)} = <b>${V.termHtml(x.w)}</b>`,sayAfter:V.term(x.w)}}
 function listenWord(x,pool){
   const others=shuffle(pool.filter(y=>y.w!==x.w&&y.w.m!==x.w.m)).slice(0,3);
@@ -315,7 +316,7 @@ function bindNext(){const b=document.getElementById("tnext");if(b){b.onclick=nex
 function answer(it,good,fbHtml,opts={}){
   if(it.answered)return;it.answered=true;
   const st=RUN.steps[RUN.si],r=RUN.res[st];
-  if(good!==null){r.n++;if(good)r.r++;if(it.w)V.mark(it.w.s,it.w.w,good);if(!good)RUN.wrong.push(it)}
+  if(good!==null){r.n++;if(good)r.r++;if(it.w)V.mark(it.w.s,it.w.w,good);if(!good)RUN.wrong.push(it);window.SFX&&(good?SFX.ok():SFX.bad())}
   if(opts.direct){   // kết quả chi tiết đã hiện sẵn (bài nói) → báo nhanh Đúng/Chưa đạt rồi tự sang câu tiếp, khỏi bấm Tiếp lần nữa
     document.querySelectorAll("#tq button").forEach(b=>b.disabled=true);
     const t=document.createElement("div");t.className="ttoast "+(good?"good":"bad");
@@ -631,6 +632,7 @@ const TIPS={nghe:"Nghe mỗi hội thoại 2 lần: lần đầu nghe ý chính,
   ngu:"Đọc kỹ ghi chú ngữ pháp, rồi tự đặt 3 câu theo mẫu trước khi làm bài tập."};
 function home(){
   RUN=null;stopPlay();
+  if(window.CourseApp&&window.TutorAPI&&!(window.appCfg&&appCfg().kits==="on")){window.NicoApp&&NicoApp.close();CourseApp.open(root);return}   // mặc định: Lộ trình 0 → A2; 180 kit chỉ hiện khi bật trong ⚙
   const done=KITS.filter(k=>S.kits[k.n]&&S.kits[k.n].done).length,cur=KITS[(S.cur||1)-1],st=STAGES[cur.s-1],sk=skillAvg(),stk=streak();
   const known=Object.values(sk).filter(v=>v!=null);let weak=null;for(const [s] of SKILL)if(sk[s]!=null&&(weak==null||sk[s]<sk[weak]))weak=s;
   const P=V.getP(),due=allW().filter(x=>{const k=kitOfKey.get(x.s.id+"|"+x.w.w);const p=P[V.keyOf(x.s,x.w)];return k&&S.kits[k]&&p&&p.lv<3}).length;
@@ -700,6 +702,6 @@ window.tutorOpenKit=n=>{window.appSetView&&appSetView("tutor");kitPage(n)};
 window.TutorAPI={STEP,R,answer,nextItem,mcWord,listenWord,typeWord,dictWord,fillItem,cmp,timeDe,playLines,stopPlay,speak,home,
   start(meta){stopPlay();RUN={course:meta,k:{n:0,s:1,course:true},steps:meta.steps,si:-1,res:{},wrong:[],only:meta.steps.length===1,title:meta.title};nextStep()},
   running:()=>!!RUN,run:()=>RUN};
-window.__tutorTest={buildStep,genDrills,timeDe,cmp,kwCheck,KITS,startKitSteps,kitPage,home,getS:()=>S,run:()=>RUN};
 home();
+window.__tutorTest={buildStep,genDrills,timeDe,cmp,kwCheck,KITS,startKitSteps,kitPage,home,getS:()=>S,run:()=>RUN};
 })();

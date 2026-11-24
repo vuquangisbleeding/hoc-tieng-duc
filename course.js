@@ -36,7 +36,7 @@ const CUSTOM=new Map();
       case"parts":s.parts=v.split(",").map(x=>x.trim());break;
       case"nico":s.nico=v.split(",").map(Number).filter(Boolean);break;
       case"words":s.words=v.split(";").map(x=>x.trim()).filter(Boolean);break;
-      case"+w":{const [t,a,w,pl,m,ex,exv]=sp(v),key=w,o={t,w:w.replace(/\s*\(.*\)$/,""),m};if(a&&a!=="-")o.a=a;if(pl)o.pl=pl;if(ex)o.ex=ex;if(exv)o.exv=exv;
+      case"+w":{const [t,a,w,pl,m,ex,exv]=sp(v),key=w,o={t,w:w.replace(/\s*\(.*\)$/,""),m};o.i=(window.COURSE_IPA||{})[o.w]||"";if(a&&a!=="-")o.a=a;if(pl)o.pl=pl;if(ex)o.ex=ex;if(exv)o.exv=exv;
         if(!CUSTOM.has(key)){COURSE_SET.words.push(o);CUSTOM.set(key,{s:COURSE_SET,w:o})}break}
       case"g":s.g.push({p:v});break;
       case"gt":case"gtn":{const last=s.g[s.g.length-1];if(last&&last.rows)last.rows.push(sp(v));else s.g.push({rows:[sp(v)],noh:k==="gtn"});break}
@@ -245,7 +245,7 @@ function finishSess(s,run,extra){
   const p=n?Math.round(100*r/n):null,gated=gate.st.some(st=>run.res[st]);
   if(gated&&p!=null)cs.best=Math.max(cs.best??-1,p);
   const testOk=!gate.st.length||(cs.best??-1)>=gate.min,sayOk=sayDone(s);
-  if(testOk&&sayOk&&!cs.done)cs.done=Date.now();
+  const newly=testOk&&sayOk&&!cs.done;if(newly)cs.done=Date.now();
   saveC();
   const nx=SESS[SESS.indexOf(s)+1],pass=!!cs.done;
   const rows=run.steps.map(st=>{const x=run.res[st];const q=x&&x.n?Math.round(100*x.r/x.n):null;const S=T().STEP[st]||{i:"",t:st};
@@ -261,6 +261,7 @@ function finishSess(s,run,extra){
     ${nicoHtml(s,"🎬 Nghe thêm 20 phút hôm nay")}
     <div class="row">${pass&&nx?`<button class="prim" data-c="sess" data-id="${nx.id}">Tiếp: ${esc(nx.kind==="lesson"?"Buổi "+nx.id:nx.title)} →</button>`:""}
       ${!testOk?`<button class="prim" data-c="retest" data-id="${s.id}">Làm lại bài kiểm tra</button>`:""}${testOk&&!sayOk?`<button class="prim" data-c="resay" data-id="${s.id}">🗣 Luyện tiếp phần nói</button>`:""}<button class="ibtn" data-c="home">Lộ trình</button></div>`;
+  if(newly&&window.SFX)setTimeout(()=>SFX.win(),300);
   finishSess.last={s,wrong:run.wrong.filter(it=>it.src).map(it=>it.src)}}
 function nicoHtml(s,title){const eps=window.NICO?s.nico.filter(n=>NICO.e.some(e=>e.n===n)):s.nico;if(!eps.length||!window.NicoApp)return"";
   return `<div class="card"><div class="sgh" style="margin-top:0"><b>${title}</b><span class="small">Học với Nico</span></div><div class="row cnico">${eps.map(n=>`<button class="ibtn" data-t="nico" data-n="${n}">🎬 Nico tập ${n}</button>`).join("")}</div>
@@ -276,9 +277,11 @@ const curSess=()=>SESS.find(s=>!(C.s[s.id]&&C.s[s.id].done))||SESS[SESS.length-1
 const label=s=>s.kind==="lesson"?`B${s.id.split(".")[1]} · ${s.title}`:s.title;
 function home(){
   const done=SESS.filter(s=>stOf(s)==="done").length,cur=curSess(),book=(C.wrong||[]).length;
-  root.innerHTML=`<div class="vtop"><button class="ibtn" data-t="home" aria-label="Quay lại">‹</button><div class="vtitle">🎓 Lộ trình 0 → A2</div><span></span></div>
+  const kitsOn=window.appCfg&&appCfg().kits==="on";
+  root.innerHTML=`<div class="vtop">${kitsOn?`<button class="ibtn" data-t="home" aria-label="Quay lại">‹</button>`:"<span></span>"}<div class="vtitle">🎓 Lộ trình 0 → A2</div><span></span></div>
     <div class="vhero thero"><div><div class="big">${done}<small>/${SESS.length}</small></div><div class="small">buổi đã qua</div></div>
       <div class="vhero-r"><span class="small">Tháng ${cur.m} · Tuần ${cur.wk}</span><b>${esc(label(cur))}</b><button class="prim" data-c="sess" data-id="${cur.id}">${C.s[cur.id]?"Học tiếp":"Bắt đầu"} →</button></div></div>
+    ${window.NicoApp?`<div class="card tnico"><div class="sgh" style="margin-top:0"><b>🎬 Học với Nico</b><span class="small">${window.NICO?NICO.e.length+" tập · ":""}Nicos Weg A1</span></div><p class="small">Xem phim theo tập: mẫu câu, từ vựng, luyện nói có chấm điểm.</p><div class="row"><button class="ibtn" data-t="nico">Mở danh sách tập →</button></div></div>`:""}
     <div class="card"><div class="sgh" style="margin-top:0"><b>📅 Mỗi ngày khoảng 1,5 tiếng</b><span class="small">${book?`📒 Sổ lỗi sai: ${book} câu`:""}</span></div>
       <div class="cday"><div><b>Thứ Hai – Năm</b><span>55′ buổi học mới · 15′ ôn từ & câu sai · 20′ nghe Nico</span></div><div><b>Thứ Sáu</b><span>60′ buổi ôn tuần / kiểm tra</span></div><div><b>Thứ Bảy</b><span>30′ làm lại Sổ lỗi sai, nói lại đoạn đầu ra</span></div><div><b>Chủ nhật</b><span>15′ ôn nhẹ hoặc nghỉ</span></div></div>
       <p class="small">Qua buổi khi kiểm tra cuối buổi ≥ 80%; qua tuần khi kiểm tra tuần ≥ 75% và nói được đoạn đầu ra.</p>

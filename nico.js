@@ -44,7 +44,7 @@ function ep(n){
         <div class="row"><button class="ibtn" data-nk="say" data-k="${k}">🔊 Nghe</button><button class="ibtn" data-nk="slow" data-k="${k}">🐢</button><button class="trybtn" data-nk="mic" data-k="${k}">🎤 Nói theo</button></div>
         <div class="small center nlive"></div><div class="tryres nres"></div></div>`).join("")}</div>
     <div class="card"><div class="sgh" style="margin-top:0"><b>🗂 Từ vựng của chủ đề</b><span class="small">${ws.length} từ · bấm để xem chi tiết</span></div>
-      <div class="nwords">${ws.map(x=>`<div class="nw"><button class="nwt" data-lk2="${esc(x.w.w)}">${V.termHtml(x.w)}</button>${x.w.i?`<span class="ipa-in small">/${esc(x.w.i)}/</span>`:""}<span class="nwm">${esc(x.w.m||"")}</span><button class="spk sm" data-say="${esc(V.term(x.w))}" aria-label="Nghe">🔊</button></div>`).join("")}</div></div>
+      <div class="nwords">${ws.map(x=>`<div class="nw"><button class="nwt" data-lk2="${esc(x.w.w)}">${V.termHtml(x.w)}</button>${V.ipaOf(x.w)?`<span class="ipa-in small">/${esc(V.ipaOf(x.w))}/</span>`:""}<span class="nwm">${esc(x.w.m||"")}</span><button class="spk sm" data-say="${esc(V.term(x.w))}" aria-label="Nghe">🔊</button></div>`).join("")}</div></div>
     <div class="card center"><p><b>🧠 Luyện tập</b> · 10 câu: nghĩa từ, chọn câu đúng tình huống, điền từ, nghe chọn câu.</p>${q.q!=null?`<p class="small">Điểm tốt nhất: <b>${q.q}%</b></p>`:""}
       <div class="row"><button class="prim" data-nk="quiz" data-n="${n}">${q.q!=null?"Luyện lại":"Bắt đầu luyện tập"} →</button></div></div>
     <div class="row"><button class="ibtn" data-nk="ep" data-n="${EPS[i-1]?EPS[i-1].n:n}" ${i?"":"disabled"}>‹ Tập trước</button><button class="ibtn" data-nk="ep" data-n="${EPS[i+1]?EPS[i+1].n:n}" ${EPS[i+1]?"":"disabled"}>Tập sau ›</button></div>`;
@@ -96,7 +96,7 @@ function qDraw(){
 function qAnswer(k){
   const q=view.Q[view.i];if(q.done)return;q.done=true;const ok=q.o[k].ok;if(ok)view.r++;
   root.querySelectorAll("#nq .mco").forEach((b,j)=>{b.disabled=true;if(q.o[j].ok)b.classList.add("right");else if(j===k)b.classList.add("wrong")});
-  document.getElementById("nfb").innerHTML=`<div class="fb ${ok?"good":"bad"}"><div class="fbh">${ok?"✅ Đúng rồi!":"❌ Chưa đúng"}</div><div class="tfbtxt">${q.ans}</div><div class="row stickynext"><button class="prim" id="tnext" data-nk="qnext">Tiếp →</button></div></div>`;
+  window.SFX&&(ok?SFX.ok():SFX.bad());document.getElementById("nfb").innerHTML=`<div class="fb ${ok?"good":"bad"}"><div class="fbh">${ok?"✅ Đúng rồi!":"❌ Chưa đúng"}</div><div class="tfbtxt">${q.ans}</div><div class="row stickynext"><button class="prim" id="tnext" data-nk="qnext">Tiếp →</button></div></div>`;
   if(q.sayAfter)setTimeout(()=>speak(q.sayAfter),200);
   document.getElementById("nfb").scrollIntoView({behavior:"smooth",block:"nearest"})}
 

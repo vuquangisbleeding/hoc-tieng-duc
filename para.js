@@ -84,10 +84,10 @@ function reader(box,src,opts={}){
     if(a==="all"||a==="allslow"){playAll(S,a==="allslow",hl);return}
     if(a==="say"||a==="slow"){stopAll();window.appSpeak&&appSpeak(S[i],a==="slow");st.cur=i;box.querySelectorAll(".prl").forEach((el,x)=>el.classList.toggle("on",x===i));return}
     if(a==="mic"){st.cur=i;const row=box.querySelector(`.prl[data-i="${i}"]`);let live=row.querySelector(".prlive");if(!live){live=document.createElement("div");live.className="small center prlive";row.querySelector(".prb").after(live)}
-      rec(b,clean(S[i]),false,live,r=>{st.res[i]=r;st.last[i]=r.pct;st.best[i]=Math.max(st.best[i]??-1,r.pct);st.lastIdx=i;
+      rec(b,clean(S[i]),false,live,r=>{window.SFX&&setTimeout(()=>r.pct>=PASS?SFX.ok():SFX.bad(),200);st.res[i]=r;st.last[i]=r.pct;st.best[i]=Math.max(st.best[i]??-1,r.pct);st.lastIdx=i;
         if(r.pct>=PASS){const nx=st.best.findIndex((x,j)=>j>i&&(x==null||x<PASS));st.cur=nx>=0?nx:i}
         draw();emit();const el=box.querySelector(`.prl[data-i="${st.cur}"]`);el&&el.scrollIntoView({block:"nearest",behavior:"smooth"})});return}
-    if(a==="wmic"){rec(b,S.map(clean).join(" "),true,box.querySelector(".prlive"),r=>{st.whole=r;st.wholeBest=Math.max(st.wholeBest??-1,r.pct);draw();emit()});return}};
+    if(a==="wmic"){rec(b,S.map(clean).join(" "),true,box.querySelector(".prlive"),r=>{window.SFX&&setTimeout(()=>r.pct>=PASS?SFX.ok():SFX.bad(),200);st.whole=r;st.wholeBest=Math.max(st.wholeBest??-1,r.pct);draw();emit()});return}};
   draw();
   return{stats,stop(){if(busy&&window.appScoreStop)appScoreStop();stopAll()},sents:S}}
 

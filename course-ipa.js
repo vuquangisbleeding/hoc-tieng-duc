@@ -1,0 +1,20 @@
+/* IPA cho các từ tự soạn của Lộ trình 0 → A2 (từ có sẵn trong bộ A1 đã có IPA riêng). Khoá = chữ tiếng Đức như trong dòng +w. */
+window.COURSE_IPA={
+"Anzeige":"ˈanˌt͡saɪ̯ɡə","Brief":"bʁiːf","Briefmarke":"ˈbʁiːfˌmaʁkə","Brüder":"ˈbʁyːdɐ","Bürgeramt":"ˈbʏʁɡɐˌʔamt","E-Mail-Adresse":"ˈiːmeɪ̯l ʔaˌdʁɛsə",
+"Es hat Spaß gemacht.":"ɛs hat ʃpaːs ɡəˈmaxt","Fahrrad fahren":"ˈfaːʁaːt ˈfaːʁən","Formular":"fɔʁmuˈlaːɐ̯","Foto":"ˈfoːto","Gern geschehen!":"ɡɛʁn ɡəˈʃeːən",
+"Gitarre":"ɡiˈtaʁə","Gute Idee!":"ˈɡuːtə iˈdeː","Handynummer":"ˈhɛndiˌnʊmɐ","Hast du Lust?":"hast duː lʊst","Haustier":"ˈhaʊ̯sˌtiːɐ̯","Ihr":"iːɐ̯","Kinder":"ˈkɪndɐ",
+"Klavier":"klaˈviːɐ̯","Leider kann ich nicht.":"ˈlaɪ̯dɐ kan ɪç nɪçt","Nachname":"ˈnaːxˌnaːmə","Nebenkosten":"ˈneːbn̩ˌkɔstn̩","Paket":"paˈkeːt","Punkt":"pʊŋkt",
+"Quadratmeter":"kvaˈdʁaːtˌmeːtɐ","Schach":"ʃax","Schwestern":"ˈʃvɛstɐn","Ski fahren":"ʃiː ˈfaːʁən","Sonst noch etwas?":"zɔnst nɔx ˈɛtvas","Straße":"ˈʃtʁaːsə",
+"Studentin":"ʃtuˈdɛntɪn","Und Ihnen?":"ʊnt ˈiːnən","Und dir?":"ʊnt diːɐ̯","Vietnamesisch":"vi̯ɛtnaˈmeːzɪʃ","Was darf es sein?":"vas daʁf ɛs zaɪ̯n","Was ist das?":"vas ɪst das",
+"Wie alt bist du?":"viː alt bɪst duː","Wie geht's?":"viː ɡeːt͡s","Wie heißt du?":"viː haɪ̯st duː","Wie schreibt man das?":"viː ʃʁaɪ̯pt man das","ab":"ap","allein":"aˈlaɪ̯n",
+"am":"am","am liebsten":"am ˈliːpstn̩","anmelden":"ˈanˌmɛldn̩","auch":"aʊ̯x","aufräumen":"ˈaʊ̯fˌʁɔɪ̯mən","aus":"aʊ̯s","ausfüllen":"ˈaʊ̯sˌfʏlən","beim":"baɪ̯m",
+"besucht":"bəˈzuːxt","danach":"daˈnaːx","das ist":"das ɪst","dein":"daɪ̯n","dreißig":"ˈdʁaɪ̯sɪç","duschen":"ˈdʊʃn̩","ein bisschen":"aɪ̯n ˈbɪsçən","eingekauft":"ˈaɪ̯nɡəˌkaʊ̯ft",
+"einschlafen":"ˈaɪ̯nˌʃlaːfn̩","einundzwanzig":"ˈaɪ̯nʊntˌt͡svant͡sɪç","er":"eːɐ̯","es geht":"ɛs ɡeːt","fotografiert":"fotoɡʁaˈfiːɐ̯t","gar nicht":"ɡaːɐ̯ nɪçt",
+"gearbeitet":"ɡəˈʔaʁbaɪ̯tət","gefeiert":"ɡəˈfaɪ̯ɐt","gehört":"ɡəˈhøːɐ̯t","gekauft":"ɡəˈkaʊ̯ft","gekocht":"ɡəˈkɔxt","gelernt":"ɡəˈlɛʁnt","gemacht":"ɡəˈmaxt",
+"geputzt":"ɡəˈpʊt͡st","geschenkt":"ɡəˈʃɛŋkt","gespielt":"ɡəˈʃpiːlt","getanzt":"ɡəˈtant͡st","getrennt":"ɡəˈtʁɛnt","gezeigt":"ɡəˈt͡saɪ̯kt","haben":"ˈhaːbn̩",
+"heute Abend":"ˈhɔɪ̯tə ˈaːbn̩t","hin und zurück":"hɪn ʊnt t͡suˈʁʏk","hängen":"ˈhɛŋən","ihr":"iːɐ̯","jeden Tag":"ˈjeːdn̩ taːk","kein":"kaɪ̯n","keine":"ˈkaɪ̯nə",
+"letzte":"ˈlɛt͡stə","letzte Woche":"ˈlɛt͡stə ˈvɔxə","mein":"maɪ̯n","meistens":"ˈmaɪ̯stn̩s","minus":"ˈmiːnʊs","modern":"moˈdɛʁn","möbliert":"møˈbliːɐ̯t","nach":"naːx",
+"nach Hause":"naːx ˈhaʊ̯zə","nett":"nɛt","nicht":"nɪçt","nicht so gut":"nɪçt zoː ɡuːt","oder":"ˈoːdɐ","plus":"plʊs","sechzehn":"ˈzɛçt͡seːn","sehr gut":"zeːɐ̯ ɡuːt",
+"sein":"zaɪ̯n","selten":"ˈzɛltn̩","sie":"ziː","siebzehn":"ˈziːpt͡seːn","tausend":"ˈtaʊ̯zn̩t","telefoniert":"telefoˈniːɐ̯t","unser":"ˈʊnzɐ","vor":"foːɐ̯","was":"vas",
+"wer":"veːɐ̯","wie":"viː","wie viel":"viː fiːl","wir":"viːɐ̯","wo":"voː","woher":"voˈheːɐ̯","zahlen":"ˈt͡saːlən","zu Hause":"t͡suː ˈhaʊ̯zə","zum":"t͡sʊm","zur":"t͡suːɐ̯",
+"zusammen":"t͡suˈzamən"};

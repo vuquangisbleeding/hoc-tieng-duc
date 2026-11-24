@@ -205,7 +205,7 @@ function show(e){
   const V=VA();let body="";
   if(e.obj&&V.infoBlock&&e.set)body=V.infoBlock(e.obj,{set:e.set});
   else body=`<div class="winfo"><div class="wterm">${termHtml(e)} <button class="spk" data-say="${esc(termOf(e))}" aria-label="Nghe">🔊</button></div>
-    ${e.obj&&e.obj.i?`<div class="wipa">/${esc(e.obj.i)}/</div>`:""}<div class="wmean">${esc(e.m)} <span class="wtype">${TYPE[e.t]||""}</span></div></div>`;
+    ${e.obj&&(window.VocabAPI?VocabAPI.ipaOf(e.obj):e.obj.i)?`<div class="wipa">/${esc(window.VocabAPI?VocabAPI.ipaOf(e.obj):e.obj.i)}/</div>`:""}<div class="wmean">${esc(e.m)} <span class="wtype">${TYPE[e.t]||""}</span></div></div>`;
   const occ=occurrences(e).slice(0,8);
   const TUT=G.TUTOR,kt=e.kit&&TUT?TUT.kits[e.kit-1]:null;
   root.innerHTML=`<div class="vtop"><button class="ibtn" data-dact="back" aria-label="Quay lại">‹</button><div class="vtitle">Tra từ</div><span></span></div>

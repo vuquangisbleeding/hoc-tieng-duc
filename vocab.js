@@ -19,6 +19,8 @@ function mark(set,w,good){const p=pr(keyOf(set,w));if(good){p.ok++;p.lv=Math.min
 const term=w=>(w.a?w.a+" ":"")+w.w;
 const artHtml=w=>w.a?`<span class="art-${w.a}">${w.a}</span> `:"";
 const termHtml=w=>artHtml(w)+esc(w.w);
+/* IPA của từ: dùng sẵn w.i; thiếu thì tự ghép từ dữ liệu phát âm của app (ipaFor) và nhớ lại */
+const ipaOf=w=>{if(!w)return"";if(w.i)return w.i;if(w._ni)return"";const t=window.ipaFor?ipaFor(w.w):"";if(t&&!t.includes("…")){w.i=t;return t}w._ni=1;return""};
 const TYPE={n:"danh từ",v:"động từ",adj:"tính từ",adv:"trạng từ",phr:"cụm từ",num:"số từ",pron:"đại từ",prep:"giới từ",conj:"liên từ",qw:"từ để hỏi",art:"mạo từ"};
 
 /* ---------- So sánh câu trả lời ---------- */
@@ -240,7 +242,7 @@ function infoBlock(w,opts={}){ // phần giải nghĩa đầy đủ – dùng �
   const ct=conjTable(w,opts.hl||[]),S=opts.set||curSet;
   return `<div class="winfo">
     <div class="wterm">${termHtml(w)} <button class="spk" data-say="${esc(term(w))}" aria-label="Nghe">🔊</button></div>
-    ${w.i?`<div class="wipa">/${esc(w.i)}/</div>`:""}
+    ${ipaOf(w)?`<div class="wipa">/${esc(ipaOf(w))}/</div>`:""}
     <div class="wmean">${esc(w.m)} <span class="wtype">${TYPE[w.t]||""}</span></div>
     ${w.pl?`<div class="wrow"><span>Số nhiều</span>${w.pl==="—"?"<i>thường không dùng số nhiều</i>":esc(w.pl)}</div>`:""}
     ${w.f&&!ct?`<div class="wrow"><span>Chia</span>${esc(w.f)}</div>`:""}
@@ -257,6 +259,7 @@ function infoBlock(w,opts={}){ // phần giải nghĩa đầy đủ – dùng �
   </div>`;
 }
 function feedback(good,w,msg,extra="",hl=[]){
+  window.SFX&&(good?SFX.ok():SFX.bad());
   return `<div class="fb ${good?"good":"bad"}"><div class="fbh">${good?"✅ Chính xác!":"❌ Chưa đúng"}</div>${msg?`<p>${msg}</p>`:""}${extra}${infoBlock(w,{gender:true,hl})}</div>`;
 }
 const kbd=`<div class="kbd">${["ä","ö","ü","ß","Ä","Ö","Ü"].map(c=>`<button type="button" data-ch="${c}">${c}</button>`).join("")}</div>`;
@@ -331,7 +334,7 @@ function setPage(i){
     <label class="chk"><input type="checkbox" id="starOnly" ${starOnly?"checked":""}> Chỉ học các từ gắn ★ (${s.words.filter(w=>pr(keyOf(s,w)).star).length})</label></div>
    <div class="modes">${MODES.filter(m=>!(m[0]==="gender"&&!hasN)&&!(m[0]==="cloze"&&!hasEx)).map(m=>`<button class="mode" data-mode="${m[0]}"><span class="mi">${m[1]}</span><b>${m[2]}</b><span class="small">${m[3]}</span></button>`).join("")}</div>
    <div class="card"><b>Danh sách từ</b>
-    <div class="wlist">${s.words.map((w,j)=>{const p=P[keyOf(s,w)]||{};return `<div class="wl"><div class="wl-main"><div>${termHtml(w)} <span class="wl-ipa">${w.i?"/"+esc(w.i)+"/":""}</span></div><div class="small">${esc(w.m)}${w.pl&&w.pl!=="—"&&w.pl[0]!=="("?" · "+esc(w.pl):""}</div></div>
+    <div class="wlist">${s.words.map((w,j)=>{const p=P[keyOf(s,w)]||{};return `<div class="wl"><div class="wl-main"><div>${termHtml(w)} <span class="wl-ipa">${ipaOf(w)?"/"+esc(ipaOf(w))+"/":""}</span></div><div class="small">${esc(w.m)}${w.pl&&w.pl!=="—"&&w.pl[0]!=="("?" · "+esc(w.pl):""}</div></div>
       ${p.say?`<span class="saybadge" title="Điểm đọc thử tốt nhất">🎤${p.say}</span>`:""}<span class="lvdot lv${Math.min(p.lv||0,3)}" title="Mức thuộc"></span><button class="spk" data-say="${esc(term(w))}">🔊</button><button class="star ${p.star?"on":""}" data-star="${j}" aria-label="Gắn sao">★</button></div>`}).join("")}</div>
     ${s.custom?`<div class="row"><button class="ibtn" data-act="delset">Xoá bộ này</button></div>`:""}</div>`);
 }
@@ -342,7 +345,7 @@ function cards(){fc={list:shuffle(wordsOf(curSet)),i:0,flip:false,dir:fc?.dir||"
 function drawCard(){
   if(fc.i>=fc.list.length){return screen(`${topbar("Thẻ ghi nhớ","set")}<div class="card center"><div class="big">🎉</div><p>Xong một lượt! Đã thuộc <b>${fc.known.length}</b> · Đang học <b>${fc.learning.length}</b></p>
     <div class="row">${fc.learning.length?`<button class="prim" data-act="cardsAgain">Học lại ${fc.learning.length} từ chưa thuộc</button>`:""}<button class="ibtn" data-mode="cards">Làm lại từ đầu</button><button class="ibtn" data-act="set">Về bộ từ</button></div></div>`)}
-  const w=fc.list[fc.i],front=fc.dir==="de"?`<div class="fterm">${termHtml(w)}</div>${w.i?`<div class="wipa">/${esc(w.i)}/</div>`:""}`:`<div class="fterm vi">${esc(w.m)}</div>`;
+  const w=fc.list[fc.i],front=fc.dir==="de"?`<div class="fterm">${termHtml(w)}</div>${ipaOf(w)?`<div class="wipa">/${esc(ipaOf(w))}/</div>`:""}`:`<div class="fterm vi">${esc(w.m)}</div>`;
   screen(`${topbar("Thẻ ghi nhớ","set")}
    <div class="fcbar"><span class="small">${fc.i+1} / ${fc.list.length}</span><button class="ibtn mini" data-act="dir">${fc.dir==="de"?"Đức → Việt":"Việt → Đức"} ⇄</button></div>
    <div class="flip ${fc.flip?"on":""}" id="flip"><div class="face front">${front}<div class="small hint">Chạm để lật</div></div><div class="face back">${infoBlock(w)}</div></div>
@@ -359,7 +362,7 @@ function mcQuestion(w,pool,dir){ // dir: "de" (hỏi nghĩa) | "vi" (hỏi từ)
 function renderQ(q,head=""){
   const w=q.w;let body="";
   if(q.type==="mc")body=`<p class="qlabel">${q.dir==="de"?"Chọn nghĩa đúng":"Chọn từ tiếng Đức đúng"}</p>
-    <div class="qbig">${q.dir==="de"?termHtml(w)+(w.i?`<div class="wipa">/${esc(w.i)}/</div>`:""):esc(w.m)}</div>
+    <div class="qbig">${q.dir==="de"?termHtml(w)+(ipaOf(w)?`<div class="wipa">/${esc(ipaOf(w))}/</div>`:""):esc(w.m)}</div>
     <div class="mcopts">${q.opts.map((o,k)=>`<button class="mco" data-opt="${k}">${q.dir==="de"?esc(o.m):termHtml(o)}</button>`).join("")}</div>`;
   if(q.type==="write")body=`<p class="qlabel">Viết bằng tiếng Đức${w.a?" (kèm der/die/das)":""}</p><div class="qbig vi">${esc(w.m)}</div>
     <form class="ansf" data-form="1"><input id="ans" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="${w.a?"vd: der Tisch":"Nhập từ…"}">${kbd}<div class="row"><button type="button" class="ibtn" data-act="hint">Gợi ý</button><button class="prim">Kiểm tra</button></div></form><div class="small" id="hintTxt"></div>`;
@@ -454,7 +457,7 @@ function series(kind,words){
 function seriesNext(){
   if(run.i>=run.qs.length){const pct=Math.round(100*run.right/run.qs.length);
     return screen(`${topbar(TITLES[run.kind],"set")}<div class="card center"><div class="big">${pct>=90?"🌟":pct>=70?"👍":"💪"}</div><div class="score">${run.right}/${run.qs.length} <small>(${pct}%)</small></div>
-     ${run.wrong.length?`<p class="small">Các từ làm sai — ôn lại nhé:</p><div class="wlist left">${run.wrong.map(w=>`<div class="wl"><div class="wl-main"><div>${termHtml(w)} <span class="wl-ipa">${w.i?"/"+esc(w.i)+"/":""}</span></div><div class="small">${esc(w.m)}</div>${w.n?`<div class="small">🗣 ${w.n}</div>`:""}</div><button class="spk" data-say="${esc(term(w))}">🔊</button></div>`).join("")}</div>
+     ${run.wrong.length?`<p class="small">Các từ làm sai — ôn lại nhé:</p><div class="wlist left">${run.wrong.map(w=>`<div class="wl"><div class="wl-main"><div>${termHtml(w)} <span class="wl-ipa">${ipaOf(w)?"/"+esc(ipaOf(w))+"/":""}</span></div><div class="small">${esc(w.m)}</div>${w.n?`<div class="small">🗣 ${w.n}</div>`:""}</div><button class="spk" data-say="${esc(term(w))}">🔊</button></div>`).join("")}</div>
      <div class="row"><button class="prim" data-act="redoWrong">Làm lại ${run.wrong.length} từ sai</button></div>`:"<p>Không sai câu nào. Tuyệt vời!</p>"}
      <div class="row"><button class="ibtn" data-mode="${run.kind}">Làm lại</button><button class="ibtn" data-act="set">Về bộ từ</button></div></div>`)}
   const q=run.qs[run.i];
@@ -551,7 +554,7 @@ const curQ=()=>activeQ;
 window.vocabHome=home;
 window.__vocabTest={parseSyl,notesBlock,verbNotes,genderTrick,stressNote};
 /* API cho tab Gia sư & Tra từ */
-window.VocabAPI={esc,shuffle,fold,lev,check,term,termHtml,artHtml,TYPE,keyOf,pr,save,mark,mastered,allSets,conjOf,whichForm,explainForm,
+window.VocabAPI={ipaOf,esc,shuffle,fold,lev,check,term,termHtml,artHtml,TYPE,keyOf,pr,save,mark,mastered,allSets,conjOf,whichForm,explainForm,
   infoBlock,infoClick,renderTry,kbd,PERS,genderHint,getP:()=>P};
 home();
 })();
