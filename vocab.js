@@ -286,8 +286,10 @@ function renderTry(r){
     <div class="tryterm">${r.targetHtml}</div>`;
   const ipa=r.target&&window.ipaFor?ipaFor(r.target):"";if(ipa)h+=`<div class="tryipa ipa-in">/${esc(ipa)}/</div>`;
   if(r.heard)h+=`<div class="small">Máy nghe thành: <b>${esc(r.heard)}</b></div>`;
-  if(r.scores)h+=`<div class="tryscores">${Object.entries(r.scores).map(([k,v])=>`<div><b>${v==null?"–":Math.round(v)}</b><span>${k}</span></div>`).join("")}</div>`;
-  if(r.words&&r.words.length){
+  if(r.scores)h+=window.scoreHelpHtml?scoreHelpHtml(r):`<div class="tryscores">${Object.entries(r.scores).map(([k,v])=>`<div><b>${v==null?"–":Math.round(v)}</b><span>${k}</span></div>`).join("")}</div>`;
+  if(r.words&&r.words.length&&window.phFeedbackHtml){const show=r.words.length<=3?r.words:r.words.filter(w=>w.acc<80||w.err!=="None");
+    h+=show.length?(r.words.length>3?`<div class="small">Từ cần luyện:</div>`:"")+show.map(w=>phFeedbackHtml(w)).join(""):`<div class="small">Tất cả các từ đều tốt! 👍</div>`}
+  else if(r.words&&r.words.length){
     const err={Mispronunciation:"đọc sai",Omission:"bỏ sót",Insertion:"đọc thừa"};
     const show=r.words.length<=3?r.words:r.words.filter(w=>w.acc<80||w.err!=="None");
     h+=show.map(w=>`<div class="tryph"><b>${esc(w.w)}</b>${window.ipaFor&&ipaFor(w.w)&&!ipaFor(w.w).includes("…")?` <span class="ipa-in">/${esc(ipaFor(w.w))}/</span>`:""} · ${w.acc}${w.err!=="None"?` <span class="bad-t">(${err[w.err]||w.err})</span>`:""}<br>${w.ph.map(x=>`<span class="ph ${x.s>=80?"g":x.s>=60?"o":"r"}">${esc(x.p)} ${x.s}</span>`).join("")}</div>`).join("")||`<div class="small">Tất cả các từ đều tốt!</div>`;

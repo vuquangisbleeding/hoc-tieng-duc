@@ -27,39 +27,46 @@ function colorize(sent,r,k0){
       return `<span class="pw ${w?cls(w.acc):"pr"}" title="${w?w.acc:0}">${esc(t)}</span>`}).join(" ");return{html,k}}
   if(r&&r.targetHtml)return{html:`<span class="tryterm prfree">${r.targetHtml}</span>`,k};
   return{html:esc(sent),k}}
-function weakHtml(r){const ws=(r.words||[]).filter(w=>w.acc<70).slice(0,6);if(!ws.length)return"";
-  return `<div class="small">Từ cần luyện:</div>`+ws.map(w=>`<div class="tryph"><b>${esc(w.w)}</b>${window.ipaFor&&ipaFor(w.w)&&!ipaFor(w.w).includes("…")?` <span class="ipa-in">/${esc(ipaFor(w.w))}/</span>`:""} · ${w.acc}<br>${(w.ph||[]).map(x=>`<span class="ph ${x.s>=80?"g":x.s>=60?"o":"r"}">${esc(x.p)} ${x.s}</span>`).join("")}</div>`).join("")}
+const PASS=90;   // một câu chỉ tính là đạt khi ≥ 90%; cả bài chỉ "Đạt" khi mọi câu đều ≥ 90%
+function weakHtml(r){const ws=(r.words||[]).filter(w=>w.acc<PASS||w.err!=="None").sort((a,b)=>a.acc-b.acc).slice(0,5);
+  if(!ws.length)return `<div class="small">Mọi từ đều ≥ ${PASS} — rất tốt! 👍</div>`;
+  return `<div class="small">Từ cần luyện (thấp nhất trước):</div>`+ws.map(w=>window.phFeedbackHtml?phFeedbackHtml(w):`<div class="tryph"><b>${esc(w.w)}</b> · ${w.acc}</div>`).join("")}
+const detailHtml=r=>`${window.scoreHelpHtml?scoreHelpHtml(r):""}${weakHtml(r)}${r.heard?`<div class="small">Máy nghe thành: <i>${esc(r.heard)}</i></div>`:""}${r.note?`<div class="small">${r.note}</div>`:""}`;
 
-/* ---------- Bộ đọc: dùng cho cả trang Luyện đoạn và bài học ---------- */
-function reader(box,text,opts={}){
-  const S=splitSents(text),st={mode:"sent",hide:false,cur:0,best:S.map((_,i)=>(opts.best||{})[i]??null),res:S.map(()=>null),whole:null,wholeBest:opts.wholeBest??null};
-  const avg=()=>{const v=st.best.filter(x=>x!=null);return v.length?Math.round(v.reduce((a,b)=>a+b,0)/v.length):null};
-  const stats=()=>{const v=st.best.filter(x=>x!=null);return{tried:v.length+(st.whole?1:0),n:S.length,avg:st.whole&&st.mode==="whole"?st.whole.pct:avg(),pass:v.filter(x=>x>=80).length,whole:st.wholeBest}};
+/* ---------- Bộ đọc: dùng cho cả trang Luyện đoạn và bài học ----------
+   src: chuỗi văn bản, hoặc mảng {de, vi, sp} (mỗi phần tử là một câu/lượt lời; vi hiện khi bật "Che chữ") */
+function reader(box,src,opts={}){
+  const U=Array.isArray(src)?src.filter(x=>x&&x.de&&/\p{L}/u.test(x.de)):splitSents(src).map(de=>({de}));
+  const S=U.map(u=>u.de),n=S.length;
+  const st={mode:"sent",hide:false,cur:0,best:S.map((_,i)=>(opts.best||{})[i]??null),last:S.map(()=>null),res:S.map(()=>null),whole:null,wholeBest:opts.wholeBest??null};
+  const stats=()=>{const b=st.best.filter(x=>x!=null),l=st.last.filter(x=>x!=null);
+    const allPass=n>0&&st.best.every(x=>x!=null&&x>=PASS);
+    return{tried:l.length+(st.whole?1:0),n,pass:st.best.filter(x=>x!=null&&x>=PASS).length,allPass,
+      avg:l.length?Math.round(l.reduce((a,c)=>a+c,0)/l.length):null,whole:st.wholeBest,wholeLast:st.whole?st.whole.pct:null,weakest:st.best.reduce((m,x,i)=>x==null||x>=PASS?m:(m==null||x<st.best[m]?i:m),null)}};
   const emit=()=>{opts.onUpdate&&opts.onUpdate(st,stats())};
-  if(!S.length){box.innerHTML=`<p class="small center">Chưa có câu tiếng Đức nào để đọc.</p>`;return{stats,stop(){}}}
+  if(!n){box.innerHTML=`<p class="small center">Chưa có câu tiếng Đức nào để đọc.</p>`;return{stats,stop(){},sents:S}}
+  function badge(i){const L=st.last[i],B=st.best[i];if(L==null&&B==null)return"";
+    return `<span class="prsc ${cls(L??B)}">${L??B}%${(B??0)>=PASS?" ✅":""}</span>${B!=null&&L!=null&&B!==L?`<span class="prbest">tốt nhất ${B}%</span>`:""}`}
   function draw(){
     const s=stats();let k=0;
     box.innerHTML=`<div class="pr${st.hide?" phide":""}">
-      <div class="pmodes"><button class="chip" aria-pressed="${st.mode==="sent"}" data-pm="sent">🗣 Từng câu</button><button class="chip" aria-pressed="${st.mode==="whole"}" data-pm="whole">📜 Cả đoạn</button><button class="chip" aria-pressed="${st.hide}" data-pm="hide">🙈 Che chữ</button></div>
+      <div class="pmodes"><button class="chip" aria-pressed="${st.mode==="sent"}" data-pm="sent">🗣 Từng câu</button><button class="chip" aria-pressed="${st.mode==="whole"}" data-pm="whole">📜 Cả đoạn</button><button class="chip" aria-pressed="${st.hide}" data-pm="hide">🙈 Che chữ${U.some(u=>u.vi)?" (nhìn tiếng Việt)":""}</button></div>
       <div class="row"><button class="ibtn" data-pa="all">🔊 Nghe cả đoạn</button><button class="ibtn" data-pa="allslow">🐢</button></div>
-      <div class="prs">${S.map((x,i)=>{const r=st.mode==="whole"?st.whole:st.res[i];let html;
+      <div class="prs">${U.map((u,i)=>{const x=u.de,r=st.mode==="whole"?st.whole:st.res[i];let html;
           if(st.mode==="whole"&&st.whole){const c=colorize(x,st.whole,k);k=c.k;html=c.html}else html=colorize(x,r,0).html;
-          const b=st.best[i];
-          return `<div class="prl${st.mode==="sent"&&i===st.cur?" on":""}" data-i="${i}"><div class="prt">${html}</div>
+          return `<div class="prl${st.mode==="sent"&&i===st.cur?" on":""}${(st.best[i]??0)>=PASS?" ok":""}" data-i="${i}">${u.sp?`<div class="prsp">${esc(u.sp)}</div>`:""}<div class="prt">${html}</div>${u.vi?`<div class="prvi">${esc(u.vi)}</div>`:""}
             ${st.mode==="sent"?`<div class="prb"><button class="spk sm" data-pa="say" data-i="${i}" aria-label="Nghe">🔊</button><button class="spk sm" data-pa="slow" data-i="${i}" aria-label="Nghe chậm">🐢</button>
-              <button class="trybtn prmic" data-pa="mic" data-i="${i}">🎤 Đọc</button>${b!=null?`<span class="prsc ${cls(b)}">${b}%</span>`:""}</div><div class="prres" id="prres${i}"></div>`:""}</div>`}).join("")}</div>
+              <button class="trybtn prmic" data-pa="mic" data-i="${i}">🎤 Đọc</button><span class="prbadge">${badge(i)}</span></div><div class="prres" id="prres${i}"></div>`:""}</div>`}).join("")}</div>
       ${st.mode==="whole"?`<div class="row"><button class="trybtn" data-pa="wmic">🎤 Đọc cả đoạn</button></div><div class="small center">Đọc liền một mạch, xong bấm 🎤 lần nữa để dừng và chấm.</div><div class="small center prlive"></div><div class="prwres"></div>`:""}
-      <div class="prsum">${s.tried?`Trung bình <b>${s.avg??"–"}%</b> · ${s.pass}/${s.n} câu đạt ≥ 80%${st.wholeBest!=null?` · cả đoạn tốt nhất <b>${st.wholeBest}%</b>`:""}`:`${S.length} câu · ${st.mode==="sent"?"bấm 🔊 nghe mẫu rồi 🎤 đọc từng câu":"nghe cả đoạn rồi đọc liền một mạch"}`}</div>
+      <div class="prsum">${s.tried?`${s.allPass?`<b class="cpass">✅ Đã qua: mọi câu ≥ ${PASS}%</b><br>`:`<b>${s.pass}/${n} câu đạt ≥ ${PASS}%</b>${s.weakest!=null?` · cần luyện thêm câu ${s.weakest+1}`:""}<br>`}<span class="small">Lần đọc gần nhất: trung bình ${s.avg??"–"}%${s.wholeLast!=null?` · cả đoạn ${s.wholeLast}%`:""}${st.wholeBest!=null?` (tốt nhất ${st.wholeBest}%)`:""}</span>`:`${n} câu · ${st.mode==="sent"?"bấm 🔊 nghe mẫu rồi 🎤 đọc từng câu":"nghe cả đoạn rồi đọc liền một mạch"} · cần ≥ ${PASS}% mỗi câu`}</div>
       <div class="small center plegend"><span class="pw pg">xanh</span> chuẩn · <span class="pw po">cam</span> hơi lệch · <span class="pw pr">đỏ</span> sai hoặc thiếu${azure()?"":" · chế độ miễn phí chỉ biết máy nghe ra chữ gì — nhập khóa Azure trong ⚙ để chấm từng âm"}</div></div>`;
     if(st.mode==="whole"&&st.whole)showWhole();
-    st.res.forEach((r,i)=>{if(r&&st.mode==="sent")showSent(i)})}
-  function showSent(i){const el=box.querySelector("#prres"+i),r=st.res[i];if(!el||!r)return;
-    el.innerHTML=`<details class="prdet"><summary>${r.pct>=80?"✅":"🔁"} ${r.pct}% — xem chi tiết</summary>${r.scores?`<div class="tryscores">${Object.entries(r.scores).map(([k,v])=>`<div><b>${v==null?"–":Math.round(v)}</b><span>${k}</span></div>`).join("")}</div>`:""}
-      ${weakHtml(r)}${r.heard?`<div class="small">Máy nghe thành: <i>${esc(r.heard)}</i></div>`:""}${r.note?`<div class="small">${r.note}</div>`:""}</details>${window.recRowHtml?recRowHtml({...r,target:null}):""}`}
+    st.res.forEach((r,i)=>{if(r&&st.mode==="sent")showSent(i,i===st.lastIdx)})}
+  function showSent(i,open){const el=box.querySelector("#prres"+i),r=st.res[i];if(!el||!r)return;
+    el.innerHTML=`<details class="prdet"${open&&r.pct<PASS?" open":""}><summary>${r.pct>=PASS?"✅":"🔁"} Lần gần nhất ${r.pct}% — ${r.pct>=PASS?"xem chi tiết":"xem âm nào chưa đúng"}</summary>${detailHtml(r)}</details>${window.recRowHtml?recRowHtml({...r,target:null}):""}`}
   function showWhole(){const el=box.querySelector(".prwres"),r=st.whole;if(!el||!r)return;
-    el.innerHTML=`<div class="tryv ${r.pct>=85?"good":r.pct>=60?"mid":"bad"}">Cả đoạn<span class="trypct">${r.pct}%</span></div>${r.scores?`<div class="tryscores">${Object.entries(r.scores).map(([k,v])=>`<div><b>${v==null?"–":Math.round(v)}</b><span>${k}</span></div>`).join("")}</div>`:""}
-      ${r.flu?`<div class="tflu"><span>⏱ <b>${r.flu.wpm||"–"}</b> từ/phút</span><span>⏸ Ngắt giữa câu: <b>${r.flu.mid}</b></span><span>Lâu nhất: <b>${r.flu.longest}s</b></span></div>`:""}
-      ${weakHtml(r)}${r.heard?`<div class="small">Máy nghe thành: <i>${esc(r.heard)}</i></div>`:""}${window.recRowHtml?recRowHtml({...r,target:null}):""}`}
+    el.innerHTML=`<div class="tryv ${r.pct>=PASS?"good":r.pct>=60?"mid":"bad"}">Cả đoạn · lần gần nhất<span class="trypct">${r.pct}%</span></div>${detailHtml(r)}
+      ${r.flu?`<div class="tflu"><span>⏱ <b>${r.flu.wpm||"–"}</b> từ/phút</span><span>⏸ Ngắt giữa câu: <b>${r.flu.mid}</b></span><span>Lâu nhất: <b>${r.flu.longest}s</b></span></div>`:""}${window.recRowHtml?recRowHtml({...r,target:null}):""}`}
   async function rec(btn,target,passage,live,done){
     if(busy){window.appScoreStop&&appScoreStop();return}
     if(!window.appScore)return alertIn(btn,"Máy không hỗ trợ nhận diện giọng nói.");
@@ -77,8 +84,9 @@ function reader(box,text,opts={}){
     if(a==="all"||a==="allslow"){playAll(S,a==="allslow",hl);return}
     if(a==="say"||a==="slow"){stopAll();window.appSpeak&&appSpeak(S[i],a==="slow");st.cur=i;box.querySelectorAll(".prl").forEach((el,x)=>el.classList.toggle("on",x===i));return}
     if(a==="mic"){st.cur=i;const row=box.querySelector(`.prl[data-i="${i}"]`);let live=row.querySelector(".prlive");if(!live){live=document.createElement("div");live.className="small center prlive";row.querySelector(".prb").after(live)}
-      rec(b,clean(S[i]),false,live,r=>{st.res[i]=r;st.best[i]=Math.max(st.best[i]??-1,r.pct);if(r.pct>=80&&i<S.length-1)st.cur=i+1;draw();emit();
-        const nx=box.querySelector(`.prl[data-i="${st.cur}"]`);nx&&nx.scrollIntoView({block:"nearest",behavior:"smooth"})});return}
+      rec(b,clean(S[i]),false,live,r=>{st.res[i]=r;st.last[i]=r.pct;st.best[i]=Math.max(st.best[i]??-1,r.pct);st.lastIdx=i;
+        if(r.pct>=PASS){const nx=st.best.findIndex((x,j)=>j>i&&(x==null||x<PASS));st.cur=nx>=0?nx:i}
+        draw();emit();const el=box.querySelector(`.prl[data-i="${st.cur}"]`);el&&el.scrollIntoView({block:"nearest",behavior:"smooth"})});return}
     if(a==="wmic"){rec(b,S.map(clean).join(" "),true,box.querySelector(".prlive"),r=>{st.whole=r;st.wholeBest=Math.max(st.wholeBest??-1,r.pct);draw();emit()});return}};
   draw();
   return{stats,stop(){if(busy&&window.appScoreStop)appScoreStop();stopAll()},sents:S}}
@@ -113,19 +121,21 @@ function onHost(e){if(window.VocabAPI&&e.target.closest("[data-ch]")&&VocabAPI.i
   if(a==="edit"){const x=LIB.find(y=>y.id===curId);rd&&rd.stop();return home(null,x?x.text:"")}
   if(a==="del"){if(b.dataset.sure){LIB=LIB.filter(x=>x.id!==b.dataset.id);saveLib();return home()}b.dataset.sure=1;b.textContent="Xoá?";b.classList.add("danger");setTimeout(()=>{if(b.isConnected){delete b.dataset.sure;b.textContent="✕";b.classList.remove("danger")}},2500)}}
 
-/* ---------- Dạng bài "para" trong bài học ---------- */
+/* ---------- Dạng bài "para" trong bài học ----------
+   it.items: [{de,vi,sp}] (đoạn nói đầu ra) hoặc it.src = bài viết vừa làm (đọc lại chính đoạn mình viết) / it.text. Chỉ "Đạt" khi mọi câu ≥ 90%. */
 function registerR(){const T=window.TutorAPI;if(!T||!T.R||T.R.para)return;
   T.R.para=(it,box)=>{
-    const own=it.src&&it.src.userText&&splitSents(it.src.userText).length?it.src.userText:"",text=own||it.text||"";
-    box.innerHTML=`<p class="qlabel">${it.label||"🎤 Đọc to đoạn văn"}</p>${it.src?`<div class="small center">${own?"Đoạn bạn vừa viết":"Bạn chưa viết — đọc bài mẫu"} · đọc từng câu, máy tô màu từng từ</div>`:""}
+    const own=it.from&&it.from.userText&&splitSents(it.from.userText).length?it.from.userText:"",src=it.items||own||it.text||"";
+    const plain=Array.isArray(src)?src.map(u=>u.de).join("\n"):src;
+    box.innerHTML=`<p class="qlabel">${it.label||"🎤 Đọc to đoạn văn"}</p><div class="small center">${it.from?(own?"Đoạn bạn vừa viết · ":"Bạn chưa viết — đọc bài mẫu · "):""}đọc từng câu, mỗi câu cần ≥ ${PASS}% mới qua</div>
       <div id="paraBox"></div><div class="row"><button class="ibtn mini" data-t2="save">💾 Lưu vào Luyện đoạn</button></div>
       <div class="row stickynext"><button class="prim soft" id="pnext">Bỏ qua, tiếp →</button></div>`;
     const btn=box.querySelector("#pnext");
-    const ctl=reader(box.querySelector("#paraBox"),text,{onUpdate:(st,s)=>{const ok=(s.avg??0)>=75;btn.className="prim"+(ok?"":" soft");btn.textContent=ok?`✅ Đạt ${s.avg}% · Tiếp →`:`Tiếp → (trung bình ${s.avg??0}%)`}});
-    box.querySelector('[data-t2="save"]').onclick=e=>{upsert(text,it.saveTitle);e.target.textContent="✓ Đã lưu — mở ở tab Phát âm → 📝 Đoạn văn";e.target.disabled=true};
+    const ctl=reader(box.querySelector("#paraBox"),src,{onUpdate:(st,s)=>{btn.className="prim"+(s.allPass?"":" soft");btn.textContent=s.allPass?`✅ Đã qua · Tiếp →`:`Tiếp → (${s.pass}/${s.n} câu ≥ ${PASS}%)`;it.onResult&&it.onResult(s)}});
+    box.querySelector('[data-t2="save"]').onclick=e=>{upsert(plain,it.saveTitle);e.target.textContent="✓ Đã lưu — mở ở tab Phát âm → 📝 Đoạn văn";e.target.disabled=true};
     btn.onclick=()=>{ctl.stop();const s=ctl.stats();if(it.answered)return;
       if(!s.tried){it.answered=true;T.nextItem();return}
-      const ok=(s.avg??0)>=75;T.answer(it,ok,"",{direct:true,toast:ok?`✅ Đọc tốt · trung bình ${s.avg}%`:`🔁 Trung bình ${s.avg??0}% — luyện thêm ở 📝 Đoạn văn nhé`})}}}
+      T.answer(it,s.allPass,"",{direct:true,toast:s.allPass?`✅ Đã qua: mọi câu ≥ ${PASS}%`:`🔁 ${s.pass}/${s.n} câu đạt ≥ ${PASS}% — luyện tiếp các câu còn lại nhé`})}}}
 
 window.ParaApp={reader,home,splitSents,
   openText(text,title){window.appSetView&&appSetView("para");const e=upsert(text,title);open(e.id)},

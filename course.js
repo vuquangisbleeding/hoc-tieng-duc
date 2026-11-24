@@ -99,7 +99,7 @@ function mk(type,P){
     case"ph":{const d=P[0].replace(/\D/g,""),txt=P[0].split(/\s+/).map(g=>g.split("").map(digitW).join(" ")).join(", ");
       return{type:"type",q:`<p class="qlabel">Nghe rồi viết số điện thoại (bằng số)</p>`,audio:true,say:{text:txt},check:i=>String(i).replace(/\D/g,"")===d,after:`<b>${esc(P[0])}</b><br><span class="small">${esc(txt)}</span>`}}
     case"lty":{const [a,ans,label]=P,alts=ans.split(" / ").map(x=>x.trim());return{type:"type",q:`<p class="qlabel">${esc(label||"Nghe rồi viết")}</p>`,audio:true,say:{text:a},ans:alts,ph:"Viết vào ô…",after:`Bạn vừa nghe: <b>${esc(a)}</b>`}}
-    case"say":return{type:"speak",text:P[0],label:"Đọc to",sub:esc(P[1]||"")}
+    case"say":return window.ParaApp&&T().R.para?{type:"para",items:[{de:P[0],vi:P[1]||""}],label:"🗣 Đọc to"}:{type:"speak",text:P[0],label:"Đọc to",sub:esc(P[1]||"")}
   }
   console.warn("Lộ trình: dạng bài lạ",type);return null}
 const lines=(s,k)=>s[k].map((l,i)=>({l,src:`${s.id}|${k}|${i}`}));
@@ -151,6 +151,14 @@ function buildLesson(s,st){
   return[]}
 function speakWrite(s,shadow){
   const items=[],L=s.t.filter(l=>l[1]);
+  if(L.length&&window.ParaApp&&T().R.para){   // đầu ra: đọc từng câu (chấm từng âm, tô màu từng từ) → cả đoạn → che chữ; mọi câu ≥ 90% mới qua
+    items.push({type:"para",items:L.map(l=>({de:l[1],vi:l[2]||"",sp:l[0]})),saveTitle:`Buổi ${s.id}: ${s.title}`,
+      label:s.kind==="lesson"?"🎯 Đầu ra của buổi: đọc từng câu, rồi cả đoạn, rồi che chữ nói thuộc":"🎯 Đầu ra của tuần: đọc từng câu, rồi cả đoạn, cố gắng che chữ",
+      onResult:st=>{const cs=C.s[s.id]=C.s[s.id]||{},o=cs.say||{};cs.say={pass:Math.max(o.pass||0,st.pass),n:st.n,all:!!(o.all||st.allPass)};
+        if(st.whole!=null)cs.flu=Math.max(cs.flu||0,st.whole);cs.t=Date.now();saveC()}});
+    s.ans.forEach(a=>items.push({type:"answer",s:a}));
+    s.w.forEach(w=>{const wi={type:"write",wq:w};items.push(wi);items.push({type:"para",from:wi,text:w[1],label:"🎤 Đọc to đoạn bạn vừa viết",saveTitle:`Buổi ${s.id}: ${s.title} (bài viết)`})});
+    return items}
   if(shadow&&L.length){items.push(intro(`<div class="tintro"><div class="big">🗣</div><p><b>Nói nhại theo (shadowing):</b> nghe từng câu rồi nói lại ngay, bắt chước ngữ điệu. Sau đó nói liền cả đoạn — đây là đầu ra của buổi.</p></div>`,"Bắt đầu"));
     L.slice(0,6).forEach((l,i)=>items.push({type:"speak",text:l[1],label:`Nói theo câu ${i+1}/${Math.min(6,L.length)} · <b>${esc(l[0])}</b>`,sub:esc(l[2]||"")}))}
   s.ans.forEach(a=>items.push({type:"answer",s:a}));
@@ -159,7 +167,7 @@ function speakWrite(s,shadow){
     items.push({type:"passage",lines:L.slice(0,h),label:"🧱 Nối câu (1/2): nói liền nửa đầu"});
     items.push({type:"passage",lines:L.slice(h),label:"🧱 Nối câu (2/2): nói liền nửa sau"})}
   if(L.length)items.push({type:"passage",lines:L,label:s.kind==="lesson"?"🎯 Đầu ra của buổi: nói trôi chảy cả đoạn":"🎯 Đầu ra của tuần: nói cả đoạn, cố gắng không nhìn chữ (🇻🇳)",final:true,onResult:rec});
-  s.w.forEach(w=>{const wi={type:"write",wq:w};items.push(wi);if(window.ParaApp&&T().R.para)items.push({type:"para",src:wi,text:w[1],label:"🎤 Đọc to đoạn bạn vừa viết",saveTitle:`Buổi ${s.id}: ${s.title} (bài viết)`})});
+  s.w.forEach(w=>{const wi={type:"write",wq:w};items.push(wi);if(window.ParaApp&&T().R.para)items.push({type:"para",from:wi,text:w[1],label:"🎤 Đọc to đoạn bạn vừa viết",saveTitle:`Buổi ${s.id}: ${s.title} (bài viết)`})});
   return items}
 /* Kiểm tra bài cũ: câu sai còn trong Sổ lỗi sai + từ đến hạn theo lịch 1-3-7-14-30 ngày */
 function dueReview(cur,max){
@@ -218,31 +226,38 @@ function finishSess(s,run,extra){
   const cs=C.s[s.id]=C.s[s.id]||{},gate=gateOf(s);
   // Sổ lỗi sai: thêm câu sai, gỡ câu đã làm đúng lại
   const book=new Set(C.wrong||[]);
-  run.wrong.forEach(it=>{if(it.src&&!it.src.startsWith("_|"))book.add(it.src)});
+  run.wrong.forEach(it=>{if(typeof it.src==="string"&&!it.src.startsWith("_|"))book.add(it.src)});
   (s._kt||[]).forEach(it=>{if(it.fromBook&&it.answered&&!run.wrong.includes(it))book.delete(it.src)});s._kt=null;
   C.wrong=[...book].slice(-60);
   let r=0,n=0;gate.st.forEach(st=>{const x=run.res[st];if(x){r+=x.r;n+=x.n}});
   const p=n?Math.round(100*r/n):null,gated=gate.st.some(st=>run.res[st]);
-  if(gated&&p!=null){cs.best=Math.max(cs.best??-1,p);if(p>=gate.min&&!cs.done){cs.done=Date.now()}}
+  if(gated&&p!=null)cs.best=Math.max(cs.best??-1,p);
+  const testOk=(cs.best??-1)>=gate.min,sayOk=sayDone(s);
+  if(testOk&&sayOk&&!cs.done)cs.done=Date.now();
   saveC();
-  const nx=SESS[SESS.indexOf(s)+1],pass=gated&&p!=null&&p>=gate.min;
+  const nx=SESS[SESS.indexOf(s)+1],pass=!!cs.done;
   const rows=run.steps.map(st=>{const x=run.res[st];const q=x&&x.n?Math.round(100*x.r/x.n):null;const S=T().STEP[st]||{i:"",t:st};
     return `<div class="tsum"><span>${S.i} ${S.t}</span><span class="tmeter"><i style="width:${q??100}%;background:${q==null?"var(--line)":q>=80?"var(--green)":q>=60?"var(--orange)":"var(--red)"}"></i></span><b>${q==null?"–":q+"%"}</b></div>`}).join("");
   const wrongN=run.wrong.filter(it=>it.src).length;
   root.innerHTML=`<div class="vtop"><button class="ibtn" data-c="sess" data-id="${s.id}" aria-label="Quay lại">‹</button><div class="vtitle">Tổng kết ${esc(s.kind==="lesson"?"buổi "+s.id:s.title)}</div><span></span></div>
     <div class="card center"><div class="big">${!gated?"✅":pass?"🎉":"💪"}</div><div class="score">${gated&&p!=null?p+"%":"Xong"}</div><p><b>${esc(s.title)}</b></p>
-      ${gated?(pass?`<p class="cpass">✅ Đạt (cần ≥ ${gate.min}%).${s.kind==="test"?" Chúc mừng bạn đã hoàn thành tháng 1! 🇩🇪":""}</p>`:`<p class="cfail">Chưa đạt — cần ≥ ${gate.min}%. Làm lại câu sai rồi làm lại bài kiểm tra nhé.</p>`):`<p class="small">Đã luyện xong phần này.</p>`}
+      ${pass?`<p class="cpass">✅ Đã qua buổi.${s.kind==="test"?" Chúc mừng bạn đã hoàn thành tháng 1! 🇩🇪":""}</p>`:`<p class="cfail">Chưa qua buổi — cần đủ cả hai điều kiện dưới đây.</p>`}
+      ${condHtml(s)}
       ${cs.flu?`<p class="small">🎯 Nói cả đoạn: tốt nhất ${cs.flu}%${cs.star?" · ⭐ thuộc lòng":""}</p>`:""}</div>
     <div class="card">${rows}</div>
     ${wrongN?`<div class="card"><p>📒 <b>${wrongN} câu sai</b> đã vào Sổ lỗi sai — sẽ quay lại ở phần Kiểm tra bài cũ của buổi sau.</p><div class="row"><button class="ibtn" data-c="redo">🔁 Làm lại ngay ${wrongN} câu sai</button></div></div>`:""}
     ${nicoHtml(s,"🎬 Nghe thêm 20 phút hôm nay")}
     <div class="row">${pass&&nx?`<button class="prim" data-c="sess" data-id="${nx.id}">Tiếp: ${esc(nx.kind==="lesson"?"Buổi "+nx.id:nx.title)} →</button>`:""}
-      ${gated&&!pass?`<button class="prim" data-c="retest" data-id="${s.id}">Làm lại bài kiểm tra</button>`:""}<button class="ibtn" data-c="home">Lộ trình tháng 1</button></div>`;
+      ${!testOk?`<button class="prim" data-c="retest" data-id="${s.id}">Làm lại bài kiểm tra</button>`:""}${testOk&&!sayOk?`<button class="prim" data-c="resay" data-id="${s.id}">🗣 Luyện tiếp phần nói</button>`:""}<button class="ibtn" data-c="home">Lộ trình tháng 1</button></div>`;
   finishSess.last={s,wrong:run.wrong.filter(it=>it.src).map(it=>it.src)}}
 function nicoHtml(s,title){if(!s.nico.length||!window.NicoApp)return"";
   return `<div class="card"><div class="sgh" style="margin-top:0"><b>${title}</b><span class="small">Học với Nico</span></div><div class="row cnico">${s.nico.map(n=>`<button class="ibtn" data-t="nico" data-n="${n}">🎬 Nico tập ${n}</button>`).join("")}</div>
     <p class="small">Lần 1 xem không phụ đề · lần 2 bật phụ đề tiếng Đức · lần 3 nói nhại theo từng câu.</p></div>`}
 
+const sayDone=s=>!s.t.length||!!(C.s[s.id]&&C.s[s.id].say&&C.s[s.id].say.all);
+function condHtml(s){const c=C.s[s.id]||{},g=gateOf(s),sy=c.say,tOk=(c.best??-1)>=g.min,sOk=sayDone(s);
+  return `<div class="ccond"><div class="${tOk?"ok":""}">${tOk?"✅":"⬜"} ${s.kind==="lesson"?"Kiểm tra cuối buổi":s.kind==="review"?"Kiểm tra tuần":"Bài kiểm tra 40 câu"} ≥ ${g.min}%${c.best!=null&&c.best>=0?` · tốt nhất ${c.best}%`:" · chưa làm"}</div>
+    ${s.t.length?`<div class="${sOk?"ok":""}">${sOk?"✅":"⬜"} Nói đoạn đầu ra: mọi câu ≥ 90%${sy?` · đã đạt ${sy.pass}/${sy.n} câu`:" · chưa làm"}</div>`:""}</div>`}
 /* ---------- Trang lộ trình & trang buổi ---------- */
 const stOf=s=>{const c=C.s[s.id];return c&&c.done?"done":c&&c.t?"part":""};
 const curSess=()=>SESS.find(s=>!(C.s[s.id]&&C.s[s.id].done))||SESS[SESS.length-1];
@@ -268,7 +283,7 @@ function sessPage(id){
     <div class="card"><h2 class="tkh">${esc(s.title)}</h2><p class="cgoal">🎯 <b>${s.kind==="lesson"?"Hết buổi bạn nói được":"Đầu ra"}:</b> ${esc(s.goal)}</p>
       ${ws.length?`<div class="tchips">${ws.map(x=>`<button class="chip" data-lk2="${esc(x.w.w)}">${V().termHtml(x.w)}</button>`).join("")}</div>`:""}
       ${!prevOk?`<p class="small">ℹ️ Buổi trước chưa qua — nên học theo thứ tự, nhưng bạn vẫn có thể học trước.</p>`:""}
-      ${c.done?`<p class="cpass">✅ Đã qua · tốt nhất ${c.best}%${c.flu?` · nói cả đoạn ${c.flu}%`:""}${c.star?" ⭐":""}</p>`:c.best!=null?`<p class="cfail">Kiểm tra gần nhất chưa đạt (tốt nhất ${c.best}%)</p>`:""}
+      ${c.done?`<p class="cpass">✅ Đã qua buổi</p>`:""}${condHtml(s)}
       <div class="row"><button class="prim big2" data-c="start" data-id="${s.id}">${c.done?"Học lại cả buổi":c.t?"Học lại từ đầu":"Bắt đầu"} →</button></div></div>
     <div class="card"><div class="sgh" style="margin-top:0"><b>Các phần</b><span class="small">bấm để làm riêng từng phần</span></div>
       ${steps.map(st=>{const S=T().STEP[st],b=(c.p||{})[st];return `<button class="tstrow" data-c="only" data-id="${s.id}" data-s="${st}"><span>${S.i} ${S.t}</span><span class="small">${b!=null&&b>=0?"tốt nhất "+b+"%":"chưa làm"}</span></button>`}).join("")}</div>
@@ -294,6 +309,7 @@ function onClick(e){const b=e.target.closest("[data-c]");if(!b||!root||!root.con
   if(a==="start"&&s)return startSess(s);
   if(a==="only"&&s)return startSess(s,[b.dataset.s]);
   if(a==="retest"&&s){const g=gateOf(s);return startSess(s,g.st)}
+  if(a==="resay"&&s)return startSess(s,["c_nv"]);
   if(a==="redo")return redoWrong();
   if(a==="book")return bookRun();
   if(a==="para"&&s&&window.ParaApp)return ParaApp.openText(s.t.map(l=>l[1]).join("\n"),`Buổi ${s.id}: ${s.title}`)}

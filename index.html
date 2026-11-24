@@ -271,7 +271,15 @@ textarea{font:inherit;font-size:16px;width:100%;padding:12px 14px;border-radius:
 .tsn{width:36px;height:36px;border-radius:50%;background:var(--soft);display:grid;place-items:center;font-weight:800}
 .tstage.open .tsn{background:var(--ink);color:var(--bg)}
 .tst{display:grid}.tst b{font-size:15px;line-height:1.25}.tsh .pbar{margin:0}
+.phrow{display:flex;flex-wrap:wrap;gap:4px;margin:4px 0}.ph i{font-style:normal;font-weight:700;margin-right:4px;opacity:.95}
+.phtips{margin:4px 0 2px;padding-left:18px;font-size:14px}.phtips li{margin:2px 0}.phtip{font-size:14px;margin-top:2px}
+.phsc.phg{color:var(--green)}.phsc.pho{color:var(--orange)}.phsc.phr{color:var(--red)}
+.scline{display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;margin:6px 0;font-size:15px}
+.schelp{font-size:14px;margin:2px 0 6px}.schelp summary{cursor:pointer;color:var(--muted,#666);text-align:center}.schelp ul{padding-left:18px;margin:6px 0}
 /* Luyện đoạn văn */
+.prsp{font-size:13px;font-weight:700;color:var(--muted,#666)}.prvi{display:none;font-size:15px;color:var(--muted,#666)}.phide .prvi{display:block}
+.prl.ok{border-color:var(--green)}.prbadge{margin-left:auto;text-align:right;display:grid;line-height:1.1}.prbest{font-size:12px;color:var(--muted,#666)}
+
 #seg{grid-template-columns:repeat(3,1fr)}#vSpeak:not(.para) #vPara{display:none}#vSpeak.para>:not(#seg):not(#vPara){display:none}
 #paraIn{width:100%;box-sizing:border-box;font:inherit;font-size:17px;border:1px solid var(--line);border-radius:12px;padding:10px;background:var(--soft);color:inherit;margin-top:6px}
 .pw{font-weight:600}.pw.pg{color:var(--green)}.pw.po{color:var(--orange)}.pw.pr{color:var(--red);text-decoration:underline wavy;text-underline-offset:5px}
@@ -279,7 +287,7 @@ textarea{font:inherit;font-size:16px;width:100%;padding:12px 14px;border-radius:
 .prl.on{border-color:var(--red);box-shadow:0 0 0 2px rgba(214,47,47,.15)}.prl.play{background:light-dark(#fff7dc,#2a2513)}
 .prt{font-size:20px;line-height:1.5}.phide .prt{filter:blur(6px)}.phide .prt:hover,.phide .prt:active{filter:none}
 .prb{display:flex;gap:6px;align-items:center;margin-top:6px;flex-wrap:wrap}.prmic{min-height:38px;padding:6px 14px;font-size:15px}
-.prsc{margin-left:auto;font-weight:800;font-size:18px}.prsc.pg{color:var(--green)}.prsc.po{color:var(--orange)}.prsc.pr{color:var(--red)}
+.prsc{font-weight:800;font-size:18px}.prsc.pg{color:var(--green)}.prsc.po{color:var(--orange)}.prsc.pr{color:var(--red)}
 .prdet summary{cursor:pointer;font-size:14px;margin-top:6px}.prsum{text-align:center;margin:8px 0}.plegend{margin-top:4px}
 .prfree .ok{color:var(--green)}.prfree .bad{color:var(--red)}
 .plib{display:flex;gap:8px;align-items:center;border-top:1px solid var(--line);padding:8px 0}.plibt{flex:1;display:grid;text-align:left;background:none;border:0;color:inherit;padding:0;font:inherit;gap:2px}
@@ -290,6 +298,7 @@ textarea{font:inherit;font-size:16px;width:100%;padding:12px 14px;border-radius:
 .cgoal{background:var(--soft);border-radius:12px;padding:8px 12px;text-align:left}
 .ctab{overflow-x:auto;margin:8px 0}.ctab table{border-collapse:collapse;width:100%;font-size:15px}.ctab td,.ctab th{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}.ctab th{background:var(--soft)}
 .cday{display:grid;gap:6px;margin:6px 0}.cday div{display:grid;grid-template-columns:110px 1fr;gap:8px;font-size:14px}.cday span{color:var(--muted,#666)}
+.ccond{display:grid;gap:4px;margin:8px 0;text-align:left;font-size:15px}.ccond .ok{color:var(--green)}
 .cpass{color:var(--green);font-weight:600}.cfail{color:var(--red);font-weight:600}
 .cnico{flex-wrap:wrap}
 .tkits{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin-top:8px}
@@ -834,6 +843,51 @@ function ipaMap(){if(IPAM)return IPAM;IPAM=new Map();
 function ipaFor(text){const m=ipaMap(),t=norm(String(text||""));if(!t)return"";if(m.has(t))return m.get(t);
   const parts=t.split(" ").map(w=>m.get(w)||"");const n=parts.filter(Boolean).length;
   return n&&n>=parts.length/2?parts.map(p=>p||"…").join(" "):""}
+/* ---------- Nhận xét từng âm (Azure de-DE chỉ trả điểm theo thứ tự âm, không có tên âm → ghép với IPA của từ) ---------- */
+const PH_VI={a:["a ngắn","há miệng, đọc gọn như “a” trong “ăn”"],"aː":["a dài","“a” kéo dài, miệng mở rộng"],"ɛ":["e mở","như “e” tiếng Việt (mẹ), miệng mở"],"ɛː":["e dài (ä)","“e” mở kéo dài"],
+ "eː":["ê dài","“ê” kéo dài, môi dẹt — đừng thành “ây”"],"ə":["ơ nhẹ","“ơ” rất nhẹ, rất ngắn — không bỏ, không đọc thành “e”"],"ɐ":["a nhẹ (-er)","đuôi -er đọc “a” nhẹ, không cuốn lưỡi"],"ɐ̯":["r cuối","r sau nguyên âm đọc như “a” nhẹ, không cuốn lưỡi"],
+ "ɪ":["i ngắn","“i” ngắn và lỏng, hơi ngả về “ê”"],"iː":["i dài","“i” kéo dài, môi dẹt căng"],"ɔ":["o ngắn","như “o” tiếng Việt, gọn"],"oː":["ô dài","“ô” kéo dài, môi tròn — đừng thành “âu”"],
+ "ʊ":["u ngắn","“u” ngắn, môi tròn lỏng"],"uː":["u dài","“u” kéo dài, môi chu tròn"],"ʏ":["ü ngắn","môi tròn như nói “u” nhưng lưỡi đặt như “i”"],"yː":["ü dài","môi chu tròn như “u”, lưỡi như “i”, giữ lâu"],
+ "œ":["ö ngắn","môi tròn như “o”, lưỡi như “e”"],"øː":["ö dài","môi tròn như “ô”, lưỡi như “ê”, giữ lâu"],"aɪ̯":["ai (ei)","“ei/ai” đọc “ai”, rõ cả hai phần"],"aʊ̯":["ao (au)","“au” đọc “ao”"],"ɔʏ̯":["oi (eu/äu)","“eu/äu” đọc “oi”"],
+ p:["p","bật hơi rõ; “b” cuối từ cũng đọc p"],b:["b","môi khép rồi bật, có rung"],t:["t","bật hơi rõ; ở cuối từ phải nghe thấy, đừng nuốt"],d:["d","như “đ” tiếng Việt"],k:["k","bật hơi; “g” cuối từ cũng đọc k"],"ɡ":["g","như “g” tiếng Việt, có rung"],
+ f:["ph","môi dưới chạm răng trên, thổi hơi (f, v)"],v:["v (chữ w)","chữ w đọc “v”: môi dưới chạm răng trên"],s:["x","“s/ss/ß” như “x” tiếng Việt, rít rõ"],z:["z rung","“s” đứng trước nguyên âm đọc rung như “d” miền Nam"],
+ "ʃ":["s nặng (sch)","chu môi, như “s” nặng của miền Bắc — “sch”, “s” trước t/p"],"ç":["ch xì (ich)","đặt lưỡi như nói “i” rồi thổi hơi “h” qua khe — không đọc thành “k” hay “s”"],x:["kh (ach)","như “kh” tiếng Việt, khàn ở cuống họng"],
+ h:["h","thở hơi nhẹ"],j:["j (như d/y)","như “d” miền Nam hoặc “y”"],l:["l","đầu lưỡi chạm lợi; “l” cuối phải nghe rõ"],m:["m","giữ khép môi, đừng nuốt ở cuối từ"],n:["n","giữ âm, nhất là ở cuối từ"],
+ "ŋ":["ng","“ng” cuối đọc như “ng” tiếng Việt, không bật thêm “g” hay “k”"],"ʁ":["r họng","rung nhẹ ở cổ họng như súc miệng, không cuốn đầu lưỡi"],ts:["ts (z, tz)","chữ z/tz đọc “ts”: bật t rồi x liền nhau"],"tʃ":["ch (tsch)","như “ch” tiếng Anh: t + sch liền"],
+ pf:["pf","bật p rồi f liền nhau"],"ʔ":["ngắt","ngắt nhẹ trước nguyên âm đầu từ"]};
+function ipaTokens(ipa,mode){const s=String(ipa||"").replace(/[ˈˌ.‿ \-]/g,"");const out=[];
+  const multi=mode===0?["aɪ̯","aʊ̯","ɔʏ̯","ɔɪ̯","ts","tʃ","pf","dʒ"]:mode===1?["aɪ̯","aʊ̯","ɔʏ̯","ɔɪ̯"]:[];
+  for(let i=0;i<s.length;){const m=multi.find(x=>s.startsWith(x,i));if(m){out.push(m);i+=m.length;continue}
+    let t=s[i++];while(i<s.length&&/[ːˑ̯̩̃ʰ̥]/.test(s[i]))t+=s[i++];out.push(t)}
+  return out}
+function phLabels(word,n){const ipa=window.ipaFor?ipaFor(word):"";if(!ipa||ipa.includes("…")||ipa.includes(" "))return null;
+  for(const mode of [0,1,2]){let t=ipaTokens(ipa,mode);if(t.length===n)return t;const t2=t.filter(x=>x!=="ʔ");if(t2.length===n)return t2;const t3=t.map(x=>x==="ɐ̯"?null:x).filter(Boolean);if(t3.length===n)return t3}
+  return null}
+const phInfo=t=>PH_VI[t]||PH_VI[t.replace(/[̩̯ˑ̥ʰ]/g,"")]||PH_VI[t.replace(/ː/,"")]||null;
+/* HTML nhận xét một từ: điểm từng âm có nhãn IPA + lời khuyên cho các âm dưới 70 */
+function phFeedbackHtml(w,opts={}){
+  const ph=w.ph||[],lab=phLabels(w.w,ph.length),ipa=window.ipaFor?ipaFor(w.w):"";
+  const c=s=>s>=80?"g":s>=60?"o":"r",cc=s=>"ph"+c(s);
+  let h=`<div class="tryph"><b>${esc(w.w)}</b>${ipa&&!ipa.includes("…")?` <span class="ipa-in">/${esc(ipa)}/</span>`:""} · <b class="phsc ${cc(w.acc)}">${w.acc}</b>`;
+  if(w.err==="Omission"){return h+`<div class="phtip">Máy không nghe thấy từ này — đọc rõ và chậm hơn một chút.</div></div>`}
+  if(ph.length)h+=`<div class="phrow">${ph.map((x,i)=>`<span class="ph ${c(x.s)}">${lab?`<i>${esc(lab[i])}</i>`:""}${x.s}</span>`).join("")}</div>`;
+  const bad=ph.map((x,i)=>({s:x.s,t:lab?lab[i]:null,i})).filter(x=>x.s<70).sort((a,b)=>a.s-b.s).slice(0,3);
+  if(bad.length)h+=`<ul class="phtips">${bad.map(b=>{const inf=b.t&&phInfo(b.t);
+    return `<li>${b.t?`Âm <b>/${esc(b.t)}/</b>${inf?` (${esc(inf[0])})`:""}`:`Âm thứ ${b.i+1}`}: <b class="phsc ${cc(b.s)}">${b.s}</b> — ${inf?esc(inf[1]):b.t?"so với giọng mẫu còn lệch, nghe 🐢 chậm rồi bắt chước":"nghe 🐢 chậm rồi bắt chước đúng vị trí này"}.</li>`}).join("")}</ul>`;
+  else if(w.acc<80)h+=`<div class="phtip">Từng âm tạm ổn — chú ý trọng âm và ngữ điệu: nghe mẫu rồi đọc lại liền mạch.</div>`;
+  return h+`</div>`}
+/* Dòng điểm dễ hiểu + giải thích các con số */
+function scoreHelpHtml(r){const S=r.scores||{};if(!r.scores)return"";
+  const v=k=>S[k]==null?"–":Math.round(S[k]);const comp=S["Đúng từ"]!=null?"Đúng từ":"Đầy đủ";
+  return `<div class="scline"><span>🎯 Phát âm <b>${v("Chính xác")}</b></span><span>🌊 Trôi chảy <b>${v("Trôi chảy")}</b></span><span>📝 Đủ từ <b>${v(comp)}</b></span></div>
+    <details class="schelp"><summary>Các số này nghĩa là gì?</summary><ul>
+      <li><b>Điểm lớn (%)</b> = điểm chung của lần đọc này, gộp từ các điểm dưới.</li>
+      <li><b>🎯 Phát âm</b> (Chính xác): các âm bạn phát ra giống giọng người Đức đến đâu — điểm quan trọng nhất.</li>
+      <li><b>🌊 Trôi chảy</b>: đọc liền mạch, ngắt nghỉ tự nhiên, không ngập ngừng giữa chừng.</li>
+      <li><b>📝 Đủ từ</b>: đọc đúng và đủ các từ, không bỏ sót hay đọc thừa (100 = đủ hết).</li>
+      <li><b>Ô nhỏ dưới mỗi từ</b>: điểm từng âm trong từ, theo thứ tự phiên âm IPA (chữ nghiêng là tên âm). Xanh ≥ 80 · cam 60–79 · đỏ dưới 60.</li></ul></details>`}
+window.phFeedbackHtml=phFeedbackHtml;window.scoreHelpHtml=scoreHelpHtml;window.ipaTokens=ipaTokens;
+
 window.ipaFor=ipaFor;
 /* hàng nút sau khi chấm: nghe lại giọng mình · nghe chữ máy hiểu · nghe giọng mẫu */
 function recRowHtml(r){if(!r)return"";const b=[];
@@ -1225,15 +1279,15 @@ if(!window.isSecureContext)$("err").textContent="Cần mở qua link https:// th
 <script src="vocab-data.js?v=a2"></script>
 <script src="vocab-a1.js?v=3"></script>
 <script src="tutor-data.js?v=2"></script>
-<script src="vocab.js?v=t7"></script>
+<script src="vocab.js?v=t9"></script>
 <script src="dict.js?v=1"></script>
 <script src="videos.js?v=1"></script>
 <script src="nico-data.js?v=1"></script>
 <script src="nico.js?v=1"></script>
 <script src="course-data.js?v=4"></script>
-<script src="course.js?v=4"></script>
-<script src="tutor.js?v=16"></script>
-<script src="para.js?v=3"></script>
+<script src="course.js?v=6"></script>
+<script src="tutor.js?v=18"></script>
+<script src="para.js?v=6"></script>
 <script src="sync.js?v=t3"></script>
 </body>
 </html>

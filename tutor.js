@@ -269,7 +269,7 @@ function buildStep(k,st){
       pickW.forEach(x=>items.push(typeWord(x)));
       const cl=shuffle(ws.filter(x=>x.w.ex&&/\[.+?\]/.test(x.w.ex))).sort((a,b)=>(b.w.t==="v")-(a.w.t==="v"))[0];if(cl&&!k.rv)items.push({type:"cloze",w:cl});
       if(main){const cand=main.d.map(l=>l).filter(l=>{const n=l[1].split(/\s+/).length;return n>=4&&n<=9&&!/[–…„]/.test(l[1])});if(cand.length)items.push({type:"order",l:pick(cand)})}}
-    (k.W||[]).forEach(w=>{const wi={type:"write",wq:w};items.push(wi);if(window.ParaApp&&R.para)items.push({type:"para",src:wi,text:w[1],label:"🎤 Đọc to đoạn bạn vừa viết",saveTitle:`Kit ${k.n}: ${k.t}`})});return items}
+    (k.W||[]).forEach(w=>{const wi={type:"write",wq:w};items.push(wi);if(window.ParaApp&&R.para)items.push({type:"para",from:wi,text:w[1],label:"🎤 Đọc to đoạn bạn vừa viết",saveTitle:`Kit ${k.n}: ${k.t}`})});return items}
   return items}
 
 /* ============ Bộ chạy bài ============ */
@@ -505,8 +505,8 @@ function passageResult(r,L){
   const weak=(r.words||[]).filter(w=>w.acc<70).slice(0,6);
   return `<div class="tryv ${c}">Cả đoạn<span class="trypct">${r.pct}%</span></div><div class="meter"><i style="width:${r.pct}%;background:${col}"></i></div>
     <div class="tryterm ptry">${text}</div>
-    ${r.scores?`<div class="tryscores">${Object.entries(r.scores).map(([k,v])=>`<div><b>${v==null?"–":Math.round(v)}</b><span>${k}</span></div>`).join("")}</div>`:""}${fluHtml(r)}
-    ${weak.length?`<div class="small">Từ cần luyện:</div>`+weak.map(w=>`<div class="tryph"><b>${esc(w.w)}</b>${window.ipaFor&&ipaFor(w.w)&&!ipaFor(w.w).includes("…")?` <span class="ipa-in">/${esc(ipaFor(w.w))}/</span>`:""} · ${w.acc}<br>${(w.ph||[]).map(x=>`<span class="ph ${x.s>=80?"g":x.s>=60?"o":"r"}">${esc(x.p)} ${x.s}</span>`).join("")}</div>`).join(""):""}
+    ${r.scores&&window.scoreHelpHtml?scoreHelpHtml(r):""}${fluHtml(r)}
+    ${weak.length&&window.phFeedbackHtml?`<div class="small">Từ cần luyện:</div>`+weak.map(w=>phFeedbackHtml(w)).join(""):weak.length?`<div class="small">Từ cần luyện:</div>`+weak.map(w=>`<div class="tryph"><b>${esc(w.w)}</b>${window.ipaFor&&ipaFor(w.w)&&!ipaFor(w.w).includes("…")?` <span class="ipa-in">/${esc(ipaFor(w.w))}/</span>`:""} · ${w.acc}<br>${(w.ph||[]).map(x=>`<span class="ph ${x.s>=80?"g":x.s>=60?"o":"r"}">${esc(x.p)} ${x.s}</span>`).join("")}</div>`).join(""):""}
     ${r.heard?`<div class="small">Máy nghe thành: <i>${esc(r.heard)}</i></div>`:""}${r.note?`<div class="small">${r.note}</div>`:""}${window.recRowHtml?recRowHtml({...r,target:null}):""}`}
 R.answer=(it,box)=>{
   const [q,model,kw,hint]=it.s,target=model.split(" / ")[0].replace(/…/g," ").replace(/\s+/g," ").trim();
