@@ -269,7 +269,7 @@ function buildStep(k,st){
       pickW.forEach(x=>items.push(typeWord(x)));
       const cl=shuffle(ws.filter(x=>x.w.ex&&/\[.+?\]/.test(x.w.ex))).sort((a,b)=>(b.w.t==="v")-(a.w.t==="v"))[0];if(cl&&!k.rv)items.push({type:"cloze",w:cl});
       if(main){const cand=main.d.map(l=>l).filter(l=>{const n=l[1].split(/\s+/).length;return n>=4&&n<=9&&!/[–…„]/.test(l[1])});if(cand.length)items.push({type:"order",l:pick(cand)})}}
-    (k.W||[]).forEach(w=>items.push({type:"write",wq:w}));return items}
+    (k.W||[]).forEach(w=>{const wi={type:"write",wq:w};items.push(wi);if(window.ParaApp&&R.para)items.push({type:"para",src:wi,text:w[1],label:"🎤 Đọc to đoạn bạn vừa viết",saveTitle:`Kit ${k.n}: ${k.t}`})});return items}
   return items}
 
 /* ============ Bộ chạy bài ============ */
@@ -531,7 +531,7 @@ R.write=(it,box)=>{
   box.innerHTML=`<p class="qlabel">Viết</p><div class="tnote">${esc(q)}</div><textarea id="tw" data-kbd="1" rows="4" autocapitalize="sentences" spellcheck="false" placeholder="Viết bằng tiếng Đức…"></textarea>${kbdHtml}
     <div class="row"><button class="ibtn" data-t="model">Xem bài mẫu</button><button class="prim" data-t="chk">Kiểm tra</button></div>`;
   bindKbd(box);const ta=document.getElementById("tw");setTimeout(()=>ta.focus({preventScroll:true}),60);
-  const done=(shown)=>{const v=ta.value.trim(),chk=kwCheck(v,kw);
+  const done=(shown)=>{const v=ta.value.trim(),chk=kwCheck(v,kw);it.userText=v;
     const mdl=`<div class="tmodel"><div class="small">Bài mẫu:</div><div><b>${esc(model)}</b> <button class="spk sm" data-say="${esc(model.replace(/…/g," "))}" aria-label="Nghe bài mẫu">🔊</button></div></div>`;
     if(!v&&!shown){ta.focus();return}
     if(chk&&v){answer(it,chk.ok,`<div class="kwl">${chk.res.map(r=>`<span class="${r.ok?"ok":"no"}">${r.ok?"✓":"✗"} ${esc(r.g.split("/")[0])}</span>`).join("")}</div>${chk.ok?"Đủ các ý chính. 👍":"Còn thiếu ý — so sánh với bài mẫu."}${mdl}`,{info:false,override:!chk.ok});return}
@@ -697,7 +697,7 @@ root.addEventListener("click",e=>{
 window.tutorHome=()=>{if(!RUN)home()};
 window.tutorOpenKit=n=>{window.appSetView&&appSetView("tutor");kitPage(n)};
 /* Cho Lộ trình A2 (course.js) dùng chung bộ chạy bài và các dạng bài */
-window.TutorAPI={STEP,R,mcWord,listenWord,typeWord,dictWord,fillItem,cmp,timeDe,playLines,stopPlay,speak,home,
+window.TutorAPI={STEP,R,answer,nextItem,mcWord,listenWord,typeWord,dictWord,fillItem,cmp,timeDe,playLines,stopPlay,speak,home,
   start(meta){stopPlay();RUN={course:meta,k:{n:0,s:1,course:true},steps:meta.steps,si:-1,res:{},wrong:[],only:meta.steps.length===1,title:meta.title};nextStep()},
   running:()=>!!RUN,run:()=>RUN};
 window.__tutorTest={buildStep,genDrills,timeDe,cmp,kwCheck,KITS,startKitSteps,kitPage,home,getS:()=>S,run:()=>RUN};

@@ -271,6 +271,19 @@ textarea{font:inherit;font-size:16px;width:100%;padding:12px 14px;border-radius:
 .tsn{width:36px;height:36px;border-radius:50%;background:var(--soft);display:grid;place-items:center;font-weight:800}
 .tstage.open .tsn{background:var(--ink);color:var(--bg)}
 .tst{display:grid}.tst b{font-size:15px;line-height:1.25}.tsh .pbar{margin:0}
+/* Luyện đoạn văn */
+#seg{grid-template-columns:repeat(3,1fr)}#vSpeak:not(.para) #vPara{display:none}#vSpeak.para>:not(#seg):not(#vPara){display:none}
+#paraIn{width:100%;box-sizing:border-box;font:inherit;font-size:17px;border:1px solid var(--line);border-radius:12px;padding:10px;background:var(--soft);color:inherit;margin-top:6px}
+.pw{font-weight:600}.pw.pg{color:var(--green)}.pw.po{color:var(--orange)}.pw.pr{color:var(--red);text-decoration:underline wavy;text-underline-offset:5px}
+.prs{display:grid;gap:8px;margin:10px 0}.prl{border:1px solid var(--line);border-radius:14px;padding:10px 12px;background:var(--soft)}
+.prl.on{border-color:var(--red);box-shadow:0 0 0 2px rgba(214,47,47,.15)}.prl.play{background:light-dark(#fff7dc,#2a2513)}
+.prt{font-size:20px;line-height:1.5}.phide .prt{filter:blur(6px)}.phide .prt:hover,.phide .prt:active{filter:none}
+.prb{display:flex;gap:6px;align-items:center;margin-top:6px;flex-wrap:wrap}.prmic{min-height:38px;padding:6px 14px;font-size:15px}
+.prsc{margin-left:auto;font-weight:800;font-size:18px}.prsc.pg{color:var(--green)}.prsc.po{color:var(--orange)}.prsc.pr{color:var(--red)}
+.prdet summary{cursor:pointer;font-size:14px;margin-top:6px}.prsum{text-align:center;margin:8px 0}.plegend{margin-top:4px}
+.prfree .ok{color:var(--green)}.prfree .bad{color:var(--red)}
+.plib{display:flex;gap:8px;align-items:center;border-top:1px solid var(--line);padding:8px 0}.plibt{flex:1;display:grid;text-align:left;background:none;border:0;color:inherit;padding:0;font:inherit;gap:2px}
+.ibtn.danger{background:var(--red);color:#fff}
 /* Lộ trình A2 */
 .tcourse{border:2px solid var(--blue,#2b6cb0)}
 .cin .cplan{margin:8px 0 4px;padding-left:22px;text-align:left;display:grid;gap:3px}.cin .cplan li span{margin-left:4px}
@@ -393,7 +406,8 @@ textarea{font:inherit;font-size:16px;width:100%;padding:12px 14px;border-radius:
   <div id="vDict" class="hidden"></div>
 
   <div id="vSpeak">
-    <div class="seg" id="seg"><button data-v="word" aria-pressed="true">Từ</button><button data-v="sent" aria-pressed="false">Câu dài</button></div>
+    <div class="seg" id="seg"><button data-v="word" aria-pressed="true">Từ</button><button data-v="sent" aria-pressed="false">Câu dài</button><button data-v="para" aria-pressed="false">📝 Đoạn văn</button></div>
+    <div id="vPara"></div>
     <div class="chips" id="cats"></div>
     <section class="card" id="practice">
       <div class="nav">
@@ -1143,21 +1157,22 @@ let prevView=null;
 function setView(v){
   if(busy&&activeRec){try{activeRec.abort()}catch(e){}}
   view=v;
-  for(const b of $("tabbar").children)b.setAttribute("aria-current",b.dataset.v===v||(b.dataset.v==="word"&&v==="sent"));
+  for(const b of $("tabbar").children)b.setAttribute("aria-current",b.dataset.v===v||(b.dataset.v==="word"&&(v==="sent"||v==="para")));
   for(const b of $("seg").children)b.setAttribute("aria-pressed",b.dataset.v===v);
   $("vVocab").classList.toggle("hidden",v!=="vocab");
   $("vTutor").classList.toggle("hidden",v!=="tutor");
   $("vDict").classList.toggle("hidden",v!=="dict");
-  $("btnList").classList.toggle("hidden",v==="vocab"||v==="tutor"||v==="dict");
+  $("btnList").classList.toggle("hidden",v==="vocab"||v==="tutor"||v==="dict"||v==="para");
   if(v==="vocab"&&window.vocabHome&&prevView==="vocab")window.vocabHome();
   if(v==="tutor"&&window.tutorHome&&prevView==="tutor")window.tutorHome();
   if(v==="dict"&&window.DictAPI)window.DictAPI.home(prevView==="dict");
   prevView=v;
-  $("vSpeak").classList.toggle("hidden",!(v==="word"||v==="sent"));
+  $("vSpeak").classList.toggle("hidden",!(v==="word"||v==="sent"||v==="para"));$("vSpeak").classList.toggle("para",v==="para");
+  if(v==="para"&&window.ParaApp)ParaApp.home($("vPara"));
   $("vStress").classList.toggle("hidden",v!=="stress");
   $("vIpa").classList.toggle("hidden",v!=="ipa");
   $("listPanel").classList.add("hidden");$("setPanel").classList.add("hidden");
-  $("title").textContent={tutor:"Gia sư tiếng Đức",vocab:"Từ vựng",dict:"Tra từ",word:"Luyện phát âm",sent:"Luyện đọc câu dài",stress:"Bài tập trọng âm",ipa:"Bài tập nguyên âm IPA"}[v];
+  $("title").textContent={tutor:"Gia sư tiếng Đức",vocab:"Từ vựng",dict:"Tra từ",word:"Luyện phát âm",sent:"Luyện đọc câu dài",para:"Luyện đọc đoạn văn",stress:"Bài tập trọng âm",ipa:"Bài tập nguyên âm IPA"}[v];
   if(v==="word"||v==="sent"){cat="Tất cả";list=data();idx=0;custom=null;renderCats();renderWord();
     $("customLabel").textContent=v==="sent"?"Tự nhập câu dài":"Tự nhập từ hoặc câu";
     $("custom").placeholder=v==="sent"?"vd: Ich habe heute keine Zeit, weil ich arbeiten muss.":"vd: Ich möchte ein Brötchen"}
@@ -1216,8 +1231,9 @@ if(!window.isSecureContext)$("err").textContent="Cần mở qua link https:// th
 <script src="nico-data.js?v=1"></script>
 <script src="nico.js?v=1"></script>
 <script src="course-data.js?v=4"></script>
-<script src="course.js?v=3"></script>
-<script src="tutor.js?v=15"></script>
+<script src="course.js?v=4"></script>
+<script src="tutor.js?v=16"></script>
+<script src="para.js?v=3"></script>
 <script src="sync.js?v=t3"></script>
 </body>
 </html>

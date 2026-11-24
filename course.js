@@ -159,7 +159,7 @@ function speakWrite(s,shadow){
     items.push({type:"passage",lines:L.slice(0,h),label:"🧱 Nối câu (1/2): nói liền nửa đầu"});
     items.push({type:"passage",lines:L.slice(h),label:"🧱 Nối câu (2/2): nói liền nửa sau"})}
   if(L.length)items.push({type:"passage",lines:L,label:s.kind==="lesson"?"🎯 Đầu ra của buổi: nói trôi chảy cả đoạn":"🎯 Đầu ra của tuần: nói cả đoạn, cố gắng không nhìn chữ (🇻🇳)",final:true,onResult:rec});
-  s.w.forEach(w=>items.push({type:"write",wq:w}));
+  s.w.forEach(w=>{const wi={type:"write",wq:w};items.push(wi);if(window.ParaApp&&T().R.para)items.push({type:"para",src:wi,text:w[1],label:"🎤 Đọc to đoạn bạn vừa viết",saveTitle:`Buổi ${s.id}: ${s.title} (bài viết)`})});
   return items}
 /* Kiểm tra bài cũ: câu sai còn trong Sổ lỗi sai + từ đến hạn theo lịch 1-3-7-14-30 ngày */
 function dueReview(cur,max){
@@ -272,6 +272,7 @@ function sessPage(id){
       <div class="row"><button class="prim big2" data-c="start" data-id="${s.id}">${c.done?"Học lại cả buổi":c.t?"Học lại từ đầu":"Bắt đầu"} →</button></div></div>
     <div class="card"><div class="sgh" style="margin-top:0"><b>Các phần</b><span class="small">bấm để làm riêng từng phần</span></div>
       ${steps.map(st=>{const S=T().STEP[st],b=(c.p||{})[st];return `<button class="tstrow" data-c="only" data-id="${s.id}" data-s="${st}"><span>${S.i} ${S.t}</span><span class="small">${b!=null&&b>=0?"tốt nhất "+b+"%":"chưa làm"}</span></button>`}).join("")}</div>
+    ${s.t.length&&window.ParaApp?`<div class="card"><div class="sgh" style="margin-top:0"><b>📝 Luyện riêng đoạn đầu ra</b><span class="small">${s.t.length} câu</span></div><p class="small">Mở đoạn nói của buổi trong Luyện đoạn văn: đọc từng câu, máy tô màu từng từ; đọc cả đoạn hoặc che chữ để nói thuộc.</p><div class="row"><button class="ibtn" data-c="para" data-id="${s.id}">📝 Mở trong Luyện đoạn</button></div></div>`:""}
     ${nicoHtml(s,"🎬 Nghe thêm sau buổi học")}
     <div class="row"><button class="ibtn" data-c="sess" data-id="${(SESS[i-1]||s).id}" ${i===0?"disabled":""}>‹ Buổi trước</button><button class="ibtn" data-c="sess" data-id="${(SESS[i+1]||s).id}" ${i===SESS.length-1?"disabled":""}>Buổi sau ›</button></div>`;
   window.scrollTo({top:0})}
@@ -294,7 +295,8 @@ function onClick(e){const b=e.target.closest("[data-c]");if(!b||!root||!root.con
   if(a==="only"&&s)return startSess(s,[b.dataset.s]);
   if(a==="retest"&&s){const g=gateOf(s);return startSess(s,g.st)}
   if(a==="redo")return redoWrong();
-  if(a==="book")return bookRun()}
+  if(a==="book")return bookRun();
+  if(a==="para"&&s&&window.ParaApp)return ParaApp.openText(s.t.map(l=>l[1]).join("\n"),`Buổi ${s.id}: ${s.title}`)}
 
 window.CourseApp={
   open(r,id){if(root!==r){root=r;r.addEventListener("click",onClick)}id&&BY[id]?sessPage(id):home()},
