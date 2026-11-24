@@ -3,7 +3,7 @@
    Buổi học đi đủ 8 phần: Mở đầu → Kiểm tra bài cũ → Từ mới → Ngữ pháp → Luyện tập → Nghe–Đọc → Nói–Viết → Kiểm tra cuối buổi (≥ 80%).
    Dùng chung bộ chạy bài và các dạng bài của Gia sư (window.TutorAPI). Tiến độ: localStorage "deCourse" (đồng bộ qua sync.js). */
 (function(){
-const TXT=window.COURSE_M1;if(!TXT)return;
+const TXT=[window.COURSE_M1,window.COURSE_M2,window.COURSE_M3].filter(Boolean).join("\n");if(!TXT)return;
 const V=()=>window.VocabAPI,T=()=>window.TutorAPI,DC=()=>window.DictCore;
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
@@ -17,21 +17,23 @@ const VI=/[ăâđêôơưạảấầẩẫậắằẳẵặẹẻẽếềể�
 const isDe=s=>!VI.test(s)&&/[A-Za-zÄÖÜäöüß]/.test(s)&&!/^\p{Extended_Pictographic}/u.test(s);
 
 /* ---------- Đọc dữ liệu ---------- */
-const WEEKS=[],SESS=[],BY={};
-const COURSE_SET={id:"course-m1",title:"Lộ trình A2 · Tháng 1",words:[]};
+const MONTHS=[],WEEKS=[],SESS=[],BY={};
+const COURSE_SET={id:"course-m1",title:"Lộ trình A2",words:[]};
 const CUSTOM=new Map();
 (function parse(){
-  let s=null;
+  let s=null,M=null;
   const sp=v=>v.split(/\s*\|\s*/).map(x=>x.trim());
   for(const raw of TXT.split("\n")){const line=raw.trim();if(!line)continue;
-    if(line.startsWith("#W ")){const [n,t,out]=sp(line.slice(3));WEEKS.push({n:+n,t,out,ss:[]});continue}
+    if(line.startsWith("#M ")){const [n,t,sum]=sp(line.slice(3));M={n:+n,t,sum,ws:[]};MONTHS.push(M);continue}
+    if(line.startsWith("#W ")){const [n,t,out]=sp(line.slice(3));const w={n:+n,t,out,ss:[],m:M?M.n:1};WEEKS.push(w);M&&M.ws.push(w);continue}
     if(line.startsWith("## ")){const m=line.slice(3).match(/^(\S+)\s+(.*)$/);
       s={id:m[1],title:m[2],wk:+m[1].split(".")[0],kind:"lesson",nico:[],i:[],iq:[],words:[],g:[],gx:[],x:[],l:[],lq:[],r:[],rq:[],t:[],ans:[],w:[]};
-      SESS.push(s);BY[s.id]=s;const W=WEEKS.find(w=>w.n===s.wk);W&&W.ss.push(s);continue}
+      SESS.push(s);BY[s.id]=s;const W=WEEKS.find(w=>w.n===s.wk);W&&W.ss.push(s);s.m=W?W.m:1;continue}
     if(!s)continue;
     const k=line.slice(0,line.indexOf(":")),v=line.slice(line.indexOf(":")+1).trim();
     switch(k){
       case"goal":case"lt":case"rt":case"ld":case"kind":s[k]=v;break;
+      case"parts":s.parts=v.split(",").map(x=>x.trim());break;
       case"nico":s.nico=v.split(",").map(Number).filter(Boolean);break;
       case"words":s.words=v.split(";").map(x=>x.trim()).filter(Boolean);break;
       case"+w":{const [t,a,w,pl,m,ex,exv]=sp(v),key=w,o={t,w:w.replace(/\s*\(.*\)$/,""),m};if(a&&a!=="-")o.a=a;if(pl)o.pl=pl;if(ex)o.ex=ex;if(exv)o.exv=exv;
@@ -99,6 +101,13 @@ function mk(type,P){
     case"ph":{const d=P[0].replace(/\D/g,""),txt=P[0].split(/\s+/).map(g=>g.split("").map(digitW).join(" ")).join(", ");
       return{type:"type",q:`<p class="qlabel">Nghe rồi viết số điện thoại (bằng số)</p>`,audio:true,say:{text:txt},check:i=>String(i).replace(/\D/g,"")===d,after:`<b>${esc(P[0])}</b><br><span class="small">${esc(txt)}</span>`}}
     case"lty":{const [a,ans,label]=P,alts=ans.split(" / ").map(x=>x.trim());return{type:"type",q:`<p class="qlabel">${esc(label||"Nghe rồi viết")}</p>`,audio:true,say:{text:a},ans:alts,ph:"Viết vào ô…",after:`Bạn vừa nghe: <b>${esc(a)}</b>`}}
+    case"tmo":case"tmi":case"tmw":{const [H,Mi]=P[0].split(":").map(Number),td=T().timeDe(H,Mi),fmt=(h,m)=>`${h}:${String(m).padStart(2,"0")}`;
+      if(type==="tmw")return{type:"type",q:`<p class="qlabel">Nói giờ kiểu thông thường (viết bằng chữ)</p><div class="qbig">🕒 ${fmt(H>12?H-12:H,Mi)}</div>`,ans:td.acc,ph:"vd: halb acht",after:`<b>${esc(td.inf)}</b>`,sayAfter:td.inf};
+      const ws=new Set(),add=(h,m)=>{h=(h+24)%24;const f=fmt(h,m);if(f!==fmt(H,Mi))ws.add(f)};
+      if(type==="tmi"){if(Mi===30){add(H+1,30);add(H,0)}else if(Mi===15||Mi===45){add(H,60-Mi);add(H+(Mi===45?1:-1),Mi)}else{add(H,(60-Mi)%60);add(H+1,Mi)}}else{add(H,(Mi+30)%60);add(H+(H<12?12:-12),Mi);add(H+2,Mi)}
+      const text=type==="tmi"?td.inf:td.acc[2];return{type:"mc",q:`<p class="qlabel">Nghe rồi chọn giờ đúng</p>`,audio:true,say:{text},layout:"g3",opts:optsOf(fmt(H,Mi),[...ws].slice(0,2)),after:`Bạn vừa nghe: <b>${esc(text)}</b> = ${fmt(H,Mi)}`}}
+    case"pr":{const [e,c]=P[0].split(",").map(Number),txt=(e===1?"ein":numW(e))+" Euro"+(c?" "+numW(c):"");
+      return{type:"type",q:`<p class="qlabel">Nghe giá rồi viết bằng số (vd: 3,49)</p>`,audio:true,say:{text:txt},check:i=>String(i).replace(/[^\d]/g,"")===String(e)+(c?String(c).padStart(2,"0"):"")||(!c&&String(i).replace(/[^\d]/g,"")===e+"00"),after:`<b>${esc(P[0])} €</b> = ${esc(txt)}`,sayAfter:txt}}
     case"say":return window.ParaApp&&T().R.para?{type:"para",items:[{de:P[0],vi:P[1]||""}],label:"🗣 Đọc to"}:{type:"speak",text:P[0],label:"Đọc to",sub:esc(P[1]||"")}
   }
   console.warn("Lộ trình: dạng bài lạ",type);return null}
@@ -196,29 +205,32 @@ function buildReview(s,st){
   return[]}
 /* Kiểm tra tháng: 40 câu (nghe 10 · đọc 10 · từ & ngữ pháp 15 · viết 5) + nói + viết đoạn */
 function buildTest(s,st){
-  const ss=SESS.filter(x=>x.kind==="lesson"),t=T(),pool=poolW();
-  if(st==="c_in")return[intro(`<div class="tintro cin"><div class="small">Tuần 4 · thứ Sáu · khoảng 60 phút</div><h2 class="tkh">${esc(s.title)}</h2>
+  const ex=s.kind==="exam",ss=SESS.filter(x=>x.kind==="lesson"&&(ex?x.m<=s.m:x.m===s.m)),t=T(),pool=poolW(),N=ex?{nghe:15,doc:15,c_tn:20,viet:6}:{nghe:10,doc:10,c_tn:15,viet:5};
+  if(st==="c_in"&&ex)return[intro(`<div class="tintro cin"><div class="small">Tuần ${s.wk} · Thi thử A1 · mô phỏng Start Deutsch 1</div><h2 class="tkh">${esc(s.title)}</h2>
+    <p class="cgoal">🎯 ${esc(s.goal)}</p><ol class="cplan">${stepsOf(s).filter(x=>x!=="c_in").map(x=>`<li>${T().STEP[x].i} ${T().STEP[x].t}${N[x]?`: ${N[x]} câu`:""}</li>`).join("")}</ol>
+    <p class="small">Đề lấy từ toàn bộ tháng 1–${s.m}. Cần ≥ 60% mỗi phần (như thi thật).</p></div>`,"Bắt đầu →")];
+  if(st==="c_in")return[intro(`<div class="tintro cin"><div class="small">Tuần ${s.wk} · thứ Sáu · khoảng 60 phút</div><h2 class="tkh">${esc(s.title)}</h2>
     <p class="cgoal">🎯 ${esc(s.goal)}</p><ol class="cplan"><li>👂 Nghe: 10 câu</li><li>📖 Đọc: 10 câu</li><li>🧩 Từ & ngữ pháp: 15 câu</li><li>✍️ Viết: 5 câu</li><li>🗣 Nói 1 phút + viết đoạn 50 từ</li></ol>
     <p class="small">Qua tháng 1 khi 40 câu đạt ≥ 75%, phần nói đạt chuẩn và đoạn viết có đủ tên, tuổi, nơi ở, ít nhất 3 người trong gia đình.</p></div>`,"Bắt đầu →")];
   if(st==="nghe"){const lq=shuffle(ss.flatMap(x=>x.lq.map((q,i)=>({type:"listenq",x:{t:x.lt||"",d:x.l},q,first:true,title:x.lt,src:`${x.id}|lq|${i}`})))).slice(0,6);
-    const lx=shuffle(ss.flatMap(x=>lines(x,"x").concat(lines(x,"gx"))).filter(o=>/^(lmc|nmc|nl|ph|calc):/.test(o.l))).slice(0,2).map(o=>exItem(o.l,o.src));
+    const lx=shuffle(ss.flatMap(x=>lines(x,"x").concat(lines(x,"gx"))).filter(o=>/^(lmc|nmc|nl|ph|calc|tmo|tmi|pr):/.test(o.l))).slice(0,N.nghe-8).map(o=>exItem(o.l,o.src));
     const dc=shuffle(ss.filter(x=>x.ld)).slice(0,2).map(x=>({type:"dict",text:x.ld}));
     return[...lq,...shuffle([...lx,...dc])]}
-  if(st==="doc")return shuffle(ss.flatMap(x=>x.rq.map((q,i)=>({type:"readq",x:{t:x.rt||"",d:x.r},q,src:`${x.id}|rq|${i}`})))).slice(0,10);
-  if(st==="c_tn"){const ex=shuffle(ss.flatMap(x=>lines(x,"gx")).filter(o=>/^(fmc|fill|art|mc):/.test(o.l))).slice(0,8).map(o=>exItem(o.l,o.src));
-    return shuffle([...ex,...shuffle(monthWords()).slice(0,7).map((x,i)=>{const it=t.mcWord(x,pool,i%2?"vi":"de");it.src=`_|w|${x.w.w}`;return it})])}
-  if(st==="viet"){const ex=shuffle(ss.flatMap(x=>lines(x,"x")).filter(o=>/^(tr|ty):/.test(o.l))).slice(0,3).map(o=>exItem(o.l,o.src));
-    const tw=shuffle(monthWords().filter(x=>x.w.t==="n")).slice(0,5-ex.length).map(x=>{const it=t.typeWord(x);it.src=`_|w|${x.w.w}`;return it});return[...ex,...tw]}
+  if(st==="doc")return shuffle(ss.flatMap(x=>x.rq.map((q,i)=>({type:"readq",x:{t:x.rt||"",d:x.r},q,src:`${x.id}|rq|${i}`})))).slice(0,N.doc);
+  if(st==="c_tn"){const ex=shuffle(ss.flatMap(x=>lines(x,"gx")).filter(o=>/^(fmc|fill|art|mc):/.test(o.l))).slice(0,N.c_tn-7).map(o=>exItem(o.l,o.src));
+    return shuffle([...ex,...shuffle(ss.flatMap(sessWords)).slice(0,7).map((x,i)=>{const it=t.mcWord(x,pool,i%2?"vi":"de");it.src=`_|w|${x.w.w}`;return it})])}
+  if(st==="viet"){const ex=shuffle(ss.flatMap(x=>lines(x,"x")).filter(o=>/^(tr|ty):/.test(o.l))).slice(0,N.viet-2).map(o=>exItem(o.l,o.src));
+    const tw=shuffle(ss.flatMap(sessWords).filter(x=>x.w.t==="n")).slice(0,N.viet-ex.length).map(x=>{const it=t.typeWord(x);it.src=`_|w|${x.w.w}`;return it});return[...ex,...tw]}
   if(st==="c_nv")return speakWrite(s,false);
   return[]}
-const stepsOf=s=>s.kind==="review"?["c_in","c_rt","c_nv"]:s.kind==="test"?["c_in","nghe","doc","c_tn","viet","c_nv"]:PARTS.map(p=>p[0]);
-const gateOf=s=>s.kind==="lesson"?{st:["c_ck"],min:80}:s.kind==="review"?{st:["c_rt"],min:75}:{st:["nghe","doc","c_tn","viet"],min:75};
+const stepsOf=s=>s.kind==="review"?["c_in","c_rt","c_nv"]:s.kind==="test"?["c_in","nghe","doc","c_tn","viet","c_nv"]:s.kind==="exam"?["c_in",...(s.parts||["nghe","doc"])]:PARTS.map(p=>p[0]);
+const gateOf=s=>s.kind==="lesson"?{st:["c_ck"],min:80}:s.kind==="review"?{st:["c_rt"],min:75}:s.kind==="exam"?{st:(s.parts||[]).filter(x=>x!=="c_nv"),min:60}:{st:["nghe","doc","c_tn","viet"],min:75};
 
 /* ---------- Chạy một buổi ---------- */
 let root=null;
 function startSess(s,steps,extra={}){
   const meta={title:extra.title||`${s.kind==="lesson"?"Buổi "+s.id:s.title}`,steps:steps||stepsOf(s),sess:s,
-    build:st=>extra.items&&st===extra.only?extra.items:(s.kind==="review"?buildReview:s.kind==="test"?buildTest:buildLesson)(s,st),
+    build:st=>extra.items&&st===extra.only?extra.items:(s.kind==="review"?buildReview:s.kind==="test"||s.kind==="exam"?buildTest:buildLesson)(s,st),
     onStep:(st,p)=>{const cs=C.s[s.id]=C.s[s.id]||{};cs.p=cs.p||{};cs.p[st]=Math.max(cs.p[st]??-1,p??100);cs.t=Date.now();C.last=s.id;saveC()},
     onFinish:run=>finishSess(s,run,extra),onExit:()=>sessPage(s.id)};
   T().start(meta)}
@@ -232,7 +244,7 @@ function finishSess(s,run,extra){
   let r=0,n=0;gate.st.forEach(st=>{const x=run.res[st];if(x){r+=x.r;n+=x.n}});
   const p=n?Math.round(100*r/n):null,gated=gate.st.some(st=>run.res[st]);
   if(gated&&p!=null)cs.best=Math.max(cs.best??-1,p);
-  const testOk=(cs.best??-1)>=gate.min,sayOk=sayDone(s);
+  const testOk=!gate.st.length||(cs.best??-1)>=gate.min,sayOk=sayDone(s);
   if(testOk&&sayOk&&!cs.done)cs.done=Date.now();
   saveC();
   const nx=SESS[SESS.indexOf(s)+1],pass=!!cs.done;
@@ -241,22 +253,22 @@ function finishSess(s,run,extra){
   const wrongN=run.wrong.filter(it=>it.src).length;
   root.innerHTML=`<div class="vtop"><button class="ibtn" data-c="sess" data-id="${s.id}" aria-label="Quay lại">‹</button><div class="vtitle">Tổng kết ${esc(s.kind==="lesson"?"buổi "+s.id:s.title)}</div><span></span></div>
     <div class="card center"><div class="big">${!gated?"✅":pass?"🎉":"💪"}</div><div class="score">${gated&&p!=null?p+"%":"Xong"}</div><p><b>${esc(s.title)}</b></p>
-      ${pass?`<p class="cpass">✅ Đã qua buổi.${s.kind==="test"?" Chúc mừng bạn đã hoàn thành tháng 1! 🇩🇪":""}</p>`:`<p class="cfail">Chưa qua buổi — cần đủ cả hai điều kiện dưới đây.</p>`}
+      ${pass?`<p class="cpass">✅ Đã qua buổi.${s.kind==="test"?" Chúc mừng bạn đã hoàn thành tháng ${s.m}! 🇩🇪":""}</p>`:`<p class="cfail">Chưa qua buổi — cần đủ cả hai điều kiện dưới đây.</p>`}
       ${condHtml(s)}
       ${cs.flu?`<p class="small">🎯 Nói cả đoạn: tốt nhất ${cs.flu}%${cs.star?" · ⭐ thuộc lòng":""}</p>`:""}</div>
     <div class="card">${rows}</div>
     ${wrongN?`<div class="card"><p>📒 <b>${wrongN} câu sai</b> đã vào Sổ lỗi sai — sẽ quay lại ở phần Kiểm tra bài cũ của buổi sau.</p><div class="row"><button class="ibtn" data-c="redo">🔁 Làm lại ngay ${wrongN} câu sai</button></div></div>`:""}
     ${nicoHtml(s,"🎬 Nghe thêm 20 phút hôm nay")}
     <div class="row">${pass&&nx?`<button class="prim" data-c="sess" data-id="${nx.id}">Tiếp: ${esc(nx.kind==="lesson"?"Buổi "+nx.id:nx.title)} →</button>`:""}
-      ${!testOk?`<button class="prim" data-c="retest" data-id="${s.id}">Làm lại bài kiểm tra</button>`:""}${testOk&&!sayOk?`<button class="prim" data-c="resay" data-id="${s.id}">🗣 Luyện tiếp phần nói</button>`:""}<button class="ibtn" data-c="home">Lộ trình tháng 1</button></div>`;
+      ${!testOk?`<button class="prim" data-c="retest" data-id="${s.id}">Làm lại bài kiểm tra</button>`:""}${testOk&&!sayOk?`<button class="prim" data-c="resay" data-id="${s.id}">🗣 Luyện tiếp phần nói</button>`:""}<button class="ibtn" data-c="home">Lộ trình</button></div>`;
   finishSess.last={s,wrong:run.wrong.filter(it=>it.src).map(it=>it.src)}}
-function nicoHtml(s,title){if(!s.nico.length||!window.NicoApp)return"";
-  return `<div class="card"><div class="sgh" style="margin-top:0"><b>${title}</b><span class="small">Học với Nico</span></div><div class="row cnico">${s.nico.map(n=>`<button class="ibtn" data-t="nico" data-n="${n}">🎬 Nico tập ${n}</button>`).join("")}</div>
+function nicoHtml(s,title){const eps=window.NICO?s.nico.filter(n=>NICO.e.some(e=>e.n===n)):s.nico;if(!eps.length||!window.NicoApp)return"";
+  return `<div class="card"><div class="sgh" style="margin-top:0"><b>${title}</b><span class="small">Học với Nico</span></div><div class="row cnico">${eps.map(n=>`<button class="ibtn" data-t="nico" data-n="${n}">🎬 Nico tập ${n}</button>`).join("")}</div>
     <p class="small">Lần 1 xem không phụ đề · lần 2 bật phụ đề tiếng Đức · lần 3 nói nhại theo từng câu.</p></div>`}
 
 const sayDone=s=>!s.t.length||!!(C.s[s.id]&&C.s[s.id].say&&C.s[s.id].say.all);
-function condHtml(s){const c=C.s[s.id]||{},g=gateOf(s),sy=c.say,tOk=(c.best??-1)>=g.min,sOk=sayDone(s);
-  return `<div class="ccond"><div class="${tOk?"ok":""}">${tOk?"✅":"⬜"} ${s.kind==="lesson"?"Kiểm tra cuối buổi":s.kind==="review"?"Kiểm tra tuần":"Bài kiểm tra 40 câu"} ≥ ${g.min}%${c.best!=null&&c.best>=0?` · tốt nhất ${c.best}%`:" · chưa làm"}</div>
+function condHtml(s){const c=C.s[s.id]||{},g=gateOf(s),sy=c.say,tOk=!g.st.length||(c.best??-1)>=g.min,sOk=sayDone(s);
+  return `<div class="ccond">${g.st.length?`<div class="${tOk?"ok":""}">${tOk?"✅":"⬜"} ${s.kind==="lesson"?"Kiểm tra cuối buổi":s.kind==="review"?"Kiểm tra tuần":s.kind==="exam"?"Các phần thi":"Bài kiểm tra 40 câu"} ≥ ${g.min}%${c.best!=null&&c.best>=0?` · tốt nhất ${c.best}%`:" · chưa làm"}</div>`:""}
     ${s.t.length?`<div class="${sOk?"ok":""}">${sOk?"✅":"⬜"} Nói đoạn đầu ra: mọi câu ≥ 90%${sy?` · đã đạt ${sy.pass}/${sy.n} câu`:" · chưa làm"}</div>`:""}</div>`}
 /* ---------- Trang lộ trình & trang buổi ---------- */
 const stOf=s=>{const c=C.s[s.id];return c&&c.done?"done":c&&c.t?"part":""};
@@ -266,20 +278,22 @@ function home(){
   const done=SESS.filter(s=>stOf(s)==="done").length,cur=curSess(),book=(C.wrong||[]).length;
   root.innerHTML=`<div class="vtop"><button class="ibtn" data-t="home" aria-label="Quay lại">‹</button><div class="vtitle">🎓 Lộ trình 0 → A2</div><span></span></div>
     <div class="vhero thero"><div><div class="big">${done}<small>/${SESS.length}</small></div><div class="small">buổi đã qua</div></div>
-      <div class="vhero-r"><span class="small">Tháng 1 · Tuần ${cur.wk}</span><b>${esc(label(cur))}</b><button class="prim" data-c="sess" data-id="${cur.id}">${C.s[cur.id]?"Học tiếp":"Bắt đầu"} →</button></div></div>
+      <div class="vhero-r"><span class="small">Tháng ${cur.m} · Tuần ${cur.wk}</span><b>${esc(label(cur))}</b><button class="prim" data-c="sess" data-id="${cur.id}">${C.s[cur.id]?"Học tiếp":"Bắt đầu"} →</button></div></div>
     <div class="card"><div class="sgh" style="margin-top:0"><b>📅 Mỗi ngày khoảng 1,5 tiếng</b><span class="small">${book?`📒 Sổ lỗi sai: ${book} câu`:""}</span></div>
       <div class="cday"><div><b>Thứ Hai – Năm</b><span>55′ buổi học mới · 15′ ôn từ & câu sai · 20′ nghe Nico</span></div><div><b>Thứ Sáu</b><span>60′ buổi ôn tuần / kiểm tra</span></div><div><b>Thứ Bảy</b><span>30′ làm lại Sổ lỗi sai, nói lại đoạn đầu ra</span></div><div><b>Chủ nhật</b><span>15′ ôn nhẹ hoặc nghỉ</span></div></div>
       <p class="small">Qua buổi khi kiểm tra cuối buổi ≥ 80%; qua tuần khi kiểm tra tuần ≥ 75% và nói được đoạn đầu ra.</p>
       ${book?`<div class="row"><button class="ibtn" data-c="book">📒 Làm Sổ lỗi sai (${Math.min(book,15)} câu)</button></div>`:""}</div>
-    ${WEEKS.map(w=>{const nd=w.ss.filter(s=>stOf(s)==="done").length;return `<div class="card cweek"><div class="sgh" style="margin-top:0"><b>Tuần ${w.n} · ${esc(w.t)}</b><span class="small">${nd}/${w.ss.length}</span></div>
+    ${MONTHS.map(M=>{const ms=M.ws.flatMap(w=>w.ss),nd=ms.filter(s=>stOf(s)==="done").length,nw=new Set(ms.flatMap(sessWords).map(x=>x.w.w)).size;
+      return `<details class="cmonth"${M.n===cur.m?" open":""}><summary><b>Tháng ${M.n} · ${esc(M.t)}</b><span class="small">${nd}/${ms.length} buổi · ${nw} từ</span></summary><p class="small">${esc(M.sum)}</p>
+      ${M.ws.map(w=>{const nd=w.ss.filter(s=>stOf(s)==="done").length;return `<div class="card cweek"><div class="sgh" style="margin-top:0"><b>Tuần ${w.n} · ${esc(w.t)}</b><span class="small">${nd}/${w.ss.length}</span></div>
       <p class="small">Hết tuần: ${esc(w.out)}</p><div class="tkits">${w.ss.map(s=>{const c=C.s[s.id]||{},st=stOf(s);
-        return `<button class="tkit${st==="done"?" done":st==="part"?" part":""}${s===cur?" cur":""}${s.kind!=="lesson"?" rv":""}" data-c="sess" data-id="${s.id}"><span class="tkn">${s.kind==="lesson"?s.id:s.kind==="test"?"📝":"🔁"}</span><span class="tkt">${esc(s.title)}</span><span class="small">${st==="done"?"✓ "+(c.best!=null?c.best+"%":""):st==="part"?"đang học":s.kind==="lesson"?sessWords(s).length+" từ":"ôn & kiểm tra"}</span></button>`}).join("")}</div></div>`}).join("")}
-    <div class="card"><p class="small">Tháng 2–6 (đến A2) sẽ được thêm sau, theo lộ trình 26 tuần.</p></div>`;
+        return `<button class="tkit${st==="done"?" done":st==="part"?" part":""}${s===cur?" cur":""}${s.kind!=="lesson"?" rv":""}" data-c="sess" data-id="${s.id}"><span class="tkn">${s.kind==="lesson"?s.id:s.kind==="test"||s.kind==="exam"?"📝":"🔁"}</span><span class="tkt">${esc(s.title)}</span><span class="small">${st==="done"?"✓ "+(c.best!=null?c.best+"%":""):st==="part"?"đang học":s.kind==="lesson"?sessWords(s).length+" từ":"ôn & kiểm tra"}</span></button>`}).join("")}</div></div>`}).join("")}</details>`}).join("")}
+    <div class="card"><p class="small">Tháng ${MONTHS.length+1}–6 (đến A2) sẽ được thêm sau, theo lộ trình 26 tuần.</p></div>`;
   window.scrollTo({top:0})}
 function sessPage(id){
   const s=BY[id];if(!s)return home();const c=C.s[s.id]||{},ws=sessWords(s),steps=stepsOf(s),i=SESS.indexOf(s);
   const prevOk=i===0||stOf(SESS[i-1])==="done";
-  root.innerHTML=`<div class="vtop"><button class="ibtn" data-c="home" aria-label="Quay lại">‹</button><div class="vtitle">Tuần ${s.wk} · ${s.kind==="lesson"?"Buổi "+s.id:s.kind==="test"?"Kiểm tra tháng":"Ôn tuần"}</div><span></span></div>
+  root.innerHTML=`<div class="vtop"><button class="ibtn" data-c="home" aria-label="Quay lại">‹</button><div class="vtitle">Tuần ${s.wk} · ${s.kind==="lesson"?"Buổi "+s.id:s.kind==="test"?"Kiểm tra tháng":s.kind==="exam"?"Thi thử A1":"Ôn tuần"}</div><span></span></div>
     <div class="card"><h2 class="tkh">${esc(s.title)}</h2><p class="cgoal">🎯 <b>${s.kind==="lesson"?"Hết buổi bạn nói được":"Đầu ra"}:</b> ${esc(s.goal)}</p>
       ${ws.length?`<div class="tchips">${ws.map(x=>`<button class="chip" data-lk2="${esc(x.w.w)}">${V().termHtml(x.w)}</button>`).join("")}</div>`:""}
       ${!prevOk?`<p class="small">ℹ️ Buổi trước chưa qua — nên học theo thứ tự, nhưng bạn vẫn có thể học trước.</p>`:""}
@@ -295,7 +309,7 @@ function bookRun(){const src=shuffle(C.wrong||[]).slice(0,15),items=src.map(x=>{
   if(!items.length)return home();
   T().start({title:"📒 Sổ lỗi sai",steps:["c_kt"],build:()=>items,onStep:()=>{},onExit:home,
     onFinish:run=>{const bad=new Set(run.wrong.map(it=>it.src));C.wrong=(C.wrong||[]).filter(x=>!src.includes(x)||bad.has(x));saveC();
-      const r=run.res.c_kt||{r:0,n:0};root.innerHTML=`<div class="card center"><div class="big">📒</div><p>Sổ lỗi sai: đúng <b>${r.r}/${r.n}</b>. Đã gỡ ${r.r} câu làm đúng khỏi sổ.</p><p class="small">Còn ${C.wrong.length} câu trong sổ.</p><div class="row"><button class="prim" data-c="home">Lộ trình tháng 1</button></div></div>`}})}
+      const r=run.res.c_kt||{r:0,n:0};root.innerHTML=`<div class="card center"><div class="big">📒</div><p>Sổ lỗi sai: đúng <b>${r.r}/${r.n}</b>. Đã gỡ ${r.r} câu làm đúng khỏi sổ.</p><p class="small">Còn ${C.wrong.length} câu trong sổ.</p><div class="row"><button class="prim" data-c="home">Lộ trình</button></div></div>`}})}
 function redoWrong(){const L=finishSess.last;if(!L||!L.wrong.length)return home();const s=L.s;
   const items=L.wrong.map(x=>{const it=fromSrc(x);if(it)it.src=x;return it}).filter(Boolean);
   T().start({title:"🔁 Làm lại câu sai",steps:["c_kt"],build:()=>items,onStep:()=>{},onExit:()=>sessPage(s.id),
@@ -317,10 +331,10 @@ function onClick(e){const b=e.target.closest("[data-c]");if(!b||!root||!root.con
 window.CourseApp={
   open(r,id){if(root!==r){root=r;r.addEventListener("click",onClick)}id&&BY[id]?sessPage(id):home()},
   card(){const done=SESS.filter(s=>stOf(s)==="done").length,cur=curSess();
-    return `<div class="card tcourse"><div class="sgh" style="margin-top:0"><b>🎓 Lộ trình 0 → A2 · Tháng 1</b><span class="small">${done}/${SESS.length} buổi</span></div>
+    return `<div class="card tcourse"><div class="sgh" style="margin-top:0"><b>🎓 Lộ trình 0 → A2 · Tháng ${cur.m}</b><span class="small">${done}/${SESS.length} buổi</span></div>
       <p class="small">Mỗi buổi 55 phút đủ 8 phần: mở đầu, ôn bài cũ, từ mới, ngữ pháp, luyện tập, nghe–đọc, nói–viết, kiểm tra cuối buổi.</p>
       <span class="pbar"><i style="width:${Math.round(100*done/SESS.length)}%"></i></span>
       <div class="row"><button class="prim" data-t="course" data-id="${cur.id}">${done?"Học tiếp":"Bắt đầu"}: ${esc(cur.kind==="lesson"?"Buổi "+cur.id:cur.title)} →</button><button class="ibtn" data-t="course">Xem lộ trình</button></div></div>`},
-  SESS,BY,word,sessWords,exItem,stepsOf,build:(id,st)=>{const s=BY[id];return(s.kind==="review"?buildReview:s.kind==="test"?buildTest:buildLesson)(s,st)},
+  MONTHS,WEEKS,SESS,BY,word,sessWords,exItem,stepsOf,build:(id,st)=>{const s=BY[id];return(s.kind==="review"?buildReview:s.kind==="test"||s.kind==="exam"?buildTest:buildLesson)(s,st)},
   reload(){C=Object.assign({v:1,s:{},wrong:[]},store.get("deCourse",{}))},get:()=>C};
 })();

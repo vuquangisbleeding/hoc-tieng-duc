@@ -5,6 +5,7 @@
    x: luyện tập · lt/l/lq/ld: nghe · rt/r/rq: đọc · t: đoạn nói đầu ra · ans: trả lời bằng lời · w: viết
    Dạng bài: mc fill fmc ord tr ty lmc snd art dict nl nw nmc calc sp ph lty say */
 window.COURSE_M1=`
+#M 1 | A1.1 – Nền móng | Phát âm, chào hỏi, tự giới thiệu, số đếm, liên lạc, gia đình. Ngữ pháp: chia động từ hiện tại, sein/haben, câu hỏi, der/die/das, kein/nicht, sở hữu, số nhiều.
 #W 1 | Âm tiếng Đức & chào hỏi | Chào hỏi đúng lúc, hỏi thăm lịch sự hoặc thân mật, đánh vần tên mình, đọc số 0–12.
 #W 2 | Giới thiệu bản thân | Tự giới thiệu 6 câu, hỏi lại người khác và giới thiệu một người bạn.
 #W 3 | Số đếm & liên lạc | Nói và nghe hiểu số đến 1000, tuổi, số điện thoại, email, địa chỉ; điền tờ khai.
