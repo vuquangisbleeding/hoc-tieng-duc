@@ -637,6 +637,7 @@ function home(){
       <p>${done?`Bạn đang ở <b>chặng ${cur.s}/18: ${esc(st.t)}</b>. Mục tiêu chặng: ${esc(st.g)}`:`Chào bạn! Lộ trình gồm <b>180 kit</b> chia thành 18 chặng, đi từ con số 0 đến trình độ <b>A1</b>. Mỗi kit khoảng 15–25 phút, luyện đủ <b>nghe – nói – đọc – viết</b>.`}</p>
       ${weak&&known.length&&sk[weak]<85?`<p class="small">Kỹ năng cần luyện thêm: <b>${SKILL.find(s=>s[0]===weak)[1]} (${sk[weak]}%)</b>. ${TIPS[weak]}</p>`:""}
       <div class="row">${due?`<button class="ibtn" data-t="quick">🔁 Ôn nhanh ${Math.min(10,due)} từ cần nhớ</button>`:""}<button class="ibtn" data-t="dict">🔍 Tra từ</button></div></div>
+    ${window.NicoApp?`<div class="card tnico"><div class="sgh" style="margin-top:0"><b>🎬 Học với Nico</b><span class="small">phim Nicos Weg A1 · ${NicoApp.count} tập</span></div><p class="small">Xem từng tập phim ngắn của DW, học mẫu câu, cách dùng và từ vựng rồi luyện tập ngay.</p><div class="row"><button class="prim" data-t="nico">Mở Học với Nico →</button></div></div>`:""}
     ${known.length?`<div class="card"><div class="sgh" style="margin-top:0"><b>Kỹ năng</b><span class="small">điểm trung bình các kit đã làm</span></div>${SKILL.map(([s,l])=>`<div class="tsum"><span>${l}</span><span class="tmeter"><i style="width:${sk[s]??0}%;background:${sk[s]==null?"var(--line)":sk[s]>=80?"var(--green)":sk[s]>=60?"var(--orange)":"var(--red)"}"></i></span><b>${sk[s]==null?"–":sk[s]+"%"}</b></div>`).join("")}</div>`:""}
     <div class="sgh"><b>Lộ trình 18 chặng</b><span class="small">bấm vào chặng để xem kit</span></div>
     ${STAGES.map(s=>{const ks=KITS.filter(k=>k.s===s.n),nd=ks.filter(k=>S.kits[k.n]&&S.kits[k.n].done).length;
@@ -649,7 +650,7 @@ function videosHtml(k,title){const D=window.KIT_VIDEOS;if(!D)return"";const ids=
   const q=D.q[k.s];
   return `<div class="card"><div class="sgh" style="margin-top:0"><b>${title||"📺 Luyện nghe thêm"}</b><span class="small">video ngắn, dễ nghe cho người mới</span></div>
     <div class="vids">${ids.map(i=>{const [id,t,ch,lv]=D.v[i];return `<a class="vid" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener">
-      <img loading="lazy" src="https://i.ytimg.com/vi/${id}/mqdefault.jpg" alt="" onerror="this.style.visibility='hidden'"><span class="vtx"><b>${esc(t)}</b><span class="small">${esc(ch)} · <span class="vlv${lv==="A1"?"":" up"}">${esc(lv)}</span></span></span></a>`}).join("")}</div>
+      <img loading="lazy" src="https://i.ytimg.com/vi/${id}/mqdefault.jpg" alt="" onerror="this.style.visibility='hidden'"><span class="vtx"><b>${esc(t)}</b><span class="small">${esc(ch)} · <span class="vlv${lv==="A1"?"":" up"}">${esc(lv)}</span></span></span></a>${window.NicoApp&&NicoApp.epOfVideo(id)?`<button class="ibtn vlearn" data-t="nico" data-n="${NicoApp.epOfVideo(id)}">🎬 Học tập này: mẫu câu, từ vựng, luyện tập</button>`:""}`}).join("")}</div>
     <p class="small">Mẹo nghe: lần 1 nghe không phụ đề để đoán ý · lần 2 bật phụ đề tiếng Đức (CC) · lần 3 nghe và nói nhại theo từng câu.${q?` <a href="https://www.youtube.com/results?search_query=${encodeURIComponent(q)}" target="_blank" rel="noopener">🔎 Tìm thêm video chủ đề này</a>`:""}</p></div>`}
 function kitPage(n){
   RUN=null;stopPlay();const k=KITS[n-1],ks=S.kits[n]||{steps:{},best:{}},ws=k.rv===1?stageW(k.s):k.rv===2?[]:kitW(k);
@@ -673,7 +674,8 @@ root.addEventListener("click",e=>{
   if(t.dataset.lk2){window.DictAPI&&DictAPI.popup(t.dataset.lk2);return}
   const a=t.dataset.t;if(!a)return;
   if(a==="exit"){const n=RUN&&!RUN.quick?RUN.k.n:null;stopPlay();if(busyMic&&window.appScoreStop)appScoreStop();RUN=null;n?kitPage(n):home();return}
-  if(a==="home"){home();return}
+  if(a==="home"){window.NicoApp&&NicoApp.close();home();return}
+  if(a==="nico"){window.NicoApp&&NicoApp.open(root,+t.dataset.n||0);return}
   if(a==="go"){const n=+t.dataset.n;S.kits[n]?resume(n):startKit(n);return}
   if(a==="kit"){kitPage(+t.dataset.n);return}
   if(a==="start"){resume(+t.dataset.n);return}

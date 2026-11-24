@@ -9,7 +9,7 @@ const RAW=window.__SYNC_OVERRIDE||{
 const clean=v=>String(v||"").trim().replace(/[^\x21-\x7E]/g,"");
 const CFG={url:clean(RAW.url).replace(/\/+$/,""),key:clean(RAW.key)};
 const CFG_BAD=(CFG.url||CFG.key)&&(!/^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(CFG.url)||!(/^eyJ[\w-]+\.[\w-]+\.[\w-]+$/.test(CFG.key)&&CFG.key.length>100||/^sb_publishable_[\w-]{10,}$/.test(CFG.key)));
-const KEYS=["deVocabProg","deMatchBest","deCustomSets","deProg","deCfg","deTutor"];
+const KEYS=["deVocabProg","deMatchBest","deCustomSets","deProg","deCfg","deTutor","deNico"];
 const $=id=>document.getElementById(id);
 const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
@@ -62,6 +62,10 @@ function merge(L,R){
         kits[n]={...nx,steps,best,done:x.done&&y.done?Math.min(x.done,y.done):(x.done||y.done||undefined)}}
       const days={...(B.days||{})};for(const d in A.days||{})days[d]=Math.max(days[d]||0,A.days[d]);
       out.deTutor={...B,...A,v:1,cur:Math.max(A.cur||1,B.cur||1),kits,days}} }
+  { const a=(L.deNico||{}).ep||{},b=(R.deNico||{}).ep||{},ep={};          // học với Nico: lấy giá trị cao nhất từng tập
+    for(const n of new Set([...Object.keys(a),...Object.keys(b)])){const x=a[n]||{},y=b[n]||{},sk=[...new Set([...(x.sk||[]),...(y.sk||[])])];
+      ep[n]={w:Math.max(x.w||0,y.w||0),...((x.q??y.q)!=null?{q:Math.max(x.q??0,y.q??0)}:{}),sk,s:sk.length}}
+    if(Object.keys(ep).length)out.deNico={ep}}
   return out;
 }
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
