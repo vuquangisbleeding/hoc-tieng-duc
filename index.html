@@ -1126,6 +1126,14 @@ async function scoreAzure(target,long,opts){
   // so từng từ cần đọc với chữ máy nghe ra (không biết trước đáp án)
   const hw=norm(lex||hText).split(" ").filter(Boolean).map(w=>w==="s"?"es":w).map(canonW);let j=0;
   const tc=tWords.map(canonW);
+  // từ ghép viết liền / tách rời: máy nghe "Bitteschön" mà đáp án là "Bitte schön" (hoặc ngược lại) vẫn tính là khớp
+  const hwS=[];for(let k=0;k<hw.length;k++){const h=hw[k];let ok=false;
+    for(let i=0;i<tc.length&&!ok;i++)for(let n=3;n>=2;n--){if(i+n>tc.length)continue;const seg=tc.slice(i,i+n);
+      if(seg.join("")===h||canonW(tWords.slice(i,i+n).map(norm).join(""))===h){hwS.push(...seg);ok=true;break}}
+    if(!ok)for(let n=3;n>=2&&!ok;n--){if(k+n>hw.length)continue;const j=hw.slice(k,k+n).join(""),jc=canonW(hw.slice(k,k+n).join(""));
+      const hit=tc.find(t=>t===j||t===jc);if(hit){hwS.push(hit);k+=n-1;ok=true}}
+    if(!ok)hwS.push(h)}
+  hw.length=0;hw.push(...hwS);
   const heardOk=(tWords.length>6?align(tc,hw).ok.map(Boolean)   // câu/đoạn dài: so khớp kiểu "sửa ít nhất" để một từ sai không kéo lệch cả đoạn
     :tc.map(t=>{const k=hw.indexOf(t,j);if(k<0)return false;j=k+1;return true})).map((ok,i)=>ok||freeTok(tWords[i]));
   const nOk=heardOk.filter(Boolean).length,all=nOk===tWords.length;
@@ -1310,7 +1318,7 @@ $("list").onclick=e=>{const b=e.target.closest("[data-i]");if(!b)return;const i=
   $("listPanel").classList.add("hidden")};
 
 /* ---------- 🔔 Âm thanh hiệu ứng (tạo bằng Web Audio, không cần file): đúng · sai · bấm nút · qua buổi ---------- */
-window.appCfg=()=>cfg;
+window.appCfg=()=>cfg;window.__scoreUtil={norm,canonW};
 window.SFX=(()=>{let ctx=null,busy=false,last=0;
   const on=()=>cfg.sfx!=="off";
   function play(seq){if(!on()||busy)return;try{ctx=ctx||new (window.AudioContext||window.webkitAudioContext)();if(ctx.state==="suspended")ctx.resume();
@@ -1360,7 +1368,7 @@ if(!window.isSecureContext)$("err").textContent="Cần mở qua link https:// th
 <script src="course-data-m3.js?v=4"></script>
 <script src="course-ipa.js?v=1"></script>
 <script src="course.js?v=13"></script>
-<script src="tutor.js?v=22"></script>
+<script src="tutor.js?v=23"></script>
 <script src="para.js?v=10"></script>
 <script src="sync.js?v=t3"></script>
 </body>
