@@ -4,12 +4,12 @@
 N|<b>gehen</b> = đi bộ (hoặc đi nói chung), <b>fahren</b> = đi bằng xe: <i>Ich <b>fahre</b> mit dem Auto.</i> — fahren đổi a → ä: du <b>fährst</b>, er <b>fährt</b>.
 N|Phương tiện: <b>mit dem</b> Auto / Fahrrad / Bus, <b>mit der</b> U-Bahn (mit + Dativ). Đi bộ: <b>zu Fuß gehen</b>.
 D|Anna|Wie kommst du zum Kurs?|Bạn đến lớp bằng gì?
-D|Minh|Ich fahre mit dem Fahrrad. Das dauert zwanzig Minuten.|Mình đi xe đạp. Mất hai mươi phút.
+D|Felix|Ich fahre mit dem Fahrrad. Das dauert zwanzig Minuten.|Mình đi xe đạp. Mất hai mươi phút.
 D|Anna|Ich gehe zu Fuß. Meine Uni ist ganz nah.|Mình đi bộ. Trường mình rất gần.
-D|Minh|Und dein Bruder? Fährt er mit dem Auto?|Còn anh trai bạn? Anh ấy đi ô tô à?
+D|Felix|Und dein Bruder? Fährt er mit dem Auto?|Còn anh trai bạn? Anh ấy đi ô tô à?
 D|Anna|Ja, Lukas fährt jeden Tag mit dem Auto zur Arbeit.|Ừ, ngày nào Lukas cũng lái ô tô đi làm.
-L|Minh đến lớp bằng gì?|mit dem Fahrrad|zu Fuß|mit dem Auto
-R|Ai đi bộ?|Anna|Minh|Lukas
+L|Felix đến lớp bằng gì?|mit dem Fahrrad|zu Fuß|mit dem Auto
+R|Ai đi bộ?|Anna|Felix|Lukas
 S|Wie kommen Sie zur Arbeit oder zum Kurs?|Ich fahre mit dem Bus. / Ich gehe zu Fuß.|fahre/gehe|Bạn đi làm / đi học bằng gì?
 W|Chia fahren: du ___, er ___.|du fährst, er fährt|du faehrst, er faehrt
 G|conj:fahren,gehen; art
@@ -17,11 +17,11 @@ G|conj:fahren,gehen; art
 =122|Xe buýt – chờ|Bus; Haltestelle; Linie; warten
 N|<b>die Haltestelle</b> = trạm dừng (xe buýt, tàu điện). <b>die Linie</b> = tuyến: <i>Nimm die Linie 100.</i>
 N|<b>warten auf</b> + Akkusativ = chờ: <i>Ich warte auf den Bus.</i> (warten: du wart<b>e</b>st, er wart<b>e</b>t)
-D|Minh|Entschuldigung, hält hier die Linie 100?|Xin lỗi, tuyến 100 có dừng ở đây không ạ?
+D|Felix|Entschuldigung, hält hier die Linie 100?|Xin lỗi, tuyến 100 có dừng ở đây không ạ?
 D|Frau|Ja, das ist die richtige Haltestelle. Ich warte auch auf den Bus.|Có, đúng trạm rồi. Tôi cũng đang chờ xe buýt.
-D|Minh|Wann kommt der nächste Bus?|Khi nào chuyến tiếp theo đến ạ?
+D|Felix|Wann kommt der nächste Bus?|Khi nào chuyến tiếp theo đến ạ?
 D|Frau|In fünf Minuten. Er fährt alle zehn Minuten.|Năm phút nữa. Cứ mười phút có một chuyến.
-L|Minh chờ tuyến xe nào?|100|10|110
+L|Felix chờ tuyến xe nào?|100|10|110
 R|Xe buýt chạy bao lâu một chuyến?|10 phút|5 phút|100 phút
 S|Worauf warten Sie an der Haltestelle?|Ich warte auf den Bus.|warte auf|Ở trạm dừng, bạn chờ gì?
 W|Viết: “Tôi chờ xe buýt số 5.”|Ich warte auf den Bus Nummer fünf.|warte auf den bus
@@ -31,9 +31,9 @@ G|conj:warten; art
 N|<b>die U-Bahn</b> (tàu điện ngầm), <b>die S-Bahn</b> (tàu nhanh nội-ngoại thành), <b>die Straßenbahn</b> (tàu điện mặt đất), <b>das Taxi</b>. Đi bằng: <b>mit der</b> U-Bahn / S-Bahn / Straßenbahn, nhưng <b>mit dem</b> Taxi.
 N|Câu hỏi: <i>Welche U-Bahn fährt zum Zentrum?</i> — <i>Die U2.</i> (đọc: U-zwei)
 D|Tourist|Entschuldigung, wie komme ich zum Flughafen?|Xin lỗi, tôi đến sân bay bằng cách nào?
-D|Minh|Nehmen Sie die S-Bahn, Linie S9. Oder ein Taxi – aber das ist teuer.|Ông đi tàu S-Bahn tuyến S9. Hoặc đi taxi – nhưng đắt.
+D|Felix|Nehmen Sie die S-Bahn, Linie S9. Oder ein Taxi – aber das ist teuer.|Ông đi tàu S-Bahn tuyến S9. Hoặc đi taxi – nhưng đắt.
 D|Tourist|Und wo fährt die S-Bahn ab?|Thế tàu S-Bahn khởi hành ở đâu?
-D|Minh|Vom Bahnhof. Fahren Sie zuerst mit der Straßenbahn oder mit der U-Bahn zum Bahnhof.|Từ nhà ga. Ông đi tàu điện mặt đất hoặc tàu điện ngầm đến ga trước.
+D|Felix|Vom Bahnhof. Fahren Sie zuerst mit der Straßenbahn oder mit der U-Bahn zum Bahnhof.|Từ nhà ga. Ông đi tàu điện mặt đất hoặc tàu điện ngầm đến ga trước.
 L|Đến sân bay đi tuyến nào?|S9|U9|S2
 R|Phương tiện nào đắt?|das Taxi|die S-Bahn|die U-Bahn
 S|Fahren Sie oft mit der U-Bahn?|Ja, ich fahre oft mit der U-Bahn. / Nein, …|fahre|Bạn có hay đi tàu điện ngầm không?
@@ -45,9 +45,9 @@ F|Wir fahren mit ___ Bus. (der Bus)|dem||den|der
 =124|Ở nhà ga|Bahnhof; Zug; Gleis; Fahrplan
 N|<b>der Bahnhof</b> = nhà ga (Hauptbahnhof = ga trung tâm), <b>der Zug</b> = tàu hoả, <b>das Gleis</b> = sân ga (số…), <b>der Fahrplan</b> = lịch chạy tàu xe.
 N|<i>Der Zug nach München fährt von Gleis 7.</i> (nach + thành phố)
-D|Minh|Entschuldigung, von welchem Gleis fährt der Zug nach Hamburg?|Xin lỗi, tàu đi Hamburg chạy từ sân ga số mấy ạ?
+D|Felix|Entschuldigung, von welchem Gleis fährt der Zug nach Hamburg?|Xin lỗi, tàu đi Hamburg chạy từ sân ga số mấy ạ?
 D|Mann|Schauen Sie auf den Fahrplan … Gleis zwölf.|Anh xem lịch tàu… Sân ga mười hai.
-D|Minh|Und wann fährt der Zug?|Thế mấy giờ tàu chạy ạ?
+D|Felix|Und wann fährt der Zug?|Thế mấy giờ tàu chạy ạ?
 D|Mann|Um vierzehn Uhr zwanzig. Sie haben noch zehn Minuten.|Lúc mười bốn giờ hai mươi. Anh còn mười phút.
 L|Tàu đi Hamburg chạy từ sân ga số mấy?|12|2|20
 R|Tàu chạy lúc mấy giờ?|14:20|12:20|14:10
@@ -58,13 +58,13 @@ G|art; time:full
 =125|Mua vé – phải & có thể|Fahrkarte; Ticket; müssen; können
 N|Động từ khuyết thiếu: <b>können</b> (có thể): ich <b>kann</b>, du <b>kannst</b>, er <b>kann</b>; <b>müssen</b> (phải): ich <b>muss</b>, du <b>musst</b>, er <b>muss</b>. Động từ chính ở <b>cuối câu</b> (nguyên mẫu): <i>Ich <b>muss</b> eine Fahrkarte <b>kaufen</b>.</i>
 N|<b>die Fahrkarte</b> = vé tàu xe (chính thức), <b>das Ticket</b> = vé (thông dụng). Vé khứ hồi: <i>hin und zurück</i>; vé một chiều: <i>einfach</i>.
-D|Minh|Eine Fahrkarte nach Hamburg, bitte.|Cho tôi một vé đi Hamburg.
+D|Felix|Eine Fahrkarte nach Hamburg, bitte.|Cho tôi một vé đi Hamburg.
 D|Mitarbeiterin|Einfach oder hin und zurück?|Một chiều hay khứ hồi ạ?
-D|Minh|Hin und zurück. Kann ich mit Karte bezahlen?|Khứ hồi. Tôi trả bằng thẻ được không?
+D|Felix|Hin und zurück. Kann ich mit Karte bezahlen?|Khứ hồi. Tôi trả bằng thẻ được không?
 D|Mitarbeiterin|Ja, natürlich. Das macht neunundachtzig Euro.|Được chứ. Tổng là 89 euro.
-D|Minh|Muss ich das Ticket im Zug zeigen?|Tôi có phải trình vé trên tàu không?
+D|Felix|Muss ich das Ticket im Zug zeigen?|Tôi có phải trình vé trên tàu không?
 D|Mitarbeiterin|Ja, Sie müssen es im Zug zeigen.|Có, anh phải trình vé trên tàu.
-L|Minh mua vé loại nào?|hin und zurück (khứ hồi)|einfach (một chiều)|zwei Fahrkarten
+L|Felix mua vé loại nào?|hin und zurück (khứ hồi)|einfach (một chiều)|zwei Fahrkarten
 R|Vé giá bao nhiêu?|89 €|98 €|79 €
 S|Sie möchten eine Fahrkarte nach München kaufen. Was sagen Sie?|Eine Fahrkarte nach München, bitte. Hin und zurück.|fahrkarte, muenchen|Bạn muốn mua vé đi München. Bạn nói gì?
 W|Viết: “Tôi phải mua một vé.”|Ich muss eine Fahrkarte kaufen.|muss, fahrkarte kaufen
@@ -74,9 +74,9 @@ G|conj:müssen,können; modal:müssen,können
 N|<b>abfahren</b> (khởi hành) và <b>ankommen</b> (đến nơi) là động từ tách: <i>Der Zug <b>fährt</b> um 8 Uhr <b>ab</b> und <b>kommt</b> um 12 Uhr <b>an</b>.</i>
 N|Danh từ: <b>die Abfahrt</b> (giờ khởi hành), <b>die Ankunft</b> (giờ đến) — có trên bảng ở ga.
 D|Lena|Wann fährt dein Zug ab?|Tàu của bạn mấy giờ khởi hành?
-D|Minh|Die Abfahrt ist um acht Uhr zehn.|Khởi hành lúc tám giờ mười.
+D|Felix|Die Abfahrt ist um acht Uhr zehn.|Khởi hành lúc tám giờ mười.
 D|Lena|Und wann kommst du in München an?|Thế mấy giờ bạn đến München?
-D|Minh|Die Ankunft ist um zwölf Uhr fünfundvierzig. Dann kommt Tom zum Bahnhof.|Đến nơi lúc mười hai giờ bốn mươi lăm. Lúc đó Tom sẽ ra ga.
+D|Felix|Die Ankunft ist um zwölf Uhr fünfundvierzig. Dann kommt Tom zum Bahnhof.|Đến nơi lúc mười hai giờ bốn mươi lăm. Lúc đó Tom sẽ ra ga.
 D|Lena|Gute Reise!|Thượng lộ bình an!
 L|Tàu khởi hành lúc mấy giờ?|8:10|8:45|12:10
 R|Tàu đến München lúc mấy giờ?|12:45|12:15|11:45
@@ -88,9 +88,9 @@ G|sep:abfahren,ankommen; art
 N|<b>einsteigen</b> (lên xe), <b>aussteigen</b> (xuống xe), <b>umsteigen</b> (đổi tàu/xe) — đều tách: <i>Wir <b>steigen</b> am Rathaus <b>aus</b>.</i> Với động từ khuyết thiếu thì không tách: <i>Sie <b>müssen</b> in Köln <b>umsteigen</b>.</i>
 N|<b>leider</b> = tiếc là: <i>Leider fährt heute kein Zug.</i>
 D|Ansage|Nächster Halt: Alexanderplatz. Bitte hier umsteigen in die U2.|Trạm tiếp theo: Alexanderplatz. Vui lòng đổi sang tuyến U2 tại đây.
-D|Minh|Tom, wir müssen hier aussteigen und umsteigen.|Tom, chúng ta phải xuống đây và đổi tàu.
+D|Felix|Tom, wir müssen hier aussteigen und umsteigen.|Tom, chúng ta phải xuống đây và đổi tàu.
 D|Tom|Und wo steigen wir in die U2 ein?|Thế lên tàu U2 ở đâu?
-D|Minh|Unten, auf Gleis zwei. Schnell!|Ở dưới, sân ga 2. Nhanh lên!
+D|Felix|Unten, auf Gleis zwei. Schnell!|Ở dưới, sân ga 2. Nhanh lên!
 D|Tom|Leider zu spät – die U-Bahn ist weg!|Tiếc là muộn rồi – tàu điện ngầm đi mất rồi!
 L|Họ đổi sang tuyến nào?|U2|U8|S2
 R|Chuyện gì xảy ra cuối cùng?|Họ lỡ tàu|Họ lên tàu kịp|Tàu bị huỷ
@@ -101,12 +101,12 @@ G|sep:einsteigen,aussteigen,umsteigen
 =128|Ở sân bay – trễ & đúng giờ|Flughafen; Flugzeug; fliegen; Verspätung; pünktlich
 N|<b>fliegen</b> = bay: <i>Ich fliege nach Vietnam.</i> <b>das Flugzeug</b> = máy bay, <b>der Flughafen</b> = sân bay.
 N|<b>die Verspätung</b> = sự trễ giờ: <i>Der Zug hat zehn Minuten Verspätung.</i> ↔ <b>pünktlich</b> = đúng giờ.
-D|Minh|Anna, ich fliege am Freitag nach Hanoi!|Anna, thứ Sáu mình bay về Hà Nội!
+D|Felix|Anna, ich fliege am Freitag nach Hanoi!|Anna, thứ Sáu mình bay về Hà Nội!
 D|Anna|Toll! Wann fliegst du?|Tuyệt! Mấy giờ bạn bay?
-D|Minh|Um zweiundzwanzig Uhr vom Flughafen Berlin. Das Flugzeug landet um fünfzehn Uhr in Hanoi.|Lúc 22 giờ từ sân bay Berlin. Máy bay hạ cánh lúc 15 giờ ở Hà Nội.
+D|Felix|Um zweiundzwanzig Uhr vom Flughafen Berlin. Das Flugzeug landet um fünfzehn Uhr in Hanoi.|Lúc 22 giờ từ sân bay Berlin. Máy bay hạ cánh lúc 15 giờ ở Hà Nội.
 D|Anna|Hoffentlich ist es pünktlich!|Hy vọng là đúng giờ!
-D|Minh|Ja, letztes Mal hatte es drei Stunden Verspätung.|Ừ, lần trước nó trễ ba tiếng.
-L|Minh bay lúc mấy giờ?|22 giờ|15 giờ|12 giờ
+D|Felix|Ja, letztes Mal hatte es drei Stunden Verspätung.|Ừ, lần trước nó trễ ba tiếng.
+L|Felix bay lúc mấy giờ?|22 giờ|15 giờ|12 giờ
 R|Lần trước máy bay trễ bao lâu?|3 tiếng|30 phút|2 tiếng
 S|Fliegen Sie gern?|Ja, ich fliege gern. / Nein, ich fliege nicht gern.|fliege|Bạn có thích đi máy bay không?
 W|Viết: “Tàu bị trễ 20 phút.”|Der Zug hat zwanzig Minuten Verspätung.|zwanzig minuten verspaetung
@@ -116,9 +116,9 @@ G|conj:fliegen; art
 N|<b>parken</b> = đỗ xe, <b>der Parkplatz</b> = chỗ đỗ xe / bãi đỗ: <i>Hier darf man nicht parken.</i>
 N|<b>die Autobahn</b> = đường cao tốc — ở Đức nhiều đoạn không giới hạn tốc độ! <b>schnell</b> = nhanh ↔ <b>langsam</b> = chậm.
 D|Lukas|Ich fahre am Wochenende nach Hamburg. Kommst du mit?|Cuối tuần mình lái xe đi Hamburg. Bạn đi cùng không?
-D|Minh|Gern! Fahren wir über die Autobahn?|Có! Chúng ta đi đường cao tốc à?
+D|Felix|Gern! Fahren wir über die Autobahn?|Có! Chúng ta đi đường cao tốc à?
 D|Lukas|Ja, das ist schnell – nur drei Stunden.|Ừ, nhanh lắm – chỉ ba tiếng.
-D|Minh|Und in Hamburg? Gibt es dort Parkplätze?|Còn ở Hamburg? Ở đó có chỗ đỗ xe không?
+D|Felix|Und in Hamburg? Gibt es dort Parkplätze?|Còn ở Hamburg? Ở đó có chỗ đỗ xe không?
 D|Lukas|Im Zentrum ist Parken teuer. Wir parken beim Hotel.|Ở trung tâm đỗ xe đắt. Chúng ta đỗ ở khách sạn.
 L|Đi Hamburg mất bao lâu?|3 tiếng|2 tiếng|5 tiếng
 R|Họ đỗ xe ở đâu?|beim Hotel (ở khách sạn)|im Zentrum|am Bahnhof
@@ -129,10 +129,10 @@ G|opp; conj:parken
 =130|Ôn tập chặng 13|*
 D|Ansage|Achtung am Gleis fünf: Der ICE nach München, Abfahrt zehn Uhr zweiunddreißig, hat heute zwanzig Minuten Verspätung.|Chú ý tại sân ga 5: Tàu ICE đi München, khởi hành 10:32, hôm nay trễ 20 phút.
 D|Ansage|Reisende nach Nürnberg steigen bitte in Leipzig um.|Hành khách đi Nürnberg vui lòng đổi tàu ở Leipzig.
-D|SMS|Hallo Tom, mein Zug hat Verspätung. Ich komme erst um fünfzehn Uhr an. Kannst du mich vom Bahnhof abholen? Minh|Chào Tom, tàu của mình bị trễ. Phải 15 giờ mình mới tới. Bạn ra ga đón mình được không? Minh
+D|SMS|Hallo Tom, mein Zug hat Verspätung. Ich komme erst um fünfzehn Uhr an. Kannst du mich vom Bahnhof abholen? Felix|Chào Tom, tàu của mình bị trễ. Phải 15 giờ mình mới tới. Bạn ra ga đón mình được không? Felix
 L|Tàu đi München trễ bao lâu?|20 phút|10 phút|32 phút
 L|Hành khách đi Nürnberg đổi tàu ở đâu?|in Leipzig|in München|in Berlin
-R|Minh đến lúc mấy giờ?|15 giờ|10:32|10:52
-R|Minh nhờ Tom làm gì?|ra ga đón|mua vé|chờ ở nhà
+R|Felix đến lúc mấy giờ?|15 giờ|10:32|10:52
+R|Felix nhờ Tom làm gì?|ra ga đón|mua vé|chờ ở nhà
 S|Ihr Zug hat Verspätung. Rufen Sie einen Freund an und sagen Sie es.|Hallo, mein Zug hat Verspätung. Ich komme um … an.|verspaetung|Tàu của bạn bị trễ. Gọi điện báo cho bạn.
 W|Viết tin nhắn: tàu trễ 30 phút, bạn đến lúc 18 giờ.|Mein Zug hat dreißig Minuten Verspätung. Ich komme um achtzehn Uhr an.|verspaetung, komme, an

@@ -6,7 +6,7 @@ N|Thói quen hằng tuần: <b>montags</b> = mỗi thứ Hai (viết thường, 
 N|<b>die Woche</b> = tuần: <i>diese Woche</i> (tuần này), <i>nächste Woche</i> (tuần sau).
 D|Frau Schmidt|Diese Woche haben wir viel zu tun.|Tuần này chúng ta có nhiều việc.
 D|Frau Schmidt|Am Montag lernen wir die Zahlen, am Dienstag schreiben wir einen Test.|Thứ Hai chúng ta học số, thứ Ba làm bài kiểm tra.
-D|Minh|Und am Mittwoch?|Còn thứ Tư ạ?
+D|Felix|Und am Mittwoch?|Còn thứ Tư ạ?
 D|Frau Schmidt|Am Mittwoch haben wir frei. Am Donnerstag besuchen wir das Museum.|Thứ Tư chúng ta nghỉ. Thứ Năm chúng ta đi thăm bảo tàng.
 D|Tom|Toll! Ich liebe Donnerstage!|Tuyệt! Em mê thứ Năm!
 L|Thứ Ba lớp học làm gì?|einen Test schreiben (làm kiểm tra)|frei haben (nghỉ)|das Museum besuchen (thăm bảo tàng)
@@ -19,10 +19,10 @@ G|seq:days; art
 N|<b>der Freitag, der Samstag, der Sonntag</b>. <b>das Wochenende</b> (cuối tuần) — chú ý: <b>das</b>! Vào cuối tuần: <b>am Wochenende</b>.
 N|<b>frei haben</b> = được nghỉ: <i>Am Samstag habe ich frei.</i> <b>frei</b> còn nghĩa: trống (Ist hier frei?), miễn phí.
 D|Lena|Was machst du am Wochenende?|Cuối tuần bạn làm gì?
-D|Minh|Am Samstag arbeite ich im Café. Aber am Sonntag habe ich frei.|Thứ Bảy mình làm ở quán cà phê. Nhưng Chủ nhật mình được nghỉ.
+D|Felix|Am Samstag arbeite ich im Café. Aber am Sonntag habe ich frei.|Thứ Bảy mình làm ở quán cà phê. Nhưng Chủ nhật mình được nghỉ.
 D|Lena|Am Freitagabend gibt es eine Party bei Anna. Kommst du?|Tối thứ Sáu có một bữa tiệc ở nhà Anna. Bạn đến không?
-D|Minh|Freitag? Ja, gern!|Thứ Sáu à? Ừ, rất sẵn lòng!
-L|Thứ Bảy Minh làm gì?|arbeitet im Café|hat frei|geht zur Party
+D|Felix|Freitag? Ja, gern!|Thứ Sáu à? Ừ, rất sẵn lòng!
+L|Thứ Bảy Felix làm gì?|arbeitet im Café|hat frei|geht zur Party
 R|Khi nào có tiệc ở nhà Anna?|Freitagabend|Samstagabend|Sonntag
 S|Was machen Sie am Wochenende?|Am Wochenende … / Am Samstag …|wochenende/samstag/sonntag|Cuối tuần bạn làm gì?
 W|Viết: “Chủ nhật tôi được nghỉ.”|Am Sonntag habe ich frei.|am sonntag habe ich frei
@@ -32,12 +32,12 @@ G|seq:days; art
 N|Các tháng đều là <b>der</b>. Vào tháng…: <b>im</b> Januar, <b>im</b> Mai (im = in dem).
 N|Phát âm: <b>Januar</b> (j = “d/y”), <b>März</b> (ä, z = ts), <b>Juni</b>. Người Đức hay nói <b>Juno</b> để khỏi nhầm với Juli.
 D|Anna|Wie lange bist du schon in Berlin?|Bạn ở Berlin bao lâu rồi?
-D|Minh|Seit Januar. Mein Deutschkurs dauert von Februar bis Juni.|Từ tháng Một. Lớp tiếng Đức của mình kéo dài từ tháng Hai đến tháng Sáu.
+D|Felix|Seit Januar. Mein Deutschkurs dauert von Februar bis Juni.|Từ tháng Một. Lớp tiếng Đức của mình kéo dài từ tháng Hai đến tháng Sáu.
 D|Anna|Und im März? Hast du Ferien?|Còn tháng Ba? Bạn có được nghỉ không?
-D|Minh|Nein, aber im April habe ich eine Woche frei.|Không, nhưng tháng Tư mình được nghỉ một tuần.
+D|Felix|Nein, aber im April habe ich eine Woche frei.|Không, nhưng tháng Tư mình được nghỉ một tuần.
 D|Anna|Im Mai ist Berlin sehr schön!|Tháng Năm Berlin rất đẹp!
-L|Minh ở Berlin từ khi nào?|seit Januar (từ tháng Một)|seit Februar|seit Juni
-R|Tháng nào Minh được nghỉ một tuần?|April|März|Mai
+L|Felix ở Berlin từ khi nào?|seit Januar (từ tháng Một)|seit Februar|seit Juni
+R|Tháng nào Felix được nghỉ một tuần?|April|März|Mai
 S|Welcher Monat kommt nach März?|April.|april|Tháng nào đến sau tháng Ba?
 W|Viết theo thứ tự: tháng 1, tháng 3, tháng 5.|Januar, März, Mai|januar, maerz, mai
 G|seq:months
@@ -46,11 +46,11 @@ G|seq:months
 N|<b>Juli</b> (hay nói <b>Julei</b> để khỏi nhầm Juni), <b>August</b> — nhấn âm thứ hai: Au<b>gust</b>; Sep<b>tem</b>ber, Ok<b>to</b>ber, No<b>vem</b>ber, De<b>zem</b>ber.
 N|Ngày tháng: <i>im Juli</i>, <i>Anfang August</i> (đầu tháng Tám), <i>Ende Dezember</i> (cuối tháng Mười Hai).
 D|Tom|Wann fährst du nach Vietnam?|Khi nào bạn về Việt Nam?
-D|Minh|Im Juli. Im August bin ich wieder in Berlin.|Tháng Bảy. Tháng Tám mình lại ở Berlin.
+D|Felix|Im Juli. Im August bin ich wieder in Berlin.|Tháng Bảy. Tháng Tám mình lại ở Berlin.
 D|Tom|Und im September? Beginnt dann der neue Kurs?|Còn tháng Chín? Lúc đó khoá mới bắt đầu à?
-D|Minh|Nein, im Oktober. Der Kurs dauert bis Dezember.|Không, tháng Mười. Khoá học kéo dài đến tháng Mười Hai.
+D|Felix|Nein, im Oktober. Der Kurs dauert bis Dezember.|Không, tháng Mười. Khoá học kéo dài đến tháng Mười Hai.
 D|Tom|Im November ist es hier kalt und dunkel. Viel Glück!|Tháng Mười Một ở đây lạnh và tối. Chúc may mắn nhé!
-L|Khi nào Minh về Việt Nam?|im Juli|im Juni|im August
+L|Khi nào Felix về Việt Nam?|im Juli|im Juni|im August
 R|Khoá học mới bắt đầu khi nào?|im Oktober|im September|im Dezember
 S|Welcher Monat kommt nach November?|Dezember.|dezember|Tháng nào đến sau tháng Mười Một?
 W|Viết: “Tháng Tám tôi ở Việt Nam.”|Im August bin ich in Vietnam.|im august bin ich
@@ -60,12 +60,12 @@ G|seq:months
 N|4 mùa (<b>die Jahreszeit</b>, số nhiều Jahreszeiten): <b>der Frühling</b> (xuân), <b>der Sommer</b> (hạ), <b>der Herbst</b> (thu), <b>der Winter</b> (đông) — đều là <b>der</b>. Vào mùa…: <b>im</b> Sommer.
 N|<b>der Monat</b> = tháng (số nhiều: die Monate): <i>Ein Jahr hat zwölf Monate.</i>
 D|Lena|Welche Jahreszeit magst du am liebsten?|Bạn thích mùa nào nhất?
-D|Minh|Den Sommer! In Vietnam ist es immer warm.|Mùa hè! Ở Việt Nam lúc nào cũng ấm.
+D|Felix|Den Sommer! In Vietnam ist es immer warm.|Mùa hè! Ở Việt Nam lúc nào cũng ấm.
 D|Lena|Ich mag den Herbst. Im Oktober ist der Park so schön!|Mình thích mùa thu. Tháng Mười công viên đẹp lắm!
-D|Minh|Und der Winter? Er ist hier vier Monate lang!|Còn mùa đông? Ở đây nó dài tới bốn tháng!
+D|Felix|Und der Winter? Er ist hier vier Monate lang!|Còn mùa đông? Ở đây nó dài tới bốn tháng!
 D|Lena|Ja, aber im Frühling ist alles wieder grün.|Ừ, nhưng mùa xuân mọi thứ lại xanh tươi.
-L|Minh thích mùa nào nhất?|Sommer|Herbst|Frühling
-R|Theo Minh, mùa đông ở đây dài bao lâu?|vier Monate|drei Monate|zwölf Monate
+L|Felix thích mùa nào nhất?|Sommer|Herbst|Frühling
+R|Theo Felix, mùa đông ở đây dài bao lâu?|vier Monate|drei Monate|zwölf Monate
 S|Welche Jahreszeit mögen Sie?|Ich mag den Sommer.|mag/sommer/winter/herbst/fruehling|Bạn thích mùa nào?
 W|Viết: “Một năm có bốn mùa và mười hai tháng.”|Ein Jahr hat vier Jahreszeiten und zwölf Monate.|vier jahreszeiten, zwoelf monate
 G|art
@@ -74,11 +74,11 @@ G|art
 N|<b>Welches Datum ist heute?</b> — <i>Heute ist <b>der dritte Mai</b>.</i> (3.5.) Ngày tháng dùng số thứ tự: der erste, zweite, dritte, vierte… zwanzigste, einunddreißigste.
 N|Vào ngày…: <b>am</b> dritten Mai (thêm -n). Ngày tháng viết: 24.12. = <i>der vierundzwanzigste Zwölfte</i>.
 N|<b>der Feiertag</b> = ngày lễ (được nghỉ), <b>Weihnachten</b> = Giáng sinh (24.–26.12.), <b>der Kalender</b> = lịch.
-D|Minh|Welches Datum ist heute?|Hôm nay là ngày bao nhiêu?
+D|Felix|Welches Datum ist heute?|Hôm nay là ngày bao nhiêu?
 D|Anna|Heute ist der zweite Oktober. Morgen ist ein Feiertag!|Hôm nay là ngày 2 tháng Mười. Ngày mai là ngày lễ!
-D|Minh|Wirklich? Was feiert man am dritten Oktober?|Thật à? Ngày 3 tháng Mười người ta kỷ niệm gì?
+D|Felix|Wirklich? Was feiert man am dritten Oktober?|Thật à? Ngày 3 tháng Mười người ta kỷ niệm gì?
 D|Anna|Den Tag der Deutschen Einheit. Schau in den Kalender!|Ngày Thống nhất nước Đức. Xem lịch đi!
-D|Minh|Und wann ist Weihnachten?|Còn Giáng sinh là khi nào?
+D|Felix|Und wann ist Weihnachten?|Còn Giáng sinh là khi nào?
 D|Anna|Am vierundzwanzigsten Dezember.|Ngày 24 tháng Mười Hai.
 L|Hôm nay là ngày mấy?|2.10.|3.10.|24.12.
 R|Giáng sinh là ngày nào?|24. Dezember|3. Oktober|1. Januar
@@ -91,12 +91,12 @@ N|<b>Wann hast du Geburtstag?</b> — <b>Am</b> zwölften März. / <b>Im</b> Mä
 N|<b>Ich bin am 12.3.2002 geboren.</b> — năm đọc: 2002 = zweitausendzwei, 1999 = neunzehnhundertneunundneunzig. <b>Wo sind Sie geboren?</b> — <b>In</b> Hanoi.
 N|Trong biểu mẫu: <b>das Geburtsdatum</b> (ngày sinh), <b>der Geburtsort</b> (nơi sinh).
 D|Sekretärin|Ihr Geburtsdatum, bitte?|Ngày sinh của anh?
-D|Minh|Ich bin am zwölften März zweitausendzwei geboren.|Tôi sinh ngày 12 tháng Ba năm 2002.
+D|Felix|Ich bin am zwölften März zweitausendzwei geboren.|Tôi sinh ngày 12 tháng Ba năm 2002.
 D|Sekretärin|Und Ihr Geburtsort?|Còn nơi sinh?
-D|Minh|Hanoi, in Vietnam.|Hà Nội, Việt Nam.
+D|Felix|Hanoi, in Vietnam.|Hà Nội, Việt Nam.
 D|Sekretärin|Oh, Sie haben nächste Woche Geburtstag! Alles Gute!|Ồ, tuần sau là sinh nhật anh rồi! Chúc mừng trước nhé!
-L|Minh sinh năm nào?|2002|2012|1992
-R|Nơi sinh của Minh ở đâu?|Hanoi|Berlin|Saigon
+L|Felix sinh năm nào?|2002|2012|1992
+R|Nơi sinh của Felix ở đâu?|Hanoi|Berlin|Saigon
 S|Wann haben Sie Geburtstag?|Ich habe am … Geburtstag.|geburtstag|Sinh nhật bạn là ngày nào?
 W|Điền phiếu: Geburtsdatum và Geburtsort của bạn.|Geburtsdatum: 12.03.2002 – Geburtsort: Hanoi|
 G|date
@@ -105,13 +105,13 @@ G|date
 N|<b>Động từ tách</b>: tiền tố tách ra và đứng <b>cuối câu</b>: auf|stehen → <i>Ich <b>stehe</b> um sechs Uhr <b>auf</b>.</i> an|fangen → <i>Der Kurs <b>fängt</b> um neun <b>an</b>.</i>
 N|Trọng âm luôn ở tiền tố tách: <b>auf</b>stehen, <b>an</b>fangen.
 N|Kể theo thứ tự: <b>zuerst</b> (đầu tiên) … <b>dann</b> (sau đó) … Chú ý đảo ngữ: <i>Zuerst <b>trinke</b> ich Kaffee, dann <b>esse</b> ich.</i>
-D|Tom|Wann stehst du auf, Minh?|Minh dậy lúc mấy giờ?
-D|Minh|Um halb sieben. Zuerst trinke ich einen Kaffee, dann frühstücke ich.|Lúc sáu rưỡi. Đầu tiên mình uống cà phê, rồi ăn sáng.
+D|Tom|Wann stehst du auf, Felix?|Felix dậy lúc mấy giờ?
+D|Felix|Um halb sieben. Zuerst trinke ich einen Kaffee, dann frühstücke ich.|Lúc sáu rưỡi. Đầu tiên mình uống cà phê, rồi ăn sáng.
 D|Tom|Und wann fängt dein Kurs an?|Còn lớp của bạn bắt đầu lúc mấy giờ?
-D|Minh|Um neun. Und du? Wann stehst du auf?|Lúc chín giờ. Còn bạn? Bạn dậy lúc mấy giờ?
+D|Felix|Um neun. Und du? Wann stehst du auf?|Lúc chín giờ. Còn bạn? Bạn dậy lúc mấy giờ?
 D|Tom|Am Wochenende? Ich stehe gar nicht auf!|Cuối tuần á? Mình chẳng dậy luôn!
-L|Minh dậy lúc mấy giờ?|6:30|7:30|9:00
-R|Sau khi uống cà phê, Minh làm gì?|frühstücken (ăn sáng)|in den Kurs gehen|schlafen
+L|Felix dậy lúc mấy giờ?|6:30|7:30|9:00
+R|Sau khi uống cà phê, Felix làm gì?|frühstücken (ăn sáng)|in den Kurs gehen|schlafen
 S|Wann stehen Sie auf?|Ich stehe um … Uhr auf.|stehe, auf|Bạn dậy lúc mấy giờ?
 W|Viết: “Lớp học bắt đầu lúc 9 giờ.” (dùng anfangen)|Der Kurs fängt um neun Uhr an.|faengt, an
 G|sep:aufstehen,anfangen
@@ -120,13 +120,13 @@ G|sep:aufstehen,anfangen
 N|<b>der Termin</b> = cuộc hẹn (với bác sĩ, cơ quan…): <i>Ich habe einen Termin um zehn Uhr.</i>
 N|<b>beginnen</b> = <b>anfangen</b> (bắt đầu); ngược lại là <b>aufhören</b> (dừng, kết thúc — động từ tách): <i>Ich höre um fünf auf.</i>
 N|<b>schon</b> = đã / rồi, <b>noch</b> = vẫn / còn: <i>Bist du <b>schon</b> fertig? — Nein, <b>noch</b> nicht.</i>
-D|Anna|Minh, hast du morgen Zeit?|Minh, mai bạn rảnh không?
-D|Minh|Morgen früh habe ich einen Termin beim Arzt. Er beginnt um zehn.|Sáng mai mình có hẹn bác sĩ. Bắt đầu lúc mười giờ.
+D|Anna|Felix, hast du morgen Zeit?|Felix, mai bạn rảnh không?
+D|Felix|Morgen früh habe ich einen Termin beim Arzt. Er beginnt um zehn.|Sáng mai mình có hẹn bác sĩ. Bắt đầu lúc mười giờ.
 D|Anna|Und am Nachmittag?|Còn buổi chiều?
-D|Minh|Da arbeite ich noch. Ich höre um fünf auf.|Lúc đó mình vẫn còn làm việc. Mình nghỉ lúc năm giờ.
+D|Felix|Da arbeite ich noch. Ich höre um fünf auf.|Lúc đó mình vẫn còn làm việc. Mình nghỉ lúc năm giờ.
 D|Anna|Gut, dann um sechs? Ich freue mich schon auf den Film!|Được, vậy sáu giờ nhé? Mình mong bộ phim lắm rồi!
-L|Minh có hẹn bác sĩ lúc mấy giờ?|10 giờ|6 giờ|5 giờ
-R|Minh nghỉ làm lúc mấy giờ?|17 giờ (fünf)|18 giờ|10 giờ
+L|Felix có hẹn bác sĩ lúc mấy giờ?|10 giờ|6 giờ|5 giờ
+R|Felix nghỉ làm lúc mấy giờ?|17 giờ (fünf)|18 giờ|10 giờ
 S|Haben Sie diese Woche einen Termin?|Ja, ich habe am … einen Termin. / Nein, …|termin|Tuần này bạn có cuộc hẹn nào không?
 W|Viết: “Bạn xong chưa? – Chưa, vẫn chưa.”|Bist du schon fertig? – Nein, noch nicht.|schon, noch nicht
 F|Bist du ___ fertig? (đã … chưa)|schon|
@@ -135,7 +135,7 @@ F|Wann ___ der Film? (beginnen)|beginnt|chia động từ
 F|Ich ___ um fünf Uhr ___. (aufhören)|höre … auf|động từ tách
 
 =60|Ôn tập chặng 6|*
-D|E-Mail|Hallo Minh, am Samstag, den zwölften Juni, habe ich Geburtstag.|Chào Minh, thứ Bảy ngày 12 tháng Sáu là sinh nhật mình.
+D|E-Mail|Hallo Felix, am Samstag, den zwölften Juni, habe ich Geburtstag.|Chào Felix, thứ Bảy ngày 12 tháng Sáu là sinh nhật mình.
 D|E-Mail|Die Party fängt um acht Uhr abends an und hört um zwei Uhr auf.|Tiệc bắt đầu lúc 8 giờ tối và kết thúc lúc 2 giờ sáng.
 D|E-Mail|Hast du Zeit? Zuerst essen wir zusammen, dann tanzen wir.|Bạn có rảnh không? Đầu tiên chúng ta ăn cùng nhau, rồi nhảy.
 D|E-Mail|Viele Grüße, Anna|Thân, Anna

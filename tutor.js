@@ -34,7 +34,7 @@ const SKILL=[["nghe","👂 Nghe"],["noi","🗣 Nói"],["doc","📖 Đọc"],["vi
 const stepsOf=k=>k.rv===2?["nghe","doc","viet","noi"]:k.rv===1?["tu","ngu","nghe","doc","noi","viet"]:["on","tu","ngu","nghe","noi","doc","viet"];
 
 /* ---------- Giọng đọc hội thoại (nam / nữ) ---------- */
-const GENDER={Minh:"m",Tom:"m",Lukas:"m","Herr Weber":"m",Kellner:"m",Mann:"m",Verkäufer:"m",Beamter:"m",Wolf:"m",Tourist:"m",
+const GENDER={Felix:"m",Tom:"m",Lukas:"m","Herr Weber":"m",Kellner:"m",Mann:"m",Verkäufer:"m",Beamter:"m",Wolf:"m",Tourist:"m",
   Anna:"f",Lena:"f",Sara:"f",Mia:"f","Frau Schmidt":"f",Frau:"f",Rotkäppchen:"f",Rezeption:"f",Ansage:"f"};
 const genderOf=sp=>GENDER[sp]||(/^Frau\b/.test(sp)?"f":/^Herr\b/.test(sp)?"m":/in$/.test(sp)?"f":"");
 let VOICES=[];const loadV=()=>{try{VOICES=speechSynthesis.getVoices().filter(v=>/^de/i.test(v.lang))}catch(e){}};
@@ -46,7 +46,7 @@ const speakable=s=>String(s).replace(/[„“”"]/g,"").replace(/…/g,", ").re
 let playTok=0;
 /* Giọng Azure cho từng nhân vật (nữ / nam khác nhau) */
 const AZV={Anna:"de-DE-KatjaNeural",Lena:"de-DE-AmalaNeural",Sara:"de-DE-LouisaNeural","Frau Schmidt":"de-DE-TanjaNeural",Mia:"de-DE-MajaNeural",
-  Minh:"de-DE-ConradNeural",Tom:"de-DE-KillianNeural",Lukas:"de-DE-KasperNeural","Herr Weber":"de-DE-KlausNeural"};
+  Felix:"de-DE-ConradNeural",Tom:"de-DE-KillianNeural",Lukas:"de-DE-KasperNeural","Herr Weber":"de-DE-KlausNeural"};
 const azVoiceOf=sp=>AZV[sp]||(genderOf(sp)==="m"?"de-DE-ConradNeural":genderOf(sp)==="f"?"de-DE-KatjaNeural":(store.get("deCfg",{}).voice||"de-DE-KatjaNeural"));
 async function playLinesAz(lines,slow,onLine,tok){
   const rel=rate()*(slow?0.72:1),az=window.azTok();
@@ -211,7 +211,7 @@ function reviewItems(words,pool){return words.map((x,i)=>[()=>mcWord(x,pool,"de"
 
 /* ---------- Xây từng bước của kit ---------- */
 function textBlocks(k){return(k.X||[]).filter(x=>x.d&&x.d.length)}
-function roleOf(lines){const sps=[...new Set(lines.map(l=>l[0]).filter(sp=>!isText(sp)))];if(!sps.length)return null;return sps.includes("Minh")?"Minh":(lines[1]&&!isText(lines[1][0])?lines[1][0]:sps[0])}
+function roleOf(lines){const sps=[...new Set(lines.map(l=>l[0]).filter(sp=>!isText(sp)))];if(!sps.length)return null;return sps.includes("Felix")?"Felix":(lines[1]&&!isText(lines[1][0])?lines[1][0]:sps[0])}
 function buildStep(k,st){
   if(RUN&&RUN.course)return RUN.course.build(st)||[];
   const ws=k.rv?(k.rv===1?shuffle(stageW(k.s)).slice(0,10):shuffle(allW()).slice(0,10)):kitW(k),pool=poolFor(k),X=textBlocks(k),main=X[0];

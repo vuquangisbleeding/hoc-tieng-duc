@@ -814,7 +814,7 @@ function ipaMap(){if(IPAM)return IPAM;IPAM=new Map();
     for(const fi of [...String(c.p||"").split(";"),c.prt,c.pf]){if(!fi)continue;const [f,i]=String(fi).replace(/^\*/,"").split("|");if(!f||!i)continue;put(f,i);
       const fw=f.trim().split(/\s+/),iw=i.trim().split(/\s+/);if(fw.length>1&&fw.length===iw.length)fw.forEach((w,k)=>put(w,iw[k]))}}}catch(e){}
   const NAMES={Berlin:"bɛʁˈliːn",Deutschland:"ˈdɔɪ̯tʃlant",Vietnam:"viɛtˈnam",München:"ˈmʏnçn̩",Hamburg:"ˈhambʊʁk",Köln:"kœln",Wien:"viːn",
-    Anna:"ˈana",Lena:"ˈleːna",Tom:"tɔm",Sara:"ˈzaːʁa",Lukas:"ˈluːkas",Schmidt:"ʃmɪt",Weber:"ˈveːbɐ",Minh:"mɪn",Mia:"ˈmiːa",Lan:"lan",Herr:"hɛʁ",Frau:"fʁaʊ̯"};
+    Anna:"ˈana",Lena:"ˈleːna",Tom:"tɔm",Sara:"ˈzaːʁa",Lukas:"ˈluːkas",Schmidt:"ʃmɪt",Weber:"ˈveːbɐ",Felix:"ˈfeːlɪks",Mia:"ˈmiːa",Lan:"lan",Herr:"hɛʁ",Frau:"fʁaʊ̯"};
   for(const k in NAMES)put(k,NAMES[k]);
   for(const a in ART_IPA)put(a,ART_IPA[a]);return IPAM}
 function ipaFor(text){const m=ipaMap(),t=norm(String(text||""));if(!t)return"";if(m.has(t))return m.get(t);
@@ -1207,17 +1207,17 @@ setView("tutor");
 if(!window.isSecureContext)$("err").textContent="Cần mở qua link https:// thì micro mới hoạt động.";
 }
 </script>
-<script src="vocab-data.js?v=a1"></script>
-<script src="vocab-a1.js?v=2"></script>
-<script src="tutor-data.js?v=1"></script>
+<script src="vocab-data.js?v=a2"></script>
+<script src="vocab-a1.js?v=3"></script>
+<script src="tutor-data.js?v=2"></script>
 <script src="vocab.js?v=t7"></script>
 <script src="dict.js?v=1"></script>
 <script src="videos.js?v=1"></script>
 <script src="nico-data.js?v=1"></script>
 <script src="nico.js?v=1"></script>
-<script src="course-data.js?v=3"></script>
+<script src="course-data.js?v=4"></script>
 <script src="course.js?v=3"></script>
-<script src="tutor.js?v=14"></script>
+<script src="tutor.js?v=15"></script>
 <script src="sync.js?v=t3"></script>
 </body>
 </html>

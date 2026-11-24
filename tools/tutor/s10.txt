@@ -4,12 +4,12 @@
 N|<b>die Wohnung</b> = căn hộ, <b>das Haus</b> (số nhiều: Häuser) = ngôi nhà, toà nhà, <b>das Zimmer</b> = phòng: <i>eine Wohnung mit drei Zimmern</i>.
 N|<b>leben</b> = sống (cuộc sống); <b>wohnen</b> = cư trú (địa chỉ): <i>Ich lebe gern in Berlin.</i> <i>Ich wohne in der Goethestraße.</i>
 N|<b>allein</b> = một mình: <i>Ich wohne allein.</i>
-D|Lena|Wohnst du allein, Minh?|Minh sống một mình à?
-D|Minh|Ja, ich habe eine kleine Wohnung mit einem Zimmer.|Ừ, mình có một căn hộ nhỏ một phòng.
+D|Lena|Wohnst du allein, Felix?|Felix sống một mình à?
+D|Felix|Ja, ich habe eine kleine Wohnung mit einem Zimmer.|Ừ, mình có một căn hộ nhỏ một phòng.
 D|Lena|Ich lebe mit zwei Freundinnen in einer WG. Das Haus ist alt, aber schön.|Mình sống với hai bạn gái trong một căn hộ chung. Toà nhà cũ nhưng đẹp.
-D|Minh|Wie viele Zimmer hat die Wohnung?|Căn hộ có bao nhiêu phòng?
+D|Felix|Wie viele Zimmer hat die Wohnung?|Căn hộ có bao nhiêu phòng?
 D|Lena|Vier Zimmer. Jede hat ein Zimmer, und wir haben ein Wohnzimmer zusammen.|Bốn phòng. Mỗi người một phòng, và chúng mình có một phòng khách chung.
-L|Căn hộ của Minh có mấy phòng?|1|2|4
+L|Căn hộ của Felix có mấy phòng?|1|2|4
 R|Lena sống với ai?|zwei Freundinnen (hai bạn gái)|gia đình|một mình
 S|Wohnen Sie allein oder mit Familie?|Ich wohne allein. / Ich wohne mit meiner Familie.|wohne|Bạn sống một mình hay với gia đình?
 W|Viết: “Tôi sống một mình trong một căn hộ nhỏ.”|Ich wohne allein in einer kleinen Wohnung.|allein, wohnung
@@ -19,13 +19,13 @@ G|art; pl
 N|<b>die Küche</b> (bếp), <b>das Bad</b> (phòng tắm), <b>die Toilette</b> (nhà vệ sinh), <b>das Wohnzimmer</b> (phòng khách), <b>das Schlafzimmer</b> (phòng ngủ).
 N|Từ ghép với <b>-zimmer</b> đều là <b>das</b> (theo das Zimmer): das Wohnzimmer, das Schlafzimmer, das Kinderzimmer.
 D|Anna|Wie ist deine Wohnung?|Căn hộ của bạn thế nào?
-D|Minh|Sie hat ein Wohnzimmer, ein Schlafzimmer, eine Küche und ein Bad.|Có một phòng khách, một phòng ngủ, một bếp và một phòng tắm.
+D|Felix|Sie hat ein Wohnzimmer, ein Schlafzimmer, eine Küche und ein Bad.|Có một phòng khách, một phòng ngủ, một bếp và một phòng tắm.
 D|Anna|Und die Toilette? Ist sie im Bad?|Còn nhà vệ sinh? Ở trong phòng tắm à?
-D|Minh|Ja. In Vietnam haben viele Wohnungen zwei Toiletten, hier nur eine.|Ừ. Ở Việt Nam nhiều căn hộ có hai nhà vệ sinh, ở đây chỉ một.
+D|Felix|Ja. In Vietnam haben viele Wohnungen zwei Toiletten, hier nur eine.|Ừ. Ở Việt Nam nhiều căn hộ có hai nhà vệ sinh, ở đây chỉ một.
 D|Anna|Und die Küche?|Còn bếp?
-D|Minh|Die Küche ist klein, aber gemütlich.|Bếp nhỏ nhưng ấm cúng.
-L|Căn hộ của Minh có những phòng nào?|Wohnzimmer, Schlafzimmer, Küche, Bad|zwei Schlafzimmer und eine Küche|nur ein Wohnzimmer und ein Bad
-R|Bếp của Minh thế nào?|klein, aber gemütlich|groß und hell|alt und dunkel
+D|Felix|Die Küche ist klein, aber gemütlich.|Bếp nhỏ nhưng ấm cúng.
+L|Căn hộ của Felix có những phòng nào?|Wohnzimmer, Schlafzimmer, Küche, Bad|zwei Schlafzimmer und eine Küche|nur ein Wohnzimmer und ein Bad
+R|Bếp của Felix thế nào?|klein, aber gemütlich|groß und hell|alt und dunkel
 S|Welche Zimmer hat Ihre Wohnung?|Meine Wohnung hat ein Wohnzimmer, ein Schlafzimmer …|zimmer/kueche/bad|Nhà bạn có những phòng nào?
 W|Viết mạo từ: Küche, Bad, Wohnzimmer.|die Küche, das Bad, das Wohnzimmer|die kueche, das bad, das wohnzimmer
 G|art; pl
@@ -33,11 +33,11 @@ G|art; pl
 =93|Có gì trong nhà? – es gibt|es gibt; Flur; Keller; Erdgeschoss
 N|<b>es gibt</b> + Akkusativ = có (tồn tại): <i>Im Haus <b>gibt es einen</b> Keller.</i> Không có: <i>Es gibt <b>keinen</b> Aufzug.</i> Câu hỏi: <i><b>Gibt es</b> hier einen Supermarkt?</i>
 N|<b>der Flur</b> = hành lang (trong nhà), <b>der Keller</b> = tầng hầm (để đồ), <b>das Erdgeschoss</b> = tầng trệt (tầng 0).
-D|Minh|Herr Weber, gibt es im Haus einen Keller?|Ông Weber, toà nhà có tầng hầm không ạ?
+D|Felix|Herr Weber, gibt es im Haus einen Keller?|Ông Weber, toà nhà có tầng hầm không ạ?
 D|Herr Weber|Ja, es gibt einen Keller. Ihr Fahrrad kann dort stehen.|Có, có một tầng hầm. Xe đạp của anh có thể để ở đó.
-D|Minh|Und wo sind die Briefkästen?|Thế hộp thư ở đâu ạ?
+D|Felix|Und wo sind die Briefkästen?|Thế hộp thư ở đâu ạ?
 D|Herr Weber|Im Erdgeschoss, im Flur neben der Tür.|Ở tầng trệt, trong hành lang cạnh cửa.
-D|Minh|Gibt es auch einen Parkplatz?|Có cả chỗ đỗ xe không ạ?
+D|Felix|Gibt es auch einen Parkplatz?|Có cả chỗ đỗ xe không ạ?
 D|Herr Weber|Nein, einen Parkplatz gibt es leider nicht.|Không, tiếc là không có chỗ đỗ xe.
 L|Toà nhà có chỗ đỗ xe không?|Không|Có|Có hai chỗ
 R|Hộp thư ở đâu?|im Erdgeschoss, im Flur|im Keller|vor dem Haus
@@ -49,12 +49,12 @@ G|akk; kein
 N|<b>der Stock</b> = tầng: <b>der erste Stock</b> = tầng ngay trên tầng trệt (tức tầng 2 kiểu Việt Nam). <i>Ich wohne im dritten Stock.</i>
 N|<b>die Treppe</b> = cầu thang bộ, <b>der Aufzug</b> = thang máy, <b>die Tür</b> = cửa ra vào.
 D|Herr Weber|Ihre Wohnung ist im vierten Stock.|Căn hộ của anh ở tầng bốn.
-D|Minh|Gibt es einen Aufzug?|Có thang máy không ạ?
+D|Felix|Gibt es einen Aufzug?|Có thang máy không ạ?
 D|Herr Weber|Nein, leider nicht. Nur die Treppe – das ist gut für die Gesundheit!|Không, tiếc là không. Chỉ có cầu thang bộ – tốt cho sức khoẻ mà!
-D|Minh|Vier Stockwerke jeden Tag … Welche Tür ist meine?|Bốn tầng mỗi ngày… Cửa nào là của tôi ạ?
+D|Felix|Vier Stockwerke jeden Tag … Welche Tür ist meine?|Bốn tầng mỗi ngày… Cửa nào là của tôi ạ?
 D|Herr Weber|Die Tür links. Rechts wohnt Frau Schulz.|Cửa bên trái. Bên phải là nhà bà Schulz.
-L|Căn hộ của Minh ở tầng mấy?|4. Stock (tầng bốn)|3. Stock|Erdgeschoss
-R|Cửa nhà Minh ở bên nào?|links (trái)|rechts (phải)|geradeaus (thẳng)
+L|Căn hộ của Felix ở tầng mấy?|4. Stock (tầng bốn)|3. Stock|Erdgeschoss
+R|Cửa nhà Felix ở bên nào?|links (trái)|rechts (phải)|geradeaus (thẳng)
 S|In welchem Stock wohnen Sie?|Ich wohne im … Stock. / im Erdgeschoss.|stock/erdgeschoss|Bạn sống ở tầng mấy?
 W|Viết: “Tôi sống ở tầng hai.”|Ich wohne im zweiten Stock.|zweiten stock
 G|art; ord
@@ -63,11 +63,11 @@ G|art; ord
 N|<b>das Fenster</b> (cửa sổ — chú ý: <b>das</b>!), <b>der Schlüssel</b> (chìa khoá), <b>der Balkon</b> (ban công), <b>der Garten</b> (vườn).
 N|Số nhiều: die Fenster, die Schlüssel (giữ nguyên), die Balkone, die Gärten.
 D|Herr Weber|Hier sind Ihre Schlüssel: für die Haustür und für die Wohnung.|Đây là chìa khoá của anh: cho cửa toà nhà và cho căn hộ.
-D|Minh|Danke! Oh, die Wohnung hat große Fenster!|Cảm ơn ông! Ôi, căn hộ có cửa sổ to quá!
+D|Felix|Danke! Oh, die Wohnung hat große Fenster!|Cảm ơn ông! Ôi, căn hộ có cửa sổ to quá!
 D|Herr Weber|Ja, und einen Balkon. Von dort sehen Sie den Garten von Frau Schulz.|Đúng, và có một ban công. Từ đó anh nhìn thấy khu vườn của bà Schulz.
-D|Minh|Ein Balkon! Da trinke ich morgens meinen Kaffee.|Ban công! Buổi sáng tôi sẽ uống cà phê ở đó.
-L|Ông Weber đưa cho Minh những chìa khoá nào?|cho cửa toà nhà và căn hộ|chỉ cho căn hộ|cho tầng hầm
-R|Minh sẽ làm gì ở ban công?|uống cà phê buổi sáng|đọc sách|ngủ
+D|Felix|Ein Balkon! Da trinke ich morgens meinen Kaffee.|Ban công! Buổi sáng tôi sẽ uống cà phê ở đó.
+L|Ông Weber đưa cho Felix những chìa khoá nào?|cho cửa toà nhà và căn hộ|chỉ cho căn hộ|cho tầng hầm
+R|Felix sẽ làm gì ở ban công?|uống cà phê buổi sáng|đọc sách|ngủ
 S|Hat Ihre Wohnung einen Balkon oder einen Garten?|Ja, meine Wohnung hat einen Balkon. / Nein, …|balkon/garten|Nhà bạn có ban công hoặc vườn không?
 W|Viết mạo từ và số nhiều: Fenster, Schlüssel.|das Fenster – die Fenster, der Schlüssel – die Schlüssel|das fenster, der schluessel
 G|art; pl
@@ -77,9 +77,9 @@ N|Tính từ đứng sau <b>sein</b> giữ nguyên: <i>Die Wohnung ist <b>hell</
 N|Cặp trái nghĩa: <b>groß ↔ klein</b> (lớn ↔ nhỏ), <b>hell ↔ dunkel</b> (sáng ↔ tối).
 N|Đứng trước danh từ, tính từ có đuôi (học sau): <i>eine <b>kleine</b> Wohnung, ein <b>großes</b> Fenster</i>.
 D|Anna|Und? Wie ist das Schlafzimmer?|Sao? Phòng ngủ thế nào?
-D|Minh|Es ist groß und hell. Aber das Bad ist klein und dunkel.|Nó rộng và sáng. Nhưng phòng tắm thì nhỏ và tối.
+D|Felix|Es ist groß und hell. Aber das Bad ist klein und dunkel.|Nó rộng và sáng. Nhưng phòng tắm thì nhỏ và tối.
 D|Anna|Und das Wohnzimmer?|Còn phòng khách?
-D|Minh|Es ist nicht groß, aber sehr hell – es hat zwei Fenster.|Không rộng, nhưng rất sáng – nó có hai cửa sổ.
+D|Felix|Es ist nicht groß, aber sehr hell – es hat zwei Fenster.|Không rộng, nhưng rất sáng – nó có hai cửa sổ.
 L|Phòng ngủ thế nào?|groß und hell|klein und dunkel|klein und hell
 R|Tại sao phòng khách sáng?|Nó có hai cửa sổ|Nó rất rộng|Nó có đèn to
 S|Wie ist Ihr Zimmer?|Mein Zimmer ist klein und hell.|ist|Phòng của bạn thế nào? (2 tính từ)
@@ -90,10 +90,10 @@ G|opp
 N|<b>ruhig</b> = yên tĩnh ↔ <b>laut</b> = ồn ào, to tiếng. <b>leise</b> = nhỏ tiếng, khẽ: <i>Bitte sprechen Sie leise.</i>
 N|<b>gemütlich</b> = ấm cúng, dễ chịu — một từ rất “Đức”! <b>ziemlich</b> = khá: <i>Die Straße ist ziemlich laut.</i>
 D|Lena|Ist deine Wohnung ruhig?|Căn hộ của bạn có yên tĩnh không?
-D|Minh|Nicht so. Die Straße ist ziemlich laut. Und mein Nachbar hört laut Musik.|Không lắm. Đường phố khá ồn. Và hàng xóm mình mở nhạc to.
+D|Felix|Nicht so. Die Straße ist ziemlich laut. Und mein Nachbar hört laut Musik.|Không lắm. Đường phố khá ồn. Và hàng xóm mình mở nhạc to.
 D|Lena|Oh nein! Sag ihm: „Bitte etwas leiser!“|Ôi không! Nói với anh ta: “Làm ơn nhỏ tiếng một chút!”
-D|Minh|Ja … Aber sonst ist die Wohnung sehr gemütlich.|Ừ… Nhưng ngoài ra thì căn hộ rất ấm cúng.
-L|Ai mở nhạc to?|hàng xóm của Minh|Minh|Lena
+D|Felix|Ja … Aber sonst ist die Wohnung sehr gemütlich.|Ừ… Nhưng ngoài ra thì căn hộ rất ấm cúng.
+L|Ai mở nhạc to?|hàng xóm của Felix|Felix|Lena
 R|Ngoài chuyện ồn, căn hộ thế nào?|sehr gemütlich|sehr laut|sehr dunkel
 S|Ist Ihre Straße ruhig oder laut?|Meine Straße ist ruhig.|ruhig/laut|Phố nhà bạn yên tĩnh hay ồn?
 W|Viết: “Căn hộ khá nhỏ nhưng rất ấm cúng.”|Die Wohnung ist ziemlich klein, aber sehr gemütlich.|ziemlich klein, aber, gemuetlich
@@ -104,12 +104,12 @@ N|<b>die Miete</b> = tiền thuê nhà: <i>Die Miete ist 650 Euro warm</i> (đã
 N|<b>seit</b> + thời gian = từ (lúc đó đến nay), đã được: <i>Ich wohne <b>seit</b> März hier.</i> <i><b>seit</b> zwei Jahren</i> (đã hai năm) — động từ vẫn ở <b>hiện tại</b>!
 N|<b>ganz</b> = hoàn toàn; cả: <i>ganz neu</i>, <i>den ganzen Tag</i>.
 D|Anna|Seit wann wohnst du in der Wohnung?|Bạn sống ở căn hộ đó từ khi nào?
-D|Minh|Seit März. Ich miete sie von Herrn Weber.|Từ tháng Ba. Mình thuê của ông Weber.
+D|Felix|Seit März. Ich miete sie von Herrn Weber.|Từ tháng Ba. Mình thuê của ông Weber.
 D|Anna|Ist er ein netter Vermieter?|Ông ấy là chủ nhà dễ chịu chứ?
-D|Minh|Ja, ganz nett! Und die Miete ist nicht so hoch: fünfhundert Euro.|Ừ, rất dễ chịu! Và tiền thuê không cao lắm: năm trăm euro.
+D|Felix|Ja, ganz nett! Und die Miete ist nicht so hoch: fünfhundert Euro.|Ừ, rất dễ chịu! Và tiền thuê không cao lắm: năm trăm euro.
 D|Anna|Fünfhundert? Das ist ganz billig für Berlin!|Năm trăm á? Thế là rất rẻ đối với Berlin!
-L|Tiền thuê nhà của Minh bao nhiêu?|500 €|600 €|1500 €
-R|Minh sống ở căn hộ từ khi nào?|seit März|seit Januar|seit zwei Jahren
+L|Tiền thuê nhà của Felix bao nhiêu?|500 €|600 €|1500 €
+R|Felix sống ở căn hộ từ khi nào?|seit März|seit Januar|seit zwei Jahren
 S|Seit wann lernen Sie Deutsch?|Ich lerne seit … Deutsch.|seit|Bạn học tiếng Đức từ khi nào?
 W|Viết: “Tôi sống ở London đã hai năm.”|Ich wohne seit zwei Jahren in London.|seit zwei jahren
 F|Ich wohne ___ 2024 in Berlin.|seit|từ … đến nay
@@ -120,10 +120,10 @@ G|conj:mieten
 N|<b>umziehen</b> (chuyển nhà) là động từ tách: <i>Ich <b>ziehe</b> am Samstag <b>um</b>.</i>
 N|<b>zeigen</b> = cho xem, chỉ: <i>Ich <b>zeige</b> dir meine Wohnung.</i> (zeigen + người + vật)
 N|<b>neu</b> (mới) ↔ <b>alt</b> (cũ); <b>schön</b> = đẹp: <i>Die neue Wohnung ist sehr schön!</i>
-D|Anna|Minh, ich ziehe am Samstag um! Hilfst du mir?|Minh, thứ Bảy mình chuyển nhà! Bạn giúp mình nhé?
-D|Minh|Klar! Wohin ziehst du?|Chắc chắn rồi! Bạn chuyển đi đâu?
+D|Anna|Felix, ich ziehe am Samstag um! Hilfst du mir?|Felix, thứ Bảy mình chuyển nhà! Bạn giúp mình nhé?
+D|Felix|Klar! Wohin ziehst du?|Chắc chắn rồi! Bạn chuyển đi đâu?
 D|Anna|In eine neue Wohnung in der Bergstraße. Ich zeige dir Fotos.|Đến một căn hộ mới ở phố Bergstraße. Mình cho bạn xem ảnh.
-D|Minh|Oh, die Wohnung ist schön! Und so hell!|Ồ, căn hộ đẹp quá! Và sáng thế!
+D|Felix|Oh, die Wohnung ist schön! Und so hell!|Ồ, căn hộ đẹp quá! Và sáng thế!
 D|Anna|Ja, und ganz neu! Komm am Sonntag, dann zeige ich dir alles.|Ừ, lại mới hoàn toàn! Chủ nhật đến nhé, mình sẽ cho bạn xem mọi thứ.
 L|Khi nào Anna chuyển nhà?|am Samstag|am Sonntag|morgen
 R|Căn hộ mới ở đâu?|in der Bergstraße|in der Goethestraße|in Hamburg

@@ -13,11 +13,11 @@ window.COURSE_M1=`
 ## 1.1 Chào hỏi & nguyên âm
 goal: Chào và tạm biệt đúng buổi trong ngày.
 nico: 1
-i: Lena | Guten Morgen, Minh! | Chào buổi sáng, Minh!
-i: Minh | Hallo, Lena! Guten Morgen! | Chào Lena! Chào buổi sáng!
+i: Lena | Guten Morgen, Felix! | Chào buổi sáng, Felix!
+i: Felix | Hallo, Lena! Guten Morgen! | Chào Lena! Chào buổi sáng!
 i: Lena | Tschüss, bis bald! | Tạm biệt, hẹn sớm gặp lại!
-i: Minh | Tschüss! | Tạm biệt!
-iq: Lena và Minh gặp nhau lúc nào? | buổi sáng | buổi tối | ban đêm
+i: Felix | Tschüss! | Tạm biệt!
+iq: Lena và Felix gặp nhau lúc nào? | buổi sáng | buổi tối | ban đêm
 iq: Câu nào dùng để tạm biệt? | Tschüss | Guten Morgen | Hallo
 iq: "Bis bald" nghĩa là gì? | hẹn sớm gặp lại | chúc ngủ ngon | xin chào
 words: Hallo; Guten Morgen; Guten Tag; Guten Abend; Gute Nacht; Tschüss; Auf Wiedersehen; bis bald; ja; nein
@@ -60,25 +60,25 @@ lq: Họ nói chuyện kiểu gì? | lịch sự | thân mật | không rõ
 lq: Câu cuối cùng là gì? | Gute Nacht | Guten Morgen | Bis bald
 ld: Guten Abend, Frau Schmidt!
 rt: Tin nhắn
-r: SMS | Hallo Minh! Guten Morgen! Bis bald, Lena | Chào Minh! Chào buổi sáng! Hẹn sớm gặp, Lena
+r: SMS | Hallo Felix! Guten Morgen! Bis bald, Lena | Chào Felix! Chào buổi sáng! Hẹn sớm gặp, Lena
 rq: Lena viết tin nhắn vào buổi tối. | F
-rq: Lena chào Minh. | R
-rq: Lena hẹn sớm gặp lại Minh. | R
-t: Lena | Guten Morgen, Minh! | Chào buổi sáng, Minh!
-t: Minh | Hallo, Lena! Guten Morgen! | Chào Lena! Chào buổi sáng!
+rq: Lena chào Felix. | R
+rq: Lena hẹn sớm gặp lại Felix. | R
+t: Lena | Guten Morgen, Felix! | Chào buổi sáng, Felix!
+t: Felix | Hallo, Lena! Guten Morgen! | Chào Lena! Chào buổi sáng!
 t: Lena | Tschüss, bis bald! | Tạm biệt, hẹn sớm gặp lại!
-t: Minh | Tschüss, Lena! | Tạm biệt Lena!
+t: Felix | Tschüss, Lena! | Tạm biệt Lena!
 w: 8 giờ sáng bạn gặp cô giáo Frau Schmidt. Viết câu chào. | Guten Morgen, Frau Schmidt! | Guten Morgen
 
 ## 1.2 ä ö ü ß, cảm ơn, xin lỗi
 goal: Cảm ơn, đáp lại lời cảm ơn và xin lỗi.
 nico: 2
 i: Lena | Hier, bitte schön! | Đây, xin mời!
-i: Minh | Danke schön! | Cảm ơn nhiều!
+i: Felix | Danke schön! | Cảm ơn nhiều!
 i: Lena | Bitte schön! | Không có gì!
-i: Minh | Oh, Entschuldigung! | Ôi, xin lỗi!
+i: Felix | Oh, Entschuldigung! | Ôi, xin lỗi!
 i: Lena | Kein Problem! | Không sao!
-iq: Minh nói gì để cảm ơn? | Danke schön | Bitte schön | Kein Problem
+iq: Felix nói gì để cảm ơn? | Danke schön | Bitte schön | Kein Problem
 iq: Lena đáp lại lời cảm ơn thế nào? | Bitte schön | Danke | Entschuldigung
 iq: "Kein Problem" nghĩa là gì? | không sao | xin lỗi | cảm ơn
 words: danke; vielen Dank; bitte; bitte schön; Entschuldigung; Es tut mir leid.; kein Problem; Gern geschehen!
@@ -124,13 +124,13 @@ lq: Anna nói gì khi nhầm người? | Entschuldigung | Danke | Tschüss
 lq: Người đàn ông đáp lại thế nào? | Kein Problem | Bitte schön | Gute Nacht
 ld: Es tut mir leid.
 rt: Tin nhắn
-r: SMS | Danke für den Kaffee, Lena! Bis bald, Minh | Cảm ơn vì cốc cà phê nhé Lena! Hẹn sớm gặp, Minh
-rq: Minh cảm ơn Lena vì cà phê. | R
+r: SMS | Danke für den Kaffee, Lena! Bis bald, Felix | Cảm ơn vì cốc cà phê nhé Lena! Hẹn sớm gặp, Felix
+rq: Felix cảm ơn Lena vì cà phê. | R
 rq: Lena viết tin nhắn này. | F
-rq: Minh chào tạm biệt ở cuối tin. | R
-t: Minh | Danke schön! | Cảm ơn nhiều!
+rq: Felix chào tạm biệt ở cuối tin. | R
+t: Felix | Danke schön! | Cảm ơn nhiều!
 t: Lena | Bitte schön! | Không có gì!
-t: Minh | Oh, Entschuldigung! | Ôi, xin lỗi!
+t: Felix | Oh, Entschuldigung! | Ôi, xin lỗi!
 t: Lena | Kein Problem! | Không sao!
 w: Bạn làm đổ cà phê của bạn mình. Viết lời xin lỗi và câu bạn ấy đáp lại. | Entschuldigung! – Kein Problem! | Entschuldigung/tut mir leid, kein Problem
 
@@ -138,10 +138,10 @@ w: Bạn làm đổ cà phê của bạn mình. Viết lời xin lỗi và câu 
 goal: Hỏi thăm thân mật và lịch sự, trả lời được.
 nico: 3
 i: Frau Schmidt | Guten Tag, Herr Nguyen! Wie geht es Ihnen? | Chào anh Nguyễn! Anh có khoẻ không?
-i: Minh | Danke, sehr gut. Und Ihnen? | Cảm ơn, rất khoẻ. Còn cô?
+i: Felix | Danke, sehr gut. Und Ihnen? | Cảm ơn, rất khoẻ. Còn cô?
 i: Frau Schmidt | Auch gut, danke. | Cũng khoẻ, cảm ơn.
 iq: Hai người nói chuyện kiểu gì? | lịch sự (Sie) | thân mật (du) | không rõ
-iq: Minh khoẻ không? | rất khoẻ | không khoẻ lắm | tạm được
+iq: Felix khoẻ không? | rất khoẻ | không khoẻ lắm | tạm được
 iq: "Und Ihnen?" nghĩa là gì? | Còn cô (ông/bà) thì sao? | Còn bạn thì sao? | Tạm biệt
 words: Wie geht's?; Wie geht es Ihnen?; gut; sehr gut; es geht; nicht so gut; Und dir?; Und Ihnen?; Herr; Frau
 +w: phr | - | Wie geht's? | | Khoẻ không? (thân mật) | Hallo Tom, [wie geht's]? | Chào Tom, khoẻ không?
@@ -156,7 +156,7 @@ gt: Chào | Hallo! · Tschüss! | Guten Tag! · Auf Wiedersehen!
 gt: Hỏi thăm | Wie geht's? | Wie geht es Ihnen?
 gt: Hỏi lại | Und dir? | Und Ihnen?
 gt: Gọi | tên riêng: Lena | Herr/Frau + HỌ: Frau Schmidt
-g: <b>Lỗi hay gặp:</b> gọi "Herr Minh" theo tên như tiếng Việt. Người Đức dùng Herr/Frau + họ: <b>Herr Nguyen</b>. Không dùng Herr/Frau với du.
+g: <b>Lỗi hay gặp:</b> gọi "Herr Felix" theo tên như tiếng Việt. Người Đức dùng Herr/Frau + họ: <b>Herr Nguyen</b>. Không dùng Herr/Frau với du.
 gx: mc: Bạn hỏi thăm sếp mới. | Wie geht es Ihnen? | Wie geht's? | Und dir?
 gx: mc: Bạn hỏi thăm em họ 15 tuổi. | Wie geht's? | Wie geht es Ihnen? | Und Ihnen?
 gx: mc: Cô giáo hỏi "Wie geht es Ihnen?". Bạn hỏi lại: | Und Ihnen? | Und dir? | Und du?
@@ -190,11 +190,11 @@ r: E-Mail | Liebe Lena, wie geht es dir? Mir geht es gut. Viele Grüße, Anna | 
 rq: Anna viết thư lịch sự với Sie. | F
 rq: Anna khoẻ. | R
 rq: Anna hỏi thăm Lena. | R
-t: Minh | Guten Tag, Frau Schmidt! Wie geht es Ihnen? | Chào cô Schmidt! Cô khoẻ không?
+t: Felix | Guten Tag, Frau Schmidt! Wie geht es Ihnen? | Chào cô Schmidt! Cô khoẻ không?
 t: Frau Schmidt | Danke, gut. Und Ihnen? | Cảm ơn, khoẻ. Còn anh?
-t: Minh | Sehr gut, danke. | Rất khoẻ, cảm ơn.
+t: Felix | Sehr gut, danke. | Rất khoẻ, cảm ơn.
 t: Frau Schmidt | Auf Wiedersehen, Herr Nguyen! | Tạm biệt anh Nguyễn!
-t: Minh | Auf Wiedersehen! | Tạm biệt!
+t: Felix | Auf Wiedersehen! | Tạm biệt!
 ans: Wie geht es Ihnen? | Danke, gut. Und Ihnen? | gut, Ihnen | Trả lời lịch sự rồi hỏi lại.
 w: Viết 2 câu hỏi thăm: một câu cho bạn thân Tom, một câu cho cô giáo Frau Schmidt. | Hallo Tom, wie geht's? Guten Tag, Frau Schmidt, wie geht es Ihnen? | geht's/dir, Ihnen
 
@@ -202,12 +202,12 @@ w: Viết 2 câu hỏi thăm: một câu cho bạn thân Tom, một câu cho cô
 goal: Hỏi tên, đánh vần tên, đọc số điện thoại ngắn.
 nico: 4
 i: Frau Schmidt | Wie heißen Sie? | Anh tên gì?
-i: Minh | Ich heiße Minh. | Tôi tên là Minh.
+i: Felix | Ich heiße Felix. | Tôi tên là Felix.
 i: Frau Schmidt | Wie schreibt man das? | Viết thế nào?
-i: Minh | M – I – N – H. | M – I – N – H.
-iq: Tên Minh có mấy chữ cái? | 4 | 3 | 5
+i: Felix | F – E – L – I – X. | F – E – L – I – X.
+iq: Tên Felix có mấy chữ cái? | 5 | 4 | 6
 iq: "Wie schreibt man das?" nghĩa là gì? | Viết như thế nào? | Bạn tên gì? | Bạn khoẻ không?
-iq: Cô giáo hỏi tên Minh kiểu gì? | lịch sự (Sie) | thân mật (du) | không hỏi
+iq: Cô giáo hỏi tên Felix kiểu gì? | lịch sự (Sie) | thân mật (du) | không hỏi
 words: Wie heißt du?; heißen; Wie schreibt man das?; buchstabieren; null; eins; zwei; drei; vier; fünf; sechs; sieben; acht; neun; zehn; elf; zwölf
 +w: phr | - | Wie heißt du? | | Bạn tên gì? | Hallo! [Wie heißt du]? | Chào! Bạn tên gì?
 +w: phr | - | Wie schreibt man das? | | Viết cái đó thế nào? | Nguyen? [Wie schreibt man das]? | Nguyễn à? Viết thế nào?
@@ -257,11 +257,11 @@ r: | Telefon: 0176 8312 | Điện thoại: 0176 8312
 rq: Họ của người này là Hoa. | F
 rq: Số điện thoại có số 8. | R
 rq: Tên của người này là Hoa. | R
-t: Minh | Hallo! Ich heiße Minh. Wie heißt du? | Chào! Mình tên Minh. Bạn tên gì?
+t: Felix | Hallo! Ich heiße Felix. Wie heißt du? | Chào! Mình tên Felix. Bạn tên gì?
 t: Lena | Ich heiße Lena. | Mình tên Lena.
-t: Minh | Eins, zwei, drei, vier, fünf, sechs! | Một, hai, ba, bốn, năm, sáu!
+t: Felix | Eins, zwei, drei, vier, fünf, sechs! | Một, hai, ba, bốn, năm, sáu!
 t: Lena | Sieben, acht, neun, zehn, elf, zwölf! | Bảy, tám, chín, mười, mười một, mười hai!
-w: Viết tên bạn rồi đánh vần bằng chữ cái (vd: M – I – N – H). | Ich heiße Minh. M – I – N – H. | heiße
+w: Viết tên bạn rồi đánh vần bằng chữ cái (vd: F – E – L – I – X). | Ich heiße Felix. F – E – L – I – X. | heiße
 
 ## 1.5 Ôn tuần 1
 kind: review
@@ -269,24 +269,24 @@ goal: Nói trọn hội thoại: chào → hỏi thăm → hỏi tên → tạm 
 nico: 1,2,3,4
 x: nmc: 0-12
 x: nmc: 0-12
-x: sp: Minh
+x: sp: Felix
 t: Herr Weber | Guten Morgen! Wie heißen Sie? | Chào buổi sáng! Anh tên gì?
-t: Minh | Ich heiße Minh Nguyen. Und Sie? | Tôi tên Minh Nguyễn. Còn ông?
+t: Felix | Ich heiße Felix Nguyen. Und Sie? | Tôi tên Felix Nguyễn. Còn ông?
 t: Herr Weber | Ich heiße Weber. Wie geht es Ihnen? | Tôi tên Weber. Anh khoẻ không?
-t: Minh | Danke, gut. Und Ihnen? | Cảm ơn, khoẻ. Còn ông?
+t: Felix | Danke, gut. Und Ihnen? | Cảm ơn, khoẻ. Còn ông?
 t: Herr Weber | Auch gut, danke. Auf Wiedersehen! | Cũng khoẻ, cảm ơn. Tạm biệt!
-t: Minh | Auf Wiedersehen, Herr Weber! | Tạm biệt ông Weber!
+t: Felix | Auf Wiedersehen, Herr Weber! | Tạm biệt ông Weber!
 w: Viết 3 câu cho 3 tình huống: 7 giờ sáng gặp hàng xóm; chia tay bạn thân; chúc em trai đi ngủ. | Guten Morgen! Tschüss, bis bald! Gute Nacht! | Guten Morgen, Tschüss/bis bald, Gute Nacht
 
 ## 2.1 Tên & quê quán
 goal: Nói tên, quê quán và hỏi lại người khác.
 nico: 5
 i: Lena | Hallo! Ich heiße Lena. Wie heißt du? | Chào! Mình tên Lena. Bạn tên gì?
-i: Minh | Ich heiße Minh. | Mình tên Minh.
-i: Lena | Woher kommst du, Minh? | Minh đến từ đâu?
-i: Minh | Ich komme aus Vietnam. Und du? | Mình đến từ Việt Nam. Còn bạn?
+i: Felix | Ich heiße Felix. | Mình tên Felix.
+i: Lena | Woher kommst du, Felix? | Felix đến từ đâu?
+i: Felix | Ich komme aus Vietnam. Und du? | Mình đến từ Việt Nam. Còn bạn?
 i: Lena | Ich komme aus Deutschland. | Mình đến từ Đức.
-iq: Minh đến từ đâu? | Việt Nam | Đức | Áo
+iq: Felix đến từ đâu? | Việt Nam | Đức | Áo
 iq: Lena đến từ đâu? | Đức | Việt Nam | Thụy Sĩ
 iq: "Woher kommst du?" nghĩa là gì? | Bạn đến từ đâu? | Bạn tên gì? | Bạn sống ở đâu?
 words: heißen; kommen; aus; woher; wie; Vietnam; Deutschland; Österreich; Schweiz; Land
@@ -300,7 +300,7 @@ gt: du | -st | du kommst | du heißt (ß + st → ßt)
 gt: Sie | -en | Sie kommen | Sie heißen
 g: <b>Woher? → aus + nước:</b> Ich komme aus Vietnam. Vài nước có mạo từ: aus <b>der</b> Schweiz.
 g: <b>Lỗi hay gặp:</b> "Ich kommen aus…" (quên đổi đuôi), "du heißst" (đúng: du heißt).
-gx: fill: Ich ___ Minh. | heiße | (heißen)
+gx: fill: Ich ___ Felix. | heiße | (heißen)
 gx: fill: Woher ___ du? | kommst | (kommen)
 gx: fill: Wie ___ Sie? | heißen | (heißen)
 gx: fill: Ich ___ aus Vietnam. | komme | (kommen)
@@ -335,23 +335,23 @@ r: | Hallo! Ich heiße Tom. Ich komme aus der Schweiz. Und woher kommst du? | Ch
 rq: Tom đến từ Thụy Sĩ. | R
 rq: Tom đến từ Đức. | F
 rq: Tom hỏi bạn đến từ đâu. | R
-t: Minh | Hallo! Ich heiße Minh. Wie heißt du? | Chào! Mình tên Minh. Bạn tên gì?
+t: Felix | Hallo! Ich heiße Felix. Wie heißt du? | Chào! Mình tên Felix. Bạn tên gì?
 t: Lena | Ich heiße Lena. Woher kommst du? | Mình tên Lena. Bạn đến từ đâu?
-t: Minh | Ich komme aus Vietnam. Und du? | Mình đến từ Việt Nam. Còn bạn?
+t: Felix | Ich komme aus Vietnam. Und du? | Mình đến từ Việt Nam. Còn bạn?
 t: Lena | Ich komme aus Deutschland. | Mình đến từ Đức.
 ans: Woher kommst du? | Ich komme aus Vietnam. | komme, aus
-w: Viết 2 câu: tên của bạn và bạn đến từ đâu. | Ich heiße Minh. Ich komme aus Vietnam. | heiße, komme, aus
+w: Viết 2 câu: tên của bạn và bạn đến từ đâu. | Ich heiße Felix. Ich komme aus Vietnam. | heiße, komme, aus
 
 ## 2.2 Nơi ở & ngôn ngữ
 goal: Nói mình sống ở đâu và nói những thứ tiếng nào.
 nico: 7
-i: Tom | Wo wohnst du, Minh? | Minh sống ở đâu?
-i: Minh | Ich wohne in Berlin. | Mình sống ở Berlin.
+i: Tom | Wo wohnst du, Felix? | Felix sống ở đâu?
+i: Felix | Ich wohne in Berlin. | Mình sống ở Berlin.
 i: Tom | Sprichst du Deutsch? | Bạn có nói tiếng Đức không?
-i: Minh | Ja, ein bisschen. Ich spreche Vietnamesisch und Englisch. | Có, một chút. Mình nói tiếng Việt và tiếng Anh.
-iq: Minh sống ở đâu? | Berlin | Wien | Hamburg
-iq: Minh nói tiếng Đức thế nào? | một chút | rất giỏi | không biết
-iq: Minh còn nói thứ tiếng nào? | tiếng Việt và tiếng Anh | tiếng Pháp | chỉ tiếng Việt
+i: Felix | Ja, ein bisschen. Ich spreche Vietnamesisch und Englisch. | Có, một chút. Mình nói tiếng Việt và tiếng Anh.
+iq: Felix sống ở đâu? | Berlin | Wien | Hamburg
+iq: Felix nói tiếng Đức thế nào? | một chút | rất giỏi | không biết
+iq: Felix còn nói thứ tiếng nào? | tiếng Việt và tiếng Anh | tiếng Pháp | chỉ tiếng Việt
 words: wohnen; sprechen; Stadt; Deutsch; Englisch; Vietnamesisch; ein bisschen; gut; auch; wo
 +w: n | - | Vietnamesisch | — | tiếng Việt | Ich spreche [Vietnamesisch]. | Tôi nói tiếng Việt.
 +w: phr | - | ein bisschen | | một chút | Ich spreche [ein bisschen] Deutsch. | Tôi nói một chút tiếng Đức.
@@ -379,7 +379,7 @@ x: fill: Ich spr___che Deutsch. | e
 x: fill: Du spr___chst Englisch. | i
 x: fill: ___ du Vietnamesisch? | Sprichst | (sprechen)
 x: fill: Sie (ông/bà) ___ sehr gut Deutsch. | sprechen | (sprechen)
-x: fill: Minh ___ ein bisschen Deutsch. | spricht | (sprechen)
+x: fill: Felix ___ ein bisschen Deutsch. | spricht | (sprechen)
 x: lmc: Ich wohne in Hamburg. | Hamburg | Berlin | Bremen
 x: lmc: Ich wohne in München. | München | Münster | Mannheim
 x: lmc: Anna wohnt in Wien. | Wien | Bern | Köln
@@ -399,9 +399,9 @@ rq: Mai sống ở Hà Nội. | F
 rq: Mai nói một chút tiếng Đức. | R
 rq: Mai đến từ Việt Nam. | R
 t: Tom | Wo wohnst du? | Bạn sống ở đâu?
-t: Minh | Ich wohne in Berlin. Und du? | Mình sống ở Berlin. Còn bạn?
+t: Felix | Ich wohne in Berlin. Und du? | Mình sống ở Berlin. Còn bạn?
 t: Tom | Ich wohne auch in Berlin. Sprichst du Deutsch? | Mình cũng sống ở Berlin. Bạn nói tiếng Đức không?
-t: Minh | Ja, ein bisschen. Ich spreche Vietnamesisch und Englisch. | Có, một chút. Mình nói tiếng Việt và tiếng Anh.
+t: Felix | Ja, ein bisschen. Ich spreche Vietnamesisch und Englisch. | Có, một chút. Mình nói tiếng Việt và tiếng Anh.
 ans: Wo wohnen Sie? | Ich wohne in Berlin. | wohne, in
 w: Viết 3 câu: bạn sống ở đâu, nói những thứ tiếng nào. | Ich wohne in Berlin. Ich spreche Vietnamesisch und Englisch. Ich spreche ein bisschen Deutsch. | wohne, in, spreche
 
@@ -409,10 +409,10 @@ w: Viết 3 câu: bạn sống ở đâu, nói những thứ tiếng nào. | Ich
 goal: Đặt 5 câu hỏi làm quen và trả lời ja/nein.
 nico: 6
 i: Anna | Wer ist das? | Đó là ai?
-i: Lena | Das ist Minh. | Đó là Minh.
+i: Lena | Das ist Felix. | Đó là Felix.
 i: Anna | Kommt er aus China? | Anh ấy đến từ Trung Quốc à?
 i: Lena | Nein, nicht aus China. Er kommt aus Vietnam. | Không, không phải từ Trung Quốc. Anh ấy đến từ Việt Nam.
-iq: Minh đến từ Trung Quốc phải không? | không, từ Việt Nam | đúng | không rõ
+iq: Felix đến từ Trung Quốc phải không? | không, từ Việt Nam | đúng | không rõ
 iq: "Wer ist das?" nghĩa là gì? | Đó là ai? | Đó là cái gì? | Ở đâu?
 iq: "Kommt er aus China?" là loại câu gì? | câu hỏi Có/Không | câu hỏi W | câu kể
 words: wer; was; wo; woher; wie; oder; nicht; ja; nein
@@ -431,7 +431,7 @@ g: <b>Lỗi hay gặp:</b> "Wo du wohnst?" (thiếu đảo động từ), "Du wo
 gx: fmc: ___ ist das? – Das ist Lena. | Wer | Was | Wo
 gx: fmc: ___ wohnst du? – In Berlin. | Wo | Woher | Wer
 gx: fmc: ___ kommen Sie? – Aus Vietnam. | Woher | Wo | Wie
-gx: fmc: ___ heißt du? – Minh. | Wie | Was | Wer
+gx: fmc: ___ heißt du? – Felix. | Wie | Was | Wer
 gx: fmc: ___ sprichst du? – Deutsch und Englisch. | Was | Wer | Wo
 gx: ord: Wohnst du in Berlin? | Bạn sống ở Berlin à?
 x: ty: Biến thành câu hỏi Có/Không | Du wohnst in Berlin. | Wohnst du in Berlin?
@@ -466,11 +466,11 @@ r: | Was spricht sie? – Deutsch und Englisch. | Cô ấy nói gì? – Tiếng
 rq: Lena sống ở Hamburg. | R
 rq: Lena đến từ Áo. | F
 rq: Lena nói tiếng Anh. | R
-t: Minh | Wie heißt du? | Bạn tên gì?
+t: Felix | Wie heißt du? | Bạn tên gì?
 t: Anna | Ich heiße Anna. | Mình tên Anna.
-t: Minh | Woher kommst du? | Bạn đến từ đâu?
+t: Felix | Woher kommst du? | Bạn đến từ đâu?
 t: Anna | Aus Österreich. | Từ Áo.
-t: Minh | Wohnst du in Wien? | Bạn sống ở Wien à?
+t: Felix | Wohnst du in Wien? | Bạn sống ở Wien à?
 t: Anna | Nein, ich wohne in Berlin. | Không, mình sống ở Berlin.
 ans: Wohnst du in Berlin? | Ja, ich wohne in Berlin. / Nein, ich wohne in … | ja/nein, wohne
 w: Viết 3 câu hỏi để làm quen một người bạn (ít nhất 1 câu Có/Không). | Wie heißt du? Woher kommst du? Wohnst du in Berlin? | wie, woher
@@ -478,10 +478,10 @@ w: Viết 3 câu hỏi để làm quen một người bạn (ít nhất 1 câu C
 ## 2.4 Giới thiệu người khác
 goal: Giới thiệu một người: tên, quê, nghề.
 nico: 19
-i: Minh | Lena, das ist Anna. Sie kommt aus Österreich. | Lena, đây là Anna. Cô ấy đến từ Áo.
+i: Felix | Lena, das ist Anna. Sie kommt aus Österreich. | Lena, đây là Anna. Cô ấy đến từ Áo.
 i: Lena | Hallo Anna! Freut mich. | Chào Anna! Rất vui được gặp.
 i: Anna | Hallo! Freut mich auch. | Chào! Mình cũng rất vui.
-i: Minh | Anna ist Lehrerin. | Anna là giáo viên.
+i: Felix | Anna ist Lehrerin. | Anna là giáo viên.
 iq: Anna đến từ đâu? | Áo | Đức | Việt Nam
 iq: Anna làm nghề gì? | giáo viên | sinh viên | bác sĩ
 iq: "Das ist Anna" dùng để làm gì? | giới thiệu một người | hỏi tên | chào tạm biệt
@@ -504,7 +504,7 @@ gx: fill: Lukas ___ Student. | ist | (sein)
 gx: fill: Lena ___ Deutsch und Englisch. | spricht | (sprechen)
 gx: fmc: Anna ist ___. | Lehrerin | Lehrer | eine Lehrerin
 gx: fmc: Tom ist mein ___. (bạn nam) | Freund | Freundin | Lehrerin
-x: ty: Chuyển sang er/sie | Ich komme aus Vietnam. (Minh → er) | Er kommt aus Vietnam.
+x: ty: Chuyển sang er/sie | Ich komme aus Vietnam. (Felix → er) | Er kommt aus Vietnam.
 x: ty: Chuyển sang er/sie | Ich wohne in Berlin. (Lena → sie) | Sie wohnt in Berlin.
 x: ty: Chuyển sang er/sie | Ich heiße Tom. (Tom → er) | Er heißt Tom.
 x: ty: Chuyển sang er/sie | Ich bin Studentin. (Mai → sie) | Sie ist Studentin.
@@ -532,32 +532,32 @@ r: | Das ist Frau Schmidt. Sie kommt aus Hamburg. Sie wohnt in Berlin. Sie ist L
 rq: Cô Schmidt sống ở Hamburg. | F
 rq: Cô Schmidt là giáo viên. | R
 rq: Cô Schmidt nói ba thứ tiếng. | R
-t: Minh | Lena, das ist Anna. | Lena, đây là Anna.
+t: Felix | Lena, das ist Anna. | Lena, đây là Anna.
 t: Lena | Hallo Anna! Freut mich. | Chào Anna! Rất vui được gặp.
-t: Minh | Anna kommt aus Österreich. Sie wohnt in Berlin. | Anna đến từ Áo. Cô ấy sống ở Berlin.
+t: Felix | Anna kommt aus Österreich. Sie wohnt in Berlin. | Anna đến từ Áo. Cô ấy sống ở Berlin.
 t: Lena | Spricht sie Englisch? | Cô ấy nói tiếng Anh không?
-t: Minh | Ja. Sie ist Lehrerin. Sie ist sehr nett. | Có. Cô ấy là giáo viên. Cô ấy rất dễ mến.
+t: Felix | Ja. Sie ist Lehrerin. Sie ist sehr nett. | Có. Cô ấy là giáo viên. Cô ấy rất dễ mến.
 w: Viết 3 câu giới thiệu một người bạn: tên, quê, nghề. | Das ist Tom. Er kommt aus der Schweiz. Er ist Student. | das ist, kommt/wohnt, ist
 
 ## 2.5 Ôn tuần 2
 kind: review
 goal: Tự giới thiệu 6 câu và giới thiệu một người bạn 3 câu, không nhìn chữ.
 nico: 5,6,7
-t: Minh | Hallo! Ich heiße Minh. | Xin chào! Tôi tên Minh.
-t: Minh | Ich komme aus Vietnam, aus Hanoi. | Tôi đến từ Việt Nam, từ Hà Nội.
-t: Minh | Ich wohne in Berlin. | Tôi sống ở Berlin.
-t: Minh | Ich spreche Vietnamesisch, Englisch und ein bisschen Deutsch. | Tôi nói tiếng Việt, tiếng Anh và một chút tiếng Đức.
-t: Minh | Ich bin Student. | Tôi là sinh viên.
-t: Minh | Das ist Lena. Sie kommt aus Hamburg. Sie ist Lehrerin. | Đây là Lena. Cô ấy đến từ Hamburg. Cô ấy là giáo viên.
-w: Viết hồ sơ cá nhân 5 câu: tên, quê, nơi ở, ngôn ngữ, nghề. | Ich heiße Minh. Ich komme aus Vietnam. Ich wohne in Berlin. Ich spreche Vietnamesisch und ein bisschen Deutsch. Ich bin Student. | heiße, komme, wohne, spreche, bin
+t: Felix | Hallo! Ich heiße Felix. | Xin chào! Tôi tên Felix.
+t: Felix | Ich komme aus Vietnam, aus Hanoi. | Tôi đến từ Việt Nam, từ Hà Nội.
+t: Felix | Ich wohne in Berlin. | Tôi sống ở Berlin.
+t: Felix | Ich spreche Vietnamesisch, Englisch und ein bisschen Deutsch. | Tôi nói tiếng Việt, tiếng Anh và một chút tiếng Đức.
+t: Felix | Ich bin Student. | Tôi là sinh viên.
+t: Felix | Das ist Lena. Sie kommt aus Hamburg. Sie ist Lehrerin. | Đây là Lena. Cô ấy đến từ Hamburg. Cô ấy là giáo viên.
+w: Viết hồ sơ cá nhân 5 câu: tên, quê, nơi ở, ngôn ngữ, nghề. | Ich heiße Felix. Ich komme aus Vietnam. Ich wohne in Berlin. Ich spreche Vietnamesisch und ein bisschen Deutsch. Ich bin Student. | heiße, komme, wohne, spreche, bin
 
 ## 3.1 Số 13–100
 goal: Đọc mọi số đến 100 và làm phép tính đơn giản.
 nico: 9
 i: Lena | Wie viel ist dreizehn plus zwanzig? | Mười ba cộng hai mươi là bao nhiêu?
-i: Minh | Dreizehn plus zwanzig ist dreiunddreißig. | Mười ba cộng hai mươi là ba mươi ba.
+i: Felix | Dreizehn plus zwanzig ist dreiunddreißig. | Mười ba cộng hai mươi là ba mươi ba.
 i: Lena | Richtig! Und hundert minus eins? | Đúng! Còn một trăm trừ một?
-i: Minh | Neunundneunzig! | Chín mươi chín!
+i: Felix | Neunundneunzig! | Chín mươi chín!
 iq: 13 + 20 = ? | 33 | 23 | 30
 iq: 100 − 1 = ? | 99 | 90 | 101
 iq: "plus" và "minus" là gì? | cộng và trừ | nhân và chia | lớn và nhỏ
@@ -601,9 +601,9 @@ x: calc: 50-7
 x: calc: 100-1
 lt: Chơi lô tô
 l: Frau Schmidt | Wir spielen Bingo! Die Zahlen sind: siebzehn, zweiundvierzig, achtundsechzig. | Chúng ta chơi lô tô! Các số là: mười bảy, bốn mươi hai, sáu mươi tám.
-l: Minh | Siebzehn, zweiundvierzig … und? | Mười bảy, bốn mươi hai… và?
+l: Felix | Siebzehn, zweiundvierzig … und? | Mười bảy, bốn mươi hai… và?
 l: Frau Schmidt | Achtundsechzig. Und jetzt: neunzig! | Sáu mươi tám. Và bây giờ: chín mươi!
-l: Minh | Bingo! | Lô tô!
+l: Felix | Bingo! | Lô tô!
 lq: Số đầu tiên là? | 17 | 70 | 7
 lq: Số thứ hai là? | 42 | 24 | 52
 lq: Số cuối cùng là? | 90 | 19 | 80
@@ -617,17 +617,17 @@ rq: Lớp học ở phòng 32. | F
 rq: Lớp có 16 người. | R
 rq: Khoá học giá 99 euro. | R
 t: Lena | Wie viel ist zwölf plus acht? | Mười hai cộng tám là bao nhiêu?
-t: Minh | Zwölf plus acht ist zwanzig. | Mười hai cộng tám là hai mươi.
+t: Felix | Zwölf plus acht ist zwanzig. | Mười hai cộng tám là hai mươi.
 t: Lena | Und fünfzig minus sieben? | Còn năm mươi trừ bảy?
-t: Minh | Fünfzig minus sieben ist dreiundvierzig. | Năm mươi trừ bảy là bốn mươi ba.
+t: Felix | Fünfzig minus sieben ist dreiundvierzig. | Năm mươi trừ bảy là bốn mươi ba.
 w: Viết bằng chữ: 17, 36, 99. | siebzehn, sechsunddreißig, neunundneunzig | siebzehn, sechsunddreißig, neunundneunzig
 
 ## 3.2 Tuổi & động từ sein
 goal: Hỏi và nói tuổi; chia sein đủ 6 ngôi.
-i: Tom | Wie alt bist du, Minh? | Minh bao nhiêu tuổi?
-i: Minh | Ich bin fünfundzwanzig Jahre alt. Und du? | Mình 25 tuổi. Còn bạn?
+i: Tom | Wie alt bist du, Felix? | Felix bao nhiêu tuổi?
+i: Felix | Ich bin fünfundzwanzig Jahre alt. Und du? | Mình 25 tuổi. Còn bạn?
 i: Tom | Ich bin dreißig. Meine Schwester ist neunzehn. | Mình 30. Em gái mình 19.
-iq: Minh bao nhiêu tuổi? | 25 | 52 | 35
+iq: Felix bao nhiêu tuổi? | 25 | 52 | 35
 iq: Tom bao nhiêu tuổi? | 30 | 13 | 33
 iq: Em gái Tom bao nhiêu tuổi? | 19 | 9 | 90
 words: alt; jung; Jahr; Wie alt bist du?; sein; wir; ihr; sie (họ)
@@ -672,14 +672,14 @@ lq: Các con của Anna bao nhiêu tuổi? | 11 và 14 | 12 và 14 | 11 và 40
 lq: "Sie sind elf" — "sie" ở đây là ai? | các con (họ) | cô ấy | bà (lịch sự)
 ld: Wie alt sind Sie?
 rt: Nhóm học
-r: | Wir sind eine Lerngruppe. Minh ist fünfundzwanzig, Lena ist neunzehn und Tom ist dreißig. Wir sind Studenten. Und ihr? Wie alt seid ihr? | Chúng tôi là một nhóm học. Minh 25, Lena 19 và Tom 30. Chúng tôi là sinh viên. Còn các bạn? Các bạn bao nhiêu tuổi?
+r: | Wir sind eine Lerngruppe. Felix ist fünfundzwanzig, Lena ist neunzehn und Tom ist dreißig. Wir sind Studenten. Und ihr? Wie alt seid ihr? | Chúng tôi là một nhóm học. Felix 25, Lena 19 và Tom 30. Chúng tôi là sinh viên. Còn các bạn? Các bạn bao nhiêu tuổi?
 rq: Lena nhiều tuổi nhất. | F
-rq: Minh 25 tuổi. | R
+rq: Felix 25 tuổi. | R
 rq: Câu cuối hỏi tuổi của nhiều người. | R
 t: Tom | Wie alt bist du? | Bạn bao nhiêu tuổi?
-t: Minh | Ich bin fünfundzwanzig. Und du? | Mình 25. Còn bạn?
+t: Felix | Ich bin fünfundzwanzig. Und du? | Mình 25. Còn bạn?
 t: Tom | Ich bin dreißig. Wie alt ist Lena? | Mình 30. Lena bao nhiêu tuổi?
-t: Minh | Sie ist neunzehn. Sie ist sehr jung. | Cô ấy 19. Cô ấy rất trẻ.
+t: Felix | Sie ist neunzehn. Sie ist sehr jung. | Cô ấy 19. Cô ấy rất trẻ.
 ans: Wie alt sind Sie? | Ich bin fünfundzwanzig Jahre alt. | bin
 w: Viết 3 câu về tuổi của bạn và hai người khác. | Ich bin fünfundzwanzig. Lena ist neunzehn. Tom und Anna sind dreißig. | bin, ist, sind
 
@@ -687,12 +687,12 @@ w: Viết 3 câu về tuổi của bạn và hai người khác. | Ich bin fünf
 goal: Đọc số điện thoại và email của mình.
 nico: 10
 i: Lena | Hast du ein Handy? | Bạn có điện thoại di động không?
-i: Minh | Ja. Meine Handynummer ist null eins sieben sechs, drei vier fünf, zwo acht. | Có. Số di động của mình là 0176 345 28.
+i: Felix | Ja. Meine Handynummer ist null eins sieben sechs, drei vier fünf, zwo acht. | Có. Số di động của mình là 0176 345 28.
 i: Lena | Und hast du eine E-Mail-Adresse? | Bạn có địa chỉ email không?
-i: Minh | Ja: minh punkt nguyen at web punkt de. | Có: minh.nguyen@web.de
-iq: Số điện thoại của Minh bắt đầu bằng? | 0176 | 0167 | 0716
+i: Felix | Ja: felix punkt nguyen at web punkt de. | Có: felix.nguyen@web.de
+iq: Số điện thoại của Felix bắt đầu bằng? | 0176 | 0167 | 0716
 iq: "zwo" là số mấy? | 2 | 3 | 12
-iq: Email của Minh có đuôi gì? | web.de | gmail.com | web.com
+iq: Email của Felix có đuôi gì? | web.de | gmail.com | web.com
 words: Telefonnummer; Handynummer; E-Mail-Adresse; Punkt; Handy; haben; E-Mail
 +w: n | die | Handynummer | die Handynummern | số điện thoại di động | Wie ist deine [Handynummer]? | Số di động của bạn là gì?
 +w: n | die | E-Mail-Adresse | die E-Mail-Adressen | địa chỉ email | Meine [E-Mail-Adresse] ist lan@web.de. | Địa chỉ email của tôi là lan@web.de.
@@ -742,21 +742,21 @@ rq: Ông Weber có điện thoại di động. | R
 rq: Số Handy bắt đầu bằng 0171. | R
 rq: Email của ông kết thúc bằng gmx.de. | F
 t: Lena | Hast du ein Handy? | Bạn có điện thoại di động không?
-t: Minh | Ja, ich habe ein Handy. | Có, mình có một chiếc.
+t: Felix | Ja, ich habe ein Handy. | Có, mình có một chiếc.
 t: Lena | Wie ist deine Handynummer? | Số di động của bạn là gì?
-t: Minh | Null eins sieben sechs, drei vier fünf, zwo acht. | 0176 345 28.
+t: Felix | Null eins sieben sechs, drei vier fünf, zwo acht. | 0176 345 28.
 t: Lena | Danke! | Cảm ơn!
-w: Viết số điện thoại và email của bạn bằng chữ (vd: null eins sieben sechs …). | Meine Telefonnummer ist null eins sieben sechs, drei vier fünf, zwo acht. Meine E-Mail-Adresse ist minh punkt nguyen at web punkt de. | Telefonnummer/Handynummer, E-Mail
+w: Viết số điện thoại và email của bạn bằng chữ (vd: null eins sieben sechs …). | Meine Telefonnummer ist null eins sieben sechs, drei vier fünf, zwo acht. Meine E-Mail-Adresse ist felix punkt nguyen at web punkt de. | Telefonnummer/Handynummer, E-Mail
 
 ## 3.4 Địa chỉ & tờ khai
 goal: Nói địa chỉ và điền tờ khai cá nhân.
 nico: 11,12
 i: Herr Weber | Wie ist Ihre Adresse? | Địa chỉ của anh là gì?
-i: Minh | Ich wohne in der Bergstraße zwölf. | Tôi sống ở số 12 phố Bergstraße.
+i: Felix | Ich wohne in der Bergstraße zwölf. | Tôi sống ở số 12 phố Bergstraße.
 i: Herr Weber | Und die Postleitzahl? | Còn mã bưu chính?
-i: Minh | Eins null eins eins fünf, Berlin. | 10115 Berlin.
-iq: Minh sống ở phố nào? | Bergstraße | Berlinstraße | Bachstraße
-iq: Số nhà của Minh là? | 12 | 20 | 2
+i: Felix | Eins null eins eins fünf, Berlin. | 10115 Berlin.
+iq: Felix sống ở phố nào? | Bergstraße | Berlinstraße | Bachstraße
+iq: Số nhà của Felix là? | 12 | 20 | 2
 iq: Mã bưu chính là? | 10115 | 11015 | 10150
 words: Adresse; Straße; Hausnummer; Postleitzahl; Wohnort; Vorname; Nachname; Formular; ausfüllen; tausend
 +w: n | die | Straße | die Straßen | đường phố | Ich wohne in der [Straße] Unter den Linden. | Tôi sống ở phố Unter den Linden.
@@ -814,12 +814,12 @@ rq: Tên của người này là Tran. | F
 rq: Người này sống ở Hamburg. | R
 rq: Số nhà là 8. | R
 t: Herr Weber | Wie ist Ihr Name? | Anh tên gì?
-t: Minh | Minh Nguyen. | Minh Nguyễn.
+t: Felix | Felix Nguyen. | Felix Nguyễn.
 t: Herr Weber | Wie ist Ihre Adresse? | Địa chỉ của anh là gì?
-t: Minh | Ich wohne in der Bergstraße zwölf, in Berlin. | Tôi sống ở số 12 phố Bergstraße, ở Berlin.
+t: Felix | Ich wohne in der Bergstraße zwölf, in Berlin. | Tôi sống ở số 12 phố Bergstraße, ở Berlin.
 t: Herr Weber | Und Ihre Telefonnummer? | Còn số điện thoại?
-t: Minh | Null eins sieben sechs, drei vier fünf, zwo acht. | 0176 345 28.
-w: Điền tờ khai của bạn: Vorname, Nachname, Adresse (mỗi ô một dòng). | Vorname: Minh. Nachname: Nguyen. Adresse: Bergstraße 12, 10115 Berlin. | Vorname, Nachname, Adresse/Straße
+t: Felix | Null eins sieben sechs, drei vier fünf, zwo acht. | 0176 345 28.
+w: Điền tờ khai của bạn: Vorname, Nachname, Adresse (mỗi ô một dòng). | Vorname: Felix. Nachname: Nguyen. Adresse: Bergstraße 12, 10115 Berlin. | Vorname, Nachname, Adresse/Straße
 
 ## 3.5 Ôn tuần 3
 kind: review
@@ -834,24 +834,24 @@ x: ph: 030 46 29 18
 x: lmc: Ich bin zweiundvierzig Jahre alt. | 42 | 24 | 52
 x: calc: 50-7
 t: Sekretärin | Guten Tag! Wie heißen Sie? | Chào anh! Anh tên gì?
-t: Minh | Ich heiße Minh Nguyen. | Tôi tên Minh Nguyễn.
+t: Felix | Ich heiße Felix Nguyen. | Tôi tên Felix Nguyễn.
 t: Sekretärin | Wie alt sind Sie? | Anh bao nhiêu tuổi?
-t: Minh | Ich bin fünfundzwanzig Jahre alt. | Tôi 25 tuổi.
+t: Felix | Ich bin fünfundzwanzig Jahre alt. | Tôi 25 tuổi.
 t: Sekretärin | Wie ist Ihre Adresse? | Địa chỉ của anh là gì?
-t: Minh | Bergstraße zwölf, eins null eins eins fünf Berlin. | Số 12 phố Bergstraße, 10115 Berlin.
+t: Felix | Bergstraße zwölf, eins null eins eins fünf Berlin. | Số 12 phố Bergstraße, 10115 Berlin.
 t: Sekretärin | Und Ihre Telefonnummer? | Còn số điện thoại?
-t: Minh | Null eins sieben sechs, drei vier fünf, zwo acht. | 0176 345 28.
-w: Điền tờ khai 8 ô về bạn: Vorname, Nachname, Alter, Straße, PLZ, Wohnort, Telefon, E-Mail. | Vorname: Minh · Nachname: Nguyen · Alter: 25 · Straße: Bergstraße 12 · PLZ: 10115 · Wohnort: Berlin · Telefon: 0176 34528 · E-Mail: minh.nguyen@web.de | Vorname, Nachname, Alter, Straße, PLZ, Wohnort, Telefon, E-Mail
+t: Felix | Null eins sieben sechs, drei vier fünf, zwo acht. | 0176 345 28.
+w: Điền tờ khai 8 ô về bạn: Vorname, Nachname, Alter, Straße, PLZ, Wohnort, Telefon, E-Mail. | Vorname: Felix · Nachname: Nguyen · Alter: 25 · Straße: Bergstraße 12 · PLZ: 10115 · Wohnort: Berlin · Telefon: 0176 34528 · E-Mail: felix.nguyen@web.de | Vorname, Nachname, Alter, Straße, PLZ, Wohnort, Telefon, E-Mail
 
 ## 4.1 Thành viên gia đình
 goal: Nói mình có anh chị em không, đã kết hôn chưa.
 nico: 61
-i: Lena | Hast du Geschwister, Minh? | Minh có anh chị em không?
-i: Minh | Ja, ich habe einen Bruder und eine Schwester. | Có, mình có một anh trai và một em gái.
+i: Lena | Hast du Geschwister, Felix? | Felix có anh chị em không?
+i: Felix | Ja, ich habe einen Bruder und eine Schwester. | Có, mình có một anh trai và một em gái.
 i: Lena | Bist du verheiratet? | Bạn đã kết hôn chưa?
-i: Minh | Nein, ich bin ledig. | Chưa, mình độc thân.
-iq: Minh có mấy anh chị em? | 2 | 1 | 3
-iq: Minh đã kết hôn chưa? | chưa, độc thân | rồi | không rõ
+i: Felix | Nein, ich bin ledig. | Chưa, mình độc thân.
+iq: Felix có mấy anh chị em? | 2 | 1 | 3
+iq: Felix đã kết hôn chưa? | chưa, độc thân | rồi | không rõ
 iq: "Geschwister" nghĩa là gì? | anh chị em | bố mẹ | con cái
 words: Familie; Mutter; Vater; Eltern; Bruder; Schwester; Geschwister; Sohn; Tochter; Kind; verheiratet; ledig
 g: <b>Ich habe + einen / eine / ein:</b> danh từ giống đực đổi ein → <b>einen</b> sau haben: Ich habe <b>einen</b> Bruder, <b>eine</b> Schwester, <b>ein</b> Kind. (Tuần 5 học kỹ cách 4.)
@@ -895,23 +895,23 @@ rq: Hoa độc thân. | F
 rq: Hoa có một con trai và một con gái. | R
 rq: Bố mẹ Hoa sống ở Hà Nội. | R
 t: Lena | Hast du Geschwister? | Bạn có anh chị em không?
-t: Minh | Ja, ich habe einen Bruder und eine Schwester. | Có, mình có một anh trai và một em gái.
+t: Felix | Ja, ich habe einen Bruder und eine Schwester. | Có, mình có một anh trai và một em gái.
 t: Lena | Bist du verheiratet? | Bạn đã kết hôn chưa?
-t: Minh | Nein, ich bin ledig. Und du? | Chưa, mình độc thân. Còn bạn?
+t: Felix | Nein, ich bin ledig. Und du? | Chưa, mình độc thân. Còn bạn?
 t: Lena | Ich bin verheiratet. Ich habe ein Kind. | Mình đã kết hôn. Mình có một con.
 ans: Haben Sie Geschwister? | Ja, ich habe einen Bruder und eine Schwester. | habe
 w: Viết 3 câu về gia đình bạn. | Ich habe einen Bruder. Meine Eltern wohnen in Hanoi. Ich bin ledig. | habe
 
 ## 4.2 der, die, das – ein, eine
 goal: Dùng đúng der/die/das và ein/eine khi nói về người trong ảnh.
-i: Minh | Das ist ein Foto von meiner Familie. | Đây là một tấm ảnh gia đình mình.
+i: Felix | Das ist ein Foto von meiner Familie. | Đây là một tấm ảnh gia đình mình.
 i: Lena | Wer ist der Mann? | Người đàn ông là ai?
-i: Minh | Das ist der Opa. Und die Frau ist die Oma. | Đó là ông. Còn người phụ nữ là bà.
+i: Felix | Das ist der Opa. Und die Frau ist die Oma. | Đó là ông. Còn người phụ nữ là bà.
 i: Lena | Und das Baby? | Còn em bé?
-i: Minh | Das ist das Baby von meiner Tante. | Đó là em bé của cô mình.
-iq: Minh cho Lena xem gì? | ảnh gia đình | điện thoại | tờ khai
+i: Felix | Das ist das Baby von meiner Tante. | Đó là em bé của cô mình.
+iq: Felix cho Lena xem gì? | ảnh gia đình | điện thoại | tờ khai
 iq: Người đàn ông trong ảnh là ai? | ông | bố | chú
-iq: Em bé là con của ai? | cô của Minh | Minh | bà
+iq: Em bé là con của ai? | cô của Felix | Felix | bà
 words: Großmutter; Großvater; Oma; Opa; Onkel; Tante; Baby; Foto
 +w: n | das | Foto | die Fotos | tấm ảnh | Das ist ein [Foto] von meiner Familie. | Đây là một tấm ảnh gia đình tôi.
 g: Danh từ tiếng Đức có <b>3 giống</b>. Số nhiều luôn dùng <b>die</b>.
@@ -959,22 +959,22 @@ rq: Em bé tên là Emma. | R
 rq: Ông 76 tuổi. | F
 rq: Trong ảnh có ông, bà và một em bé. | R
 t: Lena | Ist das ein Foto? | Đây là một tấm ảnh à?
-t: Minh | Ja, das ist ein Foto von meiner Familie. | Ừ, đây là ảnh gia đình mình.
+t: Felix | Ja, das ist ein Foto von meiner Familie. | Ừ, đây là ảnh gia đình mình.
 t: Lena | Wer ist der Mann? | Người đàn ông là ai?
-t: Minh | Das ist der Opa. Er ist achtzig. | Đó là ông. Ông 80 tuổi.
+t: Felix | Das ist der Opa. Er ist achtzig. | Đó là ông. Ông 80 tuổi.
 t: Lena | Und die Frau? | Còn người phụ nữ?
-t: Minh | Das ist die Oma. | Đó là bà.
+t: Felix | Das ist die Oma. | Đó là bà.
 w: Viết 3 câu tả một tấm ảnh gia đình (dùng ein/eine và der/die/das). | Das ist ein Foto. Das ist der Opa und das ist die Oma. Das Baby heißt Emma. | das ist, ein
 
 ## 4.3 kein và nicht
 goal: Phủ định đúng: kein với danh từ, nicht với động từ và tính từ.
 nico: 23
-i: Tom | Hast du Kinder, Minh? | Minh có con chưa?
-i: Minh | Nein, ich habe keine Kinder. Ich bin nicht verheiratet. | Chưa, mình không có con. Mình chưa kết hôn.
+i: Tom | Hast du Kinder, Felix? | Felix có con chưa?
+i: Felix | Nein, ich habe keine Kinder. Ich bin nicht verheiratet. | Chưa, mình không có con. Mình chưa kết hôn.
 i: Tom | Hast du ein Haustier? | Bạn có nuôi thú cưng không?
-i: Minh | Ja, ich habe eine Katze. Ich wohne nicht allein! | Có, mình có một con mèo. Mình không sống một mình!
-iq: Minh có con không? | không | có 1 con | có 2 con
-iq: Minh nuôi con gì? | mèo | chó | không nuôi
+i: Felix | Ja, ich habe eine Katze. Ich wohne nicht allein! | Có, mình có một con mèo. Mình không sống một mình!
+iq: Felix có con không? | không | có 1 con | có 2 con
+iq: Felix nuôi con gì? | mèo | chó | không nuôi
 iq: "nicht allein" nghĩa là gì? | không một mình | một mình | cùng nhau
 words: kein; keine; nicht; allein; zusammen; Haustier; Hund; Katze
 +w: art | - | kein | | không (một) … nào (với der/das) | Das ist [kein] Hund. | Đó không phải là con chó.
@@ -1026,21 +1026,21 @@ rq: Gia đình có ba con. | F
 rq: Họ có một con chó. | R
 rq: Họ có nuôi mèo. | F
 t: Tom | Hast du Kinder? | Bạn có con chưa?
-t: Minh | Nein, ich habe keine Kinder. | Chưa, mình không có con.
+t: Felix | Nein, ich habe keine Kinder. | Chưa, mình không có con.
 t: Tom | Bist du verheiratet? | Bạn đã kết hôn chưa?
-t: Minh | Nein, ich bin nicht verheiratet. | Chưa, mình chưa kết hôn.
+t: Felix | Nein, ich bin nicht verheiratet. | Chưa, mình chưa kết hôn.
 t: Tom | Wohnst du allein? | Bạn sống một mình à?
-t: Minh | Nein, ich wohne nicht allein. Ich habe eine Katze. | Không, mình không sống một mình. Mình có một con mèo.
+t: Felix | Nein, ich wohne nicht allein. Ich habe eine Katze. | Không, mình không sống một mình. Mình có một con mèo.
 w: Viết 3 câu phủ định về bạn (dùng kein/keine và nicht). | Ich habe keine Kinder. Ich bin nicht verheiratet. Ich habe kein Haustier. | kein/keine, nicht
 
 ## 4.4 Sở hữu & số nhiều
 goal: Nói về người trong gia đình bằng mein/dein/sein/ihr và số nhiều.
 nico: 62,22
 i: Lena | Wie heißt deine Schwester? | Em gái bạn tên gì?
-i: Minh | Meine Schwester heißt Lan. Sie ist verheiratet. | Em gái mình tên Lan. Em ấy đã kết hôn.
+i: Felix | Meine Schwester heißt Lan. Sie ist verheiratet. | Em gái mình tên Lan. Em ấy đã kết hôn.
 i: Lena | Und ihr Mann? | Còn chồng em ấy?
-i: Minh | Ihr Mann heißt Tuan. Er kommt aus Hanoi. Sie haben zwei Kinder. | Chồng em ấy tên Tuấn. Anh ấy đến từ Hà Nội. Họ có hai con.
-iq: Em gái Minh tên gì? | Lan | Tuấn | Hoa
+i: Felix | Ihr Mann heißt Tuan. Er kommt aus Hanoi. Sie haben zwei Kinder. | Chồng em ấy tên Tuấn. Anh ấy đến từ Hà Nội. Họ có hai con.
+iq: Em gái Felix tên gì? | Lan | Tuấn | Hoa
 iq: Chồng của Lan đến từ đâu? | Hà Nội | Berlin | Huế
 iq: "ihr Mann" nghĩa là gì? | chồng cô ấy | chồng tôi | chồng bạn
 words: mein; dein; sein (của anh ấy); ihr (của cô ấy); unser; Ihr (của ông/bà); Brüder; Schwestern; Kinder; Großeltern
@@ -1082,10 +1082,10 @@ x: ty: Viết dạng số nhiều | die Schwester | die Schwestern / Schwestern
 x: ty: Viết dạng số nhiều | das Kind | die Kinder / Kinder
 x: ty: Viết dạng số nhiều | der Sohn | die Söhne / Söhne
 x: ty: Viết dạng số nhiều | das Foto | die Fotos / Fotos
-x: mc: Cây gia đình: <b>Hung + Mai → Minh, Nam, Lan · Lan + Tuan → Bao, Vy</b>. Bao là gì của Lan? | con trai | anh trai | bố
-x: mc: Cây gia đình: <b>Hung + Mai → Minh, Nam, Lan · Lan + Tuan → Bao, Vy</b>. Hung và Mai là gì của Minh? | bố mẹ | ông bà | anh chị
-x: mc: Cây gia đình: <b>Hung + Mai → Minh, Nam, Lan · Lan + Tuan → Bao, Vy</b>. Minh có mấy anh chị em? | 2 | 3 | 1
-x: mc: Cây gia đình: <b>Hung + Mai → Minh, Nam, Lan · Lan + Tuan → Bao, Vy</b>. Tuan là "___ Mann" của Lan. | ihr | sein | mein
+x: mc: Cây gia đình: <b>Hung + Mai → Felix, Nam, Lan · Lan + Tuan → Bao, Vy</b>. Bao là gì của Lan? | con trai | anh trai | bố
+x: mc: Cây gia đình: <b>Hung + Mai → Felix, Nam, Lan · Lan + Tuan → Bao, Vy</b>. Hung và Mai là gì của Felix? | bố mẹ | ông bà | anh chị
+x: mc: Cây gia đình: <b>Hung + Mai → Felix, Nam, Lan · Lan + Tuan → Bao, Vy</b>. Felix có mấy anh chị em? | 2 | 3 | 1
+x: mc: Cây gia đình: <b>Hung + Mai → Felix, Nam, Lan · Lan + Tuan → Bao, Vy</b>. Tuan là "___ Mann" của Lan. | ihr | sein | mein
 lt: Gia đình Anna
 l: Tom | Ist das deine Familie, Anna? | Đây là gia đình cậu à, Anna?
 l: Anna | Ja. Das sind meine Eltern und meine Brüder. | Ừ. Đây là bố mẹ mình và các anh trai mình.
@@ -1095,32 +1095,32 @@ lq: Anna có mấy anh trai? | 3 | 2 | 1
 lq: Ai sống cùng nhà với Anna? | ông bà | cô chú | bạn bè
 lq: "meine Brüder" nghĩa là? | các anh trai của tôi | anh trai của bạn | anh trai của cô ấy
 ld: Das sind meine Eltern.
-rt: Gia đình của Minh
-r: | Mein Name ist Minh. Meine Eltern heißen Hung und Mai. Mein Bruder heißt Nam, er ist Student. Meine Schwester Lan ist verheiratet. Ihr Mann heißt Tuan. Ihre Kinder heißen Bao und Vy. | Tôi tên Minh. Bố mẹ tôi tên Hùng và Mai. Anh trai tôi tên Nam, anh ấy là sinh viên. Em gái tôi Lan đã kết hôn. Chồng em ấy tên Tuấn. Các con em ấy tên Bảo và Vy.
-rq: Bố mẹ Minh tên Hùng và Mai. | R
+rt: Gia đình của Felix
+r: | Mein Name ist Felix. Meine Eltern heißen Hung und Mai. Mein Bruder heißt Nam, er ist Student. Meine Schwester Lan ist verheiratet. Ihr Mann heißt Tuan. Ihre Kinder heißen Bao und Vy. | Tôi tên Felix. Bố mẹ tôi tên Hùng và Mai. Anh trai tôi tên Nam, anh ấy là sinh viên. Em gái tôi Lan đã kết hôn. Chồng em ấy tên Tuấn. Các con em ấy tên Bảo và Vy.
+rq: Bố mẹ Felix tên Hùng và Mai. | R
 rq: Nam đã có vợ. | F
 rq: Lan có hai con. | R
 t: Lena | Wie heißt deine Schwester? | Em gái bạn tên gì?
-t: Minh | Meine Schwester heißt Lan. | Em gái mình tên Lan.
+t: Felix | Meine Schwester heißt Lan. | Em gái mình tên Lan.
 t: Lena | Ist sie verheiratet? | Em ấy đã kết hôn chưa?
-t: Minh | Ja. Ihr Mann heißt Tuan. Er kommt aus Hanoi. | Rồi. Chồng em ấy tên Tuấn. Anh ấy đến từ Hà Nội.
+t: Felix | Ja. Ihr Mann heißt Tuan. Er kommt aus Hanoi. | Rồi. Chồng em ấy tên Tuấn. Anh ấy đến từ Hà Nội.
 t: Lena | Haben sie Kinder? | Họ có con chưa?
-t: Minh | Ja, ihre Kinder heißen Bao und Vy. | Có, các con họ tên Bảo và Vy.
+t: Felix | Ja, ihre Kinder heißen Bao und Vy. | Có, các con họ tên Bảo và Vy.
 w: Viết 4 câu về gia đình bạn, dùng mein/meine và số nhiều. | Meine Eltern wohnen in Hanoi. Mein Bruder heißt Nam. Meine Schwester ist verheiratet. Ihre Kinder sind fünf und sieben. | mein/meine
 
 ## 4.5 Kiểm tra tháng 1
 kind: test
 goal: Nói 1 phút về bản thân và gia đình (8–10 câu) không nhìn chữ; bài kiểm tra 40 câu ≥ 75%.
 nico: 64
-t: Minh | Hallo! Ich heiße Minh Nguyen. | Xin chào! Tôi tên Minh Nguyễn.
-t: Minh | Ich bin fünfundzwanzig Jahre alt. | Tôi 25 tuổi.
-t: Minh | Ich komme aus Vietnam, aus Hanoi. | Tôi đến từ Việt Nam, từ Hà Nội.
-t: Minh | Ich wohne in Berlin, in der Bergstraße zwölf. | Tôi sống ở Berlin, số 12 phố Bergstraße.
-t: Minh | Ich spreche Vietnamesisch, Englisch und ein bisschen Deutsch. | Tôi nói tiếng Việt, tiếng Anh và một chút tiếng Đức.
-t: Minh | Ich bin ledig. Ich habe keine Kinder. | Tôi độc thân. Tôi không có con.
-t: Minh | Meine Eltern wohnen in Hanoi. | Bố mẹ tôi sống ở Hà Nội.
-t: Minh | Ich habe einen Bruder und eine Schwester. | Tôi có một anh trai và một em gái.
-t: Minh | Mein Bruder heißt Nam. Er ist Student. | Anh trai tôi tên Nam. Anh ấy là sinh viên.
-t: Minh | Meine Schwester Lan ist verheiratet. Sie hat zwei Kinder. | Em gái tôi Lan đã kết hôn. Em ấy có hai con.
-w: Viết một đoạn khoảng 50 từ về bạn và gia đình: tên, tuổi, nơi ở và ít nhất 3 người trong gia đình. | Ich heiße Minh Nguyen und ich bin fünfundzwanzig Jahre alt. Ich komme aus Vietnam und wohne jetzt in Berlin. Meine Eltern wohnen in Hanoi. Ich habe einen Bruder und eine Schwester. Mein Bruder heißt Nam, er ist Student. Meine Schwester ist verheiratet. Ihr Mann heißt Tuan. | heiße, bin, wohne, mein/meine
+t: Felix | Hallo! Ich heiße Felix Nguyen. | Xin chào! Tôi tên Felix Nguyễn.
+t: Felix | Ich bin fünfundzwanzig Jahre alt. | Tôi 25 tuổi.
+t: Felix | Ich komme aus Vietnam, aus Hanoi. | Tôi đến từ Việt Nam, từ Hà Nội.
+t: Felix | Ich wohne in Berlin, in der Bergstraße zwölf. | Tôi sống ở Berlin, số 12 phố Bergstraße.
+t: Felix | Ich spreche Vietnamesisch, Englisch und ein bisschen Deutsch. | Tôi nói tiếng Việt, tiếng Anh và một chút tiếng Đức.
+t: Felix | Ich bin ledig. Ich habe keine Kinder. | Tôi độc thân. Tôi không có con.
+t: Felix | Meine Eltern wohnen in Hanoi. | Bố mẹ tôi sống ở Hà Nội.
+t: Felix | Ich habe einen Bruder und eine Schwester. | Tôi có một anh trai và một em gái.
+t: Felix | Mein Bruder heißt Nam. Er ist Student. | Anh trai tôi tên Nam. Anh ấy là sinh viên.
+t: Felix | Meine Schwester Lan ist verheiratet. Sie hat zwei Kinder. | Em gái tôi Lan đã kết hôn. Em ấy có hai con.
+w: Viết một đoạn khoảng 50 từ về bạn và gia đình: tên, tuổi, nơi ở và ít nhất 3 người trong gia đình. | Ich heiße Felix Nguyen und ich bin fünfundzwanzig Jahre alt. Ich komme aus Vietnam und wohne jetzt in Berlin. Meine Eltern wohnen in Hanoi. Ich habe einen Bruder und eine Schwester. Mein Bruder heißt Nam, er ist Student. Meine Schwester ist verheiratet. Ihr Mann heißt Tuan. | heiße, bin, wohne, mein/meine
 `;

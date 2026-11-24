@@ -5,13 +5,13 @@ N|Đại từ: <b>ich</b> = tôi, <b>du</b> = bạn (thân mật), <b>Sie</b> = 
 N|Động từ đổi đuôi theo người nói: <b>ich heiß<u>e</u></b>, <b>du heiß<u>t</u></b>, <b>Sie heiß<u>en</u></b>. (Gốc heiß- kết thúc bằng ß nên với du chỉ thêm -t.)
 N|Hỏi tên: <b>Wie heißen Sie?</b> / <b>Wie heißt du?</b> / <b>Wie ist Ihr Name?</b> — Trả lời: <b>Ich heiße …</b> / <b>Mein Name ist …</b>
 D|Frau Schmidt|Guten Tag! Ich heiße Schmidt. Wie heißen Sie?|Xin chào! Tôi tên là Schmidt. Anh tên là gì?
-D|Minh|Ich heiße Minh Nguyen.|Tôi tên là Minh Nguyễn.
+D|Felix|Ich heiße Felix Nguyen.|Tôi tên là Felix Nguyễn.
 D|Frau Schmidt|Wie bitte? Wie ist Ihr Name?|Gì cơ? Tên anh là gì?
-D|Minh|Mein Name ist Minh Nguyen.|Tên tôi là Minh Nguyễn.
+D|Felix|Mein Name ist Felix Nguyen.|Tên tôi là Felix Nguyễn.
 D|Tom|Hallo! Ich bin Tom. Und wie heißt du?|Chào! Mình là Tom. Còn bạn tên gì?
-D|Minh|Ich heiße Minh.|Mình tên Minh.
-L|Cô giáo tên là gì?|Schmidt|Minh|Tom
-R|Tom hỏi Minh câu nào?|Wie heißt du?|Wie heißen Sie?|Wie geht es dir?
+D|Felix|Ich heiße Felix.|Mình tên Felix.
+L|Cô giáo tên là gì?|Schmidt|Felix|Tom
+R|Tom hỏi Felix câu nào?|Wie heißt du?|Wie heißen Sie?|Wie geht es dir?
 S|Wie heißen Sie?|Ich heiße …|heisse/name ist/bin|Hãy nói tên của bạn.
 W|Viết câu hỏi tên một người bạn (thân mật).|Wie heißt du?|wie, heisst du
 G|conj:heißen
@@ -20,11 +20,11 @@ G|conj:heißen
 N|<b>Woher kommen Sie?</b> / <b>Woher kommst du?</b> — <b>Ich komme aus</b> Vietnam / Deutschland.
 N|Chia: ich komm<b>e</b>, du komm<b>st</b>, er/sie komm<b>t</b>, Sie komm<b>en</b>. Đuôi động từ ở hiện tại: <b>-e, -st, -t, -en, -t, -en</b>.
 N|Phần lớn tên nước không có mạo từ (aus Vietnam, aus Deutschland). Một số có: <i>aus der Schweiz, aus der Türkei, aus den USA</i>. <b>das Land</b> = đất nước.
-D|Frau Schmidt|Minh, woher kommen Sie?|Minh, anh đến từ đâu?
-D|Minh|Ich komme aus Vietnam.|Tôi đến từ Việt Nam.
+D|Frau Schmidt|Felix, woher kommen Sie?|Felix, anh đến từ đâu?
+D|Felix|Ich komme aus Vietnam.|Tôi đến từ Việt Nam.
 D|Frau Schmidt|Und Sie, Tom? Aus welchem Land kommen Sie?|Còn anh, Tom? Anh đến từ nước nào?
 D|Tom|Ich komme aus Österreich.|Tôi đến từ Áo.
-D|Minh|Und Sie, Frau Schmidt?|Còn cô, cô Schmidt?
+D|Felix|Und Sie, Frau Schmidt?|Còn cô, cô Schmidt?
 D|Frau Schmidt|Ich komme aus Deutschland, aus Hamburg.|Tôi đến từ Đức, từ Hamburg.
 L|Tom đến từ đâu?|aus Österreich|aus Deutschland|aus Vietnam
 R|Cô Schmidt đến từ thành phố nào?|Hamburg|Berlin|Wien
@@ -36,13 +36,13 @@ G|conj:kommen
 N|<b>Wo wohnen Sie?</b> / <b>Wo wohnst du?</b> — <b>Ich wohne in</b> Berlin.
 N|Phân biệt: <b>Woher?</b> (từ đâu) → <b>aus</b>; <b>Wo?</b> (ở đâu) → <b>in</b>: <i>Ich komme <b>aus</b> Vietnam, aber ich wohne <b>in</b> Berlin.</i>
 N|Nước có mạo từ: die Schweiz → <b>in der Schweiz</b> / <b>aus der Schweiz</b>. Österreich (Áo) không có mạo từ: in Österreich (thủ đô: Wien).
-D|Minh|Woher kommst du, Sara?|Sara đến từ đâu?
+D|Felix|Woher kommst du, Sara?|Sara đến từ đâu?
 D|Sara|Ich komme aus der Schweiz, aus Zürich.|Mình đến từ Thuỵ Sĩ, từ Zürich.
-D|Minh|Und wo wohnst du jetzt?|Thế bây giờ bạn sống ở đâu?
+D|Felix|Und wo wohnst du jetzt?|Thế bây giờ bạn sống ở đâu?
 D|Sara|Ich wohne in Berlin. Und du? Wo wohnst du?|Mình sống ở Berlin. Còn bạn? Bạn sống ở đâu?
-D|Minh|Ich wohne auch in Berlin.|Mình cũng sống ở Berlin.
+D|Felix|Ich wohne auch in Berlin.|Mình cũng sống ở Berlin.
 D|Sara|Und Tom? Er kommt aus Österreich, richtig?|Còn Tom? Bạn ấy đến từ Áo, đúng không?
-D|Minh|Ja, aus Wien.|Đúng, từ Viên.
+D|Felix|Ja, aus Wien.|Đúng, từ Viên.
 L|Sara đến từ đâu?|aus der Schweiz|aus Österreich|aus Deutschland
 R|Bây giờ Sara sống ở đâu?|in Berlin|in Zürich|in Wien
 S|Wo wohnen Sie?|Ich wohne in …|wohne in|Hãy nói bạn sống ở đâu.
@@ -52,11 +52,11 @@ G|conj:wohnen
 =14|Động từ sein – Ai đây?|sein@a1-dong-tu-1; er; sie; es; wer
 N|<b>sein</b> (là, thì, ở) bất quy tắc — học thuộc: <b>ich bin, du bist, er/sie/es ist, wir sind, ihr seid, sie/Sie sind</b>.
 N|<b>er</b> = anh ấy (giống đực), <b>sie</b> = cô ấy (và: họ), <b>es</b> = nó (giống trung). Hỏi người: <b>Wer ist das?</b> — <b>Das ist</b> Anna. <b>Sie ist</b> Studentin.
-D|Minh|Wer ist das?|Đó là ai?
+D|Felix|Wer ist das?|Đó là ai?
 D|Anna|Das ist Lukas. Er ist mein Bruder.|Đó là Lukas. Anh ấy là anh trai mình.
-D|Minh|Und wer ist das?|Còn đây là ai?
+D|Felix|Und wer ist das?|Còn đây là ai?
 D|Anna|Das ist Lena. Sie ist sehr nett.|Đây là Lena. Cô ấy rất dễ mến.
-D|Minh|Und du? Bist du Studentin?|Còn bạn? Bạn là sinh viên à?
+D|Felix|Und du? Bist du Studentin?|Còn bạn? Bạn là sinh viên à?
 D|Anna|Ja, ich bin Studentin.|Ừ, mình là sinh viên.
 L|Lukas là ai?|anh/em trai của Anna|bạn của Anna|thầy giáo
 R|Anna là gì?|Studentin (sinh viên)|Lehrerin (giáo viên)|Ärztin (bác sĩ)
@@ -67,15 +67,15 @@ G|conj:sein
 =15|Chúng tôi & các bạn|wir; ihr@a1-dai-tu; Vorname; Familienname; was
 N|Bảng đại từ: <b>ich, du, er/sie/es, wir, ihr, sie/Sie</b>. Đuôi động từ: ich wohn<b>e</b>, du wohn<b>st</b>, er wohn<b>t</b>, wir wohn<b>en</b>, ihr wohn<b>t</b>, sie/Sie wohn<b>en</b>.
 N|<b>ihr</b> = các bạn (nhiều người, thân mật). <b>wir</b> = chúng tôi / chúng ta.
-N|<b>der Vorname</b> = tên (Minh), <b>der Familienname</b> = họ (Nguyen). Người Đức nói tên trước, họ sau. <b>Was ist Ihr Vorname?</b>
+N|<b>der Vorname</b> = tên (Felix), <b>der Familienname</b> = họ (Nguyen). Người Đức nói tên trước, họ sau. <b>Was ist Ihr Vorname?</b>
 D|Frau Schmidt|Tom, Sara – woher kommt ihr?|Tom, Sara – các bạn đến từ đâu?
 D|Sara|Wir kommen aus Österreich und aus der Schweiz.|Chúng em đến từ Áo và Thuỵ Sĩ.
-D|Frau Schmidt|Und Sie, Minh? Was ist Ihr Familienname?|Còn anh, Minh? Họ của anh là gì?
-D|Minh|Mein Familienname ist Nguyen.|Họ của tôi là Nguyễn.
-D|Frau Schmidt|Und Minh ist Ihr Vorname?|Và Minh là tên của anh?
-D|Minh|Ja, richtig.|Vâng, đúng vậy.
+D|Frau Schmidt|Und Sie, Felix? Was ist Ihr Familienname?|Còn anh, Felix? Họ của anh là gì?
+D|Felix|Mein Familienname ist Nguyen.|Họ của tôi là Nguyễn.
+D|Frau Schmidt|Und Felix ist Ihr Vorname?|Và Felix là tên của anh?
+D|Felix|Ja, richtig.|Vâng, đúng vậy.
 L|Tom và Sara nói gì?|Wir kommen aus Österreich und aus der Schweiz.|Wir wohnen in Berlin.|Wir kommen aus Deutschland.
-R|Họ của Minh là gì?|Nguyen|Minh|Schmidt
+R|Họ của Felix là gì?|Nguyen|Felix|Schmidt
 S|Was ist Ihr Vorname?|Mein Vorname ist …|vorname ist/heisse|Hãy nói tên (không phải họ) của bạn.
 W|Viết câu hỏi cho 2 người bạn: “Các bạn sống ở đâu?”|Wo wohnt ihr?|wo wohnt ihr
 G|conj:wohnen,kommen
@@ -84,13 +84,13 @@ G|conj:wohnen,kommen
 N|<b>sprechen</b> đổi nguyên âm ở du/er: ich spreche, <b>du sprichst, er spricht</b>, wir sprechen. <b>lernen</b> chia đều: ich lerne, du lernst, er lernt.
 N|<b>Sprechen Sie Deutsch?</b> — Ja, ein bisschen. / Nein, ich spreche Englisch. Tên ngôn ngữ viết hoa và không có mạo từ: Deutsch, Englisch, Vietnamesisch.
 N|<b>die Sprache</b> = ngôn ngữ: <i>Ich spreche zwei Sprachen.</i>
-D|Tom|Minh, welche Sprachen sprichst du?|Minh, bạn nói những ngôn ngữ nào?
-D|Minh|Ich spreche Vietnamesisch und Englisch.|Mình nói tiếng Việt và tiếng Anh.
+D|Tom|Felix, welche Sprachen sprichst du?|Felix, bạn nói những ngôn ngữ nào?
+D|Felix|Ich spreche Vietnamesisch und Englisch.|Mình nói tiếng Việt và tiếng Anh.
 D|Tom|Und Deutsch?|Còn tiếng Đức?
-D|Minh|Ich lerne Deutsch. Deutsch ist schwer!|Mình đang học tiếng Đức. Tiếng Đức khó lắm!
+D|Felix|Ich lerne Deutsch. Deutsch ist schwer!|Mình đang học tiếng Đức. Tiếng Đức khó lắm!
 D|Tom|Nein, du sprichst schon gut!|Không đâu, bạn nói giỏi rồi!
-L|Minh nói những ngôn ngữ nào?|Vietnamesisch und Englisch|Deutsch und Englisch|nur Vietnamesisch
-R|Minh nói gì về tiếng Đức?|Deutsch ist schwer.|Deutsch ist leicht.|Ich spreche gut Deutsch.
+L|Felix nói những ngôn ngữ nào?|Vietnamesisch und Englisch|Deutsch und Englisch|nur Vietnamesisch
+R|Felix nói gì về tiếng Đức?|Deutsch ist schwer.|Deutsch ist leicht.|Ich spreche gut Deutsch.
 S|Welche Sprachen sprechen Sie?|Ich spreche Vietnamesisch und Englisch. Ich lerne Deutsch.|spreche|Hãy nói bạn nói những ngôn ngữ nào.
 W|Viết: “Tôi học tiếng Đức. Bạn có nói tiếng Anh không?” (thân mật)|Ich lerne Deutsch. Sprichst du Englisch?|lerne deutsch, sprichst du englisch
 G|conj:sprechen,lernen
@@ -100,13 +100,13 @@ N|Câu hỏi Có/Không: động từ đứng <b>đầu câu</b>: <b>Bist du Stu
 N|Phủ định bằng <b>nicht</b>: <i>Ich verstehe das nicht.</i> <i>Ich bin nicht Lehrer.</i>
 N|<b>doch</b> = “có chứ” — trả lời “có” cho câu hỏi phủ định: <i>Studierst du nicht? — <b>Doch</b>, ich studiere Medizin.</i>
 N|<b>der Student</b> (nam) / <b>die Studentin</b> (nữ); <b>studieren</b> = học đại học.
-D|Lena|Minh, bist du Student?|Minh, bạn là sinh viên à?
-D|Minh|Nein, ich bin nicht Student. Ich lerne Deutsch im Kurs.|Không, mình không phải sinh viên. Mình học tiếng Đức ở lớp.
+D|Lena|Felix, bist du Student?|Felix, bạn là sinh viên à?
+D|Felix|Nein, ich bin nicht Student. Ich lerne Deutsch im Kurs.|Không, mình không phải sinh viên. Mình học tiếng Đức ở lớp.
 D|Lena|Ich studiere hier in Berlin. Ich bin Studentin.|Mình học đại học ở Berlin. Mình là sinh viên.
-D|Minh|Und Anna? Studiert sie nicht?|Còn Anna? Cô ấy không học đại học à?
+D|Felix|Und Anna? Studiert sie nicht?|Còn Anna? Cô ấy không học đại học à?
 D|Lena|Doch! Sie studiert auch. Verstehst du?|Có chứ! Cô ấy cũng học đại học. Bạn hiểu không?
-D|Minh|Ja, ich verstehe.|Ừ, mình hiểu.
-L|Minh có phải sinh viên không?|Nein (không)|Ja (có)|Doch (có chứ)
+D|Felix|Ja, ich verstehe.|Ừ, mình hiểu.
+L|Felix có phải sinh viên không?|Nein (không)|Ja (có)|Doch (có chứ)
 R|Anna có học đại học không?|Ja, sie studiert auch.|Nein, sie studiert nicht.|Sie lernt Deutsch im Kurs.
 S|Sind Sie Lehrer?|Nein, ich bin nicht Lehrer. / Ja, ich bin Lehrer.|bin|Trả lời: bạn có phải giáo viên không? (thử dùng nicht)
 W|Viết câu hỏi “Bạn hiểu không?” và câu trả lời “Không, tôi không hiểu.”|Verstehst du? – Nein, ich verstehe nicht.|verstehst du, verstehe nicht
@@ -119,7 +119,7 @@ N|Mỗi danh từ có giống <b>der</b> (đực), <b>die</b> (cái) hoặc <b>d
 D|Frau Schmidt|Herzlich willkommen im Kurs! Ich bin Ihre Lehrerin.|Chào mừng các bạn đến với lớp! Tôi là giáo viên của các bạn.
 D|Tom|Lernen wir hier zusammen?|Chúng ta học cùng nhau ở đây ạ?
 D|Frau Schmidt|Ja, wir lernen hier zusammen, von Montag bis Freitag.|Đúng, chúng ta học cùng nhau ở đây, từ thứ Hai đến thứ Sáu.
-D|Minh|Ist Herr Weber auch Lehrer?|Ông Weber cũng là giáo viên ạ?
+D|Felix|Ist Herr Weber auch Lehrer?|Ông Weber cũng là giáo viên ạ?
 D|Frau Schmidt|Nein, Herr Weber ist nicht Lehrer. Er wohnt hier.|Không, ông Weber không phải giáo viên. Ông ấy sống ở đây.
 L|Ai là giáo viên?|Frau Schmidt|Herr Weber|Tom
 R|Lớp học diễn ra khi nào?|von Montag bis Freitag|nur am Montag|am Wochenende
@@ -131,13 +131,13 @@ G|art
 N|Liên từ <b>und</b> (và), <b>aber</b> (nhưng), <b>oder</b> (hoặc, hay) nối hai câu mà <b>không đổi trật tự từ</b>: <i>Ich komme aus Vietnam, <b>aber</b> ich wohne jetzt in Berlin.</i>
 N|Câu hỏi lựa chọn: <i>Sprichst du Englisch <b>oder</b> Deutsch?</i>
 N|<b>jetzt</b> = bây giờ, <b>natürlich</b> = tất nhiên.
-D|Anna|Minh, kommst du aus Vietnam oder aus China?|Minh, bạn đến từ Việt Nam hay Trung Quốc?
-D|Minh|Aus Vietnam, aus Hanoi. Aber ich wohne jetzt hier in Berlin.|Từ Việt Nam, từ Hà Nội. Nhưng bây giờ mình sống ở Berlin.
+D|Anna|Felix, kommst du aus Vietnam oder aus China?|Felix, bạn đến từ Việt Nam hay Trung Quốc?
+D|Felix|Aus Vietnam, aus Hanoi. Aber ich wohne jetzt hier in Berlin.|Từ Việt Nam, từ Hà Nội. Nhưng bây giờ mình sống ở Berlin.
 D|Anna|Sprichst du Deutsch oder Englisch?|Bạn nói tiếng Đức hay tiếng Anh?
-D|Minh|Natürlich Deutsch! Aber langsam, bitte.|Tất nhiên là tiếng Đức! Nhưng nói chậm thôi nhé.
+D|Felix|Natürlich Deutsch! Aber langsam, bitte.|Tất nhiên là tiếng Đức! Nhưng nói chậm thôi nhé.
 D|Anna|Kein Problem!|Không vấn đề gì!
-L|Minh đến từ thành phố nào?|Hanoi|Berlin|Saigon
-R|Bây giờ Minh sống ở đâu?|in Berlin|in Hanoi|in China
+L|Felix đến từ thành phố nào?|Hanoi|Berlin|Saigon
+R|Bây giờ Felix sống ở đâu?|in Berlin|in Hanoi|in China
 S|Kommen Sie aus Vietnam oder aus Deutschland?|Ich komme aus Vietnam.|komme aus|Trả lời câu hỏi lựa chọn.
 W|Viết: “Tôi đến từ Việt Nam, nhưng bây giờ tôi sống ở London.”|Ich komme aus Vietnam, aber ich wohne jetzt in London.|komme aus, aber, wohne jetzt
 F|Ich komme aus Vietnam, ___ ich wohne jetzt in Berlin.|aber|nhưng|oder|und
@@ -145,12 +145,12 @@ F|Kommst du aus Österreich ___ aus der Schweiz?|oder|hay|aber|und
 F|Ich spreche Englisch ___ Deutsch.|und|và|oder|aber
 
 =20|Ôn tập chặng 2|*
-D|Minh|Hallo! Ich heiße Minh Nguyen. Mein Vorname ist Minh, mein Familienname ist Nguyen.|Xin chào! Tôi tên là Minh Nguyễn. Tên tôi là Minh, họ tôi là Nguyễn.
-D|Minh|Ich komme aus Vietnam, aus Hanoi. Jetzt wohne ich in Berlin.|Tôi đến từ Việt Nam, từ Hà Nội. Bây giờ tôi sống ở Berlin.
-D|Minh|Ich spreche Vietnamesisch und Englisch. Ich lerne Deutsch im Kurs.|Tôi nói tiếng Việt và tiếng Anh. Tôi học tiếng Đức ở lớp.
-D|Minh|Meine Lehrerin heißt Frau Schmidt. Sie kommt aus Hamburg.|Cô giáo của tôi tên là Schmidt. Cô ấy đến từ Hamburg.
-D|Minh|Ich bin nicht Student, aber ich lerne jeden Tag Deutsch.|Tôi không phải sinh viên, nhưng ngày nào tôi cũng học tiếng Đức.
-L|Minh sống ở đâu?|in Berlin|in Hanoi|in Hamburg
-R|Ai đến từ Hamburg?|Frau Schmidt|Minh|Anna
+D|Felix|Hallo! Ich heiße Felix Nguyen. Mein Vorname ist Felix, mein Familienname ist Nguyen.|Xin chào! Tôi tên là Felix Nguyễn. Tên tôi là Felix, họ tôi là Nguyễn.
+D|Felix|Ich komme aus Vietnam, aus Hanoi. Jetzt wohne ich in Berlin.|Tôi đến từ Việt Nam, từ Hà Nội. Bây giờ tôi sống ở Berlin.
+D|Felix|Ich spreche Vietnamesisch und Englisch. Ich lerne Deutsch im Kurs.|Tôi nói tiếng Việt và tiếng Anh. Tôi học tiếng Đức ở lớp.
+D|Felix|Meine Lehrerin heißt Frau Schmidt. Sie kommt aus Hamburg.|Cô giáo của tôi tên là Schmidt. Cô ấy đến từ Hamburg.
+D|Felix|Ich bin nicht Student, aber ich lerne jeden Tag Deutsch.|Tôi không phải sinh viên, nhưng ngày nào tôi cũng học tiếng Đức.
+L|Felix sống ở đâu?|in Berlin|in Hanoi|in Hamburg
+R|Ai đến từ Hamburg?|Frau Schmidt|Felix|Anna
 S|Stellen Sie sich bitte vor: Name, Land, Wohnort, Sprachen.|Ich heiße … Ich komme aus … Ich wohne in … Ich spreche …|heisse, komme aus, wohne, spreche|Giới thiệu bản thân: tên, quê, nơi ở, ngôn ngữ.
 W|Viết đoạn giới thiệu 4 câu (tên, đến từ đâu, sống ở đâu, nói tiếng gì).|Ich heiße … Ich komme aus … Ich wohne in … Ich spreche …|heisse/name, komme aus, wohne in, spreche

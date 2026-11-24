@@ -102,7 +102,7 @@ geehrt|kính gửi (Sehr geehrte Frau …, Sehr geehrter Herr …)|adj
 ~bessere|gut|so sánh hơn của gut: tốt hơn
 ~besten|gut|am besten = tốt nhất
 ~liebsten|gern|am liebsten = thích nhất
-~Minhs|Minh|của Minh
+~Felix'|Felix|của Felix
 ~mail|E-Mail|(trong địa chỉ email)
 # ---- Động từ ----
 hängen|treo (đang treo)|v
@@ -238,16 +238,16 @@ vietnamesisch|thuộc Việt Nam; tiếng Việt (Vietnamesisch)|adj
 getrennt|riêng, tách rời (trả tiền riêng)|adj
 deutsch|thuộc nước Đức (die deutsche Sprache)|adj
 # ---- Tên riêng ----
-Minh|Minh – nhân vật chính, người Việt học tiếng Đức ở Berlin|name
-Anna|Anna – bạn, hàng xóm của Minh (sinh viên)|name
+Felix|Felix – nhân vật chính, người Việt học tiếng Đức ở Berlin|name
+Anna|Anna – bạn, hàng xóm của Felix (sinh viên)|name
 Lena|Lena – bạn của Anna|name
-Tom|Tom – bạn cùng lớp của Minh, người Áo|name
+Tom|Tom – bạn cùng lớp của Felix, người Áo|name
 Sara|Sara – bạn cùng lớp, người Thuỵ Sĩ|name
 Lukas|Lukas – anh trai của Anna|name
 Schmidt|cô Schmidt – giáo viên tiếng Đức|name
 Weber|ông Weber – chủ nhà, hàng xóm|name
-Nguyen|Nguyễn – họ của Minh|name
-Hung|Hùng – chú của Minh|name
+Nguyen|Nguyễn – họ của Felix|name
+Hung|Hùng – chú của Felix|name
 Max|Max – tên người|name
 Mia|Mia – tên người|name
 Jonas|Jonas – tên người|name

@@ -9,13 +9,13 @@ P|Nguyên âm a e i o u|Tag, Tee, Kino, Brot, gut
 P|Từ mới|Hallo, Guten Tag, Tschüss, ja, nein
 C|a|ja, Tag, Name, Hallo|ei = “ai”|nein, mein, dein, drei
 D|Frau Schmidt|Guten Tag! Tom?|Xin chào! Anh là Tom à?
-D|Minh|Nein, Minh. Guten Tag!|Không, tôi là Minh. Xin chào!
-D|Anna|Hallo, Minh!|Chào Minh!
-D|Minh|Hallo, Anna!|Chào Anna!
+D|Felix|Nein, Felix. Guten Tag!|Không, tôi là Felix. Xin chào!
+D|Anna|Hallo, Felix!|Chào Felix!
+D|Felix|Hallo, Anna!|Chào Anna!
 D|Anna|Tschüss!|Tạm biệt!
-D|Minh|Tschüss!|Tạm biệt!
-L|Minh chào Anna thế nào?|Hallo, Anna!|Guten Tag, Anna!|Tschüss, Anna!
-R|Cô giáo hỏi “Tom?” — Minh trả lời thế nào?|Nein, Minh.|Ja, Tom.|Ja, Minh.
+D|Felix|Tschüss!|Tạm biệt!
+L|Felix chào Anna thế nào?|Hallo, Anna!|Guten Tag, Anna!|Tschüss, Anna!
+R|Cô giáo hỏi “Tom?” — Felix trả lời thế nào?|Nein, Felix.|Ja, Tom.|Ja, Felix.
 S|Guten Tag!|Guten Tag!|tag/hallo|Cô giáo chào bạn. Hãy chào lại.
 W|Viết lời chào lịch sự ban ngày và lời tạm biệt thân mật.|Guten Tag! Tschüss!|guten tag, tschuess/tschuss
 F|___, Anna! (xin chào)|Hallo|
@@ -28,14 +28,14 @@ N|<b>Herr</b> + họ = ông/anh…, <b>Frau</b> + họ = bà/cô/chị… — d�
 N|Âm cuối: <b>-d → [t]</b> (Abend = “a-bənt”), <b>-g → [k]</b> (Tag = “tak”), <b>-en</b> đọc lướt [n̩] (Guten = “gu-tn”). <b>W</b> = [v], <b>ie</b> = “i” dài.
 P|-d / -g cuối đọc thành t / k|Abend, Tag, Hand, Kind, Weg
 C|w = [v]|Wiedersehen, wie, Wasser, Wein|v = [f]|vier, Vater, vergessen, verheiratet
-D|Minh|Guten Morgen, Frau Schmidt!|Chào buổi sáng, cô Schmidt!
-D|Frau Schmidt|Guten Morgen, Minh!|Chào buổi sáng, Minh!
+D|Felix|Guten Morgen, Frau Schmidt!|Chào buổi sáng, cô Schmidt!
+D|Frau Schmidt|Guten Morgen, Felix!|Chào buổi sáng, Felix!
 D|Herr Weber|Guten Abend, Frau Schmidt!|Chào buổi tối, bà Schmidt!
 D|Frau Schmidt|Guten Abend, Herr Weber!|Chào buổi tối, ông Weber!
 D|Herr Weber|Auf Wiedersehen! Gute Nacht!|Tạm biệt! Chúc ngủ ngon!
 D|Frau Schmidt|Gute Nacht!|Chúc ngủ ngon!
-L|Buổi sáng, Minh chào cô giáo thế nào?|Guten Morgen, Frau Schmidt!|Guten Abend, Frau Schmidt!|Gute Nacht, Frau Schmidt!
-R|Ai nói “Auf Wiedersehen”?|Herr Weber|Frau Schmidt|Minh
+L|Buổi sáng, Felix chào cô giáo thế nào?|Guten Morgen, Frau Schmidt!|Guten Abend, Frau Schmidt!|Gute Nacht, Frau Schmidt!
+R|Ai nói “Auf Wiedersehen”?|Herr Weber|Frau Schmidt|Felix
 S|Guten Abend!|Guten Abend!|abend|Lúc 19 giờ, hàng xóm chào bạn. Hãy chào lại.
 W|Viết lời chào buổi sáng gửi ông Weber.|Guten Morgen, Herr Weber!|guten morgen, herr weber
 F|Guten ___! (buổi sáng)|Morgen||Abend|Tag
@@ -49,13 +49,13 @@ N|<b>bitte</b> còn nghĩa là “làm ơn”: <i>Einen Kaffee, bitte.</i> Khi �
 N|Khi ăn: <b>Guten Appetit!</b> (chúc ngon miệng) — đáp: <i>Danke, gleichfalls!</i> (bạn cũng vậy). Khi uống: <b>Prost!</b> (cạn ly, dô).
 N|Phát âm: <b>-e</b> cuối đọc nhẹ “ơ” (danke = “đan-kơ”), <b>v</b> trong vielen = [f], <b>ö</b> (schön): lưỡi như “ê”, môi tròn như “ô”.
 C|o|schon, Brot, rot, wohnen|ö|schön, Brötchen, hören, Österreich
-D|Anna|Bitte schön, Minh. Guten Appetit!|Của bạn đây, Minh. Chúc ngon miệng!
-D|Minh|Danke! Guten Appetit!|Cảm ơn! Chúc ngon miệng!
+D|Anna|Bitte schön, Felix. Guten Appetit!|Của bạn đây, Felix. Chúc ngon miệng!
+D|Felix|Danke! Guten Appetit!|Cảm ơn! Chúc ngon miệng!
 D|Anna|Prost!|Dô!
-D|Minh|Prost! Vielen Dank, Anna!|Dô! Cảm ơn nhiều, Anna!
+D|Felix|Prost! Vielen Dank, Anna!|Dô! Cảm ơn nhiều, Anna!
 D|Anna|Bitte!|Không có gì!
-L|Anna nói gì khi đưa đồ ăn cho Minh?|Bitte schön|Prost|Danke
-R|Minh nói “Vielen Dank” — Anna trả lời gì?|Bitte!|Danke!|Prost!
+L|Anna nói gì khi đưa đồ ăn cho Felix?|Bitte schön|Prost|Danke
+R|Felix nói “Vielen Dank” — Anna trả lời gì?|Bitte!|Danke!|Prost!
 S|Vielen Dank!|Bitte! / Bitte schön!|bitte|Bạn của bạn cảm ơn bạn. Hãy đáp lại.
 W|Viết: “Cảm ơn nhiều!” và “Chúc ngon miệng!”|Vielen Dank! Guten Appetit!|vielen dank, guten appetit
 F|Vielen ___! (cảm ơn nhiều)|Dank|
@@ -68,13 +68,13 @@ N|Hỏi thăm: <b>Wie geht es Ihnen?</b> (lịch sự) / <b>Wie geht es dir?</b>
 N|Phát âm: <b>u</b> dài trong <b>gut</b> [uː], <b>u</b> ngắn trong <b>und</b> [ʊ]; <b>d</b> cuối → [t]: und = “unt”.
 C|u dài|gut, du, Schule, Bruder|u ngắn|und, Mutter, Butter, Bus
 D|Frau Schmidt|Guten Morgen, Herr Nguyen! Wie geht es Ihnen?|Chào buổi sáng, anh Nguyễn! Anh khoẻ không?
-D|Minh|Danke, sehr gut. Und Ihnen?|Cảm ơn, rất khoẻ. Còn cô?
+D|Felix|Danke, sehr gut. Und Ihnen?|Cảm ơn, rất khoẻ. Còn cô?
 D|Frau Schmidt|Danke, gut.|Cảm ơn, khoẻ.
-D|Anna|Hallo, Minh! Wie geht es dir?|Chào Minh! Bạn khoẻ không?
-D|Minh|Gut, danke! Und dir?|Khoẻ, cảm ơn! Còn bạn?
+D|Anna|Hallo, Felix! Wie geht es dir?|Chào Felix! Bạn khoẻ không?
+D|Felix|Gut, danke! Und dir?|Khoẻ, cảm ơn! Còn bạn?
 D|Anna|Mir geht es sehr gut!|Mình rất khoẻ!
-L|Minh trả lời cô Schmidt thế nào?|Danke, sehr gut.|Danke, gut.|Tschüss!
-R|Với Anna, Minh nói “Und dir?”. Với cô Schmidt, Minh nói gì?|Und Ihnen?|Und dir?|Und du?
+L|Felix trả lời cô Schmidt thế nào?|Danke, sehr gut.|Danke, gut.|Tschüss!
+R|Với Anna, Felix nói “Und dir?”. Với cô Schmidt, Felix nói gì?|Und Ihnen?|Und dir?|Und du?
 S|Wie geht es dir?|Mir geht es gut, danke. Und dir?|gut|Bạn thân hỏi thăm bạn. Trả lời và hỏi lại.
 W|Viết câu hỏi thăm lịch sự dành cho ông Weber.|Wie geht es Ihnen, Herr Weber?|wie geht es ihnen
 F|Wie geht es ___? (lịch sự)|Ihnen||dir|du
@@ -86,14 +86,14 @@ N|Khi được giới thiệu: <b>Freut mich!</b> (Rất vui được gặp) —
 N|<b>Entschuldigung!</b> = xin lỗi (để gọi ai, hoặc xin lỗi lỗi nhỏ). <b>Es tut mir leid.</b> = tôi rất tiếc / xin lỗi (chân thành hơn). Đáp lại: <b>Kein Problem!</b>
 N|Phát âm: <b>eu</b> = “oi” (Freut), <b>ei</b> = “ai” (leid, kein), <b>ie</b> = “i” dài (wie, Sie). Đuôi <b>-ung</b> = [ʊŋ].
 C|ei = “ai”|mein, nein, drei, Wein|ie = “i” dài|wie, Bier, sieben, vier
-D|Anna|Minh, das ist Lena.|Minh, đây là Lena.
-D|Minh|Hallo, Lena! Freut mich.|Chào Lena! Rất vui được gặp bạn.
+D|Anna|Felix, das ist Lena.|Felix, đây là Lena.
+D|Felix|Hallo, Lena! Freut mich.|Chào Lena! Rất vui được gặp bạn.
 D|Lena|Freut mich auch!|Mình cũng rất vui!
 D|Lena|Oh nein! Mein Kaffee!|Ôi không! Cà phê của mình!
-D|Minh|Entschuldigung! Es tut mir leid!|Xin lỗi! Mình xin lỗi nhé!
+D|Felix|Entschuldigung! Es tut mir leid!|Xin lỗi! Mình xin lỗi nhé!
 D|Lena|Kein Problem!|Không sao đâu!
-L|Lena nói gì khi gặp Minh?|Freut mich auch!|Es tut mir leid!|Kein Problem!
-R|Minh làm đổ cà phê của Lena. Lena nói gì?|Kein Problem!|Freut mich!|Guten Appetit!
+L|Lena nói gì khi gặp Felix?|Freut mich auch!|Es tut mir leid!|Kein Problem!
+R|Felix làm đổ cà phê của Lena. Lena nói gì?|Kein Problem!|Freut mich!|Guten Appetit!
 S|Das ist Herr Weber.|Freut mich, Herr Weber!|freut mich|Bạn được giới thiệu với ông Weber. Hãy nói “Rất vui được gặp”.
 W|Bạn lỡ giẫm vào chân ai đó. Viết lời xin lỗi.|Entschuldigung! Es tut mir leid!|entschuldigung/leid
 F|Freut mich ___! (cũng)|auch|
@@ -105,12 +105,12 @@ N|Không nghe rõ: <b>Wie bitte?</b> (Gì cơ ạ?). Nhờ nói lại: <b>Noch e
 N|Phát âm <b>ch</b>: sau <b>a, o, u, au</b> → [x] khàn như “kh” (no<b>ch</b>, a<b>ch</b>t, Bu<b>ch</b>); sau các nguyên âm khác và sau phụ âm → [ç] xì nhẹ như “h” mím (i<b>ch</b>, ni<b>ch</b>t, Mil<b>ch</b>).
 C|ch = [x] (kh)|noch, acht, Buch, Kuchen|ch = [ç] (hì)|ich, nicht, Milch, sprechen
 D|Frau Schmidt|Öffnen Sie bitte das Buch, Seite zehn.|Mời anh mở sách, trang mười.
-D|Minh|Wie bitte? Ich verstehe nicht.|Gì cơ ạ? Em không hiểu.
+D|Felix|Wie bitte? Ich verstehe nicht.|Gì cơ ạ? Em không hiểu.
 D|Frau Schmidt|Das Buch. Seite zehn.|Quyển sách. Trang mười.
-D|Minh|Noch einmal, bitte!|Cô làm ơn nói lại lần nữa!
+D|Felix|Noch einmal, bitte!|Cô làm ơn nói lại lần nữa!
 D|Frau Schmidt|Seite zehn.|Trang mười.
-D|Minh|Moment, bitte … Ah, danke!|Xin chờ một chút… À, cảm ơn cô!
-L|Lần đầu không hiểu, Minh nói gì?|Wie bitte? Ich verstehe nicht.|Danke, gut.|Freut mich.
+D|Felix|Moment, bitte … Ah, danke!|Xin chờ một chút… À, cảm ơn cô!
+L|Lần đầu không hiểu, Felix nói gì?|Wie bitte? Ich verstehe nicht.|Danke, gut.|Freut mich.
 R|“Moment, bitte” nghĩa là gì?|Xin chờ một chút|Nói lại lần nữa|Tôi không hiểu
 S|Wie heißen Sie?|Wie bitte? Noch einmal, bitte!|bitte/verstehe|Giả sử bạn không nghe rõ câu hỏi. Hãy nhờ nói lại.
 W|Viết: “Tôi không hiểu. Làm ơn nói lại lần nữa!”|Ich verstehe nicht. Noch einmal, bitte!|verstehe nicht, noch einmal
@@ -124,14 +124,14 @@ N|<b>richtig</b> = đúng, <b>falsch</b> = sai: <i>Das ist richtig.</i>
 N|Trọng âm: phần lớn từ tiếng Đức nhấn <b>âm tiết đầu</b> (<b>lang</b>sam, <b>rich</b>tig). Tiền tố <b>be-, ver-, ent-</b> không nhận trọng âm: be<b>deu</b>tet, ver<b>ste</b>he, Ent<b>schul</b>digung.
 N|<b>s</b> đứng trước nguyên âm = [z] (“d” rung nhẹ): <b>S</b>ie, <b>s</b>ieben, lang<b>s</b>am. Còn <b>ß / ss</b> = [s].
 C|s = [z]|Sie, sieben, Sohn, Saft|ß / ss = [s]|heißen, Wasser, Fuß, groß
-D|Minh|Frau Schmidt, was bedeutet „langsam“?|Cô Schmidt, “langsam” nghĩa là gì ạ?
+D|Felix|Frau Schmidt, was bedeutet „langsam“?|Cô Schmidt, “langsam” nghĩa là gì ạ?
 D|Frau Schmidt|„Langsam“ heißt: nicht schnell.|“Langsam” nghĩa là: không nhanh.
-D|Minh|Danke! Und wie heißt das auf Deutsch?|Cảm ơn cô! Thế cái này tiếng Đức gọi là gì ạ?
+D|Felix|Danke! Und wie heißt das auf Deutsch?|Cảm ơn cô! Thế cái này tiếng Đức gọi là gì ạ?
 D|Frau Schmidt|Das ist ein Heft.|Đây là quyển vở.
-D|Minh|Und das? Ein Buch, richtig?|Còn cái này? Quyển sách, đúng không ạ?
+D|Felix|Und das? Ein Buch, richtig?|Còn cái này? Quyển sách, đúng không ạ?
 D|Frau Schmidt|Nein, das ist falsch. Das ist ein Kuli.|Không, sai rồi. Đây là cái bút bi.
 L|Theo cô giáo, “langsam” nghĩa là gì?|nicht schnell (không nhanh)|sehr gut (rất tốt)|richtig (đúng)
-R|Minh đoán đồ vật thứ hai là gì?|ein Buch|ein Heft|ein Kuli
+R|Felix đoán đồ vật thứ hai là gì?|ein Buch|ein Heft|ein Kuli
 S|Wie heißt das auf Deutsch?|Das ist ein Kuli.|kuli|Cô giáo chỉ vào cái bút bi và hỏi. Hãy trả lời.
 W|Bạn muốn hỏi nghĩa của từ “Prost”. Viết câu hỏi.|Was bedeutet „Prost“?|was bedeutet, prost
 F|Wie heißt das auf ___?|Deutsch|
@@ -143,13 +143,13 @@ N|<b>Herzlich willkommen!</b> = Nhiệt liệt chào mừng. <b>Herzlichen Glüc
 N|<b>Viel Glück!</b> = Chúc may mắn (trước kỳ thi). Thứ Sáu chào nhau: <b>Schönes Wochenende!</b> — đáp: <i>Danke, gleichfalls!</i>
 N|Phát âm: <b>z</b> = [ts] (Her<b>z</b>lich), <b>ü</b>: lưỡi như “i”, môi tròn như “u” (Gl<b>ü</b>ck), <b>w</b> = [v].
 C|u|Bus, Zug, gut, Mund|ü|Glück, fünf, müde, Tür
-D|Minh|Hallo, Lena! Herzlichen Glückwunsch!|Chào Lena! Chúc mừng sinh nhật!
-D|Lena|Danke, Minh! Herzlich willkommen!|Cảm ơn Minh! Chào mừng bạn đến!
-D|Minh|Alles Gute!|Chúc bạn mọi điều tốt đẹp!
+D|Felix|Hallo, Lena! Herzlichen Glückwunsch!|Chào Lena! Chúc mừng sinh nhật!
+D|Lena|Danke, Felix! Herzlich willkommen!|Cảm ơn Felix! Chào mừng bạn đến!
+D|Felix|Alles Gute!|Chúc bạn mọi điều tốt đẹp!
 D|Lena|Vielen Dank!|Cảm ơn nhiều!
-D|Anna|Tschüss, Minh! Schönes Wochenende!|Tạm biệt Minh! Cuối tuần vui vẻ!
-D|Minh|Danke! Und viel Glück am Montag!|Cảm ơn! Và chúc bạn may mắn vào thứ Hai!
-L|Câu đầu tiên Minh nói với Lena là gì?|Herzlichen Glückwunsch!|Viel Glück!|Schönes Wochenende!
+D|Anna|Tschüss, Felix! Schönes Wochenende!|Tạm biệt Felix! Cuối tuần vui vẻ!
+D|Felix|Danke! Und viel Glück am Montag!|Cảm ơn! Và chúc bạn may mắn vào thứ Hai!
+L|Câu đầu tiên Felix nói với Lena là gì?|Herzlichen Glückwunsch!|Viel Glück!|Schönes Wochenende!
 R|“Schönes Wochenende!” nghĩa là gì?|Cuối tuần vui vẻ!|Chúc may mắn!|Chào mừng!
 S|Ich habe heute Geburtstag!|Herzlichen Glückwunsch! Alles Gute!|glueckwunsch/alles gute|Bạn của bạn nói: “Hôm nay mình sinh nhật!” Hãy chúc mừng.
 W|Bạn của bạn sắp thi. Viết lời chúc.|Viel Glück!|viel glueck
@@ -162,28 +162,28 @@ N|Tạm biệt kèm lời hẹn: <b>Bis bald!</b> (sớm gặp lại), <b>Bis mo
 N|Cuối tin nhắn / email: <b>Viele Grüße</b> hoặc <b>Liebe Grüße</b> (thân mật) + tên (der Gruß → số nhiều die Grüße). Đầu thư: <i>Hallo Anna,</i> / <i>Liebe Anna,</i>
 N|Phát âm: <b>ä</b> = “e” mở (sp<b>ä</b>ter), <b>sp / st</b> ở đầu từ = “schp / scht” (<b>sp</b>äter = “schpê-tơ”), <b>ß</b> = [s] (Gru<b>ß</b>).
 C|sp / st đầu từ = schp / scht|später, sprechen, Stadt, Straße|st giữa / cuối từ = s-t|ist, Gast, Fenster, Post
-D|Lena|Tschüss, Minh! Bis später!|Tạm biệt Minh! Lát gặp nhé!
-D|Minh|Bis später! Und bis morgen, Anna!|Lát gặp! Còn Anna, mai gặp nhé!
-D|Anna|Bis bald, Minh!|Sớm gặp lại nhé, Minh!
-D|SMS|Hallo Anna! Bis morgen! Viele Grüße, Minh|Chào Anna! Mai gặp nhé! Thân, Minh
+D|Lena|Tschüss, Felix! Bis später!|Tạm biệt Felix! Lát gặp nhé!
+D|Felix|Bis später! Und bis morgen, Anna!|Lát gặp! Còn Anna, mai gặp nhé!
+D|Anna|Bis bald, Felix!|Sớm gặp lại nhé, Felix!
+D|SMS|Hallo Anna! Bis morgen! Viele Grüße, Felix|Chào Anna! Mai gặp nhé! Thân, Felix
 L|Lena nói gì?|Bis später!|Bis morgen!|Bis bald!
-R|Minh viết gì ở cuối tin nhắn?|Viele Grüße, Minh|Bis bald, Minh|Alles Gute, Minh
+R|Felix viết gì ở cuối tin nhắn?|Viele Grüße, Felix|Bis bald, Felix|Alles Gute, Felix
 S|Tschüss, bis morgen!|Tschüss! Bis morgen!|bis morgen/tschuess|Bạn cùng lớp chào tạm biệt. Hãy chào lại và hẹn mai gặp.
-W|Viết tin nhắn ngắn cho Anna: chào, hẹn mai gặp, ký tên.|Hallo Anna! Bis morgen! Viele Grüße, Minh|hallo, bis morgen, gruesse/gruss
+W|Viết tin nhắn ngắn cho Anna: chào, hẹn mai gặp, ký tên.|Hallo Anna! Bis morgen! Viele Grüße, Felix|hallo, bis morgen, gruesse/gruss
 F|Bis ___! (mai gặp)|morgen|
 F|Bis ___! (lát nữa gặp)|später|
-F|Viele ___, Minh (cuối tin nhắn)|Grüße|
+F|Viele ___, Felix (cuối tin nhắn)|Grüße|
 
 =10|Ôn tập chặng 1|*
 D|Frau Schmidt|Guten Morgen! Herzlich willkommen im Kurs!|Chào buổi sáng! Chào mừng đến với lớp học!
-D|Minh|Guten Morgen, Frau Schmidt!|Chào buổi sáng, cô Schmidt!
+D|Felix|Guten Morgen, Frau Schmidt!|Chào buổi sáng, cô Schmidt!
 D|Frau Schmidt|Wie geht es Ihnen?|Anh khoẻ không?
-D|Minh|Danke, gut. Und Ihnen?|Cảm ơn, khoẻ ạ. Còn cô?
+D|Felix|Danke, gut. Und Ihnen?|Cảm ơn, khoẻ ạ. Còn cô?
 D|Frau Schmidt|Sehr gut, danke.|Rất khoẻ, cảm ơn.
-D|Minh|Entschuldigung, was bedeutet „Kurs“?|Xin lỗi, “Kurs” nghĩa là gì ạ?
+D|Felix|Entschuldigung, was bedeutet „Kurs“?|Xin lỗi, “Kurs” nghĩa là gì ạ?
 D|Frau Schmidt|„Kurs“ heißt: Wir lernen hier Deutsch.|“Kurs” nghĩa là: chúng ta học tiếng Đức ở đây.
-D|Minh|Ah, danke!|À, cảm ơn cô!
-L|Cô Schmidt trả lời thế nào khi Minh hỏi lại?|Sehr gut, danke.|Gut, danke.|Nicht so gut.
-R|Minh hỏi nghĩa của từ nào?|Kurs|Morgen|danke
+D|Felix|Ah, danke!|À, cảm ơn cô!
+L|Cô Schmidt trả lời thế nào khi Felix hỏi lại?|Sehr gut, danke.|Gut, danke.|Nicht so gut.
+R|Felix hỏi nghĩa của từ nào?|Kurs|Morgen|danke
 S|Guten Tag! Wie geht es Ihnen?|Guten Tag! Danke, gut. Und Ihnen?|gut, ihnen|Một người lạ lịch sự hỏi thăm bạn. Trả lời và hỏi lại.
 W|Viết 3 câu: chào buổi tối, cảm ơn nhiều, hẹn mai gặp.|Guten Abend! Vielen Dank! Bis morgen!|guten abend, vielen dank, bis morgen

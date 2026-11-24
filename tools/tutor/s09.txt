@@ -4,12 +4,12 @@
 N|<b>einkaufen</b> (đi mua sắm) là động từ tách: <i>Ich <b>kaufe</b> heute <b>ein</b>.</i> <b>kaufen</b> + đồ vật: <i>Ich kaufe Brot.</i>
 N|<b>brauchen</b> = cần (+ Akkusativ): <i>Ich brauche <b>einen</b> Kuli / <b>eine</b> Tüte / <b>ein</b> Brot.</i> Mạo từ xác định giống đực: der → <b>den</b>: <i>Ich kaufe <b>den</b> Käse.</i>
 D|Anna|Ich kaufe heute im Supermarkt ein. Brauchst du etwas?|Hôm nay mình đi siêu thị. Bạn cần gì không?
-D|Minh|Ja! Ich brauche Milch und einen Käse.|Có! Mình cần sữa và một miếng phô mai.
+D|Felix|Ja! Ich brauche Milch und einen Käse.|Có! Mình cần sữa và một miếng phô mai.
 D|Anna|Und Brot?|Còn bánh mì?
-D|Minh|Nein, Brot kaufe ich in der Bäckerei. Das ist frischer.|Không, bánh mì mình mua ở tiệm bánh. Tươi hơn.
+D|Felix|Nein, Brot kaufe ich in der Bäckerei. Das ist frischer.|Không, bánh mì mình mua ở tiệm bánh. Tươi hơn.
 D|Anna|Okay. Ich kaufe auch Bananen für dich.|OK. Mình mua cả chuối cho bạn nhé.
-L|Minh cần gì?|Milch und Käse|Brot|Bananen
-R|Minh mua bánh mì ở đâu?|in der Bäckerei|im Supermarkt|auf dem Markt
+L|Felix cần gì?|Milch und Käse|Brot|Bananen
+R|Felix mua bánh mì ở đâu?|in der Bäckerei|im Supermarkt|auf dem Markt
 S|Was brauchen Sie heute?|Ich brauche …|brauche|Hôm nay bạn cần mua gì?
 W|Viết: “Hôm nay tôi đi mua sắm.”|Heute kaufe ich ein.|kaufe ich ein
 G|akk; sep:einkaufen
@@ -18,14 +18,14 @@ G|akk; sep:einkaufen
 N|<b>Was kostet das?</b> / <b>Wie viel kostet das?</b> — Das kostet <b>zwei Euro fünfzig</b> (2,50 €). Nhiều thứ: <i>Was kosten die Äpfel?</i>
 N|1 € = 100 <b>Cent</b>. Đọc giá: 0,99 € = neunundneunzig Cent; 12,80 € = zwölf Euro achtzig.
 N|<b>der Preis</b> = giá: <i>Der Preis ist gut.</i>
-D|Minh|Entschuldigung, was kostet der Kaffee?|Xin lỗi, cà phê bao nhiêu tiền?
+D|Felix|Entschuldigung, was kostet der Kaffee?|Xin lỗi, cà phê bao nhiêu tiền?
 D|Verkäuferin|Zwei Euro achtzig.|Hai euro tám mươi.
-D|Minh|Und wie viel kostet das Brötchen?|Còn bánh mì nhỏ bao nhiêu?
+D|Felix|Und wie viel kostet das Brötchen?|Còn bánh mì nhỏ bao nhiêu?
 D|Verkäuferin|Fünfundvierzig Cent.|Bốn mươi lăm xu.
-D|Minh|Ein Kaffee und zwei Brötchen, bitte.|Một cà phê và hai bánh mì nhỏ.
+D|Felix|Ein Kaffee und zwei Brötchen, bitte.|Một cà phê và hai bánh mì nhỏ.
 D|Verkäuferin|Das macht drei Euro siebzig. Der Preis ist gut, oder?|Tổng là 3,70 euro. Giá tốt nhỉ?
 L|Cà phê bao nhiêu tiền?|2,80 €|2,08 €|8,20 €
-R|Minh trả tổng cộng bao nhiêu?|3,70 €|3,25 €|2,80 €
+R|Felix trả tổng cộng bao nhiêu?|3,70 €|3,25 €|2,80 €
 S|Was kostet ein Kaffee in Ihrer Stadt?|Ein Kaffee kostet … Euro.|kostet|Ở thành phố bạn, một ly cà phê giá bao nhiêu?
 W|Viết bằng chữ: 4,90 €|vier Euro neunzig|vier euro neunzig
 G|num:price
@@ -34,9 +34,9 @@ G|num:price
 N|<b>billig</b> = rẻ ↔ <b>teuer</b> = đắt. <b>zu</b> + tính từ = quá: <i>Das ist <b>zu</b> teuer.</i>
 N|<b>nur</b> = chỉ: <i>Das kostet <b>nur</b> einen Euro!</i> <b>das Angebot</b> = hàng khuyến mãi: <i>Äpfel im Angebot</i>.
 D|Lena|Die Jacke ist schön! Was kostet sie?|Cái áo khoác đẹp quá! Giá bao nhiêu?
-D|Minh|Hundertzwanzig Euro. Das ist zu teuer für mich.|Một trăm hai mươi euro. Đắt quá với mình.
+D|Felix|Hundertzwanzig Euro. Das ist zu teuer für mich.|Một trăm hai mươi euro. Đắt quá với mình.
 D|Lena|Schau, hier ist ein Angebot: nur neunundvierzig Euro!|Nhìn này, đây là hàng khuyến mãi: chỉ bốn mươi chín euro!
-D|Minh|Wirklich? Das ist billig!|Thật à? Rẻ thế!
+D|Felix|Wirklich? Das ist billig!|Thật à? Rẻ thế!
 D|Lena|Billig, aber auch schön!|Rẻ mà cũng đẹp!
 L|Áo khoác đầu tiên giá bao nhiêu?|120 €|49 €|112 €
 R|Áo khuyến mãi giá bao nhiêu?|49 €|94 €|19 €
@@ -47,11 +47,11 @@ G|opp
 =84|Các cửa hàng|Geschäft; Laden; Bäckerei; Markt; Kiosk
 N|<b>das Geschäft</b> / <b>der Laden</b> = cửa hàng. <b>die Bäckerei</b> = tiệm bánh, <b>der Markt</b> = chợ, <b>der Kiosk</b> = ki-ốt (báo, đồ uống, đồ ăn vặt).
 N|Ở đâu: <b>in der</b> Bäckerei, <b>im</b> (= in dem) Supermarkt, <b>auf dem</b> Markt (chợ — dùng auf!), <b>am</b> Kiosk.
-D|Minh|Wo kaufst du Obst?|Bạn mua trái cây ở đâu?
+D|Felix|Wo kaufst du Obst?|Bạn mua trái cây ở đâu?
 D|Anna|Auf dem Markt. Am Samstag ist der Markt am Rathausplatz.|Ở chợ. Thứ Bảy có chợ ở quảng trường toà thị chính.
-D|Minh|Und Brötchen?|Còn bánh mì nhỏ?
+D|Felix|Und Brötchen?|Còn bánh mì nhỏ?
 D|Anna|In der Bäckerei an der Ecke. Am Sonntag ist nur der Kiosk geöffnet.|Ở tiệm bánh ở góc phố. Chủ nhật chỉ có ki-ốt mở cửa.
-D|Minh|Sonntags sind alle Geschäfte geschlossen?|Chủ nhật tất cả cửa hàng đều đóng à?
+D|Felix|Sonntags sind alle Geschäfte geschlossen?|Chủ nhật tất cả cửa hàng đều đóng à?
 D|Anna|Ja, fast alle Läden.|Ừ, hầu hết các cửa hàng.
 L|Anna mua trái cây ở đâu?|auf dem Markt|im Supermarkt|in der Bäckerei
 R|Chủ nhật cái gì mở cửa?|der Kiosk|die Bäckerei|der Markt
@@ -63,13 +63,13 @@ G|art; pl
 N|Số lượng + danh từ, <b>không cần “von”</b>: <i>ein Kilo Äpfel, zweihundert Gramm Käse, ein Liter Milch, zwei Stück Kuchen, eine Packung Reis</i>.
 N|Đơn vị đo giữ nguyên ở số nhiều: <i>zwei <b>Kilo</b>, drei <b>Liter</b>, fünf <b>Stück</b></i> (không thêm -s).
 D|Verkäufer|Guten Morgen! Was darf es sein?|Chào buổi sáng! Anh cần gì ạ?
-D|Minh|Ein Kilo Tomaten und zweihundert Gramm Käse, bitte.|Cho tôi một ký cà chua và hai trăm gam phô mai.
+D|Felix|Ein Kilo Tomaten und zweihundert Gramm Käse, bitte.|Cho tôi một ký cà chua và hai trăm gam phô mai.
 D|Verkäufer|Noch etwas?|Còn gì nữa không ạ?
-D|Minh|Ja, zwei Liter Milch und eine Packung Reis.|Có, hai lít sữa và một gói gạo.
+D|Felix|Ja, zwei Liter Milch und eine Packung Reis.|Có, hai lít sữa và một gói gạo.
 D|Verkäufer|Und vielleicht zwei Stück Kuchen? Heute im Angebot!|Và có lẽ hai miếng bánh? Hôm nay đang khuyến mãi!
-D|Minh|Gern!|Được!
-L|Minh mua bao nhiêu phô mai?|200 g|2 kg|100 g
-R|Minh mua bao nhiêu sữa?|2 lít|1 lít|200 g
+D|Felix|Gern!|Được!
+L|Felix mua bao nhiêu phô mai?|200 g|2 kg|100 g
+R|Felix mua bao nhiêu sữa?|2 lít|1 lít|200 g
 S|Was kaufen Sie im Supermarkt? Sagen Sie auch, wie viel.|Ich kaufe ein Kilo Äpfel und einen Liter Milch.|kilo/liter/gramm/packung/stueck|Bạn mua gì ở siêu thị? Nói cả số lượng.
 W|Viết: “một ký táo, hai lít nước”|ein Kilo Äpfel, zwei Liter Wasser|kilo aepfel, liter wasser
 F|Ich kaufe zwei ___ Milch. (lít)|Liter|
@@ -82,12 +82,12 @@ N|<b>Bar oder mit Karte?</b> — Trả tiền mặt (<b>bar</b>) hay bằng th�
 N|<b>die Kasse</b> = quầy thu ngân, <b>die Tüte</b> = túi (nilon/giấy) — thường phải trả tiền: <i>Brauchen Sie eine Tüte?</i>
 N|<b>das Geld</b> = tiền (không đếm được): <i>Ich habe kein Geld.</i>
 D|Kassiererin|Das macht zwölf Euro dreißig. Bar oder mit Karte?|Tổng là 12,30 euro. Tiền mặt hay thẻ ạ?
-D|Minh|Mit Karte, bitte. Ich habe kein Bargeld.|Bằng thẻ. Tôi không có tiền mặt.
+D|Felix|Mit Karte, bitte. Ich habe kein Bargeld.|Bằng thẻ. Tôi không có tiền mặt.
 D|Kassiererin|Brauchen Sie eine Tüte?|Anh có cần túi không?
-D|Minh|Ja, bitte. Was kostet die Tüte?|Có. Túi bao nhiêu tiền?
+D|Felix|Ja, bitte. Was kostet die Tüte?|Có. Túi bao nhiêu tiền?
 D|Kassiererin|Zwanzig Cent.|Hai mươi xu.
-L|Minh phải trả bao nhiêu?|12,30 €|12,13 €|13,20 €
-R|Minh trả bằng gì?|mit Karte|bar|gar nicht
+L|Felix phải trả bao nhiêu?|12,30 €|12,13 €|13,20 €
+R|Felix trả bằng gì?|mit Karte|bar|gar nicht
 S|Zahlen Sie lieber bar oder mit Karte?|Ich zahle lieber mit Karte.|karte/bar|Bạn thích trả tiền mặt hay thẻ?
 W|Viết: “Tôi trả tiền mặt.”|Ich bezahle bar.|bar
 G|art
@@ -95,11 +95,11 @@ G|art
 =87|Mở cửa – đóng cửa|geöffnet; geschlossen; öffnen; schließen
 N|Biển hiệu: <b>Geöffnet</b> (đang mở) / <b>Geschlossen</b> (đóng cửa). Giờ mở cửa: <i>Mo–Fr 8–20 Uhr</i> = Montag bis Freitag von acht bis zwanzig Uhr.
 N|Động từ: <b>öffnen</b> (mở): <i>Die Bank öffnet um neun.</i> (du öffnest, er öffnet) — <b>schließen</b> (đóng): <i>Wann schließt der Supermarkt?</i>
-D|Minh|Wann schließt der Supermarkt heute?|Hôm nay siêu thị đóng cửa lúc mấy giờ?
+D|Felix|Wann schließt der Supermarkt heute?|Hôm nay siêu thị đóng cửa lúc mấy giờ?
 D|Anna|Um zwanzig Uhr. Aber am Sonntag ist er geschlossen.|Lúc hai mươi giờ. Nhưng Chủ nhật đóng cửa.
-D|Minh|Und die Apotheke? Ist sie am Samstag geöffnet?|Còn hiệu thuốc? Thứ Bảy có mở không?
+D|Felix|Und die Apotheke? Ist sie am Samstag geöffnet?|Còn hiệu thuốc? Thứ Bảy có mở không?
 D|Anna|Ja, von neun bis vierzehn Uhr.|Có, từ chín đến mười bốn giờ.
-D|Minh|Und wann öffnet die Bäckerei?|Thế tiệm bánh mở cửa lúc mấy giờ?
+D|Felix|Und wann öffnet die Bäckerei?|Thế tiệm bánh mở cửa lúc mấy giờ?
 D|Anna|Schon um sechs Uhr morgens!|Từ sáu giờ sáng rồi!
 L|Siêu thị đóng cửa lúc mấy giờ?|20 giờ|18 giờ|22 giờ
 R|Tiệm bánh mở cửa lúc mấy giờ?|6 giờ sáng|9 giờ|14 giờ
@@ -112,13 +112,13 @@ N|<b>suchen</b> = tìm; <b>finden</b> = tìm thấy (và: cho rằng): <i>Ich su
 N|<b>welcher</b> = cái nào, đổi theo giống như der/die/das: <b>welcher</b> Pullover, <b>welche</b> Jacke, <b>welches</b> Hemd, (số nhiều) <b>welche</b> Schuhe.
 N|<b>die Größe</b> = cỡ: <i>Welche Größe haben Sie?</i> — Größe M / 38.
 D|Verkäuferin|Kann ich Ihnen helfen?|Tôi có thể giúp gì cho anh?
-D|Minh|Ja, ich suche einen Pullover.|Vâng, tôi đang tìm một cái áo len.
+D|Felix|Ja, ich suche einen Pullover.|Vâng, tôi đang tìm một cái áo len.
 D|Verkäuferin|Welche Größe haben Sie?|Anh mặc cỡ nào?
-D|Minh|Größe M. Welcher Pullover ist im Angebot?|Cỡ M. Áo len nào đang khuyến mãi?
+D|Felix|Größe M. Welcher Pullover ist im Angebot?|Cỡ M. Áo len nào đang khuyến mãi?
 D|Verkäuferin|Der blaue hier. Wie finden Sie ihn?|Cái màu xanh này. Anh thấy nó thế nào?
-D|Minh|Ich finde ihn schön!|Tôi thấy nó đẹp!
-L|Minh tìm gì?|einen Pullover|eine Jacke|ein Hemd
-R|Minh mặc cỡ nào?|M|L|S
+D|Felix|Ich finde ihn schön!|Tôi thấy nó đẹp!
+L|Felix tìm gì?|einen Pullover|eine Jacke|ein Hemd
+R|Felix mặc cỡ nào?|M|L|S
 S|Was suchen Sie im Geschäft?|Ich suche eine Jacke.|suche|Bạn đang tìm gì ở cửa hàng?
 W|Viết câu hỏi: “Áo khoác nào giá 50 euro?”|Welche Jacke kostet fünfzig Euro?|welche jacke kostet
 F|___ Pullover ist billig? (der Pullover)|Welcher||Welche|Welches
@@ -131,13 +131,13 @@ N|Kết thúc mua hàng: <i>Noch etwas?</i> — <b>Nein, danke. Das ist alles.</
 N|<b>verkaufen</b> = bán (↔ kaufen = mua): <i>Der Kiosk verkauft Zeitungen.</i> (der Verkäufer / die Verkäuferin = người bán hàng)
 N|<b>genau</b> = chính xác, đúng vậy (dùng để đồng ý): <i>Genau!</i> <b>fast</b> = gần như: <i>Ich bin fast fertig.</i>
 D|Verkäufer|Noch etwas?|Còn gì nữa không ạ?
-D|Minh|Nein, danke. Das ist alles.|Không, cảm ơn. Thế thôi.
+D|Felix|Nein, danke. Das ist alles.|Không, cảm ơn. Thế thôi.
 D|Verkäufer|Das macht genau zehn Euro.|Tổng là đúng mười euro.
-D|Minh|Verkaufen Sie auch Briefmarken?|Ông có bán tem không?
+D|Felix|Verkaufen Sie auch Briefmarken?|Ông có bán tem không?
 D|Verkäufer|Nein, leider nicht. Die Post ist fast nebenan.|Không, tiếc là không. Bưu điện ở gần như ngay bên cạnh.
-D|Minh|Danke! Schönen Tag noch!|Cảm ơn! Chúc một ngày tốt lành!
-L|Minh phải trả bao nhiêu?|10 € (đúng mười euro)|9 €|11 €
-R|Minh có thể mua tem ở đâu?|bei der Post (bưu điện)|am Kiosk|im Supermarkt
+D|Felix|Danke! Schönen Tag noch!|Cảm ơn! Chúc một ngày tốt lành!
+L|Felix phải trả bao nhiêu?|10 € (đúng mười euro)|9 €|11 €
+R|Felix có thể mua tem ở đâu?|bei der Post (bưu điện)|am Kiosk|im Supermarkt
 S|Noch etwas?|Nein, danke, das ist alles.|alles|Người bán hỏi bạn có cần gì nữa không. Bạn đã mua đủ.
 W|Viết: “Tôi gần xong rồi.”|Ich bin fast fertig.|fast fertig
 G|opp; conj:verkaufen
@@ -147,9 +147,9 @@ D|Prospekt|Supermarkt Frisch – diese Woche im Angebot:|Siêu thị Frisch – 
 D|Prospekt|Äpfel: ein Kilo nur 1,99 € · Milch: ein Liter 0,89 €|Táo: một ký chỉ 1,99 € · Sữa: một lít 0,89 €
 D|Prospekt|Käse: 200 Gramm 2,49 € · Kaffee: eine Packung 4,99 €|Phô mai: 200 gam 2,49 € · Cà phê: một gói 4,99 €
 D|Prospekt|Geöffnet: Montag bis Samstag 7–21 Uhr. Sonntag geschlossen.|Mở cửa: thứ Hai đến thứ Bảy 7–21 giờ. Chủ nhật đóng cửa.
-D|Minh|Ich brauche zwei Kilo Äpfel und einen Liter Milch.|Mình cần hai ký táo và một lít sữa.
+D|Felix|Ich brauche zwei Kilo Äpfel und einen Liter Milch.|Mình cần hai ký táo và một lít sữa.
 D|Anna|Das kostet … vier Euro siebenundachtzig. Billig!|Hết… bốn euro tám mươi bảy. Rẻ!
-L|Minh cần gì?|zwei Kilo Äpfel und einen Liter Milch|ein Kilo Äpfel und Käse|Kaffee und Milch
+L|Felix cần gì?|zwei Kilo Äpfel und einen Liter Milch|ein Kilo Äpfel und Käse|Kaffee und Milch
 L|Tổng cộng bao nhiêu tiền?|4,87 €|4,78 €|8,47 €
 R|Một gói cà phê giá bao nhiêu?|4,99 €|2,49 €|1,99 €
 R|Khi nào siêu thị đóng cửa cả ngày?|Sonntag|Samstag|Montag

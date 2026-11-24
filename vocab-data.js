@@ -29,7 +29,7 @@ window.VOCAB_SETS = [
  {t:"n",a:"der",w:"Bruder",pl:"die Brüder",m:"anh/em trai",i:"ˈbʁuːdɐ",ex:"Ich habe einen [Bruder].",exv:"Tôi có một anh/em trai.",n:"<b>u</b> dài; số nhiều đổi thành <b>ü</b>: Brüder."},
  {t:"n",a:"die",w:"Schwester",pl:"die Schwestern",m:"chị/em gái",i:"ˈʃvɛstɐ",ex:"Meine [Schwester] ist zehn.",exv:"Em gái tôi mười tuổi.",n:"<b>schw</b> = “schv”. <b>st</b> ở giữa từ đọc bình thường “s-t” (chỉ đầu âm tiết mới là “scht”)."},
  {t:"n",a:"das",w:"Kind",pl:"die Kinder",m:"đứa trẻ, con",i:"kɪnt",ex:"Das [Kind] spielt im Garten.",exv:"Đứa trẻ chơi trong vườn.",n:"<b>d</b> cuối từ đọc [t]: “kint”. Số nhiều Kinder đọc [d]."},
- {t:"n",a:"der",w:"Sohn",pl:"die Söhne",m:"con trai",i:"zoːn",ex:"Ihr [Sohn] heißt Minh.",exv:"Con trai bà ấy tên Minh.",n:"<b>s</b> đầu từ trước nguyên âm đọc rung [z]. <b>h</b> câm → o dài."},
+ {t:"n",a:"der",w:"Sohn",pl:"die Söhne",m:"con trai",i:"zoːn",ex:"Ihr [Sohn] heißt Felix.",exv:"Con trai bà ấy tên Felix.",n:"<b>s</b> đầu từ trước nguyên âm đọc rung [z]. <b>h</b> câm → o dài."},
  {t:"n",a:"die",w:"Tochter",pl:"die Töchter",m:"con gái",i:"ˈtɔxtɐ",ex:"Unsere [Tochter] geht zur Schule.",exv:"Con gái chúng tôi đi học.",n:"<b>ch</b> sau <b>o</b> = khàn [x]; số nhiều Töchter: <b>ch</b> sau <b>ö</b> thành xì [ç]."},
  {t:"n",a:"der",w:"Großvater",pl:"die Großväter",m:"ông",i:"ˈɡʁoːsˌfaːtɐ",ex:"Mein [Großvater] ist 80 Jahre alt.",exv:"Ông tôi 80 tuổi.",n:"Từ ghép → trọng âm ở từ đầu <b>Groß</b>. Giống theo từ cuối (der Vater)."},
  {t:"n",a:"die",w:"Großmutter",pl:"die Großmütter",m:"bà",i:"ˈɡʁoːsˌmʊtɐ",ex:"Meine [Großmutter] kocht gut.",exv:"Bà tôi nấu ăn ngon.",n:"Từ ghép → trọng âm ở <b>Groß</b>. <b>ß</b> sau o dài."},

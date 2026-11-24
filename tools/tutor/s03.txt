@@ -5,12 +5,12 @@ N|0 <b>null</b>, 1 <b>eins</b>, 2 <b>zwei</b>, 3 <b>drei</b>, 4 <b>vier</b>, 5 <
 N|Qua điện thoại người Đức hay nói <b>zwo</b> thay cho zwei (để khỏi nhầm với drei).
 N|Phát âm: <b>z</b> = [ts] (zwei = “tsvai”), <b>v</b> = [f] (vier = “fia”), <b>ü</b> trong fünf.
 P|Số 0–5|null, eins, zwei, drei, vier, fünf
-D|Anna|Minh, wie ist deine Nummer?|Minh, số của bạn là gì?
-D|Minh|Null – eins – fünf – zwei – drei – vier – eins.|0 – 1 – 5 – 2 – 3 – 4 – 1.
+D|Anna|Felix, wie ist deine Nummer?|Felix, số của bạn là gì?
+D|Felix|Null – eins – fünf – zwei – drei – vier – eins.|0 – 1 – 5 – 2 – 3 – 4 – 1.
 D|Anna|Wie bitte? Noch einmal, bitte!|Gì cơ? Nói lại lần nữa nhé!
-D|Minh|Null, eins, fünf, zwei, drei, vier, eins.|0, 1, 5, 2, 3, 4, 1.
+D|Felix|Null, eins, fünf, zwei, drei, vier, eins.|0, 1, 5, 2, 3, 4, 1.
 D|Anna|Danke!|Cảm ơn!
-L|Số của Minh là gì?|0152341|0152431|0125341
+L|Số của Felix là gì?|0152341|0152431|0125341
 R|Anna nói gì khi chưa nghe rõ?|Wie bitte? Noch einmal, bitte!|Danke!|Wie ist deine Nummer?
 S|Wie viel ist zwei plus drei?|Fünf.|fuenf/5|Hai cộng ba bằng mấy? (zwei plus drei)
 W|Viết bằng chữ: 4, 2, 5|vier, zwei, fünf|vier, zwei, fuenf
@@ -21,9 +21,9 @@ N|6 <b>sechs</b> [zɛks], 7 <b>sieben</b>, 8 <b>acht</b>, 9 <b>neun</b>, 10 <b>z
 N|<b>die Zahl</b> = con số: <i>Sieben ist meine Glückszahl.</i>
 N|Phát âm: <b>chs</b> = [ks] (sechs), <b>ch</b> sau a = [x] (acht), <b>eu</b> = “oi” (neun), <b>eh</b> = e dài (zehn).
 D|Frau Schmidt|Schreiben Sie die Zahlen: sieben, drei, zehn.|Hãy viết các số: bảy, ba, mười.
-D|Minh|Sieben, drei, zehn. Und dann?|Bảy, ba, mười. Rồi sao nữa ạ?
+D|Felix|Sieben, drei, zehn. Und dann?|Bảy, ba, mười. Rồi sao nữa ạ?
 D|Frau Schmidt|Acht, sechs, neun.|Tám, sáu, chín.
-D|Minh|Acht, sechs … wie bitte?|Tám, sáu… gì cơ ạ?
+D|Felix|Acht, sechs … wie bitte?|Tám, sáu… gì cơ ạ?
 D|Frau Schmidt|Neun. Neun ist die Zahl nach acht.|Chín. Chín là số đứng sau tám.
 L|Cô giáo đọc ba số đầu tiên nào?|7, 3, 10|7, 8, 10|6, 3, 9
 R|Số nào đứng sau số 8?|9 (neun)|7 (sieben)|10 (zehn)
@@ -35,13 +35,13 @@ G|num:0-10
 N|11 <b>elf</b>, 12 <b>zwölf</b> (học riêng). 13–19 = số đơn vị + <b>zehn</b>: drei<b>zehn</b>, vier<b>zehn</b>, fünf<b>zehn</b>, acht<b>zehn</b>, neun<b>zehn</b>.
 N|Chú ý: 16 = <b>sechzehn</b> (bỏ s), 17 = <b>siebzehn</b> (bỏ en).
 N|<b>zählen</b> = đếm: <i>Zählen Sie bis zwanzig!</i>
-D|Frau Schmidt|Minh, zählen Sie bitte von elf bis neunzehn.|Minh, anh đếm từ mười một đến mười chín nhé.
-D|Minh|Elf, zwölf, dreizehn, vierzehn, fünfzehn, sechzehn, siebzehn, achtzehn, neunzehn.|11, 12, 13, 14, 15, 16, 17, 18, 19.
+D|Frau Schmidt|Felix, zählen Sie bitte von elf bis neunzehn.|Felix, anh đếm từ mười một đến mười chín nhé.
+D|Felix|Elf, zwölf, dreizehn, vierzehn, fünfzehn, sechzehn, siebzehn, achtzehn, neunzehn.|11, 12, 13, 14, 15, 16, 17, 18, 19.
 D|Frau Schmidt|Sehr gut! Und wie viele Personen sind im Kurs?|Rất tốt! Lớp mình có bao nhiêu người?
-D|Minh|Eins, zwei, drei … sechzehn! Wir sind sechzehn.|Một, hai, ba… mười sáu! Chúng ta có mười sáu người.
+D|Felix|Eins, zwei, drei … sechzehn! Wir sind sechzehn.|Một, hai, ba… mười sáu! Chúng ta có mười sáu người.
 D|Frau Schmidt|Nein, siebzehn – ich bin auch hier!|Không, mười bảy chứ – cô cũng ở đây mà!
 L|Lớp học có bao nhiêu người (tính cả cô giáo)?|17|16|7
-R|Minh đếm từ số mấy đến số mấy?|von elf bis neunzehn (11–19)|von eins bis zehn (1–10)|von zwölf bis zwanzig (12–20)
+R|Felix đếm từ số mấy đến số mấy?|von elf bis neunzehn (11–19)|von eins bis zehn (1–10)|von zwölf bis zwanzig (12–20)
 S|Zählen Sie bitte von zehn bis fünfzehn.|Zehn, elf, zwölf, dreizehn, vierzehn, fünfzehn.|zehn, elf, zwoelf, dreizehn, vierzehn, fuenfzehn|Đếm từ 10 đến 15.
 W|Viết bằng chữ: 12, 16, 17|zwölf, sechzehn, siebzehn|zwoelf, sechzehn, siebzehn
 G|num:10-19
@@ -51,11 +51,11 @@ N|Hàng chục: 20 <b>zwanzig</b>, 30 <b>dreißig</b> (ß!), 40 vierzig, 50 fün
 N|Số 21–99 đọc <b>đơn vị trước, chục sau</b>, nối bằng <b>und</b>: 21 = <b>einundzwanzig</b> (một-và-hai mươi), 35 = fünfunddreißig, 48 = achtundvierzig.
 N|Chú ý: số 1 trong số ghép là <b>ein</b>- (einundzwanzig), không phải eins.
 D|Anna|Wir spielen Bingo! Die erste Zahl ist … einundzwanzig!|Chúng ta chơi bingo! Số đầu tiên là… hai mươi mốt!
-D|Minh|Einundzwanzig – ja, hier!|Hai mươi mốt – có, đây!
+D|Felix|Einundzwanzig – ja, hier!|Hai mươi mốt – có, đây!
 D|Anna|Dann: vierzig … dreißig … fünfundfünfzig!|Tiếp theo: bốn mươi… ba mươi… năm mươi lăm!
-D|Minh|Dreißig habe ich auch! Und fünfzig?|Mình cũng có ba mươi! Còn năm mươi?
+D|Felix|Dreißig habe ich auch! Und fünfzig?|Mình cũng có ba mươi! Còn năm mươi?
 D|Anna|Nein, nicht fünfzig – fünfundfünfzig.|Không, không phải năm mươi – năm mươi lăm.
-D|Minh|Schade! Und sechzig?|Tiếc quá! Còn sáu mươi?
+D|Felix|Schade! Und sechzig?|Tiếc quá! Còn sáu mươi?
 D|Anna|Sechzig … Bingo für Lena!|Sáu mươi… Lena bingo rồi!
 L|Số đầu tiên Anna đọc là số nào?|21|12|20
 R|Anna đọc số nào (không phải 50)?|55 (fünfundfünfzig)|15 (fünfzehn)|45 (fünfundvierzig)
@@ -69,8 +69,8 @@ N|Số lớn viết liền một từ: 125 = <b>hundertfünfundzwanzig</b>, 2026
 N|Năm trước 2000 đọc theo trăm: 1999 = <b>neunzehnhundertneunundneunzig</b>.
 D|Lena|Wie viele Menschen wohnen in Berlin?|Có bao nhiêu người sống ở Berlin?
 D|Anna|Fast vier Millionen!|Gần bốn triệu!
-D|Lena|Und in Hanoi, Minh?|Còn ở Hà Nội, Minh?
-D|Minh|In Hanoi wohnen über acht Millionen Menschen.|Ở Hà Nội có hơn tám triệu người.
+D|Lena|Und in Hanoi, Felix?|Còn ở Hà Nội, Felix?
+D|Felix|In Hanoi wohnen über acht Millionen Menschen.|Ở Hà Nội có hơn tám triệu người.
 D|Lena|Wow! Und in meinem Dorf wohnen nur neunhundert.|Chà! Còn ở làng của mình chỉ có chín trăm người.
 L|Có bao nhiêu người sống ở Berlin?|gần 4 triệu|hơn 8 triệu|900
 R|Bao nhiêu người sống ở làng của Lena?|900|9000|90
@@ -82,12 +82,12 @@ G|num:60-1000
 N|Hỏi tuổi: <b>Wie alt bist du?</b> / <b>Wie alt sind Sie?</b> — <b>Ich bin 25 (Jahre alt).</b>
 N|<b>das Jahr</b> (số nhiều: die Jahre) = năm. <b>das Alter</b> = tuổi (trong biểu mẫu: <i>Alter: 25</i>).
 N|<b>alt</b> = già / cũ ↔ <b>jung</b> = trẻ.
-D|Tom|Minh, wie alt bist du?|Minh, bạn bao nhiêu tuổi?
-D|Minh|Ich bin vierundzwanzig Jahre alt. Und du?|Mình hai mươi bốn tuổi. Còn bạn?
+D|Tom|Felix, wie alt bist du?|Felix, bạn bao nhiêu tuổi?
+D|Felix|Ich bin vierundzwanzig Jahre alt. Und du?|Mình hai mươi bốn tuổi. Còn bạn?
 D|Tom|Ich bin dreißig.|Mình ba mươi.
-D|Minh|Und Frau Schmidt? Wie alt ist sie?|Còn cô Schmidt? Cô ấy bao nhiêu tuổi?
+D|Felix|Und Frau Schmidt? Wie alt ist sie?|Còn cô Schmidt? Cô ấy bao nhiêu tuổi?
 D|Tom|Ich weiß es nicht. Aber sie ist noch jung!|Mình không biết. Nhưng cô ấy vẫn còn trẻ!
-L|Minh bao nhiêu tuổi?|24|34|42
+L|Felix bao nhiêu tuổi?|24|34|42
 R|Tom bao nhiêu tuổi?|30|13|24
 S|Wie alt sind Sie?|Ich bin … Jahre alt.|bin|Hãy nói tuổi của bạn.
 W|Viết câu hỏi tuổi thân mật và câu trả lời: 25 tuổi.|Wie alt bist du? – Ich bin fünfundzwanzig Jahre alt.|wie alt bist du, fuenfundzwanzig/25
@@ -97,13 +97,13 @@ G|num:13-99; opp
 N|<b>haben</b> (có) hơi bất quy tắc: ich <b>habe</b>, du <b>hast</b>, er/sie <b>hat</b>, wir haben, ihr habt, sie/Sie haben.
 N|<b>Wie ist Ihre Telefonnummer?</b> / <b>Hast du ein Handy?</b> — Số điện thoại đọc từng số hoặc từng cặp: 0176 = null-eins-sieben-sechs.
 N|<b>das Handy</b> = điện thoại di động (người Đức không nói “mobile”!). <b>die E-Mail</b>; @ đọc là <b>„ät“</b>, dấu chấm là <b>„Punkt“</b>.
-D|Anna|Minh, hast du ein Handy?|Minh, bạn có điện thoại di động không?
-D|Minh|Ja, natürlich.|Có, tất nhiên.
+D|Anna|Felix, hast du ein Handy?|Felix, bạn có điện thoại di động không?
+D|Felix|Ja, natürlich.|Có, tất nhiên.
 D|Anna|Wie ist deine Telefonnummer?|Số điện thoại của bạn là gì?
-D|Minh|Null-eins-sieben-sechs, vierunddreißig, fünfundfünfzig, einundzwanzig.|0176 – 34 – 55 – 21.
+D|Felix|Null-eins-sieben-sechs, vierunddreißig, fünfundfünfzig, einundzwanzig.|0176 – 34 – 55 – 21.
 D|Anna|Danke. Und hast du auch eine E-Mail-Adresse?|Cảm ơn. Thế bạn có địa chỉ email không?
-D|Minh|Ja: minh Punkt nguyen ät mail Punkt de.|Có: minh.nguyen@mail.de
-L|Số điện thoại của Minh là gì?|0176 34 55 21|0176 43 55 21|0167 34 55 12
+D|Felix|Ja: felix Punkt nguyen ät mail Punkt de.|Có: felix.nguyen@mail.de
+L|Số điện thoại của Felix là gì?|0176 34 55 21|0176 43 55 21|0167 34 55 12
 R|Trong địa chỉ email, “ät” là ký hiệu nào?|@|.|-
 S|Haben Sie ein Handy?|Ja, ich habe ein Handy.|habe|Bạn có điện thoại di động không? Trả lời câu đầy đủ.
 W|Viết câu hỏi lịch sự: “Ông/bà có điện thoại di động không?”|Haben Sie ein Handy?|haben sie, handy
@@ -114,13 +114,13 @@ N|Địa chỉ ở Đức: <b>tên đường + số nhà</b>, rồi <b>mã bưu 
 N|<b>Wie ist Ihre Adresse?</b> — <b>Ich wohne in der</b> Goethestraße 12. (die Straße → in der Straße)
 N|Trong biểu mẫu: <b>Straße, Hausnummer, Postleitzahl (PLZ), Wohnort</b> (nơi ở).
 D|Sekretärin|Wie ist Ihre Adresse, bitte?|Xin cho biết địa chỉ của anh?
-D|Minh|Ich wohne in der Goethestraße.|Tôi sống ở phố Goethe.
+D|Felix|Ich wohne in der Goethestraße.|Tôi sống ở phố Goethe.
 D|Sekretärin|Und die Hausnummer?|Còn số nhà?
-D|Minh|Zwölf.|Mười hai.
+D|Felix|Zwölf.|Mười hai.
 D|Sekretärin|Wie ist die Postleitzahl?|Mã bưu chính là gì?
-D|Minh|Eins-null-eins-eins-fünf. Mein Wohnort ist Berlin.|1-0-1-1-5. Nơi ở của tôi là Berlin.
-L|Số nhà của Minh là bao nhiêu?|12|20|2
-R|Mã bưu chính của Minh là gì?|10115|10151|11015
+D|Felix|Eins-null-eins-eins-fünf. Mein Wohnort ist Berlin.|1-0-1-1-5. Nơi ở của tôi là Berlin.
+L|Số nhà của Felix là bao nhiêu?|12|20|2
+R|Mã bưu chính của Felix là gì?|10115|10151|11015
 S|Wie ist Ihre Adresse?|Ich wohne in der …straße …|wohne/strasse|Hãy nói địa chỉ của bạn (có thể bịa).
 W|Viết địa chỉ: phố Goethe số 12, mã 10115, Berlin.|Goethestraße 12, 10115 Berlin|goethestrasse 12, 10115 berlin
 G|art
@@ -131,14 +131,14 @@ N|Số thứ tự: <b>erste</b> (1.), <b>zweite</b> (2.), <b>dritte</b> (3.), vi
 N|<b>einmal</b> = một lần, <b>das Mal</b> = lần: <i>zum ersten Mal</i> (lần đầu tiên), <i>noch einmal</i> (thêm lần nữa).
 P|Bảng chữ cái|A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, Ä, Ö, Ü, ß
 D|Sekretärin|Wie ist Ihr Familienname?|Họ của anh là gì?
-D|Minh|Nguyen.|Nguyễn.
+D|Felix|Nguyen.|Nguyễn.
 D|Sekretärin|Wie bitte? Buchstabieren Sie bitte.|Gì cơ? Anh đánh vần giúp tôi.
-D|Minh|N – G – U – Y – E – N.|N – G – U – Y – E – N.
+D|Felix|N – G – U – Y – E – N.|N – G – U – Y – E – N.
 D|Sekretärin|Danke. Sind Sie zum ersten Mal in Deutschland?|Cảm ơn. Anh đến Đức lần đầu à?
-D|Minh|Ja, das erste Mal. Mein Bruder ist schon das zweite Mal hier.|Vâng, lần đầu tiên. Anh trai tôi thì đến đây lần thứ hai rồi.
-L|Chữ cái thứ ba Minh đánh vần là gì?|U|G|Y
-R|Minh đến Đức lần thứ mấy?|lần đầu tiên|lần thứ hai|lần thứ ba
-S|Buchstabieren Sie bitte Ihren Vornamen.|M – I – N – H.||Đánh vần tên của bạn bằng bảng chữ cái tiếng Đức.
+D|Felix|Ja, das erste Mal. Mein Bruder ist schon das zweite Mal hier.|Vâng, lần đầu tiên. Anh trai tôi thì đến đây lần thứ hai rồi.
+L|Chữ cái thứ ba Felix đánh vần là gì?|U|G|Y
+R|Felix đến Đức lần thứ mấy?|lần đầu tiên|lần thứ hai|lần thứ ba
+S|Buchstabieren Sie bitte Ihren Vornamen.|F – E – L – I – X.||Đánh vần tên của bạn bằng bảng chữ cái tiếng Đức.
 W|Viết bằng chữ: “lần đầu tiên”|das erste Mal|erste/ersten, mal
 G|ord
 

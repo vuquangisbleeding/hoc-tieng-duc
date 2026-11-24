@@ -4,11 +4,11 @@
 N|<b>trinken</b> chia đều: ich trinke, du trinkst, er trinkt. <b>das Getränk</b> (số nhiều: Getränke) = đồ uống.
 N|<b>das Wasser</b> (nước), <b>der Kaffee</b> (cà phê), <b>der Tee</b> (trà). Ở Đức hay hỏi: <i>Wasser mit oder ohne Kohlensäure?</i> (có ga hay không ga?)
 D|Anna|Was trinkst du gern?|Bạn thích uống gì?
-D|Minh|Morgens trinke ich Kaffee und abends Tee.|Buổi sáng mình uống cà phê và buổi tối uống trà.
+D|Felix|Morgens trinke ich Kaffee und abends Tee.|Buổi sáng mình uống cà phê và buổi tối uống trà.
 D|Anna|Ich trinke viel Wasser – zwei Liter am Tag!|Mình uống nhiều nước – hai lít mỗi ngày!
-D|Minh|Und welches Getränk trinken die Deutschen am liebsten?|Thế người Đức thích đồ uống nào nhất?
+D|Felix|Und welches Getränk trinken die Deutschen am liebsten?|Thế người Đức thích đồ uống nào nhất?
 D|Anna|Kaffee! Und dann Bier, natürlich.|Cà phê! Sau đó là bia, tất nhiên.
-L|Buổi tối Minh uống gì?|Tee|Kaffee|Wasser
+L|Buổi tối Felix uống gì?|Tee|Kaffee|Wasser
 R|Anna uống bao nhiêu nước mỗi ngày?|2 lít|1 lít|3 lít
 S|Was trinken Sie morgens?|Morgens trinke ich …|trinke|Buổi sáng bạn uống gì?
 W|Viết: “Tôi uống nhiều nước.”|Ich trinke viel Wasser.|trinke viel wasser
@@ -19,11 +19,11 @@ N|<b>möchten</b> = muốn (lịch sự): ich möchte, du möchtest, <b>er möch
 N|<b>Was möchten Sie trinken?</b> — <b>Ich möchte einen Saft / ein Wasser / eine Cola.</b> (Akkusativ: der Saft → einen Saft)
 N|<b>Durst haben</b> = khát (giống Hunger haben).
 D|Kellner|Guten Tag! Was möchten Sie trinken?|Xin chào! Quý khách muốn uống gì?
-D|Minh|Ich habe Durst. Ich möchte eine Cola, bitte.|Tôi khát. Cho tôi một cô-ca.
+D|Felix|Ich habe Durst. Ich möchte eine Cola, bitte.|Tôi khát. Cho tôi một cô-ca.
 D|Kellner|Und Sie?|Còn chị?
 D|Anna|Einen Orangensaft, bitte. Und einen Kaffee mit Milch.|Một cốc nước cam. Và một cà phê sữa.
 D|Kellner|Gern. Sofort!|Vâng. Có ngay!
-L|Minh gọi gì?|eine Cola|einen Saft|einen Kaffee
+L|Felix gọi gì?|eine Cola|einen Saft|einen Kaffee
 R|Anna gọi những gì?|Orangensaft und Kaffee mit Milch|Cola und Wasser|Tee mit Milch
 S|Was möchten Sie trinken?|Ich möchte einen Kaffee, bitte.|moechte|Người phục vụ hỏi bạn muốn uống gì.
 W|Viết: “Tôi muốn một cốc nước táo.”|Ich möchte einen Apfelsaft.|moechte einen apfelsaft
@@ -33,11 +33,11 @@ G|conj:möchten; akk
 N|<b>ein Glas</b> Wein (một ly rượu vang), <b>eine Flasche</b> Wasser (một chai nước) — không cần “von”: <i>zwei Gläser Bier</i>.
 N|<b>das Bier</b>, <b>der Wein</b>, <b>das Glas</b> (số nhiều: Gläser), <b>die Flasche</b>. <b>voll</b> = đầy; cũng nghĩa “đông người”: <i>Das Restaurant ist voll.</i>
 D|Tom|Was trinkst du? Bier oder Wein?|Bạn uống gì? Bia hay rượu vang?
-D|Minh|Ein Glas Wein, bitte. Bier mag ich nicht so.|Một ly vang nhé. Bia thì mình không thích lắm.
+D|Felix|Ein Glas Wein, bitte. Bier mag ich nicht so.|Một ly vang nhé. Bia thì mình không thích lắm.
 D|Tom|Ich nehme eine Flasche Bier. Prost!|Mình lấy một chai bia. Dô!
-D|Minh|Prost! Hier ist es aber voll heute.|Dô! Mà hôm nay ở đây đông thật.
+D|Felix|Prost! Hier ist es aber voll heute.|Dô! Mà hôm nay ở đây đông thật.
 D|Tom|Ja, am Freitag ist die Bar immer voll.|Ừ, thứ Sáu quán bar lúc nào cũng đông.
-L|Minh uống gì?|ein Glas Wein|eine Flasche Bier|Wasser
+L|Felix uống gì?|ein Glas Wein|eine Flasche Bier|Wasser
 R|Khi nào quán bar luôn đông?|am Freitag|am Montag|am Sonntag
 S|Trinken Sie lieber Bier oder Wein?|Ich trinke lieber Wein. / Ich trinke keinen Alkohol.|trinke|Bạn thích bia hay vang hơn?
 W|Viết: “Cho tôi một chai nước.”|Eine Flasche Wasser, bitte.|flasche wasser
@@ -48,11 +48,11 @@ N|<b>mit</b> = với, có kèm; <b>ohne</b> = không có: <i>Kaffee <b>mit</b> M
 N|<b>eine Tasse</b> Kaffee/Tee = một tách. <b>das Café</b> = quán cà phê ≠ <b>der Kaffee</b> = cà phê để uống. Phát âm: Café [kaˈfeː], Kaffee [ˈkafe].
 D|Kellnerin|Was darf es sein?|Quý khách dùng gì ạ?
 D|Lena|Eine Tasse Tee, bitte. Ohne Zucker.|Một tách trà. Không đường.
-D|Minh|Und für mich einen Kaffee mit Milch.|Còn tôi một cà phê sữa.
+D|Felix|Und für mich einen Kaffee mit Milch.|Còn tôi một cà phê sữa.
 D|Kellnerin|Mit Zucker?|Có đường không ạ?
-D|Minh|Ja, mit Zucker. Das Café hier ist sehr gemütlich!|Có, có đường. Quán cà phê này ấm cúng quá!
+D|Felix|Ja, mit Zucker. Das Café hier ist sehr gemütlich!|Có, có đường. Quán cà phê này ấm cúng quá!
 L|Lena gọi gì?|Tee ohne Zucker|Tee mit Zucker|Kaffee mit Milch
-R|Cà phê của Minh thế nào?|mit Milch und mit Zucker|ohne Milch|ohne Zucker
+R|Cà phê của Felix thế nào?|mit Milch und mit Zucker|ohne Milch|ohne Zucker
 S|Wie trinken Sie Ihren Kaffee?|Mit Milch und ohne Zucker.|mit/ohne|Bạn uống cà phê thế nào?
 W|Viết: “Một tách trà với sữa, không đường.”|Eine Tasse Tee mit Milch, ohne Zucker.|tasse tee, mit milch, ohne zucker
 F|Ich trinke Tee ___ Zucker. (không có)|ohne||mit|für
@@ -62,9 +62,9 @@ F|Ich möchte eine ___ Tee. (tách)|Tasse|
 =75|Vào nhà hàng|Restaurant; Person; besetzt; Speisekarte
 N|Vào nhà hàng: <b>Einen Tisch für zwei Personen, bitte.</b> Hỏi chỗ trống: <b>Ist hier noch frei?</b> — <b>Nein, hier ist besetzt.</b>
 N|<b>die Speisekarte</b> = thực đơn: <i>Die Speisekarte, bitte!</i> <b>die Person</b> (số nhiều: Personen) = người.
-D|Minh|Guten Abend! Haben Sie einen Tisch für drei Personen?|Chào buổi tối! Còn bàn cho ba người không?
+D|Felix|Guten Abend! Haben Sie einen Tisch für drei Personen?|Chào buổi tối! Còn bàn cho ba người không?
 D|Kellner|Hm … der Tisch am Fenster ist frei. Der Tisch da ist besetzt.|Hừm… bàn cạnh cửa sổ còn trống. Bàn kia có người rồi.
-D|Minh|Gut, am Fenster, bitte.|Được, cạnh cửa sổ nhé.
+D|Felix|Gut, am Fenster, bitte.|Được, cạnh cửa sổ nhé.
 D|Kellner|Hier ist die Speisekarte.|Thực đơn đây ạ.
 D|Lena|Danke! Das Restaurant ist sehr schön.|Cảm ơn! Nhà hàng đẹp quá.
 L|Họ cần bàn cho mấy người?|3|2|4
@@ -79,11 +79,11 @@ N|<b>nehmen</b> bất quy tắc: ich nehme, <b>du nimmst, er nimmt</b>, wir nehm
 N|<b>bestellen</b> = gọi món, đặt hàng: <i>Möchten Sie bestellen?</i> <b>der Kellner / die Kellnerin</b> = người phục vụ.
 D|Kellner|Möchten Sie bestellen?|Quý khách muốn gọi món chưa?
 D|Lena|Ja. Ich hätte gern die Tomatensuppe.|Rồi. Tôi muốn súp cà chua.
-D|Minh|Ich nehme den Fisch mit Reis.|Tôi lấy cá với cơm.
+D|Felix|Ich nehme den Fisch mit Reis.|Tôi lấy cá với cơm.
 D|Kellner|Und Sie? Was nehmen Sie?|Còn anh? Anh lấy gì?
 D|Tom|Ich nehme das Hähnchen. Und eine Cola, bitte.|Tôi lấy gà. Và một cô-ca.
 L|Lena gọi gì?|Tomatensuppe|Fisch mit Reis|Hähnchen
-R|Ai gọi gà?|Tom|Minh|Lena
+R|Ai gọi gà?|Tom|Felix|Lena
 S|Was nehmen Sie?|Ich nehme … / Ich hätte gern …|nehme/haette gern|Người phục vụ hỏi bạn chọn món gì.
 W|Chia nehmen: du ___, er ___.|du nimmst, er nimmt|du nimmst, er nimmt
 G|conj:nehmen,bestellen
@@ -91,12 +91,12 @@ G|conj:nehmen,bestellen
 =77|Dao, nĩa, thìa|Teller; Messer; Gabel; Löffel; bringen
 N|<b>der Teller</b> (đĩa), <b>das Messer</b> (dao), <b>die Gabel</b> (nĩa), <b>der Löffel</b> (thìa).
 N|Nhờ mang: <b>Bringen Sie mir bitte einen Löffel?</b> — Akkusativ: der Löffel → <b>einen</b> Löffel, das Messer → <b>ein</b> Messer, die Gabel → <b>eine</b> Gabel.
-D|Minh|Entschuldigung! Ich habe keinen Löffel.|Xin lỗi! Tôi không có thìa.
+D|Felix|Entschuldigung! Ich habe keinen Löffel.|Xin lỗi! Tôi không có thìa.
 D|Kellner|Oh, Entschuldigung. Ich bringe Ihnen sofort einen Löffel.|Ồ, xin lỗi. Tôi mang ngay cho anh một cái thìa.
 D|Lena|Und ich brauche ein Messer und eine Gabel, bitte.|Còn tôi cần một con dao và một cái nĩa.
 D|Kellner|Kommt sofort! Brauchen Sie auch einen Teller?|Có ngay! Chị có cần thêm đĩa không?
 D|Lena|Ja, bitte – einen kleinen Teller für das Brot.|Có, làm ơn – một cái đĩa nhỏ để đựng bánh mì.
-L|Minh thiếu gì?|einen Löffel|ein Messer|eine Gabel
+L|Felix thiếu gì?|einen Löffel|ein Messer|eine Gabel
 R|Lena cần đĩa để làm gì?|für das Brot|für die Suppe|für den Fisch
 S|Sie haben keine Gabel. Was sagen Sie?|Entschuldigung, bringen Sie mir bitte eine Gabel?|gabel|Bạn không có nĩa. Bạn nói gì với người phục vụ?
 W|Viết: “Làm ơn mang cho tôi một con dao.”|Bringen Sie mir bitte ein Messer.|bringen, ein messer
@@ -106,14 +106,14 @@ G|akk; conj:bringen
 N|Gọi tính tiền: <b>Die Rechnung, bitte!</b> / <b>Ich möchte bitte bezahlen.</b> / thân mật: <i>Zahlen, bitte!</i>
 N|Người phục vụ hỏi: <i>Zusammen oder getrennt?</i> (trả chung hay riêng?)
 N|Tiền boa khoảng 5–10%: hoá đơn 48,50 € → bạn đưa 50 € và nói <b>Stimmt so.</b> (khỏi thối). <b>geben</b> = đưa: du <b>gibst</b>, er <b>gibt</b>.
-D|Minh|Die Rechnung, bitte!|Làm ơn tính tiền!
+D|Felix|Die Rechnung, bitte!|Làm ơn tính tiền!
 D|Kellner|Zusammen oder getrennt?|Chung hay riêng ạ?
-D|Minh|Zusammen, bitte. Ich bezahle heute.|Chung nhé. Hôm nay tôi trả.
+D|Felix|Zusammen, bitte. Ich bezahle heute.|Chung nhé. Hôm nay tôi trả.
 D|Kellner|Das macht achtundvierzig Euro fünfzig.|Tổng cộng 48,50 euro.
-D|Minh|Hier sind fünfzig Euro. Stimmt so!|Đây là 50 euro. Khỏi thối!
+D|Felix|Hier sind fünfzig Euro. Stimmt so!|Đây là 50 euro. Khỏi thối!
 D|Kellner|Vielen Dank! Schönen Abend noch!|Cảm ơn nhiều! Chúc buổi tối vui vẻ!
 L|Hoá đơn bao nhiêu tiền?|48,50 €|50 €|58,40 €
-R|Minh boa bao nhiêu?|1,50 €|50 €|8,50 €
+R|Felix boa bao nhiêu?|1,50 €|50 €|8,50 €
 S|Zusammen oder getrennt?|Zusammen, bitte. / Getrennt, bitte.|zusammen/getrennt|Người phục vụ hỏi trả chung hay riêng.
 W|Viết: “Tôi muốn thanh toán.”|Ich möchte bezahlen.|moechte bezahlen
 G|conj:geben,bezahlen
@@ -123,9 +123,9 @@ N|<b>die Kantine</b> = căng tin (ở công ty); ở đại học gọi là Mens
 N|<b>nichts</b> = không gì cả: <i>Ich möchte nichts, danke.</i> <b>leer</b> = trống, rỗng ↔ <b>voll</b> = đầy.
 N|<b>das Eis</b> = kem; cũng là đá: <i>Cola mit Eis</i>.
 D|Tom|Was isst du heute in der Kantine?|Hôm nay bạn ăn gì ở căng tin?
-D|Minh|Nichts mehr. Mein Teller ist schon leer! Ich esse schnell.|Hết rồi. Đĩa của mình sạch trơn rồi! Mình ăn nhanh mà.
+D|Felix|Nichts mehr. Mein Teller ist schon leer! Ich esse schnell.|Hết rồi. Đĩa của mình sạch trơn rồi! Mình ăn nhanh mà.
 D|Tom|Und zum Nachtisch? Es gibt Eis.|Còn món tráng miệng? Có kem đấy.
-D|Minh|Eis? Ja! Schokoladeneis, bitte!|Kem à? Có! Kem sô-cô-la nhé!
+D|Felix|Eis? Ja! Schokoladeneis, bitte!|Kem à? Có! Kem sô-cô-la nhé!
 D|Tom|Die Kantine ist heute fast leer. Alle sind im Urlaub.|Hôm nay căng tin gần như vắng tanh. Mọi người đi nghỉ hết.
 L|Món tráng miệng là gì?|Eis|Kuchen|Obst
 R|Tại sao căng tin vắng?|Mọi người đi nghỉ (im Urlaub)|Căng tin đóng cửa|Đồ ăn không ngon
@@ -138,12 +138,12 @@ D|Speisekarte|Tomatensuppe – 4,50 € · Salat mit Ei – 6,90 €|Súp cà ch
 D|Speisekarte|Fisch mit Kartoffeln – 12,80 € · Hähnchen mit Reis – 11,50 €|Cá với khoai tây – 12,80 € · Gà với cơm – 11,50 €
 D|Speisekarte|Kaffee – 2,80 € · Tee – 2,50 € · Cola – 3,20 € · Wasser – 2,90 €|Cà phê – 2,80 € · Trà – 2,50 € · Cô-ca – 3,20 € · Nước – 2,90 €
 D|Kellner|Guten Abend! Was möchten Sie trinken?|Chào buổi tối! Anh muốn uống gì?
-D|Minh|Ein Wasser, bitte. Und ich hätte gern das Hähnchen mit Reis.|Một chai nước. Và tôi muốn món gà với cơm.
+D|Felix|Ein Wasser, bitte. Und ich hätte gern das Hähnchen mit Reis.|Một chai nước. Và tôi muốn món gà với cơm.
 D|Kellner|Und als Vorspeise?|Còn món khai vị?
-D|Minh|Die Tomatensuppe, bitte.|Súp cà chua.
-L|Minh gọi món chính gì?|Hähnchen mit Reis|Fisch mit Kartoffeln|Salat mit Ei
-L|Món khai vị của Minh là gì?|Tomatensuppe|Salat|nichts
-R|Minh phải trả bao nhiêu? (nước + gà + súp)|18,90 €|17,90 €|19,90 €
+D|Felix|Die Tomatensuppe, bitte.|Súp cà chua.
+L|Felix gọi món chính gì?|Hähnchen mit Reis|Fisch mit Kartoffeln|Salat mit Ei
+L|Món khai vị của Felix là gì?|Tomatensuppe|Salat|nichts
+R|Felix phải trả bao nhiêu? (nước + gà + súp)|18,90 €|17,90 €|19,90 €
 R|Món nào đắt nhất?|Fisch mit Kartoffeln|Hähnchen mit Reis|Salat mit Ei
 S|Sie sind im Restaurant. Bestellen Sie ein Getränk und ein Essen.|Ich möchte ein Wasser und ich nehme den Fisch, bitte.|moechte/nehme/haette|Bạn ở nhà hàng. Gọi một đồ uống và một món ăn.
 W|Viết đoạn ngắn: gọi đồ uống, gọi món, xin hoá đơn.|Ein Wasser, bitte. Ich nehme die Suppe. Die Rechnung, bitte!|rechnung

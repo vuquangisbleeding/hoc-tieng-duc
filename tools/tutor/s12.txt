@@ -4,11 +4,11 @@
 N|<b>die Stadt</b> (số nhiều: Städte) = thành phố, <b>das Dorf</b> (Dörfer) = làng, <b>das Zentrum</b> = trung tâm, <b>der Platz</b> = quảng trường; cũng nghĩa là chỗ ngồi.
 N|<i>in der Stadt</i> (trong thành phố), <i>im Zentrum</i>, <i>auf dem Platz</i> (trên quảng trường), <i>auf dem Dorf</i> (ở nông thôn).
 D|Lena|Wohnst du gern in der Stadt?|Bạn có thích sống ở thành phố không?
-D|Minh|Ja, sehr! Ich wohne nah am Zentrum. Und du?|Có, rất thích! Mình sống gần trung tâm. Còn bạn?
+D|Felix|Ja, sehr! Ich wohne nah am Zentrum. Und du?|Có, rất thích! Mình sống gần trung tâm. Còn bạn?
 D|Lena|Ich komme aus einem kleinen Dorf in Bayern. Dort gibt es nur eine Kirche und einen Platz.|Mình đến từ một ngôi làng nhỏ ở Bayern. Ở đó chỉ có một nhà thờ và một quảng trường.
-D|Minh|Und was macht man dort am Abend?|Thế buổi tối ở đó người ta làm gì?
+D|Felix|Und was macht man dort am Abend?|Thế buổi tối ở đó người ta làm gì?
 D|Lena|Nicht viel! Darum wohne ich jetzt in Berlin.|Chẳng mấy! Vì vậy giờ mình sống ở Berlin.
-L|Minh sống ở đâu?|gần trung tâm|ở làng|ở Bayern
+L|Felix sống ở đâu?|gần trung tâm|ở làng|ở Bayern
 R|Làng của Lena có gì?|eine Kirche und einen Platz|ein Kino|viele Geschäfte
 S|Wohnen Sie lieber in der Stadt oder auf dem Dorf?|Ich wohne lieber in der Stadt.|stadt/dorf|Bạn thích sống ở thành phố hay nông thôn?
 W|Viết: “Tôi sống ở trung tâm.”|Ich wohne im Zentrum.|im zentrum
@@ -18,9 +18,9 @@ G|art; pl
 N|<b>das Kino</b> (rạp phim), <b>das Theater</b> (nhà hát), <b>das Museum</b> (bảo tàng; số nhiều: Museen), <b>der Park</b> (công viên), <b>die Kirche</b> (nhà thờ).
 N|Đi đến (Wohin? → Akkusativ): <b>ins</b> Kino / <b>ins</b> Theater / <b>ins</b> Museum (in + das = ins), <b>in den</b> Park, <b>in die</b> Kirche.
 D|Anna|Was machen wir am Sonntag? Gehen wir ins Museum?|Chủ nhật chúng ta làm gì? Đi bảo tàng nhé?
-D|Minh|Hm, lieber in den Park. Das Wetter ist schön.|Hừm, đi công viên thì hơn. Thời tiết đẹp mà.
+D|Felix|Hm, lieber in den Park. Das Wetter ist schön.|Hừm, đi công viên thì hơn. Thời tiết đẹp mà.
 D|Anna|Und am Abend? Kino oder Theater?|Còn buổi tối? Xem phim hay đi nhà hát?
-D|Minh|Kino! Das Theater ist mir zu teuer.|Xem phim! Nhà hát đắt quá với mình.
+D|Felix|Kino! Das Theater ist mir zu teuer.|Xem phim! Nhà hát đắt quá với mình.
 D|Anna|Okay. Das Kino ist neben der Kirche am Marktplatz.|OK. Rạp phim ở cạnh nhà thờ trên quảng trường chợ.
 L|Ban ngày họ đi đâu?|in den Park|ins Museum|ins Theater
 R|Rạp phim ở đâu?|neben der Kirche|neben dem Park|im Museum
@@ -34,11 +34,11 @@ F|Das Kino ist neben ___ Kirche. (die Kirche – Wo?)|der||die|dem
 =113|Dịch vụ trong thành phố|Post; Bank; Apotheke; Krankenhaus; Polizei
 N|<b>die Post</b> (bưu điện), <b>die Bank</b> (ngân hàng; số nhiều: Banken), <b>die Apotheke</b> (hiệu thuốc), <b>das Krankenhaus</b> (bệnh viện), <b>die Polizei</b> (cảnh sát). Gọi khẩn cấp: <b>110</b> (cảnh sát), <b>112</b> (cấp cứu, cứu hoả).
 N|Đi đến: <b>zur</b> Post, <b>zur</b> Bank, <b>zur</b> Apotheke (zu + der = zur); <b>zum</b> Arzt (zu + dem = zum); <b>ins</b> Krankenhaus.
-D|Minh|Ich muss heute zur Post und zur Bank.|Hôm nay mình phải ra bưu điện và ngân hàng.
+D|Felix|Ich muss heute zur Post und zur Bank.|Hôm nay mình phải ra bưu điện và ngân hàng.
 D|Anna|Die Post ist neben der Apotheke. Die Bank ist gegenüber.|Bưu điện ở cạnh hiệu thuốc. Ngân hàng ở đối diện.
-D|Minh|Und das Krankenhaus? Mein Freund Tom arbeitet dort.|Còn bệnh viện? Bạn mình là Tom làm việc ở đó.
+D|Felix|Und das Krankenhaus? Mein Freund Tom arbeitet dort.|Còn bệnh viện? Bạn mình là Tom làm việc ở đó.
 D|Anna|Das Krankenhaus ist weit. Nimm den Bus Nummer zwölf.|Bệnh viện xa đấy. Đi xe buýt số mười hai nhé.
-L|Hôm nay Minh phải đi đâu?|zur Post und zur Bank|zur Apotheke|ins Krankenhaus
+L|Hôm nay Felix phải đi đâu?|zur Post und zur Bank|zur Apotheke|ins Krankenhaus
 R|Bưu điện ở đâu?|neben der Apotheke|neben der Bank|im Krankenhaus
 S|Wo ist die nächste Apotheke?|Die Apotheke ist neben dem Supermarkt.|apotheke/ist|Hiệu thuốc gần nhà bạn ở đâu?
 W|Viết: “Tôi đi đến ngân hàng.”|Ich gehe zur Bank.|zur bank
@@ -50,13 +50,13 @@ F|Sie fährt ___ Krankenhaus. (in + das)|ins||im|zur
 N|<b>das Rathaus</b> = toà thị chính (nơi đăng ký cư trú – <i>Anmeldung</i>). <b>der Pass</b> = hộ chiếu, <b>der Ausweis</b> = chứng minh thư, thẻ căn cước.
 N|<b>die Bibliothek</b> = thư viện (nhấn âm cuối: Biblio<b>thek</b>), <b>das Hotel</b> = khách sạn (nhấn: Ho<b>tel</b>).
 D|Beamtin|Guten Tag. Was kann ich für Sie tun?|Xin chào. Tôi có thể giúp gì cho anh?
-D|Minh|Ich möchte mich anmelden. Ich wohne jetzt in Berlin.|Tôi muốn đăng ký cư trú. Bây giờ tôi sống ở Berlin.
+D|Felix|Ich möchte mich anmelden. Ich wohne jetzt in Berlin.|Tôi muốn đăng ký cư trú. Bây giờ tôi sống ở Berlin.
 D|Beamtin|Haben Sie Ihren Pass oder Ihren Ausweis dabei?|Anh có mang theo hộ chiếu hoặc thẻ căn cước không?
-D|Minh|Ja, hier ist mein Pass.|Có, hộ chiếu của tôi đây.
+D|Felix|Ja, hier ist mein Pass.|Có, hộ chiếu của tôi đây.
 D|Beamtin|Danke. Sie wohnen nicht mehr im Hotel, richtig?|Cảm ơn. Anh không còn ở khách sạn nữa, đúng không?
-D|Minh|Nein, ich habe jetzt eine Wohnung. Ach, und wo ist die Bibliothek?|Không, giờ tôi có căn hộ rồi. À, thư viện ở đâu ạ?
+D|Felix|Nein, ich habe jetzt eine Wohnung. Ach, und wo ist die Bibliothek?|Không, giờ tôi có căn hộ rồi. À, thư viện ở đâu ạ?
 D|Beamtin|Hier im Rathaus, im ersten Stock.|Ngay trong toà thị chính, ở tầng một.
-L|Minh đưa giấy tờ gì?|seinen Pass (hộ chiếu)|seinen Ausweis|nichts
+L|Felix đưa giấy tờ gì?|seinen Pass (hộ chiếu)|seinen Ausweis|nichts
 R|Thư viện ở đâu?|im Rathaus, im ersten Stock|neben dem Hotel|im Erdgeschoss
 S|Haben Sie einen Pass?|Ja, ich habe einen Pass.|pass|Bạn có hộ chiếu không?
 W|Viết: “Hộ chiếu của tôi đây.”|Hier ist mein Pass.|mein pass
@@ -65,12 +65,12 @@ G|art; pl
 =115|Hỏi đường|Wie komme ich zum …?; links; rechts; geradeaus
 N|Hỏi đường: <b>Entschuldigung, wie komme ich zum</b> Bahnhof / <b>zur</b> Post? hoặc <i>Wo ist hier …?</i>
 N|Chỉ đường: <b>geradeaus</b> (đi thẳng), (nach) <b>links</b> (trái), (nach) <b>rechts</b> (phải). Mệnh lệnh lịch sự = động từ + <b>Sie</b>: <i><b>Gehen Sie</b> geradeaus und dann links.</i>
-D|Minh|Entschuldigung, wie komme ich zum Bahnhof?|Xin lỗi, tôi đi đến nhà ga bằng cách nào?
+D|Felix|Entschuldigung, wie komme ich zum Bahnhof?|Xin lỗi, tôi đi đến nhà ga bằng cách nào?
 D|Frau|Gehen Sie hier geradeaus, dann die zweite Straße links.|Anh đi thẳng, rồi rẽ trái ở con đường thứ hai.
-D|Minh|Geradeaus und dann links. Und dann?|Đi thẳng rồi rẽ trái. Rồi sao nữa ạ?
+D|Felix|Geradeaus und dann links. Und dann?|Đi thẳng rồi rẽ trái. Rồi sao nữa ạ?
 D|Frau|Dann rechts. Der Bahnhof ist auf der rechten Seite.|Rồi rẽ phải. Nhà ga ở bên tay phải.
-D|Minh|Vielen Dank!|Cảm ơn bà nhiều!
-L|Sau khi đi thẳng, Minh rẽ vào đâu?|die zweite Straße links|die erste Straße rechts|die zweite Straße rechts
+D|Felix|Vielen Dank!|Cảm ơn bà nhiều!
+L|Sau khi đi thẳng, Felix rẽ vào đâu?|die zweite Straße links|die erste Straße rechts|die zweite Straße rechts
 R|Nhà ga ở bên nào?|rechts (bên phải)|links (bên trái)|geradeaus
 S|Wie komme ich zur Post? (Geradeaus, dann rechts.)|Gehen Sie geradeaus und dann rechts.|geradeaus, rechts|Chỉ đường: đi thẳng rồi rẽ phải.
 W|Viết câu hỏi đường đến bưu điện.|Entschuldigung, wie komme ich zur Post?|wie komme ich zur post
@@ -82,9 +82,9 @@ F|Dann gehen Sie nach ___. (bên trái)|links||rechts|geradeaus
 N|<b>die Ampel</b> = đèn giao thông: <i>an der Ampel</i>; <b>die Kreuzung</b> = ngã tư: <i>an der Kreuzung</i>; <b>die Ecke</b> = góc: <i>an der Ecke</i> / <i>um die Ecke</i> (ngay chỗ rẽ, rất gần).
 N|<b>der Weg</b> = đường đi: <i>Können Sie mir den Weg zeigen?</i> Ở Đức: đèn đỏ thì không qua đường, kể cả khi không có xe!
 D|Tom|Kennst du den Weg zum Kino?|Bạn biết đường đến rạp phim không?
-D|Minh|Ja. Wir gehen bis zur Ampel und dann rechts.|Biết. Chúng ta đi đến đèn giao thông rồi rẽ phải.
+D|Felix|Ja. Wir gehen bis zur Ampel und dann rechts.|Biết. Chúng ta đi đến đèn giao thông rồi rẽ phải.
 D|Tom|Und dann?|Rồi sao?
-D|Minh|An der Kreuzung geradeaus. Das Kino ist an der Ecke, neben dem Café.|Đến ngã tư đi thẳng. Rạp phim ở góc phố, cạnh quán cà phê.
+D|Felix|An der Kreuzung geradeaus. Das Kino ist an der Ecke, neben dem Café.|Đến ngã tư đi thẳng. Rạp phim ở góc phố, cạnh quán cà phê.
 D|Tom|Die Ampel ist rot. Warte!|Đèn đỏ kìa. Chờ đã!
 L|Đến đèn giao thông thì đi thế nào?|nach rechts|nach links|geradeaus
 R|Rạp phim ở đâu?|an der Ecke, neben dem Café|an der Ampel|an der Kreuzung
@@ -96,11 +96,11 @@ G|art; pl
 N|<b>Wo?</b> (ở đâu, đứng yên) ↔ <b>Wohin?</b> (đi đâu, chuyển động): <i>Wo bist du? — <b>Bei</b> Anna.</i> / <i>Wohin gehst du? — <b>Zu</b> Anna.</i>
 N|<b>zu</b> + Dativ = đến (người/nơi): zu<b>m</b> Arzt, zu<b>r</b> Schule, zu Anna. <b>bei</b> + Dativ = ở chỗ (ai): bei<b>m</b> Arzt, bei meinen Eltern. <b>nach Hause</b> = về nhà, <b>zu Hause</b> = ở nhà.
 N|<b>da</b> = ở đó; có mặt: <i>Ist Anna da?</i>
-D|Minh|Hallo Lena! Wohin gehst du?|Chào Lena! Bạn đi đâu đấy?
+D|Felix|Hallo Lena! Wohin gehst du?|Chào Lena! Bạn đi đâu đấy?
 D|Lena|Zum Arzt. Und du?|Đến bác sĩ. Còn bạn?
-D|Minh|Ich gehe zu Anna. Sie ist heute bei ihren Eltern.|Mình đến chỗ Anna. Hôm nay cô ấy ở nhà bố mẹ.
+D|Felix|Ich gehe zu Anna. Sie ist heute bei ihren Eltern.|Mình đến chỗ Anna. Hôm nay cô ấy ở nhà bố mẹ.
 D|Lena|Ist Lukas auch da?|Lukas cũng ở đó à?
-D|Minh|Ja, alle sind da. Danach fahre ich nach Hause.|Ừ, mọi người đều ở đó. Sau đó mình về nhà.
+D|Felix|Ja, alle sind da. Danach fahre ich nach Hause.|Ừ, mọi người đều ở đó. Sau đó mình về nhà.
 L|Lena đi đâu?|zum Arzt|zu Anna|nach Hause
 R|Hôm nay Anna ở đâu?|bei ihren Eltern|beim Arzt|zu Hause
 S|Wohin gehen Sie heute?|Heute gehe ich zum Supermarkt.|gehe/fahre|Hôm nay bạn đi đâu?
@@ -114,9 +114,9 @@ F|Er wohnt ___ seinen Eltern. (ở chỗ)|bei||zu|nach
 N|<b>Ist das weit?</b> — Nein, das ist ganz <b>nah</b> (gần) / nur fünf Minuten zu Fuß.
 N|<b>hier</b> (ở đây) ↔ <b>dort</b> / <b>da</b> (ở đó). <b>der Stadtplan</b> = bản đồ thành phố. <b>vielleicht</b> = có lẽ.
 D|Touristin|Entschuldigung, ist das Museum weit von hier?|Xin lỗi, bảo tàng có xa đây không?
-D|Minh|Nein, es ist nah. Vielleicht zehn Minuten zu Fuß.|Không, gần thôi. Có lẽ mười phút đi bộ.
+D|Felix|Nein, es ist nah. Vielleicht zehn Minuten zu Fuß.|Không, gần thôi. Có lẽ mười phút đi bộ.
 D|Touristin|Hier auf dem Stadtplan … wo sind wir jetzt?|Trên bản đồ này… chúng ta đang ở đâu?
-D|Minh|Wir sind hier, am Rathaus. Und das Museum ist dort, am Park.|Chúng ta ở đây, ở toà thị chính. Còn bảo tàng ở đó, cạnh công viên.
+D|Felix|Wir sind hier, am Rathaus. Und das Museum ist dort, am Park.|Chúng ta ở đây, ở toà thị chính. Còn bảo tàng ở đó, cạnh công viên.
 D|Touristin|Super, vielen Dank!|Tuyệt, cảm ơn nhiều!
 L|Đi bộ đến bảo tàng mất bao lâu?|khoảng 10 phút|30 phút|5 phút
 R|Bảo tàng ở đâu?|am Park|am Rathaus|am Bahnhof
@@ -128,9 +128,9 @@ G|opp; art
 N|<b>kennen</b> = biết, quen (người, nơi chốn): <i>Ich kenne Berlin.</i> <b>wissen</b> = biết (thông tin): <i>Ich <b>weiß</b>, wo die Post ist.</i> — wissen bất quy tắc: ich <b>weiß</b>, du <b>weißt</b>, er <b>weiß</b>.
 N|Hỏi lịch sự: <i>Können Sie mir <b>sagen</b>, wo der Bahnhof ist?</i> <i><b>Wissen</b> Sie, wo …?</i> (sau wo, động từ đứng cuối)
 N|<b>die Richtung</b> = hướng: <i>in Richtung Zentrum</i>.
-D|Minh|Entschuldigung, wissen Sie, wo der Bahnhof ist?|Xin lỗi, ông có biết nhà ga ở đâu không?
+D|Felix|Entschuldigung, wissen Sie, wo der Bahnhof ist?|Xin lỗi, ông có biết nhà ga ở đâu không?
 D|Mann|Tut mir leid, ich kenne die Stadt nicht. Ich bin auch Tourist.|Xin lỗi, tôi không biết thành phố này. Tôi cũng là khách du lịch.
-D|Minh|Entschuldigung! Können Sie mir sagen, wo der Bahnhof ist?|Xin lỗi! Bà có thể nói cho tôi biết nhà ga ở đâu không?
+D|Felix|Entschuldigung! Können Sie mir sagen, wo der Bahnhof ist?|Xin lỗi! Bà có thể nói cho tôi biết nhà ga ở đâu không?
 D|Frau|Ja, der Bahnhof ist in dieser Richtung. Immer geradeaus!|Có, nhà ga ở hướng này. Cứ đi thẳng!
 L|Tại sao người đàn ông không biết đường?|Ông ấy cũng là khách du lịch|Ông ấy vội|Ông ấy không hiểu tiếng Đức
 R|Nhà ga ở đâu?|in dieser Richtung, immer geradeaus|links|rechts
@@ -141,11 +141,11 @@ F|___ du meinen Bruder? (kennen)|Kennst||Weißt|Kennt
 G|conj:wissen,kennen,sagen
 
 =120|Ôn tập chặng 12|*
-D|E-Mail|Hallo Minh, so kommst du zu meiner neuen Wohnung:|Chào Minh, đây là cách đến căn hộ mới của mình:
+D|E-Mail|Hallo Felix, so kommst du zu meiner neuen Wohnung:|Chào Felix, đây là cách đến căn hộ mới của mình:
 D|E-Mail|Nimm die U-Bahn bis zum Rathaus. Dann geh geradeaus bis zur Kreuzung.|Đi tàu điện ngầm đến toà thị chính. Rồi đi thẳng đến ngã tư.
 D|E-Mail|An der Kreuzung gehst du links. Die Bergstraße ist die zweite Straße rechts.|Đến ngã tư rẽ trái. Phố Bergstraße là con đường thứ hai bên phải.
 D|E-Mail|Mein Haus ist Nummer acht, neben der Apotheke. Bis Samstag! Anna|Nhà mình số 8, cạnh hiệu thuốc. Hẹn thứ Bảy! Anna
-L|Minh đi tàu đến đâu?|bis zum Rathaus|bis zum Bahnhof|bis zur Kreuzung
+L|Felix đi tàu đến đâu?|bis zum Rathaus|bis zum Bahnhof|bis zur Kreuzung
 L|Đến ngã tư thì rẽ đâu?|links|rechts|geradeaus
 R|Nhà Anna số mấy?|8|18|2
 R|Nhà Anna ở cạnh cái gì?|neben der Apotheke|neben der Bank|neben dem Rathaus

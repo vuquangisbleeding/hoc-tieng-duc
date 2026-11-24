@@ -4,13 +4,13 @@
 N|<b>Was sind Sie von Beruf?</b> / <b>Was machst du beruflich?</b> — <b>Ich bin</b> Lehrer. (không dùng mạo từ trước nghề!) Nữ thêm <b>-in</b>: Ärztin, Verkäuferin.
 N|<b>die Arbeit</b> = công việc (nói chung), <b>der Job</b> = việc làm (thường là việc làm thêm, ngắn hạn), <b>der Beruf</b> = nghề.
 N|<b>wollen</b> = muốn (mạnh hơn möchten): ich <b>will</b>, du <b>willst</b>, er <b>will</b>, wir wollen. <i>Ich <b>will</b> als Ingenieur <b>arbeiten</b>.</i>
-D|Frau Schmidt|Minh, was sind Sie von Beruf?|Minh, anh làm nghề gì?
-D|Minh|Ich bin Ingenieur. Aber hier in Deutschland habe ich noch keine Arbeit.|Tôi là kỹ sư. Nhưng ở Đức tôi chưa có việc làm.
+D|Frau Schmidt|Felix, was sind Sie von Beruf?|Felix, anh làm nghề gì?
+D|Felix|Ich bin Ingenieur. Aber hier in Deutschland habe ich noch keine Arbeit.|Tôi là kỹ sư. Nhưng ở Đức tôi chưa có việc làm.
 D|Frau Schmidt|Und jetzt? Haben Sie einen Job?|Còn bây giờ? Anh có việc làm thêm không?
-D|Minh|Ja, ich arbeite abends in einem Café. Aber ich will als Ingenieur arbeiten.|Có, buổi tối tôi làm ở một quán cà phê. Nhưng tôi muốn làm kỹ sư.
+D|Felix|Ja, ich arbeite abends in einem Café. Aber ich will als Ingenieur arbeiten.|Có, buổi tối tôi làm ở một quán cà phê. Nhưng tôi muốn làm kỹ sư.
 D|Frau Schmidt|Dann müssen Sie gut Deutsch lernen!|Vậy anh phải học tiếng Đức thật giỏi!
-L|Minh làm nghề gì?|Ingenieur (kỹ sư)|Kellner|Lehrer
-R|Hiện Minh làm thêm ở đâu?|in einem Café|in einer Firma|im Büro
+L|Felix làm nghề gì?|Ingenieur (kỹ sư)|Kellner|Lehrer
+R|Hiện Felix làm thêm ở đâu?|in einem Café|in einer Firma|im Büro
 S|Was sind Sie von Beruf?|Ich bin … von Beruf.|bin|Bạn làm nghề gì?
 W|Viết: “Tôi muốn làm việc ở Đức.”|Ich will in Deutschland arbeiten.|will, arbeiten
 G|conj:wollen; modal:wollen
@@ -47,12 +47,12 @@ G|conj:tun; art
 N|<b>das Formular</b> = biểu mẫu; <b>ausfüllen</b> (tách) = điền: <i>Bitte <b>füllen</b> Sie das Formular <b>aus</b>.</i>
 N|Các mục thường gặp: Name, Vorname, Geburtsdatum, Geburtsort, <b>Nationalität</b> (quốc tịch: vietnamesisch), <b>Geschlecht</b> (giới tính): <b>männlich</b> (nam) / <b>weiblich</b> (nữ), Familienstand, Unterschrift.
 D|Beamter|Bitte füllen Sie das Formular aus.|Mời anh điền vào biểu mẫu.
-D|Minh|Was muss ich hier schreiben – „Nationalität“?|Ở đây tôi phải viết gì – “Quốc tịch”?
+D|Felix|Was muss ich hier schreiben – „Nationalität“?|Ở đây tôi phải viết gì – “Quốc tịch”?
 D|Beamter|Ihre Nationalität: vietnamesisch.|Quốc tịch của anh: Việt Nam.
-D|Minh|Und hier: „männlich“ oder „weiblich“?|Còn đây: “nam” hay “nữ”?
+D|Felix|Und hier: „männlich“ oder „weiblich“?|Còn đây: “nam” hay “nữ”?
 D|Beamter|Sie sind ein Mann, also „männlich“.|Anh là đàn ông, vậy là “nam”.
-L|Minh hỏi về mục nào đầu tiên?|Nationalität|Unterschrift|Familienstand
-R|Minh đánh dấu ô nào?|männlich|weiblich|ledig
+L|Felix hỏi về mục nào đầu tiên?|Nationalität|Unterschrift|Familienstand
+R|Felix đánh dấu ô nào?|männlich|weiblich|ledig
 S|Was ist Ihre Nationalität?|Meine Nationalität ist vietnamesisch.|vietnam/nationalitaet|Quốc tịch của bạn là gì?
 W|Điền phiếu: Nationalität và Geschlecht (giới tính) của bạn.|Nationalität: vietnamesisch – Geschlecht: männlich|
 G|sep:ausfüllen; art
@@ -61,9 +61,9 @@ G|sep:ausfüllen; art
 N|<b>unterschreiben</b> = ký tên (không tách!): <i>Bitte <b>unterschreiben</b> Sie hier.</i> <b>die Unterschrift</b> = chữ ký.
 N|<b>wichtig</b> = quan trọng, <b>fertig</b> = xong, sẵn sàng: <i>Sind Sie fertig?</i>
 D|Beamter|Sind Sie fertig?|Anh xong chưa?
-D|Minh|Fast. Muss ich hier unterschreiben?|Gần xong. Tôi có phải ký ở đây không?
+D|Felix|Fast. Muss ich hier unterschreiben?|Gần xong. Tôi có phải ký ở đây không?
 D|Beamter|Ja, Ihre Unterschrift ist sehr wichtig. Ohne Unterschrift geht es nicht.|Có, chữ ký của anh rất quan trọng. Không có chữ ký thì không được.
-D|Minh|Hier, bitte. Jetzt bin ich fertig!|Đây ạ. Giờ tôi xong rồi!
+D|Felix|Hier, bitte. Jetzt bin ich fertig!|Đây ạ. Giờ tôi xong rồi!
 D|Beamter|Danke. Ihre Anmeldung ist in einer Woche fertig.|Cảm ơn. Giấy đăng ký của anh sẽ xong trong một tuần.
 L|Tại sao chữ ký quan trọng?|Không có chữ ký thì không được|Vì nó đẹp|Vì sếp muốn
 R|Khi nào giấy đăng ký xong?|in einer Woche (trong một tuần)|heute|morgen
@@ -77,9 +77,9 @@ F|Das ist sehr ___. (quan trọng)|wichtig||fertig|frei
 N|<b>die Schule</b> (trường phổ thông) — <b>der Schüler / die Schülerin</b> (học sinh); <b>die Universität</b> (đại học, nói tắt: Uni) — <b>der Student</b> (sinh viên).
 N|<b>der Unterricht</b> = giờ học: <i>Der Unterricht beginnt um acht.</i> <b>schwierig</b> = khó (= schwer).
 N|Đi học: <b>in die Schule</b> / <b>zur Schule gehen</b>, <b>an der Uni studieren</b>.
-D|Minh|Lukas, wie lange warst du in der Schule?|Lukas, bạn đi học phổ thông bao lâu?
+D|Felix|Lukas, wie lange warst du in der Schule?|Lukas, bạn đi học phổ thông bao lâu?
 D|Lukas|Dreizehn Jahre. Dann habe ich an der Universität studiert.|Mười ba năm. Sau đó mình học đại học.
-D|Minh|Dreizehn! In Vietnam sind es zwölf. War der Unterricht schwierig?|Mười ba á! Ở Việt Nam là mười hai. Học có khó không?
+D|Felix|Dreizehn! In Vietnam sind es zwölf. War der Unterricht schwierig?|Mười ba á! Ở Việt Nam là mười hai. Học có khó không?
 D|Lukas|Mathe war schwierig für mich. Ich war kein guter Schüler!|Toán thì khó với mình. Mình không phải học sinh giỏi!
 L|Lukas đi học phổ thông bao nhiêu năm?|13|12|10
 R|Môn gì khó với Lukas?|Mathe (toán)|Deutsch|Englisch
@@ -90,8 +90,8 @@ G|art; pl
 =137|Đọc & viết|lesen; schreiben; Wort; Satz; Seite
 N|<b>lesen</b> đổi e → ie: ich lese, <b>du liest, er liest</b>. <b>schreiben</b> chia đều: ich schreibe, du schreibst.
 N|<b>das Wort</b> (số nhiều: Wörter) = từ, <b>der Satz</b> (Sätze) = câu, <b>die Seite</b> = trang: <i>auf Seite zwölf</i>.
-D|Frau Schmidt|Öffnen Sie das Buch auf Seite zwanzig. Minh, lesen Sie bitte den ersten Satz.|Mở sách trang hai mươi. Minh, anh đọc câu đầu tiên nhé.
-D|Minh|„Anna wohnt in einer kleinen Wohnung.“|“Anna sống trong một căn hộ nhỏ.”
+D|Frau Schmidt|Öffnen Sie das Buch auf Seite zwanzig. Felix, lesen Sie bitte den ersten Satz.|Mở sách trang hai mươi. Felix, anh đọc câu đầu tiên nhé.
+D|Felix|„Anna wohnt in einer kleinen Wohnung.“|“Anna sống trong một căn hộ nhỏ.”
 D|Frau Schmidt|Sehr gut! Und jetzt schreiben Sie fünf Wörter aus dem Text.|Rất tốt! Và bây giờ viết năm từ trong bài.
 D|Tom|Nur fünf Wörter? Das ist einfach!|Chỉ năm từ thôi à? Dễ thế!
 D|Frau Schmidt|Und dann schreiben Sie mit jedem Wort einen Satz.|Rồi với mỗi từ, các bạn viết một câu.
@@ -105,13 +105,13 @@ G|conj:lesen,schreiben; pl
 N|<b>fragen</b> = hỏi, <b>antworten</b> = trả lời (du antwort<b>e</b>st, er antwort<b>e</b>t), <b>erklären</b> = giải thích.
 N|<b>die Frage</b> (câu hỏi) — <b>die Antwort</b> (câu trả lời): <i>Ich habe eine Frage.</i> <i>Die Antwort ist richtig.</i>
 N|Trong lớp: <i>Können Sie das bitte erklären?</i> (Cô có thể giải thích không ạ?)
-D|Minh|Frau Schmidt, ich habe eine Frage.|Cô Schmidt, em có một câu hỏi.
+D|Felix|Frau Schmidt, ich habe eine Frage.|Cô Schmidt, em có một câu hỏi.
 D|Frau Schmidt|Ja, bitte. Fragen Sie!|Vâng, anh hỏi đi!
-D|Minh|Was ist der Unterschied zwischen „kennen“ und „wissen“? Können Sie das bitte erklären?|Sự khác nhau giữa “kennen” và “wissen” là gì? Cô có thể giải thích không ạ?
+D|Felix|Was ist der Unterschied zwischen „kennen“ und „wissen“? Können Sie das bitte erklären?|Sự khác nhau giữa “kennen” và “wissen” là gì? Cô có thể giải thích không ạ?
 D|Frau Schmidt|Gute Frage! Wer weiß die Antwort? Tom, antworten Sie bitte.|Câu hỏi hay! Ai biết câu trả lời? Tom, anh trả lời đi.
 D|Tom|„Kennen“ ist für Personen und Orte, „wissen“ für Informationen.|“Kennen” dùng cho người và nơi chốn, “wissen” cho thông tin.
 D|Frau Schmidt|Richtig! Die Antwort ist perfekt.|Đúng! Câu trả lời hoàn hảo.
-L|Minh hỏi về hai từ nào?|kennen und wissen|fragen und antworten|lesen und schreiben
+L|Felix hỏi về hai từ nào?|kennen und wissen|fragen und antworten|lesen und schreiben
 R|Ai trả lời câu hỏi?|Tom|Frau Schmidt|Anna
 S|Sie verstehen ein Wort nicht. Was fragen Sie im Kurs?|Was bedeutet das? Können Sie das bitte erklären?|erklaeren/bedeutet|Bạn không hiểu một từ. Bạn hỏi gì trong lớp?
 W|Viết: “Tôi có một câu hỏi.”|Ich habe eine Frage.|habe eine frage
@@ -121,13 +121,13 @@ G|conj:fragen,antworten,erklären; art
 N|<b>die Prüfung</b> = kỳ thi: <i>eine Prüfung machen</i>; thi đỗ: <i>die Prüfung bestehen</i>.
 N|<b>die Hausaufgabe</b> = bài tập về nhà, <b>üben</b> = luyện tập, <b>wiederholen</b> = ôn lại, lặp lại (không tách: ich wiederhole), <b>der Fehler</b> = lỗi.
 N|<b>einfach</b> = đơn giản, dễ (cũng nghĩa: vé một chiều).
-D|Minh|Nächste Woche habe ich die A1-Prüfung!|Tuần sau mình thi A1!
+D|Felix|Nächste Woche habe ich die A1-Prüfung!|Tuần sau mình thi A1!
 D|Anna|Viel Glück! Übst du jeden Tag?|Chúc may mắn! Ngày nào bạn cũng luyện tập à?
-D|Minh|Ja. Ich mache alle Hausaufgaben und wiederhole die Wörter.|Ừ. Mình làm hết bài tập về nhà và ôn lại từ vựng.
+D|Felix|Ja. Ich mache alle Hausaufgaben und wiederhole die Wörter.|Ừ. Mình làm hết bài tập về nhà và ôn lại từ vựng.
 D|Anna|Und machst du noch viele Fehler?|Thế bạn còn mắc nhiều lỗi không?
-D|Minh|Manchmal, besonders mit „der, die, das“. Das ist nicht einfach!|Đôi khi, nhất là với “der, die, das”. Không dễ chút nào!
-L|Khi nào Minh thi A1?|tuần sau|ngày mai|tháng sau
-R|Minh hay mắc lỗi gì?|der, die, das|Zahlen (số)|Aussprache (phát âm)
+D|Felix|Manchmal, besonders mit „der, die, das“. Das ist nicht einfach!|Đôi khi, nhất là với “der, die, das”. Không dễ chút nào!
+L|Khi nào Felix thi A1?|tuần sau|ngày mai|tháng sau
+R|Felix hay mắc lỗi gì?|der, die, das|Zahlen (số)|Aussprache (phát âm)
 S|Wie üben Sie Deutsch?|Ich mache Hausaufgaben und wiederhole die Wörter.|uebe/wiederhole/lerne/mache|Bạn luyện tiếng Đức như thế nào?
 W|Viết: “Hôm nay tôi ôn lại từ vựng.”|Heute wiederhole ich die Wörter.|wiederhole, woerter
 G|conj:üben,wiederholen; art
